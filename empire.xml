@@ -1,0 +1,68 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Title</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication Information</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Information about the source</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+        <body>
+            <div type="entry">
+                <head><term xml:id="empire">EMPIRE</term></head>
+                <div type="article">
+                    <p> <gloss target="#empire">(<foreign xml:lang="la">imperium</foreign>), commandement, domination, et, dans une signification secondaire, état gouverné par un
+                        empereur (<hi rend="italic">voy.</hi>).</gloss> Dans ce dernier sens, <name type="place" key="http://dbpedia.org/resource/Roman_Empire">la
+                            domination romaine</name> est la première à laquelle le mot empire fut applicable. Elle se divisa en <name type="place"
+                            key="http://dbpedia.org/resource/Byzantine_Empire">empire d'Orient</name>, appelé dans la suite <hi rend="italic">Bas-Empire</hi>
+                            (<hi rend="italic">voy.</hi>
+                        <term key="http://dbpedia.org/resource/Byzantine_Empire">BYZANCE</term>), et en <name type="place" key="http://dbpedia.org/resource/Western_Roman_Empire">empire d'Occident</name>,
+                        renouvelé l'an 800 en faveur de <name type="person" key="http://dbpedia.org/page/Charlemagne">Charlemagne</name>, et qui, au bout d'un
+                        siècle, devint <name type="place" key="http://dbpedia.org/resource/Holy_Roman_Empire">l'empire germanique</name> ou <name type="place"
+                            key="http://dbpedia.org/resource/Holy_Roman_Empire">le <hi rend="italic">Saint-Empire</hi></name>, dont il va être traité ci-après.
+                        Relativement au <name type="place" key="http://dbpedia.org/resource/Byzantine_Empire">Bas-Empire</name>, on fait encore différentes
+                        distinctions, à raison des dynasties qui ont régné ou par rapport à ses démembrements. C'est ainsi qu'il y a eu un <name type="place"
+                            key="http://dbpedia.org/resource/Greek_Empire">empire grec</name> et un <name type="place"
+                            key="http://dbpedia.org/resource/Latin_Empire">empire latin</name> (<hi rend="italic">voy.</hi>
+                        <term key="http://dbpedia.org/resource/Latin_Empire">LATINS</term>), des empereurs de <name type="place" key="http://dbpedia.org/resource/Constantinople">Constantinople</name>, de
+                            <name type="place" key="http://dbpedia.org/page/Empire_of_Nicaea">Nicée</name>, de <name type="place"
+                            key="http://dbpedia.org/resource/Empire_of_Trebizond">Trébizonde</name>, etc. (<hi rend="italic">voy.</hi> ces noms). </p>
+                    <p> Au reste, le mot <term rend="italic">empire</term> se confond avec celui de domination, sans égard pour le titre monarchique ou autre
+                        affecté au chef qui régit un état; on dit <name type="place" key="http://dbpedia.org/page/Persian_Empire">l'empire des Perses</name>,
+                            <name type="place" key="http://dbpedia.org/page/Caliphate">l'empire des Arabes</name>, et, dans les temps modernes, <name
+                            type="place" key="http://dbpedia.org/page/British_Empire">l'empire britannique</name>. Cette dernière dénomination, sous laquelle
+                        sont compris les royaumes d'<name type="place" key="http://dbpedia.org/page/England">Angleterre</name>, d'<name type="place"
+                            key="http://dbpedia.org/page/Scotland">Écosse</name>, d'<name type="place" key="http://dbpedia.org/page/Ireland">Irlande</name>,
+                        etc., est officielle, et, depuis l'union, <name type="institution"
+                            key="http://dbpedia.org/page/Category:Parliament_of_the_United_Kingdom">le parlement britannique</name> est qualifié d'<hi
+                            rend="italic">impérial</hi>, c'est-à-dire appartenant aux trois royaumes. Dans l'histoire, on voit l'<hi rend="italic">empire</hi>
+                        passer d'un peuple à un autre, des <name type="people" key="http://dbpedia.org/resource/Assyrian_people">Assyriens</name> aux <name
+                            type="people" key="http://dbpedia.org/resource/Chaldea">Chaldéens</name>, de ceux-ci aux <name type="people"
+                            key="http://dbpedia.org/page/Medes">Mèdes</name> et aux <name type="people" key="http://dbpedia.org/page/Persian_people"
+                            >Perses</name>, puis aux <name type="people" key="http://dbpedia.org/page/Category:Macedonian_people">Macédoniens</name> et aux
+                            <name type="people" key="http://dbpedia.org/resource/Category:Ancient_Romans">Romains</name>. Plus tard, d'autres peuples ont rêvé
+                            <hi rend="italic">l'empire du monde</hi>, que ne réalisèrent ni les <name type="people"
+                            key="http://dbpedia.org/resource/Category:Arab_people">Arabes</name>, ni les <name type="people"
+                            key="http://dbpedia.org/resource/Mongols">Mongols</name>, ni les <name type="people"
+                            key="http://dbpedia.org/resource/Category:Turkish_people">Turcs</name>, ni <name type="person"
+                            key="http://dbpedia.org/resource/Charles_V">Charles-Quint</name>, ni <name type="person"
+                            key="http://dbpedia.org/resource/Napoleon_Louis_Bonaparte">Napoléon</name>, et qu'on aurait tort de redouter de la part d'un
+                        empereur russe. Le spectacle des <hi rend="italic">révolutions des empires</hi> est plein de hautes leçons, comme il est environné d'un
+                        vif et légitime intérêt. </p>
+                </div>
+                <byline>J. H. S.</byline>
+            </div>
+        </body>
+  </text>
+</TEI>

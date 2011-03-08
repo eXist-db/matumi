@@ -1,0 +1,11 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><div type="entry"><head><term xml:id="country">タイリク</term></head><head type="alt">大陸</head><head type="alt">Continent</head><div type="article"><p>
+                        陸地の大なるものをいひ、<name type="place" key="http://dbpedia.org/resource/Eurasia">ユーラシヤ</name>　(
+                        <name type="place" key="http://dbpedia.org/resource/Asia">アジヤ</name>
+                        及び
+                        <name type="place" key="http://dbpedia.org/resource/Europe">ヨーロッパ</name>
+                        ）、<name type="place" key="http://dbpedia.org/resource/Africa">アフリカ</name>
+                        、<name type="place" key="http://dbpedia.org/resource/North_America">北アメリカ</name>、
+                        <name type="place" key="http://dbpedia.org/resource/South_America">南アメリ<pb n="869"/>力</name>、
+                        <name type="place" key="http://dbpedia.org/resource/Australia_(continent)">オーストラリヤ</name>を五大陸と稱し
+            、またこれに南極大陸を加へて六大陸となす場合もある。前表は各大陸の面積、人口を示す。
+                    </p></div><pb n="870"/></div></body></text></TEI>

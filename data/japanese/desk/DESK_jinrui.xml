@@ -1,0 +1,14 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="847"/><div type="entry"><head><term xml:id="humanity">じんるい　</term></head><head type="alt">人類</head><div type="article"><p>知能をもつ直立二足歩行性のホニュウ類の一科であるヒト。巨大な頭脳と巧妙な手をもち，文化や言語を創造，社会生活を営む。</p><div><head rend="bracketed">種類</head><p>
+                大別して猿人
+                （アウストラロピテクス，ホモ・ハビリス）
+                ，原人（ホモ・エレクトウス）
+                ，旧人（ネアンデルタール人など）
+                ，新人（クロマニヨン人など）
+                とする。旧人と新人は共にホモ・サピエンスに含まれる。
+                            </p></div><div><head rend="bracketed">歴史</head><p>
+               ヒトが道具を使用し始めたのは，３００万～４００万年前とされる。これ以後ヒトはゆるやかな発展をしていったが，１万年前頃に食糧生産
+                （農耕，牧畜）を開始し，土器製造の技術を覚えた。これ以後を
+                新<name type="period" key="http://dbpedia.org/resource/Stone_Age">石器時代</name>
+                という。このためヒトの社会は大きく変化し，増大した生産力を背景に都市が生まれ，
+                さらに国家が誕生し，金属使用が開始された。その後の大きなエポックは産業革命で，科学技術の発展を基礎とする近代社会が生まれ，今日に至っている。
+                        </p></div></div></div></body></text></TEI>

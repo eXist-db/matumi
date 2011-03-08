@@ -1,0 +1,23 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><div type="entry"><head xml:id="humanity">ジンルイ </head><head type="alt">人類</head><head type="alt"><seg type="furigana">じんるゐ</seg></head><head type="alt">Hominidae </head><div type="article"><div><p>地上に於ける最高等の發達を遂げた生物。左右均等體、中心骨骼、中胚葉より發生せる内部規節、脊柱背側に神經管、同腹側に腸管、腸管起始部
+                            に開口せる呼吸管、心臓等を有する點で明かに脊椎動物Vertebrataに屬する。また溫血、體毛、ニ箇の後頭髁、下顎顳顓關節、三對の
+                            聽小骨、ニ室ニ房を有する心臓、横隔膜、胎盤、哺乳等の點より明かに哺乳類 Mammaliaに屬してゐる。哺乳動物中では、足蹠を地に
+                            著けて歩行し、五趾を有して拇指は他指に對向し鉤爪なく、歯牙には門齒、犬齒、小臼齒、大臼齒の別があつて完全に變換を營み、大臼
+                            齒の咀嚼面には結節があり、左右眼窠軸角小にして眼窠は骨壁に包まれ、胃は單一で盲腸があり、單一子宮を有し、睾丸は腹腔外に降
+                            下し、乳嘴は胸部に一對存する。以上の諸點により哺乳動物中最高の靈長類Primatesに屬することが明かである。靈長類中でも、鼻中
+                            隔及び鼻孔狭くして向下し、齒式は門齒 2/2、犬齒 1/1、小臼齒2/2、大臼歯3/3、小臼齒には結節ニ箇、上大臼齒には四箇、下大白齒
+                            には五箇のものがあり、骨部外聽道を具へ、卷尾を缺く等の點で狭鼻類 Catarihinae に屬する。卽ち人類は脊椎動物(門)、哺乳類(綱)、
+                            靈長類(目)、狹鼻類(亞目 )中の人科Hominidaeといふ一科になつてゐる。</p></div><div><head rend="bracketed">〔近親關係〕</head><p>現に生存する狹鼻類中で人科に最も近い科は類人猿科 Anthropoidae
+                            である。これは體軀大形で雌雄の差著しく、外尾、髀骶及び頰嚢を缺くが外側喉嚢を具へ、大腦及
+                            び腦頭蓋が發達し、口吻の突出比較的少なく、盲脇に蟲樣垂を有し、二足歩行をして手掌を地に著けて歩むことがない。月經があつて分
+                            娩は一囘普通一兒でぁる。卽ち人類に酷似し、殊に人類とのみ共通の特徴に富む。のみならずフリーデンタール Friedental, ウーレンフー
+                            トUhlenhut, ヌッタール Nuttalの血淸學的證 によれば、類人猿は人類に最も近き血族關係を示し、その程度は他の猿類に對するよりも
+                            却つて人に近い。卽ちハックスリHuxleyのピテコメトリーの方則に應ふ。その後モリソン
+                            Mollisonはウーレンフート(Uhlenhuth)等の方法を改變し、最も微妙な血液反應を利用して類人猿と人類との近親關係を檢したが、結果は前者の
+                            中ではチンパンジー(chimpanzee)が後者に最親の關係を示した。チンパンジーはこの他に趾間に蹼皮なく、中心骨が獨立せず、頭蓋に正中櫛なく大
+                            腦最も良く發達し、智能もまた最も勝れてゐて、前額竇の形態は人類に最も近い。但し身 長の大、耳殼の小、上肢の短、生毛の粗、二
+                            足歩行の巧妙といふ點では、ゴリラ(gorilla)の方が人に近い。ゴリラのみならず下等の狭鼻類、更に廣鼻類中のクモザルが屢々人類に非常に近
+                            い關係を示すが、多くは第ニ次的の收斂現象Konvorgenzerscheinungで說明出來る。以上を要するに人類は現生靈長類中類人猿に最も近
+                            く、殊にチンパンジーに最親の關係があるらしい。古生靈長類中で近時南アフリカ(Africa)發見の
+                            タウングス(Taung)頭蓋は最も人に近いと稱せられて ゐるが、この說は澽には認め難い。</p></div><div><head rend="bracketed">〔他動物 との差異〕</head><p>他動物と異なり、人類獨得の發達
+                            を遂げた諸點は種々ある。卽ち拇指を動かす筋肉の發達と細分化、手の運動の能力、殊に長掌筋以外の手及び手指の屈筋の發達、頭蓋
+                            側壁の發達(頭蓋腔の容量增加)、足穹窿の生成、足根骨及び</p></div></div><byline/></div></body></text></TEI>

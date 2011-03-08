@@ -1,0 +1,32 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="357"/><div type="entry"><head xml:id="nature"> 		nature, concept of 	</head><div type="article"><p> The basic, etymological meaning of the Japanese word <hi rend="italic">shine</hi>, which is used to translate the English word "nature," 
+                        is the power of spontaneous self-development and what results from that power. The Chinese characters for the Japanese term 
+                        <hi rend="italic">shine</hi> literally mean "from itself thus it is." It expresses a mode of being rather than the existence or "nature" 
+                        of objects in the natural order. 		</p><p>	The term <hi rend="italic">shine</hi>, if understood as a general 
+                        expression encompassing heaven and earth, including mountains, water, animals, and plants, cannot be found in 
+                        <name type="language" key="http://dbpedia.org/page/Classical_Japanese_language">ancient Japanese</name>. This was not due to any lack 
+                        of a capacity for abstract thought on the part of the <name type="people" key="http://dbpedia.org/page/Japanese_people">Japanese people
+                        </name> in ancient times, but because their chief concern was to recognize each and every phenomenon as a manifestation of the 
+                        <name type="institution" key="http://dbpedia.org/page/Kami">KAMI (god or gods)</name> behind it. It was hard for them to think of the 
+                        ever-flowing wind and the immovable mountains as all belonging to the same general classification of nature. It is safe to say that 
+                        the "articulated" thought process of the <name type="people" key="http://dbpedia.org/page/Japanese_people">Japanese</name> 
+                        (which is reflected in their polytheism) tied up with their aesthetic sensibility to separate the universe into its elements and, 
+                        consequently, to forestall simplified generalizations about it. If we insist, however, on finding generic terms for nature in the 
+                        ancient literature, we can offer comprehensive expressions like <hi rend="italic">ametsuchi</hi> (heaven and earth) and 
+                        <hi rend="italic">ikitoshi ikeromono</hi> (living things). </p><p> In the mythology of the <name type="institution" key="http://dbpedia.org/page/Nihon_Shoki">NIHON SHOKI</name> (720) nature and man are 
+                        related as if in one family. The first offspring of <name type="person" key="http://dbpedia.org/page/Izanagi">Izanagi</name> and 
+                        <name type="person" key="http://dbpedia.org/page/Izanami">Izanami</name> were neither <name type="institution" key="http://dbpedia.rog/page/Kami"><hi rend="italic">kami</hi></name> nor human but islands and land masses. Human beings do not stand opposed to nature as in Western thought. 
+                            Neither are they superior to it. Their lives are embedded in it. </p><p> This classical idea may be seen expressed in various Japanese cultural forms such as <name type="institution" key="http://dbpedia.org/page/Zen">Zen
+                    </name> paintings, literati art works, the tea ceremony, and flower arrangement, all of which had their roots in Chinese culture and thought. In nature,
+                        subject and object become fused into one reality, a fact that also served as a reason for the frequent use in poetry of the various seasonal flowers, 
+                        animals, and sights. 		</p><p> The idea of nature as so many expressions of the power of spontaneous self-development is also found in medieval 
+                        <name type="institution" key="http://dbpedia.org/page/Buddhism_in_Japan">Japanese Buddhism</name>. When salvation was viewed as a necessity 
+                        consequent upon "the vow of the Tathagata, and not as a result of the practitioner's exercises," <hi rend="italic">shine</hi>-nature became 
+                        <name type="person" key="http://dbpedia.org/page/Shinran">SHINRAN's</name> (1173-1263) <hi rend="italic">jinen</hi>, another expression for 
+                        the impersonal being of the formless <name type="institution" key="http://dbpedia.org/page/Amitābha">Amitâbha Buddha</name> (AMIDA).
+                        (<hi rend="italic">jinen</hi> and <hi rend="italic">shine</hi> are different readings of the same Chinese characters.) 		</p><p> Attempts to understand nature according to laws were made in later periods. In the <name type="period" key="http://dbpedia.org/page/Edo_period">
+                    Edo period</name>, <name type="person" key="http://dbpedia.org/page/Yamaga_Sokō">YAMAGA SOKÔ</name> (1622-85) wrote of the inevitability of nature, 
+                        by which he meant that the universe, by necessity, is as it is. <name type="person" key="http://dbpedia.org/page/Miura_Baien">MIURA BAIEN</name> 
+                        (1723-89) and <name type="person" key="http://dbpedia.org/page/Ando_Shoeki">ANDÔ SHÔEKI</name> (17037-62), tried to describe the universe as an 
+                        orderly whole in terms of law. But this was not yet a conception in abstract terms. It was only after the beginning of the 
+                        <name type="period" key="http://dbpedia.org/page/Meiji_period">Meiji period</name> (1868-1912) that the Western concept of nature signifying the 
+                        natural order came to be attached to the term <hi rend="italic">shizen</hi>. 		</p><p> 			IMAMICHI Tomonobu 		</p></div></div></body></text></TEI>

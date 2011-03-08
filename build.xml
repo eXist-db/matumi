@@ -1,0 +1,10 @@
+<project xmlns:xdb="http://exist-db.org/ant" default="xar" name="Encyclopedia Build">
+
+	<property name="build.dir" value="build"/>
+
+	<target name="xar">
+		<mkdir dir="${build.dir}"/>
+		<zip basedir="." destfile="${build.dir}/encyclopedia-0.1.xar" excludes="${build.dir}/*">
+		</zip>
+	</target>
+</project>

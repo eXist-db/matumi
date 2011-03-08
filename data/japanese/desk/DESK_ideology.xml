@@ -1,0 +1,8 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="234"/><div type="entry"><head xml:id="ideology"> 		イデオロギー 	</head><head type="alt"> 		ideologie 	</head><div type="article"><p>社会的(階級的)な利害関心を、客観的であるかのような外観につつんで表現したもの．転してそういう利害関心のむきだしの主張．かつて観念形態と訳されたこともあるが、現在では
+                        <name type="language" key="http://dbpedia.org/page/German_language">ドイツ語</name>のままでつかう．もとは
+                        <name type="period" key="http://dbpedia.org/page/French_Revolution">フランス革命</name>の直後に
+                        <name type="person" key="http://dbpedia.org/page/Destutt_de_Tracy">デステュット・ド・トラシー</name>が、
+                        形而上学的虚偽に対する科学的真理を意味するものとして、イデオロジーということばを使用したが、
+                        <name type="person" key="http://dbpedia.org/page/Napoleon_I_of_France">ナポレオン</name>がかれを含む思想家集団を、
+                        空論家という意味でイデオロジストと呼んだことから、理論の虚偽性に力占がおかれるようになり、
+                        <name type="person" key="http://dbpedia.org/page/Karl_Marx">マルクス</name>が、存在に拘束されて虚偽性をもった意識・観念をイデオロギーと呼んだ．</p></div></div></body></text></TEI>

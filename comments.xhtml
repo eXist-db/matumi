@@ -1,0 +1,27 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:jquery="http://exist-db.org/xquery/jquery">
+    <head>
+        <title>Comments/Annotations</title>
+        <jquery:header base="../scripts/jquery" cssbase="../scripts/jquery/css"/>
+        <script type="text/javascript" src="ckeditor/ckeditor.js"></script> 
+        <script type="text/javascript" src="ckeditor/adapters/jquery.js"></script>
+        <script type="text/javascript" src="annotate.js"></script>
+    </head>
+    <body>
+        <div id="editor">
+            <p class="current-selection">Selected Text: <span class="selection"></span></p>
+            <form id="editor-form" name="editor-form" method="post">
+                <textarea name="note" id="annotation-text"></textarea>
+                <input type="hidden" name="action" value="annotate"/>
+                <input type="hidden" name="doc" value="{request:get-parameter('doc', ())}"/>
+                <input type="hidden" name="nodeId" value=""/>
+                <input type="hidden" name="start" value=""/>
+                <input type="hidden" name="end" value=""/>
+                <input type="hidden" name="child" value=""/>
+                <input type="hidden" name="id" value=""/>
+                <jquery:button type="submit">Save</jquery:button>
+            </form>
+        </div>
+    </body>
+</html>

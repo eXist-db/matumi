@@ -1,0 +1,6 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="1304"/><div type="entry"><head xml:id="art"> 		びじゅつ 	</head><head type="alt"> 		美術 	</head><div type="article"><p>造形活動を通じて視覚や触覚に訴える芸術をいい、建築、彫刻、絵画、工芸に分類される．歴史的には建築を母胎とする総合芸術の形で発展し，
+                        しだいに分化した．絵画は壁画として建築と、また写本装飾画として工芸と密接に関連し，彫刻もまた建築の内外空間を飾る重要を造形要素であるのみならず，
+                        たとえば人像住として建築的機能を負担する．建築と工芸とは神話、歴史、寓意、文学など意味内容の表現に関与しない点で純粋にフォルムの芸術であり，
+                        したがって文様と不可分の関係にある．また居住性や実用性を造形表現の基本条件としているので，民族や時代の造形精神のもっとも端的な表明とみることができる．
+                        美術はまた人間の生活感情の造形表現として極めて個性的であることを特質とし、その具体的な現れが　〈個人様式〉　であり，〈時代様式〉　や　〈国民様式〉　
+                        と密接に関連して展開される．</p></div></div></body></text></TEI>

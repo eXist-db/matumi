@@ -1,0 +1,12 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="52"/><div type="entry"><head xml:id="country">チイキ</head><head type="alt">地域</head><div type="article"><p>
+            法律上一定の區劃された土地の範圍をいふ。ここに土地とは陸地たると水地たるとを問はず地表一體をいふ。
+            區劃の方法は山、河、海、道路その他如何なる標識を以てするかを問はない。従つて地域は地表の一部である。一般に地域を基礎とする團體を地域團體といふ。</p><div><head rend="bracketed">地域團體</head><p>
+            國家を始めとし、道、府縣、市町村等の地方團體は皆地域團體である。地域團體に於ては一定の地域内に居住する者は當然その團體の構成員として
+            その支配下に立つのである。この點に於て產業組合または水利組合等の人の範圍を基礎とする自治團體と異なる。後者に於ても一定の地域を限るものがあるけれども、
+            これは單に社員の範圍を定める一標準たるに止まり、その地域内の人をして當然團體の一員としてその權力に服従せしむる意義を有するものではない。
+            卽ち社員のみがその權力の客體であるが、國家、地方團體の如き地域團體に於ては人及び地域の二者が支配權の客體である。特に國家は最高の地域團體と稱せられ、
+            領土、人民、統治權をその三要素とするものであるが、領土とは卽ち國家の地域の別稱である。これに對して府縣制、市町村制に於ては府縣、
+            市町村の地域を區域と稱する（府縣制一條、市制一條、町村制一條）。而して府縣、市町村の廢置、分合または境界變更とは、
+            卽ちその區域の制定變更をなすものであつて、府縣にあつては法律を以てこれを定め、市町村にあつては内務大臣若しくはその許可を得て府縣知事がこれを定める
+            （府縣制三條、市制三條、町村制三條及び四條）。
+                        </p></div></div><byline>（相場）</byline></div></body></text></TEI>

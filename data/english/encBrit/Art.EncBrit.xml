@@ -1,0 +1,429 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><div type="entry"><head><term xml:id="ART"><hi rend="bold">ART</hi></term></head><div type="article"><p>,<gloss target="#ART" rend="unmarked"> a word in its most extended and most
+                                                                                popular sense meaning everything which we distinguish from Nature</gloss>. Art
+                                                                                and Nature are the two most comprehensive genera of which the human mind has
+                                                                                formed the conception. Under the genus Nature, or the genus Art, we include all
+                                                                                the phenomena of the universe. But as our conception of Nature is indeterminate
+                                                                                and variable, so in some degree is our conception of Art. Nor does such
+                                                                                ambiguity arise only because some modes of thought refer a greater number of the
+                                                                                phenomena of the universe to the genus Nature, and others a greater number to
+                                                                                the genus Art. It arises also because we do not strictly limit the one genus by
+                                                                                the other. The range of the phenomena to which we point, when we say Art, is
+                                                                                never very exactly determined by the range of the other phenomena which at the
+                                                                                same time we tacitly refer to the order of Nature. Everybody understands the
+                                                                                general meaning of a phrase like <cit><ref><name type="person" key="http://dbpedia.org/resource/Geoffrey_Chaucer">Chaucer's</name></ref><quote>"Nature ne Art ne koude him not amende"</quote></cit>, or <cit><ref><name type="person" key="http://dbpedia.org/resource/Alexander_Pope">Pope's</name></ref><quote>"Blest with each grace of nature and of art"</quote></cit>. In such phrases we intend to designate familiarly as Nature all which
+                                                                                exists independently of our study, forethought and exertion—in other words,
+                                                                                those phenomena in ourselves or the world which we do not originate but find;
+                                                                                and we intend to designate familiarly as Art all which we do not find but
+                                                                                originate—or, in other words, the phenomena which we add by study, forethought
+                                                                                and exertion to those existing independently of us. But we do not use these
+                                                                                designations consistently. Sometimes we draw an arbitrary line in the action of
+                                                                                individuals and societies, and say, Here Nature ends and Art begins—such a law,
+                                                                                such a practice, such an industry even, is natural, and such another is
+                                                                                artificial; calling those natural which happen spontaneously and without much
+                                                                                reflection, and the others artificial. But this line different observers draw at
+                                                                                different places. Sometimes we adopt views which waive the distinction
+                                                                                altogether. One such view is that wherein all phenomena are regarded as equally
+                                                                                natural, and the idea of Nature is extended so as to include <quote>"all the
+                                                                                powers existing in either the outer or the inner world, and everything which
+                                                                                exists by means of those powers"</quote>. In this view Art becomes a part of
+                                                                                Nature. It is illustrated in the familiar passage of <name type="person" key="http://dbpedia.org/resource/William_Shakespeare">Shakespeare</name>, where
+                                                                                <name type="person">Polixenes</name> reminds <name type="person" key="http://dbpedia.org/resource/Perdita_(The_Winter's_Tale)">Perdita</name>
+                                                                                that</p></div><div type="poem"><lg><l>"Nature is made better by no mean,</l><l>But nature makes that mean : so, over that art</l><l>Which, you say, adds to nature, is an art</l><l>That nature makes." . . .</l></lg><lg><l>"This is an art</l><l>Which does mend nature, change it rather, but</l><l>The art itself is nature".</l></lg></div><div type="article"><p>A posthumous essay of <name type="person" key="http://dbpedia.org/resource/John_Stuart_Mill">John Stuart Mill</name> contains a full philosophical
+exposition and defence of this mode of regarding the
+relations of Nature and Art. Defining Nature as above, and again
+as a <quote>"collective name for all facts, actual and possible"</quote>, that
+writer proceeds to say that such a definition
+                  <quote>"is evidently inapplicable to some of the modes in which the word
+                      is familiarly employed. For example, it entirely conflicts with the
+                      common form of speech by which Nature is opposed to Art, and
+                      natural to artificial. For in the sense of the word Nature which has
+                      thus been defined, and which is the true scientific sense, Art is as
+                      much Nature as anything else; and everything which is artificial is
+                      natural—Art has no independent powers of its own: Art is but
+                      the employment of the powers of Nature for an end. Phenomena
+                      produced by human agency, no less than those which, as far as we
+                      are concerned, are spontaneous, depend on the properties of the
+                      elementary forces, or of the elementary substances and their compounds.
+                      The united powers of the whole human race could not
+                      create a new property of matter in general, or of any one of its species.
+                      We can only take advantage for our purposes of the properties we
+                      find. A ship floats by the same laws of specific gravity and equilibrium
+                      as a tree uprooted by the wind and blown into the water.
+                      The corn which men raise for food grows and produces its grain by
+                      the same laws of vegetation by which the wild rose and the mountain
+                      strawberry bring forth their flowers and fruit. A house stands and
+                      holds together by the natural properties, the weight and cohesion
+                      of the materials which compose it. A steam engine works by the
+                      natural expansive force of steam, exerting a pressure upon one
+                      part of a system of arrangements, which pressure, by the mechanical
+                      properties of the lever, is transferred from that to another part,
+                      where it raises the weight or removes the obstacle brought into connexion
+                      with it. In these and all other artificial operations the
+                      office of man is, as has often been remarked, a very limited one; it
+                      consists of moving things into certain places. We move objects,
+                      and by doing this, bring some things into contact which were separate,
+                      or separate others which were in contact; and by this simple change
+                      of place, natural forces previously dormant are called into action,
+                      and produce the desired effect. Even the volition which designs,
+                      the intelligence which contrives, and the muscular force which
+                      executes these movements, are themselves powers of Nature"</quote>.
+Another mode of thought, in some sort complementary to
+the last, is based on the analogy which the operations of forces
+external to a man bear to the operations of man himself. Study,
+forethought and exertion are assigned to Nature, and her
+operations are called operations of Art. This view was familiar
+to ancient systems of philosophy, and especially to that of
+the Stoics. According to the report of 
+                  <name type="person" key="http://dbpedia.org/resource/Cicero">Cicero</name>, Nature as conceived
+                  by <name type="person" key="http://dbpedia.org/resource/Zeno_of_Citium">Zeno</name> was a fire, and at the same time a voluntary agent
+having the power or art of creating things with regularity and
+design (<quote>"naturam esse ignem artificiosum ad gignendum progredientem
+via"</quote>) . To this fire not merely creative force and
+                      <pb n="657"/>
+systematic action were ascribed, but actual personality. Nature
+was <quote>"non artificiosa solum, sed plane artifex"</quote>. <quote>"That which
+    in the works of human art is done by hands, is done with much
+    greater art by Nature, that is, by a fire which exercises an art
+    and is the teacher of other arts"</quote>. This conception of Nature
+as an all-generating fire, and at the same time as a personal
+artist both teaching and including in her own activity all the
+human arts, on the one hand may be said, with <name type="person">Polixenes</name> and
+                  <name type="person" key="http://dbpedia.org/resource/John_Stuart_Mill">J.S. Mill</name>, to merge Art in Nature ; but on the other hand it
+finds the essence of Nature in the resemblance of her operations
+to those of Art. <quote>"It is the <hi rend="italic">proprium</hi> of art,"</quote> according to the
+                  same system, <quote>"to create and beget,"</quote> and the reasoning proceeds
+—Nature creates and begets, therefore Nature is an artist or
+                  <name type="person" key="http://dbpedia.org/resource/Demiurge">Demiurgus</name>. A kindred view is set forth by 
+                  <name type="person" key="http://dbpedia.org/resource/Thomas_Browne">Sir Thomas Browne</name>
+                      in the <title key="http://dbpedia.org/resource/Religio_Medici"><hi rend="italic">Religio Medici</hi></title>, when he declares that 
+                  <quote>"all things are artificial; for Nature is the Art of God"</quote>.
+But these modes of thought, according to which, on the one
+hand, the processes of Art are included among processes of
+Nature, or on the other the processes of Nature among the processes
+of Art, are exceptional. In ordinary use the two conceptions,
+each of them somewhat vague and inexact, are antithetical.
+Their antithesis was what <name type="person" key="http://dbpedia.org/resource/Samuel_Johnson">Dr Johnson</name> had chiefly in his mind
+when he defined Art as <quote>"the power of doing something which
+    is not taught by Nature or by instinct"</quote>. But this definition
+is insufficient, because the abstract word Art, whether used
+of all arts at once or of one at a time, is a name not only for the
+power of doing something, but for the exercise of the power;
+and not only for the exercise of the power, but for the rules
+according to which it is exercised; and not only for the rules,
+but for the result. Painting, for instance, is an art, and the word
+connotes not only the power to paint, but the act of painting;
+and not only the act, but the laws for performing the act rightly;
+and not only all these, but the-material consequences of the
+act or the thing painted. So of agriculture, navigation and
+the rest. Exception might also be taken to 
+                  <name type="person" key="http://dbpedia.org/resource/Samuel_Johnson">Dr Johnson's</name> definition
+on the ground that it excludes all actions of instinct from
+the genus Art, whereas usage has in more languages than one
+given the name of Art to several of those ingenuities in the lower
+animals which popular theory at the same time declares to be
+instinctive. <name type="person" key="http://dbpedia.org/resource/Dante_Alighieri">Dante</name>, for instance, speaks of boughs shaken by the
+wind, but not so violently as to make the birds forgo their Art—</p></div><div type="poem"><lg><l>"Non perd dal lor esser dritto sparte</l><l>Tanto, che gl' augelletti per le cime</l><l>Lasciasser d' opcrar ogni lor <hi rend="italic">arte</hi>."</l></lg></div><div type="article"><p>
+                  And <name type="person" key="http://dbpedia.org/resource/Bernard_le_Bovier_de_Fontenelle">Fontenelle</name>, speaking in the language not of poetry but
+                  of science :—<quote>"Most animals—as, for instance, bees, spiders
+                      and beavers—have a kind of art peculiar to themselves; but
+                      each race of animals has no more than one art, and this one
+                      has had no first inventor among the race. Man, on the other
+                      hand, has an infinity of different arts which were not born with
+                      his race, and of which the glory is his own"</quote>. 
+                  <name type="person" key="http://dbpedia.org/resource/Samuel_Johnson">Dr Johnson</name> might
+reply that those properties of variety and of originality or individual
+invention, which <name type="person" key="http://dbpedia.org/resource/Bernard_le_Bovier_de_Fontenelle">Fontenelle</name> himself alleges in the
+ingenuities of man but not in those of the lower animals, are
+sufficient to make a generic difference, and to establish the
+impropriety of calling a honeycomb or a spider's web a work
+of Art. It is not our purpose to trespass on ground so debateable
+as that of the nature of consciousness in the lower animals.
+Enough that when we use the term Art of any action, it is because
+we are thinking of properties in the action from which we infer,
+whether justly or not, that the agent voluntarily and designedly
+puts forth skill for known ends and by regular and uniform
+methods. If, then, we were called upon to frame a general
+definition of Art, giving the word its widest and most comprehensive
+meaning, it would run thus :—<hi rend="italic">Every regulated operation
+    or dexterity by which organized beings pursue ends which they know
+    beforehand, together with the rules and the result of every such
+    operation or dexterity</hi>.
+Here it will be well to consider very briefly the natural history
+of the name which has been given to this very comprehensive
+conception by the principal branches of civilized mankind.
+Our own word Art the English language has taken, as all the
+Romance languages of modern Europe have taken theirs, directly
+from the Latin. The Latin <term xml:lang="la"><hi rend="italic">ars</hi></term>, according to the prevailing
+opinion of philologists, proceeds from a root AR, of which the
+primitive signification was to put or fit things together, and
+which is to be found in a large family of Greek words. The
+Greek <term xml:lang="grc"><hi rend="italic">τέχυη</hi></term> the name both for arts in the particular and art
+                  in the abstract, is by its root related both to <term xml:lang="grc"><hi rend="italic">τέκ-τωυ</hi></term> and
+                  <term xml:lang="grc"><hi rend="italic">τέκ-υου</hi></term>, and thus contains the allied ideas of making and begetting.
+                  The <term xml:lang="la"><hi rend="italic">proprium</hi></term> of art in the logic of the Stoics, 
+                  <quote>"to create and beget"</quote>, was strictly in accordance with this etymology.
+                  The Teutonic <term xml:lang="de"><hi rend="italic">Kunst</hi></term> is formed from <hi rend="italic">können</hi>, 
+                  and <hi rend="italic">können</hi> is
+                  developed from a primitive <hi rend="italic">Ich kann</hi>. In <hi rend="italic">kann</hi> philology is
+inclined to recognize a preterite form of a lost verb, of which
+we find the traces in <hi rend="italic">Kin-d</hi>, a child ; and the form <hi rend="italic">Ich kann</hi>
+thus meaning originally "I begot," contains the germ of the two
+several developments,—<hi rend="italic">können</hi>, "to be master," "to be able,"
+                  and <hi rend="italic">kennen</hi>, "to know." We thus see that the chief Indo-
+European languages have with one consent extended a name for
+the most elementary exercise of a constructive or productive
+power, till that name has covered the whole range of the skilled
+and deliberate operations of sentient beings.
+In proportion as men left out of sight the idea of creation, of
+constructing or producing, <q>"artificiosum esse ad gignendum"</q>,
+which is the primitive half of this extended notion, and attended
+only to the idea of skill, of proceeding by regular and disciplined
+methods, <q>"progredi via,"</q> which is the superadded half, the
+whole notion Art, and the name for it, might become subject to
+a process of thought which, if analysed, would be like this:—
+What is done by regular and disciplined methods is Art; facts
+are observed and classified, and a systematic view of the order
+of the universe obtained, by regular and disciplined methods;
+the observing and classifying of facts, and obtaining a systematic
+view of the order of the universe, is therefore Art. To a partial
+extent this did unconsciously take place. Science, of which the
+essence is only in knowledge and theory, came to be spoken of as
+Art, of which the essence is all in practice and production.
+                  <name type="person" key="http://dbpedia.org/resource/Cicero">Cicero</name>, 
+                  notwithstanding his citation of the Stoical dictum that
+practice and production were of the essence of Art, elsewhere
+divides Art into two kinds—one by which things are only
+contemplated in the mind, another by which something is produced
+and done. (<cit><quote>"Quumque artium aliud eiusmodi sit, ut
+    tantummodo rem cernat; aliud, ut moliatur aliquid et faciat."</quote><ref>-<bibl><title><hi rend="italic">Acad.</hi></title> ii. 7.</bibl></ref></cit>) 
+                  Of the former kind his instance is geometry; of
+the latter the art of playing on the lyre. Now geometry, understanding
+by geometry an acquisition of the mind, that is, a
+collected body of observations and deductions concerning the
+properties of space and magnitude, is a science and not an art;
+although there is an art of the geometer, which is the skill by
+which he solves any given problem in his science, and the rules
+of that skill, and his exertion in putting it forth. And so every
+science has its instrumental art or practical discipline; and in
+as far as the word Art is used only of the practical discipline or
+dexterity of the geometer, the astronomer, the logician, the
+grammarian, or other person whose business it is to collect and
+classify facts for contemplation, in so far the usage is just. The
+same justification may be extended to another usage, whereby
+in Latin, and some of its derivative languages, the name Art came
+to be transferred in a concrete sense to the body of rules, the
+written code or manual, which lays down the discipline and
+regulates the dexterity; as <hi rend="italic">ars grammatica, ars logica, ars rhetorica</hi>
+and the rest. But when the word is stretched so as to mean the
+sciences, as theoretical acquisitions of the mind, that meaning is
+illegitimate. Whether or not <name type="person" key="http://dbpedia.org/resource/Cicero">Cicero</name>, in the passage above quoted,
+had in his mind the science of geometry as a collected body of
+observations and deductions, it is certain that the Ciceronian
+phrase of the <hi rend="italic">liberal arts</hi>, the <hi rend="italic">ingenuous arts</hi>, both in Latin and
+its derivatives or translations in modern speech, has been used
+currently to denote the sciences themselves, and not merely
+the disciplines instrumental to them. The <hi rend="italic">trivium</hi> and the
+                  <hi rend="italic">quadrivium</hi> (grammar, logic and rhetoric—geometry, astronomy,
+music and arithmetic) have been habitually called arts, when
+some of them have been named in that sense in which they mean
+                  <pb n="658"/>
+not arts but sciences, <q>"only contemplating things in the mind."</q>
+Hence the nomenclature, history and practical organization,
+especially in Britain, of one great division of university studies:
+the division of <q>"arts,"</q> with its <q>"faculty,"</q> its examinations, and
+its degrees.
+In the German language the words for Art and Science have in
+general been loosely interchanged. The etymology of the word
+for Art secured a long continuance for this ambiguity. <term xml:lang="de"><hi rend="italic">Kunst</hi></term>
+was employed indiscriminately in both the senses of the primitive
+                  <hi rend="italic">Ich kann</hi>, to signify what I know, or Science, and what I can do,
+or Art. It was not till the end of the 17th century that a separate
+word for Science, the modern <term xml:lang="de"><hi rend="italic">Wissenschaft</hi></term>, came into use.
+                  On the other hand, the Greek word <term xml:lang="grc"><hi rend="italic">τέχυη</hi></term>, with its distinct
+suggestion of the root signification to make or get, acted probably
+as a safeguard against this tendency. The distinction between
+                  <term xml:lang="grc"><hi rend="italic">τέχυη</hi></term>, Art or practice, and 
+                  <term xml:lang="grc"><hi rend="italic">έπιστήμη</hi></term>, knowledge or Science, is
+observed, though not systematically, in Greek philosophy. But
+for our present purpose, that of making clear the true relation
+between the one conception and the other, further quotation is
+rendered superfluous by the discussion the subject has received
+at the hands of the modern writer already quoted. Between Art,
+of which we practise the rules, and Science, of which we entertain
+the doctrines, <name type="person" key="http://dbpedia.org/resource/John_Stuart_Mill">J.S. Mill</name> establishes the difference in the simplest
+shape, by pointing out that one grammatical mood is proper for
+the conclusions of Science, and another for those of Art. Science
+enunciates her conclusions in the indicative mood, whereas
+                  <quote>"the imperative is the characteristic of Art, as distinguished
+                      from Science."</quote> And as Art utters her conclusions in her own
+form, so she supplies the substance of her own major premise.
+                  <quote>"Every art has one first principle, or general major premise, not
+                      borrowed from science, that which enunciates the object aimed at,
+                      and affirms it to be a desirable object. The builder's art assumes
+                      that it is desirable to have buildings; architecture (as one of the
+                      fine arts) that it is desirable to have them beautiful and imposing.
+                      The hygienic and medical arts assume, the one that the preservation
+                      of health, the other that the cure of disease, are fitting and desirable
+                      ends. These are not propositions of science. Propositions of science
+                      assert a matter of fact—an existence, a co-existence, a succession,
+                      or a resemblance. The propositions now spoken of do not assert
+                      that anything is, but enjoin or recommend that something should
+                      be. They are a class by themselves. A proposition of which the
+                      predicate is expressed by the words <hi rend="italic">ought</hi> or <hi rend="italic">should be</hi> is generically
+                      different from one which is expressed by <hi rend="italic">is</hi> or <hi rend="italic">will be</hi>."</quote>
+And the logical relation of Art and Science, in other words,
+the manner of framing the intermediate member between the
+general major premise of Art and its imperative conclusion, is
+thus defined:—
+                  <cit><quote>"The Art [in any given case] proposes to itself an end to be
+                      attained, defines the end, and hands it over to the Science. The
+                      Science receives it, considers it as a phenomenon or effect to be
+                      studied, and having investigated its causes and conditions, sends
+                      it back to Art with a theorem of the causes and combinations by
+                      which it could be produced. Art then examines these combinations
+                      of circumstances, and according as any of them are or are not in
+                      human power, pronounces the end attainable or not. The only one
+                      of the premises, therefore, which Art supplies, is the original major
+                      premise, which asserts that the attainment of the given end is
+                      desirable. Science, then, lends to Art the proposition (obtained by
+                      a series of inductions or deductions) that the performance of certain
+                      actions will attain the end. From these premises Art concludes that
+                      the performance of these actions is desirable, and finding it also
+                      practicable, converts the theorem into a rule or precept. ... The
+                      grounds, then, of every rule of Art are to be found in the theorems
+                      of Science. An Art, or a body of Art, consists of the rules, together
+                      with as much of the speculative propositions as comprises the justification
+                      of these rules. The complete Art of any matter includes a
+                      selection of such a portion from the Science as is necessary to show
+                      on what conditions the effects, which the Art aims at producing,
+                      depend. And Art in general consists of the truths of Science arranged
+                      in the most convenient order for practice, instead of the order which
+                      is most convenient for thought. Science groups and arranges its
+                      truths so as to enable us to take in at one view as much as possible
+                      of the general order of the universe. Art, though it must assume the
+                      same general laws, follows them only into such of their detailed
+                      consequences as have led to the formation of rules of conduct, and
+                      brings together from parts of the field of Science most remote from
+                      one another, the truths relating to the production of the different and
+                      heterogeneous causes necessary to each effect which the exigencies
+                      of practical life require to be produced."</quote><ref>—(<bibl><title>Mill's <hi rend="italic">Logic</hi></title>, vol. ii. pp.
+                          542-549</bibl>)-</ref></cit>
+The whole discussion may be summed up thus. Science
+consists in knowing, Art consists in doing. What I must do in
+order to know, is Art subservient to Science: what I must know
+in order to do, is Science subservient to Art.
+Art, then, is defined by two broad distinctions: first, its
+popular distinction from Nature; and next, its practical and
+theoretic distinction from Science. Both of these distinctions
+are observed in the terms of our definition given above. Within
+the proper limits of this definition, the conception of Art, and
+the use of the word for it, have undergone sundry variations.
+These variations correspond to certain vicissitudes or developments
+in the order of historical facts and in society. The
+requirements of society, stimulating the ingenuity of its individual
+members, have led to the invention of arts and groups of arts,
+constantly progressing, with the progress of civilization, in
+number, in complexity, and in resource. The religious imagination
+of early societies, who find themselves in possession of such
+an art or group of arts, forgets the history of the invention, and
+assigns it to the inspiration or special grace of some god or hero.
+So the Greeks assigned the arts of agriculture to 
+                  <name type="person" key="http://dbpedia.org/resource/Triptolemus">Triptolemus</name>,
+                  those of spinning and navigation to <name type="person" key="http://dbpedia.org/resource/ATHENA">Athena</name>, and of music to
+                  <name type="person" key="http://dbpedia.org/resource/Apollo">Apollo</name>. At one stage of civilization one art or group of arts is
+held in higher esteem, another at another. In societies, like most
+of those of the ancient world, where slaves were employed in
+domestic service, and upon the handicrafts supplying the
+immediate utilities of life—food, shelter and clothing—these
+constituted a group of servile arts. The arts of husbandry or
+agriculture, on the other hand, have alternately been regarded
+as servile and as honourable according as their exercise has been
+in the hands of a subject class, as under feudal institutions, or,
+as under the Roman republic, of free cultivators. Under feudal
+institutions, or in a society in a state of permanent war, the allied
+arts of war and of government have been held the only honourable
+class. In commercial states, like the republics of Italy, the arts
+of gain, or of production (other than agricultural) and distribution,
+have made good their title to equal estimation and greater power
+beside the art of captains. But among peaceful arts, industries
+or trades, some have always been held to be of higher and others
+of lower rank; the higher rank being assigned to those that
+required larger operations, higher training, or more thoughtful
+conduct, and yielded ampler returns—the lower rank to those
+which called for simple manual exercise, especially if such
+exercise was of a disagreeable or degrading kind. In the cities
+of Italy, where both commerce and manufactures were for the
+first time organized on a considerable scale, 
+the name <term xml:lang="it"><hi rend="italic">arte</hi></term>, Art,
+was retained to designate the gilds or corporations by which the
+several industries were exercised; and, according to the nature
+of the industry, the art was classed as higher or lower (<term xml:lang="it"><hi rend="italic">maggiore</hi></term>
+                  and <term xml:lang="it"><hi rend="italic">minore</hi></term>).
+The arts of which we have hitherto spoken have arisen from
+positive requirements, and supply what are strictly utilities, in
+societies; not excluding the art of war, at least so far as concerns
+one-half of war, the defensive half. But war continued to be
+an honourable pursuit, because it was a pursuit associated
+with birth, power and wealth, as well as with the virtue of
+courage, in cases where it had no longer the plea of utility, but
+was purely aggressive or predatory; and the arts of the chase
+have stood in this respect in an analogous position to those
+of war.
+There are other arts which have not had their origin in positive
+practical needs, but have been practised from the first for
+pleasure or amusement. The most primitive human beings of
+whom we have any knowledge, the cave-dwellers of the palaeolithic
+period, had not only the useful art of chipping stones into
+spear-heads, knife-heads and arrow-heads, and making shafts
+or handles of these implements out of bone; they had also the
+ornamental art of scratching upon the bone handle the outlines
+of the animals they saw—mammoth, rhinoceros or reindeer—or
+of carving such a handle into a rude resemblance of one of these
+animals. Here we have a skill exercised, in the first case, for pure
+fancy or pleasure, and in the second, for adding an element of
+fancy or pleasure to an element of utility. Here, therefore, is the
+                  <pb n="659"/>
+germ of all those arts which produce imitations of natural objects
+for purposes of entertainment or delight, as painting, sculpture,
+and their subordinates; and of all those which fashion useful
+objects in one way rather than another because the one way gives
+pleasure and the other does not, as architecture and the subordinate
+decorative arts of furniture, pottery and the rest. Arts that
+work in a kindred way with different materials are those of
+dancing and music. Dancing works with the physical movements
+of human beings. Music works with sound. Between that
+imitative and plastic group, and the group of these which only
+produce motion or sound and pass away, there is the intermediate
+group of eloquence and the drama, which deal with the
+expression of human feeling in spoken words and acted gestures.
+There is also the comprehensive art of poetry, which works with
+the material of written words, and can ideally represent the
+whole material of human life and experience. Of all these arts
+the end is not use but pleasure, or pleasure before use, or at least
+pleasure and use conjointly. In modern language, there has
+grown up a usage which has put them into a class by themselves
+under the name of the Fine Arts, as distinguished from the
+Useful or Mechanical Arts. (See AESTHETICS and FINE ARTS.)
+Nay more, to them alone is often appropriated the use of the
+generic word Art, as if they and they only were the arts 
+                  <term xml:lang="grc"><hi rend="italic">κατ’έξοχήν</hi></term>.
+And further yet, custom has reduced the number which the
+class-word is meant to include. When Art and the works of Art
+are now currently spoken of in this sense, not even music or
+poetry is frequently denoted, but only architecture, sculpture
+and painting by themselves, or with their subordinate and
+decorative branches. In correspondence with this usage,
+another usage has removed from the class of <hi rend="italic">arts</hi>, and put into a
+contrasted class of <hi rend="italic">manufactures</hi>, a large number of industries
+and their products, to which the generic term Art, according
+to our definition, properly applies. The definition covers the
+                  <hi rend="italic">mechanical</hi> arts, which can be efficiently exercised by mere
+trained habit, rote or calculation, just as well as the fine arts,
+which have to be exercised by a higher order of powers. But
+the word Art, becoming appropriated to the fine arts, has been
+treated as if it necessarily carried along with it, and as if works
+to be called works of art must necessarily possess, the attributes
+of free individual skill and invention, expressing themselves in
+ever new combinations of pleasurable contrivance, and seeking
+perfection not as a means towards some ulterior practical end
+but as an ideal end in itself.</p></div><byline>(S. C.)</byline></div></body></text></TEI>

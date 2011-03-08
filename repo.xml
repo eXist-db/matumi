@@ -1,0 +1,14 @@
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <author>Jens Ostergaard Petersen</author>
+    <author>Wolfgang Meier</author>
+    <website>http://exist-db.org</website>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <description>Browsing Multi-Linugal Encyclopedias</description>
+    <type>application</type>
+    <target>/db/encyclopedia</target>
+    <permissions user="editor" password="editor"
+		group="biblio.users" mode="0444"/>
+    <status>stable</status>
+    <prepare>pre-install.xql</prepare>
+</meta>

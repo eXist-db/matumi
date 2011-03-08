@@ -1,0 +1,17 @@
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="1612"/><div type="entry"><head xml:id="europe"> 		ヨーロッパ 	</head><head type="alt"> 		Europe 	</head><div type="article"><p><name type="place" key="http://dbpedia.org/page/Europe">ヨーロッパ</name>は
+                        <name type="place" key="http://dbpedia.org/page/Eurasia">ユーラシア大陸</name>の西部を占め，
+                        <name type="place" key="http://dbpedia.org/page/Asia">アジア</name>とは
+                        <name type="place" key="http://dbpedia.org/page/Ural_Mountains">ウラル山脈</name>から
+                        <name type="place" key="http://dbpedia.org/page/Caspian_Sea">カスピ海</name>を通って
+                        <name type="place" key="http://dbpedia.org/page/Sea_of_Azov">アゾフ海</name>にいたる線で区分される．
+                        <name type="place" key="http://dbpedia.org/page/Africa">アフリカ</name>とは
+                        <name type="place" key="http://dbpedia.org/page/Mediterranean_Sea">地中海</name>で区切られる．面積では世界の陸地のわずか3％(493万km2，
+                        <name type="place" key="http://dbpedia.org/page/Soviet_Union">ソ連</name>領を除く)であるが、
+                        このなかに31の独立国(<name type="place" key="http://dbpedia.org/page/Soviet_Union">ソ連</name>を除く)があり、
+                        人口は世界の17％(4.85億、1980) もある．このため人口密度は１km2あたり98人で、世界でもっとも人口の稠密(ちゅうみつ)な地域となっている．
+                        [自然]海抜300m以下の平坦な土地が多く、高峻な褶曲(しゅうきょく)山脈は南半部に連なる(最高峰は
+                        <name type="place" key="http://dbpedia.org/page/Alps">アルプス山脈</name>の
+                        <name type="place" key="http://dbpedia.org/page/Mont_Blanc">モンブラン</name>、4807m)．
+                        勾配のゆるい水量の豊かな川が多い．気候は高緯度のわりに温暖であり、適当に湿潤であるが、南の地中海気候と北の高緯度海洋性気候とのちがいは顕著．
+                        植生は<name type="place" key="http://dbpedia.org/page/Tundra">ツンドラ</name>から
+                        <name type="place" key="http://dbpedia.org/page/Mediterranean_Sea">地中海</name>植生まで南北に様々であるが、大半は人間により改変されたものである．	</p></div></div></body></text></TEI>
