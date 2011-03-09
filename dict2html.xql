@@ -229,7 +229,7 @@ declare function dict:transform($root as node()?) {
                 <head>
                     <title>Encyclopedia Database</title>
                     <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
-                    <jquery:header base="../scripts/jquery" cssbase="../scripts/jquery/css"/>
+                    <jquery:header base="libs/scripts/jquery" cssbase="libs/scripts/jquery/css"/>
                     <script type="text/javascript" src="scripts/jquery.tools.min.js"></script>
                     <script type="text/javascript" src="wymeditor/jquery.wymeditor.min.js"></script>
                     <script type="text/javascript" src="annotate.js"></script>

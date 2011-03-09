@@ -12,7 +12,7 @@ import module namespace func="http://exist-db.org/encyclopedia/functions" at "fu
 import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
 import module namespace jquery="http://exist-db.org/xquery/jquery" at "resource:org/exist/xquery/lib/jquery.xql";
 
-declare option exist:serialize "method=xhtml add-exist-id=all indent=no omit-xml-declaration=yes";
+declare option exist:serialize "method=xhtml media-type=text/html add-exist-id=all indent=no omit-xml-declaration=yes";
 
 declare variable $anno:COLLECTION := "/db/encyclopedia";
 
