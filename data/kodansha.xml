@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Title</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication Information</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Information about the source</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      
+      <pb n="357"/>
+      <div type="entry">
+        <head xml:id="nature"> nature, concept of </head>
+        <div type="article">
+          <p> The basic, etymological meaning of the Japanese word <hi rend="italic">shine</hi>, which is used to translate the English word "nature," is the
+            power of spontaneous self-development and what results from that power. The Chinese characters for the Japanese term <hi rend="italic">shine</hi>
+            literally mean "from itself thus it is." It expresses a mode of being rather than the existence or "nature" of objects in the natural order. </p>
+          <p> The term <hi rend="italic">shine</hi>, if understood as a general expression encompassing heaven and earth, including mountains, water, animals,
+            and plants, cannot be found in <name type="language" key="http://dbpedia.org/page/Classical_Japanese_language">ancient Japanese</name>. This was not
+            due to any lack of a capacity for abstract thought on the part of the <name type="people" key="http://dbpedia.org/page/Japanese_people">Japanese
+              people </name> in ancient times, but because their chief concern was to recognize each and every phenomenon as a manifestation of the <name
+              type="institution" key="http://dbpedia.org/page/Kami">KAMI (god or gods)</name> behind it. It was hard for them to think of the ever-flowing wind
+            and the immovable mountains as all belonging to the same general classification of nature. It is safe to say that the "articulated" thought process
+            of the <name type="people" key="http://dbpedia.org/page/Japanese_people">Japanese</name> (which is reflected in their polytheism) tied up with their
+            aesthetic sensibility to separate the universe into its elements and, consequently, to forestall simplified generalizations about it. If we insist,
+            however, on finding generic terms for nature in the ancient literature, we can offer comprehensive expressions like <hi rend="italic">ametsuchi</hi>
+            (heaven and earth) and <hi rend="italic">ikitoshi ikeromono</hi> (living things). </p>
+          <p> In the mythology of the <name type="institution" key="http://dbpedia.org/page/Nihon_Shoki">NIHON SHOKI</name> (720) nature and man are related as
+            if in one family. The first offspring of <name type="person" key="http://dbpedia.org/page/Izanagi">Izanagi</name> and <name type="person"
+              key="http://dbpedia.org/page/Izanami">Izanami</name> were neither <name type="institution" key="http://dbpedia.rog/page/Kami"><hi rend="italic"
+                >kami</hi></name> nor human but islands and land masses. Human beings do not stand opposed to nature as in Western thought. Neither are they
+            superior to it. Their lives are embedded in it. </p>
+          <p> This classical idea may be seen expressed in various Japanese cultural forms such as <name type="institution" key="http://dbpedia.org/page/Zen"
+              >Zen </name> paintings, literati art works, the tea ceremony, and flower arrangement, all of which had their roots in Chinese culture and thought.
+            In nature, subject and object become fused into one reality, a fact that also served as a reason for the frequent use in poetry of the various
+            seasonal flowers, animals, and sights. </p>
+          <p> The idea of nature as so many expressions of the power of spontaneous self-development is also found in medieval <name type="institution"
+              key="http://dbpedia.org/page/Buddhism_in_Japan">Japanese Buddhism</name>. When salvation was viewed as a necessity consequent upon "the vow of the
+            Tathagata, and not as a result of the practitioner's exercises," <hi rend="italic">shine</hi>-nature became <name type="person"
+              key="http://dbpedia.org/page/Shinran">SHINRAN's</name> (1173-1263) <hi rend="italic">jinen</hi>, another expression for the impersonal being of
+            the formless <name type="institution" key="http://dbpedia.org/page/Amitābha">Amitâbha Buddha</name> (AMIDA). (<hi rend="italic">jinen</hi> and <hi
+              rend="italic">shine</hi> are different readings of the same Chinese characters.) </p>
+          <p> Attempts to understand nature according to laws were made in later periods. In the <name type="period" key="http://dbpedia.org/page/Edo_period">
+              Edo period</name>, <name type="person" key="http://dbpedia.org/page/Yamaga_Sokō">YAMAGA SOKÔ</name> (1622-85) wrote of the inevitability of
+            nature, by which he meant that the universe, by necessity, is as it is. <name type="person" key="http://dbpedia.org/page/Miura_Baien">MIURA
+              BAIEN</name> (1723-89) and <name type="person" key="http://dbpedia.org/page/Ando_Shoeki">ANDÔ SHÔEKI</name> (17037-62), tried to describe the
+            universe as an orderly whole in terms of law. But this was not yet a conception in abstract terms. It was only after the beginning of the <name
+              type="period" key="http://dbpedia.org/page/Meiji_period">Meiji period</name> (1868-1912) that the Western concept of nature signifying the natural
+            order came to be attached to the term <hi rend="italic">shizen</hi>. </p>
+          <p> IMAMICHI Tomonobu </p>
+        </div>
+      </div>
+      
+      <pb n="372"/>
+      <div type="entry">
+        <head xml:id="technology"> technology, modern </head>
+        <div type="article">
+          <p><name type="place" key="http://dbpedia.org/page/Japan">Japan</name> developed an advanced modem technology in the three decades following <name
+              type="period" key="http://dbpedia.org/page/World_War_II">World War II</name>; although most of this technology was initially imported from abroad,
+              <name type="place" key="http://dbpedia.org/page/Japan">Japan</name> had in certain areas surpassed the technological level of the <name
+              type="place" key="http://dbpedia.org/page/United_States">United States</name> and other advanced nations by the late 1970s. </p>
+          <p><hi rend="bold">Historical Development</hi>---Starting industrialization much later than most Western nations, Japan had to invest time and capital
+            in laying the industrial, economic, and educational foundations for a technology that was already in practical use abroad. From the very beginning
+            of the <name type="period" key="http://dbpedia.org/page/Meiji_period">Meiji period</name> (1868-1912) the national government promoted the
+            development of industry and technology in <name type="place" key="http://dbpedia.org/page/Japan">Japan</name> as part of its conscious policy of
+            modernizing and militarily strengthening the nation. This policy was given particular emphasis by the <name type="period"
+              key="http://dbpedia.org/page/First_Sino-Japanese_War">Sino-Japanese War</name> of 1894-95, and the <name type="period"
+              key="http://dbpedia.org/page/Russo-Japanese_War">Russo-Japanese War</name> of 1904-05, and there was a systematic buildup of industry and
+            technology following <name type="period" key="http://dbpedia.org/page/World_War_I">World War 1</name>. The Production Research Council, which was
+            established in 1910 and reorganized as the Temporary Industrial Council in 1927 assisted certain designated industries. The INSTITUTE OF PHYSICAL
+            AND CHEMICAL RESEARCH was organized in 1917 under the joint sponsorship of government and industry for the purpose of developing and applying
+            creative technology. During the 1930s there was a rapid development of <name type="place" key="http://dbpedia.org/page/Japan">Japan's</name> heavy
+            and chemical industries. In this decade all industry and technology was mobilized for war (the <name type="event"
+              key="http://dbpedia.org/page/Mukden_Incident">Manchurian Incident of 1931</name>, Japan's invasion of <name type="place"
+              key="http://dbpedia.org/page/Republic_of_China">China</name> in 1937, and its entry into <name type="period"
+              key="http://dbpedia.org/page/World_War_II">World War II</name> in 1941), and new developments were limited to military technology. Advances were
+            made in shipbuilding, optics, and aircraft; however, because of the narrow application to military technology, <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan's</name> overall productivity remained far below that of the <name type="place"
+              key="http://dbpedia.org/page/United_States">United States</name>. </p>
+          <p> Although most of <name type="place" key="http://dbpedia.org/page/Japan">Japan's</name> technology was imported (of some 400 important discoveries
+            and inventions in industrial technology from 1868 through the mid-1960s, only 70 were originally developed and produced in <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan</name>), the following are some of the inventions made by the <name type="people"
+              key="http://dbpedia.org/page/Japanese_people">Japanese</name> in the period before <name type="period" key="http://dbpedia.org/page/World_War_II"
+              >World War II</name>: the production of <name type="institution" key="http://dbpedia.org/page/Takadiastase">Taka-diastase</name> by <name
+              type="person" key="http://dbpedia.org/page/Jokichi_Takamine">TAKAMINE JÔKICHI</name> in 1892, the invention of the Toyoda power loom by <name
+              type="person" key="http://dbpedia.org/page/Sakichi_Toyoda">TOYODA SAKICHI</name> in 1897, the extraction of adrenalin by <name type="person"
+              key="http://dbpedia.org/page/Jokichi_Takamine">Takamine Jôkichi</name> in 1901, the invention of the seasoning Ajinomoto (L-monosodium glutamate;
+            MSG) by <name type="person" key="http://dbpedia.org/page/Kikunae_Ikeda">IKEDA KIKUNAE</name> (see <name type="institution"
+              key="http://dbpedia.org/page/Ajinomoto">AJINOMOTO CO, INC</name>) in 1908, the invention of KS steel by <name type="person"
+              key="http://dbpedia.org/page/Kotaro_Honda">HONDA KÔTARÔ</name> in 1917, the development of a nitrogen fixation process for industrial use by the
+            National Chemical Laboratory for Industry in 1920, and the invention of the Yagi antenna by <name type="person"
+              key="http://dbpedia.org/page/Hidetsugu_Yagi">YAGI HIDETSUGU</name> in 1925. </p>
+          <pb n="373"/>
+          <p> After <name type="period" key="http://dbpedia.org/page/World_War_II">World War II</name> technology once again broadened beyond military
+            technology, and the national policy on science and technology was directed toward adapting imported technology to Japanese needs and standards. The
+            SCIENCE AND TECHNOLOGY AGENCY was established in 1956 to unify policies for science and technology. The <name type="institution"
+              key="http://dbpedia.org/page/Ministry_of_International_Trade_and_Industry">MINISTRY OF INTERNATIONAL TRADE AND INDUSTRY</name> provided guidance
+            to prevent excessive competition and the payment of unreasonably high licensing fees in importing technology. The ministry has assisted in
+            introducing foreign technology while protecting and developing native industry. For example, in the case of thermo-electric power plants, the
+            government approved the import of the first plant but enforced the use of domestically built plants thereafter. </p>
+          <p> Dependence on imported technology remained heavy in the postwar period. Important sectors of industry which emerged after the war, such as polymer
+            chemistry, electronics, and atomic energy, have leaned heavily on imported technology. Technological rationalization and automation of production in
+            more established industries, such as iron, steel, and machinery, have also been heavily dependent on foreign technology. </p>
+          <p> Payment of royalties for imported technology has increased remarkably. Even in 1977, when <name type="place" key="http://dbpedia.org/page/Japan"
+              >Japan</name> caught up with <name type="place" key="http://dbpedia.org/page/United_States">American</name> technological levels, $800 million was
+            being paid in compensation. Since there has been little export of technology, the balance of international payments in technology has been
+            unfavorable. However, export of technology has been increasing with the rise of the technological level in <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan</name>. Royalties paid to <name type="place" key="http://dbpedia.org/page/Japan">Japan</name> for
+            technology amounted to only $300,000 in 1956, but this amount had increased to $150 million by 1976, and the ratio of payments received to payments
+            made reached 17 percent. In the early 1980s <name type="place" key="http://dbpedia.org/page/Japan">Japan</name> continued to pay out a large amount
+            of foreign currency because of its heavy dependence on imported technology; however, it would have required several times as much time and money to
+            develop the same technology independently. </p>
+          <p><hi rend="bold">Characteristics of Japanese Technology</hi>---The Japanese dependence on imported technology does not imply a simple imitation of
+            imported technology. The <name type="people" key="http://dbpedia.org/page/Japanese_people">Japanese</name> have continuously endeavored not only to
+            improve imported technology but to adapt it to fit new needs. For example, while all the fundamental technology for television, including television
+            recording, has been based on foreign patents, Japanese engineers developed video recording for home use. </p>
+          <p> Japanese industry particularly stresses the development of applied technology, and the proportion of total research and development funds that is
+            allocated to basic research is small. In 1974 it was only 6.3 percent, and most of this was, in actual fact, directed to the application and
+            improvement of technology. See also RESEARCH AND DEVELOPMENT. </p>
+          <p> The major Japanese enterprises are in intense competition with each other and are anxious to introduce advanced technology from abroad ahead of
+            others. The technology introduced by major enterprises is also speedily adopted by the small and medium enterprises that operate as subcontractors
+            to the larger enterprises. The subcontracting enterprises obtain new technological information promptly from their parent companies and introduce
+            new technology with the financial and technological aid of the latter. </p>
+          <p><hi rend="italic">Creativity</hi>. Japanese engineers, so gifted in their ability to find, import, and improve new technology from abroad, are,
+            however, weak in developing new technology through their own efforts. Although there is no real way to measure creativity and the latent ability to
+            develop technology, in a white paper on the world economy issued in 1969 by the Economic Planning Agency in <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan</name>, an international comparison was made on the basis of the following eight indices: (1) the number
+            of registered patents; (2) the ratio of payment to receipt in technological trade; (3) the ratio in total exports of technologically intensive
+            industry; (4) the number of cases of successful industrialization of important new technology after 1945; (5) the total expenditure for research;
+            (6) the number of persons engaged in research and development; (7) the number of graduates from schools of science and engineering; and (8) the
+            number of computers installed. Combining these indices, the agency came up with a ratio for each country surveyed to the standard index (100) of the
+              <name type="place" key="http://dbpedia.org/page/United_States"> United States</name>. According to this method, the rating of <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan</name> at the end of the 1960s was 19, comparable to <name type="place"
+              key="http://dbpedia.org/page/West_Germany">West Germany</name> but far behind the <name type="place" key="http://dbpedia.org/page/United_States"
+              >United States</name>. </p>
+          <p><hi rend="bold">Recent Trends</hi>---When environmental pollution came under severe attack in the 1970s, the government set up strict environmental
+            standards, which resulted in the development of desulfurization technology ahead of the <name type="place"
+              key="http://dbpedia.org/page/Western_Europe">Western European countries</name>. In particular, the tightening of automobile emission standards has
+            brought about the development of some of the cleanest automobile engines in the world (see LOW-POLLUTION ENGINES). </p>
+          <p> In the late 1970s and early 1980s new developments in the field of very large-scale integrated (VLSI) circuits were made in <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan</name>. VLSI with 64 kilobits were completed in 1977 through the joint research of the Telegraph and
+            Telephone Public Corporation, Nippon Electric Co, and Fujitsu, Ltd. Then, under the guidance of the <name type="institution"
+              key="http://dbpedia.org/page/Ministry_of_International_Trade_and_Industry">Ministry of International Trade and Industry</name>, the VLSI
+            Technology Research Association (a research group composed of Tôshiba Corporation, Nippon Electric Co, Ltd, Hitachi, Fujitsû, Ltd, Mitsubishi
+            Electric Corporation, and seven other companies) in 1980 completed an electron beam lithography system capable of drawing circuits with a width of
+            0.5 microns (5/10,000 millimeters). This technology has succeeded in increasing a hundredfold the capacity of semiconductors. </p>
+          <p><name type="place" key="http://dbpedia.org/page/Japan">Japan</name> caught up with the <name type="pace"
+              key="http://dbpedia.org/page/United_States">United States</name> in labor productivity in the 1970s and has overtaken it in the technological
+            level of certain production processes, as in the production of automobiles and television sets. <name type="place"
+              key="http://dbpedia.org/page/Japan">Japan</name> also has an advanced technology in such areas as the prevention of pollution and environmental
+            science. There still exists, however, a substantial technological gap between the <name type="place" key="http://dbpedia.org/page/United_States"
+              >United States</name> and <name type="place" key="http://dbpedia.org/page/Japan">Japan</name> in such areas likely to be important in the future
+            as atomic energy, aerospace, and oceanography. See also TECHNOLOGICAL DEVELOPMENT; TECHNOLOGICAL INNOVATION; TECHNOLOGY TRANSFER. </p>
+          <p><hi rend="bold">Literature</hi>--- Ôshima Keiichi, "Science and Technology Policy in Japan's Economic Growth," Proceedings of the Fourth Tsukuba
+            International Symposium on the Role of the University in International Development (1977). UNESCO, ed, Technological Development in Japan (1971). </p>
+          <p> SHISHIDO Tosmo </p>
+        </div>
+      </div>
+      
+      
+    </body>
+  </text>
+</TEI>

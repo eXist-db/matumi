@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Title</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication Information</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Information about the source</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      
+      <pb n="1304"/>
+      <div type="entry">
+        <head xml:id="art"> びじゅつ </head>
+        <head type="alt"> 美術 </head>
+        <div type="article">
+          <p>造形活動を通じて視覚や触覚に訴える芸術をいい、建築、彫刻、絵画、工芸に分類される．歴史的には建築を母胎とする総合芸術の形で発展し， しだいに分化した．絵画は壁画として建築と、また写本装飾画として工芸と密接に関連し，彫刻もまた建築の内外空間を飾る重要を造形要素であるのみならず，
+            たとえば人像住として建築的機能を負担する．建築と工芸とは神話、歴史、寓意、文学など意味内容の表現に関与しない点で純粋にフォルムの芸術であり， したがって文様と不可分の関係にある．また居住性や実用性を造形表現の基本条件としているので，民族や時代の造形精神のもっとも端的な表明とみることができる．
+            美術はまた人間の生活感情の造形表現として極めて個性的であることを特質とし、その具体的な現れが 〈個人様式〉 であり，〈時代様式〉 や 〈国民様式〉 と密接に関連して展開される．</p>
+        </div>
+      </div>
+      
+      <pb n="1005"/>
+      <div type="entry">
+        <head xml:id="country"> ちいき </head>
+        <head type="alt"> 地域 </head>
+        <div type="article">
+          <p>自然、人文の諸事象（地域構成要素）の一つを指標として区切られた地表部分．地域に区分することを地域区分、地域間の差異を地域差という．</p>
+          <p>［地域構成要素］気侯、地形などの自然的要素と産業、集落、政治などの人文的要素とがある．［意義］複雑な要素の入りくんた地表を地域に区分し、 整理することは、地理学をはじめ、統計学、生態学、経済学などの研究の出発占といえる． </p>
+        </div>
+      </div>
+      
+      <pb n="1612"/>
+      <div type="entry">
+        <head xml:id="europe"> ヨーロッパ </head>
+        <head type="alt"> Europe </head>
+        <div type="article">
+          <p><name type="place" key="http://dbpedia.org/page/Europe">ヨーロッパ</name>は <name type="place" key="http://dbpedia.org/page/Eurasia"
+            >ユーラシア大陸</name>の西部を占め， <name type="place" key="http://dbpedia.org/page/Asia">アジア</name>とは <name type="place"
+              key="http://dbpedia.org/page/Ural_Mountains">ウラル山脈</name>から <name type="place" key="http://dbpedia.org/page/Caspian_Sea">カスピ海</name>を通って <name
+              type="place" key="http://dbpedia.org/page/Sea_of_Azov">アゾフ海</name>にいたる線で区分される． <name type="place" key="http://dbpedia.org/page/Africa"
+            >アフリカ</name>とは <name type="place" key="http://dbpedia.org/page/Mediterranean_Sea">地中海</name>で区切られる．面積では世界の陸地のわずか3％(493万km2， <name type="place"
+              key="http://dbpedia.org/page/Soviet_Union">ソ連</name>領を除く)であるが、 このなかに31の独立国(<name type="place" key="http://dbpedia.org/page/Soviet_Union"
+            >ソ連</name>を除く)があり、 人口は世界の17％(4.85億、1980)もある．このため人口密度は１km2あたり98人で、世界でもっとも人口の稠密(ちゅうみつ)な地域となっている． [自然]海抜300m以下の平坦な土地が多く、高峻な褶曲(しゅうきょく)山脈は南半部に連なる(最高峰は
+              <name type="place" key="http://dbpedia.org/page/Alps">アルプス山脈</name>の <name type="place" key="http://dbpedia.org/page/Mont_Blanc"
+            >モンブラン</name>、4807m)． 勾配のゆるい水量の豊かな川が多い．気候は高緯度のわりに温暖であり、適当に湿潤であるが、南の地中海気候と北の高緯度海洋性気候とのちがいは顕著． 植生は<name type="place"
+              key="http://dbpedia.org/page/Tundra">ツンドラ</name>から <name type="place" key="http://dbpedia.org/page/Mediterranean_Sea"
+            >地中海</name>植生まで南北に様々であるが、大半は人間により改変されたものである． </p>
+        </div>
+      </div>
+      
+      <pb n="459"/>
+      <div type="entry">
+        <head>ぎじゅつ</head>
+        <head type="alt">技術</head>
+        <div type="article">
+          <p> 社会生活を支える物質，エネルギー，情報などを生産・処理するための方法または手段。一般に生産技術のことをさす。技術学や工学の発展にともない，分野別には機械技術，化学技術，電気・通信技術，農業技術などの革新が進み，また応用科学にもとづく新しい科学技術の展望が期待される。 </p>
+          <div>
+            <head rend="bracketed">背景</head>
+            <p><name type="period" key="http://dbpedia.org/resource/Category:Ancient_Greece">古代ギリシア</name> の〈テクネー〉に由来をもち，制作することの実技が重視された。<name type="period"
+                key="http://dbpedia.org/resource/Middle_Ages">中世</name>
+              では，水車を応用した動力機により生産技術の工程が急速に発展し，器具や道具も進歩した。産業革命以来，蒸気機関や内熱機関などに代表される機械工作の技術が発達する。また，特に自然科学の発展による技術の開発は社会の生産体制に大きな影響を及ぼしてきた。 </p>
+          </div>
+          <div>
+            <head rend="bracketed">問題</head>
+            <p> 技術の発展は，人間生活を進歩させる半面，文化的・社会的に，新たに解決すべき問題を発生しつつある。 </p>
+          </div>
+        </div>
+      </div>
+      
+      <pb n="230"/>
+      <div type="entry">
+        <head xml:id="city"> いち </head>
+        <head type="alt"> 市(<name type="place" key="http://dbpedia.org/page/Europe">ヨーロッパ</name>) </head>
+        <div type="article">
+          <p>古代<name type="place" key="http://dbpedia.org/page/Greece">ギリシア</name>や<name type="place" key="http://dbpedia.org/page/Rome"
+            >口一マ</name>でも市民の集会場に市場が設けられ たが、市の発展をみるのは中世である．10世紀頃から西欧各地に、余剰生産物を交換する不定期市が発生、やがて定期市となる．12～13世紀以降、開市権をもつ王や諸侯は、
+            財政上の収益を目ざして盛んに自領で開市し、さらに商工業者を保護、都市建設を推進、市は最盛期を迎え、国際規模の年市が発展した、近代、その重要性は薄れる．</p>
+        </div>
+      </div>
+      
+      <pb n="234"/>
+      <div type="entry">
+        <head xml:id="ideology"> イデオロギー </head>
+        <head type="alt"> ideologie </head>
+        <div type="article">
+          <p>社会的(階級的)な利害関心を、客観的であるかのような外観につつんで表現したもの．転してそういう利害関心のむきだしの主張．かつて観念形態と訳されたこともあるが、現在では <name type="language"
+              key="http://dbpedia.org/page/German_language"><name type="place" key="http://dbpedia.org/page/Germany">ドイツ</name>語</name>のままでつかう．もとは <name
+              type="period" key="http://dbpedia.org/page/French_Revolution"><name type="place" key="http://dbpedia.org/page/France">フランス</name>革命</name>の直後に
+              <name type="person" key="http://dbpedia.org/page/Destutt_de_Tracy">デステュット・ド・トラシー</name>が、 形而上学的虚偽に対する科学的真理を意味するものとして、イデオロジーということばを使用したが、 <name
+              type="person" key="http://dbpedia.org/page/Napoleon_I_of_France">ナポレオン</name>がかれを含む思想家集団を、 空論家という意味でイデオロジストと呼んだことから、理論の虚偽性に力占がおかれるようになり、 <name
+              type="person" key="http://dbpedia.org/page/Karl_Marx">マルクス</name>が、存在に拘束されて虚偽性をもった意識・観念をイデオロギーと呼んだ．</p>
+        </div>
+      </div>
+      
+      <pb n="847"/>
+      <div type="entry">
+        <head xml:id="humanity">じんるい </head>
+        <head type="alt">人類</head>
+        <div type="article">
+          <p>知能をもつ直立二足歩行性のホニュウ類の一科であるヒト。巨大な頭脳と巧妙な手をもち，文化や言語を創造，社会生活を営む。</p>
+          <div>
+            <head rend="bracketed">種類</head>
+            <p> 大別して猿人 （アウストラロピテクス，ホモ・ハビリス） ，原人（ホモ・エレクトウス） ，旧人（ネアンデルタール人など） ，新人（クロマニヨン人など） とする。旧人と新人は共にホモ・サピエンスに含まれる。 </p>
+          </div>
+          <div>
+            <head rend="bracketed">歴史</head>
+            <p> ヒトが道具を使用し始めたのは，３００万～４００万年前とされる。これ以後ヒトはゆるやかな発展をしていったが，１万年前頃に食糧生産 （農耕，牧畜）を開始し，土器製造の技術を覚えた。これ以後を 新<name type="period"
+                key="http://dbpedia.org/resource/Stone_Age">石器時代</name> という。このためヒトの社会は大きく変化し，増大した生産力を背景に都市が生まれ，
+              さらに国家が誕生し，金属使用が開始された。その後の大きなエポックは産業革命で，科学技術の発展を基礎とする近代社会が生まれ，今日に至っている。 </p>
+          </div>
+        </div>
+      </div>
+      
+      <pb n="807"/>
+      <div type="entry">
+        <head xml:id="information">じょうほう</head>
+        <head type="alt">情報</head>
+        <div type="article">
+          <p> 人間，生物，機械などが，感知でき，それを理解した上で行動に反映させるような信号を情報という。 </p>
+          <div>
+            <head rend="bracketed">情報の分類</head>
+            <p> 現象面から伝達，変換など動的状態にあるフロー情報と，蓄積という<pb n="808"/>静的状態にあるストック情報にわかれる。 </p>
+            <p> 表示形式によって言語系情報と非言語系情報に，また感覚面から視覚情報と聴覚情報にわかれる。さらに人間の社会的活動に対応して 認知情報（ニュース，天気予報など），指令情報（法律，交通信号など），教育情報（学校教育，職業訓練など）
+              ，娯楽情報（映画，演劇，テレビ・ラジオ番組など）にわけることができる。 </p>
+          </div>
+        </div>
+      </div>
+      
+      <pb n="369"/>
+      <div type="entry">
+        <head xml:id="science"> かがく </head>
+        <head type="alt"> 科学 </head>
+        <div type="article">
+          <p> 人聞の存在する環境世界の物象や事象に対して、経験的な知識と技術によって解明した認識の体系．古代<name type="place" key="http://dbpedia.org/page/Greece">ギリシア</name>
+            に始まる自然哲学(フュジカ)に基点をもち、近世の博物学(ネイチャー・ヒストリー)によって科学的方法による認識が確立された．［分類］分野において形式科学(論理学・数学)と実質科学 (自然科学・社会科学)、方法において純粋科学と応用科学に区別される． </p>
+          <p>［構成法］①問題の定式化、②仮説の設定、③仮説から試行可能な事柄の演鐸（えんえき）、④実験と観察、⑤理論または法則の体系化、と探求は構成される． </p>
+          <p>［特質］科学の法則は普遍性と有効性をもっている．従って、人間社会の諸問題や技術文明の方向性に対する一つの見解を提示できる．しかし、 現在、科学的応用の諸領域における生命倫理や科学技術の非人間性が大きな問題となってきている． </p>
+        </div>
+      </div>
+      
+      <pb n="446"/>
+      <div type="entry">
+        <head xml:id="ideology"> かんねんろん </head>
+        <head type="alt"> 観念論 </head>
+        <div type="article">
+          <p>idealismの訳語．形而上学的な意味と認識論的な意味をもつ．①形而上学的には、人間の精神ないし精神的価値（理念、理性、自我、意志など）
+            こそ世界全体の中で根源的なものであると考える立場、+唯心論をいう．物質的存在が根源的であり、精神は物質的存在から派生したものにすぎないと考える+唯物論に対立する． この意味での観念論は<name type="place" key="http://dbpedia.org/page/Europe"
+              >ヨーロッパ</name>哲学の主流であり、 <name type="person" key="http://dbpedia.org/page/Plato">プラトン</name>をほじめ， <name type="person"
+              key="http://dbpedia.org/page/Johann_Gottlieb_Fichte"><name type="person" key="http://dbpedia.org/page/Johann_Gottlieb_Fichte">フィヒテ</name></name>，
+              <name type="person" key="http://dbpedia.org/page/Schelling"><name type="person" key="http://dbpedia.org/page/Friedrich_Wilhelm_Joseph_Schelling"
+                >シェリング</name></name>， <name type="person" key="http://dbpedia.org/page/Georg_Wilhelm_Friedrich_Hegel--">へ一ゲル</name>などの+ <name type="place"
+              key="http://dbpedia.org/page/Germany">ドイツ</name>観念論者はもちろん、代表的哲学者はほとんど観念論者である．
+            ②認識論的には、外界の物質的存在はわれわれの意識から独立的客観的に存在するものではないと考える立場．外界の事物の客観的実在を認める+実在論に対する． 存在するとは知覚されていることだとする<name type="person"
+              key="http://dbpedia.org/page/George_Berkeley">バークリー</name>の主観的観念論、 主観の認識形式が事物を構成すると考える<name type="person"
+              key="http://dbpedia.org/page/Immanuel_Kant">カント</name>の先験的観念論など．</p>
+        </div>
+      </div>
+      
+      <pb n="446"/>
+      <div type="entry">
+        <head> かんのう </head>
+        <head type="alt"> 間脳 </head>
+        <div type="article">
+          <p><title>かんのう 間脳</title> 左右の大脳半球と中脳の間に位置する部分． </p>
+          <p>［構造と機能］〔視床〕①嗅覚以外の感覚を伝える伝導路が集まり、ここで中継して大脳皮質に伝える．②運動の基礎となる筋緊張をつかさどる．③情動、 感情の発現機序をつかさどる．〔視床下部〕①種々の自律神経機能の調節、統合．②体温調節、物質代謝調節など．［障害］自律神経失調症、情動の異常、
+            不随意運動の異常など． </p>
+        </div>
+      </div>
+      
+      <pb n="846"/>
+      <div type="entry">
+        <head xml:id="credit"> しんよう </head>
+        <head type="alt"> 信用 </head>
+        <div type="article">
+          <p>給付と反対給付の期間に一定の時間の遅れを認めて，当事者間に債権・債務の関係を設定することをいう．</p>
+          <p>[形態] ①期間の長さにより短・中・長期の信用に，②資金の使途により商業信用と資本信用に，③設定主体によって個人・銀行・国家信用などに， ④保証物件によって実物・証書・証券信用など，に分かれる．最初に現れるのは商業信用で，ついで銀行信用，これと並んで証券制度が現れる．</p>
+        </div>
+      </div>
+      
+      <pb n="733"/>
+      <div type="entry">
+        <head xml:id="science"> しぜんかがく </head>
+        <head type="alt"> 自然科学 </head>
+        <div type="article">
+          <p> 自然、とくに物質と呼ばれているものを研究対象とする科学のこと．一般的に科学というときは、自然科学のことをさす．社会科学に対する語としても使われる．［背景］ <name type="person" key="http://dbpedia.org/page/Aristotle"
+              >アリストテレス</name>の<title>〈自然学〉</title>から <name type="person" key="http://dbpedia.org/page/Isaac_Newton">ニュートン</name>の <title
+              key="http://dbpedia.org/page/Philosophiæ_Naturalis_Principia_Mathematica">〈プリンキピア〉</title>、 <name type="person"
+              key="http://dbpedia.org/page/Benjamin_Franklin">フランクリシ</name>の<title>〈電気学〉</title>、 <name type="person"
+              key="http://dbpedia.org/page/Antoine_Lavoisier">ラボアジェ</name>の<title>〈化学〉</title>、 <name type="person" key="http://dbpedia.org/page/Charles_Lyell"
+              >ライエル</name>の<title>〈地質学〉</title>に至る過程で、 自然現象や事象を経験的知識から客観的法則に体系化する科学的な学問の方法が生じてくる．中世の錬金術や技術学や博物誌が、それぞれ化学、物理学、
+            生物学などへ専門的に細分化された．［問題点］自然科学は、科学者を通じて思想や技術と結びつき、社会的にも文化的にも主要な価値判断の一つとなる． また、自然科学の進歩によって、人聞の役割と責任が変わりつつあり、科学者の倫理と自然系、生物系、社会系のシステムとの抜本的な理解と協調が必要である．
+          </p>
+        </div>
+      </div>
+      
+      <pb n="973"/>
+      <div type="entry">
+        <head xml:id="country">たいりく</head>
+        <head type="alt">大陸</head>
+        <div type="article">
+          <p> 地球上の大きな陸地，一般に，ユーラシア，南・北アメリカ，<name type="place" key="http://dbpedia.org/page/Africa">アフリカ</name>，<name type="place"
+              key="http://dbpedia.org/page/Australia">オーストラリア</name>，南極の６大陸をさし，全体で地表のほぼ３分の１を占める。 </p>
+          <div>
+            <head rend="bracketed">大陸の構造</head>
+            <p> 大陸は，海水面上にある地殻の部分であるが，海洋底の地殻とは構成が異なり，上部のカコウ岩質層と下部の玄武岩質層の２層から成っている。
+              海洋部分の地殻は，玄武岩質層のみである。大陸地殻の厚さは，平均３５ｋｍ程度であるが，軽く，下のマントル上に氷山のように浮いて均衡を保っている（+アイソスタシー）。 </p>
+          </div>
+          <div>
+            <head rend="bracketed">大陸移動説</head>
+            <p> 時代とともに，大陸の形や位置が変化しているという説で，もともと大きな一大陸であったものが分裂して移動し，現在の位置を占めているとされる。 </p>
+          </div>
+          <div>
+            <head rend="bracketed">大陸成長説</head>
+            <p> 大陸内部では，古い核のまわりに新しい部分がつけ加わって成長しているとする説で，北アメリカ大陸に顕著であり，ほかの大陸の一部でも認められる。 </p>
+          </div>
+        </div>
+      </div>
+      
+    </body>
+  </text>
+</TEI>
