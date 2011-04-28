@@ -1,3 +1,0 @@
-<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="522"/><div type="entry"><head xml:id="country_questionmark">クニ</head><head type="alt">國</head><div type="reference"><p>
-            →　國郡制度(コクグンセイド)
-                   </p></div></div></body></text></TEI>

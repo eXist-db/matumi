@@ -1,9 +1,0 @@
-<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title> </title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="459"/><div type="entry"><head>ぎじゅつ</head><head type="alt">技術</head><div type="article"><p>
-                        社会生活を支える物質，エネルギー，情報などを生産・処理するための方法または手段。 一般に生産技術のことをさす。技術学や工学の発展にともない，分野別には機械技術，化学技術，電気・通信技術， 農業技術などの革新が進み，また応用科学にもとづく新しい科学技術の展望が期待される。
-                    </p><div><head rend="bracketed">背景</head><p><name type="period" key="http://dbpedia.org/resource/Category:Ancient_Greece">古代
-                           <name type="country" key="http://dbpedia.org/resource/Greece">ギリシア</name></name>
-                            の〈テクネー〉に由来をもち，制作することの実技が重視された。<name type="period" key="http://dbpedia.org/resource/Middle_Ages">中世</name>
-                            では，水車を応用した動力機により生産技術の工程が急速に発展し，器具や道具も進歩した。産業革命以来， 蒸気機関や内熱機関などに代表される機械工作の技術が発達する。また，特に自然科学の発展による技術の開発は社会の生産体制に大きな影響を及ぼしてきた。
-                        </p></div><div><head rend="bracketed">問題</head><p>
-                            技術の発展は，人間生活を進歩させる半面，文化的・社会的に，新たに解決すべき問題を発生しつつある。
-                        </p></div></div></div></body></text></TEI>

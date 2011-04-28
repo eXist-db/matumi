@@ -1,9 +1,0 @@
-<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?><TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"><teiHeader><fileDesc><titleStmt><title>Title</title></titleStmt><publicationStmt><p>Publication Information</p></publicationStmt><sourceDesc><p>Information about the source</p></sourceDesc></fileDesc></teiHeader><text><body><pb n="807"/><div type="entry"><head><term xml:id="information">じょうほう</term></head><head type="alt">情報</head><div type="article"><p>
-            　　人間，生物，機械などが，感知でき，それを理解した上で行動に反映させるような信号を情報という。
-                    </p><div><head rend="bracketed">情報の分類</head><p>                    
-                    現象面から伝達，変換など動的状態にあるフロー情報と，蓄積という<pb n="808"/>静的状態にあるストック情報にわかれる。
-                    </p><p>
-            表示形式によって言語系情報と非言語系情報に，また感覚面から視覚情報と聴覚情報にわかれる。さらに人間の社会的活動に対応して
-            認知情報（ニュース，天気予報など），指令情報（法律，交通信号など），教育情報（学校教育，職業訓練など）
-            ，娯楽情報（映画，演劇，テレビ・ラジオ番組など）にわけることができる。
-                    </p></div></div></div></body></text></TEI>
