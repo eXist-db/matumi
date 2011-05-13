@@ -4,6 +4,8 @@ var current = {
     id: null
 };
 
+var selector = null;
+
 var selection = null;
 
 $(document).ready(function() {
@@ -18,9 +20,12 @@ $(document).ready(function() {
             }
         }
     });
+    selector = new eXist.util.Select($('#document-view'), {
+        onSelect: trackSelection
+    });
     $('#new-comment').click(function (ev) {
     	ev.preventDefault();
-    	openEditor(selection.node, this.href);
+    	openEditor(selector.getAnchorNode(), this.href);
     });
     $('#search-results').css("display", "none");
     $('#search-form').submit(search);
@@ -30,7 +35,6 @@ $(document).ready(function() {
     	position: "absolute",
     	display: "none"
     });
-    $('#document-view').mouseup(trackSelection);
     resize();
 });
 
@@ -55,8 +59,8 @@ function suggestCallback(node, params) {
     }
 }
 
-function trackSelection(ev) {
-    selection = getSelectedText();
+function trackSelection(pageX, pageY) {
+    var selection = this.getSelectedText();
     $('#document-view').data("selection", selection);
     if (selection) {
         $('.selection').text(selection.text);
@@ -71,12 +75,11 @@ function trackSelection(ev) {
             };
             this.href = "annotate.xql?" + jQuery.param(params);
         });
-        
         // display the toolbar close to current mouse position
         $("#inline-toolbar").css({
         	display: '',
-        	left: ev.pageX + 8,
-        	top: ev.pageY + 8
+        	left: pageX + 8,
+        	top: pageY + 8
         });
         setTimeout("$('#inline-toolbar').hide()", 7000);
     } else
@@ -341,131 +344,6 @@ function store() {
     }
     
     form.submit();
-}
-
-function getSelectedText() {
-    var sel = getSelected();
-    if (sel.isCollapsed)
-        return null;
-
-    var node = sel.focusNode;
-    var start = sel.anchorOffset;
-    var end = sel.focusOffset;
-    if(sel.focusNode.nodeName !== '#text') {
-        // Is selection spanning more than one node, then select the parent
-        if((sel.focusOffset - sel.anchorOffset)>1)
-            $.log("Selected spanning more than one: %o", sel.anchorNode);
-        else if ( sel.anchorNode.childNodes[sel.anchorOffset].nodeName !== '#text' )
-            node = sel.anchorNode.childNodes[sel.anchorOffset];
-        else
-            node = sel.anchorNode;
-        start = 0;
-        end = node.nodeValue.length;
-    }
-    // if we have selected text which does not touch the boundaries of an element
-    // the anchorNode and the anchorFocus will be identical
-    else if( sel.anchorNode.data === sel.focusNode.data ){
-        $.log("Selected non bounding text: %o", sel.anchorNode);
-        node = sel.anchorNode;
-        start = sel.anchorOffset;
-        end = sel.focusOffset;
-    }
-    // This is the first element, the element defined by anchorNode is non-text.
-    // Therefore it is the anchorNode that we want
-    else if( sel.anchorOffset === 0 && !sel.anchorNode.data ){
-        $.log("Selected whole element at start of paragraph " +
-              "(whereby selected element has not text e.g. &lt;script&gt;: %o",sel.anchorNode);
-    }
-    // If the element is the first child of another (no text appears before it)
-    else if( typeof sel.anchorNode.data !== 'undefined'
-            && sel.anchorOffset === 0
-            && sel.anchorOffset < sel.anchorNode.data.length ){
-        $.log("Selected whole element at start of paragraph: %o", sel.anchorNode);
-    }
-    // If we select text preceeding an element. Then the focusNode becomes that element
-    // The difference between selecting the preceeding word is that the anchorOffset is less that the anchorNode.length
-    // Thus
-    else if( typeof sel.anchorNode.data !== 'undefined'
-            && sel.anchorOffset < sel.anchorNode.data.length ){
-        $.log("Selected preceeding element text: %o", sel.anchorNode);
-        node = sel.anchorNode;
-        start = sel.anchorOffset;
-    }
-    // Selected text which fills an element, i.e. ,.. <b>some text</b> ...
-    // The focusNode becomes the suceeding node
-    // The previous element length and the anchorOffset will be identical
-    // And the focus Offset is greater than zero
-    // So basically we are at the end of the preceeding element and have selected 0 of the current.
-    else if( typeof sel.anchorNode.data !== 'undefined'
-            && sel.anchorOffset === sel.anchorNode.data.length
-            && sel.focusOffset === 0 ){
-        node = sel.focusNode.previousSibling.firstChild;
-        start = 0;
-        $.log("Selected whole element text: %o", node);
-        end = node.nodeValue.length;
-    }
-    // if the suceeding text, i.e. it bounds an element on the left
-    // the anchorNode will be the preceeding element
-    // the focusNode will belong to the selected text
-    else if(sel.focusOffset > 0) {
-        $.log("Selected suceeding element text: %o", sel.focusNode);
-        node = sel.focusNode;
-        start = 0;
-        end = sel.focusOffset;
-    }
-
-    var obj = findParent(node, start, end);
-    $.log("start: %i end: %i position: %s id: %s node: %o", obj.start, obj.end, obj.position, obj.id, node);
-    return obj;
-}
-
-/*
-    For the selection text, find the closest ancestor node with an id.
-    @return an object containing the properties "id", "position", "start",
-    "end", where "id" is the node id of the closest parent, "position" is
-    the position of the node containing the selection within the child nodes
-    of its parent, "start" is the start and "end" is the end offset.
- */
-function findParent(node, start, end) {
-    var text = node.data.substring(start, end);
-    
-    // if the node containing the selection is not the first child
-    // of its parent, we need to determine its position by iterating
-    // through the preceding siblings.
-    var position = 0;
-    var prev = node.previousSibling;
-    var last = node;
-    while (prev != null) {
-        if (prev.className == 'ref' || last.className == 'ref') {
-            var prevLen = $(prev).text().length;
-            start += prevLen;
-            end += prevLen;
-        } else
-            position++;
-        last = prev;
-        prev = prev.previousSibling;
-    }
-    // find closest ancestor with an id
-    var id = "";
-    var parent = node;
-    while (parent != null) {
-        if (parent.id) {
-            id = parent.id;
-            break;
-        }
-        parent = parent.parentNode;
-    }
-    return { id: id, position: position, start: start, end: end, text: text, node: node };
-}
-
-/* attempt to find a text selection */
-function getSelected() {
-    if(window.getSelection) { return window.getSelection(); }
-    else if(document.getSelection) { return document.getSelection(); }
-    else {
-        return document.selection && document.selection.createRange();
-    }
-    return false;
 }
 
 function initTabs(startTab) {

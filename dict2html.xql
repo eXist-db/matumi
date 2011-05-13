@@ -232,6 +232,7 @@ declare function dict:transform($root as node()?) {
                     <jquery:header base="libs/scripts/jquery" cssbase="libs/scripts/jquery/css"/>
                     <script type="text/javascript" src="scripts/jquery.tools.min.js"></script>
                     <script type="text/javascript" src="wymeditor/jquery.wymeditor.min.js"></script>
+                    <script type="text/javascript" src="scripts/selection.js"></script>
                     <script type="text/javascript" src="annotate.js"></script>
                     <link type="text/css" href="style.css" rel="stylesheet"></link>
                 </head>
