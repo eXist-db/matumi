@@ -20,12 +20,41 @@ $(document).ready(function() {
             }
         }
     });
-    selector = new eXist.util.Select($('#document-view'), {
-        onSelect: trackSelection
+    
+    $("#document-body").selection({
+        idOnly: true,
+        ignore: ".ref,.annotation",
+        onSelect: function(pageX, pageY) {
+            var selection = this.getSelectedText();
+            $('#document-view').data("selection", selection);
+            if (selection) {
+                $('.selection').text(selection.text);
+                $('#new-comment').each(function () {
+                    var params = {
+                        "nodeId": selection.id,
+                        "start": selection.start,
+                        "end": selection.end,
+                        "child": selection.position,
+                        "text": selection.text,
+                        "doc": current.document
+                    };
+                    this.href = "annotate.xql?" + jQuery.param(params);
+                });
+                // display the toolbar close to current mouse position
+                $("#inline-toolbar").css({
+                    display: '',
+                	left: pageX + 8,
+                	top: pageY + 8
+                });
+                setTimeout("$('#inline-toolbar').hide()", 7000);
+            } else
+            	$("#inline-toolbar").hide();
+        }
     });
+    
     $('#new-comment').click(function (ev) {
     	ev.preventDefault();
-    	openEditor(selector.getAnchorNode(), this.href);
+    	openEditor($("#document-body").selection("getAnchorNode"), this.href);
     });
     $('#search-results').css("display", "none");
     $('#search-form').submit(search);
@@ -57,33 +86,6 @@ function suggestCallback(node, params) {
     if (select.length == 1) {
         params.field = select.val();
     }
-}
-
-function trackSelection(pageX, pageY) {
-    var selection = this.getSelectedText();
-    $('#document-view').data("selection", selection);
-    if (selection) {
-        $('.selection').text(selection.text);
-        $('#new-comment').each(function () {
-            var params = {
-                "nodeId": selection.id,
-                "start": selection.start,
-                "end": selection.end,
-                "child": selection.position,
-                "text": selection.text,
-                "doc": current.document
-            };
-            this.href = "annotate.xql?" + jQuery.param(params);
-        });
-        // display the toolbar close to current mouse position
-        $("#inline-toolbar").css({
-        	display: '',
-        	left: pageX + 8,
-        	top: pageY + 8
-        });
-        setTimeout("$('#inline-toolbar').hide()", 7000);
-    } else
-    	$("#inline-toolbar").hide();
 }
 
 function checkSelection() {

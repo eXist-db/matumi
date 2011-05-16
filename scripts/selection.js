@@ -34,21 +34,27 @@ eXist.util.Select = (function () {
     /**
      * Create a new Select object. Takes the following options:
      * 
-     * 
      * onSelect: callback function, which will be called whenever
      * the user makes a selection. Use this to show a popup, button or
      * link. The callback function receives the Select instance as this,
-     * and the x and y position of the
-     * mouse pointer at the end of the selection. The object describing the
-     * selection has the following properties:
+     * and the x and y position of the mouse pointer at the end of the selection.
+     * 
+     * ignore: a jquery selector. Nodes matching this selector will be ignored
+     * when searching for a reference node. If they contain text, it will also be ignored
+     * when computing character offsets. This option is typically used to ignore nodes
+     * which were inserted dynamically and are not part of the original document.
+     * 
+     * idOnly: if set to true, only use elements which have an id as anchor for the selection.
      */  
     Constr = function (container, options) {
         this.options = $.extend({
-            mode: "html",
-            onSelect: function (selection) { }
+            onSelect: function (selection) { },
+            ignore: null,
+            idOnly: true
         }, options || {});
         
         this.currentSelection = null;
+        this.container = container;
         
         var $this = this;
         $(container).mouseup(function (ev) {
@@ -78,7 +84,7 @@ eXist.util.Select = (function () {
             var prev = node.previousSibling;
             var last = node;
             while (prev != null) {
-                if (prev.className == 'ref' || last.className == 'ref') {
+                if (this.options.ignore && ($(prev).is(this.options.ignore) || $(last).is(this.options.ignore))) {
                     var prevLen = $(prev).text().length;
                     start += prevLen;
                     end += prevLen;
@@ -89,15 +95,39 @@ eXist.util.Select = (function () {
             }
             // find closest ancestor with an id
             var id = "";
-            var parent = node;
-            while (parent != null) {
-                if (parent.id) {
-                    id = parent.id;
-                    break;
+            if (this.options.idOnly) {
+                var parent = node;
+                while (parent != null) {
+                    if (parent.id) {
+                        id = parent.id;
+                        break;
+                    }
+                    parent = parent.parentNode;
                 }
+            }
+            
+            var selector = this.$getSelector(node);
+            return { id: id, position: position, start: start, end: end, text: text,
+                selector: selector };
+        },
+        
+        /**
+         * Returns a jquery selector which will select the given node relative to the container
+         * element.
+         */
+        $getSelector: function (node) {
+            var path = "";
+            var parent = node;
+            if (node.nodeName == '#text')
+                parent = node.parentNode;
+            while (parent && parent.nodeType == 1 && parent != this.container) {
+                var idx = $(parent.parentNode).children(parent.tagName).index(parent);
+                if (path.length > 0)
+                    path = '> ' + path;
+                path = parent.tagName.toLowerCase() + ':eq(' + idx + ')' + path;
                 parent = parent.parentNode;
             }
-            return { id: id, position: position, start: start, end: end, text: text, node: node };
+            return path;
         },
         
         /**
@@ -106,8 +136,9 @@ eXist.util.Select = (function () {
          *
          * + start: start offset of the selection within the enclosing element.
          * + end: end offset of the selection.
-         * + position: the position of the selected node within the parent element.
-         * + node: the anchor node which contains the entire selection.
+         * + position: the position of the selected child node within the enclosing element.
+         * + selector: a jQuery selector to select the enclosing element, relative to the container.
+         * Pass this to $() to find the element within the HTML document.
          * + id: the id of the closest ancestor node which has an id attribute.
          */
         getSelectedText: function() {
@@ -185,14 +216,19 @@ eXist.util.Select = (function () {
             }
             
             var obj = this.$findParent(node, start, end);
-            $.log("start: %i end: %i position: %s id: %s node: %o", obj.start, obj.end, obj.position, obj.id, node);
+            $.log("start: %i end: %i position: %s id: %s node: %o, selector: %s", obj.start, obj.end, 
+                obj.position, obj.id, node, obj.selector);
             return obj;
         },
         
+        /**
+         * Return the node which contains the selection.
+         */
         getAnchorNode: function () {
             var selection = this.getSelectedText();
             if (selection) {
-                return selection.node;
+                var anchor = $(selection.selector, this.container).contents().eq(selection.position);
+                return anchor ? anchor[0] : null;
             }
             return null;
         }
@@ -200,3 +236,30 @@ eXist.util.Select = (function () {
     
     return Constr;
 }());
+
+/**
+ * jQuery plugin "selection". Wraps around eXist.util.Select.
+ */
+(function($) {
+    methods = {
+        init: function (options) {
+            return this.each(function () {
+                $(this).data("eXist.util.Select", new eXist.util.Select(this, options));
+            });
+        },
+        
+        getAnchorNode: function () {
+            var select = $(this).data("eXist.util.Select");
+            return select.getAnchorNode();
+        }
+    };
+    $.fn.selection = function (method) {
+        if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            alert('Method "' + method + '" not found!');
+        }
+    };
+})(jQuery);
