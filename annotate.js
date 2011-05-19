@@ -375,16 +375,3 @@ function enableTab(id) {
     });
     $('#' + id).css('display', '');
 }
-
-/* Debug and logging functions */
-(function($) {
-    $.log = function() {
-        if(window.console && window.console.log) {
-            console.log.apply(window.console,arguments)
-        }
-    };
-    $.fn.log = function() {
-        $.log(this);
-        return this
-    }
-})(jQuery);

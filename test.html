@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+        <title>Encyclopedia Database</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <script type="text/javascript" src="libs/scripts/jquery/jquery-1.4.2.min.js"/>
+        <script type="text/javascript" src="scripts/selection.js"/>
+    </head>
+    <body>
+        <div id="content">
+            <div class="chapter">
+                <h1>nature, concept of</h1>
+                <p class="block"> The basic, etymological meaning of the Japanese word <span class="italic">shine</span>, which is used to translate the English word "nature," is the
+                power of spontaneous self-development and what results from that power. The Chinese characters for the Japanese term <span class="italic">shine</span>
+                literally mean "from itself thus it is." It expresses a mode of being rather than the existence or "nature" of objects in the natural order. </p>
+                <p class="block"> The term <span class="italic">shine</span>, if understood as a general expression encompassing heaven and earth, including mountains, water, animals,
+                and plants, cannot be found in <a class="language name" href="http://dbpedia.org/page/Classical_Japanese_language" target="_new" rel="Classical_Japanese_language">ancient Japanese</a>. This was not
+                due to any lack of a capacity for abstract thought on the part of the <a class="people name" href="http://dbpedia.org/page/Japanese_people" target="_new" rel="Japanese_people">Japanese
+                  people </a> in ancient times, but because their chief concern was to recognize each and every phenomenon as a manifestation of the <a class="institution name" href="http://dbpedia.org/page/Kami" target="_new" rel="Kami">KAMI (god or gods)</a> behind it. It was hard for them to think of the ever-flowing wind
+                and the immovable mountains as all belonging to the same general classification of nature. It is safe to say that the "articulated" thought process
+                of the <a class="people name" href="http://dbpedia.org/page/Japanese_people" target="_new" rel="Japanese_people">Japanese</a> (which is reflected in their polytheism) tied up with their
+                aesthetic sensibility to separate the universe into its elements and, consequently, to forestall simplified generalizations about it. If we insist,
+                however, on finding generic terms for nature in the ancient literature, we can offer comprehensive expressions like <span class="italic">ametsuchi</span>
+                (heaven and earth) and <span class="italic">ikitoshi ikeromono</span> (living things). </p>
+            </div>
+        </div>
+        <div id="output"/>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#content").selection({
+                idOnly: true,
+                ignore: ".ref,.annotation",
+                onSelect: function(pageX, pageY) {
+                    var selection = this.getSelectedText();
+                    $("#output").html(
+                        "start: " + selection.start + "<br/>" +
+                        "end: " + selection.end + "<br/>" +
+                        "position: " + selection.position + "<br/>" +
+                        "text: " + selection.text + "<br/>" +
+                        "selector: " + selection.selector
+                    );
+                }
+            });
+        });
+        </script>
+    </body>
+</html>
