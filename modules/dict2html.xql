@@ -6,8 +6,10 @@ module namespace dict="http://exist-db.org/xquery/dict";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace atom="http://www.w3.org/2005/Atom";
 
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+
 declare function dict:comments($root as node()?, $docURI as xs:string) {
-    let $locations := //atom:feed/exist:location[@doc = $docURI]
+    let $locations := collection($config:app-root)//atom:feed/exist:location[@doc = $docURI]
     for $location in $locations
     let $target := util:eval(concat("root($root)/", $location/exist:xpath))
     return
@@ -16,7 +18,7 @@ declare function dict:comments($root as node()?, $docURI as xs:string) {
 
 declare function dict:find-comment($document-uri as xs:string, $node as node()) {
     let $log := util:log("DEBUG", ("Text: ", $node))
-    for $location in //atom:feed/exist:location[@doc = $document-uri]
+    for $location in collection($config:app-root)//atom:feed/exist:location[@doc = $document-uri]
     let $target := util:eval(concat("root($node)/", $location/exist:xpath))
     let $log := util:log("DEBUG", ("Target: ", $target))
     return

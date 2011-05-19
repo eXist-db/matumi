@@ -6,6 +6,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare namespace rdfs="http://www.w3.org/2000/01/rdf-schema#";
 
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace func="http://exist-db.org/encyclopedia/functions" at "func.xql";
 import module namespace kwic="http://exist-db.org/xquery/kwic";
 import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
@@ -139,7 +140,7 @@ declare function search:facets($root as element()*) {
 
 declare function search:search() {
     let $xpath := search:query()
-    let $context := collection("/db/encyclopedia")
+    let $context := collection($config:app-root)
     let $results := search:apply-facets(util:eval($xpath), $search:FACETS)
     let $facets := search:facets($results/ancestor-or-self::tei:p) 
     let $rows := 

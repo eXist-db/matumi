@@ -6,13 +6,13 @@ xquery version "1.0";
 declare namespace anno="http://exist-db.org/xquery/annotate";
 declare namespace atom="http://www.w3.org/2005/Atom";
 
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 
 import module namespace h2t="http://exist-db.org/xquery/html2tei" at "html2tei.xql";
 
 import module namespace xutil="http://exist-db.org/xquery/xpath-util" at "path.xql";
-
-declare variable $anno:COLLECTION := "/db/encyclopedia";
     
 declare variable $anno:NOTES_TMPL :=
     <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -39,7 +39,7 @@ declare variable $anno:NOTES_TMPL :=
 declare function anno:annotations($resource as xs:string, $source as element()) {
     let $ref := concat($resource, '#', util:node-id($source))
     let $location := xutil:get-location($source)
-    let $feed := //atom:feed[exist:location[@doc = document-uri($source)][exist:xpath = $location/exist:xpath]
+    let $feed := collection($config:app-root)//atom:feed[exist:location[@doc = document-uri($source)][exist:xpath = $location/exist:xpath]
         [@start = $location/@start][@length = $location/@length]]
     return
         if ($feed) then
@@ -55,7 +55,7 @@ declare function anno:annotations($resource as xs:string, $source as element()) 
                     {$location}
                 </feed>
             let $path := 
-                xdb:store($anno:COLLECTION, concat($uuid, ".atom"), $feedDoc, "text/xml")
+                xdb:store($config:app-root, concat($uuid, ".atom"), $feedDoc, "text/xml")
             return
                 doc($path)//atom:feed
 };
@@ -91,7 +91,6 @@ declare function anno:tag($source as element()) {
     let $child := xs:int(request:get-parameter("child", 0))
     let $node := $source/node()[$child + 1]
     let $updates := anno:insert-tag($node, $start, $end)
-    let $log := util:log("DEBUG", ("Update: ", $updates))
     return
         update replace $source with 
             element { node-name($source) } {
@@ -149,7 +148,7 @@ declare function anno:update($id as xs:string) {
     let $note := anno:parse-note()
     (: let $tei := h2t:transform($note) :)
     let $content := $note//BODY/*
-    let $feed := collection($anno:COLLECTION)/atom:feed[atom:id = $id]
+    let $feed := collection($config:app-root)/atom:feed[atom:id = $id]
     return (
         update insert
             <entry xmlns="http://www.w3.org/2005/Atom">
@@ -185,4 +184,3 @@ return
             anno:update-tag($doc, $id)
         else
             ()
-        (: error(xs:QName("anno:not-found"), concat("resource not found: ", $resource)) :)
