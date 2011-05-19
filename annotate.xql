@@ -70,13 +70,11 @@ declare function anno:html() {
 };
 
 declare function anno:page() {
-    let $log := util:log("DEBUG", ("DATA: ", $anno:DATA))
-    return
     <html xmlns:jquery="http://exist-db.org/xquery/jquery">
         <head>
             <jquery:header base="../scripts/jquery" cssbase="../scripts/jquery/css"/>
-            <script type="text/javascript" src="wymeditor/jquery.wymeditor.min.js"></script> 
-            <script type="text/javascript" src="notes.js"></script>
+            <script type="text/javascript" src="resources/scripts/wymeditor/jquery.wymeditor.min.js"></script> 
+            <script type="text/javascript" src="resources/scripts/notes.js"></script>
             <link rel="stylesheet" type="text/css" href="../scripts/jquery/css/smoothness/jquery.ui.all.css"/>
             <link type="text/css" href="style.css" rel="stylesheet"></link>
         </head>
