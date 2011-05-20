@@ -45,9 +45,12 @@ else if ($exist:path = "/") then
         </dispatch>
     else
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="modules/view.xql">
-                <clear-attribute name="xquery.attribute"/>
-             </forward>
+            <forward url="index.html"/>
+            <view>
+                <forward url="modules/view.xql">
+                    <clear-attribute name="xquery.attribute"/>
+                 </forward>
+            </view>
          </dispatch>
          
 (: paths starting with /libs/ will be loaded from the webapp directory on the file system :)

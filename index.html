@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:jquery="http://exist-db.org/xquery/jquery">
+    <head>
+        <title>Matumi</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <jquery:header base="libs/scripts/jquery" cssbase="libs/scripts/jquery/css"/>
+        <script type="text/javascript" src="resources/scripts/jquery.tools.min.js"/>
+        <script type="text/javascript" src="resources/scripts/wymeditor/jquery.wymeditor.min.js"/>
+        <script type="text/javascript" src="resources/scripts/selection.js"/>
+        <script type="text/javascript" src="resources/scripts/annotate.js"/>
+        <link type="text/css" href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="search-panel" class="panel">
+            <form id="search-form" name="search" method="GET">
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <jquery:select name="field">
+                                    <jquery:option value="Lemma"/>
+                                    <jquery:option value="Term"/>
+                                    <jquery:option value="Name"/>
+                                    <jquery:option value="Text"/>
+                                    <jquery:option value="Key"/>
+                                </jquery:select>
+                            </td>
+                            <td>
+                                <jquery:input name="q" size="50">
+                                    <jquery:autocomplete url="suggest.xql" minLength="1" width="300" multiple="false" matchContains="false" paramsCallback="suggestCallback"/>
+                                </jquery:input>
+                                <button type="reset">Clear</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit">Query</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+            <div id="search-results">
+                <p id="navbar">Query Results</p>
+            </div>
+        </div>
+        <div id="document-view">
+            <div id="facets"/>
+            <div id="document-body"/>
+        </div>
+        <div id="inline-toolbar">
+            <button>
+                <a id="new-comment" title="Add comment on selected text">
+                    <img src="images/comment_add.png" alt="Comment"/>
+                </a>
+            </button>
+        </div>
+        <div id="error-message">
+            <table width="100%">
+                <tr>
+                    <td width="20%" vertical-align="center" class="ui-icon ui-icon-circle-check"/>
+                    <td>
+                        <span id="error-message-text"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="dbpedia-tooltip" class="tooltip">
+            <h4>Tooltip</h4>
+            <a href="#" target="_new">
+                <button>DBpedia</button>
+            </a>
+            <a href="#" class="key-search">
+                <button>Search</button>
+            </a>
+        </div>
+    </body>
+</html>

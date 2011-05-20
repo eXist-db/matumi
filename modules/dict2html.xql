@@ -1,5 +1,5 @@
 (:~
-    Generates the main HTML page and handles the transformation of TEI markup to HTML.
+    Handles the transformation of TEI markup to HTML.
 :)
 module namespace dict="http://exist-db.org/xquery/dict";
 
@@ -220,85 +220,7 @@ declare function dict:entries($root as node()?) {
 };
 
 declare function dict:transform($root as node()?) {
-    let $ajax := request:get-parameter('ajax', ())
-    return
-        if ($ajax) then
-            <div>
-                {dict:entries($root)}
-            </div>
-        else
-            <html xmlns:jquery="http://exist-db.org/xquery/jquery">
-                <head>
-                    <title>Encyclopedia Database</title>
-                    <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
-                    <jquery:header base="libs/scripts/jquery" cssbase="libs/scripts/jquery/css"/>
-                    <script type="text/javascript" src="resources/scripts/jquery.tools.min.js"></script>
-                    <script type="text/javascript" src="resources/scripts/wymeditor/jquery.wymeditor.min.js"></script>
-                    <script type="text/javascript" src="resources/scripts/selection.js"></script>
-                    <script type="text/javascript" src="resources/scripts/annotate.js"></script>
-                    <link type="text/css" href="style.css" rel="stylesheet"></link>
-                </head>
-                <body>
-                    <div id="search-panel" class="panel">
-                        <form id="search-form" name="search" method="GET">
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <jquery:select name="field">
-                                                <jquery:option value="Lemma"/>
-                                                <jquery:option value="Term"/>
-                                                <jquery:option value="Name"/>
-                                                <jquery:option value="Text"/>
-                                                <jquery:option value="Key"/>
-                                            </jquery:select>
-                                        </td>
-                                        <td>
-                                            <jquery:input name="q" size="50">
-                                                <jquery:autocomplete url="suggest.xql"
-                                                    minLength="1"
-                                                    width="300" multiple="false"
-                                                    matchContains="false"
-                                                    paramsCallback="suggestCallback">
-                                                </jquery:autocomplete>
-                                            </jquery:input>
-                                            <button type="reset">Clear</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2"><button type="submit">Query</button></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </form>
-                        <div id="search-results">
-                            <p id="navbar">Query Results</p>
-                        </div>
-                    </div>
-                    <div id="document-view">
-                        <div id="facets"></div>
-                        <div id="document-body"></div>
-                    </div>
-                    <div id="inline-toolbar">
-                        <button>
-                            <a id="new-comment" title="Add comment on selected text">
-                                <img src="images/comment_add.png" alt="Comment"/>
-                            </a>
-                        </button>
-                    </div>
-                    <div id="error-message">
-                        <table width="100%">
-                            <tr>
-                                <td width="20%" vertical-align="center" class="ui-icon ui-icon-circle-check"></td>
-                                <td><span id="error-message-text"></span></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div id="dbpedia-tooltip" class="tooltip">
-                        <h4>Tooltip</h4>
-                        <a href="#" target="_new"><button>DBpedia</button></a>
-                        <a href="#" class="key-search"><button>Search</button></a>
-                    </div>
-                </body>
-            </html>
+    <div>
+        {dict:entries($root)}
+    </div>
 };

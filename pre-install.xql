@@ -4,6 +4,7 @@ import module namespace xdb="http://exist-db.org/xquery/xmldb";
 
 declare variable $home external;
 declare variable $dir external;
+declare variable $target external;
 
 declare function local:mkcol-recursive($collection, $components) {
     if (exists($components)) then
@@ -27,5 +28,5 @@ if (xdb:exists-user("editor")) then ()
 else xdb:create-user("editor", "editor", "biblio.users", ()),
 
 util:log("INFO", ("Loading collection configuration ...")),
-local:mkcol("/db/system/config", "db/encyclopedia"),
-xdb:store-files-from-pattern("/system/config/db/encyclopedia", $dir, "*.xconf")
+local:mkcol("/db/system/config", $target),
+xdb:store-files-from-pattern(concat("/db/system/config/", $target), $dir, "*.xconf")

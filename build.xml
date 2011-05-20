@@ -4,7 +4,7 @@
 
 	<target name="xar">
 		<mkdir dir="${build.dir}"/>
-		<zip basedir="." destfile="${build.dir}/encyclopedia-0.1.xar" excludes="${build.dir}/*">
+		<zip basedir="." destfile="${build.dir}/matumi-0.1.xar" excludes="${build.dir}/*">
 		</zip>
 	</target>
 </project>

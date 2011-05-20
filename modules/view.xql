@@ -14,8 +14,6 @@ import module namespace jquery="http://exist-db.org/xquery/jquery" at "resource:
 
 declare option exist:serialize "method=xhtml media-type=text/html add-exist-id=all indent=no omit-xml-declaration=yes";
 
-declare variable $anno:COLLECTION := "/db/encyclopedia";
-
 let $resource := request:get-parameter("doc", ())
 let $query := request:get-parameter("q", ())
 let $context := doc($resource)
@@ -26,6 +24,13 @@ let $root :=
             $result/ancestor-or-self::tei:TEI
     else
         $context
+let $ajax := request:get-parameter('ajax', ())
 return
-    jquery:process(dict:transform($root[1]))
-    (: jquery:process-templates(dict:transform(util:expand($root, "add-exist-id=all indent=no"))) :)
+    (: If called from javascript, process the query result :)
+    if ($ajax) then
+        jquery:process(dict:transform($root[1]))
+    (: else: just display the html page :)
+    else
+        let $content := request:get-data()
+        return
+            jquery:process($content)

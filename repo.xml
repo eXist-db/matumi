@@ -5,11 +5,12 @@
     <repo:website>http://exist-db.org</repo:website>
     <repo:license>GNU-LGPL</repo:license>
     <repo:copyright>true</repo:copyright>
-    <repo:description>Browsing Multi-Linugal Encyclopedias</repo:description>
+    <repo:description>Matumi Multi-Linugal Encyclopedias</repo:description>
     <repo:type>application</repo:type>
-    <repo:target>/db/encyclopedia</repo:target>
+    <repo:target>/db/matumi</repo:target>
     <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
     <repo:status>stable</repo:status>
     <repo:prepare>pre-install.xql</repo:prepare>
-    <repo:deployed>2011-05-19T19:42:58.267+02:00</repo:deployed>
+    2011-05-19T19:42:58.267+02:00
+<repo:deployed>2011-05-20T11:23:11.931+02:00</repo:deployed>
 </repo:meta>
