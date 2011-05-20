@@ -1,6 +1,13 @@
 xquery version "1.0";
 
+import module namespace theme="http:/exist-db.org/xquery/matumi/theme" at "modules/theme.xqm";
+
 declare variable $local:CREDENTIALS := ("admin", "");
+
+declare variable $exist:resource external;
+declare variable $exist:path external;
+declare variable $exist:root external;
+declare variable $exist:prefix external;
 
 if ($exist:resource eq 'search.xql') then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -45,7 +52,7 @@ else if ($exist:path = "/") then
         </dispatch>
     else
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="index.html"/>
+            <forward url="{theme:resolve($exist:prefix, $exist:root, 'index.html')}"/>
             <view>
                 <forward url="modules/view.xql">
                     <clear-attribute name="xquery.attribute"/>
@@ -58,7 +65,17 @@ else if (starts-with($exist:path, "/libs/")) then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="/{substring-after($exist:path, 'libs/')}" absolute="yes"/>
     </dispatch>
-    
+
+else if (starts-with($exist:path, "/theme")) then
+let $path := theme:resolve($exist:prefix, $exist:root, substring-after($exist:path, "/theme"))
+let $themePath := replace($path, "^(.*)/[^/]+$", "$1")
+return
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="{$path}">
+            <set-attribute name="theme-collection" value="{theme:get-path()}"/>
+        </forward>
+    </dispatch>
+
 else
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>,

@@ -99,7 +99,7 @@ declare function dict:process-comment($text as xs:string, $locations as element(
                 $before,
                 <a href="annotate.xql?id={$location/../atom:id}&amp;mode=inline" target="_new"
                     class="annotation" title="{$location/exist:text}">
-                    <img src="images/comment_add.png" height="16"/>
+                    <img src="theme/images/comment_add.png" height="16"/>
                 </a>,
                 dict:process-comment($text, subsequence($locations, 2), $location/@start + $location/@length)
             )

@@ -25,6 +25,9 @@ declare variable $config:app-root :=
         substring-before($modulePath, "/modules")
 ;
 
+declare variable $config:themes := concat($config:app-root, "/themes");
+declare variable $config:theme-config := concat($config:themes, "/configuration.xml");
+
 (:~
  : Returns the repo.xml descriptor for the current application.
  :)

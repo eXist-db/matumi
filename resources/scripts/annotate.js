@@ -117,7 +117,7 @@ function tag() {
 function search(ev) {
 	if (ev)
 		ev.preventDefault();
-    $('#search-results').css("display", "").html("<img class='indicator' src='images/ajax-loader.gif'/>");
+    $('#search-results').css("display", "").html("<img class='indicator' src='theme/images/ajax-loader.gif'/>");
     var params = $('#search-form').serialize();
     $("#facets input").each(function () {
     	if (this.checked)

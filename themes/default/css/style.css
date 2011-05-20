@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, .block {
     width:180px;
     height: 105px;
     padding: 10px 0px;
-    background: transparent url(images/white_arrow_big.png) no-repeat;
+    background: transparent url(../images/white_arrow_big.png) no-repeat;
     text-align: center;
     z-index: 3;
 }
