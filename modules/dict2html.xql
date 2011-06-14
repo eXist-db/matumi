@@ -198,6 +198,7 @@ declare function dict:process-entries($documentURI as xs:string, $entry as eleme
     dict:process($documentURI, $entry/tei:note, $comments)
 };
 
+
 declare function dict:process-div($div as element(tei:div), $comments as node()*) {
     <p id="{$div/@exist:id}">
         <span class="orth">{dict:process($documentURI, $div/tei:head, $comments)}</span>
@@ -217,6 +218,14 @@ declare function dict:entries($root as node()?) {
             for $entry in $entries return dict:process-entries($documentURI, $entry, $comments)
         else
             for $entry in $expanded return dict:process($documentURI, $entry, $comments)
+};
+
+declare function dict:entry($entry as node()?) {
+    let $documentURI := document-uri(root($entry))
+    let $expanded := util:expand($entry, "add-exist-id=all")
+    let $comments := dict:comments($expanded, $documentURI)
+    let $log := util:log("DEBUG", ("Comments: ", $comments))
+    return dict:process($documentURI, $entry, $comments)       
 };
 
 declare function dict:transform($root as node()?) {

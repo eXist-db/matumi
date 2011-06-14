@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+Cannot save the file. Failed to invoke method storeBinary in class org.exist.xmlrpc.RpcConnection: java.io.IOException: Cannot move file D:\eXist\trunk\eXist\webapp\WEB-INF\data\fs\db\matumi\modules\dict2html.xql for delete journal to D:\eXist\trunk\eXist\webapp\WEB-INF\data\fs.journal\txn.383\db\matumi\modules\dict2html.xql
