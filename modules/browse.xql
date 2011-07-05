@@ -28,6 +28,13 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 declare function browse:roots( $nodes as node()*){    
     if( exists($nodes) ) then (
         $nodes/ancestor-or-self::tei:TEI
+    ) else if( exists(request:get-parameter("uri", ()  )) )then (
+       for $uri in distinct-values(request:get-parameter("uri", () ))
+       return if( doc-available($uri)) then
+                   doc($uri)//tei:TEI    
+              else <error uri="{$uri}">missing book:{ $uri }</error>
+                 
+              
     )else (
        collection(concat($config:app-root, '/data'))//tei:TEI      
     )    
@@ -35,7 +42,8 @@ declare function browse:roots( $nodes as node()*){
 
 (: the books that are contain $nodes - names, titles :)
 declare function browse:booksOf( $nodes as node()*){
-     $nodes/ancestor-or-self::tei:TEI//teiHeader/fileDesc
+        
+    $nodes/ancestor-or-self::tei:TEI//teiHeader/fileDesc
 };
 
 (: entries containing names or titles :)
@@ -69,19 +77,20 @@ declare function browse:name-types_enumerate( $nodes as node()*){
         for $t in $types 
         let $count := count( $nodes//name/@type[ . = $t ] )
         return
-            element type {
-               attribute {'count'}{ $count },
-               attribute {'value'}{ $t },
+            element {'name'}{
+               (: attribute {'count'}{ $count },  :)
+               attribute {'name-value'}{ $t },
                concat ($t, ' (', $count, ')')
             }
+    
 };
 
 
-
-declare function browse:node-titles( $nodes as element()*, $section-title as xs:string ){
+(: title elements will contains the specific URL parameters for each axon   :)
+declare function browse:node-titles( $nodes as element()*, $level as node(), $step as xs:int ){
     element titles {
         attribute {'count'}{ count($nodes)},
-        attribute {'title'}{ $section-title },
+        attribute {'title'}{ $level/@title },
         typeswitch ($nodes[1] )
           case element(tei:TEI) return
              for $title in $nodes//tei:titleStmt  
@@ -101,7 +110,7 @@ declare function browse:node-titles( $nodes as element()*, $section-title as xs:
              return 
                 element title { 
                      attribute uri { document-uri( root($title)) },   
-                     attribute node-id { util:node-id($title) },
+                     attribute entry-node-id { util:node-id($title) },
                    $title 
                 }
 
@@ -113,13 +122,18 @@ declare function browse:node-titles( $nodes as element()*, $section-title as xs:
                 order by $t
                 return                    
                     element title {
-                       attribute {'value'}{$t},
+(:                       attribute {'uri'} { document-uri( root($t)) },   
+                       attribute {'name-node-id'} { util:node-id($t) },      
+:)                       
+                       attribute {'name'}{$t},
                        attribute {'count'}{$count},
                        concat( $t, ' (', $count, ')' )
                     }
-    
+                    
+  
+                    
           default return
-             <title>no-tiles</title>
+             <title>no-titles</title>
     }
 };
 
@@ -197,19 +211,44 @@ declare function browse:nameValue( $nodes as item()* ) as xs:string*{
    concat( local-name($n), '=', string($n))
 };
 
+declare function browse:link-param( $name as xs:string, $values as xs:string* ) as xs:string?{
+   if( exists($values) ) then    
+       string-join((
+         for $v in $values return
+         concat( $name, '=', $v )
+        ), '&amp;') 
+   else ()
+};
+
+
+declare function browse:link-href-base( ) as xs:string?{
+    string-join((
+       browse:link-param('L1', $browse:L1),
+       browse:link-param('L2', $browse:L2),
+       browse:link-param('L3', $browse:L3),
+       browse:link-param('uri',  for $uri in distinct-values(request:get-parameter("uri", () )) return $uri )
+    ),'&amp;')
+};
+
+declare function browse:link-href-param( $param-names as xs:string* )as xs:string?{
+    string-join((
+       for $p in $param-names return
+          browse:link-param($p,  request:get-parameter($p, ()  ) )
+    ),'&amp;')
+};
+
+
 
 declare function browse:link( $title as element() ) as element(a){
   element a {
      attribute{'href'}{
         concat('?',
             string-join((
-               if( string-length($browse:L1) > 0 ) then concat('L1=', $browse:L1) else (),
-               if( string-length( $browse:L2) > 0 ) then concat('L2=', $browse:L2) else (),
-               if( string-length( $browse:L3) > 0 ) then concat('L3=', $browse:L3) else ()
-               , browse:nameValue( $title/@* )               
+               browse:link-href-base(),
+              (: browse:link-href-param(('v1', 'v2', 'v3')), :)              
+               browse:nameValue( $title/@* )               
             ),'&amp;')
-        )
-     
+        )     
      },
      attribute{'title'}{},
      string( $title )  
@@ -217,7 +256,7 @@ declare function browse:link( $title as element() ) as element(a){
 
 };
 
-declare function browse:section-as-ul( $section as element(titles), $id as xs:string ) {
+declare function browse:section-as-ul( $section as element(titles), $id as node() ) {
     <h4>{ string($section/@title) }</h4>,
     <ul id="{ $id }">{ 
         for $t in $section/title return 
@@ -226,36 +265,58 @@ declare function browse:section-as-ul( $section as element(titles), $id as xs:st
 };
 
 
+declare variable $browse:levels := (
+    <level value-names="book" title="Books">books</level>,
+    <level value-names="entry" title="Entries">entries</level>,
+    <level value-names="name" title="Names">names</level>,
+    <level value-names="title" title="Titles" optional="yes">titles</level>
+);
 
-declare variable $browse:L1 := request:get-parameter("L1", 'books'  );
-declare variable $browse:L2 := request:get-parameter("L2", 'entries'  );
-declare variable $browse:L3 := request:get-parameter("L3", ()  );
+(: TODO: make sure there is no duplicatates of levels where the missing levels are set by the order in $browse:levels :)
+declare variable $browse:L1 := $browse:levels[ . = request:get-parameter("L1", 'books'  )];
+declare variable $browse:L2 := $browse:levels[ . = request:get-parameter("L2", 'entries' )];
+declare variable $browse:L3 := $browse:levels[ . = request:get-parameter("L3", () )];
+declare variable $browse:L4 := $browse:levels[ . = request:get-parameter("L4", () )];
+
 
 
 let $uri := request:get-parameter("uri", () ),
     $node-id := request:get-parameter("node-id", () ),
-    $doc := if( exists($uri)) then  doc($uri) else (),
+(:    $doc := if( exists($uri)) then  doc($uri) else (),
     $node := if( exists($doc) and exists($node-id)) then util:node-by-id($doc, $node-id) else (),
-    
-    $level-1 := request:get-parameter("L1", 'books'  ),
-    $level-2 := request:get-parameter("L2", 'entries' ),
-    $level-3 := request:get-parameter("L3", () ),
-
+:)
 
 (: we need: A. data nodes to extract the lower levels,
             B. List of titles(values) to display for this axon
 :)
     $data-1 := 
-          if(       $browse:L1 = 'books')   then (   browse:roots( () )
-          )else if( $browse:L1 = 'names')   then (   browse:roots( () )//name[@type]
-          )else if( $browse:L1 = 'entries') then (  browse:entriesIn( browse:roots( () ))
+          if(       $browse:L1 = 'books')   then (   
+            browse:roots( () )
+          )else if( $browse:L1 = 'names')   then ( 
+            (: todo: add node-id to select on the corresponding node :)          
+            browse:roots( () )//name[@type]
+          )else if( $browse:L1 = 'entries') then (  
+            let $entry-node-id := request:get-parameter("entry-node-id", () )
+            return
+            browse:entriesIn(
+                if( false () and string-length( $entry-node-id  ) > 3 ) then
+                   util:node-by-id( doc($uri), $entry-node-id)
+                else 
+                    browse:roots( () ) 
+            )
+            
+ 
+            
+            
           )else(),
+    
     
 
     $data-2 := 
         if( $browse:L1 = 'books')   then (  
             if( $browse:L2 = 'names') then (
-                 browse:name-types_enumerate($data-1)
+                 $data-1//name[@type]
+                 (: browse:name-types_enumerate($data-1) :)
             )else if( $browse:L2 = 'entries') then (
                  browse:entriesIn($data-1)
             )else ()
@@ -269,15 +330,19 @@ let $uri := request:get-parameter("uri", () ),
 
         )else if( $browse:L1 = 'entries') then ( 
             if( $browse:L2 = 'book') then (
-                 browse:booksOf($data-1)
-            )else if( $browse:L2 = 'names') then (
-                 browse:name-types_enumerate($data-1)
+                
+                 root($data-1)
+            )else if( $browse:L2 = 'names') then (                
+                   $data-1//name[@type]
+                 (: browse:name-types_enumerate($data-1) :)
             )else ()
         )else(),
 
 
-     $titles-1 := browse:node-titles($data-1, $browse:L1),
-     $titles-2 := browse:node-titles($data-2, $browse:L2)
+     $titles-1 := browse:node-titles($data-1, $browse:L1, 1),
+     $titles-2 := browse:node-titles($data-2, $browse:L2, 2),
+     $titles-3 := ()
+ 
      
      
     
@@ -286,12 +351,12 @@ return <html >
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <head>
       <title> Browse:{
-        if( exists($level-1)) then (
-           $level-1,
-           if( exists($level-2)) then (
-              concat('/', $level-2),
-               if( exists($level-3)) then (
-                   concat('/', $level-3)
+        if( exists($browse:L1)) then (
+           string($browse:L1),
+           if( exists($browse:L2)) then (
+              concat('/', $browse:L2),
+               if( exists($browse:L3)) then (
+                   concat('/', $browse:L3)
                )else()
            )else()        
         )else ()
@@ -305,15 +370,40 @@ return <html >
       </script>
       
     </head>
-    <body>{
+    <body>
+      <table width="500"><tr>
+        <td>
+            <a href="?L1=books&amp;L2=entries">Books &gt; Entries</a><br/>
+            <a href="?L1=books&amp;L2=names">Books &gt; Names</a><br/>
+        </td>
+        <td>
+              <a href="?L1=entries&amp;L2=names">Entries &gt; Names</a><br/>
+              <a href="?L1=entries&amp;L2=books">Entries &gt; Books</a><br/>
+        </td>
+        <td>
+              <a href="?L2=entries&amp;L1=names">Names &gt; Entries </a><br/>
+              <a href="?L1=names&amp;L2=books">Names &gt; Books</a><br/>
+        </td>
+      </tr></table>
+
+
       <table border="1" width="600" style="height:300px">
         <tbody>
           <tr valign="top">
-            <td>{  browse:section-as-ul( $titles-1, $browse:L1 )}</td>
-            <td>{  browse:section-as-ul( $titles-2, $browse:L2 )}</td>
+            <td width="30%">
+               <a href="?L1={ request:get-parameter("L1",())}">All</a>
+               { browse:section-as-ul( $titles-1, $browse:L1 )  }
+            </td>
+            <td width="30%">
+              <a href="?L1={ request:get-parameter("L1",())}&amp;L2={ request:get-parameter("L2",()) }">All</a>
+              {  browse:section-as-ul( $titles-2, $browse:L2 )}              
+            </td>
+            <td width="30%">
+            </td>
           </tr>
         </tbody>
      </table>
-    }</body>    
+    
+    </body>    
 </html>
     
