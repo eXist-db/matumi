@@ -1,6 +1,4 @@
-xquery version "1.0";
-
-declare namespace search="http://exist-db.org/xquery/search";
+module namespace search="http://exist-db.org/xquery/search";
 
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
@@ -46,13 +44,22 @@ declare function search:apply-facets($input as element()*, $facets as xs:string*
         search:apply-facets($input[ancestor-or-self::tei:p//*[@key = $facets[1]]], subsequence($facets, 2))
 };
 
+declare function search:query-to-session() {
+    let $query :=
+        <query>
+            <field name="{request:get-parameter('field', ())}">{request:get-parameter("q", ())}</field>
+        </query>
+    return
+        (session:create(), session:set-attribute("matumi:query", $query))
+};
+
 declare function search:query() as xs:string {
     let $field := request:get-parameter("field", ())
     let $queryStr := request:get-parameter("q", ())
     let $expr := $search:FIELDS/field[@name = $field]
     let $expandedExpr := replace($expr, "\$q", $queryStr)
     return
-        $expandedExpr
+        ($expandedExpr, search:query-to-session())
 };
 
 declare function search:filter($node as node(), $mode as xs:string) as item()? {
@@ -67,7 +74,7 @@ declare function search:display-result($node as element(), $xpath as xs:string) 
         let $callback := util:function(xs:QName("search:filter"), 2)
         let $config :=
             <config width="40" table="yes"
-                link="?doc={document-uri(root($node))}&amp;qu={$xpath}#N{util:node-id($node)}"/>
+                link="entry.html?doc={document-uri(root($node))}&amp;qu={$xpath}&amp;node={util:node-id($node)}"/>
         let $block := $node/ancestor-or-self::tei:p
         return
             if ($block) then
@@ -80,12 +87,12 @@ declare function search:display-result($node as element(), $xpath as xs:string) 
             typeswitch ($node)
                 case element(tei:form) return
                     <tr>
-                        <td><a href="?doc={$documentURI}&amp;qu={$xpath}#N{util:node-id($node)}">{$node/tei:orth/string()}</a></td>
+                        <td><a href="entry.html?doc={$documentURI}&amp;qu={$xpath}&amp;node={util:node-id($node)}">{$node/tei:orth/string()}</a></td>
                         <td>{dict:process($documentURI, $node/../tei:sense[1]/tei:def, ())}</td>
                     </tr>
                 case element(tei:head) return
                     <tr>
-                        <td><a href="?doc={$documentURI}&amp;qu={$xpath}#N{util:node-id($node)}">{$node/string()}</a></td>
+                        <td><a href="entry.html?doc={$documentURI}&amp;qu={$xpath}&amp;node={util:node-id($node)}">{$node/string()}</a></td>
                         <td>{dict:process($documentURI, $node/../tei:div/tei:p[1]/tei:gloss[1], ())}</td>
                     </tr>
                 default return
@@ -142,6 +149,7 @@ declare function search:search() {
     let $xpath := search:query()
     let $context := collection($config:app-root)
     let $results := search:apply-facets(util:eval($xpath), $search:FACETS)
+    let $stored := session:set-attribute("matumi:results", $results)
     let $facets := search:facets($results/ancestor-or-self::tei:p) 
     let $rows := 
         for $result in $results
@@ -150,9 +158,9 @@ declare function search:search() {
             search:display-result($result, $xpath)
     return
         <div>
+            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
             { $facets }
             <div id="results">
-                <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
                 <div id="results-container">
                     <table class="kwic">
                     {
@@ -163,5 +171,3 @@ declare function search:search() {
             </div>
         </div>
 };
-
-search:search()

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="templates:surround?with=page.html&amp;at=content">
+    <form id="search-form" name="search" method="GET">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <select name="field" class="templates:form-control">
+                            <option value="Lemma">Lemma</option>
+                            <option value="Term">Term</option>
+                            <option value="Name">Name</option>
+                            <option value="Text">Text</option>
+                            <option value="Key">Key</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input name="q" size="50" class="templates:form-control"/>
+                        <button type="reset">Clear</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Query</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="matumi:search"/>
+    </form>
+</div>

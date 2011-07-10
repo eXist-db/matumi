@@ -28,6 +28,7 @@ declare variable $config:app-root :=
 declare variable $config:themes := concat($config:app-root, "/themes");
 declare variable $config:theme-config := concat($config:themes, "/configuration.xml");
 
+declare variable $config:data-collection := concat($config:app-root, "/data");
 (:~
  : Returns the repo.xml descriptor for the current application.
  :)

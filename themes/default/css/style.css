@@ -1,31 +1,25 @@
 body {
     margin: 25px 70px;
-    font: 0.75em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;
+    font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;
 }
-table td { font: 0.75em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
+table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 
-#toolbar { margin: 0; padding: 10px 8px; background-color: #FFAD00; }
-#toolbar li { list-style: none; display: inline; }
-#toobar img { border: 0; }
-
-.panel {
+#content {
+    padding: 15px;
+    margin: -2px;
     border: 2px solid #FFAD00;
     border-radius: 15px;
     moz-border-radius: 15px;
-    margin: 0; 
 }
-    
-.panel form { padding: 10px 8px; }
 
-#document-body { 
-    margin: 10px 220px 0 0; 
-    padding: 0 10px; 
-    overflow: auto;
+#results {
+    margin: 10px 220px 0 0;
+    padding: 0 10px;
 }
 
 #facets {
     float: right;
-    width: 260px;
+    width: 210px;
     overflow: auto;
 }
 
@@ -47,17 +41,78 @@ table td { font: 0.75em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
     padding-right: 8px;
 }
 
+.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 15px;
+    height: 30px;
+}
+
+.tabs li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs a:link, .tabs a:visited {
+    display: block;
+    float: left;
+    font: normal 12px "Courier New", Courier, monospace;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    background: #FCEEB1;
+    border: 2px solid #FFAD00;
+    /* box-shadow: 7px 1px 10px #d1cfd1;
+    -moz-box-shadow: 7px 1px 10px #d1cfd1;
+    -webkit-box-shadow: 7px 1px 10px #d1cfd1;*/
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    padding: 6px 20px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.tabs a:link.active, .tabs a:visited.active {
+    background: white;
+    color: #6e6e6e;
+    border-bottom: 2px solid white;
+}
+
+.entry-view td {
+    padding: 4px 8px;
+    margin: 4px 8px;
+    background-color: #FEF8E0;
+}
+
+.entry-view .label {
+    background-color: #FCEEB1;
+    font-size: 125%;
+}
+
+#navbar { background-color: #FFAD00; margin: 0; padding: 4px 8px; font-size: 85%;
+    color: white; }
+
+#toolbar { margin: 0; padding: 10px 8px; background-color: #FFAD00; }
+#toolbar li { list-style: none; display: inline; }
+#toobar img { border: 0; }
+
+.panel {
+    border: 2px solid #FFAD00;
+    border-radius: 15px;
+    moz-border-radius: 15px;
+    margin: 0; 
+}
+    
+.panel form { padding: 10px 8px; }
+
 .dochead {
     color: #BBBBBB;
     font-size: 85%;
 }
 
-#search-results { margin: 0; height: 240px; }
 .indicator { display: block; margin-left: auto; margin-right: auto; }
-#results-container { height: 200px; overflow: auto; }
-
-#navbar { background-color: #FFAD00; margin: 0; padding: 4px 8px; font-size: 85%;
-    color: white; } 
 
 .current-selection { font-size: 85%; margin: 0 8px; padding: 4px 0; }
 .selection { color: #133CAC; }

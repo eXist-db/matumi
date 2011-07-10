@@ -9,7 +9,11 @@ declare variable $exist:path external;
 declare variable $exist:root external;
 declare variable $exist:prefix external;
 
-if ($exist:resource eq 'search.xql') then
+if ($exist:path eq "/") then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <redirect url="entry.html"/>
+    </dispatch>
+else if ($exist:resource eq 'search.xql') then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="modules/search.xql">
          </forward>
@@ -35,7 +39,7 @@ else if ($exist:resource eq 'annotate.xql') then
                 <clear-attribute name="xquery.attribute"/>
              </forward>
          </dispatch>
-else if ($exist:path = "/") then
+else if (ends-with($exist:path, ".html")) then
     if (request:get-parameter("action", ())) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="modules/store.xql">
@@ -52,9 +56,11 @@ else if ($exist:path = "/") then
         </dispatch>
     else
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-            <forward url="{theme:resolve($exist:prefix, $exist:root, 'index.html')}"/>
+            <forward url="{theme:resolve($exist:prefix, $exist:root, $exist:resource)}"/>
             <view>
-                <forward url="modules/view.xql">
+                <forward url="modules/view2.xql">
+                    <set-attribute name="exist:prefix" value="{$exist:prefix}"/>
+                    <set-attribute name="exist:root" value="{$exist:root}"/>
                     <clear-attribute name="xquery.attribute"/>
                  </forward>
             </view>
