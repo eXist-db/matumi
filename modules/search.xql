@@ -190,6 +190,10 @@ declare function search:do-search($xpath as xs:string) {
     )
 };
 
+declare function search:show-facets($result) {
+    search:facets($result/ancestor-or-self::tei:p)
+};
+
 declare function search:search() {
     let $session := session:create()
     let $query := request:get-parameter("q", ())
@@ -199,8 +203,13 @@ declare function search:search() {
             search:do-search($xpath)
         else
             session:get-attribute("matumi:results")
-    let $facets := search:facets($results/ancestor-or-self::tei:p) 
-    let $rows := 
+    return
+        $results
+};
+
+declare function search:show-results($results) {
+    let $xpath := session:get-attribute("matumi:xpath")
+    let $rows :=
         for $result in $results
         order by ft:score($result)
         return
@@ -208,7 +217,6 @@ declare function search:search() {
     return
         <div>
             <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
-            { $facets }
             <div id="results">
                 <div id="results-container">
                     <table class="kwic">

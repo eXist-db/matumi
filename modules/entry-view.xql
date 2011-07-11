@@ -63,7 +63,23 @@ declare function matumi:process-tabs($node as node(), $active as xs:string) {
 };
 
 declare function matumi:search($node as node()*, $params as element(parameters)?, $model as item()*) {
-    <div class="results">{ search:search() }</div>
+    let $results := search:search()
+    return
+        <div class="results">
+        {
+            for $child in $node/node()
+            return
+                templates:process($child, request:get-attribute("$templates:prefixes"), $results)
+        }
+        </div>
+};
+
+declare function matumi:results($node as node()*, $params as element(parameters)?, $model as item()*) {
+    search:show-results($model)
+};
+
+declare function matumi:facets($node as node()*, $params as element(parameters)?, $model as item()*) {
+    search:show-facets($model)
 };
 
 declare function matumi:query-form($node as node()*, $params as element(parameters)?, $model as item()*) {
