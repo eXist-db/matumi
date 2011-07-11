@@ -1,43 +1,16 @@
-(:~
-    Render a document for display
-:)
 xquery version "1.0";
 
-declare namespace anno="http://exist-db.org/xquery/annotate";
-declare namespace tei="http://www.tei-c.org/ns/1.0";
+import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
 
-declare default element namespace "http://www.tei-c.org/ns/1.0";
+declare option exist:serialize "method=html5 media-type=text/html";
 
-import module namespace func="http://exist-db.org/encyclopedia/functions" at "func.xql";
-import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
-import module namespace jquery="http://exist-db.org/xquery/jquery" at "resource:org/exist/xquery/lib/jquery.xql";
+declare variable $modules :=
+    <modules>
+        <module prefix="config" uri="http://exist-db.org/xquery/apps/config" at="config.xql"/>
+        <module prefix="matumi" uri="http://www.asia-europe.uni-heidelberg.de/xquery/matumi" at="entry-view.xql"/>
+    </modules>;
 
-declare option exist:serialize "method=xhtml media-type=text/html add-exist-id=all indent=no omit-xml-declaration=yes";
-
-let $resource := request:get-parameter("doc", '/db/matumi/data/GSE-eng.xml')
-let $query := request:get-parameter("q", ())(:  '$context//tei:p[ft:query(., "lenin")]' :)
-let $context := doc($resource)
-let $root :=
-    if ($query) then
-        let $result := util:eval($query)
-        return
-            $result
-    else
-        $context
-let $ajax := request:get-parameter('ajax', ())
+let $content := request:get-data()
+let $log := util:log("DEBUG", ($content))
 return
-    if( fn:true() ) then 
-        
-        
-        dict:transform($root//div[@type='entry'][3])
-      
-    else
-    
-    (: If called from javascript, process the query result :)
-    if ($ajax) then
-        jquery:process(dict:transform($root[1]))
-    (: else: just display the html page :)
-    else
-        let $content := request:get-data()
-        return
-            jquery:process($content)
+    templates:apply($content, $modules, ())
