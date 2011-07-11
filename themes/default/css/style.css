@@ -13,13 +13,13 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 }
 
 #results {
-    margin: 10px 220px 0 0;
+    margin: 10px 190px 0 0;
     padding: 0 10px;
 }
 
 #facets {
     float: right;
-    width: 210px;
+    width: 180px;
     overflow: auto;
 }
 
@@ -80,6 +80,10 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
     border-bottom: 2px solid white;
 }
 
+.entry-view {
+    margin: 10px 200px 0 0;
+}
+
 .entry-view td {
     padding: 4px 8px;
     margin: 4px 8px;
@@ -91,7 +95,7 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
     font-size: 125%;
 }
 
-#navbar { background-color: #FFAD00; margin: 0; padding: 4px 8px; font-size: 85%;
+#navbar { background-color: #FFAD00; margin: 10px 220px 0 0; padding: 4px 8px; font-size: 85%;
     color: white; }
 
 #toolbar { margin: 0; padding: 10px 8px; background-color: #FFAD00; }

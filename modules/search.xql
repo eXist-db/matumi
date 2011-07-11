@@ -191,7 +191,13 @@ declare function search:do-search($xpath as xs:string) {
 };
 
 declare function search:show-facets($result) {
-    search:facets($result/ancestor-or-self::tei:p)
+    let $context :=
+        if (count($result) eq 1 and $result instance of element(tei:div)) then
+            $result
+        else
+            $result/ancestor-or-self::tei:p
+    return
+        search:facets($context)
 };
 
 declare function search:search() {
@@ -216,7 +222,7 @@ declare function search:show-results($results) {
             search:display-result($result, $xpath)
     return
         <div>
-            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
+            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>,
             <div id="results">
                 <div id="results-container">
                     <table class="kwic">
