@@ -8,7 +8,7 @@ import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql
 import module namespace search="http://exist-db.org/xquery/search" at "search.xql";
 
 declare function matumi:entry($node as node()*, $params as element(parameters)?, $model as item()*) {
-    let $doc := request:get-parameter("doc", "EncBrit.xml")
+    let $doc := request:get-parameter("doc", ())
     let $id := request:get-parameter("id", ())
     return
         if ($id) then
@@ -64,4 +64,8 @@ declare function matumi:process-tabs($node as node(), $active as xs:string) {
 
 declare function matumi:search($node as node()*, $params as element(parameters)?, $model as item()*) {
     <div class="results">{ search:search() }</div>
+};
+
+declare function matumi:query-form($node as node()*, $params as element(parameters)?, $model as item()*) {
+    search:query-form()
 };

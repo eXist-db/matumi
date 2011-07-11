@@ -35,7 +35,16 @@ declare variable $search:CONFIG :=
     <config width="40" table="yes"/>
 ;
 
-declare variable $search:FACETS := request:get-parameter("facet", ());
+declare variable $search:FACETS := 
+    let $query := request:get-parameter("q", ())
+    return
+        if ($query) then
+            let $facet := request:get-parameter("facet", ())
+            return
+                ( session:set-attribute("matumi:facets", $facet), $facet )
+        else
+            session:get-attribute("matumi:facets")
+;
 
 declare function search:apply-facets($input as element()*, $facets as xs:string*) {
     if (empty($facets)) then
@@ -51,6 +60,31 @@ declare function search:query-to-session() {
         </query>
     return
         (session:create(), session:set-attribute("matumi:query", $query))
+};
+
+declare function search:query-form() {
+    let $queryFromSession := session:get-attribute("matumi:query")
+    return
+        <tr>
+            <td>
+                <select name="field">
+                {
+                    let $value := (request:get-parameter("field", ()), $queryFromSession/field/@name)[1]
+                    for $field in $search:FIELDS/field/@name/string()
+                    return
+                        <option>
+                        { if ($field eq $value) then attribute selected { "selected"} else () }
+                        { $field }
+                        </option>
+                }
+                </select>
+            </td>
+            <td>
+                <input name="q" size="50"
+                    value="{(request:get-parameter('q', ()), $queryFromSession/field/string())[1]}"/>
+                <button type="reset">Clear</button>
+            </td>
+        </tr>
 };
 
 declare function search:query() as xs:string {
@@ -145,11 +179,26 @@ declare function search:facets($root as element()*) {
     </div>
 };
 
-declare function search:search() {
-    let $xpath := search:query()
+declare function search:do-search($xpath as xs:string) {
     let $context := collection($config:app-root)
-    let $results := search:apply-facets(util:eval($xpath), $search:FACETS)
-    let $stored := session:set-attribute("matumi:results", $results)
+    let $result :=
+        search:apply-facets(util:eval($xpath), $search:FACETS)
+    return (
+        session:set-attribute("matumi:results", $result),
+        session:set-attribute("matumi:xpath", $xpath),
+        $result
+    )
+};
+
+declare function search:search() {
+    let $session := session:create()
+    let $query := request:get-parameter("q", ())
+    let $xpath := if ($query) then search:query() else session:get-attribute("matumi:xpath")
+    let $results :=
+        if ($query) then
+            search:do-search($xpath)
+        else
+            session:get-attribute("matumi:results")
     let $facets := search:facets($results/ancestor-or-self::tei:p) 
     let $rows := 
         for $result in $results

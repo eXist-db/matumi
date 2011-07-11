@@ -3,21 +3,7 @@
     <form id="search-form" name="search" method="GET">
         <div>
             <table>
-                <tr>
-                    <td>
-                        <select name="field" class="templates:form-control">
-                            <option value="Lemma">Lemma</option>
-                            <option value="Term">Term</option>
-                            <option value="Name">Name</option>
-                            <option value="Text">Text</option>
-                            <option value="Key">Key</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input name="q" size="50" class="templates:form-control"/>
-                        <button type="reset">Clear</button>
-                    </td>
-                </tr>
+                <tr class="matumi:query-form"/>
                 <tr>
                     <td colspan="2">
                         <button type="submit">Query</button>
