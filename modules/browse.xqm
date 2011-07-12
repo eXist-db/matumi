@@ -259,7 +259,7 @@ declare function browse:section-as-ul( $section as element(titles)?, $id as node
                     </li>,
                     for $t in $section/title return 
                     element li { browse:link($t) }
-               }</ul>                
+               }</ul>
             </div>
 		</div>
 	</div>

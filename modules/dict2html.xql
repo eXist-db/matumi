@@ -224,8 +224,7 @@ declare function dict:entry($entry as node()?) {
     let $documentURI := document-uri(root($entry))
     let $expanded := util:expand($entry, "add-exist-id=all")
     let $comments := dict:comments($expanded, $documentURI)
-    let $log := util:log("DEBUG", ("Comments: ", $comments))
-    return dict:process($documentURI, $entry, $comments)       
+    return dict:process($documentURI, $expanded, $comments)       
 };
 
 declare function dict:transform($root as node()?) {

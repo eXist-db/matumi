@@ -43,6 +43,7 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 .facet-links {
     margin-left: 2em;
     display: none;
+    font-size: 85%;
 }
 .facet-links a:link, .facet-links a:visited {
     text-decoration: none;

@@ -11,7 +11,7 @@ declare variable $exist:prefix external;
 
 if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <redirect url="search.html"/>
+        <redirect url="browse.html"/>
     </dispatch>
 else if ($exist:resource eq 'search.xql') then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

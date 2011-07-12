@@ -140,7 +140,7 @@ declare function search:display-result($node as element(), $xpath as xs:string) 
                     ()
 };
 
-declare function search:name-facet($root as element()*, $type as xs:string) {
+declare function search:name-facet($root as element()*, $type as xs:string, $view as xs:string) {
     <div class="facet">
         <h3 class="{$type}">{dict:capitalize-first($type)}</h3>
         <ul>
@@ -154,18 +154,33 @@ declare function search:name-facet($root as element()*, $type as xs:string) {
             for $name in $names order by $name
             return
                 <li>
-                    <input type="checkbox" name="facet" class="facet-check" value="{$name}"
-                        title="Mark to restrict search">
-                        {if (exists(index-of($search:FACETS, $name))) then attribute checked { "checked" } else ()}
-                    </input>
-                    {translate(replace($name, "^.*/([^/]+)", "$1"), "_", " ")}
+                    {
+                        if ($view eq "search") then
+                            <input type="checkbox" name="facet" class="facet-check" value="{$name}"
+                                title="Mark to restrict search">
+                                {if (exists(index-of($search:FACETS, $name))) then attribute checked { "checked" } else ()}
+                            </input>
+                        else
+                            ()
+                    }
+                    {
+                        let $displayName := translate(replace($name, "^.*/([^/]+)", "$1"), "_", " ")
+                        return
+                            if ($view eq "entry") then
+                                <a href="#{util:node-id(($root//tei:name[@key = $name])[1])}"
+                                    title="Click to jump to first occurrence">
+                                    { $displayName }
+                                </a>
+                            else
+                                $displayName
+                    }
                     <span class="facet-links">
                         <a href="{$name}" target="_new">
                             DBpedia
                         </a>
                         |
                         <a class="key-search" 
-                            href="{$name}" target="_new">
+                            href="search.html?field=Key&amp;q={$name}" target="_new">
                             New Search
                         </a>
                     </span>
@@ -178,14 +193,20 @@ declare function search:name-facet($root as element()*, $type as xs:string) {
 declare function search:facets($root as element()*, $view as xs:string) {
     for $facet in distinct-values($root//tei:name/@type)
     order by $facet
-    return search:name-facet($root, $facet)
+    return search:name-facet($root, $facet, $view)
 };
 
-declare function search:do-search($xpath as xs:string) {
+declare function search:do-search($xpath as xs:string?) {
+    let $query :=
+        if ($xpath) then
+            $xpath
+        else if ($search:FACETS) then
+            concat("func:find-by-key($context, '", $search:FACETS, "')")
+        else
+            ()
     let $context := collection($config:app-root)
     let $result :=
-        search:apply-facets(util:eval($xpath), $search:FACETS)
-    let $log := util:log("ERROR", ("QUERY: ", $xpath, "Facets: ", $search:FACETS, " Found: ", $result))
+        search:apply-facets(util:eval($query), $search:FACETS)
     return (
         session:set-attribute("matumi:results", $result),
         session:set-attribute("matumi:xpath", $xpath),

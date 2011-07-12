@@ -80,9 +80,11 @@ declare function matumi:results($node as node()*, $params as element(parameters)
 };
 
 declare function matumi:facets($node as node()*, $params as element(parameters)?, $model as item()*) {
-    <div class="facet-list">
-    { search:show-facets($model, "search") }
-    </div>
+    let $view := $params/param[@name = "view"]/@value/string()
+    return
+        <div class="facet-list">
+        { search:show-facets($model, $view) }
+        </div>
 };
 
 declare function matumi:query-form($node as node()*, $params as element(parameters)?, $model as item()*) {
