@@ -2,6 +2,7 @@ body {
     margin: 25px 70px;
     font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;
 }
+
 table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 
 #content {
@@ -12,15 +13,27 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
     moz-border-radius: 15px;
 }
 
+.query-form {
+    margin-bottom: 10px;
+}
+
 #results {
-    margin: 10px 190px 0 0;
+    /* margin: 10px 190px 0 0; */
     padding: 0 10px;
 }
 
 #facets {
-    float: right;
-    width: 180px;
+    /* float: right; */
+    /* width: 180px; */
+    font-size: 85%;
+}
+
+.facet-list {
     overflow: auto;
+}
+
+.facet-search {
+    text-align: left;
 }
 
 .facet ul {
@@ -81,7 +94,7 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 }
 
 .entry-view {
-    margin: 10px 200px 0 0;
+    /* margin: 10px 200px 0 0; */
 }
 
 .entry-view td {
@@ -95,8 +108,32 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
     font-size: 125%;
 }
 
-#navbar { background-color: #FFAD00; margin: 10px 220px 0 0; padding: 4px 8px; font-size: 85%;
+#navbar { background-color: #FFAD00; padding: 4px 8px; font-size: 85%;
     color: white; }
+
+.L-block a:hover {
+
+    background:#fff;
+
+}
+
+.L-block ul {
+    font-size: 85%;
+}
+
+.cat-name { font-weight:bold; color:red }
+
+a.cat-value-deep-link:hover,
+
+a.entry-derect-link:hover{ color:blue; background-color:#fff; text-decoration:underline; }
+
+.browse-grid table, .browse-boxes {
+    font-size: 85%;
+}
+
+.browse-grid table th {
+    text-align: left;
+}
 
 #toolbar { margin: 0; padding: 10px 8px; background-color: #FFAD00; }
 #toolbar li { list-style: none; display: inline; }

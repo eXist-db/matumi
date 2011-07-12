@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div class="templates:surround?with=page.html&amp;at=content">
     <form id="search-form" name="search" method="GET">
-        <div>
+        <div class="grid_16 query-form">
             <table>
                 <tr class="matumi:query-form"/>
                 <tr>
@@ -11,9 +11,16 @@
                 </tr>
             </table>
         </div>
+        <div class="clear"/>
         <div class="matumi:search">
-            <div class="matumi:facets"/>
-            <div class="matumi:results"/>
+            <div class="grid_12">
+                <div class="matumi:results"/>
+            </div>
+            <div id="facets" class="grid_4">
+                <a href="#" id="clear-facets">Clear all</a>
+                <div class="matumi:facets?view=search"/>
+            </div>
+            <div class="clear"/>
         </div>
     </form>
 </div>

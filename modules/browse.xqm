@@ -50,9 +50,9 @@ declare variable $browse:URIs :=  (: combine multiple URI and multiple node-id :
 
 
 declare variable $browse:levels := (
-    <level value-names="name-type" title="Names" clear="name-type">names</level>, 
+    <level value-names="uri" title="Books" clear="uri">books</level>,             (: uri=/db/matumi/data/GSE-eng.xml :)
     <level value-names="uri" title="Entries" clear="uri_node-id">entries</level>, (:  uri=/db/matumi/data/GSE-eng.xml___3.2.2.2 :)
-    <level value-names="uri" title="Books" clear="uri">books</level>             (: uri=/db/matumi/data/GSE-eng.xml :)
+    <level value-names="name-type" title="Names" clear="name-type">names</level>
     (: , <level value-names="subject" title="Subjects" clear="subject">subject</level> :)
 );
 
@@ -322,12 +322,9 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     		</colgroup>
     		<thead>
     			<tr>
-    				<th colspan="4" class="table-head">Table heading</th>
-    			</tr>
-    			<tr>
-    				<th width="15%" >Book</th>
-    				<th width="10%" >Subject</th>
+    				<th width="15%" >Encyclopedia</th>
     				<th width="25%" >Entry</th>
+    				<th width="10%" >Subject</th>
     				<th width="50%" >Categories</th>
     			</tr>
     		</thead>
@@ -341,8 +338,8 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     			 
     			 return <tr class="{ if( $pos mod 2 = 0 ) then 'odd' else ()}">{
     				element {'td'}{ string($document-title)},
-    				<td>{ string($e/@subtype )}</td>,
     				<td>{ browse-entries:direct-link($e)}</td>,
+    				<td>{ string($e/@subtype )}</td>,
     				<td>{  
     				    for $c in $categories 
     				    let $total := sum($c/name/@count)

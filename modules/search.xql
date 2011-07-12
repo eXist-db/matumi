@@ -36,9 +36,16 @@ declare variable $search:CONFIG :=
 ;
 
 declare variable $search:FACETS := 
+    let $action := request:get-parameter("action", ())
     let $query := request:get-parameter("q", ())
     return
-        if ($query) then
+        if ($action = "refine") then
+            let $facets := session:get-attribute("matumi:facets")
+            let $newFacets := distinct-values(($facets, request:get-parameter("facet", ())))
+            let $log := util:log("ERROR", ("FACETS: ", $newFacets))
+            return
+                ( session:set-attribute("matumi:facets", $newFacets), $newFacets )
+        else if ($query) then
             let $facet := request:get-parameter("facet", ())
             return
                 ( session:set-attribute("matumi:facets", $facet), $facet )
@@ -168,21 +175,17 @@ declare function search:name-facet($root as element()*, $type as xs:string) {
     </div>
 };
 
-declare function search:facets($root as element()*) {
-    <div id="facets">
-        <a href="#" id="clear-facets">Clear all</a>
-        {
-            for $facet in distinct-values($root//tei:name/@type)
-            order by $facet
-            return search:name-facet($root, $facet)
-        }
-    </div>
+declare function search:facets($root as element()*, $view as xs:string) {
+    for $facet in distinct-values($root//tei:name/@type)
+    order by $facet
+    return search:name-facet($root, $facet)
 };
 
 declare function search:do-search($xpath as xs:string) {
     let $context := collection($config:app-root)
     let $result :=
         search:apply-facets(util:eval($xpath), $search:FACETS)
+    let $log := util:log("ERROR", ("QUERY: ", $xpath, "Facets: ", $search:FACETS, " Found: ", $result))
     return (
         session:set-attribute("matumi:results", $result),
         session:set-attribute("matumi:xpath", $xpath),
@@ -190,22 +193,23 @@ declare function search:do-search($xpath as xs:string) {
     )
 };
 
-declare function search:show-facets($result) {
+declare function search:show-facets($result, $view as xs:string) {
     let $context :=
         if (count($result) eq 1 and $result instance of element(tei:div)) then
             $result
         else
             $result/ancestor-or-self::tei:p
     return
-        search:facets($context)
+        search:facets($context, $view)
 };
 
 declare function search:search() {
     let $session := session:create()
     let $query := request:get-parameter("q", ())
+    let $refine := request:get-parameter("action", ()) = "refine"
     let $xpath := if ($query) then search:query() else session:get-attribute("matumi:xpath")
     let $results :=
-        if ($query) then
+        if ($query or $refine) then
             search:do-search($xpath)
         else
             session:get-attribute("matumi:results")
@@ -222,7 +226,7 @@ declare function search:show-results($results) {
             search:display-result($result, $xpath)
     return
         <div>
-            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>,
+            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
             <div id="results">
                 <div id="results-container">
                     <table class="kwic">

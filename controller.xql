@@ -40,7 +40,7 @@ else if ($exist:resource eq 'annotate.xql') then
              </forward>
          </dispatch>
 else if (ends-with($exist:path, ".html")) then
-    if (request:get-parameter("action", ())) then
+    if (request:get-parameter("action", ()) = "store") then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="modules/store.xql">
                 <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>

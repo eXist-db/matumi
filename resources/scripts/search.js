@@ -11,10 +11,6 @@ $(document).ready(function() {
 });
 
 function resize() {
-    var nh = $(window).height() - $("#facets").offset().top;
-    $("#facets").height(nh - 20);
-    var rh = $(".results").height();
-    if (rh < $(window).height()) {
-        $(".results").height(nh);
-    }
+    var nh = $(window).height() - $("#facets .facet-list").offset().top;
+    $("#facets .facet-list").height(nh - 40);
 }

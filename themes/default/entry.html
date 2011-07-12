@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div class="templates:surround?with=page.html&amp;at=content">
     <div class="matumi:entry">
-        <div class="matumi:facets"/>
-        <div class="entry-view">
+        <div class="entry-view grid_12">
             <table>
                 <tr>
                     <td class="label">Encyclopedia:</td>
@@ -12,7 +11,9 @@
                 </tr>
                 <tr>
                     <td class="label">Keywords:</td>
-                    <td/>
+                    <td>
+                        <span class="matumi:encyclopedia-subjects"/>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -21,5 +22,15 @@
                 </tr>
             </table>
         </div>
+        <div id="facets" class="grid_4">
+            <p>Names and Terms in this Text:</p>
+            <form action="search.html">
+                <div class="matumi:facets?view=entry"/>
+                <div class="facet-search">
+                    <button type="submit" name="action" value="refine">Search (again)</button>
+                </div>
+            </form>
+        </div>
+        <div class="clear"/>
     </div>
 </div>

@@ -6,6 +6,7 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
 import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
 import module namespace search="http://exist-db.org/xquery/search" at "search.xql";
+import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 
 declare function matumi:entry($node as node()*, $params as element(parameters)?, $model as item()*) {
     let $doc := request:get-parameter("doc", ())
@@ -28,6 +29,10 @@ declare function matumi:entry($node as node()*, $params as element(parameters)?,
 
 declare function matumi:encyclopedia-title($node as node()*, $params as element(parameters)?, $model as item()*) {
     $model/ancestor::tei:TEI/tei:teiHeader//tei:titleStmt/tei:title/text()
+};
+
+declare function matumi:encyclopedia-subjects($node as node()*, $params as element(parameters)?, $model as item()*) {
+    $model/@subtype/string()
 };
 
 declare function matumi:format-entry($node as node()*, $params as element(parameters)?, $model as item()*) {
@@ -65,13 +70,9 @@ declare function matumi:process-tabs($node as node(), $active as xs:string) {
 declare function matumi:search($node as node()*, $params as element(parameters)?, $model as item()*) {
     let $results := search:search()
     return
-        <div class="results">
-        {
             for $child in $node/node()
             return
                 templates:process($child, request:get-attribute("$templates:prefixes"), $results)
-        }
-        </div>
 };
 
 declare function matumi:results($node as node()*, $params as element(parameters)?, $model as item()*) {
@@ -79,9 +80,21 @@ declare function matumi:results($node as node()*, $params as element(parameters)
 };
 
 declare function matumi:facets($node as node()*, $params as element(parameters)?, $model as item()*) {
-    search:show-facets($model)
+    <div class="facet-list">
+    { search:show-facets($model, "search") }
+    </div>
 };
 
 declare function matumi:query-form($node as node()*, $params as element(parameters)?, $model as item()*) {
     search:query-form()
+};
+
+declare function matumi:browse-boxes($node as node()*, $params as element(parameters)?, $model as item()*) {
+    browse:level-boxes()
+};
+
+declare function matumi:browse-grid($node as node()*, $params as element(parameters)?, $model as item()*) {
+    <div class="grid_16 browse-grid"> 
+        { browse:page-grid( false() ) }
+     </div>
 };
