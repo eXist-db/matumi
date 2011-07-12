@@ -10,8 +10,6 @@ declare copy-namespaces no-preserve, no-inherit;
 declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
-
 
 declare function browse-names:data( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){ 
    let $name-types := request:get-parameter("name-type", () )
@@ -27,6 +25,36 @@ declare function browse-names:data( $context-nodes as node()*, $URIs as node()*,
     )
 };
 
+
+declare function browse-names:extract-categories( $n as element()? ){ 
+   let $categories := $n//tei:name[@type]
+   let $types :=  distinct-values($categories/@type) 
+   
+   return 
+        for $t in $types 
+        let $values := $categories[@type = $t ], 
+            $keys := distinct-values($values/@key)
+                        
+        order by $t
+        return                    
+            element category {               
+               attribute {'name'}{$t},
+               attribute {'count'}{ count( $keys ) },
+               attribute {'total'}{ count( $values ) },
+               for $k in $keys 
+               let $instances := $values[@key = $k]
+               let $first := $instances[1]                
+               order by string( $k )
+               return element {'name'}{ 
+                    attribute {'key'}{ $k },
+                    attribute {'count'}{ count($instances) },
+                    attribute {'name-node-id'}{ util:node-id($first)},
+                    string( $first )                    
+               } 
+            } 
+};
+
+
 declare function browse-names:titles-list( $nodes as element()*,  $level as node()? ){
     let $types := distinct-values($nodes/@type)    
     
@@ -35,13 +63,19 @@ declare function browse-names:titles-list( $nodes as element()*,  $level as node
         attribute {'title'}{ $level/@title },            
    
         for $t in $types 
-        let $count := count( $nodes[@type = $t ])
+        let $n := $nodes[@type = $t ],
+            $values := distinct-values($n/@key),
+            $count := count( $n ),
+            $total := count($values)
         order by $t
         return                    
             element title {               
                attribute {'name-type'}{$t},
                attribute {'count'}{$count},
-               concat( $t, ' (', $count, ')' )
+                    if( $count > 1 ) then (
+                       attribute {'title'}{ concat(  $total, ' unique keys and ', $count, ' instaces'   )},
+                       concat( $t, ' (', $total, '/', $count ,')' )
+                    )else $t
             } 
 
     }    

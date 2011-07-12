@@ -7,6 +7,10 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
+import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
+import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
+import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/browse-names" at "browse_names.xqm";
+
 
 declare variable $browse:delimiter-uri-node := '___';
 declare variable $browse:delimiter-uri-nameNode := '---';
@@ -49,6 +53,7 @@ declare variable $browse:levels := (
     <level value-names="name-type" title="Names" clear="name-type">names</level>, 
     <level value-names="uri" title="Entries" clear="uri_node-id">entries</level>, (:  uri=/db/matumi/data/GSE-eng.xml___3.2.2.2 :)
     <level value-names="uri" title="Books" clear="uri">books</level>             (: uri=/db/matumi/data/GSE-eng.xml :)
+    (: , <level value-names="subject" title="Subjects" clear="subject">subject</level> :)
 );
 
 (:
@@ -59,6 +64,61 @@ declare variable $browse:L1 := ($browse:levels[ . = request:get-parameter("L1", 
 declare variable $browse:L2 := ($browse:levels[ . = request:get-parameter("L2", () )], $browse:levels[ not(. = $browse:L1) ])[1];
 declare variable $browse:L3 := ($browse:levels[ . = request:get-parameter("L3", () )], $browse:levels[ not(. = ($browse:L1,$browse:L2)) ])[1];
 declare variable $browse:L4 := ($browse:levels[ . = request:get-parameter("L4", () )], $browse:levels[ not(. = ($browse:L1,$browse:L2,$browse:L3)) ])[1];
+
+declare variable $browse:data-1 := 
+          if(      $browse:L1 = 'books')   then  browse-books:data( (), $browse:URIs, 1)            
+          else if( $browse:L1 = 'entries') then  browse-entries:data( (),  $browse:URIs, 1)  
+          else if( $browse:L1 = 'names')   then  browse-names:data( (), $browse:URIs, 1)      
+          else();
+
+declare variable $browse:data-2 := 
+            if(      $browse:L2 = 'names')   then browse-names:data(   $browse:data-1, $browse:URIs, 2)
+            else if( $browse:L2 = 'entries') then browse-entries:data( $browse:data-1, $browse:URIs, 2)
+            else if( $browse:L2 = 'books')   then browse-books:data(   $browse:data-1, $browse:URIs, 2)                 
+            else ();
+
+declare variable $browse:data-3 := 
+            if(      $browse:L3 = 'names')   then browse-names:data(   $browse:data-2, $browse:URIs, 3)
+            else if( $browse:L3 = 'entries') then browse-entries:data( $browse:data-2, $browse:URIs, 3)
+            else if( $browse:L3 = 'books')   then browse-books:data(   $browse:data-2, $browse:URIs, 3)                 
+            else ();
+
+declare variable $browse:data-4 := ();
+
+declare variable $browse:titles-1 := if( empty($browse:data-1) or empty($browse:L1)) then () else 
+       typeswitch ($browse:data-1[1] )
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1, $browse:L1 )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-1, $browse:L1 )
+          case element(tei:name) return browse-names:titles-list( $browse:data-1, $browse:L1 )          
+          default return <titles><title>no-titles</title></titles>;
+                   
+declare variable $browse:titles-2 := if( empty($browse:data-2) or empty($browse:L2)) then () else 
+        typeswitch ($browse:data-2[1] ) 
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2, $browse:L2 )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-2, $browse:L2 )
+          case element(tei:name) return browse-names:titles-list( $browse:data-2, $browse:L2 ) 
+          default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
+    
+declare variable $browse:titles-3 := if( empty($browse:data-3) or empty($browse:L3) ) then () else 
+        typeswitch ($browse:data-3[1] ) 
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3 )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3 )
+          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3 ) 
+          default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
+
+declare variable $browse:titles-4 := if( empty($browse:data-4) or empty($browse:L4) ) then () else 
+        typeswitch ($browse:data-4[1] ) 
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3 )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3 )
+          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3 ) 
+          default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
+
+declare variable $browse:entries := 
+      if( $browse:L1 = 'entries' ) then $browse:data-1
+      else if( $browse:L2 = 'entries' ) then $browse:data-2
+      else if( $browse:L3 = 'entries' ) then $browse:data-3
+      else if( $browse:L4 = 'entries' ) then $browse:data-4
+      else ();
 
 
 declare function browse:levels-combo( $level as node(), $pos as xs:int ) as element(select) {
@@ -98,6 +158,7 @@ declare function browse:makeDocument-Node-URI( $node as node() ) as xs:string {
 
 };
 
+(:  local:change-element-ns-deep($x, "http://www.w3.org/1999/xhtml")  :)
 declare function browse:change-element-ns-deep ($element as element(), $newns as xs:string) as element(){
   let $newName := QName($newns, local-name($element))
   return
@@ -109,7 +170,7 @@ declare function browse:change-element-ns-deep ($element as element(), $newns as
         else $child
   })
 };
-(:  local:change-element-ns-deep($x, "http://www.w3.org/1999/xhtml")  :)
+
 
 declare function browse:nameValue( $nodes as item()* ) as xs:string*{
    for $n in $nodes return
@@ -124,7 +185,6 @@ declare function browse:nameValue( $name as xs:string, $values as xs:string* ) a
         ), '&amp;') 
    else ()
 };
-
 
 declare function browse:link-href-base( $add-uri as xs:boolean ) as xs:string?{
     string-join((
@@ -147,6 +207,9 @@ declare function browse:link-href-param( $param-names as xs:string* )as xs:strin
 
 declare function browse:link( $title as element() ) as element(a){
   element a {
+     if( exists($title/@title)) then 
+        $title/@title 
+     else attribute {'title'}{},
      if( exists($title/@href)) then 
         $title/@href
      else   
@@ -158,7 +221,7 @@ declare function browse:link( $title as element() ) as element(a){
                ),'&amp;')
            )     
         },
-     attribute{'title'}{},
+     
      string( $title )  
   }
 };
@@ -177,52 +240,19 @@ declare function browse:clean-link( $level as element(), $step as xs:int ) as xs
        )     
 };
 
-
-declare function browse:page-head(  ) {
-    <head>
-      <title> local:{ fn:string-join(($browse:L1, $browse:L2, $browse:L3), '/')  }</title>
-		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/reset.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/text.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/grid.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/layout.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/nav.css" media="screen" />
-		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/ie6.css" media="screen" /><![endif]-->
-		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/ie.css" media="screen" /><![endif]-->      
-
-       <link rel="stylesheet" type="text/css" href="../resources/css/browse.css" media="screen" />
-      
-      <script type="text/javascript" src="../resources/scripts/head.js"></script>
-      <script>
-        head.js(
-           "../resources/scripts/jquery-1.5.js",
-           // "../resources/scripts/jquery.columnizer.js",
-           // "../resources/scripts/jquery.form.js",
-           "../resources/scripts/jquery.listnav-2.1.js",
-           "../resources/scripts/browse.js",
-           function(){{
-             //$('ul#entities').makeacolumnlists({{cols:3,colWidth:0,equalHeight:true}});
-                          
-           }}
-        );
-      </script>
-      
-    </head>
-};
-
 declare function browse:section-as-ul( $section as element(titles)?, $id as node()?, $pos as xs:int) {
-    (: <h4>{ string($section/@title) }</h4>, :)
-    
     <div class="grid_5">
 		<div class="box L-box">
 			<h2>{browse:levels-combo( $id,  $pos) }</h2>
 			<div class="block L-block">
                 <ul id="{ $id }">{ 
-                    <li>
+                    <li style="margin-left:0;list-style:none">
                        <a href="?{              
                              string-join((
                                browse:nameValue('L1', $browse:L1),
                                browse:nameValue('L2', $browse:L2),
-                               browse:nameValue('L3', $browse:L3)
+                               browse:nameValue('L3', $browse:L3),
+                               browse:nameValue('L4', $browse:L4)
                             ),'&amp;')
                           }">All ({ count($section/title), ' ',  string($section/@title)} )</a>        
                       
@@ -235,180 +265,117 @@ declare function browse:section-as-ul( $section as element(titles)?, $id as node
 	</div>
 };
 
-
-declare function browse:page-grid(){ 
- 
- 	<table summary="Table summary">
-		
-		<colgroup>
-			<col class="colA" />
-			<col class="colB" />
-			<col class="colC" />
-		</colgroup>
-		<thead>
-			<tr>
-				<th colspan="3" class="table-head">Table heading</th>
-			</tr>
-			<tr>
-				<th>Book</th>
-				<th>Entry</th>
-				<th>Names</th>
-			</tr>
-		</thead>
-		<!-- tfoot>
-			<tr>
-				<th>Summary</th>
-				<td>1</td>
-				<th>2</th>
-			</tr>
-			<tr class="total">
-				<th>Total</th>
-				<td>3</td>
-				<th>4</th>
-			</tr>
-		</tfoot -->
-		<tbody>
-			<tr class="odd">
-				<th>Book</th>
-				<td>Entry</td>
-				<td>Names</td>
-			</tr>
-			<tr>
-				<th>Book</th>
-				<td>Entry</td>
-				<td>Names</td>
-			</tr>
-	    </tbody>
-	</table>
+declare function browse:level-boxes(){
+   <form id="browseForm" action="?">{ 
+    browse:section-as-ul( $browse:titles-1, $browse:L1, 1 ),
+	browse:section-as-ul( $browse:titles-2, $browse:L2, 2 ),
+	browse:section-as-ul( $browse:titles-3, $browse:L3, 3 ),
+	<div class="clear"></div>
+   }</form>,
+   <script>
+        function browse_Set_L3( event, $L1, $L2, $L3){{
+            var $autoUpdate = $('#autoUpdate');
+            $L1 = $L1 || $('#L1');
+            $L2 = $L2 || $('#L2');    
+            $L3 = $L3 || $('#L3');    
+            $('option:disabled', $L3).removeAttr('disabled').show();
+            $('option[value=' + $L1.val() + '], option[value=' + $L2.val() + '] ', $L3).attr('disabled', 'true' ).hide();
+            $L3.val( $L3.find('option:enabled').eq(0).attr('value')); 
+            
+            if( $autoUpdate.length == 0 || $autoUpdate.is(':checked')) {{   
+               $('#browseForm').submit();
+            }}             
+        }}        
+        $(document).ready(function() {{
+            $('#L1').live('change', function(event){{
+                 var $L1 = $(event.target),
+                     $L2 = $('#L2'),
+                     $L3 = $('#L3'),
+                     v1 = $L1.val(),
+                     v2 = $L2.val(),
+                     v3 = $L3.val();
+                 
+                 $('#browseForm option:disabled').removeAttr('disabled').show();
+                 $('#L2 option[value=' + v1 + ']').attr('disabled', 'true' ).hide();
+                 if( v2 == v1 ) {{ 
+                     $L2.val( $L2.find('option:enabled').eq(0).attr('value')); 
+                 }}
+                 browse_Set_L3(null, $L1, $L2, $L3 );
+            }});
+            
+            $('#L2').live('change', browse_Set_L3 );
+        }});
+   </script>
 };
 
 
-declare function browse:page-content($t1 as node()?, $t2 as node()?, $t3 as node()?  ) {
-  <div class="container_16">
-     <form id="browseForm" action="?"> 
-  	  <div class="grid_16">
-		<h1 id="branding">
-			Matumi - Browser
-		</h1>
-	  </div><div class="clear"></div>
-  
-      <div class="grid_16">
-    	<ul class="nav main">
-    		<li>
-    			<a href="#">Item 1</a>
-    			<ul>
-    				<li>
-    					<a href="#">Item 11</a>
-    				</li>
-    				<li>
-    					<a href="#">Item 12</a>
-    				</li>
-    				<li>
-    					<a href="#">Item 13</a>
-    				</li>
-    			</ul>
-    		</li>
-    		<li>
-    			<a href="#">Item 2</a>
-    			<ul>
-    				<li>
-    					<a href="#">Item 21</a>
-    				</li>
-    				<li>
-    					<a href="#">Item 22</a>
-    				</li>
-    				<li>
-    					<a href="#">Item 23</a>
-    				</li>
-    			</ul>
-    		</li>
-    		<li class="secondary">
-        		 <input type="checkbox" name="autoUpdate" id="autoUpdate">{
-                    if( request:get-parameter("autoUpdate", 'off' ) = 'on') then
-                       attribute {'checked'}{ 'true'}
-                    else ()
-                }</input>
-                <label for="autoUpdate">Auto Update</label>&#160;&#160;&#160; 
-                <input type="submit" value="Update"/>
-    		</li>
-         </ul>
-      </div>
-      <div class="clear"></div> 
-      <div class="grid_16">
-        <h2 id="page-heading">Page Title</h2>
-  	  </div>
-	  <div class="clear"></div>
-	
-	
-	{ 
-	   browse:section-as-ul( $t1, $browse:L1, 1 ),
-	   browse:section-as-ul( $t2, $browse:L2, 2 ),
-	   browse:section-as-ul( $t3, $browse:L3, 3 )
-	}
-	   <div class="clear"></div>
-     </form>
-    
-     <div class="grid_16"> { browse:page-grid() }</div><div class="clear"></div>
-  </div>
-};
 
 
-declare function browse:books-table( $books as element()*, $show-entries as xs:boolean){
-   <table border="1" cellspacing="0" cellpadding="4">
-    <thead>
-       <th>Name</th>
-       <th>Language</th>
-       <th>Entries</th>
-       <th>Articles</th>
-       <th>URI</th>
-    </thead>
-    <tbody>{
-   
-  
-   for $book in $books 
-   let $articles := sum($book//@articles)
-   let $title := if( string($book/title = '' )) then (
-                         $book/file/text()  
-                   )else string($book/title )
-   return (    
-       element tr {
-           element td{
-            <a href="?uri={$book/uri/text()}">{ $title }</a>
-           },
-           <td align="center">{ $book/language/text() }</td>,
-           element td{ count($book/entries/*)},
-           element td{ if( $articles > number( $book/entries/@count) ) then ( $articles ) else () },
-           element td{  $book/file/text() }
-       },
-       if( $show-entries ) then (
-           element tr {
-               element td{
-                 attribute {'colspan'}{ 5},
-                 element UL{
-                   for $e in $book/entries/entry return
-                      element li {
-                        element a {
-                           attribute {'href'}{
-                             concat("?uri=", $book/uri, '&amp;node-id=', $e/@node-id )
-                           },
-    (:                   attribute {'uri'}{ $book/uri/text() },
-                           $e/@node-id,
-    :)                       
-                           if( string( $e/head[1]) != '' ) then (
-                              string( $e/head[1]),
-                              if( number($e/@articles) > 1 ) then 
-                                  concat('(', $e/@articles, ' articles)')
-                              else ()
-                           )else '--- Title is missing ---'
-                           
-                        }
-                      }
-                 }
-               }
-           }
-       )else ()
-     )
-}</tbody>
-   </table>
+declare function browse:page-grid( $show-all as xs:boolean ){ 
+ 	if( $show-all or exists($browse:URIs) or string-length(request:get-parameter("name-type", () )) > 0 ) then ( 	
+     	<table summary="Table summary">		
+    		<colgroup>
+    			<col class="colA" />
+    			<col class="colB" />
+    			<col class="colC" />
+    			<col class="colD" />
+    		</colgroup>
+    		<thead>
+    			<tr>
+    				<th colspan="4" class="table-head">Table heading</th>
+    			</tr>
+    			<tr>
+    				<th width="15%" >Book</th>
+    				<th width="10%" >Subject</th>
+    				<th width="25%" >Entry</th>
+    				<th width="50%" >Categories</th>
+    			</tr>
+    		</thead>
+    		<tbody>{
+    			 for $e at $pos in $browse:entries
+                  let $root := $e/ancestor-or-self::tei:TEI,
+    			      $uri  := document-uri( root($e)),
+    			      $document-title := browse-books:title-extract($root//teiHeader/fileDesc/titleStmt),
+    			      $node-id := util:node-id($e),
+    			      $categories := browse-names:extract-categories($e)
+    			 
+    			 return <tr class="{ if( $pos mod 2 = 0 ) then 'odd' else ()}">{
+    				element {'td'}{ string($document-title)},
+    				<td>{ string($e/@subtype )}</td>,
+    				<td>{ browse-entries:direct-link($e)}</td>,
+    				<td>{  
+    				    for $c in $categories 
+    				    let $total := sum($c/name/@count)
+    				    return
+    				    <div>
+    				       <span class="cat-name">{ 
+    				            attribute {'title'}{ concat(  $c/@count, ' unique keys and ', $total, ' instaces'   )},
+    				            string($c/@name),
+    				            concat('(', $c/@count,'/', $total ,')')				            
+    				       }:</span>
+    				       {
+    				         for $n at $pos in $c/name 
+    				         let $title := concat( $n/@count,' instances in this document')
+    				         return(
+    				         <a title="{$title}" class="cat-value-deep-link" 
+    				            href="{ concat('entry.html?doc=', $uri, 
+    				                            '&amp;node=',$node-id, 
+    				                            '&amp;name-node-id=', $n/@name-node-id,
+    				                            '&amp;key=', $n/@key
+    				                          )}">{ 
+    				            string($n),
+    				            if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()				           
+    				         }</a>,
+    				         if( $pos < number($c/@count)) then ', ' else ()
+    				        )
+    				       }
+    				    </div>
+    				}</td>
+    			}</tr>
+    	    }</tbody>
+    	</table>
+    )else(
+       (: may be we can display a shot text to explain there will be a grid only when something is selected from the lists? :)
+    )
 };
 

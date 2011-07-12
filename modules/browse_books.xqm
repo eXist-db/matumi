@@ -10,7 +10,6 @@ declare copy-namespaces no-preserve, no-inherit;
 declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 
 declare function browse-books:data( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){
    if( $level-pos = 1 ) then (
@@ -49,20 +48,27 @@ declare function browse-books:list( $books as element()*){
    }
 };
 
+declare function browse-books:title-extract( $title as element(tei:titleStmt)? ){ 
+     if( exists($title)) then
+         element title {
+            attribute uri { document-uri( root($title)) },
+            if( string($title) = 'Title' ) then 
+                 concat('[',  util:document-name($title), ']') 
+            else $title   
+         }   
+     else <title>Missing Title</title>
+};
+
+
 declare function browse-books:titles-list( $nodes as element()*,  $level as node()? ){
     element titles {
         attribute {'count'}{ count($nodes)},
         attribute {'title'}{ $level/@title },
              for $title in $nodes//tei:titleStmt  
-             let $title2 := if( string($title) = 'Title' ) then 
-                                 concat('[',  util:document-name($title), ']') 
-                            else $title
+             let $title2 := browse-books:title-extract($title)
              order by string($title2)
-             return 
-                 element title {
-                    attribute uri { document-uri( root($title)) },
-                    $title2 
-                 }
+             return $title2
+   
     }    
 };
 

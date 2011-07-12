@@ -1,3 +1,6 @@
 .L-block a:hover {
 	background:#fff;
-}
+}
+.cat-name { font-weight:bold; color:red }
+a.cat-value-deep-link:hover,
+a.entry-derect-link:hover{ color:blue; background-color:#fff; text-decoration:underline; }
