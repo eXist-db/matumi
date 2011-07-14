@@ -14,17 +14,14 @@ declare function matumi:entry($node as node()*, $params as element(parameters)?,
     return
         if ($id) then
             let $entry := doc($doc)//tei:div[@type = "entry"][@subtype = $id]
-            for $child in $node/node()
             return
-                templates:process($child, request:get-attribute("$templates:prefixes"), $entry)
+                templates:process($node/node(), $entry)
         else
             let $nodeId := request:get-parameter("node", ())
             let $target := util:node-by-id(doc($doc), $nodeId)
             let $entry := $target/ancestor-or-self::tei:div[@type = "entry"]
-            for $child in $node/node()
             return
-                templates:process($child,
-                    request:get-attribute("$templates:prefixes"), $entry)
+                templates:process($node/node(), $entry)
 };
 
 declare function matumi:encyclopedia-title($node as node()*, $params as element(parameters)?, $model as item()*) {
@@ -70,9 +67,7 @@ declare function matumi:process-tabs($node as node(), $active as xs:string) {
 declare function matumi:search($node as node()*, $params as element(parameters)?, $model as item()*) {
     let $results := search:search()
     return
-            for $child in $node/node()
-            return
-                templates:process($child, request:get-attribute("$templates:prefixes"), $results)
+        templates:process($node/node(), $results)
 };
 
 declare function matumi:results($node as node()*, $params as element(parameters)?, $model as item()*) {

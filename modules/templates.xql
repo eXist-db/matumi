@@ -1,8 +1,24 @@
 module namespace templates="http://exist-db.org/xquery/templates";
 
+(:~
+ : HTML templating module
+:)
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace theme="http:/exist-db.org/xquery/matumi/theme" at "theme.xqm";
 
+(:~
+ : Start processing the provided content using the modules defined by $modules. $modules should
+ : be an XML fragment following the scheme:
+ :
+ : <modules>
+ :       <module prefix="module-prefix" uri="module-uri" at="module location relative to apps module collection"/>
+ : </modules>
+ :
+ : @param $content the sequence of nodes which will be processed
+ : @param $modules modules to import
+ : @param $model a sequence of items which will be passed to all called template functions. Use this to pass
+ : information between templating instructions.
+:)
 declare function templates:apply($content as node()+, $modules as element(modules), $model as item()*) {
     let $imports := templates:import-modules($modules)
     let $prefixes := (templates:extract-prefixes($modules), "templates:")
@@ -12,15 +28,37 @@ declare function templates:apply($content as node()+, $modules as element(module
         templates:process($root, $prefixes, $model)
 };
 
+(:~
+ : Continue template processing on the given set of nodes. Call this function from
+ : within other template functions to enable recursive processing of templates.
+ :
+ : @param $nodes the nodes to process
+ : @param $model a sequence of items which will be passed to all called template functions. Use this to pass
+ : information between templating instructions.
+:)
+declare function templates:process($nodes as node()*, $model as item()*) {
+    let $prefixes := request:get-attribute("$templates:prefixes")
+    for $node in $nodes
+    return
+        templates:process($node, $prefixes, $model)
+};
+
 declare function templates:process($node as node(), $prefixes as xs:string*, $model as item()*) {
     typeswitch ($node)
         case document-node() return
             for $child in $node/node() return templates:process($child, $prefixes, $model)
         case element() return
             let $class := $node/@class
+            let $expanded :=
+                for $name in tokenize($class, "\s+")
+                return
+                    if (templates:matches-prefix($name, $prefixes)) then
+                        templates:call($name, $node, $model)
+                    else
+                        ()
             return
-                if ($class and templates:matches-prefix($class, $prefixes)) then
-                    templates:call($class, $node, $model)
+                if ($expanded) then
+                    $expanded
                 else
                     element { node-name($node) } {
                         $node/@*, for $child in $node/node() return templates:process($child, $prefixes, $model)
@@ -74,9 +112,8 @@ declare function templates:extract-prefixes($modules as element(modules)) as xs:
 declare function templates:include($node as node(), $params as element(parameters)?, $model as item()*) {
     let $relPath := $params/param[@name = "path"]/@value
     let $path := concat($config:app-root, "/", $relPath)
-    let $prefixes := request:get-attribute("$templates:prefixes")
     return
-        templates:process(doc($path), $prefixes, $model)
+        templates:process(doc($path), $model)
 };
 
 declare function templates:surround($node as node(), $params as element(parameters)?, $model as item()*) {
@@ -86,9 +123,8 @@ declare function templates:surround($node as node(), $params as element(paramete
     let $at := $params/param[@name = "at"]/@value
     let $path := concat($config:app-root, "/", $template)
     let $merged := templates:process-surround(doc($template), $node, $at)
-    let $prefixes := request:get-attribute("$templates:prefixes")
     return
-        templates:process($merged, $prefixes, $model)
+        templates:process($merged, $model)
 };
 
 declare function templates:process-surround($node as node(), $content as node(), $at as xs:string) {
@@ -113,10 +149,7 @@ declare function templates:if-parameter-set($node as node(), $params as element(
     let $param := request:get-parameter($paramName, ())
     return
         if ($param and string-length($param) gt 0) then
-            let $prefixes := request:get-attribute("$templates:prefixes")
-            for $child in $node/node()
-            return
-                templates:process($child, $prefixes, $model)
+            templates:process($child/node(), $model)
         else
             ()
 };
