@@ -54,7 +54,7 @@ declare function browse-books:title-extract( $title as element(tei:titleStmt)? )
             attribute uri { document-uri( root($title)) },
             if( string($title) = 'Title' ) then 
                  concat('[',  util:document-name($title), ']') 
-            else $title   
+            else $title/title[@type="main"]   
          }   
      else <title>Missing Title</title>
 };
