@@ -28,11 +28,14 @@ declare function local:page-head(  ) {
 		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/ie6.css" media="screen" /><![endif]-->
 		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/ie.css" media="screen" /><![endif]-->      
 
+       <link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/grid.css" media="screen" />
        <link rel="stylesheet" type="text/css" href="../resources/css/browse.css" media="screen" />
       
       <script type="text/javascript" src="../resources/scripts/head.js"></script>
       <script type="text/javascript" src="../resources/scripts/jquery-1.5.js"></script>
-      <script>head.js("");</script>      
+      <script type="text/javascript" src="../resources/scripts/browse.js"></script>
+      <script type="text/javascript" src="../resources/scripts/chosen.jquery.js"/>
+      <!-- script>head.js("");</script -->       
     </head>
 };
 

@@ -59,6 +59,7 @@ declare function browse-names:titles-list( $nodes as element()*,  $level as node
     let $types := distinct-values($nodes/@type)    
     
     return element titles {
+        attribute {'name'}{ 'name-type' },
         attribute {'count'}{ count($types)},
         attribute {'title'}{ $level/@title },            
    

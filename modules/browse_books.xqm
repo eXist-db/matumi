@@ -37,7 +37,7 @@ declare function browse-books:data( $context-nodes as node()*, $URIs as node()*,
 
 declare function browse-books:list( $books as element()*){
    for $book in $books
-     let $titleStmt := $books//teiHeader/fileDesc/titleStmt 
+     let $titleStmt := $books//teiHeader/fileDesc/titleStmt
      let $root := $book/ancestor-or-self::tei:TEI
      
    return 
@@ -48,27 +48,35 @@ declare function browse-books:list( $books as element()*){
    }
 };
 
-declare function browse-books:title-extract( $title as element(tei:titleStmt)? ){ 
+declare function browse-books:title-extract( $title as element(tei:titleStmt)?, $URIs as node()* ){     
      if( exists($title)) then
-         element title {
-            attribute uri { document-uri( root($title)) },
-            if( string($title) = 'Title' ) then 
+         let $uri := document-uri( root($title)) 
+         return element title {
+            if( $uri = $URIs/uri ) then attribute {'selected'}{'true'} else (),
+            attribute {'value'} { $uri },
+            attribute {'uri'} { $uri },
+            if( exists($title/title[@type='main']) ) then
+                 $title/title[@type="main"]   
+            else if( string($title) = 'Title' or empty($title/title) or fn:string-join($title/title,'') = '' ) then 
                  concat('[',  util:document-name($title), ']') 
-            else $title/title[@type="main"]   
+            else
+                $title/title 
+             
          }   
      else <title>Missing Title</title>
 };
 
 
-declare function browse-books:titles-list( $nodes as element()*,  $level as node()? ){
+declare function browse-books:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()* ){
     element titles {
-        attribute {'count'}{ count($nodes)},
-        attribute {'title'}{ $level/@title },
-             for $title in $nodes//tei:titleStmt  
-             let $title2 := browse-books:title-extract($title)
-             order by string($title2)
-             return $title2
-   
+         attribute {'name'}{ 'uri' },
+         attribute {'count'}{ count($nodes)},
+         attribute {'title'}{ $level/@title },
+        
+         for $title in $nodes//tei:fileDesc/tei:titleStmt
+         let $title2 := browse-books:title-extract($title, $URIs )
+         order by string($title2)
+         return $title2   
     }    
 };
 

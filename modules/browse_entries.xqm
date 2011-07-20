@@ -76,6 +76,7 @@ declare function browse-entries:direct-link( $entry as element()? ){
 
 declare function browse-entries:titles-list( $nodes as element()*,  $level as node()? ){
     element titles {
+        attribute {'name'}{ 'entity-uri' },
         attribute {'count'}{ count($nodes)},
         attribute {'title'}{ $level/@title },
         

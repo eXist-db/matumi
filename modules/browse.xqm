@@ -87,28 +87,28 @@ declare variable $browse:data-4 := ();
 
 declare variable $browse:titles-1 := if( empty($browse:data-1) or empty($browse:L1)) then () else 
        typeswitch ($browse:data-1[1] )
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1, $browse:L1 )                
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1, $browse:L1, $browse:URIs )                
           case element(tei:div) return   browse-entries:titles-list( $browse:data-1, $browse:L1 )
           case element(tei:name) return browse-names:titles-list( $browse:data-1, $browse:L1 )          
           default return <titles><title>no-titles</title></titles>;
                    
 declare variable $browse:titles-2 := if( empty($browse:data-2) or empty($browse:L2)) then () else 
         typeswitch ($browse:data-2[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2, $browse:L2 )                
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2, $browse:L2, $browse:URIs )                
           case element(tei:div) return   browse-entries:titles-list( $browse:data-2, $browse:L2 )
           case element(tei:name) return browse-names:titles-list( $browse:data-2, $browse:L2 ) 
           default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
     
 declare variable $browse:titles-3 := if( empty($browse:data-3) or empty($browse:L3) ) then () else 
         typeswitch ($browse:data-3[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3 )                
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3, $browse:URIs )                
           case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3 )
           case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3 ) 
           default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
 
 declare variable $browse:titles-4 := if( empty($browse:data-4) or empty($browse:L4) ) then () else 
         typeswitch ($browse:data-4[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3 )                
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3, $browse:URIs )                
           case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3 )
           case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3 ) 
           default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
@@ -217,7 +217,7 @@ declare function browse:link( $title as element() ) as element(a){
            concat('?',
                string-join((
                   browse:link-href-base( true()),
-                  browse:nameValue( $title/@* )               
+                  browse:nameValue( $title/@*[ not(local-name()='value')] )               
                ),'&amp;')
            )     
         },
@@ -265,47 +265,54 @@ declare function browse:section-as-ul( $section as element(titles)?, $id as node
 	</div>
 };
 
+declare function browse:section-as-searchable-combo( $section as element(titles)?, $id as node()?, $pos as xs:int) {
+    let $url := string-join((
+                               browse:nameValue('L1', $browse:L1),
+                               browse:nameValue('L2', $browse:L2),
+                               browse:nameValue('L3', $browse:L3),
+                               browse:nameValue('L4', $browse:L4)
+                            ),'&amp;')
+    return                        
+    <div class="grid_5">
+		<div class="box L-box" ajax="?{$url}&amp;segment=box-level&amp;pos={$pos}&amp;level={$id}">
+			<h2>{browse:levels-combo( $id,  $pos) }</h2>
+			<div class="block L-block">
+               <select id="{$id}" style="width:100%" class="chzn-select s-select" name="{$section/@name}">
+                   <option value=''> -- Make a Selection --- </option>
+                   {
+                   for $title in $section/title return 
+                   element {'option'}{
+                       $title/@*,
+                       string($title)
+                   }
+               }</select>
+               <!-- a href="?{$url}">Show all ({ count($section/title), ' ',  string($section/@title)} )</a -->
+               <ul id="{ $id }">{ 
+                    <li style="margin-left:0;list-style:none">
+                       <a href="?{$url}">Show all ({ count($section/title), ' ',  string($section/@title)} )</a>
+                    </li>,
+                    for $t in $section/title return 
+                    element li { browse:link($t) }
+               }</ul>
+            </div>
+		</div>
+	</div>
+};
+
+(:     
+
+
+:)               
+
+
 declare function browse:level-boxes(){
    <form id="browseForm" action="?">{ 
-    browse:section-as-ul( $browse:titles-1, $browse:L1, 1 ),
-	browse:section-as-ul( $browse:titles-2, $browse:L2, 2 ),
-	browse:section-as-ul( $browse:titles-3, $browse:L3, 3 ),
+    browse:section-as-searchable-combo( $browse:titles-1, $browse:L1, 1 ),
+	browse:section-as-searchable-combo( $browse:titles-2, $browse:L2, 2 ),
+	browse:section-as-searchable-combo( $browse:titles-3, $browse:L3, 3 ),
+	<input type="submit" id="" value="Submit"/>,
 	<div class="clear"></div>
-   }</form>,
-   <script>
-        function browse_Set_L3( event, $L1, $L2, $L3){{
-            var $autoUpdate = $('#autoUpdate');
-            $L1 = $L1 || $('#L1');
-            $L2 = $L2 || $('#L2');    
-            $L3 = $L3 || $('#L3');    
-            $('option:disabled', $L3).removeAttr('disabled').show();
-            $('option[value=' + $L1.val() + '], option[value=' + $L2.val() + '] ', $L3).attr('disabled', 'true' ).hide();
-            $L3.val( $L3.find('option:enabled').eq(0).attr('value')); 
-            
-            if( $autoUpdate.length == 0 || $autoUpdate.is(':checked')) {{   
-               $('#browseForm').submit();
-            }}             
-        }}        
-        $(document).ready(function() {{
-            $('#L1').live('change', function(event){{
-                 var $L1 = $(event.target),
-                     $L2 = $('#L2'),
-                     $L3 = $('#L3'),
-                     v1 = $L1.val(),
-                     v2 = $L2.val(),
-                     v3 = $L3.val();
-                 
-                 $('#browseForm option:disabled').removeAttr('disabled').show();
-                 $('#L2 option[value=' + v1 + ']').attr('disabled', 'true' ).hide();
-                 if( v2 == v1 ) {{ 
-                     $L2.val( $L2.find('option:enabled').eq(0).attr('value')); 
-                 }}
-                 browse_Set_L3(null, $L1, $L2, $L3 );
-            }});
-            
-            $('#L2').live('change', browse_Set_L3 );
-        }});
-   </script>
+   }</form>
 };
 
 
@@ -332,7 +339,7 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     			 for $e at $pos in $browse:entries
                   let $root := $e/ancestor-or-self::tei:TEI,
     			      $uri  := document-uri( root($e)),
-    			      $document-title := browse-books:title-extract($root//teiHeader/fileDesc/titleStmt),
+    			      $document-title := browse-books:title-extract($root//teiHeader/fileDesc/titleStmt, $browse:URIs),
     			      $node-id := util:node-id($e),
     			      $categories := browse-names:extract-categories($e)
     			 
