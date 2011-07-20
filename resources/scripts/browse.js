@@ -1,11 +1,15 @@
 function browse_Set_L3( event, $L1, $L2, $L3){
+    var $autoUpdate = $('#autoUpdate');
     $L1 = $L1 || $('#L1');
     $L2 = $L2 || $('#L2');    
     $L3 = $L3 || $('#L3');    
     $('option:disabled', $L3).removeAttr('disabled').show();
     $('option[value=' + $L1.val() + '], option[value=' + $L2.val() + '] ', $L3).attr('disabled', 'true' ).hide();
     $L3.val( $L3.find('option:enabled').eq(0).attr('value')); 
-    $('#browseForm').submit(); //if( $('#autoUpdate').is(':checked')) {   }
+    
+    if( $autoUpdate.length == 0 || $autoUpdate.is(':checked')) {   
+       $('#browseForm').submit();
+    }             
 }
 
 $(document).ready(function() {
@@ -24,6 +28,8 @@ $(document).ready(function() {
          }
          browse_Set_L3(null, $L1, $L2, $L3 );
     });
+    
     $('#L2').live('change', browse_Set_L3 );
+    $(".chzn-select").chosen();
 });
 
