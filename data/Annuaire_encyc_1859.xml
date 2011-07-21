@@ -1,0 +1,1601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Annuaire encyclopédique 1859</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication information: publié par les directeurs de l'Encyclopédie du XIXe siècle,
+          1859-1860.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Source: Gallica Bibliothéque numérique</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="entry" subtype="asia">
+                <head>
+                    <term xml:id="asia">ASIE</term>
+                </head>
+                <div type="article">
+                    <p> Ces derniers temps ont été signalés par des événements d'une haute importance en <name type="place" key="http://dbpedia.org/resource/Asia">Asie</name>: notre pavillon a
+            flotté victorieusement dans les mers de la <name type="place" key="http://dbpedia.org/resource/Cochinchina">Cochinchine</name>; on a obtenu, pour le
+            commerce européen, l'ouverture des ports de la <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">Chine</name>, par le
+            traité de <name type="place">Tbien-Tsin</name>, malheureusement si mal observé par les
+              <name type="people">Chinois</name>. Le <name type="place" key="http://dbpedia.org/resource/Japan">Japon</name>, demeuré jusqu'ici fermé a notre
+            commerce, s'est enfin décidé à nous ouvrir plusieurs de ses ports; l'<name type="place" key="http://dbpedia.org/resource/India">Inde</name> anglaise, naguère encore en
+            convulsion, parait se pacifier à peu près, domptée plus par la persévérance que par la
+            puissance matérielle du gouvernement britannique. La <name type="place" key="http://dbpedia.org/resource/Russia">Russie</name>, renonçant en apparence a ses
+            projets ambitieux en <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>, s'est insensiblement agrandie en <name type="place" key="http://dbpedia.org/resource/Europe">Asie</name>; le pays des <name type="people">Kirghiz</name> et une partie du <name type="place" key="http://dbpedia.org/resource/Turkestan">Turkestan</name> lui appartiennent; elle
+            s'avance hardiment vers le midi, et se propose peut-être de menacer un jour l'<name type="place" key="http://dbpedia.org/resource/India">Inde</name>. Du côte de l'extrême
+            orient, les rives du fleuve <name type="place">Amour</name> ne sont plus, sur un certain
+            espace, qu'une faible barrière qui la sépare du <name type="place" key="http://dbpedia.org/resource/Tianxia">Céleste- Empire</name> sur un autre, ces
+            rives sont mémo franchies. L'<name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>, en un mot, serre l'<name type="place" key="http://dbpedia.org/resource/Asia">Asie</name> par le nord et par le sud, et
+            s'efforce de la faire sortir de sa longue atonie et de la vivifier par la civilisation. </p>
+                    <p> Retraçons maintenant le tableau rapide des événements qui intéressent la géographie,
+            sur ce vaste continent qui fut le berceau du genre humain. </p>
+                    <p> Dans la <name type="place">Turquie d'Asie</name>, des tremblements de terre ont
+            continué à troubler la sécurité des habitants terre ont continué à troubler la sécurité
+            des habitants les épouvantables désastres de <name type="place" key="http://dbpedia.org/resource/Rhodes">Rhodes</name> et de <name type="place" key="http://dbpedia.org/resource/Bursa">Brousse</name>, en 1856, ont trouvé leur
+            pendant, en 1859, dans le sinistre qui a frappé la ville d'<name type="place" key="http://dbpedia.org/resource/Erzurum">Erzeroum</name>: le 2 juin, plusieurs
+            milliers de maisons se sont écroulées, en écrasant dans leur chute un grand nombre
+            d´individus. </p>
+                    <p> La<name type="place" key="http://dbpedia.org/resource/France">France</name>, à peu
+            prés à la même époque, a vu s'inaugurer, sous son haut patronage, la route qui relie
+            aujourd'hui <name type="place" key="http://dbpedia.org/resource/Beirut">Beyrouth</name>
+            à <name type="place" key="http://dbpedia.org/resource/Damascus">Damas</name>: une de nos
+            compagnies prit l'initiative de cette importante communication, et, grâce à son
+            activité, les travaux furent menés rapidement et avec un plein succès, la route franchit
+            le <name type="place" key="http://dbpedia.org/resource/Lebanon">Liban</name>, passe à
+            travers, la plaine de <name type="place">Bk'aa</name>, et nous ne doutons pas qu'avant
+            peu des diligences ne sillonnent cette magnifique voie, emportant avec elles le progrès,
+            dont les habitants de la <name type="place" key="http://dbpedia.org/resource/Turkey">Turquie</name> semblent malheureusement encore peu soucieux.</p>
+                    <p> L'affaire de <name type="place" key="http://dbpedia.org/resource/Jeddah">Djeddah</name>, déjà loin de nous, a laissé dans les esprits une triste impression;
+            la justice a sévèrement puni les assassins de notre malheureux consul <name type="person">M. Éveillard</name>. <name type="place" key="http://dbpedia.org/resource/Arabian_Peninsula">L'Arabie</name>, ou se trouve ce
+            port, nous invite tout naturellement à dire que les <name type="language" key="http://dbpedia.org/resource/English_language">Anglais</name> n'ont pas cessé de
+            tourner leurs regards inquiets du côté de la <name type="place">mer Rouge</name>, qui
+            pourrait devenir un jour ou l'autre, grâce au <name type="place" key="http://dbpedia.org/resource/Suez_Canal">canal de Suez</name>, la route la plus
+            directe pour aller aux <name type="place" key="http://dbpedia.org/resource/Indies">Indes</name>. Jalouse des tentatives de la compagnie dirigée par <name type="person" key="http://dbpedia.org/resource/Ferdinand_de_Lesseps">M. de Lesseps</name>, <name type="place" key="http://dbpedia.org/resource/England">l'Angleterre</name> a cherché
+            depuis longtemps à entraver l'entreprise de la canalisation de <name type="place" key="http://dbpedia.org/resource/Suez">Suez</name> et à lui susciter des difficultés
+            de tous genres, elle-même paraissait avoir le projet d'établir une communication entre
+              <name type="place">l'Aasi</name> ou <name type="place">Oronte</name>, tributaire de la
+              <name type="place" key="http://dbpedia.org/resource/Mediterranean_Sea">Méditerranée</name>, et l'<name type="place">Euphrate</name>, tributaire du <name type="place">golfe Persique</name>; mais aujourd'hui les ingénieurs ont suspendu leurs
+            travaux. La <name type="place" key="http://dbpedia.org/resource/Great_Britain">Grande-Bretagne</name>, du moins, a voulu rester maîtresse absolue du détroit de
+              <name type="place" key="http://dbpedia.org/resource/Bab-el-Mandeb">Bab-el-Mandeb</name>, en prenant possession des petites <name type="place">Iles de
+              Périm</name> et de <name type="place">Camaran</name>. (V, ces mots.) Au mois de juin
+            1859, la pose du fil électrique à travers la <name type="place">mer Rouge</name> fut
+            terminée d'une manière satisfaisante. L'<name type="place">Ile de Perim</name> est
+            maintenant le siége de la principale station télégraphique. </p>
+                    <p> Des découvertes archéologiques ont été faites au <name type="place" key="http://dbpedia.org/resource/Sinai_Peninsula">Sinaï</name>. Les inscriptions qu'on
+            y a trouvées ont été envoyées à Londres, et appartiennent aujourd'hui au Musée
+            britannique.</p>
+                    <p> Transportons-nous au centre de l'<name type="place" key="http://dbpedia.org/resource/Asia">Asie</name>. Les frères <name type="person">Schlagintweit</name> (<name type="person" key="http://dbpedia.org/resource/Hermann_Schlagintweit">Herrmann</name>, <name type="person" key="http://dbpedia.org/resource/Adolf_Schlagintweit">Adolphe</name> et
+              <name type="person" key="http://dbpedia.org/resource/Robert_Schlagintweit">Robert</name>), voyageurs et naturalistes bavarois qui out accompli des missions si
+            périlleuses dans l'<name type="place" key="http://dbpedia.org/resource/India">Inde</name>, l'<name type="place" key="http://dbpedia.org/resource/Himalayas">Himalaya</name>, le <name type="place" key="http://dbpedia.org/resource/Tibet">
+              Thibet</name>, le <name type="place" key="http://dbpedia.org/resource/Turkestan">Turkestan</name>, se sont attiré un juste tribut d'éloges et une réputation bien
+            méritée de savoir et d'audace. La, réussite de leur oeuvre est incontestable: on leur
+            doit des descriptions orthographiques très-précieuses, et particulièrement des données
+            toutes nouvelles sur les monts <name type="place">Karakoroum</name> et <name type="place">Kouen-lun</name>; ils ont établi que ces montagnes formaient deux chaînes
+            bien distinctes, ce qui n'avait jamais été compris avant eux. (Voir, pour la biographie
+            de ces voyageurs, l'article Schlagintweit.)</p>
+                    <pb n="1"/>
+                    <p> L'orographie de l'<name type="place" key="http://dbpedia.org/resource/Asia">Asie</name> centrale s'est encore enrichie d'une observation bien importante: le
+            colonel <name type="person">Waugh</name>, en 1856, a fait connaître que le pic le plus
+            élevé de l'<name type="place" key="http://dbpedia.org/resource/Himalayas">Himalaya</name> est, non le <name type="place">Kitchitchinga</name>, comme on l'avait
+            pensé quelque temps, ni le <name type="place">Dhaoulagiri</name>, qui avait passé
+            longtemps pour le point culminant du monde, mais le pic <name type="place">Everest</name>, qu'on a ainsi appelé en l'honneur d'un savant géographe anglais, et
+            qui atteint 8,840 mètres.</p>
+                    <p> A peu de distance de l'<name type="place" key="http://dbpedia.org/resource/Indochina">Indo-Chine</name>, les <name type="place">îles Andaman</name>, qui sont devenues
+            récemment une possession anglaise, ont été le lieu d'exil du <name type="person">roi de
+              Delhy</name>. Le gouvernement britannique y envoie un grand nombre de prisonniers, qui
+            sont principalement relégués dans quelques petites îles voisines de la <name type="place">Grande Andaman</name>. Il y a quelques années, plusieurs déportés
+            hindous, qui avaient vécu constamment à fond de cale durant la traversée, et qui, par
+            conséquent, n'en avaient pas pu apprécier l'étendue, crurent, en apercevant les rives de
+            la <name type="place">Grande Andaman</name>, n'être qu'à quelques milles de leur
+            mère-patrie; ils conçurent le dessein de s'évader, et mirent à exécution leur projet;
+            mais ils furent reçus à coups de poignard par les habitants, très-farouches, et qui sont
+            même, dit-on, cannibales; ils se virent dans la nécessité , s'ils voulaient échapper à
+            la mort, de reprendre humblement leurs fers.</p>
+                    <p>Si les <name type="people" key="http://dbpedia.org/resource/English_people">Anglais</name> s'étendent au sud, les <name type="people" key="http://dbpedia.org/resource/Russians">Russes</name> menacent encore plus
+            sérieusement le nord, où ils s'avancent à grands pas aux dépens du vaste empire <name type="people">Chinois</name>. Grâce au fleuve <name type="place">Amour</name>,
+            aujourd'hui la moitié de la <name type="place" key="http://dbpedia.org/resource/Manchuria_(region)">Mandchourie</name> se trouve
+            enclavée dans les possessions des <name type="people" key="http://dbpedia.org/resource/Russians">Russes</name>; des forteresses et des
+            stations de <name type="people">Cosaques</name> ont été établies le long des rives du
+            même fleuve, et des ingénieurs s'occupent du tracé de routes stratégiques destinées à
+            les relier entre elles. Enfin les <name type="people" key="http://dbpedia.org/resource/Russians">Russes</name> s'avancent déjà dans la <name type="place">Dzoungarie</name> jusqu'au lac <name type="place">Issik-Koul</name>, qui
+            est compris tout entier dans leur territoire. Dans le <name type="place">Turkestan
+              occidental</name>, la <name type="place">mer d'Aral</name> leur appartient; ils
+            tiennent le <name type="place">Khanat de Khiva</name> sous leur suzeraineté, et ils ont
+            obtenu le droit exclusif de faire remonter le <name type="place">Djihoun</name> par
+            leurs bâtiments. D'un autre côté, ils sont maîtres presque entièrement de la grande
+              <name type="place">île de Sakhalien</name>. (Nous renvoyons, pour d'autres détails
+            concernant l'<name type="place" key="http://dbpedia.org/resource/Asia">Asie</name>, aux
+            articles <name type="place">Chine</name>, <name type="place" key="http://dbpedia.org/resource/Japan">Japon</name>, <name type="place" key="http://dbpedia.org/resource/India">Inde</name>, <name type="place">Siam</name>,
+              <name type="place">Barmananie</name>, <name type="place">Perse</name>, <name type="place" key="http://dbpedia.org/resource/Siberia">Sibérie</name>, <name type="place">Anour</name>, <name type="place">Caucase</name>, <name type="place">Kirgitz</name>.)</p>
+                    <byline>Richard Cortambert</byline>
+                </div>
+            </div>
+            <div type="entry" subtype="europe">
+                <head>
+                    <term xml:id="europe">EUROPE</term>
+                </head>
+                <div type="article">
+                    <p> Nous n'avons pas à mentionner pour cette partie du monde des découvertes géographiques
+            telles que celles que nous offrent les autres régions du globe; tout y est á peu près
+            connu géographiquement; mais la topographie est encore l'objet de nombreuses
+            améliorations: les cartes topographiques ne sont pas complètes ne beaucoup près. La
+              <name type="place" key="http://dbpedia.org/resource/France">France</name> a terminé le
+            levé, mais non la publication de cette grande et belle carte en 258 feuilles, dite de
+            l'étal-major; plusieurs pays <name type="place" key="http://dbpedia.org/resource/Germany">d'Allemagne</name> ont leurs cartes
+            topographiques achevées ou fort avancées; parmi les plus importantes, sont celle du
+              <name type="place" key="http://dbpedia.org/resource/Hanover">Hanovre</name>, oeuvre du
+            savant <name type="person">Papen</name>, dont la science déplore la perte récente; celle
+            de la <name type="place" key="http://dbpedia.org/resource/Bavaria">Bavière</name>, en
+            112 feuilles, qui n'est pas tout à fait complète; celles du grand-duché de <name type="place" key="http://dbpedia.org/resource/Hesse">Hesse</name>, du <name type="place" key="http://dbpedia.org/resource/Württemberg">Würtemberg</name>, du
+            grand-duché de <name type="place" key="http://dbpedia.org/resource/Baden">Bade</name>,
+            entièrement terminées; celles de la <name type="place" key="http://dbpedia.org/resource/Hesse-Kassel">Hesse-Électorale</name>, du royaume de
+              <name type="place" key="http://dbpedia.org/resource/Saxony">Saxe</name>, qui le sont à
+            peu près. La <name type="place" key="http://dbpedia.org/resource/Prussia">Prusse</name>
+            avance beaucoup la carte de son état-major, et a même achevé toutes ses provinces
+            occidentales (<name type="place">Rhin</name> et <name type="place" key="http://dbpedia.org/resource/Westphalia">Westphalie</name>). <name type="place" key="http://dbpedia.org/resource/Austria">L'Autriche</name> possède les cartes de
+            presque toutes ses provinces, par les soins de son <name type="institut">Institut
+              militaire géographique</name>; elle a même fait lever par lui <name type="place" key="http://dbpedia.org/resource/Italy">l'Italie</name> septentrionale et centrale
+              (<name type="place" key="http://dbpedia.org/resource/Lombardy">Lombardie</name>, <name type="place" key="http://dbpedia.org/resource/Veneto">Vénetie</name>, <name type="place" key="http://dbpedia.org/resource/Papal_States">États de l'Église</name>,
+              <name type="place">Toscane</name>, <name type="place">Parme</name> et <name type="place">Modène</name>). Le royaume de <name type="place">Sardaigne</name> a donné
+            une grande partie de sa belle carte en 91 feuilles. <name type="place" key="http://dbpedia.org/resource/Netherlands">Les Pays-Bas</name> avancent leur
+            admirable monument topographique en 62 feuilles. La <name type="place" key="http://dbpedia.org/resource/Belgium">Belgique</name> a sa grande carte de <name type="person">Van der Maelen</name>, en 250 feuilles, oeuvre énorme et gouvernemental,
+            qu'a pu faire un simple particulier. La carte de la <name type="place" key="http://dbpedia.org/resource/Switzerland">Suisse</name>, sous la direction du
+            général <name type="person">Dufour</name>, est près d'être terminée; le canton de <name type="place" key="http://dbpedia.org/resource/Canton_of_Geneva">Genève</name>, publié
+            sur une plus grande échelle que le reste, est un des plus charmants dessins
+            topographiques dont s'enorgueillisse notre époque. </p>
+                    <p>Les <name type="place" key="http://dbpedia.org/resource/British_Isles">Iles
+              britanniques</name> sont représentées dans le plus grand détail par <hi rend="italic">
+              l'Ordnance Map</hi>. <name type="place">L'Irlande</name>, en 1,907 feuilles, est
+            terminée: <name type="place" key="http://dbpedia.org/resource/England">l'Angleterre</name> et <name type="place" key="http://dbpedia.org/resource/Scotland">l'Écosse</name>, publiées sur une échelle moins considérable, ne sont pas tout à fait
+            achevées. La carte topographique du <name type="place">Danemark</name>, par l'état-major
+            de ce pays, ne compte encore qu'un petit nombre de feuilles. <name type="place" key="http://dbpedia.org/resource/Sweden">La Suède</name> a commencé une carte
+            topographique par loen (préfectures), qui remplacera avec avantage les anciennes cartes
+            provinciales <name type="person">d'Hermelin</name>. La <name type="place" key="http://dbpedia.org/resource/Norway">Norwége</name> en aura une par <hi rend="italic">amt</hi> (bailliages), plus détaillée que la carte, bonne cependant, de
+              <name type="person">Munch</name>. On ne saurait croire combien les cartes les plus
+            estimées, celles, par exemple, des meilleurs géographes allemands, sont encore fautive
+            pour une foule de positions, pour une quantité de détails, de fleuves, de lacs, de
+            fiords, dans une grande partie de la <name type="place" key="http://dbpedia.org/resource/Scandinavian_Peninsula">péninsule scandinave</name>:
+            les cartes topographiques qui se préparent seront donc de la plus grande utilité pour
+            l'amélioration de la géographique générale de <name type="place" key="http://dbpedia.org/resource/Europe">l'Europe</name>. <name type="place" key="http://dbpedia.org/resource/Spain">L'Espagne</name> et <name type="place" key="http://dbpedia.org/resource/Portugal">le Portugal</name> n'ont pas encore de
+            travail propre à remplacer la carte trèsdéfectueuse de <name type="person">Thomas
+              Lopez</name>; cependant l'état-major espagnol a commencé en 1856 sa triangulation pour
+            l'exécution d'une grande carte topographique qui doit s'étendre à toute la <name type="place" key="http://dbpedia.org/resource/Scandinavian_Peninsula">Péninsule</name>; don <name type="person">Francisco Coello</name> a donné plusieurs
+            bonnes cartes de provinces, et il continue avec succès son estimable oeuvre de
+            topographie, qui fera attendre avec patience le grand travail dont nous venons de
+            parler. </p>
+                    <p>La <name type="place">Russie d'Europe</name> a besoin d'une topographie plus complète
+            et plus exacte que celle des généraux <name type="person">Souchtelen</name> et <name type="person">Opermann</name> (1812) et du général <name type="person">Schubert</name>
+            (1837). La <name type="institute">Société géographique de Russie</name> s'occupe avec
+            activité de tout ce qui peut amener la connaissance complète du pays: elle a donné des
+            cartes détaillées de plusieurs parties, entre autres, du gouvernement de <name type="place" key="http://dbpedia.org/resource/Tver">Tver</name>; elle a décidé, en
+            1857, l'exécution d'une carte topographique de tout le territoire russe européen et du
+              <name type="place" key="http://dbpedia.org/resource/Caucasus">Caucase</name>, à
+            l'échelle de 1/1680000; le docteur <name type="person">Hoffmann</name> vient de publier
+            ses observations d'altitude sur une grande partie des monts <name type="place" key="http://dbpedia.org/resource/Ural_Mountains">Ourals</name>; les altitudes de la
+              <name type="place">Finlande</name> ont été l'object de travaux récents de <name type="person">MM. Gylden</name> et <name type="person">Struve</name>. Des
+            reconnaissances topographiques encore plus récentes, par <name type="person">MM.
+              Popiel</name>, <name type="person">Ivanov</name> et <name type="person">Nasarov</name>, ont fait voir que le <name type="person">Manitch</name>, qu'on croyait
+            tributaire seulement du Don, a un autre écoulement vers la mer <name type="place">Caspienne</name>, à laquelle il arrive par une traînée de lacs près de l'embouchure
+            de la <name type="place">Kouma</name>.</p>
+                    <p> La <name type="place" key="http://dbpedia.org/resource/Turkey">Turquie</name> est le
+            pays <name type="place" key="http://dbpedia.org/resource/Europe">d'Europe</name> dont la
+            topographie est le moins connue; la géographie générale el1e-méme y offre de grandes
+            lacunes: les voyages de <name type="person">MM. Boué</name> et <name type="person">Viquesnel</name> ont avancé cependant, dans ces dernières années, la connaissance des
+            parties centrales, spécialement de la <pb n="1"/>
+                        <name type="place" key="http://dbpedia.org/resource/Thrace">Thrace</name>, de la <name type="place">Macédoine</name> et de <name type="place" key="http://dbpedia.org/resource/Albania">l'Albanie</name>; l'orographie et la
+            géologie leur doivent surtout beaucoup; plus récemment, <name type="person">M.
+              Lejean</name> a éclairé quelques points de la géographie de la <name type="place" key="http://dbpedia.org/resource/Bulgaria">Bulgarie</name> et du <name type="place" key="http://dbpedia.org/resource/Montenegro">Montenegro</name>; <name type="person">M.
+              Hecquard</name> a donné sur la haute <name type="place" key="http://dbpedia.org/resource/Albania">Albanie</name> des renseignements tout à
+            fait neufs; M. le docteur <name type="person">Poyet</name> a décrit le territoire <name type="place">d'Islimnia</name> et d'autres parties encore peu connues du voisinage du
+              <name type="place" key="http://dbpedia.org/resource/Balkans">Balkan</name>. Des
+            commissions françaises, topographiques et sanitaires: envoyées dans la <name type="place" key="http://dbpedia.org/resource/Dobruja">Dobroudja</name> à la suite de
+            l'expédition militaire de 1854-1855, et dont faisaient partie <name type="person">MM.
+              Lalanne</name>, <name type="person">Michel</name>, <name type="person">Allard</name>,
+            etc., ont rectifié bien des idées erronées sur cette presqu'île remarquable, <name type="place">le delta du Danube</name> a été étudié avec plus de soin par les
+            ingénieurs européens; beaucoup de renseignement nouveaux ont été donnés sur la <name type="place">Moldavie</name> et la <name type="place" key="http://dbpedia.org/resource/Wallachia">Malachie</name>, devenues des principautés
+            unies et les <name type="people" key="http://dbpedia.org/resource/Austrians">Autrichiens</name> ont levé la carte de la <name type="place" key="http://dbpedia.org/resource/Wallachia">Malachie</name>. Les <name type="people">Serbes</name> s'occupent de faire celle de leur principauté.</p>
+                    <p>
+                        <name type="person">M. Basile Nicolaïdy</name>, Grec plein d'enthousiasme pour son
+            pays, a fait, dans ces derniers temps, un excellent voyage en <name type="place">Macédoine</name> et en <name type="place" key="http://dbpedia.org/resource/Thessaly">Thessalie</name>, et en a publié la relation en français sous le titre de <q>Les
+              Turcs et la Turquie contemporaine</q>. <name type="institut">l'école française
+              d'Athènes</name> continue à nous éclairer sur les points les moins connus de la <name type="place" key="http://dbpedia.org/resource/Greece">Grèce</name>: parmi les plus
+            importants de ses derniers travaux géographiques, on peut remarquer la description de
+              <name type="place" key="http://dbpedia.org/resource/Acarnania">l'Acarnanie</name> et
+            de la <name type="place" key="http://dbpedia.org/resource/Thessaly">Thessalie</name>.</p>
+                    <p>En dépit des vastes plans de remaniements que nous présentaient naguère certaines
+            publications cartographiques, entourées d'un moment de vogue, le commencement de cette
+            année 1860, qui devait voir tant de changements dans la carte d' <name type="place" key="http://dbpedia.org/resource/Europe">l'Europe</name>, ne trouve pas cette partie
+            du monde très différente de ce qu'elle était en 1856, avant le traité de <name type="place" key="http://dbpedia.org/resource/Paris">Paris</name>. Les seules
+            modifications dans la carte politique sont: la cession du territoire entre le <name type="place">Danube</name> et le <name type="place">Val de Trajan</name>, faite par la
+              <name type="place" key="http://dbpedia.org/resource/Russia">Russie</name> à la
+            principauté de <name type="place" key="http://dbpedia.org/resource/Moldova">Moldavie</name>; le <name type="place">delta du Danube</name> remis tout entier à la
+              <name type="place" key="http://dbpedia.org/resource/Turkey">Turquie</name>; <name type="place" key="http://dbpedia.org/resource/Lombardy">Lombardie</name>, enfin,
+            enlevée à <name type="place" key="http://dbpedia.org/resource/Austria">l'Autriche</name>
+            par les préliminaires de <name type="place">Villafranca</name> et le traité de <name type="place">Zurich</name>, et transférée au royaume de <name type="place">Sardaigne</name>.</p>
+                    <p>Nous résumons dans le tableau suivant la situation politique et statistique de <name type="place" key="http://dbpedia.org/resource/Europe">l'Europe</name> au commencement
+            de 1860.</p>
+                    <byline>E.Cortambert</byline>
+                </div>
+            </div>
+            <div type="entry" subtype="asia">
+                <head>
+                    <term xml:id="orientalisme">ORIENTALISME</term>
+                </head>
+                <div type="article">
+                    <p>Nous avons expose sous ce litre, dans le Supplément de l'Encyclopédie, l'état actuel
+            des études orientales. Nous allons donner ici un aperçu des publications de mémé nature
+            qui ont été faites en <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name> dans le courant de l'année 1859, en y comprenant celles qui, à notre
+            connaissance, ont été faite dans certaines parties de l'<name type="place" key="http://dbpedia.org/resource/Orient">Orient</name>.</p>
+                </div>
+                <div type="sub">
+                    <head> Langues sémitiques</head>
+                    <p>Les langues sémitiques continuent à être l'objet de la prédilection de la plupart des
+            orientalistes. L'un des plus infatigables éditeurs de textes arabes est <name type="person">M. Wüstenfeld</name>, de <name type="place">Goettingue</name>, qui a
+            publié <hi rend="italic">l'Histoire de la vie de Mahomet</hi> en <name type="language" key="http://dbpedia.org/resource/Arabic_language">arabe</name>, par <name type="person">Jbn Is'hak</name>, composée dans la première moitié du ne siècle de
+            l'hègyre. Il a aussi donné un ouvrage sur <hi rend="italic">la Mecque</hi>, par Azraki,
+            aux frais de la <name type="institution">Société orientale de l'Allemagne</name>, dont
+            le siége est à <name type="place" key="http://dbpedia.org/resource/Leipzig">Leipzig</name>. <name type="person">MM. Dozy</name>, <name type="person">Dugat</name>, <name type="person">Krehl</name> et <name type="person">Wright</name> ont
+            continué la publication de leurs textes arabes relatifs à <hi rend="italic">l'Histoire
+              et à la littérature des Arabes d' Espagne</hi>. En <name type="place" key="http://dbpedia.org/resource/France">France</name>
+                        <name type="person">M. Barbier de Meynard</name> fait imprimer un frag-<pb n="1"/>ment,
+            relatif à la Perse, de la grande <hi rend="italic">Géographie</hi> de <name type="person" key="http://dbpedia.org/resource/Yaqut_al-Hamawi">Yakout</name>, qui
+            vivait au commencement du <name type="period" key="http://dbpedia.org/resource/13th_century">XIIIe siècle</name> de notre ère. Si
+            l'histoire arabe est toujours très-cultivée, la poésie n'est pas négligée. <name type="person">M. Engelmann</name> a publié à <name type="place">Leyde</name>, en <name type="language" key="http://dbpedia.org/resource/Arabic_language">arabe</name>, avec
+            une version <name type="language" key="http://dbpedia.org/resource/Latin">latine</name>
+            et des notes, le <hi rend="italic">Divan</hi> de <name type="person">Hadirah</name>,
+            poète contemporain de <name type="person" key="http://dbpedia.org/resource/Muhammad">Mahomet</name>. <name type="person">M. Dieterici</name>, à <name type="place">Berlin</name>, a continué la publication des poésies de <name type="person">Motenabbi</name>, avec le commentaire de <name type="person">Wàhidi</name>. <name type="person">M. W. Wright</name>, professeur d'arabe à <name type="place">Dublin</name>, a publié à <name type="place">Leyde</name> quelques opuscules arabes
+            curieux, relatifs à la métrique et à la poésie. Le même savant a aussi fait paraître la
+            première partie d'une traduction <name type="language" key="http://dbpedia.org/resource/English_language">anglaise</name> de la grammaire
+              <name type="language" key="http://dbpedia.org/resource/Arabic_language">arabe</name>
+            de <name type="person">Caspari</name>, publiée originairement en <name type="language" key="http://dbpedia.org/resource/Latin">latin</name>, et dont une traduction <name type="language" key="http://dbpedia.org/resource/German_language">allemande</name>
+            complète vient aussi de paraître à <name type="place">Leipzig</name>. <name type="person">M. Wright</name> y a ajouté d'excellentes notes et de nombreux
+            rapprochements avec les formes similaires de <name type="language" key="http://dbpedia.org/resource/Hebrew_language">l'hébreu</name>, du <name type="language" key="http://dbpedia.org/resource/Syriac_language"> syriaque</name> et
+            de <name type="language">l'éthiopien</name>. <name type="person">M. G. Flüegel</name> a
+            livré au public son septième et dernier volume (in-4°) du grand <hi rend="italic">Dictionnaire bibliographique et encyclopédique de Hadji-Khalfa</hi>, dont le <hi rend="italic">
+                            <name type="institution">Comité des traductions</name>
+                        </hi> de <name type="place">Londres</name> a fait les frais. Enfin, <name type="person">M.
+              Munk</name> a donné un volume intitulé <hi rend="italic">Mélanges de philosophie juive
+              et arabe</hi>, qui comprend les différents articles qu'il avait publiés auparavant
+            dans le <hi rend="italic"> Dictionnaire des sciences philosophiques</hi>, mais complétés
+            et enrichis de nombreux documents qui donnent à cette publication une valeur toute
+            scientifique.</p>
+                    <p>La langue <name type="language" key="http://dbpedia.org/resource/Syriac_language">syriaque</name> a donné lieu encore à de nombreux travaux. <name type="person">M.
+              Lagarde</name> a publié à <name type="place">Leipzig</name> des <hi rend="italic">Analecta syriaca</hi>; <name type="person">MM. W. Cureton</name> et <name type="person">Payne-Smith</name> ont fait paraître en <name type="place" key="http://dbpedia.org/resource/England">Angleterre</name> plusieurs nouveaux
+            fragments de traductions <name type="language">syriaques
+              key="http://dbpedia.org/resource/Syriac_language"</name> du Nouveau Testament.</p>
+                    <p>Les tentatives de déchiffrement des inscriptions assyriennes continuent aussi avec plus
+            ou moins de succès. <name type="person">M. Ménant</name> a fait paraître à <name type="place">Caen</name> deux <hi rend="italic">Mémoires</hi> sur les inscriptions
+            assyriennes et les briques de <name type="place">Babylone</name>. <name type="person">M.
+              Jules Oppert</name> a achevé la publication (à l'imprimerie impériale) du deuxième
+            volume de <hi rend="italic">l'Expédition scientifique de la Mésopotamie</hi>, exécutée
+            par ordre du gouvernement français. Ce second volume comprend le <hi rend="italic">Déchiffrement des inscriptions cunéiformes</hi> recueillies pendant l'expédition ou
+            tirées d'autres sources. Si la publication de <name type="person">M. Oppert</name> n'est
+            pas la première en date, c'est au moins le premier traité systématique sur cette partie
+            nouvelle et très-hardie de la linguistique orientale; et si un certain nombre des
+            importants résultats auxquels l'auteur croit être arrivé ne sont pas confirmés par les
+            travaux ultérieurs, les bases de la science du déchiffrement des inscriptions
+            cunéiformes, assyriennes et babyloniennes, nous paraissent reposer désormais sur de
+            solides fondements.</p>
+                    <p>L'étude des hiéroglyphes égyptiens, cultivée par un petit nombre d'adeptes, confirme de
+            plus en plus le système d'interprétation fondé par Champollion, mort à la peine. <name type="person">M. Bunsen</name> a fait paraître le 3e volume de son édition <name type="language" key="http://dbpedia.org/resource/English_language">anglaise</name> de
+              <hi rend="italic">La place de l'Égypte dans l'histoire universelle</hi>. <name type="person">M. Brugsch</name> a publié en <name type="language" key="http://dbpedia.org/resource/French_language">français</name> le premier volume de
+              <hi rend="italic">l'Histoire de l'Égypte ancienne</hi>, que lui a commandé le <name type="person">pacha d'Égypte</name>; <name type="person">M. Mariette</name> continue,
+            au nom du même pacha, l'exploration des antiquités pharaoniques qui couvrent encore le
+            sol de <name type="place">http://dbpedia.org/resource/Ancient_Égypte"&gt;l'antique
+              Égypte</name>, et chaque jour de nouvelles découvertes viennent enrichir les trésors
+            de la science. Enfin, <name type="person">M. Lepsius</name> à <name type="place">Berlin</name>, <name type="place">M. Birch</name> à <name type="place">Londres</name>, et <name type="person">M. le vicomte de Rougé</name> à <name type="place">Paris</name>, continuent avec un succès bien démontré l'interprétation de
+            ces mystérieux caractères dont on ne croyait jamais pouvoir dérober les secrets à la
+            tombe. La traduction annoncée du grand <hi rend="italic">Rituel funéraire</hi>, par
+              <name type="person">M. Birch</name>, et l'exposition de la religion et de la
+            philosophie des <name type="people">Égyptiens</name>, 600 ans avant <name type="person" key="http://dbpedia.org/resource/Moses">Moïse</name>, par <name type="person">M. de
+              Rougé</name>, viendront bientôt confirmer d'une manière définitive toutes les
+            promesses de la science.</p>
+                </div>
+                <div type="sub">
+                    <head>Langues Arie</head>
+                    <p>La littérature sanskrite semble vouloir se ranimer en <name type="place" key="http://dbpedia.org/resource/France">France</name>. <name type="person">MM.
+              Oppert</name>, <name type="person">Emile Burnouf</name> et <name type="person">Rodet</name> ont publié chacun des <hi rend="italic">Grammaires sanskrites</hi>
+            élémentaires destinées à faciliter l'étude de cette langue savante aux commençants. Un
+              <hi rend="italic">Dictionnaire sanskrit-français</hi>, dont nous manquons encore, est
+            aussi annoncé en caractères européens. Un glossaire sanskrit de mots spéciaux a été
+            édité à <name type="place">Bonn</name> par <name type="person">M. Aufrecht</name> (<hi rend="italic">Udjdjvuladatta's commentary on the unâdisâtras</hi>). Le même indianiste
+            a fait paraître à <name type="place">Oxford</name> la première partie de son Catalogue
+            des ouvrages sanskrits de la Bibliothèque bodléienne. <name type="person">M.
+              Kosegarten</name> poursuit ses travaux indiens; il a publié la première partie du <hi rend="italic">Pantchatantra</hi>, rédaction moderne du plus ancien recueil de fables
+            indiennes, dont il avait déjà publié la rédaction ancienne. <name type="person">M.
+              Sadous</name> a donné au public une traduction <name type="language" key="http://dbpedia.org/resource/French_language">français</name> des <hi rend="italic">Lectures sur la littérature indienne</hi> de <name type="person">A.
+              Weber</name>; il est à regretter que le traducteur ait conservé presque partout, dans
+            sa traduction, l'orthographe <name type="language" key="http://dbpedia.org/resource/German_language">allemande</name> des noms sanskrits,
+            rendus souvent ainsi méconnaissables. <name type="person">M. Max Muller</name> a aussi
+            fait paraître, à <name type="place">Londres</name>, une <hi rend="italic">Histoire de
+              l'ancienne littérature sanskrite</hi>, dans laquelle on retrouve le profond savoir de
+            l'éditeur du <hi rend="italic">Rig-veda</hi>. <name type="person">M. James R.
+              Ballantyne</name>, de retour de <name type="place">l'Inde</name>, où il était
+            principal du collège de <name type="place" key="http://dbpedia.org/resource/Varanasi">Bénarès</name>, a mis à profit ses longues études: nous lui devons un <hi rend="italic">Essai</hi>, en quatre livres, sanskrit et <name type="language" key="http://dbpedia.org/resource/English_language">anglaise</name>, sur le <hi rend="italic">Christianisme comparé à la philosophie indienne</hi>, dont il a édité,
+            dans <name type="place">l'Inde</name>, la plupart des systèmes. Cet essai prouve chez
+              <name type="person">M. Ballantyne</name> une grande connaissance de ces systèmes et de
+            la langue dans laquelle ils ont été exposés. A <name type="place">Londres</name> aussi
+            on a accueilli très-favorablement le premier volume des <hi rend="italic">Textes
+              originaux sanskrits, sur l'origine et le <pb n="2"/> développement de la religion et
+              des institutions de <name type="place">l'Inde</name>
+                        </hi>, recueillis par <name type="person">M. Muir</name>; il est à souhaiter qu'il en donne bientôt la suite. Ces
+            textes, toujours accompagnés d'une traduction <name type="language" key="http://dbpedia.org/resource/English_language">anglaise</name>, sont d'une haute
+            importance pour les études sanskrites.</p>
+                    <p> La langue de <name type="person" key="http://dbpedia.org/resource/Zoroaster">Zoroastre</name> n'est pas négligée en <name type="place" key="http://dbpedia.org/resource/Germany">Allemagne</name>: <name type="person">M.
+              Spiegel</name> a publié à <name type="place">Vienne</name> le deuxième volume du texte
+            de l'<hi rend="italic">Avesta</hi>, comprenant le <hi rend="italic">Vispered</hi> et le
+              <hi rend="italic">Yaçna</hi>, accompagné de la traduction <hi rend="italic">huzvaresch</hi>; et, à <name type="place">Leipzig</name>, le second volume de sa
+            traduction allemande du texte <hi rend="italic">Zend</hi>, plus littérale et plus exacte
+            que celle d'<name type="person">Anquetil Duperron</name>, laquelle, cependant, restera
+            toujours un monument glorieux de dévouement à la science. <name type="person">M. Martin
+              Haug</name> a inséré dans les <hi rend="italic">Mémoires pour la science de
+              l'Orient</hi>, édités à <name type="place">Leipzig</name> par la <name type="insituion">Société orientale allemande</name> (n° 3), la première partie des <hi rend="italic">Gâthâs</hi> ou <hi rend="italic">Hymnes</hi> de <name type="person" key="http://dbpedia.org/resource/Zoroaster">Zoroastre</name>, avec une traduction
+              <name type="language" key="http://dbpedia.org/resource/Latin">latine</name> et un
+            commentaire. Enfin, on attend toujours le grand travail de <name type="person">M.
+              Westergaard</name> sur les livres de <name type="person" key="http://dbpedia.org/resource/Zoroaster">Zoroastre</name>, lequel travail doit
+            comprendre une traduction <name type="language" key="http://dbpedia.org/resource/English_language">anglaise</name>, une grammaire et
+            un dictionnaire zends comparés.</p>
+                    <p> Il n'est venu à notre connaissance, en fait de publications persanes, qu'un volume
+            publié à <name type="place">Calcutta</name> par <name type="person">M.
+              Nassau-Lees</name> et intitulé <hi rend="italic">Les vies des Soufis</hi>, par <name type="person">Djami</name> (en <name type="language" key="http://dbpedia.org/resource/Persian_language">persan</name>), et une traduction
+              <name type="language" key="http://dbpedia.org/resource/English_language">anglaise</name> des <hi rend="italic">Mémoires</hi> de <name type="person">Mahmoud le
+              Ghaznévide</name>, par <name type="person">M. Reynolds</name>, publiée à <name type="place">Londres</name>. En <name type="place" key="http://dbpedia.org/resource/Germany">Allemagne</name>, <name type="person">M.
+              Hermann Brockhaus</name> continue sa belle édition des <hi rend="italic">Poésies de
+              Hafiz</hi>, avec le <hi rend="italic">Commentaire</hi>
+                        <name type="language" key="http://dbpedia.org/resource/Persian_language">persan</name>)
+            de Soudi, et <name type="person">M. Vullers</name> le second volume de son <hi rend="italic">Dictionnaire</hi>
+                        <name type="language" key="http://dbpedia.org/resource/Persian_language">persan</name>-<name type="language" key="http://dbpedia.org/resource/Latin">latin.</name>
+                    </p>
+                </div>
+                <div type="sub">
+                    <head> Langues <name type="language" key="http://dbpedia.org/resource/Chinese_language">chinoise</name> et <name type="language" key="http://dbpedia.org/resource/Japanese_language">japonaise</name>
+                    </head>
+                    <p>L'extrême <name type="place" key="http://dbpedia.org/resource/Orient">Orient</name>
+            paraît entrer enfin d'une manière plus active dans le mouvement européen; toutefois, les
+            publications qui y sont relatives sont toujours rares, du moins celles qui ont un
+            caractère sérieux et scientifique, car nous ne parlons pas ici des productions plus
+            légères qu'un même jour voit naître et mourir. <name type="person">M. Stanislas
+              Julien</name> a publié un choix de fables traduites du <name type="language" key="http://dbpedia.org/resource/Chinese_language">chinoise</name>, mais d'origine
+            indienne, qu'il a intitulées <hi rend="italic">Avadânas</hi>, pour rappeler cette même
+            origine. <name type="person">M. Edkins</name>, missionnaire anglais, a fait imprimer à
+              <name type="place">Londres</name> un petit traité sur la <hi rend="italic">Condition
+              religieuse des Chinois</hi>, à l'usage des gens du monde. <name type="name">M. Th.-F.
+              Wade</name>, secrétaire-interprète du gouvernement anglais en <name type="place">Chine</name>, a donné, à <name type="place">Hong-Kong</name>, un ouvrage en trois
+            parties in-folio destiné aux interprètes et intitulé le <hi rend="italic">Livre des
+              épreuves ou essais (Book of experiments)</hi>, pour se former à la prononciation de
+              <name type="place">Pé-king</name>, qui est celle de la cour; cet ouvrage ne peut guère
+            dispenser de l'enseignement oral des indigènes. Ce même sinologue avait inséré en 1851,
+            dans le <hi rend="italic">Chinese repository</hi>, publié à <name type="place">Canton</name>, trois Mémoires importants sur l'armée chinoise: the <hi rend="italic">Army of the chinese empire; Its two great Divisions, the Rannermen or national guard,
+              and the green Standard or provincial troops; their organization, locations, pay,
+              condition, etc.</hi>, by <name type="person">T.F. Wade</name>, que <name type="person">M. le capitaine Dabry</name> a traduits récemment avec quelques modifications et
+            additions, sous le titre <hi rend="italic">d'Organisation militaire des <name type="people">Chinois</name>, ou la <name type="place">Chine</name> et ses armées
+              par <name type="person">M. Dabry</name>, capitaine d'infanterie, attaché à
+              l'état-major du corps expéditionnaire de <name type="place">Chine</name>.</hi>
+                        <name type="person">M. Dabry</name> a fait paraître presque en même temps le <hi rend="italic">Guide des armées alliées en Chine</hi>, dont le texte chinois a été
+            rédigé par un jeune Chinois qui avait accompagné á <name type="place">Paris</name> le
+            vicaire apostolique d'une province de <name type="place">Chine</name>. L'impression de
+            ce petit livre est très-incorrecte.</p>
+                    <p>La nouvelle expédition anglo-française a inspiré à <name type="person">M. le marquis
+              d'Hervey Saint-Denis</name> une publication sérieuse intitulée: la <hi rend="italic">
+                            <name type="place">Chine</name> devant <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>.</hi>
+                    </p>
+                    <p>L'auteur de cette notice a aussi publié lui-même une <hi rend="italic">Histoire des
+              relations politiques de la <name type="place">Chine</name> avec les puissances
+              occidentales depuis les temps les plus anciens jusqu'à nos jours.</hi> Quant au <name type="language" key="http://dbpedia.org/resource/Japanese_language">japonais</name>,
+            il n'est arrivé à notre connaissance que la <hi rend="italic">Bibliographie
+              japonaise</hi> de <name type="person">M. Léon Pagès</name>, qui prépare la publication
+            d'un <hi rend="italic">Dictionnaire <name type="language" key="http://dbpedia.org/resource/Japanese_language">japonais</name>
+                            <name type="language" key="http://dbpedia.org/resource/French_language">français</name>
+                        </hi>, dont on comprend l'utilité dans les circonstances actuelles,
+            et le <hi rend="italic">Manuel de la Lecture japonaise à l'usage des voyageurs</hi>, par
+              <name type="person">M. Léon de Rosny</name>
+                    </p>
+                </div>
+                <div type="sub">
+                    <head>Travaux aux des sociétés orientales</head>
+                    <p>La <hi rend="italic">
+                            <name type="institution">Société asiatique</name>
+                        </hi> de <name type="place">Paris</name>, la première qui ait été fondée en <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>, poursuit ses travaux. Outre la
+            publication de son <hi rend="italic">Journal</hi>, qui en est au tome 14 de sa 5<hi rend="superscript">e</hi> série, elle continue l'impression d'un choix de <hi rend="italic">Textes orientaux</hi>, accompagnés d'une traduction <name type="language" key="http://dbpedia.org/resource/French_language">français</name>.
+            Elle a sous presse les <hi rend="italic">Prairies de Masoudi</hi>. La <hi rend="italic">
+                            <name type="institution">Société asiatique</name>
+                        </hi> de <name type="place">Londres</name> publie aussi, indépendamment de son <hi rend="italic">Journal</hi>,
+            qui paraît régulièrement, des textes orientaux en différentes langues, mais sans être
+            accompagnés de traductions, ce qui les rend d'un usage moins général. La <hi rend="italic">
+                            <name type="institution">Société orientale</name>
+                        </hi>, d'<name type="place">Allemagne</name>, la plus jeune des trois, est aussi la plus active.
+            Outre la publication de son <hi rend="italic">Journal</hi> très-substantiel, elle fait
+            paraître ou encourage des travaux importants sur différentes branches de l' <hi rend="italic">Orientalisme</hi>. Les <hi rend="italic">
+                            <name type="institution">Sociétés asiatiques</name>
+                        </hi> de <hi rend="italic">
+                            <name type="place">Calcutta</name>
+                        </hi>, de <hi rend="italic">
+                            <name type="place">Bombay</name>
+                        </hi>,
+            de <hi rend="italic">
+                            <name type="place">Madras</name>
+                        </hi> ont repris leurs travaux,
+            momentanément ralentis par la révolte de l'<name type="place">Inde</name>. Celle de <hi rend="italic">
+                            <name type="place">Hongkong</name>
+                        </hi>, qui avait déjà publié <hi rend="italic">cinq</hi> numéros de ses <hi rend="italic">Mémoires</hi>,
+            presqu'inconnus en <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>, et qui paraissait dissoute, s'est réorganisée et remise à l'œuvre;
+            elle peut contribuer beaucoup à augmenter nos connaissances sur la <name type="place">Chine</name>, qui est son domaine spécial. Une Société jumelle s'est récemment formée
+            à <hi rend="italic">
+                            <name type="place">Chang-haï</name>
+                        </hi>, siége actuel des grandes
+            autorités consulaires de l'<name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>; elle a déjà publié deux numéros de ses <hi rend="italic">Mémoires</hi>, qui paraissent destiné à se suivre plus rapidement que ceux de la
+            société de <hi rend="italic">
+                            <name type="place">Hong-Kong</name>
+                        </hi>, car le 3 <hi rend="superscript">e</hi> nu-<pb n="3"/>méro est sous presse et renferme la <hi rend="italic">Relation</hi> par <name type="person">M. Wells Williams</name>, de
+            l'ambassade du ministre américain, <name type="person">M. Ward</name>, à <hi rend="italic">
+                            <name type="place">Pé-king</name>
+                        </hi>. Enfin, la <hi rend="italic">
+                            <name type="institution">Société orientale</name>
+                        </hi> des <name type="place" key="http://dbpedia.org/resource/United_States">États-Unis</name>, dont le siège est à
+              <name type="place">New-Haven</name>, a déjà publié et continue à publier dans son
+            Journal d'excellents <hi rend="italic">Mémoires</hi> qui dénotent en <name type="place">Amérique</name>, comme en <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name> et en <name type="place" key="http://dbpedia.org/resource/Asia">Asie</name>, un mouvement sérieux d'études actives pour pénétrer tous les mystères de
+            l`antique <name type="place" key="http://dbpedia.org/resource/Orient">Orient</name>.</p>
+                    <byline>G. Pauthier</byline>
+                </div>
+            </div>
+            <div type="entry" subtype="philosophie">
+                <head>
+                    <term xml:id="philosophy">Philosophie et Science politique</term>
+                </head>
+                <div type="article">
+                    <p> Ce n'est pas de l'année 1859 que date le mal profond dont la philosophie est atteinte,
+            et dont elle ne se relèvera guère sans quelque remède héroïque. Consultez la plupart des
+            oeuvres philosophiques publiées depuis dix ou vingt ans, même celles que le public a
+            accueillies avec le plus de bienveillance et qui ont joui de tous les honneurs du
+            succès, vous n'y verrez que 1es reflets affaiblis de systèmes qui ont jeté dans leur
+            temps une vive lumière, mais dont te cours des années et la marche incessante de
+            l'esprit humain ont bien terni l'éclat. Notre philosophie moderne ne se compose que de
+            réminiscences. Réminiscences de <name type="person" key="http://dbpedia.org/resource/Plato">Platon</name>, de <name type="person" key="http://dbpedia.org/resource/René_Descartes">Descartes</name>, de <name type="person" key="http://dbpedia.org/resource/Gottfried_Wilhelm_Leibnitz">Leibnitz</name> pur les uns, de <name type="person" key="http://dbpedia.org/resource/Immanuel_Kant">Kant</name>, de <name type="person" key="http://dbpedia.org/resource/Georg_Wilhelm_Friedrich_Hegel">Hegel</name>, pour les
+            autres, même de Locke, de Lamettrie, du baron d'Holbach pour quelques-uns. Il semblerait
+            que tout a été dit sur cette science universelle qui embrasse Dieu, l'homme et la
+            nature, que cet immense terrain n'offre plus aucune découverte à faire, aucun germe à
+            féconder, et que toute la tâche des philosophie de nos jours doive se borner à copier le
+            passé. Et pourtant XIXe siècle a reçu son mot, le grand mot auquel ont abouti tous les
+            efforts intellectuels du siècle précédent, et qui renferme dans sa vaste compréhension
+            toute la rénovation des sciences: le <hi rend="italic">Progrès</hi>! Cette puissante
+            idée contient en germe une métaphysique nouvelle, un théodicée nouvelle, une psychologie
+            nouvelle; elle doit transformer radicalement la logique, 1'ontologie et la moral et
+            Maisqui s'occuperait à exploiter cette mine dont à peine les premiers abords sont
+            ouvert? Le principe du progrès se comporte mal avec la fixité des idées innées qui fait
+            le fond de la philosophie cartésienne ou éclectique; il constitue pour cette philosophie
+            un élément étranger, que, malgré toute sa bonne volonté, elle ne s'assimiler. Quant au
+            panthéisme allemand, il noie ce principe dans le flot nuageux des transformations
+            incessantes de l'être. Quoique répété par p1usieurs voix, parties de points fort opposés
+            de l'horizon, le mot du dix-neuvième siècle n'a pu se faire entendre, et les seuls sons
+            que nous percevions sont les échos monotones du passé. <pb n="1"/> En France, le vent
+            souffle au hégélisme. M. Vacherot a reproduit naguère les conclusions de Hegel dans
+            l'oeuvre de philosophie la plus importante qui ait été publiée en 1858. La <hi rend="italic">Revue germanique</hi> les propage mensuellement avec ardeur, et dans la
+            préface de la nouvelle édition de ses <hi rend="italic">Eudes sur la philosophie
+              contemporaine</hi>. M. Taine fait adhésion ouverte à la méthode hégélienne. Chose
+            singulière, cette philosophie ne compte plus que quelques anciens et rares adhérents en
+            Allemagne; la grande réputation dont elle y a joui pendant quelques années, s'est
+            évanouie au moment où des disciples trop hardis en ont dévoilé toutes les conséquences,
+            et c'est à ce moment que le courant hégélien s'épanche sur la France et qu'on importe
+            chez nous un produit que le pays producteur a condamné! Un autre littérateur encore, M.
+            Renan, qui trouve le mots de Dieu, de Providence d'immortalité un peu lourds pour notre
+            temps, se plaint, dans la préface de ses <hi rend="italic">Essais de morale et de
+              critique</hi>, de ne pas avoir été bien compris, et se défend des opinions
+            anti-spiritualistes qu'on lui a prêtées. Mais, en somme, M. Renan n'avoue pas plus
+            franchement ses opinions dans cette préface que dans ses écrits antérieurs, et ses
+            conclusions sont assez vagues pour faire croire qu'il obéit à ce même souffle de
+            panthéisme et de matérialisme qui nous vient d'Allemagne. Vis-à-vis de cette invasion
+            des doctrines étrangères qui jette le trouble dans les esprits et l'hésitation dans les
+            consciences, on est heureux de voir les derniers représentants de l'école éclectique
+            rester fermes dans la défense des doctrines communes à tous les spiritualistes et
+            opposer au panthéisme les armes qui l'ont toujours vaincu. C'est ce qu'a fait encore M.
+            Saisset dans son <hi rend="italic">Essai de philosophie religieuse</hi>, qui est le plus
+            important des ouvrages de philosophie proprement dite publiés dans l'année.</p>
+                    <p>On peut reprocher à M. Saisset d'avoir mal choisi son titre. Il fait confondre en effet
+            son livre avec ces <hi rend="italic">Essais et mélanges</hi> nombreux dont nos
+            littérateurs en vogue sont si prodigues, et qui sont destinés à transmettre à la
+            postérité les articles que ces messieurs ont publiés dans les journaux et les revues. M.
+            Saisset lui-même a donné en 1859 des <hi rend="italic">Mélanges d'histoire, de morale et
+              de critique</hi> de ce genre. Son travail sur la philosophie religieuse a une plus
+            haute portée. C'est la question de la personnalité de Dieu qui constitue évidemment le
+            point fondamental de toutes les discussions métaphysiques que le panthéisme a soulevées.
+            Du sein de toutes les écoles où se concentre le travail des intelligences, partout des
+            courants d'idées contraires, idées écossaises, idées allemandes, idées de provenance
+            catholique, idées d'origine protestante, idées sceptiques, panthéistes, matérialistes,
+            ultramontaines, piétistes, que sais-je? et toutes ces idées concourent à obscurcir et à
+            effacer dans les âmes l'idée naturelle, l'idée sainte d'un Dieu personnel, créateur
+            libre et intelligent de l'univers, juge et père du genre humain. <q>M. Saiset, vis-à-vis
+              de ces agitations et de ces luttes, s'est demandé où allait notre siècle; il n'a pu
+              croire que les nobles élans par les quels le dix-neuvième siècle a commencé, la
+              renaissance victorieuse du spiritualisme qui en a signalé les premières années, ne
+              doivent conclure qu'au plus triste avortement. Il a donc recommencé le cours de ses
+              études antérieures, il a soumis à une nouvelle vérification les résultats qui lui
+              paraissaient le plus incontestablement acquis, et ces nouvelles recherches n'ont fait
+              que le confirmer dans ses premières convictions. Il expose lui-même ainsi le plan de
+              son livre: J'ai suivi dans l'écrit qu'on va lire un ordre très-simple, l'ordre même de
+              mes études et de mes réflexion. Ayant commencé par me remettre devant les yeux les
+              grands philosophes, j'ai raconté quelles impressions j'ai ressenties en conversant
+              avec eux, en leur proposant mes difficultés et mes doutes. J'ai laissé de côté les
+              anciens, comme trop éloignés de nos habitudes, de notre langage et de toute notre vie
+              moderne. Parmi les penseurs des deux derniers siècles, je ne crois avoir omis aucun
+              homme de génie. J'ai consulté Spinoza, Kant, Hegel, avec autant de scrupule et de
+              respect que Descartes, Malebranche, Newton et Leibnitz. Je n'ai écarté aucun grand
+              problème, dissimulé aucun doute, éludé sciemment aucune objection. J'ai pensé que le
+              seul moyen de me faire pardonner la témérité de mon entreprise, c'était l'ardeur de la
+              recherche et sa parfaite sincérité. Il n'a paru aussi qu'à une recherche sincère, la
+              forme qui convenait le mieux, c'était la plus simple, la plus dégagée de tout appareil
+              d'école et de science. Je ne me suis pas adressé à un cénacle de métaphysiciens; j'ai
+              écrit pour tous ces esprits généreux et cultivés qui, sans se piquer de métaphysique,
+              veulent en matière religieuse, comme en toute autre, faire usage de leur
+            raison.»</q>
+                    </p>
+                    <p> M. Saisset a parfaitement tenu ses promesses. Il a exposé dans un style clair,
+            élégant, un peu académique, les problèmes débattus par la philosophie moderne sur la
+            personnalité de Dieu. Son livre est divisé en deux parties. Dans la première, intitulée
+              <hi rend="italic">Études historiques</hi>, il passe successivement en revue les
+            systèmes des sept philosophes nommés plus haut. Dans la seconde partie il entre, sous le
+            titre de <hi rend="italic">Méditations</hi>, dans le fond même de la question. Y a-t-il
+            un Dieu? Dieu est-il accessible à la raison, sinon dans son essence absolue, dans sa
+            perfection infinie, du moins dans les puissances de son être, la pensée, l'amour, la
+            vie, par lesquelles il se communique à nous? Peut-il y avoir autre chose que Dieu, et le
+            fini ne saurait-il exister en dehors de l'infini? Dieu a-t-il librement créé le monde?
+            Le monde <pb n="2"/> est-il éternel et infini? La nature et l'homme ne sont-ils pas les
+            témoins vivants de la providence divine? Quel est, dans cette harmonie universelle, le
+            rôle du mal et de la douleur? Tels sont les problèmes que l'auteur agite successivement
+            et qu'il résout dans le sens spiritualiste; il conclut par un chapitre sur la religion,
+            qu'il proclame universelle et impérissable, et qu'il reconnaît pour légitime et sainte
+            sous toutes les formes qu'elle a pu revêtir, la diversité des symboles lui paraissant
+            peu importante. En somme, ce livre n'ajoute que peu de chose aux arguments qui ont été
+            donnés maintes fois pour prouver l'existence de Dieu; mais il les rappelle, ce qui n'est
+            pas inutile dans notre temps d'oubli et d'ignorance et il a le mérite nouveau de réfuter
+            parfaitement les objections les plus récentes qui ont été dirigées contre cette ancienne
+            conviction du genre humain, notamment par l'école allemande. </p>
+                    <p>Sous le titre de <hi rend="italic">Philosophie positive</hi>, le chef actuel de l'école
+            positiviste, M. Littré, a publié un petit manifeste qui paraît destiné surtout à
+            indiquer quelques points de dissidence entre le fondateur de l'école et son principal
+            disciple. L'école positiviste est une de celles qui ont pris leur point de départ dans
+            la grande idée du progrès posée avec tant de force au commencement de ce siècle; mais
+            elle a coupé la tête à la science en lui interdisant la recherche des causes, et n'en a
+            laissé subsister que le tronc matériel, privé de dé la conscience de ses mouvements. (V.
+            l'article comte dans le <hi rend="italic">Supplém. de l'Encyclopédie du XIXe
+              siècle.</hi>) Les idées particulières que M. Littré ajoute au fond qu'il a trouvé chez
+            Auguste Comte ont peut-être une certaine importance pour l'économie intérieure du
+            système positiviste; mais elles n'en altèrent pas les données générales. M. Littré admet
+            toujours que la philosophie n'a pas à s'occuper des causes; elle ne doit se permettre
+            aucune affirmation sur l'origine et la fin des êtres: à ce titre, elle repousse même
+            l'athéisme, car l'athée est encore, à sa manière, une espèce de théologien qui a son
+            explication de l'essence des choses. Voyez cependant : un des points sur lesquels M.
+            Littré insiste le plus, c'est l'<hi rend="italic">immanence</hi> des lois de l'univers.
+              <q> Quelque solution individuelle dit-il, que l'on donne aux insolubles questions,
+              d'origine et de fin, le fait est que l'univers nous apparaît présentement comme un
+              ensemble ayant ses causes en lui-même. Le long conflit entre l'immanence et la
+              transcendance touche à son terme: la transcendance, c'est la théologie ou la
+              métaphysique expliquant l'univers par des causes qui sont en dehors de lui;
+              l'immanence, c'est la science expliquant l'univers par des causes qui sont en
+              lui.»</q> Évidemment, en écrivant ces paroles, l'honorable auteur a oublié son
+            principe général. La question des causes immanentes ou extérieures! mais c'est
+            précisément le grand problème qui s'agite entre le panthéisme et le matérialisme d'un
+            côté, et le spiritualisme de l'autre. M. Littré tranche la difficulté sous prétexte de
+            ne pas s'en occuper et sans paraître se douter qu'il justifie complètement ainsi le
+            reproche de matérialisme souvent adressé à l'école positiviste. La principale
+            modification que l'auteur apporte à la doctrine d'Auguste Comte, c'est qu'il substitue à
+            la série sociologique de ce savant à la succession des états théologique, métaphysique
+            et positif, une série nouvelle d'après la quelle l'histoire se partage en quatre âges
+            fondamentaux: le premier, où l'humanité est sous l'empire prépondérant des besoins; le
+            second, où <hi rend="italic">le moral</hi> se développant suscite les premières
+            créations civiles et religieuses; le troisième, ou âge du sens du <hi rend="italic">beau</hi> ou de l'art, et le quatrième, ou âge de la <hi rend="italic">science</hi>.
+            M. Littré se garde bien aussi d'admettre les conclusions religieuses si singulières où a
+            abouti Auguste Comte et l'idéal social de son maître. Suivant lui, le grand résultat de
+            la civilisation a été un <hi rend="italic">changement dans la conception du monde</hi>,
+            changement dont la philosophie positive est l'expression, et quant à la religion, elle
+            ne doit être que <q>«l'ensemble de dogmes et d'institutions qui conforment à la
+              conception du monde l'éducation et la morale.</q>
+                    </p>
+                    <p>En dehors des ouvrages que nous venons de citer, nous ne trouvons pas en France
+            d'autres travaux dogmatiques. M. l'abbé Bautain a donné une nouvelle édition de <hi rend="italic">Psychologie expérimentale</hi>, 2 vol. in-8e. Nous ne pouvons compter
+            parmi les oeuvres philosophiques <hi rend="italic">l'Essai sur le naturalisme
+              contemporain</hi> de dom Guéranger. L'auteur est un des disciples les plus fougueux de
+            cette école catholique qui voudrait faire croire que la religion est incompatible avec
+            le bon sens et convertir la société en un couvent régi passivement par ses supérieurs.
+            Ce livre est dirigé contre un autre écrivain catholique, M. Albert de Broglie, dont la
+            sincère orthodoxie n'est douteuse pour personne et qu'on ne saurait accuser d'être
+            révolutionnaire ou socialiste. Mais M. de Broglie ne croit pas aveuglément à tous les
+            miracles, à tous tes les légendes, et c'est assez pour qu'on lui lance l'anathème. Nous
+            ne pouvons davantage considérer comme un livre de philosophie <hi rend="italic">Paris,
+              Rome et Jérusalem</hi> (2 vol. in-8e), de M. Salvador israélite convaincu, qui rêve la
+            reconstitution du judaïsme, d'un judaïsme revu et corrigé, il est vrai, et où les idées
+            rabbiniques sont singulièrement mêlées de doctrines puisées chez les panthéistes
+            modernes, de métempsycose, etc. M. Salvador, qui rappelle des hallucinations qu'il a
+            eues, nous semble être sous l'empire d'une grande illusion; car, certes, si l'humanité
+            devait abandonner le christianisme, ce n'est pas au judaïsme qu'elle retournerait.</p>
+                    <p>C'est toujours en travaux historique, en rééditions, en traductions, que la génération
+              philoso<pb n="3"/>phique formée par l'éclectisme est la plus féconde. Nous avons à
+            citer sous ce rapport la 2e livraison des <hi rend="italic">Mélanges de philosophie
+              juive et arabe</hi>, de M. Munk, traduction en français de fragments des écrits de
+            Salomon ibn gebirol (Avicebron); le 2e et dernier volume de l'édition des <hi rend="italic">Oeuvres complètes d'Abailard</hi>, par M. Cousin, in-4e; <hi rend="italic">Hugues de Saint-Victor</hi>, nouvel examen de l'édition de ses oeuvres,
+            par M. Hauréau, 1860, in-8e la traduction en français du <hi rend="italic">Traité
+              politique de Spinosa</hi>, par M. Prat; le premier volume des <hi rend="italic">Oeuvres de Leibnitz</hi>, par M. Foucier de Careil; et le <hi rend="italic">upplément
+              aux Oeuvres de Descartes</hi>S, du même; <hi rend="italic">Stahl et l'animisme</hi>,
+            mémoire lu à l'Académie des sciences politiques et morales, par M. Alb. Lemoine; une
+            nouvelle édition des <hi rend="italic">Oeuvrês de Bonald</hi>, publiée par l'ahbé Migne;
+            enfin la traduction, par M. Barni, des <hi rend="italic">Considérations destinées à
+              rectifier les jugements sur la Révolution française</hi>, de Fichte, et celle de la
+              <hi rend="italic">Logique de Hegel</hi>, par M Véra (2 vol in-8e).</p>
+                    <p> En Allemagne aussi, le mouvement philosophique s'est beaucoup ralenti. Le grand
+            édifice panthéiste que Hegel avait construit avec les matériaux élevés par Kant, Fichte
+            et Schelling, a été battu en brèche par ses propres disciples, et il n'en reste plus
+            aujourd'hui que les ruines abandonnées. Ceux qui sont restés fidèles à l'inspiration du
+            maître sont les mêmes qui, à l'époque où le système a jeté son plus grand éclat, en
+            étaient les propagateurs les plus ardents: tel est M. Michelet, de Berlin; tel est M.
+            Rosenkranz, qui, du reste, s'est toujours distingué par quelques points de vue
+            particuliers et qui a publié, cette année, le 2e volume de sa <hi rend="italic">Science
+              de l'idée logique (Wissenschaft der logischen Idee</hi>, Koenigsberg, in-8e). En
+            somme, la disparition du système hégélien a fait un grand vide dans la philosophie
+            allemande. Les esprits sont dispersés; on cherche sans trouver. Quelques personnes se
+            sont ralliées à une sorte de spiritualisme tout empreint des idées qui ont eu cours en
+            Allemagne dans la première moitié de ce siècle. Les principaux représentants de cette
+            doctrine semi-idéaliste, qui offre d'ailleurs de grandes diversités dans ses expressions
+            individuelles et diffère beaucoup du spiritualisme de France, issu de Descartes et de
+            Leibnitz, sont MM. Fichte jeune, Ulrich et Maurice Carrière. Ce dernier a publié en 1859
+            un traité complet d'<hi rend="italic">Esthétique</hi> ou l'<hi rend="italic">Idée du
+              beau dans sa réalisation par la nature, l'esprit et l'art</hi>, Leipzig, 2 vol. in-8.
+            M. Fichte continue à publier son <hi rend="italic">Journal de philosophie
+              spéculative.</hi> Il a donné en outre, en 1859, un petit volume complémentaire de son
+              <hi rend="italic">Anthropologie</hi> (1856), <hi rend="italic">Sur la question de l'
+              âme</hi> (<hi rend="italic">Zur Seelenfrage</hi>, Leipsig, in-8°). Cette question de
+            l'âme a été vivement agitée en Allemagne il y a quelques années. L'école matérialiste,
+            fondée par MM. Vogt et Molesdoit, l'a portée sur le terrain de la physiologie où les ont
+            suivis avec succès non-seulement des philosophes comme M. Fichte, mais des
+            physiologistes tels que MM. Wagner et Lotze. Le problème, tel qu'il était posé, méritait
+            la plus haute attention, et certainement c'est un de ceux qui préoccuperont le plus les
+            philosophes et les physiologistes dans l'avenir. Du moment, en effet, qu'on sera sorti
+            de l'ornière des idées innées, qu'on aura regardé en face les grands faits
+            physiologiques dont le matérialisme se fait aujourd'hui une arme si puissante, on se
+            verra forcé de s'enquérir enfin des véritables rapports de l'esprit avec le cerveau, de
+            rechercher la part pour laquelle ils contribuent l'un et l'autre aux phénomènes de
+            l'intelligence et de la volonté. Naturellement la question n'a pu être résolue, malgré
+            la quantité de livres et de brochures qu'elle a fait éclore. Le combat a cessé par
+            lassitude; cependant, quelques traînards lâchent encore quelquefois leur dernier coup de
+            feu. Ainsi, nous avons à noter cette année deux petits volumes, éclos de cette grande
+            querelle, tous deux dirigés contre l'école matérialiste: l'un de M. Gloss, <hi rend="italic">Qu'est-ce que la science naturelle a découvert jusqu'ici?</hi> (<hi rend="italic">Wie viel entdeckte</hi>, etc., Brunsw., in-8°), et l'autre de M. Reclam,
+              <hi rend="italic">Geist und Koerper</hi>, etc. (l'Esprit et le corps dans leurs
+            re1ations réciproques, Leipsig, in-8°). M. Neugeboren a fondé une revue trimestrielle
+            consacrée spécialement à cette question de l'âme (<hi rend="italic">Vierteljahresschritt
+              zur Seelenlehre</hi>, Herrmannstadt, in-8°).</p>
+                    <p> Il n'est pas étonnant que, dans le désordre intellectuel qui est résulté de cette
+            grande variation de doctrines dont l'Allemagne a été le théâtre, quelques esprits
+            sentent vivement le besoin d'une conciliation entre les vues opposées. Nous trouvons en
+            effet en 1859 deux ouvrages où cette tendance est manifeste: l'un de M. Weissenborn, <hi rend="italic">Leçons sur le panthéisme et le théisme </hi>(<hi rend="italic">Vorlesungen</hi>, etc., Marb. in-8); le second de M. de Quandt, <hi rend="italic">Le
+              savoir et l'être</hi> (<hi rend="italic">Wissen und Seyn</hi>), <hi rend="italic">dissertation réaliste en vue de la conciliation du spiritualisme et du
+              matérialisme</hi> (Dresde, in-8e). D'autres écrivains cherchent à ramener le public
+            aux doctrines chrétiennes; tel est M. Reinke, qui, dans un livre sur <hi rend="italic">La création du monde</hi> (Munster, in-8e), tend à prouver que la seule cosmogonie
+            rationnelle est celle de Moyse. Enfin, de même qu'en France, faute d'idées dogmatiques,
+            on se rejette sur l'histoire. C'est ainsi qu'à l'imitation de M. Haym, qui a exposé, il
+            y a deux ans, le développement intellectuel par lequel Hegel est arrivé à la formule
+            définitive de son système, M. Noack a publié un ouvrage semblable sur la doctrine de
+            Schelling, sous le titre de <hi rend="italic">Schelling, ou la philosophie
+              romantique</hi> (<hi rend="italic">Phil. der Romantik</hi>), dont le 2e et dernier
+            volume a été publié en 1859, Berlin, in·8. Les fils de Schelling continuent, du reste, à
+            publier l'édition des oeuvres complètes de leur père, et le 4' volume de la 1er série a
+              paru<pb n="4"/> dans la même année. M. Schmid (de Schwartzenberg) a donné une
+            monographie sur Descartes (<hi rend="italic">René Déscartes et sa réforme de la
+              philosophie</hi>, Naerdlingen, in-8°). M. Feuerlein a esquissé rapiment en deux
+            volumes l'histoire générale des doctrines morales (<hi rend="italic">Die philosophische
+              Sittenlehre</hi>, Tubingen, in-8°); M. Stoekl a publié le 2e volume de son ouvrage sur
+            l'histoire de l'anthropologique (<hi rend="italic">Die spekulative Lehre vom Menschen u.
+              ihre Geschichte</hi>, Wurtzh., in-8e), comprenant l'époque des pères de l'Église;
+            enfin, M. Zeller continue la 2e édition de son histoire estimée de la philosophie
+            grecque (<hi rend="italic">Die Philosophie des Griechen in ihrer geschichtlichen
+              Entwickelung</hi>, Tubingen, in-8°), dont le second volume a paru cette année.</p>
+                    <p> Nous n'avons parlé jusqu'ici que des travaux dont l'objet est du domaine philosophique
+            proprement dit. Mais la science sociale aussi, dans ses principes généraux, appartient à
+            la philosophie; car, bien que, dans ses applications, elle puisse donner lieu à diverses
+            sciences particulières, elle constitue la partie essentielle de la morale et renferme
+            toutes les conclusions pratiques de l'enseignement philosophique. Nousavons à signaler,
+            dans cette branche de la science, plusieurs travaux remarquables et avant tout deux
+            ouvrages de premier mérite sur la liberté: l'un, du plus éminent économiste de
+            l'Angleterre dans le temps présent, John Stuart Mill l'autre, de M. Jules Simon, le
+            représentant le plus illustre de l'école fondée par M. Cousin. On ne saurait être étonné
+            de voir l'attention se porter sur cette grande question de la liberté. L'homme bien
+            portant s'inquiète peu de la maladie; mais, quand elle vient l'atteindre, il regrette
+            amèrement le temps où il disposait pleinement de toutes les facultés de son esprit et de
+            son corps, et toute sa préoccupation se concentre sur ce point. Il en est de même quand
+            la liberté s'affaiblit dans la société: on est heureux alors d'en signaler la fécondité
+            et la puissance et de rappeler aux générations oublieuses les bienfaits dont elle les a
+            dotées. Nous n'analyserons pas ici l'ouvrage de John Stuart Mill, dont on a fait
+            connaître l'esprit à l'article Grande-Bretagne (<hi rend="italic">littérature</hi>). M.
+            Jules Simon, qui s'est proposé depuis quelque temps de traiter les questions pratiques
+            de la philosophie, a abordé directement, dans son livre actuel, la première partie de la
+            science sociale, dont un second livre sur l'association doit dans sa pensée être le
+            complément nécessaire et jusqu'à un certain point le correctif. Nous ne sommes pas du
+            même avis que le savant écrivain en métaphysique et en psychologie, et nous ne pouvons
+            admettre toutes ses conclusions historiques; mais, dans la généralité des conséquences
+            pratiques et sur le terrain de la morale reconnue par toutes les sociétés modernes, il
+            ne saurait y avoir de divergence entre les hommes qui désirent le progrès, à quelque
+            nuance philosophique qu'ils appartiennent. Dans une première partie qui sert en même
+            temps d'introduction à tout l'ouvrage, M. Jules Simon établit les conditions morales de
+            la liberté; il insiste avec raison sur la nécessité de reconnaître le libre arbitre hors
+            duquel la liberté individuelle n'est qu'un vain mot; il nous parait moins heureux: en
+            traitant de la loi naturelle, qu'il trouve dans la déclaration des droits de 1789; la
+            plus grande partie de cette introduction est consacrée, du reste, à l'exposé historique
+            des phases qu'ont subies la liberté et l'autorité en France dans les trois derniers
+            siècles, et à un examen critique des divers systèmes qui ont été émis sur l'autorité.
+            Abordant directement ensuite la question qui fait le sujet de son livre, l'honorable
+            auteur considère successivement la société domestique ou la famille: liberté du foyer,
+            liberté du capital, liberté de l'atelier; la société politique ou l'état: liberté
+            civile, liberté publique; la société religieuse ou la science: liberté des cultes,
+            liberté de penser. Il nous est impossible ici de reproduire toutes les solutions qu'il
+            propose sur les innombrables questions de détail que soulèvent ces importants problèmes.
+            Bornons-nous à dire que, dans le chapitre de la famille, il se prononce pour
+            l'indissolubilité du mariage; qu'en traitant de la propriété, il combat énergiquement le
+            communisme; qu'en politique, il résume toutes les conditions de la liberté politique
+            dans ces trois principes: <q> «le premier, que la loi écrite prenne partout la place de
+              la volonté arbitraire; le second, que la loi consacre et respecte les droits naturels
+              et imprescriptibles de l' homme, et le troisième, qui se confond presque avec le
+              second, c'est que le gouvernement ne se regarde jamais comme ayant un droit et un
+              intérêt propre, mais qu'il agisse en toute occasion comme le serviteur et le ministre
+              de l'intérêt général.» </q> En matière religieuse, enfin, M. Jules Simon est pour la
+            tolérance et la liberté de penser la plus absolue. Nulle part, du reste, il ne s'est
+            confiné dans le pur domaine de la théorie, et presque toujours il a rappelé et invoqué
+            les enseignements de l'histoire. En somme, les idées de M. Jules Simon sont celles de la
+            première assemblée constituante; il a peu ajouté aux doctrines de 89 et a même jugé
+            sévèrement, trop sévèrement peut-être, les déviations que, sous l'empire des
+            circonstances, la convention s'est permises à leur égard. Mais ces doctrines, il les a
+            exposées avec le style brillant et élégant qui distingue tous ses écrits et les a
+            revêtues ainsi d'une forme nouvelle propre à les graver dans le coeur des générations
+            présentes, dans tout ce qu'elles ont d'excellent et de définitif. </p>
+                    <p> A côté de cet ouvrage, un autre eût demandé une analyse détaillée où la critique se
+            serait mêlée à l'éloge: nous voulons parler de la <hi rend="italic">Démocratie</hi> de
+            M. Vacherot. Mais les tribunaux, par leur intervention, ont clos la bouche à l'ap-<pb n="5"/> préciation scientifique. Nous devons donc nous borner à mentionner ce livre.
+            Deux autres ouvrages accusent des tendances politiques analogues à celles de M. Julès
+            Simon; ce sont les <hi rend="italic">Essais de littérature et de politique</hi> de M.
+            Prevost Paradol, où l'on remarque des études intéressantes sur le régime parlementaire,
+            et la <hi rend="italic">Femme</hi>, de M. Michelet, qui, à la vérité, appartient plus à
+            la littérature et à l'éducation qu'à la politique et à la philosophie.</p>
+                    <p> Il nous reste à parler enfin d'un ouvrage qui se présente avec tout l'appareil de la
+            philosophie scolastique, l'<hi rend="italic">Essai sur le pouvoir public</hi>, du père
+            Ventura. Ici nous trouvons transportés dans un monde tout différent de celui de MM.
+            Julès Simon et Vacherot. Nous rentrons en plein moyen âge, dans les théories de saint
+            Thomas et les institutions politiques de l'époque féodale. Le père Yentura, qui avait
+            l'apparence d'un grand révolutionnaire en 1847, a malheureusement prouvé depuis qu'il
+            n'avait jamais rien compris aux idées modernes. Qu'on invoque l'autorité de saint Thomas
+            pour démontrer que des catholiques très-orthordoxes ont enseigné la souveraineté du
+            peuple, le droit d'insurrection et même le droit des nations de juger et condamner les
+            tyrans: rien de mieux; mais reprendre la question politique au point où l'ont laissée
+            les théologiens du XIIIe siècle ou les révolutions municipales de l'Italie du XVIe c'est
+            se placer tout à fait en dehors des données de la seience. Direction des sociétés par
+            les pouvoirs nés des circonstances historiques, respect et obéissance à ces autorités
+            tant qu'elles ne font pas le mal absolu, libertés locales, municipales, provinciales,
+            corporatives, telles sont en somme les conclusions du père Ventura. Ce qui constitue la
+            vie politique moderne, le développement des sentiments nationaux, la liberté
+            individuelle, la tendance à l'égalité, la presse, les assemblées représentatives,
+            l'influence toute puissante qu'exerce l'opinion publique même sur les pouvoirs les plus
+            absolus, tous ces grands faits ont passé devant les yeux du père théatin sans le
+            toucher. Son idéal est derrière lui comme celui de M. Salvador. Est-ce là comprendre le
+            christianisme? Est-ce comprendre l'humanité, qui marche toujours vers un idéal futur et
+            qui, malgré des défaillances passagères, ne recule jamais?  </p>
+                    <byline> A. OTT</byline>
+                </div>
+            </div>
+            <div type="entry" subtype="history">
+                <head>
+                    <term xml:id="history">HISTOIRE</term>
+                </head>
+                <div type="article">
+                    <p>De toutes les sciences qui ont pour objet l'homme et la société, l'histoire et ses
+            branches accessoires sont celles dont le mouvement s'est le moins ralenti pendant ces
+            dernières années. La grande impulsion donnée aux esprits par la révolution s'est fait
+            sentir dans les études historiques plus que partout ailleurs, et ces études, reprises
+            avec une vigueur nouvelle au sortir des guerres du premier empire, ont abouti à des
+            résultats qui dépassent de bien loin les aquisitions du dernier siècle. On a compris, en
+            effet, de notre temps, que des liens étroits rattachent les destinées de la société
+            actuelle à celles des sociétés antérieures, l'histoire est devenue un des éléments de la
+            science politique, et si les uns ont cherché à justifier le présent par le passé, pour
+            d'autres l'étude des progrès accomplis jusqu'ici par l'humanité, malgré tant d'obstacles
+            et des retours en arrière, est restée une source de vives espérances d'avenir. Chaque
+            année apporte ainsi son tribut de travaux et de recherches à la constatation définitive
+            des lois et des faits de l'histoire et l'année 1859 n'a pas été moins féconde sous ce
+            rapport que les précédentes. Dans cette revue rapide, nous nous bornerons à l'histoire
+            proprement dite, les sciences accessoires, telles que la géographie, l'archéologie, la
+            numismatique, ayant été traitées dans des articles spéciaux.</p>
+                </div>
+                <div type="sub">
+                    <head>Histoire générale</head>
+                    <p> L'histoire générale, qui coordonne les faits sous des points de vue philosophiques, et
+            l'histoire universelle, qui résume dans une narration plus ou moins détaillée tout
+            l'ensemble événements historiques, n'ont pas donné lieu cette année à des travaux
+            importants. Nous ne pouvons citer sous le premier rapporteur que l´<hi rend="italuc">Essai sur l´histoire de l'humanité</hi> volume de 300 pages publie en français, à
+            Leipzig, par un savant russe, sous le pseudonyme de Michael Antonides. L'auteur parait
+            s'être inspiré avant tout de saint Augustin et de Bossuet, tout en tenant compte des
+            civilisations orientales qui tout récemment dans le domaine historique. Il devise
+            l'histoire universelle en deux grandes périodes, savoir, l'ère antérieure à
+            Jesus-Christ, qui a conduit l'humanité dans le passé, ne l'abandonnera pas non plus dans
+            l'avenir, et la parole de Jesus-Christ: Jésus-Christ: <q>Il n'y aura qu'un pasteur et
+              qu'un troupeau,</q> se réalisera sans aucun doute. C'est aux <hi rend="italic">japhétides de l'occident</hi> qu'est dévolu l'accomplissement de cette haute mission.
+            Le seul ouvrage de 1a seconde espèce que nous ayons à mentionner est la 8 édition du <hi rend="italic">Manuel d'histoire universelle</hi>, de Weber, (en allem., 2 vol. in-8e).
+            Ce même auteur a publié, du reste, en 1857 et 1858, le commencement d'une histoire
+            universelle plus étendue et qui formera une douzaine de volumes. D'autres publications,
+            si elles n'ont pas l'histoire générale pour objet direct, en recueillent les matériaux.
+            Telles sont les <hi rend="italic">Biographies universelles</hi>, dont les plus
+            importantes se publient en France, savoir: la nouvelle édition de la biographie Mi
+            chaud, qui est arrivée à son 22e volume (klu-lal), et la biographie Didot, qui en est à
+            son 38 (koegl-lah); telles sont aussi les revues, qui embrassent l'histoire générale en
+            tout ou en partie. L' Allemagne a vu paraître deux recueils de ce genre en 1859: la <hi rend="italic">Revue historique </hi>(<hi rend="italic">Hist. Zeitschrift</hi>),
+            publiée à Munich par M. de Sybel, avec la collaboration des principaux historiens de
+            l'Allemagne, en livraisons trimestrielles, et la <hi rend="italic">Revue de psychologie
+              des peuples et de linguistique</hi> (<hi rend="italic">Zeitschrift für
+              Voelkerpsychologie und Sprach-Wissenschaft</hi>, Berlin), publiée par MM. Lazarus et
+            Steintal et dont l'objet, quoique plus spécial, présente néanmoins un grand intérêt
+            historique. En France, la <hi rend="italic">Revue d'ethnographie orientale et
+              américaine</hi>, dirigée par M. Léon de Rossy, consacre d'intéressantes notices aux
+            peuples de l'Asie et même de tout le monde musulman, et aux question américaines.</p>
+                    <p> A ce même ordre d'études se rattache un ouvrage allemand du plus haut intérêt, l'<hi rend="italic">Anthropologie des peuples de la nature</hi>, de M. Théod. Waltz,
+            professeur de philosophie à Marbourg, et dont il n'a paru jusqu'ici que le premier
+            volume, sous le titre spécial: <hi rend="italic">Sur l'unité de l'espèce humaine et
+              l'état de nature de l'homme</hi>. Ce volume est consacré <pb n="1"/> tout entier à
+            l'examen de la grande question de l'unité de l'espèce; qui y est discutée sous toutes
+            ses faces avec toute l'érudition que comporte ce vaste sujet. La majeure partie du livre
+            n'est qu'un tissu de faits et d'exemples parfaitement classés et tirés de tous les
+            auteurs qui se sont occupés de la question, physiologistes, zoologistes, historiens,
+            voyageurs; mais il laisse désirer quelquefois plus de netteté et de décision dans les
+            opinions propres à l'auteur, qui d'ailleurs conclut très-positivement à l'unité du genre
+            humain et en fournit la démonstration évidente. Une première partie est consacrée à
+            l'examen de la question sous le rapport de l'histoire naturelle. L'auteur discute les
+            diverses définitions qui ont été données de l'espèce; il insiste sur le principe de la
+            fécondité posé par Buffon comme caractère spécifique, et sur celui de Blumenbach de
+            l'analogie de l'homme avec les animaux sous le rapport des variétés et des différences
+            considérables qui peuvent se produire dans une même espèce. Ces principes concluent tous
+            deux à l'unité de l'espèce humaine, sinon à la provenance de tous les hommes d'un même
+            couple primitif, l'auteur paraissant admettre la création d'un certain nombre de couples
+            à la fois et en plusieurs lieux. La première de ces conclusions se trouve corroborée par
+            des recherches étendues sur la nature et la grandeur des modifications dont l'homme est
+            susceptible sous le rapport physique et des causes qui les produisent. Ces causes sont
+            réduites à quatre classes: 1e le climat et le milieu physique; 2° la nourriture et la
+            manière de vivre; 3° la culture intellectuelle: l'auteur constate par des exemples
+            nombreux la ressemblance générale qu'offrent entre eux, chez les races peu civilisées,
+            les individus d'une même peuplade, tandis que la diversité des traits et de l'expression
+            de la physionomie paraît être l'apanage presque exclusif des peuples policés; il
+            constate en même temps les grandes variations qu'offre la forme du crâne au sein d'une
+            même population; 4° la naissance spontanée et l'hérédité des caractères physiques. Ce
+            chapitre contient des faits fort curieux, par exemple, celui de générations de chiens et
+            de chevaux sans queue ou à oreilles coupées, provenant d'individus qu'on avait ainsi
+            mutilés. Considérant ensuite dans leur ensemble les différences principales que
+            présentent les races humaines, l'auteur fait voir que toutes ces différences, celles du
+            crâne, de la peau, de la forme du squelette et des membres, sont variables dans la même
+            race; et que, d'autre part, la chaleur interne, l'époque de la puberté, le rapport des
+            naissances masculines et féminines, la force musculaire, digestive, les maladies, etc.,
+            offrent des variations identiques dans des races fort opposées. Un appendice étendu est
+            consacré à la l'réfutation de l'opinion que les races américaines et polynésiennes ont
+            une tendance naturelle à s'éteindre. Après avoir examiné la question du mélange des
+            races et avoir opposé à l'opinion de M. Gobineau, qui ne voit dans le mélange qu'une
+            cause d'abâtardissement, celle de M. Serre, qui considère la fusion des peuples comme
+            éminemment favorable au progrès de la civilisation, il revient à la question générale de
+            l'unité de l'espèce, et prouve à cette occasion qu'il est impossible de faire provenir
+            l'homme du singe. Cette partie se termine enfin par l'exposé des travaux qui ont été
+            entrepris sur la classification des races humaines au point de vue de l'histoire
+            naturelle, de la linguistique et de l'histoire. - Il ne suffisait pas de démontrer
+            l'unité physiologique du genre humain vis-à-vis des écrivains qui proclament
+            l'infériorité naturelle et irrémédiable de certaines races sous le rapport moral et
+            intellectuel; il fallait considérer aussi la question à ce dernier point de vue. Cette
+            recherche fait l'objet de la seconde partie. Dans un premier chapitre, l'auteur examine
+            quels sont les caractères généraux qui distinguent l'homme de l'animal, savoir: 1° la
+            conservation des connaissances acquises par l'expérience et le pouvoir sur la nature qui
+            en résulte; 2° les sentiments intérieurs de l'homme, leur expression par la parole; 3e
+            le droit et la propriété, une vie sociale plus complète; 4° des idées religieuses: ces
+            caractères se retrouvent dans toutes les races. Existe-t-i1 outre ces propriétés
+            d'autres caractères spécifiques qui distinguent les races entre elles? Cette question
+            conduit à la recherche de ce que pouvait être l'homme à l'origine, avant les
+            développements de la civilisation, dans ce qu'on peut appeler son état de nature. Or, à
+            en juger par les peuples qui s'en rapprochent le plus, cet état offre pour caractères
+            généraux: une dépendance complète du milieu extérieur, une grande paresse de corps et
+            d'esprit, la violence effrénée des passions et des désirs, l'incertitude de la volonté
+            et le défaut de buts suivis. Or, ces particularités sont communes aux peuplades incultes
+            de toutes les races, et l'auteur prouve par de nombreux exemples que, sous aucun de ces
+            rapports et notamment sous celui de la férocité, les blancs ne sont supérieurs aux
+            noirs. Un dernier chapitre enfin est consacré 1t la réfutation de l'objection qu'on a
+            tirée si souvent, contre le principe de l'unité de l'espèce, du fait que beaucoup de
+            races n'ont pu s'élever dans le cours de tant de siècles au-dessus des premiers
+            rudiments de la civilisation. L'auteur examine à cette occasion les diverses causes qui
+            peuvent porter obstacle au développement des sociétés ou le favoriser , il s'étend sur
+            l'action du climat, de la manière de vivre, des circonstances géographiques, des
+            migrations, des guerres, des mélanges de peuples, de la densité de la population, de
+            l'agriculture, des institutions politiques, du commerce, de la religion. Tout en
+            admettant la plupart des faits constatés dans ce dernier chapitre, nous aurions désiré
+            une démonstration plus <pb n="2"/> concluante et basée sur des idées philosophiques plus
+            arrêtées; car la question est bien facile à résoudre, quand on se place au point de vue
+            du progrès. La condition essentielle du progrès, en effet, c'est la transmission, à
+            travers les générations, de toutes les connaissances acquises, de toutes les vérités
+            constatées, de toutes les améliorations accomplies. On comprend donc facilement que la
+            civilisation la plus avancée n'ait été que le partage des peuples qui ont pu profiter de
+            tout le travail antérieur de l'humanité, tandis que telle société, une fois engagée dans
+            une fausse direction, ne puisse plus en sortir et reste fatalement dans un état
+            d'infériorité jusqu'à ce que les idées progressives venues du dehors lui permettent de
+            prendre son élan. Mais, à part ce défaut, qui tient peut-être au désarroi général de la
+            philosophie allemande, et quelques omissions, par exemple, l'examen des maladies propres
+            à chaque contrée et de l'influence qu'elles peuvent exercer sur les races, la
+            dégénérescence, etc., le livre de M. Waitz est un excellent ouvrage qu'on ferait bien de
+            traduire en français.</p>
+                </div>
+                <div type="sub">
+                    <head>ANTIQUITÉ</head>
+                    <p>L'histoire primitive de l'humanité fait l'objet depuis quelques années d'études
+            trèsintéressantes, qui ont déjà été tentées dans les siècles passés, mais qui ne
+            pouvaient conduire alors à aucun résultat positif. Nous voulons parler des recherches
+            basées sur les rapports linguistiques, qui ont été si fructueuses depuis que les langues
+            de l'Inde et de la Perse anciennes ont été dévoilées. L'appréciation des travaux, même
+            historiques, qui se fondent uniquement sur des rapprochements d'idiomes, appartient à la
+            philologie. Nous nous contenterons donc de mentionner ici l'important ouvrage dont M.
+            Pictet, de Genève, a publié cette année le premier volume: <hi rend="italic">les
+              Origines indo-européennes ou les Aryas primitifs</hi>, in-8°, et la savante <hi rend="italic">Étude</hi> de notre collaborateur, M. Vivien de Saint-Martin, <hi rend="italic">Sur la géographie et les populations primitives du nord-ouest de
+              l'Inde</hi>, in-8°. Nous rappellerons à ce sujet que M. Pott fait paraître en ce
+            moment une seconde édition, complètement transformée, de ses <hi rend="italic">Recherches étymologiques</hi> sur les langues indo-germaniques (<hi rend="italic">Etymologische Forschungen</hi>, 3 vol. in-8°). Nous devons passer également à côté
+            d'un autre champ d'investigations fécondes, attenant à celui que nous venons d'indiquer:
+            les travaux relatifs aux études orientales, auxquels sera consacré un article spécial
+            (V. Orientalisme). Mais nous dirons quelques mots des recherches dont la mythologie
+            générale continue à être l'objet, surtout en Allemagne, et dont le principal résultat,
+            jusqu'ici, a été de constater de la manière la plus positive l'identité des plus
+            anciennes traditions mythologiques de la Grèce avec celles de l'Inde primitive. L'idée
+            dominante des mythologues allemands est toujours celle d'un naturalisme primitif. Si
+            l'on n'admet plus avec Dupuis que tous les systèmes religieux se basaient exclusivement
+            sur l'adoration du soleil, si on a même beaucoup modifié le symbolisme de Creuzer, on
+            suppose toujours que l'homme a commencé par attacher le caractère divin aux grandes
+            unités qu'il apercevait dans la nature; qu'il a adoré d'abord le soleil, la terre, les
+            eaux, l'air atmosphérique, le feu, etc.; que peu à peu il a attribué à ces phénomènes
+            naturels une pensée et une volonté semblables à celles de l'homme, et que définitivement
+            il les a personnifiés sous une forme humaine. Sans contester le rôle que les forces de
+            la nature ont joué dans les religions primitives, il nous paraît impossible de démontrer
+            historiquement cette genèse des idées religieuses, et les mythologues, qui s'inspirent
+            des doctrines chrétiennes nous semblent beaucoup plus près de la vérité, en admettant
+            l'existence d'un monothéisme primitif qui n'excluait pas la croyance en des esprits
+            inférieurs, directeurs des phénomènes de la nature, et dont sont sortis tous les dieux
+            du paganisme. Les conclusions de cette partie de la science allemande ont été
+            parfaitement résumées par un érudit qui les partage, M. Alfred Maury, dans sa savante
+              <hi rend="italic">Histoire des religions de la Grèce</hi>, dont le 3' et dernier
+            volume a paru en 1859. On les trouvera aussi dans l'<hi rend="italic">Essai de
+              mythologie comparée</hi> (brochure traduite de l'anglais, in-8), par M. Max Muller,
+            orientaliste allemand établi à Londres. Elles sont enfin exprimées plus ou moins
+            clairement dans les ouvrages publiés cette année sur la mythologie en Allemagne: la
+            livraison du tome 2 de la <hi rend="italic">Mythologie grecque</hi> (<hi rend="italic">Griechische Goetterlehre</hi>), du savant archéologie Welker; la <hi rend="italic">Symbolique et la Mythologie de la nature</hi>, de Friedrich; l'<hi rend="italic">Essai sur la symbolique des tombeaux des anciens</hi>, de Bachofen; les Douze dieux
+            des Grecs, au point de vue de la philosophie de l' histoire, par Eug. de Schmidt,
+            ouvrage qui se fonde en partie sur les idées mythologiques de Schelling; Kuhn, <hi rend="italic">la Descente du feu et de la boisson divine</hi>; Gruppe, <hi rend="italic">Minos</hi>. L'opinion opposée est représentée, jusqu'à un certain point,
+            dans le discours sur le <hi rend="italic">monothéisme</hi> de M. Wallon, prononcé au
+            sein de l'Académie des inscriptions, dans la discussion contre M. Renan (V.
+            Institut).</p>
+                    <p>L'histoire de la Grèce et de Rome n'a donné lieu, en 1859, à aucun ouvrage notable. On
+            a publié une seconde édition d'un ouvrage qui a produit une certaine sensation l'année
+            dernière, et dont l'auteur est mort depuis: <hi rend="italics">Italiques et grecs; le
+              latin est du grec</hi>, dans lequel M. Bosz soutenait l'opinion, assez paradoxale, que
+            le latin était une transformation du grec, toute semblable à celle qui avait fait
+            dériver du latin les langues romanes modernes, et que, par suite, les populations
+            italiques provenaient des Grecs. M. G.-Fr. Schoemann, qui est connu, même de ceux qui ne
+            savent pas l'allemand, par son excellent ouvrage <hi rend="italic">Antiquitates
+              jurispublici Groecorum</hi>, a donné le 2e vol. <pb n="3"/> de ses <hi rend="italic">Antiquités grecques</hi> (en allemand). Ce second et dernier volume traite des
+            antiquités du droit public et du culte. Les origines obscures de l'Italie ont été, en
+            outre, l'objet des recherches de M. Max. de Ring <hi rend="italic">Histoire des peuples
+              Opiques,</hi> in-8. Sur Rome nous ne pouvons que citer les <hi rend="italic">Studia
+              romana</hi>, d'un jurisconsulte distingué, M. Zumpt, et une nouvelle brochure de M. A.
+            Mommsen, sur la <hi rend="italic">Chronologie grecque et romaine</hi> (en allemand), au
+            sujet de laquelle il se trouve engagé dans une discussion assez vive avec son frère
+            Théodore, le savant auteur de l'<hi rend="italic">Histoire romaine</hi>. Même pénurie
+            sur l'histoire des juifs. Sur les juifs anciens, nous n'avons à citer que la deuxième
+            partie du <hi rend="italic">Manuel d'archéologie biblique</hi> (en allemand), de M.
+            Keil, et une dissertation de de M. Schultz, <hi rend="italic">Das Deuteronomium</hi>. M.
+            Jost, auteur d'une histoire étendue des Juifs depuis les Macchabées, a publié la
+            troisième partie de son <hi rend="italic">Histoire du judaïsme</hi> (<hi rend="italic">Gesch. des Judenthums</hi>). M. Bidarde a donné: <hi rend="italic">Les Juifs en
+              France, en Italie, en Espagne, depuis la dispersion jusqu'à nos jours</hi>, in-8.-
+            Enfin les premières migrations des peuples qui ont formé en partie l'Europe moderne, ont
+            fait l'objet d'un nouveau travail de M. Bargmann: <hi rend="italic">les Gètes ou la
+              filiation des Scythes aux Gètes et des Gètes aux Germains et aux Scandinaves</hi>,
+            Strasbourg, in-8°. (V. au <hi rend="italic">Supplie</hi>. de l'Encyclopédie du XIX'
+            Siècle, l'article Scandinaves du même auteur.)</p>
+                </div>
+                <div type="sub">
+                    <head>ÉGLISE</head>
+                    <p> Nous ne pouvons nous empêcher, en abordant l'histoire ecclésiastique, d'exprimer le
+            regret que la France manque toujours d'une bonne histoire générale de l'Église fondée
+            sur les recherches modernes. Nous en sommes toujours à Fleury, et sans contester le
+            moins du monde le mérite de cet éminent historien, on déplore, vis-à-vis de la quantité
+            de documents et de travaux qui ont vu le jour depuis la fin du 17e siècle, qu'il n'ait
+            trouvé dans le clergé français aucun imitateur. Malheureusement l'érudition solide de
+            l'écrivain gallican fait défaut aussi bien que sa critique judicieuse, et, sous ce
+            rapport aussi, on revient aux traditions du moyen âge. En Allemagne, où les travaux ne
+            manquent pas sur cette matière, l'abbé Alzog vient de terminer la 7e édition de son <hi rend="italic">Histoire universelle de L'Eglise</hi>, qui est d'ailleurs connue en
+            France par une bonne traduction. M. Laemmer a commencé à Schaffouse la publication d'une
+            nouvelle édition du texte grec de l'<hi rend="italic">Histoire ecclésiastique
+              d'Eusèbe</hi>, revu sur tous les manuscrits des bibliothèques d'Italie et d'
+            Allemagne, et accompagné de la traduction latine de Henri de Valois. En fait de
+            monographies, nous citerons en premier lieu la <hi rend="italic">Vie de Jésus</hi> (<hi rend="italic">die Geschichte Jesu</hi>, Brunswick, in-8°), et la 2e édition,
+            augmentée, de l'<hi rend="italic">Histoire des Apôtres</hi> (<hi rend="italic">die
+              Apostol. Geschichte</hi>, Brunswick, 2 vol. in-8°), de M. Baumgarten, professeur à
+            Rostock, qui, tout en admettant la vérité de l'histoire évangélique, et en rejetant la
+            plupart des conclusions du rationalisme, n'en a pas moins été l'objet d'attaques
+            véhémentes de la part des luthériens orthodoxes. D'autre part, le chef de l'école de
+            Tubingue, M. Baur, a publié une histoire de l'<hi rend="italic">Église chrétienne du 4e
+              au 6e siècle</hi> (<hi rend="italic">die Christliche Kirche</hi>, etc., Tubingue,
+            in-8°), faisant suite à son histoire des trois premiers siècles, publiée en 1853, et
+            dans laquelle il expose les vues générales de son école sur le développement religieux
+            pendant la période en question. L'école de Tubingue, dont les doctrines ont été exposées
+            en détail dans la <hi rend="italic">Revue germanique</hi>, a complètement renouvelé
+            l'histoire primitive de l'Église. On est surpris au plus haut point quand on lit le
+            récit qu'elle en fait, et on se demande quels sont les documents nouveaux, les sources
+            inconnues qui ont transformé si complètement la narration des Apôtres et autorisé une
+            version si absolument différente de la leur. Mais on est bien plus étonné encore quand,
+            se reportant au bas des pages, on voit que ces documents sont ceux qui se trouvent entre
+            les mains de tout le monde, que ce sont les Évangiles et les Épîtres mêmes des Apôtres,
+            et que tous ces résultats nouveaux ne sont dus qu'à une interprétation ingénieuse, à une
+            critique tellement profonde du texte que le texte même y disparaît. Nous doutons que
+            l'école de Tubingue fasse jamais beaucoup de prosélytes, excepté parmi ceux qui lui sont
+            acquis d'avance et de parti pris; car il faut une foi plus robuste pour admettre ses
+            hypothèses que pour croire à tous les miracles de l'Ancien et du Nouveau Testament.
+            C'est dans un esprit tout différent qu'est écrit l'ouvrage dont M. Albert de Brogile
+            vient de donner le 3e et le 4e volumes: l'<hi rend="italic">Eglise et l'Empire au IVe
+              siècle</hi>. Les deux premiers volumes qui ont paru en 1856 embrassaient le règne de
+            Constantin; les deux volumes actuels comprennent le règne des fils de Constantin et ceux
+            de Julien et Jovien. M. Albert de Broglie appartient à l'école catholique modérée, dont
+            le <hi rend="italic">Correspondant</hi> est l'organe. Il s'est placé à peu près au point
+            de vue de Chateaubriand dans l'<hi rend="italic">Esprit du christianisme</hi>. C'est
+            dire que; tout en reconnaissant es bienfaits dont le christianisme a doté jusqu'ici
+            l'humanité, il est bien éloigné de voir, dans les aspirations de notre temps vers la
+            liberté et l'égalité politique, les effets du même sentiment qui a relevé la femme et
+            aboli l'esclavage. Ce livre semble même avoir été commencé sous une préoccupation assez
+            singulière, savoir, qu'au IVe siècle, l'Église se trouvait vis-à-vis de la société
+            païenne dans la même situation que l'Église de notre temps vis-à-vis des institutions
+            nées de la l'évolution; comme si le gouvernement parlementaire, la liberté individuelle,
+            la liberté de conscience, l'égalité civile, l'indépendance de la propriété, le partage
+            égal des successions, tout enfin ce que la révolution a essayé d'établir de solide et de
+            durable, n'était pas infiniment plus conforme à la morale de l'Évangile que l'absolu-<pb n="4"/> lisme gouvernemental, la distinction des classes, le régime féodal, qui
+            subsistaient avant. Cette préoccupation, heureusement, disparaît dans le courant du
+            livre, où l'on ne retrouve plus que l'historien fidèle et consciencieux. Se fondant sur
+            une étude attentive des sources, initié à tous les travaux modernes dont cette période
+            de l'empire romain a été l'objecte, équitable même envers les adversaires de l'Eglise,
+            n'admettant pas, avec d'autres écrivains catholiques de notre temps, qu'on ne saurait
+            croire à trop de miracles, et sachant faire la part de la légende, M. Albe. de Brogli a
+            présenté sous une forme facile, élégante, quelquefois un peu monotone, le récit presque
+            toujours intéressant des grandes luttes religieuses que souleva l'arianisme sous les
+            fils de Constance, des tentatives réactionnaires de Julien, des guerres défensives de
+            l'empire sur le Rhin et l'Euphrate. Du quatrième siècle nous sautons au onzième, à
+            l'histoire du <hi rend="italic">pape Grégoire VIl et de son temps</hi> (<hi rend="italic">Pabst Gregorius VII und sein Zeitalter</hi>. Schaffouse) par M. A.-FR.
+            Gfroerer, écrivain fécond et qui s'est fait connaître particulièrement par sa conversion
+            éclatante au catholicisme. Son nouvel ouvrage paraît devoir prendre des dimensions très
+            étendues, car les premiers volumes (il en a paru 4) s'occupent exclusivement des
+            affaires antérieures à l'avènement de Grégoire VII au pontificat, des rapports du
+            saint-siège avec tous les pays de l'Europe et notamment avec l'Allemagne, et enfin de la
+            situation religieuse et politique de ces pays mêmes. Ils sont accompagnés de cartes
+            spéciales destinées à faire connaître les divisions ecclésiastiques et politiques des
+            divers États européens au XIe siècle. Les autres ouvrages sur l'histoire de l'Église,
+            qu'il nous reste à citer, sont: le tome II, historiens occidentaux du <hi rend="italic">Recuetl des historiens des Croisades</hi>, publié par l'Académie des inscriptions,
+            in-4°; il contient la fin de la chronique de Guillaume de Tyr, et de ses continuateurs;
+              l'<hi rend="italic">Histoire de la première croisade</hi>, par M. A. Peyré, 2 vol.
+            in-8°; <hi rend="italic">les Croisades de saint Louis</hi>, par M. Ern. Gervais, 1856,
+            in-8e; le 2e volume de l'<hi rend="italic">Histoire des jésuites</hi>, par l'abbé
+            Guettée, in-8°, et divers ouvrages sur méle le calvinisme dont nous parlerons à propos
+            de l'histoire de France.</p>
+                </div>
+                <div type="sub">
+                    <head>EUROPE JUSQU'À LA RÉVOLUTION</head>
+                    <p>Nous n'avons à mentionner aucun ouvrage comprenant l'histoire générale de l'Europe, si
+            ce n'est la continuation de l'<hi rend="italic">Histoire générale des traités de
+              paix</hi> du comte de Garden (t.14 ). Mais les histoires particulières sont d'autant
+            plus nombreuses, et nous rappellerons à ce sujet qu'il se publie chaque année une foule
+            de travaux relatifs à l'histoire locale des provinces, des villes, des abbayes, de
+            personnages secondaires, et même de nombreux recueils périodiques locaux destinés à
+            mettre au jour des documents et des pièces historiques. Nous serons malheureusement
+            forcé d'omettre ces publications qui abondent notamment en France, en Allemagne, en
+            Angleterre et en Italie, et qui souvent offrent des ressources précieuses à l'historien.
+            Nous devrons nous borner à faire connaître les ouvrages qui intéressent l'histoire
+            générale des nations modernes.</p>
+                </div>
+                <div type="sub">
+                    <head>France</head>
+                    <p> Les seuls grands travaux historiques qui paraissent avoir un débit assuré en France,
+            sont les livres qui embrassent toute l'histoire de la nation française. C'est un
+            très-bon signe sans doute pour le sentiment national des classes qui cherchent à
+            s'instruire, mais un indice très-fâcheux pour les classes instruites ou qui devraient
+            l'être, et une preuve qu'en France le goût des études sérieuses disparaît de plus en
+            plus. N'est il pas affligeant de voir, dans un pays qui a été pendant trois siècles à la
+            tête des sciences historiques, une foule de travaux remarquables avorter faute
+            d'éditeurs ou de lecteurs? Croirait-on que le traducteur d'un ouvrage allemand d'une
+            importance majeure, l' <hi rend="italic">Histoire de France</hi> au XVIe et au XVII
+            siècle, de Ranke, a dû s'arrêter au troisième volume, les acheteurs faisant défaut?
+            Rendons grâce aux savants qui ne se laissent pas rebuter par l'indifférence ou
+            l'ignorance du public, et souhaitons à tous le succès des historiens généraux de France.
+            En effet, à côté du nombreux public acquis à l'<hi rend="italic">histoire de France</hi>
+            de M. Henri Martin, qui est définitivement la meilleure qu'on ait publiée, et à celle de
+            M. Michelet, où les qualités et les défauts sont mêlés d'une manière si originale, il se
+            trouve des lecteurs pour l'histoire pittoresque de MM. Bordier de Charton (2 vol.), pour
+            l'histoire de M. Gabourd, écrite, comme on sait, par un zélé catholique, au seul point
+            de vue de la conviction religieuse, et qui en est arrivée à son 12e volume; pour celle
+            de M. l'abbé Pierrot, qui en est à son 9e, et même pour la déplorable histoire
+            d'Anquetil, qui se réimprime indéfiniment. C'est aussi à l'histoire générale que nous
+            devons rattacher deux recueils consacrés presque exclusivement à l'histoire de France:
+            la <hi rend="italic">Bibliothèque de l'Ecole des chartes</hi>, qui a publié dans ces
+            derniers temps, entre autres travaux remarquables, des dissertations sur l'époque
+            mérovingienne, de M. Jacobs et un mémoire sur les <hi rend="italic">finances de la
+              Champagne au moyen âge</hi>, de M. André Lefèvre; et le <hi rend="italic">Cabinet
+              historique</hi>, qui imprime une foule de documents inédits concernant l'histoire des
+            provinces. C'est de même parmi les ouvrages généraux que nous devons classer la <hi rend="italic">Gallia christiana</hi>, cette oeuvre des bénédictins continuée
+            aujourd'hui, avec une érudition égale, par un savant distingué qui, sorti des rangs de
+            la presse, s'est déjà fait connaître par d'autres écrits pleins de science sur le moyen
+            age, M. Hauréau, et dont la 4° livraison, terminant le premier volume in-folio de la
+            continuation, a paru cette année; enfin le tome VI, in-4 , du <hi rend="italic">Catalogue de l'histoire de France, de la Bibliothèque impériale</hi>. Ajoutons qu'une
+            société spéciale, la <hi rend="italic">Société de l'histoire de <pb n="5"/> France</hi>,
+            qui comprend dans son sein des savants nombreux et distingués et qui jouit déjà d'une
+            longue existence, s'occupe de mettre au jour les sources de l'histoire nationale.
+            Plusieurs ouvrages importants ont déjà été publiés à ses frais; elle fait paraître, en
+            outre, tous les ans un <hi rend="italic">Annuaire historique</hi> composé de pièces
+            concernant les périodes diverses de l'histoire de France. Le gouvernement continue en
+            même temps la grande publication des <hi rend="italic">Documents inédits</hi>.</p>
+                    <p> Parmi les ouvrages relatifs à des périodes déterminées ou à des faits particuliers,
+            nous trouvons tout d'abord un travail de premier ordre, l'histoire de la <hi rend="italic">Fondation de la nationalité française</hi>, par M. Buchez. Bien que ces
+            deux petits volumes fassent partie d'une publication populaire, la Bibliothèque utile,
+            on n'a pas besoin d'être fort initié à l'histoire de France pour voir qu'ils ont été
+            écrits sur les documents originaux et nous ne connaissons, en effet, aucun ouvrage
+            moderne qui dénote une étude aussi approfondie des sources de l'histoire de France sous
+            les deux premières races. Évidemment, l'auteur a été limité par l'espace, et son récit
+            porte quelquefois la trace d'abréviations obligées. Mais, telle qu'elle est, cette
+            narration présente le plus grand intérêt, et l'on y trouve des faits que l'on
+            chercherait vainement dans des histoires plus étendues, et qui jettent souvent une
+            lumière inattendue sur l'ensemble des événements. Ce qui domine dans ce livre, c'est le
+            sentiment des choses politiques: il a permis à l'auteur d'éclaircir et de rendre
+            parfaitement intelligibles certaines périodes qui, dans la plupart des autres ouvrages,
+            ne présentent que désordre et confusion, telles que l'histoire des fils de Clovis et de
+            Clotaire, ou celle des successeurs de Louis le Débonnaire. Cet ouvrage offre du reste,
+            une démonstration nouvelle et irrécusable des principes que M. Buchez a toujours
+            soutenus sur la formation des nationalités en général et de la nationalité française en
+            particulier. Suivant ce penseur éminent, ce qui constitue une nation, ce n'est pas la
+            race, ni la langue, ni le territoire, mais une idée , et une idée active, celle d'un but
+            commun à atteindre par l'effort collectif des masses, par la coopération successive des
+            générations. La France n'est pas née de la conquête: jamais les Francs ne se seraient
+            rendus maîtres de la Gaule, si la Confédération armoricaine, qui depuis longtemps avait
+            secoué le joug impérial, et les légions romaines campées sur la Loire ne leur avaient
+            donné librement la main; Francs, Gaulois et Romains se sont volontairement unis dans une
+            pensée commune, celle de défendre le catholicisme contre les populations ariennes qui le
+            menaçaient de tous côtés et de faire prévaloir le christianisme dans l'ordre social.
+            Malgré des préjugés contraires, cette vérité, que M. Buchez a proclamée d'abord en 1833,
+            a fini par être reconnue plus ou moins par tous les historiens modernes. Le livre de M.
+            Buchez offre encore divers autres points saillants et nouveaux que nous ne pouvons même
+            indiquer ici; qu'il nous suffise de signaler un seul d'entre eux, savoir les détails
+            curieux qu'il donne sur la constitution presque parlementaire de la France à l'époque de
+            Clotaire II.</p>
+                    <p>C'est à la fin de la deuxième race et au commencement de la troisième que se rapportent
+            des documents nouveaux, précieux pour l'histoire des institutions sociales, et qu'on n'a
+            commencé à tirer de la poussière des archives que depuis une quinzaine d'années. Nous
+            voulons parler des cartulaires d'églises et d'abbayes. MM. Merlet et Moutier ont terminé
+            cette année la publications de celui de <hi rend="italic">Notre-Dame-des-Vaux de
+              Cernay</hi> (Seine-et-Oise), en 2 vol. in-4°, et planches in-fol.; M. Mahul a publié
+            le 2e volume des <hi rend="italic">Cartulaires et Archives des communes de
+              l'arrondissement de Carcassonne</hi>, in-4°; et l'académie de Grenoble, le Cartulaire
+            du monastère de l'ordre de Cluny de cette ville (Lyon, grand in-8e). Avec la <hi rend="italic">France au moyen âge</hi>, de M. Frédéric Morin (qui fait également
+            partie de la <hi rend="italic">Bibliothèque utile</hi>), nous arrivons à
+            l'affranchissement des communes et aux premières luttes du tiers état contre la royauté.
+            Le petit livre de M. Morin; dont nous ne pouvons partager toutes les appréciations
+            historiques, est étincelant de verve et d'esprit, et pour peu qu'on ait quelque
+            sympathie pour la grande cause des communes au moyen âge, quelque vénération pour les
+            hommes courageux et dévoués qui ont préparé la société moderne, on lira avec bonheur cet
+            éloquent plaidoyer en faveur de tous les droits et de toutes les libertés. A la même
+            époque se rattache l'histoire des <hi rend="italic">Comtes de Toulouse</hi>, dont M. le
+            général Moline de Saint-Yon vient de publier les deux premiers volumes. C'est un ouvrage
+            consciencieux, fait d'après les sources, bien écrit, et qui manquait complètement
+            jusqu'ici. Le 2e volume finit avec l'année 1194. M. Quicherat a terminé la nouvelle
+            édition de l'<hi rend="italic">Histoire des règnes de Charles VII et de Louis XI</hi>,
+            par <hi rend="italic">Basin, évêque de Lisieux</hi>, attribuée jusqu'ici à Amelgard
+            (t.4, in-8e). M. Aoel Desjardins a publié le 1er, volume des <hi rend="italic">Négociations diplomatiques de la France avec la Toscane</hi>, recueillies par M.
+            Canestrini, et faisant partie des documents inédits sur l'histoire de France (in-4e).
+            L'introduction du protestantisme en France et les événements politiques qui en ont été
+            la suite ont été l'objet de plusieurs travaux. Indépendamment de l'<hi rend="italic">Histoire des guerres de religion en France</hi>, de M. J. Bastide (Bibliothèque
+            utile), M. Anquez a donné l'<hi rend="italic">Histoire des assemblées politiques des
+              réformés en France</hi> (1573-1722), in-8e; M. Dargaud, l'<hi rend="italic">Histoire
+              de la liberté religieuse en France</hi> (4 volumes grand in-l8), et un auteur allemand
+            , M. Polenz, le t. 2 (1560-1574) de l'<hi rend="italic">Histoire du calvinisme
+              français</hi>. MM. Anquez, Dargaud et Polenz sont tous <pb n="6"/> trois partisans
+            zélés du mouvement protestant. M. Charles Read, président de la Société de l'histoire du
+            protestantisme français, a publié, de son côté, pour la première fois, le journal du
+            voyage de <hi rend="italic">Daniel Charnier</hi> à la cour de Henri IV en 1607
+            (gr.in-8e). Les études de M. Cousin sur <hi rend="italic">Madame de Longueville</hi> ont
+            fait assez de bruit pour que nous puissions nous borner à les mentionner ici. L'ouvrage
+            de M. de Barante, <hi rend="italic">le Parlement et la Fronde: La vie de Matthieu
+              Molé</hi>, n'est, il vrai dire, qu'une biographie apologétique de ce personnage et de
+            ses ancêtres et descendants. L'auteur annonce l'intention de retracer le rôle du
+            parlement pendant la Fronde; malheureusement, la sèche reproduction des actes de ce
+            corps, rattachés l'un à l'autre par un récit des plus rapides, ne donne qu'une faible
+            idée de cette époque si animée. Le règne de Louis XIV a été l'objet d'assez nombreux
+            travaux. M. Dreyss a donné la première édition complète et revue sur de nouveaux
+            manuscrits des <hi rend="italic">Mémoires de Louis XIV</hi>. M. Sallard a publié le 2e
+            volume de <hi rend="italic">Quinze ans du règne de Louis XIV</hi> (1700-1711i), par M.
+            Moret, qui malheureusement est mort en 1858, sans avoir pu terminer cet ouvrage (en 4
+            vol.). Le duc De Noailles en est arrivé au tome 4 de sa volumineuse compilation sur Mme
+            de Maintenon et son royal époux. Dans ce volume, qui n'arrive pas encore à la guerre de
+            la succession d'Espagne, l'auteur continue à défendre sur tous les points le
+            gouvernement de Louis XIV et à combattre une à une les assertions de tous les écrivains,
+            et notamment du duc de Saint-Simon, qui ont cherché à jeter de l'ombre sur sa gloire.
+            Mais M. de Noailles ne fait que l'histoire de la cour, et s'il s'élevait à celle du
+            peuple, il trouverait peut-être sujet à tempérer l'ardeur de son admiration. Il a, du
+            reste, pu constater dans ce volume le changement d'opinion qui s'est produit en faveur
+            de son héroïne depuis que les tomes 1 et 2 de l'<hi rend="italic">Histoire de madame de
+              Maintenon</hi> ont paru en 1848. En somme, d'après les documents nombreux réunis dans
+            cet ouvrage, Mme de Maintenon apparaît comme une femme habile à ménager parfaitement ses
+            intérêts, douée d'un grand charme dans la société; du reste, assez ordinaire, n'ayant ni
+            grande élévation d'esprit ni originalité bien marquée, acceptant facilement les idées de
+            son entourage, faisant le bien dans les limites où elle le comprenait, et n'ayant
+            définitivement pas exercé sur la politique de Louis XIV l'influence qu'on lui a
+            attribuée. MM. Soulié et Dussieux continuent la publication du <hi rend="italic">ournal
+              du marquis de Dangeau</hi>J, qui en est à sou 16e volume. Enfin à la même époque se
+            rapporte le 10e volume des <hi rend="italic">Mémoires militaires sur la guerre de la
+              succession d'Espagne</hi>, faisant partie de la collection des <hi rend="italic">Documents inédits</hi>. La <hi rend="italic">Monarchie française au XVIIIe
+              siècle</hi>, par M.L. de Carné, offre une série d'études quelquefois intéressantes sur
+            la fin du règne de Louis XIV et celui de Louis XV. Malheureusement les morceaux détachés
+            de ce genre ont toujours l'air d'articles de revues, et l'on a peine à y voir un
+            véritable ouvrage d'histoire. Nous devons mentionner enfin, sur le xVIIIe siècle, le t.
+            IV et dernier de l'important ouvrage de M. D'Hassonville, <hi rend="italic">Histoire de
+              la réunion de la Lorraine à la France</hi>; la monographie de M. Francis Monnier sur
+            le <hi rend="italic">Chancelier d' Aguesseau</hi>; le 1er, volume de l'édition complète
+            du <hi rend="italic">Journal et des mémoires du marquis d'Argenson</hi>, publiés par M.
+            Rathery; l'<hi rend="italic">Essai sur l'administration de Turgot dans la généralité de
+              Limoges</hi>, par M. D'Hugues, et enfin un ouvrage qui intéresse plus spécialement
+            l'histoire littéraire, mais n'est pas complément étranger à l'histoire politique: la <hi rend="italic">Correspondance inédite de Mme du Deffand</hi>, publiée par le marquis de
+            Saint Aulaire. Rappelons encore que la maison Didot publie une nouvelle <hi rend="italic">Bibliothèque des Memoires relatifs à l'histoire de France pendant le
+              XVIIIe siècle</hi>, avec notes, par M. Barière, en petit format.</p>
+                </div>
+                <div type="sub">
+                    <head>
+                        <hi rend="italic">Belgique</hi> et <hi rend="italic">Pays-Bas</hi>.</head>
+                    <p> L'histoire de la Belgique et des Pays-Bas est l'objet d'une louable activité de la
+            part des savants belges. On a de M. Schayès, dont les lettres déplorent la perte
+            récente, les 2 premiers volumes de <hi rend="italic">la Belgique et les Pays-Bas avant
+              et pendant la domination romaine.</hi> M. Gachard continue la publication de la <hi rend="italic">Correspondance de Philippe II</hi> (in-4°), qui en est arrivée à son 3e
+            volume. Il a donné en outre, en 1859, la <hi rend="itaic">Correspondance de
+              Charles-Quint et d'Adrien IV</hi> (in-8e). M. Groen van Prinsterer a publié le 3e vol.
+            de la 2e série (1652 à 1642) des <hi rend="italic">Archives et correspondance inédite de
+              la maison d'Orange-Nassau</hi> (Utrecht, in-8e). La Société de l'histoire de Belgique
+            se propose d'éditer sous un format commode les principaux mémoires concernant l'histoire
+            de ce pays; elle a fait paraître dès cette année 5 volumes de cette collection. M. Juste
+            publie les oeuvres de Marnix de Saint-Aldegonde, dont il a donné l'an dernier la vie
+            sous le titre de <hi rend="italic">les Pays-Bas au XVIe siècle</hi>. Enfin, l'histoire
+            estimée de l'Américain John Lothrop Motley, the <hi rend="italic">Rise of dutch
+              Republic</hi> (nouv. éd., Edimb., 1859, 2vol.), est l'objet de traductions françaises
+            en Belgique et en France. La traduction française, précédée d'une introduction de M.
+            Guizot, est intitulée:<hi rend="italic"> Histoire de la fondation de la république des
+              Provinces unies</hi>.</p>
+                </div>
+                <div type="sub">
+                    <head>
+                        <hi rend="italic">Angleterre</hi>
+                    </head>
+                    <p>Depuis qu'on suppose en Angleterre que les Saxons ont massacré toute l'ancienne
+            population du pays et qu'on s'y sent heureux et fier de descendre de ces féroces
+            conquérants, les études celtiques ont beaucoup baissé dans la grande Bretagne. C'est en
+            Allemagne que nous trouvons le seul ouvrage qui ait été publié il ce sujet. <hi rend="italic">L'ancien pays de Galles (das alte Wales</hi>. Bonn, in-8e), de M. Ferd
+            Walter, présente un exposé complet de l'état social, politique, religieux, littéraire
+            des anciens Gallois. M. Rob. Vaughan a donné le premier volume des <hi rend="italic">Révolutions in englisch his<pb n="7"/> tory</hi>, traitant des révolutions de la
+            race. Ce dont on s'occupe le plus en Angleterre depuis quelques années, c'est de la
+            publication des innombrables documents historiques renfermés dans les archives publiques
+            et privées : mémoires, correspondances, pièces officielles. Le gouvernement fait
+            lui-même mettre au jour les <hi rend="italic">State papers</hi>ou papiers d'État.
+            Plusieurs volumes de cette collection ont paru cette année, parmi lesquels nous citerons
+            : Aug. Cole, <hi rend="italic">Memorials of Henry V, king of England</hi> (in-8e);
+            Gairdner, <hi rend="italic">Memorials of Henry VII</hi>; le journal et la correspondanee
+            d'Evelyn, avec la correspondance particulière de Charles Fier pendant la guerre civile
+              (<hi rend="italic">Evelyn's diary and correspondance</hi>, etc. 4 vol. in-8e,
+            t.i.,l859), édités par John Forster; les pièces du règne de <hi rend="italic">Jacques
+              1e</hi>, par le même; diverses chroniques d'Ecosse, etc. Parmi les oeuvres
+            particulières les plus importantes sont une nouvelle édition du <hi rend="italic">Journal de Horace Walpole</hi>, publié sur les documents originaux par M. Doran; les
+            mémoires de Charles II (<hi rend="italic">Personal memoirs</hi>, etc.), par W. Clayton ;
+            l'histoire du journalisme anglais (<hi rend="italic">History of british journalism</hi>)
+            depuis la fondation de la presse périodique jusqu'à 1815, par M. Al. Andrews (2 vol.
+            in-8e) , et l'histoire de Fox (<hi rend="italic">the Life and time of Ch. J. Fox</hi>,
+            t. 2, in-8e), par lord John Russel, qui antérieurement déjà a recueilli les memoires et
+            la correspondance du même homme d'État. </p>
+                    <p>En France, Mme Dupont a donné le tome II des <hi rend="italic">Anchiennes croniques
+              d'Engleterre</hi>, par de Wawrin, chapitres inédits annotés; M. A. Teulet a publié un
+            volume de <hi rend="italic">Lettres de Marie Stuart</hi>, pour faire suite au recueil de
+            M. de Labanoff. Les historiens se sont beaucoup occupés dans ces derniers temps de
+            l'infortunée reine d'Ecosse, et l'ouvrage de Ranke, dont nous allons parler, lui
+            consacre également quelques pages. Mais tous les documents nouveaux qu'on a publiés sur
+            son histoire ne pourront modifier les conclusions résultant des faits depuis longtemps
+            connus, savoir, que Marie Stuart était une femme légère, passionnée, ayant de graves
+            reproches à se faire, mais qu'elle possédait en même temps les qualités qui excitent de
+            vives sympathies, et que sa mort a été une injustice cruelle. - Il nous reste à parler
+            de deux ouvrages qui embrassent l'ensemble des destinées de la Grande-Bretagne: l'<hi rend="italic">Histoire d'Angleterre depuis les temps les plus reculés jusqu'à la
+              révolution française</hi>, de M. E. de Bonnechose (4 vol. in-8e), et l'<hi rend="italic">Histoire d'Angleterre (Englische Geschichte</hi>), principalement au
+            XVIe et au XVIIe siècle, par Léopold Rank (t.1.Berlin, in-8e). Le livre de M. de
+            Bonnechose est un excellent résumé de l'histoire britannique, assez détaillé pour
+            présenter un aperçu complet des faits, écrit d'un tres-bon style et avec un grand
+            sentiment de justice et d'impartialité, basé enfin sur les sources et tous les travaux
+            spéciaux dont diverses périodes de cette histoire out été l'objet. M. Ranke, comme on
+            sait, s'occupe à retracer toute l'histoire de l'Europe au XVIe et au XVIIe siècle dans
+            une série de monographies affectées aux diverses nationalités. Après l'Espagne, la
+            papauté, l'Allemagne, la France, voilà le tour de l'Angleterre. Les qualités de
+            l'éminent historien se retrouvent ici comme dans ses ouvrages précédents; nulle part
+            cependant elles n'ont apparu avec plus d'éclat que dans l'histoire de la papauté, sans
+            doute parce que le sujet s'y prêtait davantage, et que, dans cette histoire, M. Ranke a
+            pu découvrir et mettre en lumière des faits généraux du plus haut intérêt qui avaient
+            passé inaperçus jusqu'alors, tandis que , dans ses autres ouvrages, l'étude approfondie
+            des sources et surtout des documents diplomatiques lui a permis, à la vérité, de
+            rectifier une foule de détails et de les exposer sous un jour nouveau, mais n'a amené
+            aucune découverte capable de modifier essentiellement les appréciations antérieures.
+            Dans un premier livre, l'auteur retrace à grands traits l'histoire d'Angleterre depuis
+            l'époque celtique jusqu'au règne de Henri VII, et cherche surtout à indiquer la
+            situation de l'Angleterre, aux diverses époques de l'histoire, vis-à-vis du saint-siège.
+            Les trois autres livres dont se compose ce 1er volume traitent d'une manière plus
+            détaillée du règne de Henri VIII et de ses premiers successeurs, de celui d'Élisabeth et
+            enfin de celui de Jaques II jusqu'en 1614. On a reproche à Ranke d'être trop impartial;
+            ce n'est pas le défaut qui nous frappe dans son livre. On voit bien qu'il a des
+            préférences, et, par exemple, sa prédilection pour la cause protestante en général et la
+            reine Élisabeth en particulier perce assez clairement. Ce que nous lui reprocherons
+            plutôt, c'est de ne pas prendre parti franchement, de ne pas blâmer le mal, louer le
+            bien ouvertement, comme il aurait tant d'autorité pour le faire. Du reste, le livre de
+            Ranke n'est pas de ceux dont on peut prendre connaissance par une analyse; il faut, pour
+            l'apprécier, le lire tout entier. [V. aussi l'article Grande-Bretagne
+            (littérature)].</p>
+                </div>
+                <div type="sub">
+                    <head>
+                        <hi rend="italic">Allemagne</hi>
+                    </head>
+                    <p>L'histoire d'Allemagne est l'objet d'études approfondies dans toute la Confédération
+            germanique. Une société ayant pour but les recherches sur l'histoire allemande s'est
+            formée, en 1858, à Munich, sous les auspices du roi de Bavière; cette société est
+            présidée par MM. Ranke, et compte dans son comité les principaux historiens allemands:
+            Pertz, Jacob Grimm, de Berlin; Droysen, d'Iéna; Giesebrecht, de Koenigsberg; Waitz, de
+            Goettingen; Haeusser, de Heidelberg; Sybel et Voigt, de Munich, etc. Elle s'est réunie à
+            Munich le 29 septembre 1859, et a reçu de ses membres des communications sur les travaux
+            historiques qu'ils ont l'intention d'entreprendre, et parmi lesquels nous mentionnerons
+            de préférence l'édition, que se propose de faire M. Hegel, des chroniques des villes
+            allemandes aux XVe et XVIe siècles, et la collection des actes des diètes<pb n="8"/>
+            germaniques que doit publier M. Sybel. Il n'a pas paru dans ces derniers temps de
+            nouveau volume de la grande collection des Rerum germanicarum de Pertz; mais la
+            publication des documents de l'histoire de l'Autriche et de celle de l'histoire de la
+            Bavière se poursuit activement.- Les ouvrages les plus importants qui ont paru cette
+            année sont: Daniels, <hi rend="italic">Manuel de l'histoire du droit public allemand
+              (Handb. des deutschen Rechts und Staatenrechts Gesch.)</hi>. Cet ouvrage est conçu
+            dans le même esprit que ceux de Zoepfl, Walter, Philipps (qui vient de publier la 4'
+            édition du sien), etc.; mais il est beaucoup plus détaillé et entre dans la discussion
+            des points controversés. Le premier volume, le seul qui ait paru, ne comprend que la
+            période que l'auteur appelle germanique, c'est-à-dire qu'il s'arrête à la dissolution de
+            l'empire carlovingien.- Q. Giesebrecht, <hi rend="italic">Histoire de la période
+              impériale allemande (Gesch. der deutschen Kaiserzeit)</hi>, 2e édition,
+            considérablement augmentée. La première édition de cet ouvrage a obtenu en 1858 le grand
+            prix quinquennal fondé par l'Académie des sciences de Berlin pour le meilleur ouvrage
+            sur l'histoire d'Allemagne. Cela suffit pour faire juger du mérite de ce livre.
+            L'auteur, après a voir esquissé rapidement l'histoire des établissements germaniques
+            jusque sous les successeurs de Charlemagne, expose en détail, dans ce volume de 900
+            pages, les destinées de l'Allemagne depuis l'élection de Louis l'Enfant jusqu'à la mort
+            d'Otton III.- Nitzch, <hi rend="italic">Travaux préliminaires sur la période des
+              Hohenstaufen (Vorarbeiten</hi>, etc., t. 1).Ce volume est consacré en entier à la
+            constitution des villes et à la ministérialité aux XIe et au XIIe siècles. - Huillard
+            Bréholles, <hi rend="italic">Historia diplomatica Frederici secundi</hi> (5t. in-4°,
+            1853-1859). Cet important recueil de pièces relatives à l'histoire de <hi rend="italic">L'empereur Frédéric II</hi>, publié aux frais du duc de Luynes, par le savant
+            archiviste de Paris, fait le plus grand honneur à l'érudition française et a fourni en
+            grande partie les matériaux de l'ouvrage allemand qui suit - Schirrmacher, L'empereur
+            Frédéric II (t.1, in-8°). Dans ce premier volume, qui n'offre pas de qualités bien
+            remarquables, l'auteur paraît généralement favorable à Frédéric II. - Roth von
+            Schrenkenstein, <hi rend="italic">Histoire de l'ancienne chevalerie de l'empire (Gesch.
+              der ehemaligen freien Rechsritterschaft)</hi> en Souabe, en Franconie et sur le Rhin.
+            Le premier volume, le seul qui ait paru, traite de l'origine de la chevalerie libre
+            jusqu'en 1437.- J. Voigt, <hi rend="italic">Histoire de l'ordre teutonique (Gesch. des
+              deutschen Ritterorders)</hi>, t. 2 et dernier. Après avoir retracé dans le premier
+            volume les origines et la constitution de l'ordre, l'auteur, dans le deuxième, expose
+            l'histoire des chevaliers teutoniques depuis la réformation (1525-1858). - L'histoire
+            spéciale de l'Autriche n'a donné lieu cette année qu'à deux ouvrages notables, provoqués
+            tous deux par les circonstances politiques. M. Alfr. Michiels a recueilli dans son <hi rend="italic">Histoire secrète du gouvernement autrichien</hi> divers documents
+            relatifs à la politique autrichienne depuis le XVIe siècle, publiés récemment par
+            plusieurs historiens allemands, notamment par Rauke, Vehse, Hurter, Hormayr,) et s'en
+            est servi pour dresser un formidable acte d'accusation contre la maison d'Autriche, basé
+            surtout sur la compression exercée en vue de la restauration du catholicisme. En
+            réponse, l'historiographe de la famille de Habsbourg, M. Hurter, a publié une brochure
+            qui a été reproduite dans la <hi rend="italic">Gazette de Vienne</hi> sous le titre de:
+              <hi rend="italic">Hostilités françaises contre la maison d'Autriche, à l'époque de
+              l'empereur Ferdinand II (Franzoesische Feindseligkeiten</hi>, etc.). - Sur la Prusse
+            nous avons la continuation du grand ouvrage de M. Droysen, <hi rend="italic">Histoire de
+              la politique prussienne</hi>. La deuxième partie du second volume, qui a paru cette
+            année, comprend la période de, 1500 à 1630. L'auteur a pu faire usage pour cette partie
+            de son livre de nombreuses pièces inédites. Sous le litre de <hi rend="italic">Frédéric
+              le Grand et Catherine II</hi>, M. Kurd Schloezer a réuni un certain nombre de
+            documènts, dans le but de laver Frédéric des reproches, qui lui ont été faits à
+            l'occasion du partage de la Pologne. Dans <hi rend="italic">Frédéric le Grand et
+              Voltaire</hi> M. Yeneoey a essayé de prouver que la plupart des vices et défauts du
+            héros prussien provenaient de ses relations avec le philosophe français.-Il nous reste à
+            citer enfin un ouvrage spécial, fait sur les documents officiels: Stéphane, <hi rend="italic">Histoire de la poste prussienne jusqu'en 1858</hi>(in, 8e). </p>
+                </div>
+                <div type="sub">
+                    <head>
+                        <hi rend="italic">Italie</hi>
+                    </head>
+                    <p>En Italie aussi on s'occupe activement à fouiller les archives, à mettre au jour les
+            documents inédits destinés à éclairer l'histoire de la patrie italienne. Naturellement
+            les événements de cette année ont interrompu jusqu'à un certain point ce mouvement.
+            Cependant l'<hi rend="italic">Archivio storico italiano</hi>, recueil commencé depuis
+            1842, et qui a publié déjà de nombreuses pièces inédites, continue à paraître. On
+            annonce une grande collection des histoires italiennes et la continuation de la
+            publication des rapports des ambassadeurs de Venise au sénat. M. Gius Lafarina a donné
+            cette année le 10e volume de sa <hi rend="italic">Storia universale d'Italia</hi>; M.C.
+            Cantu, l'<hi rend="italic">Histoire des Italiens</hi>, traduite en français (t.1); M.
+            Dom Ceratti a publié la <hi rend="italic">Storia del regno di Carlo Emanuele III</hi> (2
+            vol. in-8"). Les étrangers aussi cultivent avec succès l'histoire d'Italie. M.
+            Gregorvus, auteur connu déjà par des esquisses de la vie italienne, a donné en allemand
+            les deux premiers volumes de l'<hi rend="italic">Histoire de la ville de Rome au moyen
+              âge</hi>. Ces deux volumes comprennent la période de 410 il 800. L'auteur s'occupe
+            aussi, dans ce livre, de l'Église romaine et des formes du culte; suivant lui, le
+            christianisme n'est qu'un développement de la religion païenne, et, de même, la ville
+            moderne est née de Rome antique par une lente transformation. Le <pb n="9"/> savant
+            ministre de Prusse à Florence, M. de Reumont, qui a tiré déjà tant de documents précieux
+            des archives italiennes, a publié en 1859, à Florence, <hi rend="italic">Della
+              diplomazia ilaliana del secolo XII al XVI</hi>. Enfin, en France, M. Eug. Rendu a
+            esquissé dans un mémoire brillant, l'<hi rend="italic">Empire d'Allemagne et l'Italie au
+              moyen âge</hi>, destiné à servir d'introduction à un ouvrage pins étendu sur la
+            philosophie italienne, les premiers efforts de l'Italie en faveur de son indépendance;
+            et dans la <hi rend="italic">Grande Italienne</hi>, ouvrage provoqué par les
+            circonstances, M. Am. Reneé a retracé l'histoire de l'amie de Grégoire VII, la duchesse
+            Mathilde de Toscane. V. aussi Italie (<hi rend="italic">littérature</hi>).</p>
+                </div>
+                <div type="sub">
+                    <head>
+                        <hi rend="italic">Autres pays</hi>
+                    </head>
+                    <p>L'histoire des autres pays européens ne nous offre que peu d'ouvrages dignes d'intérêt.
+            Un personnage qui a joué un rôle marquant dans l'histoire d'Espagne, a appelé sur lui,
+            dans ces derniers temps, l'attention des historiens français: c'est la princesse des
+            Ursins, dont M. Conces a donné en 1858 la biographie, et dont M. Geffroy a publié en
+            1859 les <hi rend="italic">Lettres inédites</hi>. Pour les ouvrages historiques qui se
+            publient dans la péninsule hispanique même, nous renvoyons à l'article Espagne.-C'est de
+            même à l'article Scandinave (<hi rend="italic">littérature</hi>) que l'on trouvera les
+            travaux dont est l'objet, en Danemark, en Suède et en Norvège, l'histoire de ces pays,
+            qui cette année n'a produit aucun livre intéressant dans le reste de l'Europe.- Sur la
+            Russie, on a mis au jour récemment les <hi rend="italic">Mémoires de l'impératrice
+              Catherine II</hi>, écrits par elle-même en français et publiés à Londres, d'après des
+            copies mises en circulation après la guerre de Crimée, par M. Herbent. Ces mémoires,
+            dont l'authenticité est encore douteuse, s'arrêtent en 1795. Nous citerons encore <hi rend="italic">les peuples du Caucase et leur guerre contre la Russie</hi>, par
+            Bodenstedt, traduits de l'italien par le prince de Salm-Kyrburg, in-8°, la traduction en
+            français, par M. Aug. Galitzin, d'un récit contemporain du massacre de Moscou en 1606;
+            enfin, la réimpression des <hi rend="italic">Mémoires secrets sur les règnes de
+              Catherine Ire et de Paul Ier</hi> par Masson, dans la Bibliothèque des mémoires
+            publiée par la maison Didot.</p>
+                </div>
+                <div type="sub">
+                    <head>Europe depuis la révolution.</head>
+                    <p>La liaison étroite des destinées des nations européennes, depuis la révolution
+            française, et la dépendance qui est résultée de ce grand événement entre leurs intérêts
+            moraux et matériels, nous a déterminé à réunir en un seul coup d'oeil toute cette partie
+            contemporaine ou presque contemporaine de l'histoire. Commençons par un livre allemand
+            qui s'annonce avec de grandes prétentions philosophiques: c'est l'<hi rend="italic">Histoire de l'humanité, dans son développement depuis 1775 jusqu'aux temps
+              actuels</hi>, par M. C.-L. Michelet, de Berlin. M. Michelet est un des rares disciples
+            de Hegel qui soient restés fidèles au système du maître, et il a consacré déjà plusieurs
+            ouvrages à la propagation et à la défense de la philosophie transcendentale. Exercé
+            surtout à faire entrer de gré ou de force toutes les idées et les faits dans les
+            formules hégéliennes et dans les divisions et subdivisions tripartites qui forment le
+            fond de cette doctrine, il essaie dans le présent ouvrage d'assujettir aussi le monde
+            moderne à ce lit de Procuste. On ne doit pas y chercher autre chose. M. Michelet,
+            d'ailleurs, est partisan de la révolution, et il pense, comme beaucoup d'écrivains fort
+            étrangers aux idées hégéliennes, que l'oeuvre de 89 est loin d'être terminée.- Sur
+            l'époque révolutionnaire elle-même, nous n'avons à citer que la seconde édition d'un
+            ouvrage trèsestimé en Allemagne, l'<hi rend="italic">Histoire de l'époque
+              révolutionnaire de 1789 à 1795 (Gesch. der Revolutionszeit)</hi>, par M. de Svbel,
+            tom. I et II, in-8°, et les recherches historiques publiées par M. de Vielcastel sous le
+            titre de <hi rend="italic">Marie-Antoinette et la Révolution</hi>, et le <hi rend="italic">Journal of my life during the french revolution</hi>, par Mme Grace
+            Dalrymple Elliot, livre curieux qui a produit une grande sensation en Angleterre. Mais
+            sur une époque un peu postérieure, nous trouvons de nouveaux documents inédits
+            très-importants, et dont quelques-uns touchent de près à l'époque présente. Ce sont: la
+              <hi rend="italic">Correspondance de Napoléon Ier</hi> publiée par ordre du
+            gouvernement, et dont le 4e volume a paru en 1859; - les <hi rend="italic">Mémoires et
+              correspondance du prince Eugène Beauharnais</hi>, publiés par M. du Casse et qui en
+            sont à leur 7e volume; - les <hi rend="italic">Souvenirs et correspondance tirés des
+              papiers de Madame Récamier</hi>, qui touchent il tous les personnages de l'histoire
+            contemporaine, quoi que leur intérêt soit principalement biographique et littéraire.
+            Cette correspondance est d'ailleurs loin d'être complète, et on regrette la parcimonie
+            que l'éditeur a mise dans son choix; - les <hi rend="italic">Mémoires pour servir à
+              l'histoire de mon temps</hi>, dans lesquels M. Guizot essaie de justifier sa vie
+            politique; enfin, la publication, à Berlin, de la première livraison d'un nouveau <hi rend="italic">Portfoglio (das neue Portfolgio)</hi>, livraison qui contient 7 pièces
+            diplomatiques, dont la première remonte à 1807 et dont la dernière est de
+            1857.-L'histoire particulière de plusieurs nations européennes depuis 1815 a provoqué
+            divers travaux importants ; en première ligne: Duvergier de Hauranne, <hi rend="italic">Histoire du gouvernement parlementaire en France</hi> (de 1814 à 1848). Le 3e volume,
+            qui a paru en 1859, ne comprend que la période de juin 1815 à septembre 1816. Comme on
+            le voit, par ces proportions, c'est une histoire très-détaillée, dans laquelle l'auteur
+            a été quelquefois acteur lui-même, et pour laquelle il est à même de consulter beaucoup
+            de documents inédits. Le rôle politique qu'a joué M. Duvergier de Hauranne peut faire
+            juger de l'esprit de son livre: il cherchera à justifier les partis moyens de la
+            restauration et du règne de Louis-Philippe, et c'est déjà ce qu'il fa it dans le présent
+            volume à l'égard du ministère Decaze : mais il défendra aussi avec<pb n="10"/> une ferme
+            conviction les libertés constitutionnelles et parlementaires. M. de Nouvion a donne le
+            troisième volume de son <hi rend="italic">Histoire de Louis-Philippe</hi>. M. Ernouf a
+            fait, d'après des documents inédits, l' <hi rend="italic">Histoire de la dernière
+              capitulation de Paris</hi>; et enfin, une nouvelle publication officielle sur le siégé
+            de Sébastopol comprend l'<hi rend="italic">Histoire du service de l'artillerie</hi> dans
+            ce siégé, 2 vol. in-4. En Allemagne M. Hausser, l'illustre professeur de Heidelberg, a
+            publié le premier volume de sa deuxième édition, augmentée de <hi rend="italic">l'Histoire l'Allemagne</hi> depuis la mort de Fredéric-le-Grand jusqu'à
+            l'établissement de la Confédération germanique. Les questions fédérales qui se sont
+            agitées récemment en Allemagne ont donne lieu à diverses publications sur la
+            Confédération germanique; la principale est l'<hi rend="italic">Histoire de la diète
+              germanique</hi> par M. Ilse, dont il n'a paru ici que la première livraison, qui ne
+            dépasse pas l'année 1817.- M. de Gerlache a publié à Bruxelles l'<hi rend="italic">Histoire du royaume des Pays-Bas</hi> de 1814 à 1830, 2 vol in-8. - En Angleterre
+            nous trouvons un suplllément aux <hi rend="italic">dépêches et mémoires de lord
+              Wellington</hi>, publiés par son fils; la <hi rend="italic">Correspondance du marquis
+              de Cornwallis</hi>, 3 vol. in 8e édités par Ch.Ross; les <hi rend="italic">Memoirs of
+              the court of Georges IV</hi> (1820-1830) d'après des papiers de famille du duc de
+            Buckhingham, et James, <hi rend="italic">The naval history of Great-Britain</hi>
+            (1793-1820); cet ouvrage formera 6 vol. Mais c'est l'Italie surtout qui, par suite des
+            événements mêmes de l'année, a été l'objet de publications nombreuses dont nous ne
+            pouvons citer ici que les principales. C'est d'abord l'<hi rend="italic">Histoire de
+              l'Italie depuis la fondation des dynasties régnantes</hi> (en allem.), par M.Reuchlin,
+            ouvrage dont, à la vérité, les circonstances n'ont fait, sans doute, que hâter
+            l'apparition, puisqu'il fait partie d'une collection de résumés assez détaillés de
+            l'histoire des États modernes dans les, derniers temps, publiée par la librairie Heizel,
+            à Leipsig, et dont fait partie l'<hi rend="italic">Histoire de France</hi> de 1814 à
+            1852 de M. de Rouchau, qui a paru en 1858. Le premier volume de l'ouvrage de M. Reuchlin
+            est écrit dans un sens libéral. Après avoir retracé en quelques pages les événements
+            antérieurs à la révolution, il conduit l'histoire d'Italie jusqu'en 1848. Le
+            gouvernement provisoire de Bologne a commencé la publication de documents relatifs au
+            gouvernement de la Romagne depuis 1815; il en a déjà paru un volume in 4. M. Eug. Rendu,
+            dans une brochure instructive, l'<hi rend="italic">Autriche dans le confédération
+              italienne</hi>, a retracé en partie, d'après des documents originaux, la diplomatie et
+            la police de l'Autriche en Italie depuis 1815. Des révélations non moins curieuses se
+            trouvent dans le livre <hi rend="italic">Les Autrichiens en Italie</hi>, de M. Ch. de la
+            Varenne, qui a publié en outre deux autres ouvrages pleins d'excellents renseignements:
+              <hi rend="italic">Lettres italiennes; Victor-Emmanuel et le Piémont en 1858</hi>,
+            in-18, et l'<hi rend="italic">Italie centrale</hi>, in- 18. M. Diego sobria a donné
+              l'<hi rend="italic">Histoire général de l'Italie de 1846 à 1850</hi>, 2 vol. in-8; le
+            général Ulloa, la <hi rend="italic">Guerre de l'indépendance italienne de 1848 et
+              1849</hi>, 2 vol. in-8, et M. Henri Martin la biographie de <hi rend="italic">Daniel
+              Manin</hi>. Enfin, il a déjà paru des écrits sur la campagne d'Italie de 1859,
+            notamment la première partie de l'histoire de cette campagne par M. de Bazancourt.-
+            Après les événements contemporains de l'Italie, ce sont ceux de Hongrie qui ont le droit
+            d'intéresser le plus. La seule publication sur ce sujet qui ait paru celte année est
+              l'<hi rend="italic">Histoire politique de la révolution de Hongrie de 1848 à
+            1849</hi>, par MM. Dan.-Ch. Iraniv et L.Chassin - Il nous reste à mentionner enfin le
+            tome Ier des <hi rend="italic">Contemporains portugais, espagnol et brésiliens</hi> de
+            M. Terneira de Vasconcellos.</p>
+                </div>
+                <div type="sub">
+                    <head>Amérique et Asie</head>
+                    <p> L'histoire des Etats-Unis n'a donné lieu cette année à aucun ouvrage nouveau de
+            quelque importance. La <hi rend="italic">France aux colonies</hi> de M. Rameau forme une
+            série d'études dont il n'a été publié que le premier volume sur le développement de la
+            race française hors de l'Europe. Ce premier volume est relatif au Canada. Sur le Mexique
+            nous avons un ouvrage qui appartient plutôt à la statistique qu'à l'histoire, celui de
+            l'ancien consul de Prusse dans ce pays, M. de Richthofen, <hi rend="italic">La situation
+              politique extérieure et intérieure de la république mexicaine (Die aeusseren und
+              inneren pol. Zustände der Rep Mexico)</hi> depuis la guerre de l'indépendance, Berlin,
+            in-8e. Notre ancienne colonie de Saint-Domingue: dont l'histoire depuis 1789 a été
+            l'objet d'études si intéressantes de M. B. Ardouin, 8 volumes in-8 (1854-l855), est
+            l'objet d'un travail nouveau de M. Saint-Amand, <hi rend="italic">Histoire des
+              révolutions d' Haiti</hi> en 4 vol., dont il n'a paru que le premier volume. Enfin, M.
+            Handelmann, professeur à Kiel, a publié en allemand une <hi rend="italic">Histoire du
+              Brésil</hi> (1 fort vol.in-8), pour laquelle il a pu faire usage des documents
+            nombreux réunis à la bibliothèque de Hambourg, et à laquelle il a joint une
+            bibliographie complète de l'histoire brésilienne.- Sur les parties de l'histoire de
+            l'Asie qui ne rentrent pas dans la géographie ou les études orientales, nous n'avons à
+            citer qu'un ouvrage, celui de Léop. d'Orlich, l'<hi rend="italic">Inde et son
+              gouvernement</hi>, 2 vol. in-8. en allemand. Ce livre s'occupe principalement de la
+            conquête de l'Inde par les Anglais et de leur administration dans ce pays, il s'arrête à
+            la dernière insurrection. M. d'Orlich a parcouru lui-même les diverses provinces de
+            l'Inde. Des rapports personnels avec les principaux agents de la compagnie et de
+            nombreux documents inédits, dont il a reçu communication, lui ont permis d'exposer en
+            détail l'histoire des dernières conquêtes faites dans l'Inde par les Anglais, l'état
+            social et économique qu'ils y ont trouve, les institutions et les améliorations qu'ils y
+            ont introduites.</p>
+                </div>
+                <div type="sub">
+                    <head>Histoire des Sciences, des institutions, etc.</head>
+                    <p>Nous ne pouvons, pour cet ordre de travaux, que ren<pb n="11"/>voyer aux articles
+            consacrés aux diverses spécialités scientifiques, tels que Botanique, Économie
+            politique, Jurisprudence, Philosophie, etc. Nous mentionnerons néanmoins ici quelques
+            ouvrages qui ne peuvent se classer facilement dans ces divisions générales; ce sont:
+            Scherr, <hi rend="italic">Histoire des femmes allemandes</hi> (en allem. 1860, in-8);
+            Mme Dora, D'Istria, <hi rend="italic">Les femmes en 0rient</hi>, Zurich, 1860, 2 vol.
+            in-8; M. Sanger, <hi rend="italic">The history of prostitution</hi>, rapport fait à la
+            cour des pauvres de New-York, in-8; Elephias Levi, <hi rend="italic">Histoire de la
+              magie</hi>, in-8; et Louis Figuier, <hi rend="italic">Histoire du merveilleux dans les
+              temps modernes</hi>, t.l, 1860, in-18.</p>
+                    <byline>A. OTT</byline>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>

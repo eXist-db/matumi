@@ -1,0 +1,2137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Encyclopédie du dix-neuvième siècle</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Anonyme. Encyclopédie du dix-neuvième siècle: répertoire universel des sciences, des lettres et des arts, avec la biographie de tous les hommes célèbres. 1836.</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Gallica. Bibliothèque numérique</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="entry">
+                <head>Asie</head>
+                <p> la plus vaste et la plus peuplée des cinq parties du monde, en est aussi la plus variée, la plus riche et la plus poétique. 
+          L'Asie est le berceau des peuples; là sont les
+          divers foyers de la civilisation humaine. Les
+          végétaux, et les animaux en sont presque tous
+          originaires. Les cinq principales religions du
+          globe y ont pris naissance. Les sciences les
+          lettres, les arts les langues y trouvent leurs
+          sources. Cette grande terre, féconde en grands
+          souvenirs malgré l'obscurité qui'enveloppe
+          les annales d'une partie des peuples qu'elle a
+          portés, est encore celle dont les fastes remontent
+          d'une manière certaine a l'époque
+          la plus reculée. Son sol, qui a vu naître les
+          plus illustres législateurs, a été ravagé par
+          les plus célèbres conquérants du monde. Là,
+          nous contemplons encore les ruines des plus
+          nobles Etats, les débris de Babylone et de
+          Ninive, de Palmyre et d'Ilion, d'Ecbatane
+          et de Persépolis, de Bactres et de Palibothra;
+          là subsistent encore l'Inde et la Chine, debout
+          sur les ruines des plus grands empires; là vivent
+          à la fois l'Arabe vagabond et l'Arménien
+          industrieux, le Druse simple et frugai, et le
+          Chinois voluptueux et rusé, le Tâtar belliqueux
+          et l'Hindou pacifique.</p>
+                <p>Soit que nous considérions l'Asie sous le
+          rapport physique, soit que nous, l'envisagions
+          sous celui de l'histoire de l'homme,
+          elle se présente toujours à nous avec un caractère
+          d'imposante grandeur et d'inépuisable
+          richesse. Tout dans ses origines, dans son
+          existence même est mystérieux. Que de
+          choses il nous reste à savoir sur ses peuples 
+          sur leurs langues, leurs religions, leurs mœurs
+          et leurs institutions! que de particularités
+          nous ignorons sur ses montagnes, les plus
+          hautes du globe, sur ses immenses plateaux,
+          ses grands fleuves et ses lacs immenses comme
+          des mers! Son nom même, son nom est une
+          énigme. Cependant, grâce aux travaux des
+          anciens et aux recherches des voyageurs les
+          plus récents et les plus instruits, nous n'osons
+          dire les nôtres, nous entreprendrons de décrire
+          cette partie du monde d'une manière assez
+          claire et assez complète, quoique succincte,
+          pour que nos lecteurs puissent la connaître
+          aussi bien que l'état de la science le permet.</p>
+                <p>Nous comprendrons sous le nom d'Asie
+          toutes les contrées à l'orient de l'Europe, au
+          nord-est de l'Afrique et à l'occident de l'Amérique
+          septentrionale. Les limites de l'Asie sont
+          en partie naturelles et en partie contestées.
+          Elle est bornée au N. par l'océan Glacial antarctique
+          et par le détroit de Behring qui la
+          sépare de l'Amérique septentrionale; à l'E. par
+          la mer de Behring, sans y comprendre les îles
+          aléoutiennes et celles qui en sont voisines
+          et qui doivent appartenir à l'Amérique puisqu'elles
+          ne sont qu'un prolongement de la
+          presqu'île d'Alaska; au S.-E. par le Grand-
+          Océan qui sépare l'Asie de la Micronésie, de
+          la Polynésie et de la Malaisie; par le passage
+          entre Formose et les Philippines la mer de
+          la Chine, et les détroits de Singhapora et de
+          Malakka, qui la séparent de la Malaisie; au S.
+          par l'océan Indien qui la sépare de l'Afrique,
+          de manière que les îles Maldives appartiennent
+          à l'Asie, et les îles de Sechelles, de </p>
+                <pb n="1"/>
+                <p>France et de Bourbon à l'Afrique. En remontant la mer des Indes, 
+          on doit laisser l'ile de Socotora à l'Afrique,
+          en dépit de quelques
+          géographes et cartographes, et atteindre le
+          détroit de Bab-el-Mandeb amer mer Rouge,
+          qui servent de limites entre l'Asie et l'Afrique
+          que l'isthme de Soueys rattache sur un
+          seul point. Vers l'occident, les confins entre
+          l'Europe et l'Asie seront la mer Méditerranée,
+          l'Archipel, les détroits des Dardanelles
+          et de Constantinople, et la mer Noire. Là,
+          prenant la limite rationnelle, celle du partage
+          des eaux, nous aurons pour ligne la
+          chaine principale du mont Caucase, dont la
+          crête forme la séparation entre l'Europe et
+          l'Asie, depuis la mer Noire à la mer Caspienne,
+          du N.-O. au S.-E., des environs du
+          port fortifié d'Anapa jusqu'aux environs de
+          Bakou dans la péninsule d'Abcheron, de sorte
+          que la Tcherkessie, la Kabardie, la petite
+          Abasie, le Daghestan, le Lesghistan, au N. du
+          Caucase, appartiendraient à l'Europe; et la
+          Grande Abasie, la Mingrélie, l'Imiréthi, la
+          Grusie, la Géorgie et le Chirvan resteraient
+          à l'Asie.' Apartir de cette chaîne, les côtes occidentales
+          de la mer Caspienne marqueraient
+          la frontière de l'Europe jusqu'aux bouches de
+          la grande rivière Oural (Jaïk). Ce fleuve nous
+          guide jusqu'aux montagnes de ce nom, si riches
+          sous le rappport minéralogique, et les
+          monts Oural nous conduisent jusqu'au détroit
+          de Vaïgatch, en laissant Novaïa-Zemlia à
+          l'Europe, ce qui avec la mer Glaciale arctique
+          complèterait ce système de limites natur
+          relles. Un coup d'œil jeté sur une grande
+          carte de l'Asie, et quelques réflexions sur les
+          considérations des limites et des classifications
+          que nous avons lé premier données à la
+          cinquième partie du monde dans l'ouvrage
+          que nous avons publié sous le nom d'<hi rend="italic">Océanie</hi>
+          convaincront tout homme éclairé des avantages
+          qui résulteraient de son adoption pour
+          la distribution méthodique des descriptions
+          géographiques.</p>
+                <p>On a fait de nombreuses conjectures sur
+          l'origine du nom donné à ce vaste continent.
+          Les Grecs l'ont fait dériver d'<hi rend="italic">Asia</hi>,fille de deux
+          divinités fabuleuses, l'Océan et Thétis; d'autres
+          l'ont attribué à <hi rend="italic">Asia</hi>, fils d'Atys, roi de
+          Lydie. Le savant Bochart croit qu'il vient du
+          mot hébreu ou phénicien <hi rend="italic">asi</hi>, qui veut dire
+          milieu; mais cette opinion n'est appuyée sur
+          aucune preuve historique. Quoi qu'il en soit,
+          il paraît, d'après Homère, Hérodote et Euripide,
+          qu'on donna de bonne heure le nom
+          d'Asie à une partie de la Lydie, où il existait une tribu appelée
+          <hi rend="italic">Asiones</hi>, et une ville du nom d'<hi rend="italic">Asia</hi>. 
+          Par la suite, 
+          les Grecs appliquèrent cette dénomination à toute l'Asie-
+          Mineure, et successivement à toutes les contrées
+          de l'Orient, au fur et à mesure de leurs
+          découvertes.</p>
+                <pb n="1"/>
+                <p>L'Asie est la plus grande des cinq parties
+          du monde. Elle est cinq fois plus étendue que
+          l'Europe, dont elle diffère complètement,
+          aussi bien que de l'Afrique, par sa configuration,
+          car l'Afrique est un énorme corps sans
+          membres, et l'Europe, un petit corps avec des
+          membres immenses. L'Asie offrant à elle seule
+          ces deux caractères, est un énorme quadrilatère,
+          d'où s'élancent de tous côtés des
+          membres longs et puissants qui se dessinent
+          en caps et en péninsules. Viennent ensuite
+          quelques membres isolés qui se rattachent à
+          ce grand corps; ce sont des îles plus ou moins
+          considérables, telles que les Kouriles, Sakhalian,
+          Yesso, Niphon, Sikokf, Kiou-Siou,
+          Lieou-Kieou, Thaï-Ouan ou Formose, Haïnan,
+          Ceylan, les Lakdives et les Maldives,
+          Chypre, Rhodes, Chio, Samos, Lesbos, Kotelnoï,
+          Fadevskoï, la Nouvelle-Sibérie et
+          quelques autres. On voit que nous n'avons
+          pas compris dans les îles asiatiques, ni la
+          Malaisie que les Anglais appellent improprement
+          Archipel des Indes-Orientales, ni même
+          les îles Andaman et Nikobar, que nous avons
+          prouvé, dans l'ouvrage précité, devoir faire
+          partie de la Malaisie, la plus importante
+          de nos quatre divisions de l'Océanie. L'Asie,
+          avec ses îles, et dans les bornes que nous
+          venons d'indiquer, offre une surface en général
+          montagneuse, excepté au nord.</p>
+                <p>L'Asie est située entre le 1°17' et le 76° de
+          lat. N., et entre les 23° 33' (extrémité de
+          l'Asie-Mineure), et 187°40' de long. E. Elle
+          a ainsi, dans sa plus grande largeur, environ
+          1,870 lieues ordinaires du N. au S., ou depuis le
+          cap Severo-Vostotchenoï jusqu'au cap Romania,
+          à l'extrémité méridionale de la presqu'île
+          de Malakka; elle a dans sa plus grande longueur
+          prise obliquement 3,230 lieues du N.-O. au
+          S.-E., c'est-à-dire, depuis le cap Oriental
+          (extrémité du Kamtschatka) jusqu'à l'isthme
+          de Soneys, qui forme la limite de l'Arabie et
+          de l'Egypte.</p>
+                <p>La superficie de l'Asie comprend 2,100,000
+          lieues géographiques carrées; nous n'estimons
+          sa population qu'à environ 450,000,000 d'habitants,
+          parce que nous n'admettons pas le
+          chiffre exagéré que les Anglais ont donné à
+          l'empire chinois. Sa constitution physique et
+          ses divisions sont réglées sur le cours de ses
+          grandes chaînes de montagnes et de ses grands
+          fleuves: et d'abord voyons quelle était l'Asie
+          dans les temps anciens.</p>
+                <pb n="1"/>
+                <p>Nous y trouvons deux principales chaînes
+          de montagnes de l'ouest à l'est. L'Altaï
+          ( sans nom dans l'antiquité ) au nord et le
+          Taurus au sud; le Caucase rameau de ces
+          deux chaînes entre la mer Noire et la mer
+          Caspienne; l'Imaus, le long du désert de
+          sable riche en or ( le désert de Cobi), le
+          Paropamisus au nord de l'Inde et l'Oural (sans
+          nom propre dans l'antiquité). - Quatre des
+          principaux fleuves de l'Asie, qui coulent du
+          nord au sud, sont dignes de remarque pour
+          l'histoire ancienne: l'Euphrate et le Tigre,
+          qui se jettent dans le golfe Persique; l'Indus
+          et le Gange, qui se jettent dans la mer des
+          Indes; deux autres, l'Oxus (le Gihon) et
+          l'Iaxarte (le Sirr), coulent de l'est à l'ouest;
+          ils se jetaient jadis dans la mer Caspienne, et
+          maintenant dans le lac Aral.</p>
+                <p>Les anciens fondèrent sur cette base la division
+          de l'Asie en Asie septentrionale, qui
+          renfermait le pays au nord de l'Altaï; en
+          Asie du milieu, ou le pays entre l'Altaï et le
+          Taurus; en Asie méridionale, c'est-à-dire le
+          pays au sud du Taurus. Voici les principales
+          divisions de cette partie du monde chez les
+          anciens.</p>
+                <p>L'Asie septentrionale, selon les Grecs, était
+          située entre le 70° et le 50° de lat. N. (la Russie
+          asiatique ou Sibérie d'aujourd'hui; cette
+          partie de l'Asie était, il est vrai, peu connue
+          dans l'antiquité, mais non pas entièrement
+          inconnue. -Les renseignements qu'on
+          trouve à cet égard dans Hérodote sont obscurs,
+          mais vrais dans quelques parties.</p>
+                <p>L'Asie centrale était le pays situé entre
+          les 50° et 40° de lat. N., <hi rend="italic">Scythia sarmatica et
+          asiatica</hi>, c'est-à-dire le Tourkestàn et la Mongolie,
+          ce qu'on appelait naguère la Grande-
+          Tartarie. C'est en grande partie un immense
+          désert sans culture et sans bois, propre seulement
+          aux pâturages.– Ses habitants, peuples
+          pasteurs ou nomades, sans ville et presque
+          sans habitations fixes, ne connaissaient point
+          d'autres liens politiques que le simple gouvernement
+          des tribus.</p>
+                <pb n="1"/>
+                <p>L'Asie méridionale comprenait les pays situés depuis le 40° de lat.
+          N .jusque près de l'équateur
+          et ceux entre la Méditerranée et l'Indus et
+          entre l'Indus et l'Océan septentrional.  - Ces
+          contrées offraient un contraste frappant avec 
+          celles de l'Asie moyenne ou du milieu. L'Asie
+          méridionale renfermait les pays connus sous
+          le nom d'Asie-Mineure, c'ést-à-dire la Mysie,
+          la Lydie, la Carie avec plusieurs villes
+          grecques le long de la côte, telles que Phocée
+          Ephèse, Milet, Smyrne, Halicarnasse, etc.,
+          et dans l'intérieur, les villes de Sardes en
+          Lydie, et de Pergame en Mysie, la Lycie,
+          la Pamphilie et la Cilicie, dont Tharse était
+          la capitale, la Bithynie, la Paphlagonie le
+          Pont; avec les villes grecques maritimes d'Héraclée,
+          d'Amisus et de Sinope, la Phrygie et
+          la Galatie avecles villes capitales de G ordium
+          et Celènes, la Cappadoce et la ville de Mazaca;
+          les îles situées le long des côtes de l'Asie-Mineure,
+          telles que Lesbos et la ville de Mitylène,
+          Chios, Samos, Cos, Rhodes, avec les
+          villes de même nom sur les côtes orientales
+          de la Méditerranée la Pliénicie avec les villes de
+          Tyr et de Sidon, et la Palestine, qui avait
+          pour capitale Jérusalem;
+          
+          
+          
+          la Syrie proprement
+          dite ayant pour villes principales Damas,
+          Emèse, Héliopolis (Baalbeck),Palmyre dans le
+          désert. De là, dit Heren, on touchait à l'Arabie,
+          qui renfermait d'immenses déserts de sable
+          et était presque entièrement habitée par des
+          peuples nomades; mais ses côtes occidentales
+          et orientales lui donnaient comme de nos jours
+          une grande importance pour le commerce.
+          Au nord, l'Arabie Pétrée, ainsi appelée
+          d'une ville nommée Pétra.dont on a découvert
+          naguère de nobles ruines; dans le milieu,
+          le désert d'Arabie; au midi, l'Arabie
+          Heureuse riche de ses propres productions,
+          puisqu'elle est le pays natal de toutes les espèces
+          de parfums, et en outre le plus ancien
+          entrepôt des marchandises de l'Inde; nous
+          croyons y avoir trouvé les sites de Saba et
+          d'Ophir, sur la côte occidentale; à l'est
+          était la ville de Gera, et en face les îles de
+          Tylus et d'Aradus (les îles Baharein ), entrepôts
+          des marchandises de l'Arabie, aussi bien
+          que de l'Inde, et particulièrement de la fine
+          cannelle de Trapobane (Ceylan). Venait ensuite
+          le pays entre l'Euphrate et le Tigre qui
+          comprenait 1° la Mésopotamie, pays de pâturages,
+          sec et aride, habité seulement par
+          des hordes nomades. Villes de l'Euphrate
+          Tapsaque, Circesium, Conaxa; au N., Zoba
+          ou Nisibis. 2° L'Arménie au N. de la Mésopotamie,
+          pays de Montagnes. 3° La Babylonie
+          ou partie méridionale de la Mésopotamie,
+          dont elle était séparée par la
+          muraillemédique. Cette plaine fertile dut autrefois
+          une culture très perfectionnée, à</p>
+                <pb n="1"/>
+                <p>Borsippe. Enfin le pays entre le Tigre et l'Indus
+          comprenant 1° L'Assyrie ou la région Adiabène,
+          pays de pâturages, dont les villes principales
+          étaient Niniveet Arbèle. Ce nom d'Assyrie
+          est souvent pris dans un sens plus étendu
+          par les Grecs, qui y comprennent la Mésopotamie
+          et la Babylonie, et quelquefois même la
+          Syrie. 2" LaSusiane, pays fertile, avec la ville
+          de Suze sur le fleuve Choaspe ou Oulôus (Oulai),
+          l'une des résidences desrois de Perse. 3°La
+          Perse, au nord, pays sauvage et plein de montagnes,
+          caractérisé par une plaine fertile dans
+          Je milieu et un pays sablonneux au midi. Ses
+          fleuves sont le Cyrus et l'Araxe. Elle avait
+          pour villes principales Ecbatane et Persépolis
+          ou Pasagarde, qui renfermait le paiais et la
+          sépulture des rois de Perse. Sous le nom de
+          Perse étaient compris, sauf l'Assyrie, tous
+          les pays situés enlre le Tygre et l'Indus,
+          c'est-à-dire la Caramanie, la Gédrosie, la
+          Médie, la Parlhie, l'Hi.rcariie, la Bactriane,
+          laSogdiane, etc. On ne connaissait guère de
+          l'Inde que quelques points entre l'Indus et le
+          Gange.</p>
+                <p>Passons aux divisions naturelles de l'Asie
+          avec ses subdivisions telles qu'elles existent
+          de nos jours.
+          1. JUgion Cauca.iem.e. j «^i«.|fi'»"Ali».i.,Imiréll,iMi..grl.-|i.,
+          2. Hépon dc'l'Aaiit-Hi-'j Anadoli, Caraiiu'iiir. Siïas, TrebWde; Un
+          nelir*. ( d« Cii)'|im, de «l.ode»..
+          -S. Hti^ion de l'Cuplirati- J Ariuéiii'r, k'.nidi&gt;lan, Mésopotamie ou Al
+          H Ju T grt. { Djriirah, llalijloiiieou Irak-Arabi.
+          4. Bip ic, du monl Li- t s ie bail. ..lne e a[,C:'olUe.
+          5. Région d'Arabie. | Arabie.
+          b. Région l'f.-mn.e. l'rilr.
+          _ | UraudcBoukliarie Turkwlnn ocrioVnlal
+          7d.uT»lac A- S'W d™ Kire"is- T»' «« V'S'
+          { de* Trouchniéncs.
+          Rfï1.'V.&gt;illd"
+          *hl""
+          K«l.ottkîe. Alonsolio, P.lit.
+          eumall'.it, Bouuiarie.
+          1), U¡'E:iou.Je l'Obi Mele j -)'
+          °na:idrnluk.
+          l'It'ui:o:ot,ï..f
+          ,e tH":1 t'nt
+       !
+          M UéCBIiC,,iIi duIf 1N0o1r"d-Eit. 1 L:i S'b*ri'! "«l* ««« le Kam.scl.alka
+          -( coiuiik: a|iprudioti.
+          il- Riyinii du ileute l TaMarie dile chinoise, aï«-c la Curée coiuitie
+          'Saklialijn. | appendicR.
+          i2. l'union inMilaire de j Ile» Kouriles, Tclioka el YeîO-îlKa du Jajjou.
+          l'Ai-ie nrifnlale. Lieou-Kieuu, 'j;iiaïuu«Q.
+          1.1. ll-BNUMluilou. lll.iu (
+          _proprement dit°.
+          -rtd.,l|r,M, J ,e. j -l.n.«.propn!u..«1ld.l..
+          14. IW-giondessourvw du )
+          G»»B'(
+          Tlb!l-
+          «5. Ili-gion du Gange. I IlindouManni.-ril.il.
+          1li. Kvii.iu.lu Sii.d. ;|.lliuduiiMau»ci:ideulal.
+          7. R2gion du Dekkao.
+          ii'éuiuatile k l'Inde i-u ds du iîange, afiM:
+          RegIOndu Dt:kk.ll.D. •|-ile(&gt;jla,i. le» Maldiiu el le» takdivn
+          18. Rpgiun de la
+          près j
+          Péninsule de: l'Indu au delà du Gange, euiqu'ile
+          Tranî'ganyê- j ,(jire Birman, royaume de Siaiu, Antiani
+          que. ( « Jlulakka.</p>
+                <p>Ne pouvant indiquer dans le cadre étroit
+          de cet article les subdivisions et tous les en-</p>
+                <pb n="1"/>
+                <p>foncements des mers de l'Asie, nous allons énumérer les mers et les enfoncements principaux de ce continent.</p>
+                <p>L'océan Glacial arctique baigne toute la
+          côte boréale de l'Asie ; il forme plusieurs enfoncements.
+          Le Khalanga , le Lena , le Yana, l'Indigirka et le Kovyma, ont tous à leur
+          embouchure un golfe plus ou moins remarquable.</p>
+                <p>Le Grand Océan baigne la côte orientale
+          de l'Asie, et forme un certain nombre de médilerranées
+          à plusieurs issues telles que la
+          mer de Behring, la mer d'Okotsk ou de Tarrakai,
+          la mer du Japon, la mer Orientale ou
+          Toung-Haï, dont une partie porte le nom do
+          Hoang-Haï ou mer Jaune; la mer de la
+          Chine. L'océan Indien,, placé entre l'Océanie,
+          l'Asie et l'Afrique; le golfe Persique qui
+          est une véritable méditerranée la mer Rouge
+          ou golfe Arabique; et le golfe de Skanderoun
+          ( Alexandrette) que la Méditerranée
+          forme entre la Syrie et l'Asie-Mineure.
+          Toutes ces mers forment plus do 12 golfes.</p>
+                <p>L'Asie compte sept grandes presqu'îles l'Arabie,
+          le Dekkan, le Kamlschatka l'ancienne
+          Asie-Mineure ou Anadoli d'aujourd'hui,
+          la Korée, Malakka et le Goudjerat;
+          plus trois presqu'îles formées par la Sibérie
+          et qui n'ont pas encore reçu un nom consacré.
+          Plusieurs détroits tels sontceux do Behring,
+          de Nadocheda, de la Boussole, de Vries,
+          du Pic, de Sakhalian, de la Pérouse, de Tsougar,
+          de Kiou-Siou, de Founaï, de Korée, do
+          I)iémen, de Formose, d'Haïnan, de Malakka,
+          de Palk, de Hormouz et de Bab-el-Mandeb.
+          Un grand nombre de promontoires, entre
+          autres le cap Severo-Vostoknoï, le plus
+          septentrional du continent le cap oriental
+          qui en forme l'extrémité N.-E. et ceux de
+          Kopatka Romania, Komorin Has-el-Had
+          Moussendom Baba, le plus occidental de
+          l'Asie, etc.</p>
+                <p>Cette vaste région renferme un grand
+          nombre de lacs qui se distinguent généralement
+          par leurs eaux salées, saumàtres ou
+          sulfureuses, et par un manque d'écoulement.
+          Nommons d'abord le plus grand et le plus important
+          de l'Asie et du globe et la partie de
+          sa surface la plus basse connue, c'est-à-dire
+          la MERCaspienne ( voy.ce mot ). Celac salé
+          et sans écoulement occupe une étendue de
+          16,850 lieues carrées ou 3,139 myriamètres,
+          que les anciens nommaient mare Hyrcanum;
+          il nourrit une grande quantité de plioques,
+          dont les peaux forment un article considé-</p>
+                <pb n="1"/>
+                <p>able de commerce en Russie. D'après un
+          grand nivellement trigonométrique opéré
+          en 1837. par les Russes, la mer Caspienne est
+          plus basse que la mer Noire de 94. pieds 9
+          pouces de Paris.</p>
+                <p>Le lac d'Aral, faussement appelé mer
+          d'Aral, situé dans la moitié occidentale du
+          Tourkestan indépendant, dont il reçoit les
+          plus grands fleuves, est le plus remarquable
+          de l'Asie. après la mer Caspienne il a une
+          étendue de 1,200 lieues carrées. Le niveau de
+          ses eaux est à 186 pieds au-dessus du niveau de
+          l'Océan.</p>
+                <p>Le lac Amer ( Kouli-Deria ou Hadji Eougoussi)
+          communique à la mer Caspienne; et
+          il est très probable qu'il était une antique
+          dépendance de cette mer. Le témoignage des
+          anciens qui y placent l'embouchure de l'Oxus
+          'et de l'laxartes, l'ancien lit de la mer dont
+          M. Mouravieff a reconnu les traces entre le
+          lac Aralet la mer Caspienne les traditions des
+          Chinois et le fait attesté par les Kirghis au
+          colonel Meyendorff que le lac continue à
+          diminuer d'étendue confirment cette opinion.</p>
+                <p>Les autres lacs les plus remarquables sont
+          leïele-Koul, situé presque au centre du Tourkeslau
+          indépendant le Karan-Koulok, dans
+          le pays des Kirghis le Lop et le Borteng, dans
+          le Thian-Chaii-nan-Lou; le Balkach-Noor
+          le Koukhan-Noor, en chinois Tsing-Haï (mer
+          Bleue) le Namtso, en mongol Tengri-Noo'r
+          (tac Céleste), le plus grand lac du Tibet; le
+          Baldhi aussi dans le Tibet le Zerrah qui
+          reçoit le Lermend dans l'État de Kaboul;
+          l'Ourmiali ou Maragha, et le Bakliteglu'an,
+          qui reçoit le Bendemir ou Koura, en Perse; le
+          lac d'Eriv m ou Goktcha et le lac de Van ou
+          de Vachpouragan dont le plus grand affluent
+          est le Kochab, en Arménie une foule
+          de lacs salés et sans écoulement dans l'intérieur
+          d'Anadoli; celui venant de Touzla ou
+          Salate, qui a 14 lieues de longueur sur 2 de
+          largeur; le Bahr-el-Louth ou mer Morte
+          lequel reçoit les eaux du Jourdain, et dont
+          les eaux bitumineuses recouvrent une étendue
+          de 60 à 70 lieues carrées. Les lacs suivants
+          sont traversés par des fleuves dans le
+          Thian-Clian-l'elou le Dzaïssang, traversé par
+          l'Irtyche, affluent de l'Ob le Tlioung-Thing,
+          le plus grand lac de la Chine; le Phan-Yang,
+          aussi en Chine le Manassarovar, dont le niveau
+          parait être au-dessus du plus haut sommet
+          des Alpes c'est un des principaux pèlerinages
+          des Hindous.</p>
+                <pb n="1"/>
+                <p>Au nombre des lacs qui, ainsi que ies'quatre
+          que nous venons de citer, sont traversés
+          par des fleuves, il faut nommer le lac Baï kal,
+          le plus grand de l'Asie après la m erCaspienne
+          et le lac Aral. Selon M. Klaproth, le
+          Baïkal nourrit une grande quantité de phoques.
+          Il reçoit la rivière Selenga, et est la
+          source de l'Angara, qu'on doit regarderavec le
+          Selenga comme la branche principale du Jenissei,
+          le plus grand fleuve de l'ancien continent.
+          On trouve encore le Taïmour dans la
+          presqu'île des Samoïèdes, et ailleurs un nombre
+          prodigieux d'autres lacs.</p>
+                <p>Nous ne comprenons point, parmi les lacs,
+          le Tchani, situé sur les limites des gouvernements
+          de Tobolsk et de Tomsk ni le Rin au
+          nord du Keutch dans l'Inde, parce que ce
+          sont deux vastes marais. On recueille dans le
+          dernier une grande quantité de sel, et on y
+          observe le curieux phénomène du mirage.</p>
+                <p>On ne compte en Asie qu'un petit nombre
+          de canaux. Les seuls qui soient navigables
+          .se trouvent en Chine et dans l'empire d'Annam.
+          Le Yu-ho ou canal impérial de Chine,
+          a plus de 600 milles de longueur, et permet
+          d'aller par eau de Canton à Péking. L'An-nam
+          eu a deux considérables celui d'Hué et celui
+          de Saigon mais les canaux d'irrigation
+          sont plus nombreux, surtout en Chine, au
+          Japon, dans l'Inde, et dans les Khanats de~
+          Boukhara et de Cherisébz.</p>
+                <p>L'Asie est le pays du monde dont la surface
+          présente la dépression la plus considérable
+          que l'on connaisse mais elle partage
+          cet affaissement avec l'Europe orientale.
+          Elle offre aussi les montagnes les plus hautes
+          et les plateaux les plus élevés du globe,
+          mais on possède encore trop peu d'observations
+          barométriques pour pouvoir déterminer
+          l'élévation exacte de la plupart de ses plateaux
+          au-dessus du jtiveau de la mer. Nous
+          citerons cependant les deux plateaux du Tibet,
+          qui atteignent jusqu'à 2,200 toises d'élévation
+          celui de la Mongolie, qui atteint 1,880
+          toises; le plateau de la petite Boukharie, dont
+          les sommités sont à 1,400. toises; celui do
+          l'Asie occidentale, composé du Caucase et du
+          Taurus, qui est de 500 jusqu'à 1,320 toises
+          au-dessus du niveau de la mer.</p>
+                <p>La géologie de l'Asie est encore peu connue,
+          Le groupe de l'Altaï, que les Chinois appellent
+          Kin-Chan ou Mont-d'Or, est en effet
+          riche en or, et l'était bien plus autrefois. On
+          y trouve le granit répandu sur des schistes argileux
+          renfermant des pyroxènes, des cou-</p>
+                <pb n="1"/>
+                <p>ches de jaspe, des roches calcaires compactes
+          de transition et deveriues grenues, la malachite,
+          le cuivre natif, etc.</p>
+                <p>Le rameau de l'Altaï, que les Russes nomment
+          Kolyvan, est composé de sléaschisles,
+          de schistes, de calcaire de quartz et de diorites,
+          riches en filons d'argent et de plomb.
+          Ces roches forment des montagnes d'environ
+          3,000 pieds de hauteur, dont les flancs sont
+          couverts de dépôts diluviens aurifères.. Deux
+          autres rameaux de l'Altaï, les monts Salaïr et
+          les monts Khoksoun, étant composés de roches
+          à peu près semblables à celles des monts
+          Kolyvan. renferment également des richesses
+          métalliques les premiers des sables aurifères,
+          et les seconds des mines d'argent. L'illustre
+          M. de Humbeldt porte à 70,000 marcs la
+          quantité d'argent exploité de l'Altaï, et à
+          1,900 marcs la quantité d'or obtenu seulement
+          par le lavage, et on vient d'y découvrir
+          de nouveaux gisements l'Altaï se termine
+          par de larges plateaux granitiques. Ses
+          terrasses inférieures sont riches en agates
+          en cornalines et en calcédoines. On trouve
+          des bois siliciés dans les dépôts d'alluvion s:-
+          tués dans les plaines. Le Thsoung-Ling est riche
+          en rubis, en lapis-lazuli et en turquoises. La
+          chaîne de l'Himàlaya est composée de granit,
+          de micaschiste avec disthène, d'amphibolites
+          nommées aussi diorites et de grunstein primitif.
+          Dans la chaîne orientale des monts Ourals
+          dominent des granits, riches en beaux
+          minéraux de fer et de cuivre. Les monts Hmen
+          sont riches en gros zircons et corindons, dont
+          quelques uns en prismes hexaèdres ont jusqu'à
+          3 pouces de diamètre. Sur le côté oriental
+          des monts Irendik on trouve des roches
+          de talc, schistes, diorites et serpentines ces
+          dernières renferment des dépôts de cuivre et
+          d'or dans plusieurs localités. C'est à leur décomposition
+          et à celle du schiste siliceux que
+          sont dues les alluvions qui fournissent par le
+          lavage la plus grande quantité d'or qu'on recueille
+          dans cette région. Le massif du Caucase
+          se compose de différentes bandes, dont
+          la plus haute est granitique et les autres do
+          schiste argileux, auquel sont subordonnées
+          des masses de porphyre, dont la structure
+          est basaltique. A ces bandes schisteuses succèdent
+          des bandes calcaires où l'on trouve des
+          filons métalliques. Le système arabique comprend
+          trois groupes celui du mont Sinaï, celui
+          de Tehama et celui d'Oman; le premier
+          et le second groupe sont généralement granitiques.
+          Le système indien se compose des</p>
+                <pb n="1"/>
+                <p>monts Nilgherry, des Ghâtes occidentales ct
+          orientales, et des monts Vindhia. Les montagncs
+          de l'île de Ceylan peuvent être regardées
+          comme appartenant à ce système, qui est séparé
+          do l'Himâlayen par le cours du Gange.</p>
+                <p>L'Asie est la partie du globe qui offre,
+          après l'Europe et l'Afrique, le moindre nombre
+          de volcans elle ne peut être comparée
+          sous ce rapport avec l'Amérique, et bien
+          moins encore avec l'Océanie. Les principaux
+          retrouvent dans la presqu'île du Kamtschatka,
+          où l'on en compte cinq dans l'empire chinois
+          nous nommerons le Pé-chan ou Echik-
+          Bach, sur la pente septentrionale du Thianchan,
+          dans le ïhian-cban-pe-lou, et à quelques
+          milles deKoulché et celui de Ho-tcheou,
+          sur la pente méridionale dans le Tliian-channan-
+          lou et peu éloigné de Tourfan ils sont
+          d'autant plus remarquables que ce sont les
+          volcans en activité les plus éloignés de la mer
+          que l'on connaisse. Les Anglais prétendent
+          avoir observé en 1825 des volt-ans dans la partie
+          orientale de l'Himalaya, co qui est encore
+          douteux. On peut nommer avec certitude
+          celui de Damavend, visible au loin, entre
+          Melazkird et Bayazid en Arménie; niais
+          c'est dans les île.; asiatiques que les monts
+          ignivomes font éclater leurs fureurs, et principalement
+          dans l'archipel du Japon. Nous
+          nommerons le Fousino-yama dans l'île Niphon,
+          comme le plus formidable de tous,
+          le Sera-yania et l'Asama-yama ou Asamano-
+          Dake, dans la même île: l'Ounzen-gadake,
+          le Miyi-yama et l'Aso-no-yama, dans
+          l'ile Kiousiou; les trois volcans sur la baio
+          des Volcans, dans l'île de Yiso; l'Ourbitch,
+          dans l'ile Jtouroup, une des Kouriles et le
+          très petit volcan de l'îlot Kou-Sima, à l'ouest
+          du détroit de Sangar, et dont le cône n'a que
+          150 pieds d'élévation. 11en existe encore plusieurs
+          dans quelques îles de la partie de l'archipel
+          des Kouriles qui appartient à la Russie.</p>
+                <p>Pour donner plus de précision aux généralités
+          des régions physiques, et aux divisions naturelles
+          de l'Asie pour lesquelles on ne peut
+          viser entièrement à une rigueur scientifique,
+          mais a uneméthode plus commodepour l'étude
+          de l'Asie, nous allons tracer l'ensemble de son
+          orographie. Les monts Oural s'élèvent au N.
+          0.; à l'ouest le mont Taurus, le Liban et les
+          hautes cimes de l'Arménie, le Caucase, les
+          monts Elbours etKazbeck, les montagnes du
+          Khorassan l'Hindou-Koh les monts Brahouïks
+          Soliman et Ouachély ceux du pays
+          des Kazaks et des ïroukmans au centre la</p>
+                <pb n="1"/>
+                <p>vaste chaîne qui sépare la Sibérie de l'empire 
+          chinois, et qui prend successivement les noms
+          d'Altaï, de Sayansk, Jablonoy et Stanovoy
+          les Tache-Dava ouTarbagataï, l'Alak-Taou,
+          les Thian-Chan, les Belour-Tagh les Khang-
+          Haï, les Nomkhoun ou Ourghandagh les
+          mots du Tangout et les Kouen-Loun et le
+          groupe des monts Himâlaya, le plus élevé du
+          globe; au N.-E. les Stanovoy et les monts du
+          Kamtschatka; a l'E. les monts Kingglian, Golmin-
+          Chanyan-Alin, les montagnes du Japon,
+          l'In-Clian ;au S.-E. les Pé-Ling,les Youn-Ling,
+          les Nan-Ling, les Tan-Linet les Matian-Lin;
+          au S., les montagnes de la Cochinchine, celles
+          de Siam de la presqu'île de Malakka et de
+          l'Arakan; les Gâtes orientales et occidentales
+          enûn au S.-O. les Bakthiaris et les
+          ifférentes chaînes de l'Arabie.</p>
+                <p>Quoique nous connaissions peu les innombrables
+          ramifications des montagnes de
+          l'Asie, on connaît assez la direction des
+          chaînes principales pour les classer par massif
+          ou parsystème; Matte-Brun les a rangées
+          en cinq systèmes que nous suivrons, en attendant
+          mieux, mais en leur faisant éprouver
+          de nombreuses corrections.</p>
+                <p>SYSTÈME HIMALAYEN.
+         GGrrouuupe ldd'Ae ILt"'ItalitzkoLï',Iyiktou ou Alas-Tau, 33,,250708
+         Le Tugtau, 3,080
+         du tt,- ( Le volcan appelé Pé-
+         GrUojliapne#duThian-) 1 ç^^ vv 4200?
+         ) Point culminant des
+         4,200?
+         monts Helour-Tag, 5,700?
+         Groupe de l'Hi- Pic connu sous la dénomàlaya.
+         minai ion du 14e, 7,821
+         Id. id. 12% 7,088
+         SYSTÈMEOURALIEN.
+         I Le Pavdinskoï-Kamen, 1,123
+         SYSTÈMECAUCASIQUE.
+         GroupeduTauru.j^lriï' ftSSÏ
+         Groupe de
+         aurus. Le Toughlalon, 1,975?
+         GTaureusdC
+         V^'
+         Le
+         Taurus. raont Ardjs, 4,872?
+         Le
+         mont Groupe du Liban. Le Liban, 3,310
+         Id. des monts (,M e«
+         Elvend. j
+         L Ararat&gt; e&gt; '0
+         L'Elbourz ( Ouache-
+         Groupe du Cau- Homaco), 5,031
+         case. Le Mquinvari ou Kazlll
+         bek des Russes, 4,680
+         SYSTÈMEA1IABIQUE.
+         Ujulrur
+         eu mitrrn.
+         L'Alta-Iin-Miro, "à^sVé"
+         /LeJJokhda-Oola, 5,800?
+         LeTchamoulari, 8,580?
+         Le Dhavaladgiri, 8,555
+         Le Djavahir, 7,845
+         Id. id. 3% 6,958?
+         Id. id. 23% 6,928
+         Le Kvar-Kouch, 1,607
+         | Points culminanst,
+         1.900 à 2,600
+
+         occidentales. Le Mourchourti-Iiet,
+         point culminantdes
+         monts Nil-Gherris 2,680
+         Groupe des GâtesPoint culminant des
+         orientales. ( Gâtesorientales, 980</p>
+                <p>L'Asie compte un grand nombre de rivières
+         elles sont remarquables par l'étendue
+         de leur cours, mais elles sont inférieures
+         à celles del'Amérique.Aucune des plusgrandes
+         ne court vers l'occident comme font celles
+         d'Amérique, elles prennent au contraire ladirection
+         du nord de Test et du sud.
+         Nous allons classer les principales de ces
+         rivières selon le système de leurs bassins respectifs,
+         la longueur approximative de leurs
+         cours et de leurs principaux affluents établis
+         par Malte-Brun en leur faisant subir d'importantes
+         modifications.</p>
+                <p>Bassin de la mer Glaciale; pente septentrionale
+         du plateau de la Mongolie.
+         Longueur en tieuet
+         • gëugruphiquei.
+         L'Ob ou L'Obi.
+         r
+         742
+         (L'Irtich. 562
+         l Le Tobol. 213
+         Le Jeniseï. 785
+         ( LaToungouska supérieure. 360
+         La Toungouska moyenne. 202
+         ( LaToungouska inférieure. 40i&gt;
+         Le Piasina. 107
+         La Chatanga. 123
+         L'Olenck. 2S1
+         Le Lena. 678?
+         Le Vilioui. 250
+         Le Vitim. 281
+         )L'Aldan.. 281
+         ( L'Olekma. 258
+         La Jana. 169
+         L'Indighirka. 300
+         La Kovyma. 370
+         Bassin septentrional du Grand-Océan; pente»
+         orientales de la Sibérie et du plateau de la
+         Mongolie.
+         L'Anadir. 202
+         Le Kamtschatka. 135
+         L'Amour ou Sakhalian-oula (le Noir). 680
+         Le Soungari. 247
+         La Chilka. 90
+         Bassin de la mer de Chine, faisant partie du
+         bassin du Grand-Océan pente orientale du
+         plateau du Tibet.
+         Le Hoang-ho (le fleuve Jaune). 920
+         Le Yang-Tseu-Kiang (le fleuve Bleu). 664
+         Idem en remontant jusqu'à la source du
+         Kin-Cha-Kiang. 1042
+         Le Kin-Cha-Kiang. 385
+         iLeYaloung-Kiang. 250
+         Le Han-Kiang. 262
+         Le Ta-Kiang, qui prend à Canton le
+         nom de fleuve Tchou-Kiang. 209
+         
+         Le Meï-Nam. 314
+         Bassinde l'océan Indien.
+         L'Jraouaddy. 700
+         Le ISourampouterou Brahmâpoutra. 619
+         Le Gange. 600
+         Le Mehenedi. 259
+         Le Godaveri. 283
+         Le Vourda. 101
+         I LeMandjera, 139
+         Le Krichnah. 238
+         Le Nerboud'dah. 247
+         L'Indus ou Sind.. 606?
+         Pentes et bassins de ^intérieur de F Asie.
+         Bassin du. lac Aral.
+         Le SirrrDaria ou Sihoun. 360
+         L'Amou-Dariaou Djihoun. 450
+         Dans la petite Boukhane, les monts
+         Bolor, Thian-Chan et Koulkoum.
+         Le Yarkand. 370
+         Bassin du lac Baïkal.
+         La Selenga. 230
+         Pentes de l'Asie occidentale ou du Caucase, de
+         l'Araral du Taunts vers la mer Caspienne.
+         Le lîour ouMkvari. 180
+         L'Aras. 170
+         Vers le golfe Persique.
+         L'Euplirale ou Fraat (jusqu'augolfe). 510
+         Le Tigreou Hiddekel, 292
+         Vers le golfe Arabique.
+         Aucunerivière et peu de ruisseaux.
+         Vers la Méditerranée et l'Archipel.
+         1,'Oronte. 81
+         Le Jiouiouk-Mcïender. 84
+         Vers la mer Noire.
+         Le Sakaria (Sangarino)).. 80
+         Le Kisil-Irmak (Halys). 171
+         Le Rioiii ( Phasis 52</p>
+                <p>L'Asie renferme un grand nombre de steppes
+         et de déserts, la plupart liés vastes. La
+         Sibérie est comme une immense steppe, parsemée
+         de grands marais mais dans sa partie
+         méridionale ces déserts sont moins vastes que
+         celui qui borde l'océan Glacial arctique. Nous
+         citerons parmi les plus importants, la grande
+         steppe des Kirguis dont une partie considérable
+         appartient au Tourkestân indépendant;
+         celle d'Iscliim, entre le Tobol et l'Irtich; celle
+         deBaraba entre l'Irtioli et l'Ob; le désert élevé
+         de Gobi,qui traverse la Mongolie, sépare les
+         Khalkhas des Mongols et est undes plus grands
+         déserts sablonneux que l'on connaisse, quoiqu'il
+         soit moins grand qu'il n'est représenté sur
+         les cartes; le désert de Khârizm et ceux de
+         Kara-Koum et de Kizyl-Koum, dans le Tourkestan
+         indépendant le désert d'Adjmir en-</p>
+                <pb n="1"/>
+                <p>tre le Sind et le Ban, dans l'Inde et ceux de
+         l'Irak-Adjemi, de Kerman et de Mekran, dans
+         la Perse; le Barraï-el-Cliam ou le désert de Syrie,
+         entre cette contrée et l'Euphrate; enfin
+         les vastes déserts qui occupent la plus grande
+         partie de l'Arabie, parmi lesquels celui d'Akhaf
+         et autres qui s'étendent comme un linceul
+         sur la plus grande partie de l'Arabie.</p>
+                <p> L'Asie embrassant une étendue de 75 degrés
+         de lat., offre nécessairement une grande variété
+         de climats. On y éprouve toutes les gradations
+         de température depuis le froid intense
+         delaiSibérie et des hautes plaines du-Tibet,
+         jusqu'aux chaleurs brûlantes de l'Arabie.</p>
+                <p>Ces contrastes sont cause que. les lignes
+         d'égale chaleur annuelle s'infléchissent considérablement
+         vers le sud, à mesure qu'elles
+         s'éloignent de l'Europe et s'avancent vers
+         l'intérieur de l'Asie. L'Asie à partir du parallèle
+         de 35°, possède un climat formé d'étés
+         très chauds succédant à des hivers très froids.
+         Ainsi à Astrakhan, où le raisin mûrit
+         comme il mûrit en France ou dans les Canaries,
+         l'on voit durant l'hiver le thermomètre
+         descendre jusqu'à 28 et 30° au-dessous
+         de 0. L'est de.la Russie su rapproche, sous le
+         rapport climatologique, de l'Asie bien plus
+         que de l'Europe; sa position géographique
+         en montre la raison au premier aperçu.</p>
+                <p>Voici quelques éléments de climatologie
+         comparée, recueillis par M. de Humboldt
+         Saint-Pétersbourg (lat. 59° 56', long. 27°).
+         Température moyenne de l'année,-)- 3°, 8'
+         centigrades; de l'hiver, 8° 3'; de l'été,
+         + 16° 7'.
+         Tobolsk ( lat. 58° 12' long. 65° 58' ).
+         Température moyenne, 063'.
+         Kasan ( lat. 55° 48' long. 46° .44' ).
+         Température moyenne,- i°, 3 de l'hiver,
+         18° 4'; de l'été, + 17° 4'.
+         Péking (lat. 39° 54' long. 114° 7' ).
+         Température moyenne, + 12°7' de l'hiver
+         3° 2' de l'été, + 28° 1' En France, entre
+         Nantes et Saint-Malo, de 7 à 8° plus au
+         nord que Pékin, on retrouve la même température
+         annuelle; à Copenhague, à 16° plus
+         au nord on n'a pas un hiver plus rigoureux,
+         et à Naples, bien plus au sud, on n'a
+         pas un été plus chaud.</p>
+                <p>Macao ( lat. 22° 12' ). Température
+         moyenne, 23° 3' de l'hiver, 18° 2'; de
+         l'été, 28°.Dans cette partie de l'Asie située sous
+         la zone torride, les lignes d'égale température
+         sontà peu près parallèles à l'équateur. Les
+         contrastes entre la chaleur des saisons extrê-</p>
+                <pb n="1"/>
+                <p>mes sont bien moinssensiblcs qu'à Pékiiig, A
+         Canton et à Bénarès, les résultais climatéri-:
+         ques sont à peu près les mêmes qu'à Macao.</p>
+                <p>Plus au sud, les températures moyennes deviennent
+         à peu près uniformes sur tout le
+         globe. A Bombay,cette température est de
+         26» 7' à Manila, 25° 6' à Madras; 26°9'
+         à Pondichéry, 29-6'.</p>
+                <p>Le climat particulier de l'Asie-Mineure
+         offre autant de variété que celui de la péninsule
+         espagnole; au reste, ces deux contrées ont
+         une ressemblance étonnante
+         à cause des nombreuses
+         chaînes de montagnes qui les traversent
+         toutes deux, et leur voisinage de la mer.
+         On rencontre sur le vaste continent asiatique
+         tous les genresde sols, depuis les terres
+         stériles des régions glacées et les sables arides
+         du désert jusqu'aux plaines fertiles des contrées
+         équinoxiales. </p>
+                <p>Nous allons énumérer seulement les principales
+         productions appartenant aux deux
+         grandes sections ou règnes de la nature, organiques
+         ou inorganiques, car nulle part elles
+         ne sont ni aussi nombreuses ni aussi riches.</p>
+                <p>On trouve en Asie les minéraux les plus
+         précieux et les plus utiles, et tout indique
+         que ses mines sont au moins aussi abondantes
+         et aussi précieuses que celles de l'Amérique,
+         ( dans l'état où sont aujourd'hui celles-ci),
+         quoiqu'elles soient moins connues, et que
+         l'art de les exploiter soit peu avancé chez
+         les Asiatiques, tandis qu'en Amérique le travail
+         des mines a été confié à des Européens.</p>
+                <p>Les diamants sont' recueillis' dans l'Inde,
+         et surtout au royaume de Nizam,' et dans l'île
+         de Ceylan, mais non à Golconde, ainsi que le
+         disent là plupart des géographes 'c'est près
+         des rives du Krichnà et du Pennar, près de
+         Raolkonde, qu'on les trouve niais on les taille
+         généralement à Golconde, où s'en fait le
+         commerce principal. Ils sontensuite exportés
+         par.dés marchands màlabares dans les différentes
+         parties de l'Inde. Les gouvernements
+         de Perm et d'Orenbourg, dansla Russie asiatique,
+         sont également riches en diamants. On
+         trouve dans les mêmes contrées la plupart des
+         pierres précieuses, ainsi que dans l'empire
+         Birman, au royaume de Siam, dans les gouvernements
+         russes de Tomsk et d'Irkoutsk,
+         en Chine et dans l'empire chinois, au royaume
+         de Perse, au Khorassari, dans le Tourkestan
+         indépendant, dans le Badakchan etc. L'or
+         existe dans l'empire chinois, dans l'archipel
+         japonais, dans la Russie asiatique, dans l'empire
+         birman, dans l'An-nam, dans le royaume</p>
+                <pb n="1"/>
+                <p>Siam, dans la péninsule de Malakka dans
+         l'Inde britannique, etc. on recueille l'argent
+         dans la Russie asiatique, dans les empireschinois
+         et japonais, dans l'Asie-Mineure, en Arménie,
+         etc. On exploite du cuivre aussi beau
+         qu'abondant au Japon, dans l'empire chinois,
+         dans la Russie asiatique, en Géorgie,
+         dans l'Asie ottomane, -l'Inde, la Perse et
+         l'An-nam. L'étain abondedans la presqu'île de
+         Malakka, dans l'empire birman et dans l'enpire
+         danois. On trouve le mercure en Chine,
+         au Tibet, dans l'lnde, à Ceylan et au Japon.
+         Le fer, les sels et les marbres, les pierres,
+         le salpêtre, la naphte, les terres, porcelaine,
+         se rencontrent dans plusieurs Etats de l'Asie;
+         le plomb-, dans l'empire chinois, l'Asie russe,
+         le Siam, la Géorgie, le Japon, la Perse, l'Arabie,
+         l'Arménie et l'Asie-Mineure. Le charbon
+         de terre existe on plusieurs contrées de
+         l'Asie; mais il n'est exploité, à notre connaissance,
+         que dans l'empire chinois et dans
+         les provinces septentrionales de la Chine.</p>
+                <p>Les bornes dans lesquelles nous sommes renfermés,
+         nous empêchent d'indiquer les nombreuses
+         productions végétales de l'Asie et la
+         géographie botanique de cette partie du monde
+         nous dirons seulement que ses principaux
+         végétaux consistent en millet, orge, froment,
+         maïs, riz, thé, raisins; en djagri ou arbre à
+         sucre, en arbres à suif, à cire, à papier et à
+         vernis; en café exquis, safran, coton, cannelle,
+         poivre; gingembre, cardamome, ginseng,
+         bétel et arek. On trouve le pin, le
+         bambou le palmier éventail ( coryphoea umbr
+         aculi fer a) le mimonsailotica, qui fournit la
+         gomme arabique; lé camphre, l'aloès, le benjoin,
+         l'encens, la laque, la rhubarbe, le tek,
+         bois de construction incorruptible, des boisde
+         teinture, de charpente et d'ébénisterie, le
+         manguier le cocotier le bananier, l'arbre à
+         pain, le figuier, le marronnier du Népal, lo
+         platane, l'azérolier, l'ébénier, l'indigotier,
+         le tamarinier, le mûrier, le mangoustan, le
+         litchi, le jakier, l'ananas, et une quantité de
+         fruitsde toute espèce et de plantes médicinales.</p>
+                <p>Le blé n'est cultivé avec succès que dans
+         les parties méridionales de la région sibérienne.
+         Selon Malte-Brun il ne mûrit ni à
+         Oddskoï, sous le cinquante-cinquième degré,
+         ni au Kamtschatka, situé sous le cinquanteseptième
+         tandis que les parties sud-ouest
+         sont remarquablement fertiles. Au nord de
+         Koly van. l'orge produit douze fois la quantité
+         qu'on a semée, et l'avoine vingt fois. On y
+         élève difficilement le blé, que les habitants </p>
+                <pb n="1"/>
+                <p>remplacent par différentes espèces de sarrazin
+         (polygonum ), dont ils font une sorte
+         du mauvais pain, comme en Chine et dans
+         quelques parties de la Lombardie. Le coudrier
+         de Tatarie croît encore à 15,000 pieds
+         sur ses plus hautes montagnes.</p>
+                <p>Le règne animal en Asie comprend le
+         cheval, le chameau, l'éléphant, le rhinocéros,
+         le buffle, différentes espèces de boeufs,
+         telles que le zéiiou, l'arni, le gour et l'yak
+         Le règne animal en Asie comprend le
+         cheval, le chameau, l'éléphant, le rhinocéros,
+         le buffle, différentes espèces de boeufs,
+         telles que le zéiiou, l'arni, le gour et l'yak ou
+         taureau grognant, dont la queue touffue sert
+         d étendard aux Orienlaux; le tigre, la panthère,
+         le chacal, l'ours, l'hyène, l'âne
+         l'onagre, le lynx, le mulet, le renne, le bison,
+         le moufflon le mouton argali et le mouton
+         commun,.la chèvre du Tibet, dont le
+         poil soyeux donne aux châles de Kachmir
+         la souplesse et le lustre, et la chèvre commune
+         plusieurs espèces de cerfs, la gazelle
+         et attires antilopes, le tapir bicolor ou mayba,
+         que nous avons vu dans la presqu'île de Malakka
+         et même en Océanie, et qui rappelle
+         la zoologie américaine; plusieurs espèces de
+         singes, telles que le gibbon, le douc, et diverses
+         espèces du genre macaque le nasique
+         masqué, qu'on trouve en Cochinchine
+         et qui est si remarquable par la longueur de
+         son nez le gallock (espèce d'orang-outang),
+         le lièvre sauteur, différentes espèces de renards,
+         de martres, d'hermines et d'écureuils,
+         et le chevrotain porte-muse.</p>
+                <p>L'ornithologie asiatique s'enorgueillit de
+         ses grands vautours, des aigles, des faucons,
+         du paon, du cryptonix, de l'autruche,
+         des perroquets du faisan doré, du faisan
+         argenté, du lori au plumage cramoisi, du
+         couroucou aux plumes dorées, du drongo aux
+         plumes d'azur, du calyptomène vert qui réfléchit
+         la teinte de Témeraude, et du magnifique
+         luen de la presqu'île de Malakka, dont
+         l'immense queue est semée de mille yeux qui
+         l'ont fait surnommer argus.</p>
+                <p>Les insectes de cette partie du monde sont
+         infiniment variés.</p>
+                <p>L'Asie est la patrie d'un grand nombre
+         de reptiles, tels que les crocodiles bi-carénés,
+         Yoular limpé dont la piqûre donne la mort
+         avec des douleurs affreuses; les monstrueux
+         pythons, le nadja surnommé la vipère à lunettes,
+         dont la morsure est mortelle, que lés
+         jongleurs indiens apprivoisent et font danser
+         au son de la flûte, et auquel le peuple hindou a
+         voué une espèce de culte; la tortue de l'Inde,
+         et surtout celle de l'Euphrale, qui offre une
+         nourriture succulente, et dont les habitants de</p>
+                <pb n="1"/>
+                <p>la Turkie d'Asie repoussent la chair par un
+         préjugé religieux.</p>
+                <p>Les mers qui baignent le vaste continent
+         asiatique fournissent une grande abondance
+         de poissons de différentes espaces. On y trouve
+         des squales de grande taille, des balittes, des
+         aleutères des chelodons, des labres et des
+         murenophis. Le gourami est un des poissons
+         d'eau douce lé plus délicats. Le Gange nourrit
+         une espèce de dauphins connue de Pline
+         l'ancien sous le nom de platynista.</p>
+                <p>Parmi les crustacés des mers méridionales
+         de l'Asie'il faut citer les langoustes la muta à
+         crête et la maïa pipa, qui porte ses oeufs sur
+         son dos; le matouté vainqueur, le crabe
+         bronzé, les squilles le palémon carcin, etc.</p>
+                <p>Sur les côtes méridionales on voit une
+         grande variété de zoophyles étalant les plus
+         brillantes couleurs; ici des coralinées jaunes,
+         bleues, rouges, vertes; là des gorgones en
+         forme d'éventail; sur les côtes orientales et
+         sur les îles qui en dépendent, des holothuries
+         (Iripangs)si recherchés des Sybarites chinois
+         sur ces deux côtes la marée, en se retirant,
+         laisse sur le rivage une foule d'actinies
+         aux couleurs les plus variées et qui lui donnent
+         l'aspect d'un brillant parterre de fleurs.</p>
+                <p>La mer qui entoure la péninsule indienne
+         est riche en mollusques conchifères
+         aux formes les plus élégantes et aux couleurs
+         les plus diverses. Nous citerons la cythérée
+         qui sert aux jeux des Chinois et des Japonais,
+         la cythérée pourprée cedo-nulli si
+         estimée des collecteurs, labuccar de coeur-devénus,
+         l'arche bistournée, la donace à réseau,
+         le tridacne gigantesque dont nous avons possédé
+         quelques uns supérieurs par la taille
+         à celui dont les deux valves servent de bénitier
+         dans l'église Saiht-Sulpice; la jolie vénus-
+         lôvantine le peigne manteau-ducat, la
+         pintadine qui fournit les plus belles perles fines
+         et la nacre employée dans les arts; la
+         houlette et autres bivalves; enfin là placune
+         vitrée que les Chinois, les habitants de Goa
+         et autres emploient au lieu de vitres; l'huître
+         rayonnée de 9 à 10 pouces de diamètre et
+         autres belles espèces du genre spondyle
+         parmi les univalves la bulle fasciée, l'ombrelle
+         de l'Inde, la scalaire précieuse, le monodonte
+         ou pagode, le turbo marbré; le ptérocère-
+         araignée, le beau casque rouge, la
+         porcelaine argus, la mitre papale, le beau
+         cône cedo-nulli la harpe ventrue et le grand
+         triton émaillé, qui atteint quelquefois jusqu'à
+         un pied et demi de longueur. Parmi les mol-</p>
+                <p>lusques dépourvus de coquilles qui habitent
+         les mers de l'Asie, nous mentionnerons la sèche
+         tuberculeuse la matière noire qu'elle
+         sécrète sert aux Chinois à fabriquer l'encre
+         surnommée de la Chine.</p>
+                <p>On trouve sur les plateaux les plus élevés
+         du Tibet, à plus de 15,000 pieds au-dessus
+         du niveau de la mer, de grandes couches de
+         coquilles fossiles, et en Sibérie, dans des terrains
+         tertiaires des. quantités d'ossements
+         d'animaux, tels que l'éléphant, le rhinocéros,
+         le mammouth et autres quadrupèdes dont les
+         espèces sont éteintes.</p>
+                <p>Nous donnerons ici quelques généralités
+         sur les divisions et subdivisions des régions
+         de l'Asie, en commençant par celle qui est le
+         plus rapprochée de nous.</p>
+                <p>L'Asie ottomane ou la Turkie asiatique
+         comprend tous les pays situés entre la Méditerranée
+         et le Tigre ou Hiddekel; elle renferme
+         sept divisions principales Anadoli
+         (Asie mineure), l'Arménie, la Syrie, l'Aldjézirah
+         (Mésopotamie), l'Irack-Arabi (Babytonie
+         et Kaldèe), le Kourdistan et les îles. La
+         Turkie asiatique, autrefois le séjour des arts,
+         offre en grand nombre des restes imposants
+         d'antiquité. Les ruines de Baalbek (Héliopo^
+         lis), celles de Palmyre (Tadmor), de Jérusalem,
+         de Tyr, Sidon, liphèse, de tant d'autres
+         cités, attestent encore la puissance et la
+         splendeur. des anciens Etats de l'Asie -Mineure..
+         Dus recherches récentes, faites dans
+         les plaines où était située l'ancienne Troie,
+         ont ouvert un vaste champ aux archéologues.
+         Le Simoïs n'est qu'un torrent qui
+         se jette dans l'Hellespont près du Château-
+         Neuf d'Asie. Les Romains ayant détourné
+         le cours du Scamandre, qui allait
+         auparavant joindre la rive occidentale du
+         Simois, ce changement, resta long-temps
+         ignoré, et causa une foule d'erreurs aux
+         savants. Des tombeaux antiques construits
+         en forme de tertre couvrent ça et là la
+         plaine. Quelques voyageurs sont parvenus à
+         marquer avec plus de vraisemblance leur
+         situation. Suivant eux, celui d'Hector est
+         derrière Troie, ceux d'Achille et de Patrocle
+         sur le rivage ils ont également indiqué les
+         tombes de quelques autres héros d'Homère.
+         Troie occupait l'emplacement du mont situé
+         près du village de Bounat-Bachi.</p>
+                <p>L'Arabie est une grande presqu'île entourée
+         par la mer Rouge ou golfe Arabique la
+         mer des Indes et le golfe Persique au nord
+         elle est séparée de l'Asie ottomane par ses</p>
+                <pb n="1"/>
+                <p>déserts. L'Arabe est cultivateur dans les terrains
+         fertiles de la péninsule dans les déserts
+         il est nomade et guerrier. L'Arabie se divise
+         en Arabie Pétrée au nord-ouest, en Arabie
+         Déserte au centre et à l'est en partie, en
+         Arabie Heureuse à 1ouest et au sud.</p>
+                <p>La Perse ou lràn est située en partie sur
+         le plateau secondaire de l'Asie, si remarquable
+         par son aridité. Cependant, dans le reste
+         du pays, il y a des montagnes, de belles vallées
+         et des terrains fertiles. La Perse est bornée
+         au nord par l'Arménie et le Chirvan (empire
+         russe) la mer Caspienne et le Tourkestan,
+         à l'est l'Afghanistan et le Beloutcliislàn,
+         au sud le golfe Persique et le golfe d'Oman,
+         à l'ouest l'Asio ottomane.</p>
+                <p>L'Afghanistan, aussi nommé royaume do
+         Kaboul,et de Kandahar, est à l'orient, de la
+         Perse. Co pays est montueux à l'est, et sablonneux
+         au sud. 11y a quelque industrie
+         dans les villes de Kaboul, Kandahar et
+         Peichouer.</p>
+                <p>Le Beloutchislân est une contrée maritime
+         située au sud de la précédente la nature du
+         pays et le caractère des habitants sont les
+         mêmes; ils professeut lemahométisme, ainsi
+         que les Afghans ou Pouchtous.</p>
+                <p>Le Tourkestân ou Tatarie indépendante
+         comprend tout le pays entre la mer Caspienne
+         à l'ouest les monts Alghidim-Chamo
+         au nord, les monts Belour à l'est, et la Perse
+         au sud.. Remarquable par son aspect physique,
+         il est généralement plat, uni, sablonneux
+         et couvert de steppes; il faut en excepter
+         la Boukharie et quelques autres parties.</p>
+                <p>L'Hindoustân, ou lapres qu'ile de l'Inde endeçà
+         du Gange, a une longueur d'environ
+         500 lieues du nord au sud. Cette presqu'île
+         est bornée au nord par la vaste chaîne do
+         l'Himalaya, à laquelle appartient le géant des
+         montagnes, le Dhavaladgiri, haut de 27,000
+         pieds, sans parler du Djavahir et d'autres A
+         dont les sommités n'ont guèro moins d'élévation.</p>
+                <p>L'Inde entière a une population de plus de.
+         cent millions d'individus. Ses Etats indépendants
+         sont le Népal, le Sikkim, ceux de Rendjot-
+         Singlt comprenant le Lahor leKachmir
+         et le Pendjab; le Sindhi et le royaume des;
+         îles Maldives. L'empire indo-britannique se
+         compose 1" des territoires soumis à la compagnie
+         des Indes-Orientales, qui comptent
+         80,000,000 d'habitants; 2° de pays vassaux
+         qui dépendent de cette puissante compagnie.
+         avec 25,000,000 dûmes; 3° de pays dépen-</p>
+                <pb n="1"/>
+                <p>dant immédiatement du roi d'Angleterre, et
+         dont la population ne dépasse pas 9;000,000
+         de sujets. La partie britannique se .compose
+         de trois présidences celle de Calcutta où réside
+         le gouverneur général celle de Madras
+         etcelle d« Bombay,et en outrede l'île de Ceylan
+         qui appartient au roi de la Grande-Bretagne.</p>
+                <p>La région transgangélique est une presqu'île
+         d'une forme bizarre qui se termine par
+         la presqu'île allongée de Malakka. Renfermée
+         entre le golfe de Bengale à l'ouest et le golfe
+         deTongkingàl'est, la région transgangétiquo
+         peut être divisée en cinq parties 1° l'empire
+         birman 2° le royaume de Siam dont
+         dépend l'isthme de .lvraw (Kraou ); 3° l'empire
+         d'An-namdivisé encinq États: Cambodge,
+         Laos, Lak tho divisé entre plusieurs chefs;
+         Tong-king,Tsiampa, Bao et autres Etats
+         indépendants ( les habitants du Tong-king
+         ont beaucoup de ressemblance avec les Chinois)
+         4° la presqu'île de Malakka divisée en
+         six .petits Etats, et quelques peuplades sauvages
+         et en partie noires 5° la région transgangétique
+         anglaise comprenant le pays d'Acham
+         au N.-O. avec lu fort Gherghon, sur
+         les bords du Brahmâpoutra; les anciennes
+         provinces birmanes d'Arakan, de Martaban,
+         d'Yé/de ïavoy, celle de Tanasserim dans le
+         royauinede Siam, et une partie de la presqu'île
+         de Malakka, avec la ville de ce nom.</p>
+                <p>L'empire chinois est le plus peuplé du
+         monde; lès Anglais portent jusqu'à 362 millions
+         le nombre de ses habitants mais nous
+         avons établi,' dansnotre Statistique delaChine,
+         que ce nombre ne pouvait guère s'élever qu'à
+         184,000,000, dont 150,000,000 pour la Chine
+         propre, 2'i-,000,000 pour les Etats soumis au
+         céleste'empire, et 10;000,000 pour les Chinois
+         établis dans divers Etats de l'Asio et en
+         Océanie. Cet empire se compose de la Chine
+         proprement dite, divisée en quinze provinces,
+         située à l'orient de l'Asie; de la Tàlarie chinoise
+         qui comprend la Kalmoukie, le Thianchan-
+         pae-lou ou Dzoungarie la Mongolie et
+         la Manlchourie; de la presqu'île de Korée et
+         des pays tributaires, tels que le Bouthan, le
+         Tibet, le Thian-chan-nan-lou ou petite Boukharie
+         des îles d'Haïnan et de ïhaï-ouan, de
+         l'archipel des îles Lieoukieou et de l'ile Sakhalian.</p>
+                <p>Les Mandchous, maîtres de ce grand empire,
+         sont une grande division de la grande
+         famille toungouse, dont on trouvera la place
+         qu'elle occupe, ainsi que celle des nations</p>
+                <pb n="1"/>
+                <p>tongouses, finnoises, etc., dans la petite carte
+         géographique et ethnographique de l'Asie qui
+         accompagne cet article, et que nous avons fait
+         dresser conformément à notre texte.</p>
+                <p>L'archipel qui compose l'empire du Japon
+         est situé à l'orienlde la Chine, dans le Grand-
+         Océan. Il renferme quatre îles principales
+         Kiousiou, Sikokf, Niphon et Jesso, gouvernement
+         de Matsamaiy indépendamment d'un
+         grand nombre d'autres, et des grandes Kouriles.
+         Cesîles ont une population industrieuse
+         et'brave d'environ 30,000,000 d'habitants.</p>
+                <p>La région sibérienne est tout entière occupée
+         par la Sibérie, immense portion de la
+         Russie asiatique, qui s'étend de l'Oural au
+         détroit du Behring les monts Alghidim-chamo,
+         les petits Altaï et les monts Stanovoï,
+         la séparent du reste de l'Asie, et sont riches
+         en métaux. Les côtes sont basses cl marécageuses
+         le climat très rigoureux. Dans cet
+         immense.pays on compte à peine 2,000,000
+         d'habitants. 1) illustres exi!és sont envoyés de
+         Russie dans cette affreuse région et souvent
+         ils y.sont employés au fond des mines. La Sibérie
+         renferme d'immenses forêts et une foule
+         d'animaux, source féconde de commerce et
+         de richesses.</p>
+                <p>Le pays des Kirguis, sur lequel les Russes
+         n'ont qu'une souveraineté'nominale, est une
+         vaste contrée dont les steppes sont traversées
+         par les nombreux nomades connus sous le nom
+         de Kirguis mais ils- ne ressemblent à ceuxci
+         que par le langage ce qui prouve que la
+         langue n'est pas toujours la prouve de la filiation
+         des peuples. Ce sont des Kozaks, et ils
+         diffèrent des Kara-Kirguis qui sont les vrais
+         Kirguis et habitent, dans le voisinage des
+         Bourouts près du lac Dzaïssang. Le pays
+         des Tlchouktchis forme l'extrémité N.-E. de
+         l'Asie nous parlerons plus bas de ce peuple.</p>
+                <p>La région caucasienne appartient aujourd'hui
+         en grande partie à la Russie, qui, à
+         l'E., s'étend jusque sur les anciens domaines
+         de la Perse. A l'O. et sur les bords de la mer
+         Noire, quelques forteresses dépendent encore
+         des indigènes, et quelques petits peuples vivent
+         libres à l'abri des montagnes dont le
+         pays est hérissé. Celte région se compose
+         au S., du Caucase de la Mingrélie, de TImérélhi,
+         de la Géorgie, renommée par la
+         beauté de seshabitants du Daghestân, du
+         Chirvan, du Gouriel et d'une partie de l'Arménie
+         persane, dernièrement conquise. La
+         partie au nord du Caucase appartient à l'Europe.
+         La religion grecque est celle d'une par-</p>
+                <pb n="1"/>
+                <p>tie de ses peuples, beaucoup cependant sont
+         ou musulmans ou idolâtres.</p>
+                <p>35. Nous partagerons les grandes divisions
+         politiques de l'Asie: en dix grandes régions</p>
+                <p>iy oa yo tfo</p>
+                <p>paux, et dont une partie de la côte occidentale
+         appartient au vice-roi d'Egypte; -2°la
+         Perse,. subdivisée en royaumes de Perse ou
+         Iran proprement dit, et en Afghanistan ou
+         Etats de Kaboul et de Hérat, aujourd'hui soumis
+         en partie à Rendjit-Sing'h; 3° TEtat
+         du Beloutchistân le Tourkestân indépendant
+         dans lequel nous comprenons les khânats
+         de Boukhara, de Balkli, de Kliokand,
+         de Khiva, de Badakchan, une partie du pays
+         des Kirguis ou Kazaks, le pays des Tourkmans,
+         etc. 5° l'Inde, subdivisée en plusieurs
+         Etats, dont l'empire indo-britannique&gt; les
+         royaumes de Siridià et du Népal, le pays des
+         Seïkhs'ou l'état de Rendjit-Sing'h, et celui
+         de Sindhi sont les plus importants. La
+         France, le' Portugal et le Danemarck ont
+         quelques possessions de peu d'importance
+         dans l'Inde. 6° La région transgangétique,</p>
+                <pb n="1"/>
+                <p>savoir: 1° l'Asie ottomane partagée entre les
+         sultans Mahmoud et Mehemed-Ali l'Arabie,
+         subdivisée en plusieurs Etats, dont lïmànal
+         d'Yémen et celui dè Mâskat sont
+         d'Yémen et celui ;dè Mâskat sont les princi-</p>
+                <p>100 A. THIKRAUL f
+         121/</p>
+                <p>dont les principaux Etats sont les empires
+         birman et d'An-nam, l'Assam et l'Arrakan et
+         le royaume de Siam ( les Anglais ont conquis
+         naguère une partie de la côte des Birmans)
+         7°lapresqu'île deMalakka 8° l'empire
+         chinois qui comprend la Chine, le Tibet,
+         le liouttân la Korée, la Mongolie, la
+         Dzoungarie, le pays de Rhoukhou-iioor ou
+         des Mongols, le Tourkestân oriental ou Petite-
+         Boukharie et le pays des Mandchous;
+         les Portugais y possèdent la ville de Marao
+         dans la province de Kouang tourig dont
+         Kouàng-tcheouestle chef-lieu) ;9°rempire dit
+         Japon ;&gt;et10° l'Asie russe, qui comprend la
+         Sibérie et lé Kamtschatka, la région caucasienne
+         et une portion de l'Arménie.</p>
+                <p>Les villes principales de l'Asie sont dans
+         l'Asie ottomane,Damas, Smyrne, Haleb,Erzeroum,
+         Bagdad, Broussa, Diarbékir, Bassra,
+         Moussoul, Ourfa, Jérusalem (El-Kods, la 
+         sainte), Angorah, Tripoli ( Tarablos) du Liban,
+         Akka ( le Saint-Jean-d Acre des Européens), et Trébizonde. 
+         En Arabie la Mekke,
+         capitale; Medinet-el-Nebi (Médine ), Moka,
+         Fouf et Derrièh; dans l'lrân ou la Perse, Téhéran,
+         capitale, Ispahan Tébriz et non Tauris,
+         Hamadan Chiraz, Kerman, Kazbin
+         Yezd Bender-Abouchir, Chouster et Kermancliâli
+         dans le Kaboul, Kaboul (capitale);
+         dans l'Hérat, Hérat (capitale), Kandahar,
+         Péchouer, Moultân, Djeiat-Abad, Ghizni,
+         Balk; dans le Beloutchistûn, Kalaat-Nassir-
+         Khan ou Kelat (capitale), Gondava, Kadje-
+         Mokran, Zahri, Kbozdar et Bcla; dans le
+         Tourkestân ou Tatarie indépendante, Boukhara,
+         ville célèbre, résidence du khan et
+         Samarkand, autrefois capitale florissante du
+         vaste empire de Timour-Leng, et célèbre encore
+         de nos jours par ses écoles, ses fabriques,
+         et le tombeau du grand conquérant
+         dont nous venons de parler. Dans l'Inde, et
+         d'abord dans l'Inde britannique, il faut nommer
+         Calcutta, capitale des possessions anglaises
+         en Asie et résidence du gouverneur
+         général; Bénarès, ville célèbre, située sur la
+         rive gauche du Gange et qui est en grande
+         vénération chez les Hindous.; on y compte environ
+         600,000 habitans; à 190 lieues N.-O. de
+         Calcutta, Madras, chef-lieu de l'une des trois
+         résidences anglaises; Patna (Behar), sur la
+         rivedroite du Gange, avec 312,000 habitants;
+         Dhakka, Bombay, situé dans la partie S. -E.
+         de l'île du même nom, dans la mer des Indes,
+         et l'entrepôt de tout le commerce de la côte
+         N.-O. de Hindoustan; 162,000 habitants à
+         540 lieues E.-S.-E. de Calcutta, Delhi,
+         ancienne capitale de l'Hindoustan sur la
+         Djemna; Surate, sur le Tapti; Mourched-
+         Abâd; Pounah, ville importante, ancienne
+         résidence des chefs mahrattes; Lahore, capi-
+         tale des Seïks; Laknau, capitale du royaume
+         d'Oude; Sâtàra, noyau de la monarchie
+         maltraite, fondée par le célèbre Sevadji; Haider-
+         Abâd, capitale et résidence du Nizam;
+         Katmandou, capitale du Népal Chandernagor,
+         qui appartient à la France; Pondichéri,
+         chef-lieu des. établissements français dans
+         l'Hindoustân; Goa, capitale des possessions
+         portugaises en Asie, située à l'embouchure
+         de la Mandova à 3 lieues de l'ancienne ville-,
+         qui est aujourd'hui presque abandonnée, tandis
+         que la nouvelle compte 20,000 habitants; Oudjeïn,
+         l'Athènes del'Inde; Coloumbo, chef-lieu,
+         et Trinkomali, beau port fortifié del'ile Ceylan.</p>
+                <pb n="1"/>
+                <p>Dans la région transgangétique, on doit
+         distinguer Ratnapoura ( la ville des joyaux);
+         Ava, grande ville située sur la rive gauche
+         de'l'Irraouadi et qui est redevenue, depuis
+         1824, là capitale de l'empire; Amara-Poura,
+         située sur la rive gauche de l'Irraouadi et sur
+         les bords romantiques d'un lac, et qui fut
+         la capitale des deux derniers monarques i
+         en Cochinchine, Houe, capitale; Touran
+         (Hansan), rade superbe sur laquelle les Français
+         ont acquis de véritables droits par cession
+         obtenue pour cause de services rendus;
+         dans le Tongking, Ketcho ou Dong-King ou
+         Bak-King; dans le Kambodje, Saïgon, Kambodje
+         ou Louek, l'ancienne capitale; Panomping,
+         la nouvelle dans le Siam Bangkok,
+         capitale Siam ou Julhia, ancienne capitale,
+         et Chaiiljbon dans la péninsule de Malakka,
+         Malakka capitale Kédah, Palaui, Pahaug
+         ou Packanga, et Ligor.</p>
+                <p>Dans l'empire chinois, nous citerons, dans
+         la Chine propre, Chun-Thian ou Peking, capitale
+         de l'un et de l'autre avec 1,700,000
+         habitants, Kouang tcheou (Canton ), avec
+         846,000 âmes, Fou-tchcou, Thaï-ouan, dans
+         l'île de Formose; au pays des Mandchous,
+         Ching-yang ou Moukden; eun Mongolie, 1° dans
+         le pays des Mongols, subdivisé en kortsin, on
+         trouve les ruines des villes d'Almatou et de
+         Sibé; dans la subdivision de Djalaïton on trouve
+         Tehol-khotò; dans celle de Gorlos les ruines
+         des villes Loung-ngan, Ao-khotô et Barkholô;
+         dans celle de Toumet la ville ruinée de
+         Khara-kholô dans la subdivision de Karatsin
+         les ruines de plusieurs villes anciennes,
+         et le temple bouddhique de Kou-yuan-mingszeu,
+         avec des inscriptions du temps de la dynastie
+         mongole de Yuan, etc. 2° Dans le pays
+         des Khalkha, composé de l'ancien pays de
+         Khalkha, d'une partie du désert de Gobi ou
+         Chamo, et d'une partie du pays des Eleuths ou
+         Oulets, on trouve Ourga, Maï-tma-chin et
+         Oulia-Soutaï et dans le pays des Ouraugkhaï
+         vivent quelques Soyates anthropopliages.
+         C'est dans cette partie de l'empire et
+         proprement sur la rive gauche de l'Orkhon,
+         peu loin des sources de ce fleuve, qu'on doit
+         placer Karakhorin ou Karakoroum. D'après
+         les recherches de M. Klaproth, cette ville qui,
+         suivant Rubruquis, témoin oculaire, n'était,
+         au temps même de sa gloire, pas plus grande
+         que Saint-Denis, servait de point de ralliement
+         aux innombrables hordes de la Tàtarie. «Cependant,
+         dit M. Balbi, elle était la résidence
+         ordinaire dos premiers successeurs de Tchin-</p>
+                <p>guiz-khan, et par conséquent la capitale du
+         plus vaste empire qui ait jamais existé. C'est
+         dans son enceinte que Koublaï et Argoun reçurent
+         les ambassadeurs de toutes les puissances
+         de l'Asie, et ceux d'une grande partie de
+         l'Europe et même de l'Amérique. «Nous compterons
+         dans le Thian-chan-pe-lou ou Dzoungarie,
+         Ili ou Gouldja; dans le Thian-chan-nan-lou
+         (Petile-Boukharie), Khamil ou Hami,
+         Kaclighhar ou Kachkar, Yarkand et Khotân;
+         dans le Tibet ou Si-zzang on trouve
+         H'lassa, capitale, Jikadze, Djachi-loumbo
+         (Tissou-loumbou), Bathang, Ladak ou Leï,
+         ville principale du Ladak ou Petit-Tibet; au
+         pays du Deb-Radja ou Bouttân, Tassissoudon
+         capitale; dans la Korée, Han-yang-tchhing,
+         capitale de ce royaume ainsi que de l'archipel
+         de Korée, formé d'un grand nombre
+         d'îlots. Dans le royaume de Lieou-kieou,
+         King-tching où réside le roi de la grande
+         Licou-kieou, l'île la plus grande.de cet archipel.</p>
+                <p>Dans l'empire japonais on doit remarquer
+         Jédo, sur la côte est de Vi\p Niphon. Cette
+         immenseville, qui compte 1,200,000 habitants,
+         est la capitale de l'empire et la résidence
+         du koubo empereur temporel et
+         Miako, dans la même île, celle du daïri, empereur
+         spirituel. On voit à Miako la plus
+         grande cloche du monde, pesant 1,700,000
+         livres japonaises. Viennent ensuite Nara et
+         Osaka Nangasaki dans l'île Kiousiou seul
+         port où les Hollandais, les Chinois et les Koréens
+         soient admis pour leur commerce,
+         Matsmaï, bâtie sur une vaste baie de l'île
+         Yeso, et Faklhodoude, dans la même; ce sont
+         deux places de commerce.</p>
+                <p>Dans la Russie asiatique, on compte Tobolsk,
+         capitale. Irkoulsk, ville forte, Tomsk,
+         Yakoutsk, Jénisseisk, Krasnoïarsk, Kiakla
+         sur la frontière de la Chine, divisée en deux
+         villes, la première, Kiakta, aux Russes, la
+         deuxième, Maï-ma-tchin, aux Chinois: elles
+         servènt d'entrepôt au commerce de ces deux
+         grands empires. 11 faut ajouter Okhotsk et
+         Avatcha ou le port Saint-Pierre et Saint-
+         Paul, chef-lieu du Kamtschatka.</p>
+                <p>Dans la partie méridionale de la Russie
+         asiatique on doit mentionner Tiflis, en Géorgie,
+         ville d'un grand commerce, la principale
+         de tout le pays, avec environ 25,000
+         aines; dans le Chirvan, vieux Chamakhi, chef-lieu
+         de la province, et Bakou sur le bord de
+         la mer Caspienne, lieu reconnu pour sacré par
+         les parsis ou adorateurs du feu, et quelques</p>
+                <pb n="1"/>
+                <p>Indiens à cause de ses nombreuses sources
+         de naphte qui s'enflamment d'elles-mêmes.
+         Quelques cellules adossées aux murs de l'atech-
+         gâh<hi rend="italic"/>( endroit du feu ) sont habitées par
+         des parsis, et d'autres par des Indiens; dans
+         l'Arménie (naguère, persane), Erivan, ville
+         forte avec le célèbre couvent d Ecthmiadzin
+         (les trois églises) dans ses environs; dans l'Imerethi,
+         K'houtaïssi (Cotatis), sur le Rion
+         (Phasis, autrefois capitale du royaume, et à
+         présent de la province de ce nom en Mingrélie
+         Zoubdédé, résidence d'un dadian ou
+         prince, qui est singulièrement pauvre; Soukhoum-
+         Kalé, Anapa, Redoutkalé dépendant
+         du gouvernement de K'houtaissi; Kouba et
+         Derbent dans le Daghestân; Stavropol
+         Georgiesk, Mozdock et Kizlia dans le gouvernement
+         du Caucase.</p>
+                <p>C'est surtout dans le midi de l'Asie et de
+         la Chine qu'est concentrée l'industrie manufacturière
+         de l'Orient. Ces contrées se distinguent
+         par leurs étoffes de coton et de soie,
+         les beaux tapis de Perse les châles de l'Inde
+         recherchés dans le monde entier, les peaux
+         de cordouan et de chagrin, les travaux en
+         ivoire, en nacre, en écaille et en laques, les
+         camelots de poils de chameau, les porcelaines,
+         les bijoux, l'acier de l'Inde, nommé
+         voutz<hi rend="italic"/> d'une trempe tellement dure qu'il
+         coupe l'acier d'Europe, les armes damassées,
+         etc.</p>
+                <p>Ce sont les Européens qui font le commerce
+         extérieur par la voie maritime, et le
+         commerce intérieurse fait ordinairement par
+         caravanes; et depuis la plus haute antiquité,
+         ce commerce présente une uniformité semblable
+         à celle qu'offrent les constitutions des
+         grands empires asiatiques. Les principaux
+         articles d exportation consistent en coton,
+         sucre, thé, riz, indigo, opium, café, chevaux,
+         ivoire, pierres précieuses, cuivre, poils de
+         chèvre, soie, étoffes de soie et de coton
+         châles de première qualité, crêpes, porcelaines
+         et laques de Chine, etc. Les principaux
+         articles d'importation sont la quincaillerie
+         les armes, la poudre, les étoffes, les draps.
+         les mousselines et autres marchandises de fabrique
+         européenne.</p>
+                <p>Les moeurs et la manière de vivre des
+         Asiatiques sont aussi variées que leur climat.
+         La vie palriarchale et nomade est prescrite
+         par la nature à plusieurs de ces peuples; 
+         mais la plus grande partie de ces contrées
+         sont soumises à des monarchies régulières,
+         régies despotiquement. On trouve en Asie</p>
+                <pb n="1"/>
+                <p>toutes les formes de gouvernement et on y
+         professe toutes les religions depuis l'idolâtrie
+         la plus grossière jusqu'au christianisme. La
+         plus répandue est le bouddhisme viennent
+         ensuite le mohammedisme le brahmânisme,
+         le lâmisme, le christianisme.</p>
+                <p>Les langues se tiennent les unes les autres
+         par des nuances infinies. I! est inutile
+         de chercher une langue primitive des langues-
+         mères et des langues-filles: il n'existe
+         que des langues-soeurs. Nous diviserons les
+         langues asiatiques en sept familles et quatre
+         groupes pour la facilité de la science. Notre
+         classification différera souvent de celle de
+         M. Klaproth. 1° Famille des langues indoslavo-
+         germaniques; 2° famille des langues
+         caucasiennes; 3° famille des langues araméennes;
+         4° famille des langues tâlares;
+         5° famille des langues de la région sibérienne;
+         6°famille des langues monosyllabiques; 7° famille
+         des langues malayous. Nous ajouterons
+         à ces sept familles quatre groupes: 1° groupe
+         koréen; 2° groupe japonais; 3° groupe kourilien
+         4° groupe tchouktchi.</p>
+                <p>La famille des langues auxquelles nous
+         avons imposé le nom de langues <hi rend="italic">Hind-iran-slavo-
+         germaniques</hi>, comprend celles qui règnent
+         depuis les bords du Gange jusqu'aux
+         rivages de l'Islande nous classerons les principaux
+         genres de cette famille dans l'ordre géographique
+         et quelquefois chronologique qui
+         va suivre. Le <hi rend="italic">païssachi</hi>, langue primitive de
+         l'Inde, languerude, a donné naissance au <hi rend="italic">pràkrit</hi>
+         ou langue adoucie, qui a engendré le <hi rend="italic">sanskrit</hi>,
+         selon notre opinion, différente en ce point
+         de celle de l'illustre Colebrooke. Le <hi rend="italic">sanskrit</hi>,
+         langue parfaite écrite, savante et sacrée, est
+         la souche et l'origine 1°du <hi rend="italic">pahli</hi>, langue sacrée
+         des Bouddhistes, à Ceylan, dans la presqu'île
+         transgangétiqùe excepté l'A-nam, et
+         dans la presqu'île de Malakka; quoique le pahli
+         dérivé en partie du <hi rend="italic">magadha </hi>, langue ancienne
+         du Behar, où, dit-on, naquit Bouddha 2° du
+         kachmirien, qui. semble se rapprocher le plus
+         dusanskrit, et qui en a conservé les caractères
+         et 3° peut-être de l'hindoustâni. La
+         langue <hi rend="italic">hindoustâni</hi> est divisée en plusieurs
+         dialectes, dont celui qu'on nomme <hi rend="italic">wradcha</hi>,
+         et qu'on. parle aux environs d'Agra et de Madoura,
+         est le plus pur et le plus analogue au
+         sanskrit. Ce dialecte de l'Hindoustan central,
+         mêlé avec la langue des Afghans et avec celles
+         des armées mongolo-tâtares, a engendré l'idiome
+         parlé à la cour du grand-mogol, et que
+         les Indiens musulmans parlent encore on le</p>
+                <p>nomme <hi rend="italic">maure</hi>le nom de <hi rend="italic">mongol-hindoustdni</hi>
+         nous paraît plus convenable.</p>
+                <p>M. Colebrooke comprend, sous la dénomination
+         de pràkrit, tous les dialectes vulgaires
+         de l'Inde, dont il détermine les dix souches
+         principales, savoir le <hi rend="italic">Saraswata</hi>, parlé
+         anciennement dans le Pendjab; le <hi rend="italic">canyacabja</hi>
+         ou le dialecte de Kanoudjé, souche de
+         <hi rend="italic">l'hindi</hi> moderne d'où, par son mélange avec
+         l'arabe et le persan, est venu l'hindoustâni
+         le <hi rend="italic">goura</hi>  ou le dialecte de Bengale ( Bengali),
+         dont Gour était la capitale le <hi rend="italic">marthila</hi>, parlé,
+         vers le Népâl, et différant peu du précédent; 
+         <hi rend="italic">l'outkala</hi>, dans la province d'Orissa; le <hi rend="italic">tamla</hi>
+         ou tamoul, langue du pays de Dravira ou de la.
+         presqu'ile au sud de Krichna; le <hi rend="italic">mahratta</hi>
+         qui, outre d'autres mélanges, contient des
+         mots d'une langue inconnue; le <hi rend="italic">karnataka</hi>,
+         parlé dans l'ancien Karnat; le <hi rend="italic">telinga</hi>, anciennement
+         nommé kalinga, usité dans le
+         Telingana, et le <hi rend="italic">gourjara</hi> ou dialecte du
+         Goudjerat.</p>
+                <p>Ces'langues doivent avoir'appartenu à autant
+         de nations distinguées par leur civilisation
+         mais cette énumération nous paraît
+         incomplète; nous nous permettons d'y ajouter
+         le pendjâbi parlé actuellement dans le
+         Pendjab et dans une partie des Etats de Hendjit-
+         Sing'h; le <hi rend="italic">madoura</hi>, le <hi rend="italic">magadha</hi>, une des anciennes
+         langues de l'Hindoustan; le <hi rend="italic">kerala</hi>
+         ou <hi rend="italic">malabare</hi>, le <hi rend="italic">telourou</hi>, qui en est un dialecte;
+         le <hi rend="italic">kanara</hi>, lé <hi rend="italic">toulouva</hi> etc.; enfin, le <hi rend="italic">tzengari</hi>,
+         dialecte mahratta. La plupart des
+         langues de l'Inde ont emprunté au sanskrit un
+         plus ou moins grand nombre de mots qui s'y
+         sont glissés, surtout à cause des doctrines religieuses
+         des Hindous. Le sanskrit est aujourd'hui
+         une langue morte dans laquellesont écrits
+         les livres sacrés et les grands ouvrages de la
+         belle et immenselittérature des <hi rend="italic">Hindous</hi>, c'est-à-
+         dire des hommes professant le brahmanisme,
+         tandis qu'on doit appeler Indiens les hommes
+         de toutes sectes nés de père en fils dans l'Hindoustan.
+         Cette langue admirable se rapproche,
+         tant par ses mots que par ses formes, du zend,
+         langue sacrée de l'ancienne Perse, du péri,
+         du pelhvi, langue de l'ancienne Médie du
+         pàrsi et du persan actuel, du slave du grec
+         du latin, du teutonique^ou ancien allemand,
+         du gothique et même de l'islandais, dont le
+         pays est séparé de l'Inde par un quart de la circonférence
+         du globe. On trouve aussi des traces
+         hind-irân-slavo-germaniques dans le copte,
+         l'albanais, et les idiomes gaelic et kimri (celtiques),
+         et même dans le basque, la seule lan-</p>
+                <pb n="1"/>
+                <p>gue de l'Europe occidentale qui n'ait pas été
+         modifiée par les idiomes hind-irân-slavogermaniques,
+         quoiqu'elle soit mêlée de beaucoup
+         de mots qui leur appartiennent.</p>
+                <p>Le <hi rend="italic">persan</hi> actuel peut être regarde comme
+         le centre de toutes les langues qui composent
+         le genre persan; il dérive du zend, et
+         plus immédiatement du parsi, deux langues
+         mortes; le <hi rend="italic">kourd</hi>  et le <hi rend="italic">pouchto</hi> ou <hi rend="italic">afghani</hi> 
+         offrent beaucoup de rapports avec le persan.
+         Dans toutes ces langues on retrouve beaucoup
+         de mots des langues <hi rend="italic">hind-iran-slavo-germaniques</hi>,
+         et l'arménien et la langue des
+         Ossètes du Caucase peuvent être rangés
+         aussi dans cette famille.</p>
+                <p>Nous comprendrons dans la famille des
+         langues <hi rend="italic">caucasiennes</hi> le géorgien le tcherkesse,
+         l'abasse, et les dialectes des Lesghis
+         et des Kistis.</p>
+                <p>La famille dès langues araméennes se distingue
+         par la richesse des mots, la simplicité
+         et la pauvreté grammaticales et l'abondance
+         des sons gutturaux. Elle comprend <hi rend="italic">l'arabe
+            littéral</hi> et <hi rend="italic">l'arabe vulgaire</hi>, le <hi rend="italic">mauresque</hi>
+         (Afrique septentrionale), le <hi rend="italic">ghiz</hi> et
+         <hi rend="italic">l'amharique</hi> de l'Abyssinie, etc. <hi rend="italic">l'hébreu</hi>
+         dans ses diverses-modifications, et les dialectes
+         <hi rend="italic">chaldaïque</hi>, <hi rend="italic">samaritain</hi> et autres aujourd'hui
+         éteints à l'exception du dialecte
+         <hi rend="italic">rabbinique</hi> ou hébreu moderne; le phénicien
+         dont le <hi rend="italic">punique</hi> ou <hi rend="italic">carthaginois</hi> est la
+         branche la plus célèbre, et dont le patois
+         <hi rend="italic">arabe-maltais</hi> conserve quelques traces le
+         <hi rend="italic">chaldéen</hi>, différent de l'hébreu chaldaïque,
+         et le <hi rend="italic">syriaque</hi> ou <hi rend="italic">araméen</hi> proprement dit.</p>
+                <p>La plupart des nations qui parlent ces langues
+         descendant de Sem, selon Moïse, on a
+         désigné cette famille sous le nom de <hi rend="italic">sémitique</hi>,
+         de même qu'on a nommé indienne, indogermanique
+         et japhétique, notre famille
+         hind-irân-slavo-germanique.</p>
+                <p>La famille des langues tâtares les plus ré-
+         pandues dans les immenses plaines du centre
+         de l'Asie sont les genres de langues <hi rend="italic">tourkis</hi>,
+         <hi rend="italic">mongole</hi>, <hi rend="italic">yalioute</hi> et <hi rend="italic">mantchou</hi>. 
+         Le mantchou
+         a pénétré en Chine avec les conquérants de
+         ce grand empire. On le parle même à la cour
+         de Pé-king autant que le chinois; il s'écrit
+         perpendiculairement de haut en bas.</p>
+                <p>On trouve des peuples ou peuplades parlant
+         le tourki depuis Constantinople jusqu'en
+         Sibérie et dans l'Asie centrale; l'ouïgour,
+         l'osmanli, le tchagatéen, le boukhare,
+         le tourkman, en sont les principaux idiomes.
+         Le mongol, pauvre en combinaisons</p>
+                <pb n="1"/>
+                <p>grammaticales, est assez harmonieux. Le
+         kalmouk appartient au genre mongol le
+         toungouse est un dialecte mandchou.</p>
+                <p>La famille des langues <hi rend="italic">sibériennes</hi> peut
+         être divisée en cinq branches principales,
+         la <hi rend="italic">samoiède</hi>, la <hi rend="italic">jenissei</hi>, la <hi rend="italic">koriaihe</hi>, la <hi rend="italic">youkhagire</hi>,
+         et la <hi rend="italic">kamtchadale</hi>.</p>
+                <p>La famille des langues monosyllabiques diffère
+         singulièrement de toutes les autres; elle
+         comprend le chinois, divisé enkou-wen (langue
+         ancienne écrite), et en kouan-hoa (langue
+         parlée et écrite de nos jours); le tibelain, le
+         birman dans les dialectes du Pegou, d'Avâ
+         et autres, Vannamique dans les dialectes du
+         Tongking et de la Cochinchine, le siamois ou
+         t'haï dans ceux qu'on parle dans le Kambodje,
+         et le laos, qui semble être avec le
+         siamois, suivant M. Klaprolh, des dialectes
+         d'un même idiome. Le koréen et le mandchou
+         renferment un grand nombre de mots
+         monosyllabiques et d'autres polysyllabiques.</p>
+                <p>La famille des langues mala ou prend son
+         origine dans la Malaisie, ainsi que nous l'avons
+         prouvé dans l'Océanie (3 vol. in-8°, chez
+         Firmin Didot) mais comme elle est parlée
+         dans la presqu'île de Malakka avec une assez
+         grande pureté, nous comprendrons cette langue
+         harmonieuse au rang des langues usitées
+         en Asie. Elle possède beaucoup de mots sanskrits,
+         ainsi que la plupart des langues de
+         l'Inde, et plusieurs mots arabes empruntés à
+         l'islamisme. Le thaï-ouan, ou sidéïan de l'île
+         Formose, est un dialecte malayou mêlé de
+         polynésien.</p>
+                <p>Le groupe koréen renferme des mots mongols
+         et chinois mais il forme un genre de
+         langue particulier.</p>
+                <p>Le groupe japonais est dans le même cas,
+         mais il ne ressemble à aucune langue voisine.
+         Un dialecte japonais est en usage dans la plupart
+         des îles Lieou-Kieou.</p>
+                <p>Le groupe kourilien s'étend en différents
+         dialectes depuis la pente méridionale du
+         Kamtschatka aux îles Kouriles et Yeso, dans
+         l'île Sakhalian ou Tarakai et même par les
+         Galiaks et autres tribus de la Tàtarie près
+         de l'embouchure de l'Amour.</p>
+                <p>Enfin le groupe tchoukchi on parle cette
+         langue à l'extrémité de l'Asie orientale, et
+         nous ignorons si elle dérive du langage des
+         Américains polaires, c'est-à-dire des Groënlandais,
+         des Eskimaux et des habitants de
+         Kadiak auquel elle ressemble d'une manière
+         frappante, ou si ces Américains l'ont empruntée
+         à l'Asie orientale.</p>
+                <pb n="1"/>
+                <p>L'arabe e le persan sont les plus répandues de l'Asie. On parle l'arabe
+         vulgaire dans l'Arabie la Syrie, le Diarbékir,
+         l'Irak-Arabi sous le nom d'arabe littéral
+         c'est la langue sacrée et savante de
+         l'Arabie,' de la Turkie et de l'empire ottoman,
+         duKaclimir, d'une partie de l'Hindoustan,
+         de la Bonkharie, d'une grande partie des
+         Etats de la Tatarie indépendante, tels que le
+         Tourkestân et le Kharisme. On parle le persan
+         dans les vastes contrées comprises entre
+         le Tigre et le Sindh il est très répandu dans
+         les cours et dans les tribunaux de l'Inde,
+         principalement dans la partie indépendante
+         de l'Angleterre.Voilà, en attendant mieux, les
+         résultats les moins douteux des observations
+         des plus célèbres orientalistes et de celles que
+         nous avons recueillies pendant douze'ans de
+         voyages et d'études en Orient et en Occanie.</p>
+                <p>La littérature les sciences et les arts sont
+         médiocrement cultivés en Turkie et en Arabie
+         ils le sont davantage en. Pelrse, dans
+         l'Inde en Chine et au Japon. J'ai rarement
+         vu en Chine un homme qui ne sût pas lire. Les
+         principales villes des pays où l'on professe
+         l'islamisme possèdent un grand nombre d'établissements
+         d'instruction publique, mais
+         ils sont presque entièrement consacrés à lire,
+         écrire et expliquer le Kourân. Cependant
+         la poésie et l'histoire sont encouragées en
+         Pe.se, et aujourd'hui des instructeurs européens,
+         aidés de jeunes Turks et Arabes
+         élevés en France et en Angleterre ont organisé
+         l'instruction de plusieurs branches des
+         connaissances humaines en Egypte, en Syrie
+         et dans l'empire ottoman. J'ai vu dans l'Inde
+         plusieurs colléges établis par les Anglais j'ai
+         visité à Malakka un collége anglo-chinois, et
+         à Macao (Chine) un autre lusitano-chinois,
+         sons l'invocation de saint Joseph.</p>
+                <p>Moïse, Homère, Hérodote et les auteurs
+         grecs sont les premiers qui nous ont fait
+         connaître l'Asie. Les Grecs établirent des
+         colonies sur la côte de l' Asie-Mineure leurs
+         guerres avec les rois de Perse augmentèrent
+         leurs connaissances géographiques. Les conquêtes
+         d'Alexandre leur tirent connaître la
+         Perse et une partie de l'Inde car, par les ordres
+         de co grand homme Néarque et Onésicrite
+         explorèrent le delta de l'Indus et une
+         partie de l'océan Indien visitèrent le golfe
+         Persique jusqu'à l'embouchure de l'Euphrate,
+         et en rapportèrent le périple.</p>
+                <p>Parmi les généraux d'Alexand e, rois après
+         sa mort Séleucus Nicanor porta ses armes</p>
+                <p>victorieuses jusqu'aux bords du Gange; M(V
+         gastliènes et Daimachns recueillirent à'Palibollira,
+         située sur w fleuve et capitale d'un
+         grand royaume les notions les plus importantes
+         sur l'Inde. Les flottes de Ptolémée'arrivèrent
+         de 1 Abyssinieaux bouches de l'Indus
+         en longeant les côtes les rois grecs d'Egypte
+         firent ensuite un commerce direct avec TaprobaneO'îledeCeylan
+         ). Les Grecs établirent
+         plusieurs États en Asie entre autres celui de
+         Bactres; peut-être même régnèrent-ils quelque
+         temps sur la Sérique,. qui selon mon
+         opinion se composait du Tibèt, d'une partie
+         de la Petite Boukharie, du Kachmir, et peutêtre
+         des vallées où le Gange et l'Indus prennent
+         leurs sources. Nous voyons en effet dans
+         Bayer, JJùl. regn. Baclriuni, qu'un des rois
+         grecs de laBaclriane, nommé Ménander, -régna
+         sur la Sérique.</p>
+                <p>Les Romains détruisirent la plupart des
+         empires fondés par les Grecs en Asie maisils
+         n'étendirent pas comme eux leur domination
+         sur toute l'étendue de l'empire persan. Leurs
+         expéditions ajoutèrent peu de chose à ce que
+         les Grecs savaient de l'Asie, si on en excepte
+         leursexploralions dans la région caucasienne,
+         presque inconnue avant eux pendant la
+         guerre contre Mithridate. Ils firent encore
+         quelques découvertes sur les côtes de la mer
+         Caspienne, et remontèrent à l'est de cette
+         Méditerranée qu'ils avaient explorée.</p>
+                <p>Les anciens ignoraient la dénomination
+         d'Asie-Mineure donnée à une grande partie de
+         l'Asie occidentale. Lenomd'Analolie lui vient
+         du mot grec Anatole, qui veut dire l'Est. Cette
+         belle péninsule, qui e?t encore imparfaitement
+         connue, paraît avoir joui d une assez
+         grande prospérité sous la domination romaine.
+         La chute de cette puissance et la faiblesse
+         du Bas-Empire la laissèrent envahir
+         par les barbares de l'Orient.
+         Quand les premiers croisés eurent débarqué
+         sous la conduite de Pierrè l'Ermite, près
+         de Nicée, en 1096, ils trouvèrent les Turks
+         en possession de la partie orientale de la péninsule,
+         et séparés de Constantinople seulemont
+         par la Propontide et le Bospliore. Timour
+         avec ses Tâtars vainquit Bayazid, et
+         la population de l'Asie-Mineure n'en fut pas
+         plus modifiée que par les différentes invasions
+         des croisés. La conquête passagère de
+         la Syrie par les Français que commandait
+         Napoléon, n'a pas exercé une plus grande
+         influence. Naguère le vice-roi d'Egypte a conquis
+         et gardé la Syrie, et envahi une partie</p>
+                <pb n="1"/>
+                <p>de l'Asie-Mineure, et la Porte a perdu le pachàlick
+         d'Adana, pays riche et fertile en bois
+         de construction.</p>
+                <p>Lorsque l'empire grec succéda à l'empire
+         romain, on acquit quelques informations sur
+         les contrées situées au nord de l'Iaxarte et
+         sur quelques parties de l'Inde, par l'ambassade
+         que l'empereur Justinien envoya en 569
+         à des chefs de tribus turkes, habitant les
+         steppes voisines de l'Altaï et les environs du
+         lac Dzaïssàng.</p>
+                <p>Les conquêtes de l'islamisme interrompirent
+         bientôt les relations; mais la science
+         géographique .fit quelques progrès chez les
+         Arabes. Ils firent et écrivirent plusieurs
+         voyages. Deux Arabes visitèrent la Chine au
+         IXe siècle. La Géographie orientale fut écrite
+         dans le commencement du Xe siècle la Géographie
+         d'Edrisi, en 1153; la Géographied' Aboxdfeda,
+         en 1345. Ebn-Batouta parcourut les
+         pays intermédiaires entre Tanger et la côte
+         orientale de la Chine, entre l'Oural et le pic
+         Adam, et visita Tembotiktou.* il peut être
+         considéré comme le plus grand voyageur qui
+         ait existé-, sans en excepter Marco-Polo.</p>
+                <p>Après les croisades, les relations de l'Europe
+         avec l'Asie furent reprises dans le
+         xme siècle, par les Génois, qui s'emparèrent
+         du commerce de la mer Noire, et visitèrent
+         dans leurs courses commerciales la Krimée,
+         Kaffa, Azof, Astrakhan, Khiva et Tachkend,
+         où ils avaient vraisemblablement tracé leurs
+         étapes pour la route de l'Inde.</p>
+                <p>Dans ce même siècle, Marco-Polo parcourut
+         l'Asie en tous sens, en qualité d'ambassadeur
+         de la république de Venise. 11pubiia sa
+         relation intitulée II miglione di messer
+         Marco-Polo ouvrage qui doit encore exciter
+         l'admiration par l'étendue et l'exactitude
+         des recherches qu'il contient. 11y décrit principalement
+         l'empire mongol, qui s'étendait
+         alors à plus de la moitié de l'Asie. Sa mémoire
+         n'en a pas moins été calomniée par
+         ses contemporains et. peut-être sa relation
+         n'est-elle'pas encore entièrement comprise.
+         Vasco de Gama'arriva à Kalikat (.Calicut)
+         dans l'Inde en 1498, .et les Portugais explorèrent
+         l'Asie depuis la côté du Malabar jusqu'au
+         Japon. Depuis, les conquêtes des Portugais,
+         des Hollandais, des Français et des
+         Anglais ont fait connaître l'Hindoustàn.</p>
+                <p>La Sibérie ne commença à être connue
+         des Européens qu'à la fin du xve siècle. Les
+         principaux peuples qui l'habitent, outre les
+         Russes qui y sont établis, sont les Samoyôdes</p>
+                <pb n="1"/>
+                <p>et les Ostiaks les Bouriatos les Toungouses
+         et les Jakoutcs. Les Russes suivent la religion
+         grecque les indigènes sont en partie attachés
+         au bouddhisme, et en plus grande partie
+         païens. La Sibérie attira enfin l'attention
+         de l'Europe civilisée vers 'e milieu du xvi*'
+         siècle. Il'osl important de remarquer que l'Amérique
+         a été pour ainsi dire découverte avant
+         la plus grande partie de l'Asie, d'autant plus
+         que les fréquentes invasions que firent en
+         Europe les hordes sorties du fond de l'Asie
+         auraient dû exciter la curiosité.. Sous le
+         règne d'Ivan Vasilowitch, regardé comme
+         le fondateur de la puissance russe, à cause de
+         ses conquêtes sur les Tâlars dit M. Dubocage,
+         il se fit quelques excursions jusqu'au
+         fleuve Obi, et des chefs mongols faits prisonniers
+         furent amenés à Moscou mais plus d'undemi-
+         siècle s'écoula avant que l'on songeât
+         à conquérir la Sibérie. En effet l'exécution de
+         ce grand dessein ne commença que sous.Ivan
+         Vasilowitch II, qui monta sur le trône de
+         Russie en 1534. Un marchand russe d'Archangel
+         ayant introduit dans sa patrie le commerce
+         des fourrures, le tzar conçut le projet
+         de faire la conquête du pays qui les produisait.
+         Ce ne fut néanmoins qu'au commencement
+         du xvn« siècle que les Russes en devinrent
+         les maîtres paisibles. Le Kamtschatka ne
+         fut complétement soumis qu'en 1711. Dans la
+         suite Behring, navigateur danois, entreprit
+         la découverte de l'autre extrémité de l'Asie,
+         et prouva que le continent américain en était
+         séparé. Cook reconnut en 1778 le détroit qui
+         porte le nom de Behring.</p>
+                <p>Les postes militaires et les stations civiles
+         qui dessinent les frontières et fraient les routes
+         sont, dit encore M. Dubocage les moyens
+         decommunication de cette grande région pour
+         les produits du sol ou de l'industrie. C'estainsi
+         que les pelleteries obtenues sous le pôle, celles
+         des îles Aléoutiennes celles du continent
+         même de l'Amérique, du Kamtschalka ou de
+         l'intérieur de la Sibérie, traversent cet immense
+         pays à l'aide de fleuves pendant l'été,
+         ou sur des traîneaux pendant l'hiver, et viennent
+         obtenir en Chine des échanges avantageux
+         en thé, rhubarbe, soie et coton. Les
+         traîneaux sont le moyen le plus rapide dé
+         communication. Ils unissent Pétersbourg et
+         le Kamtschalka à la Chine. Ils se rendent,
+         par exemple l'hiver à Kiakhta, le marché
+         de la Chine distant de pins de 1500 lieues
+         de la capitale de la Russie-, et les échanges
+         reviennent par eau, en descendant la Selengâ,</p>
+                <pb n="1"/>
+                <p>traversant le lac Baïkal, suivant les rivières 
+         Angara et Tangouska jusqu'à Jénisseisk, ouse
+         trouve un portage de près de 20 lieues. On
+         descend alors le Kel et l'Obi jusqu'à l'Irtich,
+         qu'on remonte jusqu'à Tobolsk. La communication
+         du Kamtschatka au même endroit,
+         formant une distance de plus de 1200 lieues,
+         n'est pas moins curieuse. Jusqu'en 1716, époque
+         où l'on découvrit le passage de Bolchoretsk
+         à Okotsk, on était obligé d'aller chercher
+         la rivière Anadir, ce qui doublait la
+         distance; aujourd'hui, l'on serend d'Okotsk à
+         Jakoulsk, et l'on remonte le fleuve Lena jusqu'auprès
+         de sa source, où un portage peu
+         considérable conduit dans une petite rivière
+         qui tombe dans le lac Baïkal.</p>
+                <p>Dans le XVIIè siècle, l'Europe dut aux jésuites
+         une connaissance assez exacte de la
+         Chine et du Japon.</p>
+                <p>La région transgangetique était à peu près
+         inconnue, sauf quelques points du royaume
+         de Siam et de l'empire d'An-nam. Les guerres
+         des Anglais et des Birmans et leurs ambassades
+         nous ont fourni la plupart desrelations
+         que nous possédons aujourd'hui sur cette
+         vaste contrée.</p>
+                <p>Les conquêtes des Russes nous ont mieux
+         fait connaîtrela région caucasienne, et les pays
+         situés entre la mer Caspienne et le lac Aral.</p>
+                <p>Plusieurs sociétés ont été fondées dans
+         le but d'étudier la géographie, l'histoire, les
+         langues et les antiquités de l'Asie. La première
+         Société asiatiqu6 fut fondée en 1784 à'
+         Calcutta, par lecélèbresir William Jones, qui
+         en fut le président. Cinq autres sociétés existent
+         dans l'Inde anglaise à savoir, une à
+         Bombay, une à Madras,uneàBénarès, la quatrième
+         à Colombo (île de Ceylan), et la cinquième
+         (danoise) à Tranquebar. Une autre a
+         été fondée en 1789 à Batavia, par les Hollandais
+         et enfin il existe une société asiatique
+         à Paris et une à Londres.</p>
+                <p>Les voyageurs récents qui ont plus ou
+         moins ajouté à la source de nos connaissances
+         sur l'Asie sont MM. de Humboldt, Burns,
+         Timkoffski, Jacquemont, Siebold Texier,
+         Gutzlaf.et quelques autres savants.</p>
+                <p>Nous n'avons pas dû nous occuper ici de
+         l'histoire, des moeurs et des religions des différents
+         peuples qui habitent l'Asie ce travail
+         appartient à la description spéciale de chacun
+         de ces Etats.</p>
+                <p>Voy. ANATOLIE,Arabie, Bir-
+         MANS,Bouddiiisme, Brahmanisme Chine
+         Himalaya, Hindoustan, JAPON,LAMA,NANEK,
+         PERSE etc. G. L. D"' DERIENZI.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

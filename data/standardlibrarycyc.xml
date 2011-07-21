@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Standard Library Cyclopedia of Political, Constitutional, Statistical and
+          Forensic Knowledge Vol.II</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>London: Henri G. Bohn, York Street, Covent Garden. 1848.</p>
+                <p>Vol II of VI, Full Title The Standard Cyclopedia of Political, Constitutional,
+          Statistical and Forensic Knowledge: Forming a Work of Universal Reference on the Subjects
+          of Civil Administration, Political Economy, Finance, Commerce, Laws and Social Relations.
+          Translated in to Japanese in "taisei seiji ruiten" (Reynold, Douglas R.:"Japanese
+          Encyclopaedias: Their Backround and Hidden Impact on Late-Qing Chinese Encyclopaedias",
+          Georgia State University, in: Doleželová-Velingerová, Milena and Wagner, Rudolf G.(Eds.):
+          "Chinese Encyclopaedias of New Global Knowledge (1870-1920) p. 169)</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Google Books</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <pb n="512"/>
+            <div type="entry">
+                <head>
+                    <term xml:id="City">City</term>
+                </head>
+                <div type="article">
+                    <p>CITY (in <name type="language" key="http://dbpedia.org/resource/French_language">French</name>
+                        <hi rend="italic">Cité</hi>, ultimately from the Latin <hi rend="italic">Civitas</hi>).
+            Certain large and ancient towns both in <name type="place" key="http://dbpedia.org/resource/England">England</name> and in other countries are
+            called cities, and they are supposed to rank before other towns. On what the distinction
+            is founded is not well ascertained. The word seems to be one of common use, or at most
+            to be used in the letters and charters of kings as a complimentary or honorary name,
+            rather than as betokening the possession of any social privileges which may not and in
+            fact do not belong to other ancient and incorpo-<pb n="513"/>rated places which are
+            still known only by the name of towns or boroughs. <name type="person" key="http://dbpedia.org/resource/César-Pierre_Richelet">Richelet</name> (<hi rend="italic">Dictionnaire</hi>) says that the French word <hi rend="italic">cité</hi>
+            is only used in general when we speak of places where there are two towns, an old town
+            and another which has been built since; and he adds that <q>"la cité de <name type="place" key="http://dbpedia.org/resource/Paris">Paris</name>"</q> means old
+              <name type="place" key="http://dbpedia.org/resource/Paris">Paris</name>.</p>
+                    <p>
+                        <name type="person" key="http://dbpedia.org/resource/William_Blackstone">Sir William
+              Blackstone</name>, following <name type="person" key="http://dbpedia.org/resource/Edward_Coke">Coke</name> (1 <hi rend="italic">Inst.</hi> 109 b), says, <q>" A city is a town incorporated, which is or hath been
+              the see of a bishop."</q> (<hi rend="italic">Comm. Introd</hi>., sec. iv.) But <name type="place" key="http://dbpedia.org/resource/City_of_Westminster">Westminster</name>
+            is a city, though it is not incorporated, <name type="place" key="http://dbpedia.org/resource/Thetford">Thetford</name> is a town, though
+            incorporated, and once the seat of a bishop. Whether Westminster owes its designation to
+            the circumstance that it had a bishop for a few years of the reign of <name type="person" key="http://dbpedia.org/resource/Henry_VIII_of_England">Henry
+              VIII.</name>, and in the reign of <name type="person" key="http://dbpedia.org/resource/Edward_VI_of_England">Edward VI.</name>, may be
+            doubted. But there are, besides Thetford, many places which were once the seats of
+            bishops, as <name type="place">Sherburn</name>, and <name type="place" key="http://dbpedia.org/resource/Dorchester,_Oxfordshire">Dorchester</name> in <name type="place" key="http://dbpedia.org/resource/Oxfordshire">Oxfordshire</name>, which
+            are never called cities. On the whole, we can rather say that certain of our ancient
+            towns are called cities, and their inhabitants citizens, than show why this distinction
+            prevails and what are the criteria by which they are distinguished from other towns.
+            These ancient towns are those in which the cathedral of a bishop is found; to which are
+            to be added <name type="place" key="http://dbpedia.org/resource/Bath,_Somerset">Bath</name> and <name type="place" key="http://dbpedia.org/resource/Coventry">Coventry</name>, which, respectively with <name type="place" key="http://dbpedia.org/resource/Wells">Wells</name> and <name type="place" key="http://dbpedia.org/resource/Lichfield">Lichfield</name>, occur in the designation
+            of the bishop in whose diocese they are situated; and Westminster, which in this respect
+            stands alone.</p>
+                    <p>In the <name type="place" key="http://dbpedia.org/resource/United_States">United States
+              of North America</name> the name City is usually given to large towns, as <name type="place" key="http://dbpedia.org/resource/New_York_City">New York</name>, <name type="place" key="http://dbpedia.org/resource/Philadelphia">Philadelphia</name>, and
+            others.</p>
+                </div>
+            </div>
+            <pb n="516"/>
+            <div type="entry">
+                <head>
+                    <term xml:id="Civilization">Civilization</term>
+                </head>
+                <div type="article">
+                    <p>CIVILIZATION. The words civilization, education, and religion, with many others, are
+            often used without any precise ideas being attached to them; yet there are no words that
+            require to be more thoroughly analysed.</p>
+                    <p>The meaning of a word is often formed by degrees. As soon as a particular fact presents
+            itself to our notice which appears to have a specific relation to a known term, it
+            becomes immediately incorporated with it; and hence the meaning of many terms gradually
+            extends, and finally embraces all the various facts and ideas which are considered to
+            belong to it. On this account, there is more depth as well as accuracy in the usual and
+            ordinary meaning of complex terms than in any definitions which can be given of them,
+            notwithstanding the definition may appear to be more strict and precise. In the majority
+            of instances scientific definitions are too narrow, and owing to this circumstance they
+            are frequently less exact than the popular meaning of terms; it is therefore in its
+            popular and ordinary signification that we must seek for the various ideas that are
+            included in the term civilization.</p>
+                    <p>Now, the fundamental notion of civilization is that of a progressive movement, of a
+            gradual development, and a tendency to amelioration. It always suggests the idea of a
+            community, of a political body, of a nation, which is advancing methodically, and with
+            distinct and clear views of the objects which it seeks to attain: progress, continual
+            improvement, is therefore the fundamental idea contained in our notion of the term
+            Civilization.</p>
+                    <p>As to this progress and improvement involved in the term Civilization, to what do they
+            apply ? The etymology of the word answers the question. From this we learn that it does
+            not contemplate the actual number, power, or wealth of a people, but their <hi rend="italic">civil</hi> condition, their social relations, and intercourse with each
+            other. Such then is the first impression which arises in our mind when we pronounce the
+            word <hi rend="italic">Civilization</hi>. It seems to represent to us at once the
+            greatest activity and the best possible organization of society; so as to be productive
+            of a continual increase, and a distribution of wealth and power among its members,
+            whereby their absolute and relative condition is kept in a state of constant
+            improvement.</p>
+                    <p>But great as is the influence which a well organised civil society must have upon the
+            happiness of the human race, the term Civilization seems to convey something still more
+            extensive, more foil and complete, and of a more elevated and dignified character, than
+            the mere perfection of the social relations, as a matter of order and arrangement. In
+            this other aspect of the word it embraces the development of the intellectual and moral
+            faculties of man, of his feelings, his propensities, his natural capacities, and his
+            tastes.</p>
+                    <p>Education, which is the result of a well ordered social arrangement and also its
+            perfector and conservator, an education which shall give to every member of the
+            community the best opportunities for developing the whole of his faculties, is the end
+            which civilisation, or a society in a state of continued progress, must always have in
+            view.</p>
+                    <p>The fundamental ideas then, contained<pb n="516"/>in the word Civilization are—the
+            continual advancement of the whole society in wealth and prosperity, and the improvement
+            of man in his individual capacity.</p>
+                    <p>When the one proceeds without the other, it is immediately felt that there is something
+            incomplete and wanting. The mere increase of national wealth, unaccompanied by a
+            corresponding knowledge and intelligence on the part of the people, seems to he a state
+            of things premature in existence, uncertain in duration, and insecure as to its
+            stability. We are unacquainted with the causes of its origin, the principles to which it
+            can be traced, and what hopes we may form of its continuance. We wish to persuade
+            ourselves that this prosperity will not be limited to a few generations, or to a
+            particular people or country, but that it will gradually spread, and finally become the
+            inheritance of all the people of the earth. And yet what rational expectation can we
+            entertain of such a state of things becoming universal? It is only by means of
+            education, conducted upon right principles, that we can ever nope to see true national
+            prosperity attained, and rendered permanent The development of the moral and
+            intellectual faculties must go hand in hand with the cultivation of the industrious
+            arts; united, they form the great engine for giving true civilization to the world.</p>
+                    <p>In fact without the union of these two elements, civilization would stop half way; mere
+            external advantages are liable to be lost or abused without the aid of those more
+            refined and exalted studies which tend to improve the mind, and call forth the feelings
+            and affections of the heart It must be repeated, civilization consists in the
+            progressive improvement of the society considered as a whole, and of all the individual
+            members of which it is composed.</p>
+                    <p>The means by which this improvement of the whole of a society and of all the members of
+            it may be best effected, will vary somewhat in different countries. <name type="place" key="http://dbpedia.org/resource/Europe">European</name> nations consider and call
+            their social state civilized, and they view the social states of other countries, which
+            do not rest on the same foundation, either as barbarous or as less civilized than their
+            own. An impartial observer may allow that if we measure civilization by the rule here
+            laid down, <name type="place" key="http://dbpedia.org/resource/Europe">the nations of
+              Europe</name>, and other nations whose social systems have a like basis, are the most
+            civilized. The civilization of <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name> and of the nations of European
+            origin is founded mainly on two elements, the Christian religion and the social state
+            which grew up from the diffusion of the power of the <name type="people" key="http://dbpedia.org/resource/Ancient_Rome">Romans</name>. The establishment of
+            feudality in many countries greatly affected the social basis; and the consequences are
+            still seen, but more distinctly in some parts of <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name> than in others. The elements of
+            such a social system are essentially different from those on which is founded the system
+            of <name type="place" key="http://dbpedia.org/resource/China">China</name>, of the
+            nations which profess Mohammedanism, and of the nations of the <name type="place" key="http://dbpedia.org/resource/India">Indian peninsula</name>. European civilization
+            is active and restless, but still subordinate to constituted authority. It gives to man
+            the desire and the means to acquire wealth at home, and it stimulates him to adventure
+            and discovery abroad. It seeks to assimilate the civilization of other nations to its
+            own by conquest and colonization, and it is intolerant of all civilization that is
+            opposed to itself. <name type="place" key="http://dbpedia.org/resource/Asia">Asiatic</name> civilization is at present inert, it is not in a state of progress,
+            and is exposed to the inroads of European civilization. European civilization has been
+            and is most active in increasing the power of states as states, and in increasing their
+            wealth; it also gives facilities for men of talent and enterprise to acquire wealth and
+            power by means recognised as legal and just; and it is now beginning to extend the means
+            of individual improvement among all the members of its communities more widely than any
+            other civilization; but the amount of poverty and ignorance which still co-exist by the
+            side ox wealth and intelligence, wherever European civilization has been established,
+            show that much remains to be done before the individual happiness of these States can be
+            as complete and their internal condition as sound as their collective wealth is
+            unbounded and their external aspect is fair and flourishing.</p>
+                    <p>The nations of Europe consider their<pb n="517"/>social system as the standard by which
+            the civilization of other countries must be measured, and they assume as a fundamental
+            principle, that in countries where there is no individual property in land, and where
+            the land is not cultivated, there is no civilization, and that they may therefore seise
+            it This assumption is true, if we measure civilization by the rule here laid down, for
+            on individual ownership of land, and the cultivation of land, the whole European system
+            rests. Whether land might be advantageously cultivated in common, and the institution of
+            private property in land might be abolished, is another question, which however has not
+            yet been satisfactorily resolved, end cannot be resolved without destroying the present
+            social systems of Europe.</p>
+                    <p>A recent committee of the <name type="institution" key="http://dbpedia.org/resource/House_of_Commons_of_the_United_Kingdom">House of
+              Commons</name>, appointed to inquire into the state of <name type="place" key="http://dbpedia.org/resource/New_Zealand">New Zealand</name>, have put forth the
+            following doctrine :—<q>"The uncivilized inhabitants of any country have but a qualified
+              dominion over it, or a right of occupancy only, and until they establish amongst
+              themselves a settled form of government and subjugate the ground to their own uses by
+              the cultivation of it they cannot grant to individuals, not of their own tribe, any
+              portion of it for the simple reason that they have not themselves any individual
+              property in it."</q> This is not very precise language, but one may collect what it
+            means. <name type="person" key="http://dbpedia.org/resource/Earl_of_Derby">Lord
+              Stanley</name>, in a despatch to the governor of New Zealand, dated 13th August, 1844,
+            says, <q>"With respect to this doctrine, I am not sure that, were the question one of
+              mere theory, I should be prepared to subscribe, unhesitatingly and without reserve, to
+              the fundamental assumption of the committee; and I am sure that it would require
+              considerable qualification as applicable to the <name type="people" key="http://dbpedia.org/resource/Māori">aborigines of New Zealand</name>. There are
+              many gradations of 'uncivilized inhabitants,' and practically according to their state
+              of civilization mustt be the extent of the rights which they can be allowed to claim,
+              whenever the territory on which they reside is occupied by civilized communities."</q>
+            After describing the <q>"<name type="people" key="http://dbpedia.org/resource/Indigenous_Australians">aborigines of <name type="place" key="http://dbpedia.org/resource/New_Holland_(Australia)">New
+                  Holland</name>
+                            </name>"</q> as far below <q>"the <name type="people" key="http://dbpedia.org/resource/Māori">New Zealanders</name> in civilization, and
+              being wholly ignorant of or averse to the cultivation of the soil, with no principles
+              of civil government or recognition of private property, and little if any knowledge of
+              the simplestst form of religion, or even of the existence of a Supreme being;"</q> he
+            adds, that <q>"it is impossible to admit on the part of a population thus situated, any
+              rights in the soil which should be permitted to interfere with the subjugation by
+                <name type="people" key="http://dbpedia.org/resource/Ethnic_groups_in_Europe">Europeans</name> of the vast wilderness over which they are scattered; and all that
+              can be required by justice, sanctioned by policy;, or recommended by humanity, is to
+              endeavour, as civilization and cultivation extend, to embrace the aborigines within
+              their pale, to diffuse religious knowledge among them, to induce them, if possible, to
+              adopt more settled means of providing for their subsistence, and to afford them the
+              means of doing so, if so disposed, by an adequate reservation of lands within the
+              limits of cultivation."</q> The principles laid down by <name type="person" key="http://dbpedia.org/resource/Earl_of_Derby">Lord Stanley</name> are those which
+            the civilized nations of Europe have long acted on, sometimes tempering their conquests
+            of uncivilized nations with mercy and humanity, and sometimes treating them as if they
+            were merely wild beasts that infested the country. The foundations on which even Lord
+            Stanley places the justification of European occupation are not stated with much
+            precision. The real foundations are, the enterprising spirit of Europeans; the pressure
+            of difficulties at home, which drive men abroad; the necessity of possessing land in
+            their new country, as the basis ot that edifice of civilization which they propose to
+            erect after the model of the mother country ; and the power to take from those who are
+            too feeble to resist Europeans admit, and the admission is contained by implication in
+            Lord Stanley's remarks, that the nearer a nation's social system approaches to their
+            own, the safer should it be against unprovoked aggression; but they contend, as Lord
+            Stanley does, that the same self-restraint will not and ought not to be practised in
+            those cases where the social system, or the mode of life, is altogether opposed to those
+            fundamental principles on which European society is constituted. </p>
+                    <pb n="516"/>
+                </div>
+            </div>
+            <pb n="809"/>
+            <div type="entry">
+                <head>
+                    <term xml:id="Education">Education</term>
+                </head>
+                <div type="article">
+                    <p>EDUCATION. In every nation, even those called uncivilized, there are, and necessarily
+            must be, certain practices and usages according to which children are instructed in
+            those things which are to form the occupation of their future life; and every civilized
+            nation, and, we may presume, nations also called uncivilized, have some general term by
+            which they express this process of instruction. In the <name type="language" key="http://dbpedia.org/resource/Languages_of_Europe">European languages</name>
+            derived from the <name type="language" key="http://dbpedia.org/resource/Latin">Latin</name>, and in others that have a mixture of that language, this general term
+            is Education. It is not important to consider the more or less precise notions attached
+            to this or any other equivalent word, but it is enough to observe, that, as the language
+            of every nation possesses such a term, it is a universal truth that all nations admit
+            that there is something which is expressed by the comprehensive term education; or by
+            some equivalent term. But like all other general terms which have been long in use, this
+            term Education comprehends within the general meaning already assigned to it a great
+            number of particulars, which are conceived by various people in such different modes and
+            degrees and in such varying amount as to the number of the particulars, some nations or
+            individuals conceiving a certain set of particulars as essential to the term, others
+            conceiving a different set of particulars as essentials, and others again conceiving the
+            same particulars in such different ways, that two or more persons who agree in their
+            general description of the term might very probably, in descending into the enumeration
+            of the particulars, find themselves completely at variance with one another. This remark
+            possesses no claim to novelty, but it is not on that account the less important The
+            discrepancy just stated is apparent not only as to such general terms as Education,
+            Government, Right, Duty, and numerous other such words; but it is perceived and occurs
+            even in things obvious to the senses, which consist of a number of parts, such as a
+            machine, or any other compound thing;. The general use of a machine, as a mill, for
+            instance, is conceived in the same wav by all, by the miller and by persons who knew
+            nothing more about the mill than that it is used for grinding corn. As to the
+            particulars, there may be all imaginable discrepancies among the persons who are only
+            acquainted with the general purpose of the mill. But discrepancies as to the mode in
+            which the several parts of a thing and the uses of the several parts are conceived, are
+            generally discrepancies to be referred to the inaccuracy of the conceptions; they are,
+            in fact, only errors, not the same but about the same thing. The more completely a large
+            number of persons approach to harmony in their whole views as to this machine, the
+            nearer, as a general rule, do their several views, approach to accuracy; it being of the
+            nature of truth to produce a harmony of opinion, the truth being one and invariable; and
+            it being of the nature of error<pb n="809"/>to admit of more varieties than man has yet
+            conceived, inasmuch as men yet unborn will conceive errors never conceived before.</p>
+                    <p>The same holds good as to Education which holds good of the machine. The general use,
+            the general object of Education is roughly and rightly conceived by all persons to whom
+            the name is familiar; but the great contrariety which exists among mankind as to the
+            particulars which they conceive as entering into and forming a part of this term, and as
+            to their mode of conceiving the same, proves either that all are still wrong as to their
+            particular conceptions of this term, or that hitherto no means have been discovered of
+            producing a general harmony of opinion, or in other words, of approaching to the truth.
+            And here there is no person, or class of persons, who, as in the case of the miller, is
+            or are allowed to be an authority competent to decide between conflicting opinions.</p>
+                    <p>In every society, Education (in what particular manner conceived by any particular
+            society is of no importance to our present inquiry) is, as a general rule, and must
+            necessarily be, subjected to the positive law of the society, and to that assemblage of
+            opinions, customs and habits which is not inappropriately called by some writers the
+            Positive Morality of Society, or the Law of Opinion. This truth, or truism, as some may
+            call it, is the basis of every inquiry into Education. In no country can there exist, as
+            a general rule, an Education, whether it be good or bad, not subordinate to the law as
+            above explained: for if such Education did exist, the form of that society or political
+            system could not coexist with it. One or the other must be changed, so that on the whole
+            there must at last result a harmony, and not a discord. In every country then there does
+            exist Education, either directed by and subordinate to the Positive Law and Positive
+            Morality of that country, or there is an Education not so directed and subordinate, and
+            consequently inconsistent with the continuance of that political system in which it
+            exists. But such an anomaly, if found anywhere, should not be allowed to exist, because
+            it is inconsistent with the continued existence of the society in which it has
+            established itself; and if such an Education does exist, and can maintain itself in a
+            society, against the will of that society, such a society is not a sovereign and
+            independent society, but is in a state of anarchy. Education then should be in harmony
+            with and subordinate to the political system: it should be part of it; and whether the
+            political system is called by the name good or bad, if that political system is to
+            continue, Education must not be opposed to it, but must be a part of it. From this it
+            follows that the question, What is the best education? involves the question, What is
+            the best political system? and that question again cannot be answered without
+            considering what are the circumstances of the particular nation or society as to which
+            we inquire what is the best political system. Recollecting however that the question of
+            the best education and of the best political system cannot be discussed apart, because,
+            as we have shown, Education is a part of the system, still we can consider several
+            important questions as to Education, without determining what is the best political
+            system.</p>
+                    <p>One is, the political system being given, what ought the Education to be? And, how far
+            is it the business of the state to direct, control, and encourage that Education?</p>
+                    <p>A man (under which term we include woman) has two distinct relations or classes of
+            relations towards the state: one comprehends his duties as a citizen, wherein he is or
+            ought to be wholly subordinate to the state; the other comprehends all his functions as
+            a producer and enjoyer of wealth, wherein he has or ought to have all freedom that is
+            not inconsistent with the proper discharge of his duties as a citizen. It is barely
+            necessary to state this proposition in order to perceive that his Education as a citizen
+            should be directed by the state. To suppose any other directing power, any power for
+            instance which may educate im in principles opposed to the polity of which he is to form
+            a part, is to suppose an inconsistency which, in discussing any question involving
+            principles, we always intend to avoid.</p>
+                    <pb n="810"/>
+                    <p>His Education then as a citizen, it must be admitted, ought to be under the
+            superintendence of the state: but How ought the state to exercise this
+            superintendence?</p>
+                    <p>It is not our purpose to attempt to answer this question, which involves the
+            consideration of some of the most difficult questions in legislation. It is our object
+            here to present the questions which it belongs to the civilization of the present and
+            future ages to solve; to show What is to be done, not How it is to be done. But we may
+            answer the question so far at this: the state having the superintendence of the
+            citizen's Education, must have the superintendence of those who direct that Education;
+            in other words, must direct those who are to carry its purposes into effect The body of
+            teachers therefore must be formed by, or, at least, must be under the superintendence of
+            the state. Unless this fundamental truth is admitted and acted on, the state cannot
+            effectually direct or superintend the Education of its citizens.</p>
+                    <p>Every branch of this inquiry into Education runs out into other branches almost
+            Innumerable, till we find that the solution of this important question involves the
+            solution of the greater part of those questions which occupy or ought to occupy a
+            legislative body. For this reason, as above stated, we cannot attempt to answer in its
+            full extent, How the state must direct the Education of its citizens, because this
+            question involves the consideration of How far the direction and control of the state
+            should be a matter of positive law imperative on all, how far and with respect to what
+            particular matters it should encourage and give facilities only, how far it should act
+            by penalties or punishment, how far it should allow individuals or associations of
+            individuals to teach or direct teaching according to their own will and judgment, or, to
+            express the last question in other words, whether and to what extent the state should
+            allow competition in Education?</p>
+                    <p>To these questions, and more especially to the last, the answer is in general terms,
+            that the general interest, considered in all its bearings, must determine what and how
+            much the state must do. This answer may be said to determine nothing. It is true it
+            determines no particular thing, but it determines the principle by which all particular
+            measures must be tested; and it would not be difficult to select instances from our own
+            legislation, where enactments relating to places of education have been made with a view
+            to particular interests only, without a reference to all the bearings of the question,
+            and which, consequently, if tried by the test above given, would be found to be
+            mischievous. As to the last question, the answer more particularly is,—that individual
+            competition must not be destroyed. It is possible to reconcile the two principles of
+            state direction and control and individual competition. The state may allow no person to
+            teach without being examined and registered: such register will show if he has been
+            trained under the superintendence of the state or not This fact being established, it
+            may be left to individuals or associations of individuals to employ what teachers they
+            please. In all the schools founded by the state, in all schools under the
+            superintendence of the state (to which latter class belong nearly all charitable
+            foundations; and all such foundations which are not under the superintendence of the
+            state ought, consistently with the general principles already laid down, to be brought
+            under that superintendence), it follows as a matter of course that none but teachers
+            trained under the superintendence of the state should be appointed. The selection of the
+            teachers, out of the whole authorized body, for any particular school of the class just
+            described, may be safely left to the local authorities who have the immediate
+            superintendence of these schools.</p>
+                    <p>If the principle that a state ought to exercise a superintendence over the Education of
+            its citizens as citizens be admitted, it may be asked, how far and to what branches of
+            knowledge does this extend? To this we reply that a precise answer can only be given by
+            the legislature of each country, and the question cannot be answered without many years
+            of labour and perhaps without many experiments. But it follows from the principles<pb n="811"/>already laid down that no citizen ought to exercise any function of
+            government, or be intrusted with the exercise of any power delegated by the state,
+            without having received some (what, we cannot here say) Education under the
+            superintendence and direction of the state.</p>
+                    <p>When the sovereign is one, it is clear how he will and ought to direct the Education of
+            his people. His first object must be to maintain his own power. It is an absurdity to
+            suppose any Education permitted in any state which shall be inconsistent with tbe
+            existence of that state; and consequently in a monarchy, the first object is and must be
+            the preservation of the <name type="institution" key="http://dbpedia.org/resource/Monarchy">monarchy</name>. It is unnecessary to show
+            that the attainment of this object is by no means inconsistent with good Education, and
+            Education which is good when considered with reference to other objects than the
+            conservation of the monarchy.</p>
+                    <p>In a <name type="institution" key="http://dbpedia.org/resource/Democracy">democracy</name> [DEMOCRACY] tbe business of the state is also plain and easy. It is
+            not plain how far and to what classes of subjects the superintendence of the state
+            should extend, for that may be as difficult to determine in a democracy as in any other
+            form of government; but it is plain to what objects the superintendence of the state in
+            such a community should extend. Its objects should be to maintain in all its purity the
+            principle of individual political equality, that the sovereign power is in all and every
+            person, that the will of the majority declared in the form prescribed by the
+            constitution, is the rule which all must obey, and that the expression of opinion on all
+            subjects, by speaking or writing, should be perfectly free. If any checks are wanting on
+            the last head, they will always be supplied in a democracy by the positive morality of
+            the society in a degree at least great as is required, and certainly in a greater degree
+            than in any other form of government; and when opinion is ineffectual, law must supply
+            its weakness.</p>
+                    <p>What must the state do in a political system which is neither a monarchy nor a
+            democracy; in a system where there are contending elements, and none has yet obtained
+            the superiority? The answer is, it must do what it can, and that which it does, being
+            the will of the stronger part for the time, must be considered right. But such a
+            political system, though it may continue for a long time, is always moving (at least it
+            is only safe when it is moving) in the direction impressed upon it by one or other of
+            the contending powers which exist in the state. Still, so long as the struggle
+            continues, there can be no Education in the sense which we are considering, no Education
+            which has the single, clear, and undivided object proposed to it in a monarchy and in a
+            democracy. Such a political system then would appear to be wanting in one of the chief
+            elements of a political system, which we have explained to be the bringing up of the
+            citizens in such a manner as to secure the stability of that system under which they
+            live. In such a system as we here imagine, there being no unity in the object, there can
+            be no unity of means with reference to any object; and such a system might be more
+            properly called an aggregation of political societies, than one political society; what
+            is implied by the word aggregation being the existence of something just strong enough
+            to keep the whole together. Such a society, in spite of its incongruity, may be kept
+            together by several things: one may be, that the positive morality of the whole society
+            is favourable to order, as characterized by a love of wealth, and impressed with a
+            profound conviction of the necessity of leaving free to every individual the pursuit of
+            wealth and the enjoyment of it when it is acquired. Another may be, that in this same
+            society, though there are contending elements, there may be a slow and steady progress,
+            and a gradual change, tending in one direction only; such a gradual progress in such a
+            system may be regarded as the only security against its destruction.</p>
+                    <p>If the history of the world has ever presented, or if it now presents, such a
+            phenomenon as we have attempted to describe; further, if such a society contains the
+            greatest known number of instances of enormous individual wealth opposed to the greatest
+            amount of abject poverty; the highest intellectual cultivation and the greatest freedom
+            of thought, side by<pb n="812"/>side with the grossest ignorance and the darkest
+            superstition; thousands in the enjoyment of wealth for which they never laboured, and
+            tens of thousands, depending for their daily bread upon the labour of their hands and
+            the sensitive vibrations of the scale of commerce; political power in appearance widely
+            diffused, in effect confined to the hands of a few; ignorance of the simplest elements
+            of society in many of the rich and those who have power; ignorance not greater in those
+            who are poor and have none—such a society, if it exists, is a society in which every
+            reflecting man must at moments have misgivings as to its future condition and as to the
+            happiness of those in whom he is most nearly interested. But if such a society contains
+            a class, properly and truly denominated a middle class, a class neither enervated by
+            excessive wealth and indolence nor depressed by poverty; a class that is characterized
+            by industry and activity unexampled; a class that considers labour as the true source of
+            happiness, and free inquiry on all subjects as the best privilege of a free man— such a
+            society may exist and continue to be indefinitely in a state of progressive improvement
+            Such a society, with its monstrous anomalies and defects, offers to a statesman of
+            enlarged mind and vigorous understanding the strongest motive, while it supplies him
+            with all the means, to give to the political system an impulse that shall carry it
+            beyond the region of unstable equilibrium and place it at once in a state of security. </p>
+                    <p>In such a society the simple enunciation by one possessed of power, that Education is a
+            part of the business of the state, would be considered as the forerunner of some measure
+            which should lay the foundation of that unity without which the temporary prosperity of
+            the nation can never become permanent and its real happiness can never be secured.</p>
+                    <p> The particular questions that the philosophic legislator has then to solve with
+            respect to the education of the citizens, are—1. How are teachers to be taught, and what
+            are they to be taught? 2. How is the body of teachers to be directed, superintended,
+            rewarded, and punished? 3. What schools and what kinds of schools are to be established
+            and encouraged for the Education of the people? 4. What are the teachers to teach in
+            those schools? 5. Where is the immediate government of such schools to be placed? 6. And
+            where the ultimate and supreme direction and control of such schools? The word Schools
+            is here used as comprehending all places of Education.</p>
+                    <p>It remains to consider those other relations of a man to the state in which we view him
+            as a producer of wealth for his own enjoyment. Here the general principle is, that the
+            pursuit and enjoyment of wealth must be left as free as the public interest requires;
+            and this amount of freedom will not depend in any great degree on the form of
+            government. To this head, that of the production of wealth, belong all the divisions of
+            labour by which a man, to use a homely but expressive phrase, gets his living, or what
+            in other words are called the professions, trades, and arts of a country. The only way
+            in wich the state can with any advantage direct or control the exercise of any
+            profession, trade, or art, is by requiring the person who undertakes to exercise it to
+            have been trained or educated for the purpose. Whether this should be done in all cases,
+            or in some and what cases, and to what extent, and how, are questions for a legislature
+            guided by a philosopher to answer.</p>
+                    <p>In all countries called civilized this has been done to a certain extent. The
+            legislation of our own country offers instances of great errors committed by legislating
+            where no legislation was wanted, or by legislating badly. Perhaps instances may also be
+            noted in all countries where evil has arisen for want of legislation on the subject. We
+            may explain by example</p>
+                    <p>Perhaps it is unnecessary for a state to require that a shoemaker, or a tailor, or a
+            painter, or a sculptor, should be required to go through a certain course of training
+            before he exercises his art. The best shoemaker and best tailor will be sure to find
+            employment, and individual shoemakers and tailors have as ample means of giving
+            instruction in their craft as can be desired. It may be true or not true, that the best
+            painters and sculptors will meet with most employment: but is<pb n="814"/>it unnecessary
+            or is it necessary for a state to offer facilities and encouragement to those who design
+            to educate themselves as painters and sculptors ? Most civilized nations have decided
+            this question by doing so, and there are many reasons in favour of such a policy.</p>
+                    <p>Ought the state to require the professor of law, of medicine, or of religious teaching,
+            to undergo some kind of preliminary Education, and to obtain a certificate thereof?
+            Nearly all civilized countries have required the lawyer and physician to go through some
+            course of Education. There are strong reasons in some countries, our own for instance,
+            both for and against such a requisition; but on the whole, the reasons seem to
+            preponderate in favour of requiring such Education from him who designs to practise law,
+            and still more from him who designs to practise the art of healing. Most civilized
+            countries, perhaps all, except two (so for as we know), require all persons who profess
+            the teaching of Religion to have received some Education, to be ascertained by some
+            evidence. But in both the nations excepted, any person, however ignorant, may preach on
+            subjects which the mass of the community believe or affect to believe to be of greater
+            importance both for their present and future welfare than any other subjects. Professing
+            to maintain, as we hope they always will do, the principle of religious freedom, these
+            two nations have fallen into the greatest inconsistencies. They have checked the free
+            expression of individual opinion by word of mouth, and fettered it in the written form,
+            in the one country by the severe penalties of positive law, and the no less severe
+            penalties of positive morality; and in the other by the penalties of positive morality
+            carried to an excess which is destructive to the interests of the society itself.
+              (<q>See Attorney General v. Pearson, 3 Merrivale, 353.</q>) But both nations allow any
+            person, if he professes to be a teacher of religion, however ignorant he may be, to
+            become the weekly, the daily instructor of thousands, including children, who derive and
+            have derived no instruction of any kind except from this source. Such a teaching or
+            preaching, if it only assumes the name and form of religious teaching, is permitted to
+            inculcate principles which may be subversive of the political system; and it may and
+            often does inculcate principles the tendency of which is to undermine the foundations of
+            all social order; for it should never be forgotten that all religious teaching must
+            include moral teaching, though moral teaching is quite distinct from religions teaching.
+            And though it must be admitted that no teacher of religion recommends a bad thing as
+            bad, he may recommend a bad thing as good, solely because he knows no better. We have
+            endeavoured to point out an anomaly which exists in certain political institutions, and
+            which can only be allowed to exist so long as it protects itself under a specious and an
+            honoured but misunderstood name. For though it be admitted that such anomaly exist, it
+            may be said that it cannot be remedied without interfering with the important principle
+            of religious freedom. But what is religious or any other freedom? Is it the individual
+            power of doing or saying what a man likes? Certainly not. It means no more than a
+            freedom not inconsistent with the public welfare. Still it may be urged that this is
+            precisely the kind of freedom with which no state, where the principle of religious
+            freedom is admitted, can safely interfere. But this is only bringing us round again to
+            the question, What is religious freedom? To say that it cannot be interfered with is to
+            assume an answer to the question. Does what is called religious freedom, as the same is
+            now understood, admitting it to produce much good, produce also any evil? If it does,
+            can the evil be remedied? Is the free practice of any art or profession, Medicine or
+            law, for instance, or the art of instructing children in general knowledge, or perfect
+            freedom in teaching and expounding religious doctrines, inconsistent with the condition
+            ef qualification? How the qualification is to be ascertained, and what it is to be, is
+            the question; and it is a question which may be answered.</p>
+                    <p>It may be asked: If a man should not be a teacher of Religion without complying with
+            some previous conditions, why should he be allowed to write on Religion<pb n="814"/>without some like qualification, for he may do mischief by his writing as well as his
+            oral preaching? This is true; and if it were possible, consistently with religious
+            freedom, as here understood, to prevent persons from writing on Religion who have not
+            had a competent Education, it would be a good thing to prevent them. So would it also be
+            a good thing to prevent persons from writing on many other subjects, who know little or
+            nothing about them, if it could be done consistently with letting those write who do
+            understand what they are writing about. But it cannot be done; and as the free
+            expression of opinion is essential to the full development of a nation's powers, both
+            physical and intellectual, we must be content to take the bad with the good. Writing,
+            however, is different from teaching and preaching. Oral instruction reaches thousands
+            whom a book, however small or cheap, never can reach. If a man should propound doctrines
+            destructive to all social organisation in a learned and extensive work, it might be most
+            prudent to take no notice of him. If he should propound them in a form adapted for
+            universal circulation, the case is different; and if his doctrines are such as tend to
+            overthrow the political system under which he lives, it would be a gross inconsistency
+            to allow them to be circulated. Still more, if he should go about preaching them, would
+            it be the business of the state to quench such a firebrand by any means, however severe,
+            that are required for the purpose.</p>
+                    <p>In a Monarchy, such an evil is stopped by the monarch or his agents; but there is the
+            danger that the interference may extend to cases when no real harm could be done by the
+            circulation of the book or the preaching of the doctrine, and to cases in which good
+            would follow. In a free state, no man is convicted of the offence of writing or
+            teaching; what is bad without the judgment of his fellow-citizens— in <name type="place" key="http://dbpedia.org/resource/England">England</name> by a jury; and though a jury
+            is neither always wise nor always impartial, no better means have yet been discovered of
+            reconciling the free expression of opinion with the restraint of opinions which cannot
+            be broached without danger to the state.</p>
+                    <p>The relation of Religion to the State is a question of vital importance to all nations,
+            but to none is it of so great importance as to those of a Republican form, those in
+            which political power is distributed among many individuals, and extends to a large part
+            of the people in general, as distinguished from a privileged class.</p>
+                    <p>He who views a state rightly views it as a Unity: the sovereign power, whether it is
+            lodged in one or in many, is that which gives a unity to all the members of the social
+            body. In the <name type="period" key="http://dbpedia.org/resource/Middle_Ages">middleage</name> history of <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>, we see two contending bodies
+            in a state, a body Political and a body Ecclesiastical, and the consequence was anarchy.
+            The states of Europe have long been Christian States, and the Christian Religion is
+            inseparably blended with all European systems, and those of <name type="place" key="http://dbpedia.org/resource/Americas">America</name>, which have arisen out of
+            them. In one state in Europe, the <name type="place" key="http://dbpedia.org/resource/Papal_States">Papal State</name>, the constitution is
+            Ecclesiastical, and the Political is merged in it. In some other states of Europe the
+            Ecclesiastical body is now completely subjected by the Political; in others the
+            Ecclesiastical body still possesses large political power. The paramount importance of
+            Religion leads many persons to conclude that the Ecclesiastical Estate should have
+            political power, or at least that it should have the sole power of regulating all its
+            own concerns. Those who maintain this proposition must admit that a state is not a
+            Unity: it is a divided body, one member of which is to some extent independent of the
+            whole body; a monstrous anomaly which can only breed confusion and stop all social
+            improvement.</p>
+                    <p>If the state is to be One, must it be One as a Political body, or as a body Political
+            and Religious? If there is only one religion in the state, and no other allowed, the
+            state may be Politically and Religiously one. Such a state may be perfect in theory,
+            but, in fact, its movements will not be towards improvement; but retrograde. Experience
+            has shown that the free exercise of the understanding on all matters of speculation, on
+            all matters of belief, on all matters that extend beyond the limits of sense, is as<pb n="816"/>necessary to the development of the understanding, as freedom from unwise
+            restrictions on trade and industry is necessary to the increase of national wealth. If a
+            state then allows each man to think, speak, and so write as he pleases, subject only to
+            the condition that he shall not speak, write, or act, as to attempt to overthrow the
+            power which gives him this freedom, the state must consistently declare, the sovereign
+            body by its acts of legislation must declare, that it is neither a Religious nor an
+            Anti-religious body. The state is neither Christian nor not- Christian. But it is
+            objected—it has been admitted that all European nations are now Christian, and that
+            Christianity is intimately blended with them. True; and for this reason,—the state need
+            not occupy itself about the matter. It is admitted that Christianity has rooted itself
+            in all our social systems deeper than any legislation can do. It pervades all society,
+            its influence is above law. Christianity is therefore recognised by all; for as to the
+            few speculative thinkers who do not recognise its truths, and as to the still larger
+            number who are indifferent, they do not affect the great mass. It is a truth
+            indisputable, a truth which no man in his senses can deny, that modern civilization is
+            Christian; and that if all state establishments of religion were abolished, Christianity
+            would exist in the minds of the great mass of a nation, and would be taught and
+            propagated by zealous teachers. Nay, were a state to oppose itself to all religion, to
+            persecute those who profess and those who teach it, Christianity would only flourish the
+            more. For a state is directed by a comparatively small number, and this small number, if
+            it opposed Christianity, would be precisely in the same position as if one man should
+            attempt to control by force a million.</p>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>

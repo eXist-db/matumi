@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">The Penny Cyclopaedia of The Society for the Diffusion of Useful Knowledge. First edition, 1833-1843.</title>
+                <title type="sub">An electronic edition of excerpts for transcultural research</title>
+                <editor>Research Project "Hidden Grammars of Transculturality - Migrations of Encyclopedic Knowledge and Power"</editor>
+                <respStmt>
+                    <resp>Project Coordination</resp>
+                    <name xml:id="BM">Barbara Mittler</name>
+                    <name xml:id="MH">Madeleine Herren-Oesch</name>
+                    <name xml:id="JK">Joachim Kurtz</name>
+                    <name xml:id="KMW">Kaja Mueller-Wang</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Technical supervision and file administration</resp>
+                    <name xml:id="JP">Jens Petersen</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Proof-reading, Mark-up</resp>
+                    <name xml:id="CS">Charlotte Schäfer</name>
+                    <name xml:id="JL">Jonathan Link</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Cluster of Excellence "Asia and Europe in a Global Context"</publisher>
+                <pubPlace>Heidelberg University</pubPlace>
+                <address>
+                    <addrLine>Karl Jaspers Centre for Advanced Transcultural Studies</addrLine>
+                    <addrLine>Voßstraße 2, Building 4400</addrLine>
+                    <addrLine>69115 Heidelberg</addrLine>
+                    <addrLine>Germany</addrLine>
+                </address>
+                <date>2011</date>
+            </publicationStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>The Penny Cyclopaedia of The Society for the Diffusion of Useful Knowledge</title>
+                        <editor>The Society for the Diffusion of Useful Knowledge</editor>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>First Edition</edition>
+                    </editionStmt>
+                    <publicationStmt>
+                        <publisher>Charles Knight</publisher>
+                        <pubPlace>London</pubPlace>
+                        <date>1833-1843</date>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note>
+                            <p>The Penny Cyclopædia of the Society for the Diffusion of Useful Knowledge was a multi-volume 
+                                        encyclopedia edited by George Long and published by Charles Knight alongside the Penny Magazine, 
+                                        London 1833 –1843.</p>
+                            <p>The Society for the Diffusion of Useful Knowledge, founded in 1826, was an organisation that 
+                                              published inexpensive texts intended to adapt scientific and similarly high-minded material 
+                                              for the rapidly expanding reading public.</p>
+                            <p>In the preface dating from 13th November 1833 the editors announce after the completion of the 
+                                              first volume, that two partial publications of futher volumes will be published weekly. 
+                                              One part is to cost Ninepence. On the 1st of September 1834 the seconc volume is supposed 
+                                              to be finished, consisting of nine of these Ninepence Parts; bound in a hardcopy it is to 
+                                              cost Seven Shillings and Sixpence. The announce the publication of another volume every 
+                                              eight months. </p>
+                        </note>
+                        <note>Scans from Google.</note>
+                    </notesStmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2011-07-12" who="#KMW">update of TEI header, subtype added, xml:id corrected</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="entry" subtype="education">
+                <head>
+                    <term xml:id="Education">Education.</term>
+                </head>
+                <p>
+                    <gloss target="#Education" rend="unmarked">is the art of preparing youth for the business
+        of after-life.</gloss> This is not offered as a complete or exact
+        definition; it is only proposed as sufficient to indicate in a
+        general way the subject matter here under discussion.</p>
+                <p>In every nation, even those called uncivilized, there are,
+          and necessarily must be, certain practices and usages according
+          to which children are instructed in those things which
+          are to form the occupation of their future life ; and every
+          civilized nation, and, we may presume, nations also called
+          uncivilized, have some general and collective term by which
+          they express this process of instruction.In the European
+          languages derived from the <name type="language" key="http://dbpedia.org/resource/Latin">Latin</name>, and in others that have
+          a mixture of that language, the general term is Education.
+          It is not important at present to consider the more or less
+          precise notions attached to this or any other equivalent
+          word, but it is enough to observe, that, as the language of
+          every nation possesses such a term, it is a universal truth
+          that all nations or societies of men admit that there is something
+          which is expressed by the comprehensive term Education,
+          or by some equivalent term. But like all other
+          general terms which have been long in use, this term Education
+          comprehends within the general meaning already
+          assigned to it a great number of particulars, which are
+          conceived by various people in such different modes and
+          degrees and in such varying amount as to the number of
+          the particulars, some nations or individuals conceiving a
+          certain set of particulars as essential to the term, others,
+          conceiving a different set of particulars as essentials, and
+          others again conceiving the same particulars in such different
+          ways, that two or more persons agreeing in their
+          general description of the term might very probably, in
+          descending into the enumeration of the particulars, find
+          themselves completely at variance with one another. This
+          remark possesses no claim to novelty, but it is not on that
+          account the less important. The discrepancy just stated is
+          apparent not only as to such general terms as education,
+          government right, duty, and numerous otoer such words,
+          the analysis of which can only be successfully attempted by
+          those who are accustomed to that kind of inquiry, but it is
+          perceived and occurs even in things obvious to the senses,
+          which consist of a number of parts, sucb as a machine,
+          or any other compound thing. The general use of a machine,
+          as a mill, for instance, is conceived in the same way
+          by all, by the miller and by persons who know nothing
+          more about the mill than that it is used for grinding corn.
+          As to the particulars, there may be all imaginable discrepancies
+          among the persons who are only acquainted with
+          the general purpose of the mill. But discrepancies as to
+          the mode in which the several parts of a thing and the uses
+          of the several parts are conceived, are generally discrepancies
+          to be referred to the <hi rend="italic">inaccuracy</hi> of the conceptions;
+          they are, in fact only errors, not the same but about the
+          same thing. The more completely a large number of persons
+          approach to harmony in their whole views as to this
+          machine, the nearer, as a general rule, do their several views
+          approach to accuracy; it being ofthe nature of truth to produce
+          a harmony of opinion, the truth being one and invariable;
+          and it being ofthe nature of error to admit of more
+          varieties than man has yet conceived, inasmuch as men yet
+          unborn will conceive errors never conceived before.</p>
+                <p>The same holds good as to Education which holds good of
+          the machine. The <hi rend="italic">general</hi> use, the <hi rend="italic">general</hi> object of Education
+          is roughly and rightly conceived by all persons to
+          whom the name is familiar; but the great contrariety
+          which exists among mankind as to the particulars which
+          they conceive as entering into and forming a part of this
+          term, and as to their mode of conceiving the same, proves
+          either that all are still wrong as to their particular conceptions
+          of this term, or that hitherto no means have been
+          discovered of producing a general harmony of opinion, or
+          in other words, of approaching to the truth. And here
+          there is no person, or class of persons, who, as in the case
+          of the miller, is or are allowed to be an authority competent
+          to decide between conflicting opinions.</p>
+                <p>In every society, Education (in what particular manner
+          conceived by any particular society is of no importance to
+          our present inquiry) is, as a <hi rend="italic">general</hi> rule, and must necessarily
+          be, subjected to the positive law of the society, and to
+          that assemblage of opinions, customs, and habits which is
+          not inappropriately called by some writers the Positive Morality
+          of Society, or the Law of Opinion. This truth, or
+          truism, as some may call it is the basis of every inquiry
+          into Education. In no country can there exist as a <hi rend="italic">general</hi>
+          rule, an Education, whether it be good or bad, not subordinate
+          to the law as above explained: for if such Education did
+          exist the form of that society or political system could not
+          co-exist with it One or the other must be changed, so
+          that on the whole there must at last result a harmony, and
+          not a discord. In every country then there does exist Education,
+          either directed by and subordinate to the Positive
+          Law and Positive Morality of that country, or there is an
+          Education not so directed and subordinate, and consequently
+          inconsistent with the continuance of that political system<pb n="1"/>in which it exists. But such an anomaly, if found anywhere,
+          should not be allowed to exist, because it is inconsistent
+          with the continued existence of the society in which
+          it has established itself; and if such an Education does
+          exist and can maintain itself in a society, against the will
+          of that society, such a society is not a sovereign and independent
+          society, but is in a state of anarchy. Education
+          then should be in harmony with aud subordinate to
+          the political system: it should be part of it; and whether
+          the political system is called by the name good or bad, if
+          that political system is to continue, Education must not be
+          opposed to it but just be a part of it. From this it follows
+          that the question, What is the best Education? involves the
+          question, What is the best political system? and that question
+          again cannot be answered without considering what
+          are the circumstances of the particular nation or society as
+          to which we inquire what is the best political system. Recollecting
+          however that the question of the best Education
+          and of the best political system cannot be discussed apart
+          because, as we have shown, Education is a part of the system,
+          still we can consider several important questions quite
+          as fully as if the former question were out of the way.
+          One is, the political system being given, what ought the
+          Education to be?</p>
+                <p>And, how far is it the business of the state to direct,
+        control, and encourage that Education?</p>
+                <p>A man (under which term we include woman) has two
+          distinct relations or classes of relations towards the state:
+          one comprehends his duties as a citizen, wherein he is or
+          ought to be wholly subordinate to the state; the other
+          comprehends all his functions as a producer and enjoyer of
+          wealth, wherein he has or ought to have all freedom that is
+          not inconsistent with the proper discharge of his duties as a
+          citizen. It is barely necessary to state this proposition in
+          order to perceive that his Education as a citizen should be
+          directed by the state. To suppose any other directing power,
+          any power for instance which may educate him in principles
+          opposed to the polity of which he is to form a part is to
+          suppose an inconsistency which, in discussing any question
+          involving principles, we always intend to avoid.</p>
+                <p>His Education then as a citizen, it must be admitted,
+          ought to be under the superintendence of the state; but
+          <hi rend="italic">how</hi> ought the state to exercise this superintendence?
+          It is not our purpose to attempt to answer this question,
+          which involves tbe consideration of some of the most difficult
+          questions in legislation. It is our object here to present
+          the questions which it belongs to the civilization of the
+          present and future ages to solve \ to show <hi rend="italic">what</hi> is to be
+          done, not <hi rend="italic">how</hi> it is to be done.</p>
+                <p>But we may answer the question so far as this: the state
+          having the superintendence of the citizen's Education, must
+          have the superintendence of those who direct that Education; 
+          in other words, must direct those who are to carry its
+          purposes into effect. The body of teachers therefore must
+          be formed by, or, at least must be under the superintendence
+          of the state. Unless this fundamental truth is admitted
+          and acted on, the state cannot effectually direct or
+          superintend the Education of its citizens.</p>
+                <p>Every branch of this inquiry into Education runs out into
+          other branches almost innumerable, till we find that the
+          solution of this important question involves the solution of
+          the greater part of those questions which occupy or ought
+          to occupy a legislative body. For this reason, as above
+          stated, we cannot attempt to answer in its full extent <hi rend="italic">how</hi>
+          the state must direct the Education of its citizens, because
+          this question involves the consideration of how far tbe direction
+          and control of the state should be a matter of positive
+          law imperative on all, how far and with respect to what particular
+          matters it should encourage and give facilities only,
+          how far it should act by penalties or punishment how far
+          it should allow individuals or associations of individuals to
+          teach or direct teaching according to their own will and
+          judgment, or, to express the last question in other words,
+          whether and to what extent the state should allow competition
+          in Education?</p>
+                <p>To these questions, and more especially to the last, the
+          answer is in general terms, that the <hi rend="italic">general</hi> interest considered
+          in all its bearings, must determine what and how much
+          the state must do. This answer may be said to determine
+          nothing. It is true it determines no particular thing, but
+          it determines the principle by which all particular measures
+          must be tested; and it would not be difficult to select instances
+          even from our legislation, where enactments relating, 
+          to places of education have been made with a view to particular
+          interests only, without a reference to all the bearings
+          of the question, and which, consequently, if tried by the
+          test above given, would be found to be mischievous. As to
+          the last question the answer more particularly is, that
+          individual competition must not be destroyed. It is possible
+          to reconcile the two principles of state direction and control
+          and individual competition. The state may allow no
+          person to teach without being examined and registered:
+          such register will show if he has been trained under the
+          superintendence of the state or not. This fact being established,
+          it may be left to individuals or associations of individuals
+          to employ what teachers they please. In all the
+          schools founded by the state, in all schools under the superintendence
+          of the state (to which latter class belong nearly all
+          charitable foundations, and all such foundations which are
+          not under the superintendence of the state ought consistently
+          with the general principles already laid down, to be
+          brought under that superintendence), it follows as a matter
+          of course that none but teachers trained by the state should
+          be appointed. The selection of the teachers, out of the
+          whole authorized body, for any particular school of the
+          class just described, may be safely left to the local authorities
+          who have the immediate superintendence of these
+          schools.</p>
+                <p>If the principle that a state ought to exercise the superintendence
+          of the Education of its citizens as citizens be admitted,
+          it may be asked, how far and to what branches of
+          knowledge does this extend? To this we reply that a precise
+          answer can only be given by the legislature of each
+          country, and the Question cannot be answered without many
+          years of labour and perhaps without many experiments. But
+          it follows from the principles already laid down that no citizen
+          ought to exercise any function of government or he
+          intrusted with the exercise of any power delegated by tho
+          state, without having received <hi rend="italic">some</hi> (<hi rend="italic">what</hi>, we cannot here
+          say) Education under the superintendence and direction of
+          the state.</p>
+                <p>When the sovereign is one, it is clear how he will and
+          ought to direct the Education of his people. His first
+          object must be to maintain the stability of his own power.
+          It is an absurdity to suppose any Education permitted
+          in any state which shall be inconsistent with the existence
+          of that state; and consequently in a monarchy, the first
+          object is and must be the preservation of the monarchy. It
+          is unnecessary to show that the attainment of this object is
+          by no means <hi rend="italic">inconsistent</hi> with good Education, and Education
+          which is good when considered with reference to other
+          objects than the conservation of the monarchy.
+          In a democracy [DEMOCRACY] the business of the state is
+          also plain and easy. It is not plain <hi rend="italic">how</hi> far and to <hi rend="italic">what</hi>
+          classes of subjects the superintendence of the state should
+          extend, for that may be as difficult to determine in a democracy
+          as in any other form of government; but it is plain
+          to what objects the superintendence of the state in such a
+          community should extend. Its objects should be to maintain
+          in all its purity the principle of individual political equality,
+          that the sovereign power is in all and every person,
+          that the will of the majority is the rule which all must
+          obey, and that the expression of opinion on all subjects
+          by speaking or writing, should be perfectly free. If any
+          checks are wanting on the last head, they will always be
+          supplied in a democracy by the positive morality of the
+          society in a degree at least as great as is required, and
+          certainly in a greater degree than in any other form of
+          government.</p>
+                <p>What must the state do in a political system which is neither
+          a monarchy nor a democracy; in a system where there
+          are contending elements, and none has yet obtained the
+          superiority ? The answer is, it must do what it can, and that
+          which it does, being the will of the stronger part for the time,
+          must be considered right. But such a political system, though
+          it may continue for a long time, is always moving (at least
+          it is only safe when it is moving) in the direction impressed
+          upon it by one or other of the contending powers which
+          exist in the state. Still, so long as the struggle continues,
+          there can be no Education in the sense which we are considering,
+          no education which has the single, clear, and undivided
+          object proposed to it in a monarchy and in a democracy.
+          Such a political system then would appear to be
+          wanting in one of the chief elements of a political system,
+          which we have explained to be the bringing up of the
+          citizens in such a manner as to secure the stability of that<pb n="2"/>system under which they live. In such a system as we here
+          imagine, there being no <hi rend="italic">unity</hi> in the object, there can be
+          no unity of means with reference to any object; and such a
+          system might be more properly called an aggregation of
+          political societies, than one political society; what is implied
+          by the word aggregation being the existence of
+          something just strong enough to keep the whole together.
+          Such a society, in spite of its incongruity, may be kept together
+          by several things: one may be, that the positive
+          morality of the whole society is favourable to order, as
+          characterized by a love of wealth, and impressed with a profound
+          conviction of the necessity of leaving free to every
+          individual the pursuit of wealth and the enjoyment of it
+          when it is acquired. Another may be, that in this same
+          society, though there are contending elements, there may
+          be a slow and steady progress, and a gradual change,
+          tending in one direction only: such a gradual progress in
+          such a system may be regarded as the only security against
+          its destruction.</p>
+                <p>If the history of the world has ever presented, or if it now
+          presents, such a phenomenon as we have attempted to
+          escribe; further, if such a society contains the greatest
+          known number of instances of enormous individual wealth
+          opposed to the greatest amount of abject poverty; the
+          highest intellectual cultivation and the greatest freedom of
+          thought, side by side with the grossest ignorance and the
+          darkest superstition; thousands in the enjoyment of wealth
+          for which they never laboured, and tens of thousands depending
+          for their daily bread upon the labour of their hands
+          and the sensitive vibrations or the scale of commerce; political
+          power in appearance widely diffused, in effect confined
+          to the hands of a few; ignorance of the simplest
+          elements of society in many of the rich and those who have
+          power; ignorance not greater in those who are poor and
+          have none - such a society, if it exists, is a society in which
+          every reflecting man must at moments have misgivings as
+          to its future condition and as to the happiness of those in
+          whom he is most nearly interested. But if such a society
+          contains a class, properly and truly denominated a middle
+          class, a class neither enervated by excessive wealth and indolence
+          nor depressed by poverty; a class that is characterized
+          by industry and activity unexampled; a class that
+          considers labour as the true source of happiness, and free
+          inquiry on all subjects as the best privilege of a free man—
+          such a society may exist and continue to be Indefinitely in
+          a state of progressive improvement. Such a society, with
+          its monstrous anomalies and defects, offers to a statesman
+          of enlarged mind and vigorous understanding the strongest
+          motive, while it supplies him with all the means, to give to
+          the political system an impulse that shall carry it beyond the
+          region of unstable equilibrium and place it at once in a
+          state of security.</p>
+                <p>In such a society the simple enunciation by one possessed
+          of power, that Education is a part of the business of the
+          state, would be considered as the forerunner of some
+          measure wliich should lay the foundation of that unity
+          without which the temporary prosperity of the nation can
+          never become permanent and its real happiness can never
+          be secured.</p>
+                <p>The particular questions that the philosophic legislator
+          has then to solve with respect to the education of the
+          citizens, are - 1. How are teachers to be taught, and what
+          are they to be taught? 2. How is the body of teachers
+          to be directed, superintended, rewarded, and punished?
+          3. What schools and what kinds of schools are to be established
+          and encouraged for the Education of the people?
+          4. What are the teachers to teach in those schools? 5. Where
+          is the immediate government of such schools to be placed?
+          6. And where the ultimate and supreme direction and
+          control of such schools? The word Schools is here used
+          as comprehending <hi rend="italic">all</hi> places of Education.</p>
+                <p>It remains to consider those other relations of a man to the state in 
+          which we view him as a producer of wealth for his own enjoyment Here 
+          the general principle is, that the pursuit and enjoyment of wealth must 
+          be left as free as the public interest requires; and this amount of freedom 
+          will not depend in any great degree on the form of government. To this head, 
+          that of the production of wealth, belong all the divisions of labour by 
+          which a man, to use a homely but expressive phrase, gets his living, 
+          or what in other words are called the professions, trades, and arts of a country. 
+          The only way in which the state can with any advantage direct or 
+          control the exercise of any profession, trade, or 
+          art, is by requiring the person who undertakes to exercise 
+          it to have been trained or educated for tbe purpose. Whether this should 
+          be done in all cases, or in some and what cases, and to what extent and how, 
+          are questions for a legislature guided by a philosopher to answer.</p>
+                <p>In all countries called civilized this has been done to a certain extent. The legislation of our own country offers instances of great errors committed by legislating where no legislation was wanted, or by legislating badly. Perhaps instances may also be noted in all countries where evil has arisen for want of legislation on the subject. We may explain by example.</p>
+                <p>Perhaps it is unnecessary for a state to require that a shoemaker, or a tailor, or a painter, or a sculptor, should be required to go through a certain course of training before he exercises his art. The best shoemaker and best tailor will be sure to find employment, and individual shoe¬makers and tailors have as ample means of giving instruction in their craft as can be desired. It may be true or not true, that tbe best painters and sculptors will meet with most employment; but is it unnecessary or is it necessary for a state to offer facilities and encouragement to those who design to educate themselves as painters and sculptors? Most civilized nations have decided this question by doing so, and there are many reasons in favour of such a policy.</p>
+                <p>Ought the state to require the professor of law, of medicine, 
+          or of religious teaching, to undergo some kind of preliminary Education, 
+          and to obtain a certificate thereof? Nearly all civilized 
+          countries have required the lawyer and physician to go 
+          through some course of Education. There are strong reasons 
+          in some countries, our own for instance, both for and 
+          against such a requisition; but on the whole, 
+          the reasons seem to preponderate in favour of 
+          requiring such Education from him who designs to practise law, and still
+          morefromhim who designs to practise the art o£ healing.
+          Most civilized countries, perhaps all, except two (so far as
+          we know), require <hi rend="italic">all</hi> persons who profess the teaching of
+          religion to have received some Education, to be ascertained
+          by some evidence. But in both the nations excepted, any
+          person, however ignorant may preach on subjects which the
+          mass of the community believe or affect to believe to be of
+          eater importance both for their present and future welfare
+          an any other subjects. Professing to maintain, as we hope
+          they always will do, the principle of religiousfreedom,these
+          two nations have fallen into the greatest inconsistencies. 
+          They have checked the free expression of individual 
+          opinion by word of mouth, and fettered it in the written 
+          form, in the one country by the severe penalties of positive 
+          law and the no less severe penalties of positive morality; 
+          and in the other by the penalties of positive morality carried 
+          to an excess which is destructive to the interests of the 
+          society itself. (See Attorney-General v. Pearson, 3 Meri¬
+          vale, 353.) But both nations allow any person, if he 
+          professes to be a teacher of religion, however ignorant he 
+          may be, to become the weekly, the daily instructor of thou¬
+          sands, including children, who derive and have derived no 
+          instruction of any kind except from this source. Such a 
+          teaching or preaching, if it only assumes the name and 
+          form of religious teaching, is permitted to inculcate prin¬
+          ciples which may be subversive of the political system; and 
+          it may and often does inculcate'principles the tendency of 
+          which is to undermine the foundations ot all social order; 
+          for it should never be forgotten that all religious teaching 
+          must include moral teaching, though moral teaching is 
+          quite distinct from religious teaching. And though it must 
+          be admitted that no teacher of religion recommends a had 
+          thing as bad, he may recommend a bad thing as good, 
+          solely because he knows no better. We have endeavoured 
+          to point out an anomaly which exists in certain political 
+          institutions, and which can only be allowed to exist so 
+          long as it protects itself under a specious and an honoured 
+          but misunderstood name. For though it be admitted that 
+          such anomaly exist it may be said that it cannot be 
+          remedied without interfering with the important principle 
+          of religious freedom. But what is religious or any other 
+          freedom? Is it the individual power of doing or saying 
+          what a man likes? Certainly not It means no more 
+          than a freedom not inconsistent with the public welfare. 
+          Still it may be urged that this is precisely the kind of free¬
+          dom with which no state, where the principle of religious 
+          freedom is admitted, can safely interfere. But this is only 
+          bringing us round again to the question, What is religious 
+          freedom ? To say that it cannot be interfered with is to<pb n="3"/>assume an 
+          answer to the question. Does what is called religious freedom, 
+          as the same is now understood, admitting it to produce much good, 
+          produce also any evil? If it does, can the evil be remedied? 
+          Is the free practice of any art or profession, medicine 
+          or law, for instance, or the art of instructing children 
+          in general knowledge, or perfect freedom in teaching and 
+          expounding religious doctrines, inconsistent with the 
+          condition of <hi rend="italic">qualification</hi>?<note>In discussing a subject of this kind in a limited space, it is not possible to anticipate objections 
+            that may be fairly urged, or to state and answer them. For example, it may be said, if a 
+            man ought not to preach without some evidence of qualification, why should a man print 
+            a book on religious subjects without some evidence of qualification ? The answer is not difficult; 
+            but we have not space to answer either this or numerous other objection that may be made.</note> How the <hi rend="italic">qualification</hi> is 
+          to be ascertained, and what it is to be, is the question; 
+          and it is a question which may be answered.</p>
+                <p>In all that we have said on Education as a subject of legislation, it is assumed either that the state can enforce, if necessary, that which it enacts; or that the enactments of the state will be only the expression of the public will; or that they will be founded on reasons so clear and convincing as to receive, when promulgated, the assent and
+        support of a majority large enough to secure their being carried into effect If some one of these conditions cannot be fulfilled, the legislation is premature, and will probably be injurious.</p>
+                <p>The extent of that department of Education with which the 
+          legislature should not interfere can only be fixed with 
+          precision by ascertaining the extent of its proper, that 
+          is, its useful interference. We may state, however, in 
+          general terms, that the early and domestic Education of 
+          the young of both sexes is in nearly all, perhaps all, 
+          modern political systems, placed beyond the reach of 
+          direct legislative control by the constitution of modern 
+          society. But in as much as one of the great functions of 
+          government is the instruction, direction, and superintendence 
+          of the teaching body, even the domestic Education is 
+          not beyond its influence, but will be subjected to it 
+          in precisely the same degree as the state shall succeed 
+          in forming a body of good teachers. For the importance 
+          and value of Education (in some sense or other: it 
+          matters not here in what sense) are universally admitted. 
+          The objects of Education, it is true, are often 
+          misunderstood by parents and those who have the charge 
+          of youth, and the means are as often ill-calculated for 
+          the end proposed. But this is only a consequence of 
+          ignorance, not an indication that Education is undervalued. 
+          When better objects and better means are proposed, 
+          whether by individual example or by associations of 
+          individuals called societies, or by the state, such 
+          objects and means will be readily embraced by all 
+          who can comprehend them. It being assumed that the 
+          objects and means thus presented are desirable in 
+          themselves, there can be no obstacle to the reception 
+          of them, so far as the state allows the reception 
+          to be voluntary, except the ignorance and prejudices 
+          (which are, in fact, only ignorance under another name) 
+          of those to whom they are proposed. But till this 
+          obstacle which ignorance presents is overcome, nothing 
+          can be effected in the way of improvement; and it being 
+          admitted, that as to the department of education under 
+          consideration, direct legislation is not the proper means, 
+          some other means must be adopted. Individuals and societies 
+          often effect their benevolent objects by example and by 
+          the authority of their name and character. The state may 
+          do the same. The influence of authority and example is 
+          in all countries most efficient when the sovereign power 
+          calls them in to its aid. Individuals may do much; 
+          societies have done more; but Society (the whole, 
+          in its collective power) is the body from which all 
+          improvements must come that are calculated to operate on the mass. 
+          From these considerations we conclude that if any state 
+          seriously and anxiously apply itself to the business of 
+          forming a body of teachers, it is impossible to foresee 
+          how far the beneficial influence of such a body, well 
+          organized, may extend. It may penetrate into the house 
+          of the wealthy, where the child who is born to the 
+          possession of wealth is not thereby secured in the 
+          enjoyment of it or against any one calamity of human life. 
+          His wealth may be wasted by improvidence; his health may 
+          be enfeebled by indolence and debauchery; his understanding 
+          maybe cramped and corrupted by vicious Education and bad example; 
+          and he may become an object of detestation and contempt 
+          though born to the command of wealth sufficient to purchase 
+          all that society has to offer. This influence may also reach, 
+          and perhaps sooner and more effectually reach, the hovels and 
+          the garrets of the poor, where thousands of children are now 
+          brought up under such circumstances, that to be unhealthy, 
+          vicious, criminal, and unhappy, are the only results which, 
+          as a general rule, can follow from the given conditions of 
+          their existence. When the unhappy wretch, who cannot be 
+          other than what he is, has at last transgressed the limits 
+          of the positive morality of society, and got within the 
+          verge of the penalties of the law, his crimes are blazoned 
+          forth by thousands, the respectable part of society are 
+          shocked at the disclosures, and are only relieved from 
+          their pain when the criminal is hid in a prison, or his 
+          life is taken by tbe executioner. But the example is soon 
+          forgotten, and misery and vice fester in the very heart of society unheeded, till
+          some new warning again startles it from its lethargy.</p>
+                <p>It may appear almost superfluous to state that the true 
+          interest of the sovereign power, considered in all its bearings, must coincide 
+          with the interest of the governed; the difference in forms of government or in 
+          the distribution of the sovereign power being mainly to be considered a difference 
+          in the instruments or means by which an end is to be obtained. Nor is this 
+          difference an unimportant one. Where the sovereign power is in all those 
+          who as individuals are subject to it the coincidence of power and of interest is 
+          complete; and the nearer any form of government approaches to this distribution 
+          of power, the more obvious and the stronger is the principle laid down. 
+          The principle may express a common-place truth; but the consequences that flow from it are 
+          numerous and important. When it is clear that the state will promote the general good by its 
+          regulations, its business is to make regulations. If regulations will not promote the general 
+          good, that is a reason for not making them. Now to protect a man in the enjoyment of his 
+          property, and to preserve him from the aggressions of others, is a main part of the business 
+          of governing. For this purpose restraints and punishments are necessary; immediately, 
+          to protect the injured, and give compensation, when it can be given; remotely, to prevent 
+          others from being injured, and, so far as it can be done, to reform the offender. 
+          But the punishment of any offender, in its extremest shape, can do little more than prevent 
+          the same person from offending again. Those who are deterred from crime by his example can 
+          at any rate only be those to whom the example is known, and they are a small portion even 
+          of the actual society. Generally, then, those who do not offend against the laws, do not offend, 
+          either because they have been sufficiently educated to avoid such offence, or because 
+          the opportunity and temptation have not been presented to them, or because they know that 
+          punishment may follow the crime. But a large class of offenders have not been sufficiently 
+          educated to enable them to avoid the commission of crime; a very large number are brought up 
+          amidst the opportunities, the temptations, and the example of crime, to oppose all which 
+          the single fact of knowing that the crime <hi rend="italic">may</hi> be punished (and even that amount of knowledge 
+          is not always possessed by the criminal) is all the means of resistance that such persons are armed with. 
+          In societies which boast of their wealth, their civilization, and their high intellectual cultivation, 
+          such is the feeble barrier opposed by those who have the government of a people between thousands of 
+          their fellow-citizens and the commission of crimes the penalties of which are always severe and often cruel.</p>
+                <p>If the general considerations which we have urged are of any weight, there is no branch 
+          of legislation which comprehends so many important questions as are comprehended in the word Education, 
+          even when taken in its ordinary acceptation; but when viewed in all its bearings, it is of all 
+          questions most peculiarly that which it concerns the present age and the present state of society to determine. 
+          That Education was an integral, an essential part of legislation, was clearly seen by the <name type="people" key="http://dbpedia.org/resource/Greeks">Greeks</name>, 
+          to whom belongs the merit of having approached, and often having solved, nearly all the important 
+          questions that affect the constitution of society. It was their good fortune to contemplate many truths 
+          from a nearer poiut of view and in a clearer light than we can do now. The relations of modern society 
+          are so numerous and complicated, that the mind is bewildered amidst the multiplicity and variety of facts, 
+          the claims of opposing interests, and the number and magnitude of the objects which are presented 
+          for its consideration. It is only by keeping ourselves as free as possible from mere party influences, 
+          and steadily looking to the general welfare as the end to be attained by and the true test of ail political
+          <pb n="4"/>institutions, that we can hope to discover and apply the 
+          principles which shall secure, so far as such a thing can be secured, the universal happiness of a nation.</p>
+                <p>
+                    <quote>'That the legislator should especially occupy himself with the education of youth, no one can dispute; 
+          for when this is not done in states, it is a cause of damage to the polity (form of government). 
+          For a state must be administered with reference to its polity; and that which is the peculiar characteristic 
+          of each polity is that which preserves and originally constitutes it; as, for instance, the democratical principle 
+          in a democracy, and the oligarchal in an oligarchy; and that which is the best principle 
+          always constitutes the best polity. Further, in every occupation and
+          art a person must receive previous instruction and discipline, 
+          in order to the exercising of the occupation or art; consequently also to the enabling him to the exercise of virtue. 
+          Now, since the end of every state is one, it is evident that education must be <hi rend="italic">one</hi>, and of necessity the same for all, 
+          and that the superintendence of the education must be with the public and not with individuals, 
+          as it now is, when each individual superintends his own children singly, and teaches them what he chooses. 
+          But when things are matter of public concern, the discipline pertaining to them must also be matter 
+          of public concern; and we must not consider any citizen as belonging to himself, but 
+          all as belonging to the state; for each is a part of the state, and the superintendence of 
+          each part has naturally a reference to the superintendence of the whole. In the matter of 
+          education, as well as in other matters, the <name type="people">Lacedemonians</name> deserve praise; for they take the 
+          greatest pains about the education of their children, and that, too, as a public concern. 
+          That then a state ought to legislate on education and make it a public concern, is clear;
+          but what education is, and how education must be conducted, is a subject for consideration'</quote> (<name type="person" key="http://dbpedia.org/resource/Aristotle">Aristotle</name>, <hi rend="italic">Politik</hi>, book viii.)</p>
+            </div>
+            <div type="entry" subtype="science">
+                <head>
+                    <term xml:id="Science">Science.</term>
+                </head>
+                <div type="article">
+                    <p>SCIENCE. The word scientia, in real <name type="language" key="http://dbpedia.org/resource/Latin">Latin</name>, simply
+                    means knowledge, and we must attribute the subsequent
+                    application of the word to particular kinds of knowledge, to
+                    causes similar to those which have influenced the use of
+                    the equally general term MATHEMATICS [vol. xv., p. 111.
+                    It does not appear that in the earlier parts of the <name type="period" key="http://dbpedia.org/resource/Middle_Ages">middle
+                    ages</name> science had any distinct meaning as opposed either to
+                    literature or to art. Almost at the earliest establishment
+                    of universities, the great preliminary branches of knowledge
+                    were separated from the rest under the name of liberal
+                    arts: that is to say, the Triviura, containing grammar,
+                    logic, and rhetoric; and the Quadrivium, containing arithmetic,
+                    geometry, astronomy, and music. If theology, law,
+                    and medicine were called sciences, it was not in any distinctive
+                    sense, and we are inclined to think that scientia
+                    must then have been rather a term subaltern to art than
+                    opposed to it. We find <name type="person" key="http://dbpedia.org/resource/Roger_Bacon">Roger Bacon</name>(Oj). Maj., cap. xv.)
+                    speaking of the nine mathematical sciences, and the six
+                    great natural sciences, which contain under them many
+                    other sciences: and his contemporary <name type="person">Robert of Lincoln</name>
+                    (Tract, de Art. Lib.), after laying it down that the arts (not
+                    sciences), of which it is the office <q>'operationes hum anas
+                    corrigendo ad perfectionem ducere,'</q> are seven in number,
+                    proceeds to describe them without a single use of the word
+                    science. How the word grew it is not our business to inquire
+                    closely; but by the middle of the <name type="period" key="http://dbpedia.org/resource/16th_century">sixteenth century</name>
+                    the word science had begun to appear as denoting connected
+                    and demonstrated knowledge, in opposition to art, which <pb n="1"/> signified digested rules of operation not connected with each
+                    other by deduction from common first principles. Thus
+                    <name type="person" key="http://dbpedia.org/resource/Niccolò_Fontana_Tartaglia">Tartalea</name>, a writer on algebra (which was then, and most properly,
+                    called only an art; ars magna, or arte moggiore),
+                    styles <name type="person" key="http://dbpedia.org/resource/Euclid">Euclid</name>, in the preface to his edition of the Elements,
+                    <q>'the sole guide to the mathematical sciences.'</q> By the
+                    middle of the <name type="period" key="http://dbpedia.org/resource/17th_century">seventeenth century</name>, the term science was
+                    freely used in the sense which it has never since lost,
+                    namely, that in which it is opposed to literature. But the
+                    old distinction of science as opposed to art has still remained,
+                    though the two terms, in this sense, have been in great
+                    measure superseded by theory and practice ; but improperly,
+                    for the distinction between science and art is one thing,
+                    and that between theory and practice another. [THEORY.]</p>
+                    <p>A science, as distinguished from an art, is a body of
+                    truths, the common principles of which are supposed to be
+                    known and separated, so that the individual truths, even
+                    though some or all may be clear in themselves, have a
+                    guarantee that they could have been discovered and known,
+                    either with certainty or with such probability as the subject
+                    admits of, by other means than their own evidence. It
+                    is not necessary that these truths should have been discovered
+                    by a scientific process; it is enough that they admit
+                    of such treatment subsequently. The telescope, for instance,
+                    may have been discovered accidently; but it can now be
+                    demonstrated beforehand that such an instrument must
+                    produce the effect which it is known to produce, and the
+                    rules for its construction may be deduced from the simple
+                    fundamental properties of light. In the sense of the word
+                    above used, the number of perfect sciences is not so great as
+                    is commonly supposed; for many branches of knowledge
+                    which bear the name are not perfect sciences, such as medicine,
+                    zoology, and geology;—in all of these, large classifications
+                    have been made, many principles have been deduced
+                    which seem to be of universal application, and much has
+                    been done to make these known principles point out the direction
+                    of inquiry; but it would be idle to say that either
+                    of them is a science in the sense in which astronomy is a
+                    science.</p>
+                    <p>Science, as opposed to literature, means any branch of
+                    knowledge in which the affections of mind or matter are to
+                    be made the subject of reasoning, with a view to discover
+                    and apply first principles. The distinctions of mental and
+                    physical sciences, the subdivision of the former into ethical
+                    and psychological, &amp;c, whatever terms may be employed,
+                    are real and useful. But as it is not the object here to
+                    classify human knowledge, but only to give a slight account
+                    of the mode of using a word, we may pass on to its common
+                    signification.</p>
+                    <p>By science, in popular language, is meant simply mathematical,
+                    physical, or natural science, not with reference to
+                    principles, but to results. Calculation, collection of natural
+                    objects, construction of models, use of philosophical instruments,
+                    any or either, is science, or part of science; and a
+                    man of science (man of a science, or man of the art which
+                    is built upon a science, would frequently be a correct
+                    description) may be either a mathematician, mechanist,
+                    engineer, medical practitioner, astronomer, geologist, electrician,
+                    zoologist ornithologist &amp;c. To this sort of designation
+                    there can be no objection in itself, and it is convenient
+                    as distinguishing followers of science, or of a science, from
+                    those of literature. But it is not sufficiently precise in itself
+                    to distinguish the followers of different sciences from one
+                    another. When a literary man is named, his pursuit is
+                    generally indicated: the historian, the antiquary, the poet,
+                    the novelist the politician, the scholar, and the linguist, are
+                    not confounded by means of a general term: insomuch
+                    that <q>'literary man,'</q> by itself, generally implies one of information,
+                    but not of distinguished depth in any one
+                    particular branch. But the inquirer into the sciences of
+                    electricity and magnetism, for example, has no name to
+                    distinguish him from the observer and classifier of insects;
+                    that is to say, the proper technical names are not familiar
+                    to the world at large. But this is the least inconvenience.
+                    When the word science comes to be used in its high and
+                    proper sense, indicative of truth discovered, error prevented,
+                    inquiry organised, judicious habits formed, and mental
+                    energy strengthened, it must be difficult for those who are
+                    used to the common sense of the word to imagine the truth
+                    of many things which are said about it. <q>'All we require is,
+                    that he will hold his former opinions and judgments without
+                    bigotry, retain till he shall see reason to question them,
+                    be ready to resign them when fairly proved untenable, and to doubt them when the weight of probability is shown to
+                    lie against them. If he refuse this, he is incapable of
+                    science.'</q> Now this, though the word of a good authority,
+                    and perfectly true, is nevertheless notoriously false in the
+                    common sense of the word science: a man may be incapable
+                    of the preceding state of mind, and may be a man
+                    of science. There is no remedy for this confusion of terms,
+                    except that which every one must make for himself, by
+                    attention to the different senses of the word, the higher and
+                    the lower.</p>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>
