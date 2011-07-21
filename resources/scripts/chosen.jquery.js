@@ -22,7 +22,7 @@
       this.set_default_values();
       this.form_field = elmn;
       this.is_multiple = this.form_field.multiple;
-      this.default_text_default = this.form_field.multiple ? "Select Some Options" : "Select an Option";
+      this.default_text_default = this.form_field.multiple ? "No filters" : "No filter";
       this.set_up_html();
       this.register_observers();
     }

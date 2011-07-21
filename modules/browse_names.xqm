@@ -11,6 +11,21 @@ declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 
+declare function browse-names:data-all( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){
+   if( $level-pos = 1 ) then 
+        collection(concat($config:app-root, '/data'))//tei:name[@type]       
+   else $context-nodes//tei:name[@type] 
+};   
+
+declare function browse-names:data-filtered( $data as node()*, $URIs as node()* ){       
+    let $name-types := request:get-parameter("name-type", () )
+    return  if(exists( $name-types )) then (
+       $data//tei:name[@type = $name-types]
+    )else   
+        $data    
+};
+
+(:
 declare function browse-names:data( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){ 
    let $name-types := request:get-parameter("name-type", () )
    return if( $level-pos = 1 ) then (
@@ -24,7 +39,7 @@ declare function browse-names:data( $context-nodes as node()*, $URIs as node()*,
           else $context-nodes//tei:name[@type] 
     )
 };
-
+:)
 
 declare function browse-names:extract-categories( $n as element()? ){ 
    let $categories := $n//tei:name[@type]
@@ -55,11 +70,12 @@ declare function browse-names:extract-categories( $n as element()? ){
 };
 
 
-declare function browse-names:titles-list( $nodes as element()*,  $level as node()? ){
-    let $types := distinct-values($nodes/@type)    
+declare function browse-names:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*  ){
+    let $types := distinct-values($nodes/@type)
+    let $name-types := request:get-parameter("name-type", () )    
     
     return element titles {
-        attribute {'name'}{ 'name-type' },
+        attribute {'name'}{ 'name-type' }, (: combo name, ie the parameter name :)
         attribute {'count'}{ count($types)},
         attribute {'title'}{ $level/@title },            
    
@@ -71,12 +87,13 @@ declare function browse-names:titles-list( $nodes as element()*,  $level as node
         order by $t
         return                    
             element title {               
-               attribute {'name-type'}{$t},
-               attribute {'count'}{$count},
-                    if( $count > 1 ) then (
-                       attribute {'title'}{ concat(  $total, ' unique keys and ', $count, ' instaces'   )},
-                       concat( $t, ' (', $total, '/', $count ,')' )
-                    )else $t
+                if( $t = $name-types  ) then attribute {'selected'}{'true'} else (),
+                attribute {'value'}{$t},
+                attribute {'count'}{$count},
+                if( $count > 1 ) then (
+                   attribute {'title'}{ concat(  $total, ' unique keys and ', $count, ' instaces'   )},
+                   concat( $t, ' (', $total, '/', $count ,')' )
+                )else $t
             } 
 
     }    

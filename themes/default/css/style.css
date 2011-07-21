@@ -110,7 +110,7 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 
 .entry-view .label {
     background-color: #FCEEB1;
-    font-size: 112%;
+    font-size: 125%;
 }
 
 #navbar { background-color: #FFAD00; padding: 4px 8px; font-size: 85%;
@@ -242,3 +242,5 @@ h1, h2, h3, h4, h5, h6, .block {
 }
 
 .tooltip h4 { margin: 8px 10px; }
+
+.L-block li {  line-height:1.3em; margin-bottom:.5em;}

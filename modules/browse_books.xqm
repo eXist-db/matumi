@@ -11,6 +11,59 @@ declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 
+declare function browse-books:data-all( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){
+   if( $level-pos = 1 ) then 
+        collection(concat($config:app-root, '/data'))//tei:TEI        
+   else $context-nodes/ancestor-or-self::tei:TEI
+};
+
+declare function browse-books:data-filtered( $data as node()*, $URIs as node()* ){       
+    if(  exists($URIs) ) then (
+        for $d in $data return
+        if( document-uri( root($d)) =  $URIs/uri ) then 
+            $d 
+        else ()
+    )else   
+        $data    
+};
+
+declare function browse-books:title-extract( $title as element(tei:titleStmt)?, $URIs as node()* ){     
+     if( exists($title)) then
+         let $root := root($title)
+         let $uri := document-uri( $root ) 
+         return element title {
+            if( $uri = $URIs/uri ) then attribute {'selected'}{'true'} else (),
+            attribute {'language'}{ string($root/text/@xml:lang)  },     
+            attribute {'value'} { $uri },            
+            attribute {'uri'} { $uri },
+            
+            if( exists($title/title[@type='main']) ) then
+                 $title/title[@type="main"]   
+            else if( string($title) = 'Title' or empty($title/title) or fn:string-join($title/title,'') = '' ) then 
+                 concat('[',  util:document-name($title), ']') 
+            else $title/title
+         }   
+     else <title>Missing Title</title>
+};
+
+
+declare function browse-books:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()* ){
+    element titles {
+         attribute {'name'}{ 'uri' },
+         attribute {'count'}{ count($nodes)},
+         attribute {'title'}{ $level/@title },
+        
+         for $title in $nodes//tei:fileDesc/tei:titleStmt
+         let $title2 := browse-books:title-extract($title, $URIs )
+         order by string($title2)
+         return $title2   
+    }    
+};
+
+
+
+(:
+
 declare function browse-books:data( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){
    if( $level-pos = 1 ) then (
         (:   no context nodes expected   :) 
@@ -35,6 +88,7 @@ declare function browse-books:data( $context-nodes as node()*, $URIs as node()*,
     )
 };
 
+
 declare function browse-books:list( $books as element()*){
    for $book in $books
      let $titleStmt := $books//teiHeader/fileDesc/titleStmt
@@ -47,40 +101,6 @@ declare function browse-books:list( $books as element()*){
        attribute file { util:document-name($book) }
    }
 };
-
-declare function browse-books:title-extract( $title as element(tei:titleStmt)?, $URIs as node()* ){     
-     if( exists($title)) then
-         let $uri := document-uri( root($title)) 
-         return element title {
-            if( $uri = $URIs/uri ) then attribute {'selected'}{'true'} else (),
-            attribute {'value'} { $uri },
-            attribute {'uri'} { $uri },
-            if( exists($title/title[@type='main']) ) then
-                 $title/title[@type="main"]   
-            else if( string($title) = 'Title' or empty($title/title) or fn:string-join($title/title,'') = '' ) then 
-                 concat('[',  util:document-name($title), ']') 
-            else
-                $title/title 
-             
-         }   
-     else <title>Missing Title</title>
-};
-
-
-declare function browse-books:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()* ){
-    element titles {
-         attribute {'name'}{ 'uri' },
-         attribute {'count'}{ count($nodes)},
-         attribute {'title'}{ $level/@title },
-        
-         for $title in $nodes//tei:fileDesc/tei:titleStmt
-         let $title2 := browse-books:title-extract($title, $URIs )
-         order by string($title2)
-         return $title2   
-    }    
-};
-
-(:
 
 local:roots( $nodes )//teiHeader/fileDesc
 

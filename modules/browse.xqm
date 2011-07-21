@@ -16,7 +16,9 @@ declare variable $browse:delimiter-uri-node := '___';
 declare variable $browse:delimiter-uri-nameNode := '---';
 
 declare variable $browse:URIs :=  (: combine multiple URI and multiple node-id :)                  
-        let $u := for $i in request:get-parameter("uri", () ) return 
+        let $u := for $i in (request:get-parameter("uri", () ),
+                              request:get-parameter("entry-uri", () )) 
+              return 
               element {'URI'}{ 
                   if(  contains($i,  $browse:delimiter-uri-node ) ) then (
                       element {'node-id'}{ fn:substring-after($i, $browse:delimiter-uri-node )  },
@@ -65,60 +67,77 @@ declare variable $browse:L2 := ($browse:levels[ . = request:get-parameter("L2", 
 declare variable $browse:L3 := ($browse:levels[ . = request:get-parameter("L3", () )], $browse:levels[ not(. = ($browse:L1,$browse:L2)) ])[1];
 declare variable $browse:L4 := ($browse:levels[ . = request:get-parameter("L4", () )], $browse:levels[ not(. = ($browse:L1,$browse:L2,$browse:L3)) ])[1];
 
-declare variable $browse:data-1 := 
-          if(      $browse:L1 = 'books')   then  browse-books:data( (), $browse:URIs, 1)            
-          else if( $browse:L1 = 'entries') then  browse-entries:data( (),  $browse:URIs, 1)  
-          else if( $browse:L1 = 'names')   then  browse-names:data( (), $browse:URIs, 1)      
+declare variable $browse:data-1-all := 
+          if(      $browse:L1 = 'books')   then  browse-books:data-all( (), $browse:URIs, 1)            
+          else if( $browse:L1 = 'entries') then  browse-entries:data-all( (),  $browse:URIs, 1)  
+          else if( $browse:L1 = 'names')   then  browse-names:data-all( (), $browse:URIs, 1)      
           else();
+declare variable $browse:titles-1 := if( empty($browse:data-1-all) or empty($browse:L1)) then () else 
+       typeswitch ($browse:data-1[1] )
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs )
+          case element(tei:name) return browse-names:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs )          
+          default return <titles><title>no-titles</title></titles>;
 
+declare variable $browse:data-1 := 
+        typeswitch ($browse:data-1-all[1] )
+          case element(tei:TEI) return   browse-books:data-filtered( $browse:data-1-all, $browse:URIs )                
+          case element(tei:div) return   browse-entries:data-filtered( $browse:data-1-all, $browse:URIs )
+          case element(tei:name) return  browse-names:data-filtered( $browse:data-1-all, $browse:URIs )         
+          default return ();
+
+        
+declare variable $browse:data-2-all := 
+            if(      $browse:L2 = 'names')   then browse-names:data-all(   $browse:data-1, $browse:URIs, 2)
+            else if( $browse:L2 = 'entries') then browse-entries:data-all( $browse:data-1, $browse:URIs, 2)
+            else if( $browse:L2 = 'books')   then browse-books:data-all(  $browse:data-1, $browse:URIs, 2)                 
+            else ();
 declare variable $browse:data-2 := 
-            if(      $browse:L2 = 'names')   then browse-names:data(   $browse:data-1, $browse:URIs, 2)
-            else if( $browse:L2 = 'entries') then browse-entries:data( $browse:data-1, $browse:URIs, 2)
-            else if( $browse:L2 = 'books')   then browse-books:data(   $browse:data-1, $browse:URIs, 2)                 
+        typeswitch ($browse:data-2-all[1] )
+          case element(tei:TEI) return   browse-books:data-filtered( $browse:data-2-all, $browse:URIs )                
+          case element(tei:div) return   browse-entries:data-filtered( $browse:data-2-all, $browse:URIs )
+          case element(tei:name) return  browse-names:data-filtered( $browse:data-2-all, $browse:URIs )          
+          default return ();
+declare variable $browse:titles-2 := if( empty($browse:data-2-all) or empty($browse:L2)) then () else 
+        typeswitch ($browse:data-2[1] ) 
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs )
+          case element(tei:name) return browse-names:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs ) 
+          default return <titles><title>no-titles</title></titles>;
+
+declare variable $browse:data-3-all := 
+            if(      $browse:L3 = 'names')   then browse-names:data-all(   $browse:data-2, $browse:URIs, 3)
+            else if( $browse:L3 = 'entries') then browse-entries:data-all( $browse:data-2, $browse:URIs, 3)
+            else if( $browse:L3 = 'books')   then browse-books:data-all(   $browse:data-2, $browse:URIs, 3)                 
             else ();
 
 declare variable $browse:data-3 := 
-            if(      $browse:L3 = 'names')   then browse-names:data(   $browse:data-2, $browse:URIs, 3)
-            else if( $browse:L3 = 'entries') then browse-entries:data( $browse:data-2, $browse:URIs, 3)
-            else if( $browse:L3 = 'books')   then browse-books:data(   $browse:data-2, $browse:URIs, 3)                 
-            else ();
+        typeswitch ($browse:data-3-all[1] )
+          case element(tei:TEI) return   browse-books:data-filtered(   $browse:data-3-all, $browse:URIs )                
+          case element(tei:div) return   browse-entries:data-filtered( $browse:data-3-all, $browse:URIs )
+          case element(tei:name) return  browse-names:data-filtered(   $browse:data-3-all, $browse:URIs )          
+          default return ();
 
-declare variable $browse:data-4 := ();
-
-declare variable $browse:titles-1 := if( empty($browse:data-1) or empty($browse:L1)) then () else 
-       typeswitch ($browse:data-1[1] )
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1, $browse:L1, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-1, $browse:L1 )
-          case element(tei:name) return browse-names:titles-list( $browse:data-1, $browse:L1 )          
-          default return <titles><title>no-titles</title></titles>;
-                   
-declare variable $browse:titles-2 := if( empty($browse:data-2) or empty($browse:L2)) then () else 
-        typeswitch ($browse:data-2[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2, $browse:L2, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-2, $browse:L2 )
-          case element(tei:name) return browse-names:titles-list( $browse:data-2, $browse:L2 ) 
-          default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
-    
 declare variable $browse:titles-3 := if( empty($browse:data-3) or empty($browse:L3) ) then () else 
         typeswitch ($browse:data-3[1] ) 
           case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3 )
-          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3 ) 
-          default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3, $browse:URIs  )
+          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3, $browse:URIs  ) 
+          default return <titles><title>no-titles</title></titles>;
 
-declare variable $browse:titles-4 := if( empty($browse:data-4) or empty($browse:L4) ) then () else 
-        typeswitch ($browse:data-4[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3 )
-          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3 ) 
-          default return <titles><title>no-titles</title>{ $browse:data-2[1] }</titles>;
 
-declare variable $browse:entries := 
-      if( $browse:L1 = 'entries' ) then $browse:data-1
-      else if( $browse:L2 = 'entries' ) then $browse:data-2
-      else if( $browse:L3 = 'entries' ) then $browse:data-3
-      else if( $browse:L4 = 'entries' ) then $browse:data-4
-      else ();
+declare variable $browse:data-4 := ();
+declare variable $browse:titles-4 := <titles><title>no-titles</title></titles>;
+
+declare variable $browse:entries := browse-entries:filtered(
+                                      if( $browse:L1 = 'entries' ) then $browse:data-1
+                                      else if( $browse:L2 = 'entries' ) then $browse:data-2
+                                      else if( $browse:L3 = 'entries' ) then $browse:data-3
+                                      else if( $browse:L4 = 'entries' ) then $browse:data-4
+                                      else (),
+                                     $browse:URIs  );
+      
+   
 
 
 declare function browse:levels-combo( $level as node(), $pos as xs:int ) as element(select) {
@@ -277,8 +296,7 @@ declare function browse:section-as-searchable-combo( $section as element(titles)
 		<div class="box L-box" ajax="?{$url}&amp;segment=box-level&amp;pos={$pos}&amp;level={$id}">
 			<h2>{browse:levels-combo( $id,  $pos) }</h2>
 			<div class="block L-block">
-               <select id="{$id}" style="width:100%" class="chzn-select s-select" name="{$section/@name}">
-                   <option value=''> -- Make a Selection --- </option>
+               <select id="{$id}" style="width:100%" class="chzn-select s-select" name="{$section/@name}" multiple="multiple">
                    {
                    for $title in $section/title return 
                    element {'option'}{
@@ -286,31 +304,34 @@ declare function browse:section-as-searchable-combo( $section as element(titles)
                        string($title)
                    }
                }</select>
-               <!-- a href="?{$url}">Show all ({ count($section/title), ' ',  string($section/@title)} )</a -->
-               <ul id="{ $id }">{ 
+               <a href="?{$url}" style="font-size:80%">Clear filters and data for all { count($section/title), ' ',  string($section/@title)}.</a>
+               <!-- ul id="{ $id }">{ 
                     <li style="margin-left:0;list-style:none">
                        <a href="?{$url}">Show all ({ count($section/title), ' ',  string($section/@title)} )</a>
                     </li>,
                     for $t in $section/title return 
                     element li { browse:link($t) }
-               }</ul>
+               }</ul -->
             </div>
 		</div>
 	</div>
 };
-
-(:     
-
-
-:)               
-
 
 declare function browse:level-boxes(){
    <form id="browseForm" action="?">{ 
     browse:section-as-searchable-combo( $browse:titles-1, $browse:L1, 1 ),
 	browse:section-as-searchable-combo( $browse:titles-2, $browse:L2, 2 ),
 	browse:section-as-searchable-combo( $browse:titles-3, $browse:L3, 3 ),
-	<input type="submit" id="" value="Submit"/>,
+	<span>
+	   <!-- input type="checkbox" name="autoUpdate" id="autoUpdate">{
+	      if( request:get-parameter("autoUpdate", 'off' ) = 'on' ) then(
+	         attribute {'checked'}{'true'}
+	      )else()
+	   }</input>
+	   <span style="font-size:10px">Autoupdate</span>
+	   <br/ -->
+	   <input type="submit" id="" value="Submit"/>
+	</span>,
 	<div class="clear"></div>
    }</form>
 };
@@ -379,7 +400,7 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     	    }</tbody>
     	</table>
     )else(
+      <span>No entries to display</span>
        (: may be we can display a shot text to explain there will be a grid only when something is selected from the lists? :)
     )
 };
-
