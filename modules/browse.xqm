@@ -49,6 +49,22 @@ declare variable $browse:URIs :=  (: combine multiple URI and multiple node-id :
             )
 ;   
 
+declare variable $browse:Catgories :=  (: combine multiple castegory types and names :)                  
+    for $i in request:get-parameter("category", ()) 
+          return 
+          element {'category'}{ 
+              if(  contains($i,  $browse:delimiter-uri-node ) ) then (
+                  element {'name'} {    fn:substring-before($i,$browse:delimiter-uri-node ) },
+                  element {'key'}{ fn:substring-after($i, $browse:delimiter-uri-node )  }
+             ) else if( contains($i,  $browse:delimiter-uri-nameNode ) ) then ( 
+                  element {'name'} {    fn:substring-before($i, $browse:delimiter-uri-nameNode ) },                      
+                  element {'value'}{ fn:substring-after($i,  $browse:delimiter-uri-nameNode )  }
+              ) else (
+                  element {'name'} { $i },
+                  element {'key'} { '*' }
+              )
+          }
+;   
 
 
 declare variable $browse:levels := (
@@ -74,9 +90,9 @@ declare variable $browse:data-1-all :=
           else();
 declare variable $browse:titles-1 := if( empty($browse:data-1-all) or empty($browse:L1)) then () else 
        typeswitch ($browse:data-1[1] )
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs )
-          case element(tei:name) return browse-names:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs )          
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs, $browse:Catgories )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs, $browse:Catgories )
+          case element(tei:name) return browse-names:titles-list( $browse:data-1-all, $browse:L1, $browse:URIs, $browse:Catgories )          
           default return <titles><title>no-titles</title></titles>;
 
 declare variable $browse:data-1 := 
@@ -100,9 +116,9 @@ declare variable $browse:data-2 :=
           default return ();
 declare variable $browse:titles-2 := if( empty($browse:data-2-all) or empty($browse:L2)) then () else 
         typeswitch ($browse:data-2[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs )
-          case element(tei:name) return browse-names:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs ) 
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs, $browse:Catgories )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs, $browse:Catgories )
+          case element(tei:name) return browse-names:titles-list( $browse:data-2-all, $browse:L2, $browse:URIs, $browse:Catgories ) 
           default return <titles><title>no-titles</title></titles>;
 
 declare variable $browse:data-3-all := 
@@ -120,9 +136,9 @@ declare variable $browse:data-3 :=
 
 declare variable $browse:titles-3 := if( empty($browse:data-3) or empty($browse:L3) ) then () else 
         typeswitch ($browse:data-3[1] ) 
-          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3, $browse:URIs )                
-          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3, $browse:URIs  )
-          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3, $browse:URIs  ) 
+          case element(tei:TEI) return   browse-books:titles-list( $browse:data-3, $browse:L3, $browse:URIs, $browse:Catgories )                
+          case element(tei:div) return   browse-entries:titles-list( $browse:data-3, $browse:L3, $browse:URIs, $browse:Catgories  )
+          case element(tei:name) return browse-names:titles-list( $browse:data-3, $browse:L3, $browse:URIs, $browse:Catgories  ) 
           default return <titles><title>no-titles</title></titles>;
 
 
@@ -135,7 +151,8 @@ declare variable $browse:entries := browse-entries:filtered(
                                       else if( $browse:L3 = 'entries' ) then $browse:data-3
                                       else if( $browse:L4 = 'entries' ) then $browse:data-4
                                       else (),
-                                     $browse:URIs  );
+                                     $browse:URIs,
+                                     $browse:Catgories);
       
    
 
@@ -296,13 +313,19 @@ declare function browse:section-as-searchable-combo( $section as element(titles)
 		<div class="box L-box" ajax="?{$url}&amp;segment=box-level&amp;pos={$pos}&amp;level={$id}">
 			<h2>{browse:levels-combo( $id,  $pos) }</h2>
 			<div class="block L-block">
-               <select id="{$id}" style="width:100%" class="chzn-select s-select" name="{$section/@name}" multiple="multiple">
-                   {
-                   for $title in $section/title return 
-                   element {'option'}{
-                       $title/@*,
-                       string($title)
-                   }
+               <select id="{$id}" style="width:100%" class="chzn-select s-select" name="{$section/@name}" title="No filters"  multiple="multiple">{
+                 let $has-groups := $section/group/@name
+                 return if( exists( $has-groups )) then ( 
+                      for $g in $section/group
+                      return 
+                      <optgroup label="{ $g/@title}">{
+                          for $title in $g/title return 
+                             element {'option'}{ $title/@*,  string($title) }
+                      }</optgroup>                 
+                  ) else ( 
+                   for $title in $section//title return 
+                     element {'option'}{ $title/@*,  string($title) }
+                  )
                }</select>
                <a href="?{$url}" style="font-size:80%">Clear filters and data for all { count($section/title), ' ',  string($section/@title)}.</a>
                <!-- ul id="{ $id }">{ 
@@ -332,10 +355,9 @@ declare function browse:level-boxes(){
 	   <br/ -->
 	   <input type="submit" id="" value="Submit"/>
 	</span>,
-	<div class="clear"></div>
+	<div class="clear"></div>	
    }</form>
 };
-
 
 
 
@@ -362,7 +384,7 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     			      $uri  := document-uri( root($e)),
     			      $document-title := browse-books:title-extract($root//teiHeader/fileDesc/titleStmt, $browse:URIs),
     			      $node-id := util:node-id($e),
-    			      $categories := browse-names:extract-categories($e)
+    			      $categories := browse-names:categories-list($e)
     			 
     			 return <tr class="{ if( $pos mod 2 = 0 ) then 'odd' else ()}">{
     				element {'td'}{ string($document-title)},
@@ -370,7 +392,7 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     				<td>{ string($e/@subtype )}</td>,
     				<td>{  
     				    for $c in $categories 
-    				    let $total := sum($c/name/@count)
+    				    let $total := sum($c/value/@count)
     				    return
     				    <div>
     				       <span class="cat-name">{ 
@@ -379,17 +401,18 @@ declare function browse:page-grid( $show-all as xs:boolean ){
     				            concat('(', $c/@count,'/', $total ,')')				            
     				       }:</span>
     				       {
-    				         for $n at $pos in $c/name 
+    				         for $n at $pos in $c/value 
     				         let $title := concat( $n/@count,' instances in this document')
     				         return(
-    				         <a title="{$title}" class="cat-value-deep-link" 
+    				         <a title="{$title} {if($n/@key = 'missing') then ' - Missing Key!' else ()}" class="cat-value-deep-link" 
     				            href="{ concat('entry.html?doc=', $uri, 
     				                            '&amp;node=',$node-id, 
     				                            '&amp;name-node-id=', $n/@name-node-id,
     				                            '&amp;key=', $n/@key
     				                          )}">{ 
     				            string($n),
-    				            if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()				           
+    				            
+    				            if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()	           
     				         }</a>,
     				         if( $pos < number($c/@count)) then ', ' else ()
     				        )

@@ -47,16 +47,17 @@ declare function browse-books:title-extract( $title as element(tei:titleStmt)?, 
 };
 
 
-declare function browse-books:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()* ){
+declare function browse-books:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
     element titles {
          attribute {'name'}{ 'uri' },
          attribute {'count'}{ count($nodes)},
          attribute {'title'}{ $level/@title },
-        
-         for $title in $nodes//tei:fileDesc/tei:titleStmt
-         let $title2 := browse-books:title-extract($title, $URIs )
-         order by string($title2)
-         return $title2   
+         element {'group'}{
+             for $title in $nodes//tei:fileDesc/tei:titleStmt
+             let $title2 := browse-books:title-extract($title, $URIs )
+             order by string($title2)
+             return $title2
+         }
     }    
 };
 

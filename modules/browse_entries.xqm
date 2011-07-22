@@ -39,7 +39,7 @@ declare function browse-entries:data-filtered( $data as node()*, $URIs as node()
         $data    
 };
 
-declare function browse-entries:filtered( $data as node()*, $URIs as node()* ){       
+declare function browse-entries:filtered( $data as node()*, $URIs as node()*, $Categories as element(category)* ){       
     if(  exists($URIs/node-id) ) then (
         $data[ util:node-id(.) = $URIs/node-id and document-uri( root(.)) = $URIs/uri  ]
     )else   
@@ -65,24 +65,24 @@ declare function browse-entries:direct-link( $entry as element()? ){
    }     
 };
 
-
-declare function browse-entries:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*  ){
+declare function browse-entries:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*, $Categories as element(category)*  ){
     element titles {
         attribute {'name'}{ 'entry-uri' },
         attribute {'count'}{ count($nodes)},
         attribute {'title'}{ $level/@title },
-        
-        for $n in $nodes 
-         let $title := $n/tei:head[1] 
-         let $uri   :=  browse:makeDocument-Node-URI( $n )
-         order by string($title)
-         return 
-            element title {
-                 if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
-                 attribute {'value'} { $uri },              
-                 attribute uri { $uri },
-                 $title 
-            }
+        element {'group'}{
+            for $n in $nodes 
+             let $title := $n/tei:head[1] 
+             let $uri   :=  browse:makeDocument-Node-URI( $n )
+             order by string($title)
+             return 
+                element title {
+                     if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
+                     attribute {'value'} { $uri },              
+                     attribute uri { $uri },
+                     $title 
+                }
+       }
     }    
 };
 
