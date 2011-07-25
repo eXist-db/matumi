@@ -19,7 +19,7 @@ import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" a
 
 declare function local:page-head(  ) {
     <head>
-      <title> local:{ fn:string-join(($browse:L1, $browse:L2, $browse:L3), '/')  }</title>
+      <title> local:{ fn:string-join(($browse:LEVELS[1], $browse:LEVELS[2], $browse:LEVELS[3]), '/')  }</title>
 		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/reset.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/text.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="../resources/fluid960gs/css/grid.css" media="screen" />

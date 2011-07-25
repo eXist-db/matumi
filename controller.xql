@@ -9,10 +9,20 @@ declare variable $exist:path external;
 declare variable $exist:root external;
 declare variable $exist:prefix external;
 
+declare variable $local:controller-url := concat( fn:substring-before(request:get-url(), $exist:controller),$exist:controller);
+
 if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="browse.html"/>
     </dispatch>
+    
+else if ($exist:resource eq 'browse-section') then
+    <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+        <forward url="modules/browse-section.xql">
+            <add-parameter name="controller-url" value="{$local:controller-url}"/>        
+        </forward>
+     </dispatch>
+    
 else if ($exist:resource eq 'search.xql') then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="modules/search.xql">
@@ -38,7 +48,7 @@ else if ($exist:resource eq 'annotate.xql') then
             <forward url="modules/annotate.xql">
                 <clear-attribute name="xquery.attribute"/>
              </forward>
-         </dispatch>
+         </dispatch>         
 else if (ends-with($exist:path, ".html")) then
     if (request:get-parameter("action", ()) = "store") then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
@@ -62,6 +72,7 @@ else if (ends-with($exist:path, ".html")) then
                     <set-attribute name="exist:prefix" value="{$exist:prefix}"/>
                     <set-attribute name="exist:root" value="{$exist:root}"/>
                     <clear-attribute name="xquery.attribute"/>
+                    <add-parameter name="controller-url" value="{$local:controller-url}"/>       
                  </forward>
             </view>
          </dispatch>

@@ -11,10 +11,10 @@ declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
+import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 
-
-declare function browse-entries:data-all( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){
-   if( $level-pos = 1 ) then 
+declare function browse-entries:data-all( $context-nodes as node()*, $root as xs:boolean ){
+   if( $root ) then 
         collection(concat($config:app-root, '/data'))//tei:body/tei:div[@type="entry"]    
    else typeswitch ($context-nodes[1] )
           case element(tei:TEI)  return $context-nodes//tei:body/tei:div[@type="entry"]
@@ -22,31 +22,66 @@ declare function browse-entries:data-all( $context-nodes as node()*, $URIs as no
          default                 return <error type="unknown-context-data-element"/>       
 };
 
-declare function browse-entries:data-filtered( $data as node()*, $URIs as node()* ){       
-    if(  exists($URIs) ) then (
-        for $d in $data 
-           let $this-node-uri := document-uri( root($d))           
-           let $this-param-URI := $URIs[ uri = $this-node-uri ]
+declare function browse-entries:data-filtered( $data as node()*, $URIs as node()*, $Categories as element(category)* ){
+    if( empty($URIs) )then (
+             $data   
+    )else (
+       let $urls := if( exists($URIs/node-id)) then $URIs[node-id] else $URIs
+       return for $d in $data 
+           let $this-param-URI := $urls[ uri = document-uri( root($d) )  ]
            return    
             if( exists($this-param-URI) ) then(
-               let $node-ids := $this-param-URI/node-id
-               let $this-node-id := util:node-id($d)
-               return if( empty( $node-ids ) or $this-node-id  =  $node-ids ) then (
-                            $d
-                      )else ()        
+                if( empty( $this-param-URI/node-id  ) or $this-param-URI/node-id   = util:node-id($d)  ) then (
+                      $d
+                )else ()        
             )else ()          
-    )else   
-        $data    
+    )  
 };
 
-declare function browse-entries:filtered( $data as node()*, $URIs as node()*, $Categories as element(category)* ){       
-    if(  exists($URIs/node-id) ) then (
-        $data[ util:node-id(.) = $URIs/node-id and document-uri( root(.)) = $URIs/uri  ]
-    )else   
-        $data    
+declare function browse-entries:filtered( $data as node()*, $URIs as element(URI)*, $Categories as element(category)* ){       
+    let $step1 := 
+        if(  exists($URIs/node-id) ) then (
+            $URIs/node-id,           
+            $data[ util:node-id(.) = $URIs/node-id and document-uri( root(.)) = $URIs/uri  ]
+        )else (  
+            <no-node-id/>,
+            $URIs,
+            $URIs/tei:node-id,
+            $data
+        )            
+  
+    return  if(  exists($Categories/name) ) then (
+            let $names-with-values := if( exists( $Categories/value) ) then 
+                           for $n in $data/descendant-or-self::tei:name[  empty(@key) and @type =  $Categories/name ]
+                           return if( exists( $Categories[ name = $n/@type and value = fn:normalize-space($n )  ])) then 
+                                     $n
+                                  else ()
+                        else ()
+                
+               
+            return  (if( exists($Categories[key='*']) ) then (
+                       $data[  ./descendant-or-self::tei:name[ @type = $Categories[key='*']/name ] ]
+                    )else ())
+                    |
+                    (if( exists($Categories[ key != '*']) ) then
+                       $data[  ./descendant-or-self::tei:name[ @key = $Categories/key[not(. = '*') ] ]]
+                    else ())                       
+                    | 
+                   $names-with-values/ancestor-or-self::tei:div[@type="entry"]   
+       ) else 
+              $step1
 };
 
 
+
+
+(:
+     let $c-selected := $Categories[ name = $c/@name and key = '*' ]
+            for $t in $c/*  
+            let $c-selected := if( exists( $t/@value-insted-of-key )) then            
+                                    $Categories[  name = $c/@name and value = $t/@key  ]
+                               else $Categories[  name = $c/@name and key = $t/@key ]
+:)
 
 declare function browse-entries:title-extract( $entry as element()? ){ 
    element title {
@@ -65,8 +100,10 @@ declare function browse-entries:direct-link( $entry as element()? ){
    }     
 };
 
-declare function browse-entries:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*, $Categories as element(category)*  ){
-    element titles {
+declare function browse-entries:titles-list( $nodes as element()*,  $level as node()?, $URIs as element(URI)*, $Categories as element(category)*  ){
+    let $all := browse-books:data-all((), true())
+    
+    return element titles {
         attribute {'name'}{ 'entry-uri' },
         attribute {'count'}{ count($nodes)},
         attribute {'title'}{ $level/@title },
@@ -74,62 +111,17 @@ declare function browse-entries:titles-list( $nodes as element()*,  $level as no
             for $n in $nodes 
              let $title := $n/tei:head[1] 
              let $uri   :=  browse:makeDocument-Node-URI( $n )
+             let $xml-id := $n/head/xml:id 
              order by string($title)
              return 
                 element title {
                      if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
-                     attribute {'value'} { $uri },              
-                     attribute uri { $uri },
-                     $title 
+                     attribute {'value'} { $uri },                     
+                     $title,
+                     element { 'same-xml-id' }{
+                        $all//head/xml:id[. = $xml-id ]
+                     }
                 }
        }
     }    
 };
-
-
-(:
-declare function browse-entries:data( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){ 
-   if( $level-pos = 1 ) then (
-        (:   no context nodes expected   :) 
-        if( exists($URIs) ) then (           
-               for $U in  $URIs
-               let $node-ids := $U/node-id
-               return 
-                   if( doc-available($U/uri)) then (
-                      if( empty( $node-ids )) then (                
-                          doc($U/uri)//tei:body/tei:div[@type="entry"]
-                      )else (
-                          for $n in $node-ids return (
-                             util:node-by-id( doc($U/uri), $n)/descendant-or-self::tei:body/tei:div[@type="entry"]
-                          )
-                      )    
-                   )else <error type="bad-uri">{ $U }</error>           
-               
-        )else ( 
-           (:   all available data   :)
-           collection(concat($config:app-root, '/data'))//tei:body/tei:div[@type="entry"]
-        )
-    )else (
-       let $data := () | (
-        typeswitch ($context-nodes[1] )
-          case element(tei:TEI)  return $context-nodes//tei:body/tei:div[@type="entry"]
-          case element(tei:name) return $context-nodes/ancestor-or-self::tei:div[@type="entry"]    
-         default                 return <error type="unknown-context-data-element"/>
-       )
-       return if( exists($URIs) ) then (
-           for $d in $data 
-           let $this-node-uri := document-uri( root($d))           
-           let $this-param-URI := $URIs[ uri = $this-node-uri ]
-           return    
-            if( exists($this-param-URI) ) then(
-               let $node-ids := $this-param-URI/node-id
-               let $this-node-id := util:node-id($d)
-               return if( empty( $node-ids ) or $this-node-id  =  $node-ids ) then (
-                            $d
-                      )else ()        
-            )else ()                    
-       )else $data
-    )
-};
-:)
-

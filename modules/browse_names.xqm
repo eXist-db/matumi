@@ -12,13 +12,13 @@ declare boundary-space strip;
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 
-declare function browse-names:data-all( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){
-   if( $level-pos = 1 ) then 
+declare function browse-names:data-all( $context-nodes as node()*, $root as xs:boolean){
+   if( $root ) then 
         collection(concat($config:app-root, '/data'))//tei:name[@type]       
    else $context-nodes//tei:name[@type] 
 };   
 
-declare function browse-names:data-filtered( $data as node()*, $URIs as node()* ){       
+declare function browse-names:data-filtered( $data as node()*, $URIs as node()*, $Categories as element(category)* ){       
     let $name-types := request:get-parameter("name-type", () )
     return  if(exists( $name-types )) then (
        $data//tei:name[@type = $name-types]
@@ -76,11 +76,13 @@ declare function browse-names:categories-list( $n as element()* ){
                    }           
             } 
 };
-(:
-declare variable $browse:delimiter-uri-node := '___';
-declare variable $browse:delimiter-uri-nameNode := '---';
-:)
-declare function browse-names:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*, $Categories as element(category)*  ){
+
+declare function browse-names:titles-list( 
+    $nodes as element()*,  
+    $level as node()?, 
+    $URIs as node()*, 
+    $Categories as element(category)*  
+ ){
      let $categories := browse-names:categories-list( $nodes)
      return element titles {
         attribute {'name'}{ 'category' }, (: combo name, ie the parameter name :)
@@ -127,82 +129,3 @@ declare function browse-names:titles-list( $nodes as element()*,  $level as node
 
     }    
 };
-
-
-(:
-
-declare function browse-names:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*  ){
-    let $types := distinct-values($nodes/@type)
-    let $name-types := request:get-parameter("name-type", () )    
-    
-    return element titles {
-        attribute {'name'}{ 'name-type' }, (: combo name, ie the parameter name :)
-        attribute {'count'}{ count($types)},
-        attribute {'title'}{ $level/@title },            
-   
-        for $t in $types 
-        let $n := $nodes[@type = $t ],
-            $values := distinct-values($n/@key),
-            $count := count( $n ),
-            $total := count($values)
-        order by $t
-        return                    
-            element title {               
-                if( $t = $name-types  ) then attribute {'selected'}{'true'} else (),
-                attribute {'value'}{$t},
-                attribute {'count'}{$count},
-                attribute {'group'}{$t},
-                attribute {'group-title'}{$t},
-                if( $count > 1 ) then (
-                   attribute {'title'}{ concat(  $total, ' unique keys and ', $count, ' instaces'   )},
-                   concat( $t, ' (', $total, '/', $count ,')' )
-                )else $t
-            } 
-
-    }    
-};
-
-
-declare function browse-names:data( $context-nodes as node()*, $URIs as node()*, $level-pos as xs:int ){ 
-   let $name-types := request:get-parameter("name-type", () )
-   return if( $level-pos = 1 ) then (
-           if(exists( $name-types )) then 
-                 collection(concat($config:app-root, '/data'))//tei:name[@type = $name-types]
-           else  collection(concat($config:app-root, '/data'))//tei:name[@type]
-        
-    )else (
-          if(exists( $name-types )) then 
-               $context-nodes//tei:name[@type = $name-types]
-          else $context-nodes//tei:name[@type] 
-    )
-};
-
-
-declare function browse-names:extract-categories( $n as element()* ){ 
-   let $categories := $n//tei:name[@type]
-   let $types :=  distinct-values($categories/@type) 
-   
-   return 
-        for $t in $types 
-        let $values := $categories[@type = $t ], 
-            $keys := distinct-values($values/@key)
-                        
-        order by $t
-        return                    
-            element category {               
-               attribute {'name'}{$t},
-               attribute {'count'}{ count( $keys ) },
-               attribute {'total'}{ count( $values ) },
-               for $k in $keys 
-               let $instances := $values[@key = $k]
-               let $first := $instances[1]                
-               order by string( $k )
-               return element {'name'}{ 
-                    attribute {'key'}{ $k },
-                    attribute {'count'}{ count($instances) },
-                    attribute {'name-node-id'}{ util:node-id($first)},
-                    fn:normalize-space(string( $first ))                     
-               } 
-            } 
-};
-:)
