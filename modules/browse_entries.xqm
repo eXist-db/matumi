@@ -83,13 +83,22 @@ declare function browse-entries:filtered( $data as node()*, $URIs as element(URI
                                else $Categories[  name = $c/@name and key = $t/@key ]
 :)
 
+declare function browse-entries:alternative-titles( $entry as element()? ) as xs:string* { 
+   let $xml-id := string($entry/head//@xml:id)
+   let $main-title := string( $entry/tei:head[not(@type='alt')][1] )
+   let $same-xmlID := browse:heads-with-same-xmlID( $xml-id )
+   for $i in fn:distinct-values( ($same-xmlID[@xml-id =$xml-id ][ not(. = $main-title )], $entry/tei:head[ .//@type='alt'])  ) 
+   order by $i
+   return $i 
+};
 declare function browse-entries:title-extract( $entry as element()? ){ 
    element title {
      attribute {'doc'}{ document-uri( root($entry)) },
      attribute {'node'}{ util:node-id($entry)},
-     $entry/tei:head[1]
+     $entry/tei:head[not(@type='alt')][1]
    }     
 };
+
 
 declare function browse-entries:direct-link( $entry as element()? ){ 
    let $title := browse-entries:title-extract( $entry )
@@ -101,26 +110,23 @@ declare function browse-entries:direct-link( $entry as element()? ){
 };
 
 declare function browse-entries:titles-list( $nodes as element()*,  $level as node()?, $URIs as element(URI)*, $Categories as element(category)*  ){
-    let $all := browse-books:data-all((), true())
     
-    return element titles {
+    element titles {
         attribute {'name'}{ 'entry-uri' },
         attribute {'count'}{ count($nodes)},
         attribute {'title'}{ $level/@title },
         element {'group'}{
             for $n in $nodes 
-             let $title := $n/tei:head[1] 
-             let $uri   :=  browse:makeDocument-Node-URI( $n )
-             let $xml-id := $n/head/xml:id 
+             let $title := $n/tei:head[not(@type='alt')][1] 
              order by string($title)
              return 
-                element title {
+                element {'title'} {
                      if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
-                     attribute {'value'} { $uri },                     
+                     attribute {'value'} {  browse:makeDocument-Node-URI( $n ) },  
+                     attribute{'xml-id'}{ string($n/head//@xml:id[1]) },
+                     attribute{'node-id'}{ util:node-id($n) },                     
                      $title,
-                     element { 'same-xml-id' }{
-                        $all//head/xml:id[. = $xml-id ]
-                     }
+                     $n/tei:head[ @type='alt']
                 }
        }
     }    

@@ -26,6 +26,10 @@ declare function browse-names:data-filtered( $data as node()*, $URIs as node()*,
         $data    
 };
 
+declare function  browse-names:categories-number($n as element()* ){   
+   count( $n/descendant-or-self::tei:name[@type])
+};
+
 declare function browse-names:categories-list( $n as element()* ){ 
    let $categories := $n/descendant-or-self::tei:name[@type]
    let $types :=  distinct-values($categories/@type) 

@@ -16,6 +16,9 @@ import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/bro
 declare variable $browse:ajax-load := false();
 declare variable $browse:use-combo-plugin := true(); (: chzn-select :)
 declare variable $browse:drop-combo-plugin-limit := 125; (: switch to a clasic dropdown for better performance. To be fixed :)
+declare variable $browse:categories-table-ajax-limit := 100;
+
+
 declare variable $browse:use-cached-data := request:get-parameter("use-cached-data", 'yes' );
 
 declare variable $browse:controller-url := request:get-parameter("controller-url", 'missing-controller-url');
@@ -107,6 +110,22 @@ declare variable $browse:CATEGORIES :=  (: combine multiple castegory types and 
 ;   
 
 declare function local:now() as xs:dateTime {   dateTime(current-date(), util:system-time() ) };
+
+
+
+(: I have an error "Can not find the ICU4J library in the classpath com.ibm.icu.text.Normalizer " when using fn:normalize-unicode :)
+
+declare function browse:heads-with-same-xmlID( $xml-id as xs:string* ) as node()*  { 
+     for $i in browse-books:data-all((), true())//head[ .//@xml:id = $xml-id ] 
+     let $s := fn:normalize-space(string( $i))
+     order by string($i/@xml:id), $s
+     return element {'head'}{
+         attribute {'xml-id'}{ string( $i//@xml:id[1] ) },
+         attribute {'node-id'}{ util:node-id($i) },
+         attribute {'uri' }{ document-uri( root($i)) },
+         $s 
+     }     
+};
 
 declare function local:level-signature( $prexif as xs:string*, $level-name as xs:string, $pos as xs:int, $param-name as xs:string   ) {
     fn:string-join((
@@ -201,23 +220,49 @@ declare function browse:change-element-ns-deep ($element as element(), $newns as
 };
 
 declare function browse:section-parameters-combo( $section as element(titles)?, $level as node()? ) {
-       <select id="{$level}" style="width:100%" 
+     let $has-groups := $section/group/@name
+     let $same-xmlID := browse:heads-with-same-xmlID($section//@xml-id)
+     
+     return (
+        <select id="{$level}" style="width:100%" 
            class="s-select {if( $browse:use-combo-plugin and count($section/group/title) < $browse:drop-combo-plugin-limit ) then 'chzn-select' else ()}" 
            name="{$section/@name}" title="No filters"  multiple="multiple">{
-         let $has-groups := $section/group/@name
-         return if( exists( $has-groups )) then ( 
-              for $g in $section/group
-              return 
+          if( exists( $has-groups )) then ( 
+             for $g in $section/group return 
               <optgroup label="{ $g/@title}">{
-                  for $title in $g/title return 
-                     element {'option'}{ $title/@*,  string($title) }
+                for $title in $g/title 
+                  let $t :=  fn:normalize-space($title[not(@type='alt')][1])
+                  let $same-xml-ids := fn:distinct-values($same-xmlID[ @xml-id = $title/@xml-id ][. != $t ])
+                  return 
+                     element {'option'}{ 
+                        $title/@selected, 
+                        $title/@value, 
+                        $title/@title,
+                        $title/@xml-id,                        
+                        $t,
+                        if( exists($same-xml-ids)) then 
+                            concat('(', fn:string-join( $same-xml-ids, ', '), ')')
+                        else ()
+                     }
               }</optgroup>                 
           ) else ( 
-           for $title in $section/group/title return 
-             element {'option'}{ $title/@*,  string($title) }
+           for $title in $section/group/title 
+           let $t := fn:normalize-space($title[not(@type='alt')][1])
+           let $same-xml-ids := fn:distinct-values( ($same-xmlID[@xml-id = $title/@xml-id ][ not(. = $t )], $title/*[@type='alt'])  )
+           return 
+             element {'option'}{ 
+                $title/@selected, 
+                $title/@value, 
+                $title/@title, 
+                $title/@xml-id,                      
+                $t,
+                if( exists($same-xml-ids)) then 
+                    concat('(', fn:string-join( $same-xml-ids, ', '), ')')
+                else () 
+            }
           )
        }</select>
-       (: , $section  :)
+    )       
 };
 
 declare function browse:section-titles-combo(  $all-level-data as node(), $level as node()? ) {
@@ -229,9 +274,9 @@ declare function browse:section-titles-combo(  $all-level-data as node(), $level
           case element(tei:name) return browse-names:titles-list(    $all-level-data, $level, $browse:URIs, $browse:CATEGORIES )          
           default return <titles><title>no-titles</title></titles>			     
  
-    return if( exists($titles)) then 
+    return if( exists($titles)) then ( 
                browse:section-parameters-combo( $titles, $level )
-           else ()
+           ) else ()
 };
 
 
@@ -246,6 +291,11 @@ declare function browse:ajax-url( $level as node()?, $param as xs:string* ) as x
       ) else ()
     ),'&amp;')
 };
+
+declare function browse:ajax-loading-div( $level as node()?, $param as xs:string*, $id as xs:string ) as xs:string {
+   <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{browse:ajax-url( $level, $param)}">Loading  { string($level/@title) }... </div> 
+};
+
 
 declare function browse:section-as-searchable-combo-generic( $data as node(), $level as node()?, $ajax-loaded as xs:boolean ) {                     
     <div class="grid_5">
@@ -341,6 +391,38 @@ declare function browse:page-grid( $show-all as xs:boolean ){
   
 };
 
+declare function browse:entiry-categories-listed( $e as node() ){
+    for $c in browse-names:categories-list($e) 
+            let $total := sum($c/value/@count)
+            return
+            <div>
+               <span class="cat-name">{ 
+                    attribute {'title'}{ concat(  $c/@count, ' unique keys and ', $total, ' instaces'   )},
+                    string($c/@name),
+                    concat('(', $c/@count,'/', $total ,')')				            
+               }:</span>
+               {
+                 for $n at $pos in $c/value 
+                 let $title := concat( $n/@count,' instances in this document')
+                 return(
+                 <a title="{$title} {if($n/@key = 'missing') then ' - Missing Key!' else ()}" class="cat-value-deep-link" 
+                    href="{ concat('entry.html?doc=', document-uri( root($e)), 
+                                    '&amp;node=',util:node-id($e), 
+                                    '&amp;name-node-id=', $n/@name-node-id,
+                                    '&amp;key=', $n/@key
+                                  )}">{ 
+                    string($n),        				            
+                    if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()	           
+                 }</a>,
+                 if( $pos < number($c/@count)) then ', ' else ()
+                )
+               }
+            </div>  
+  
+};
+
+
+
 declare function browse:page-grid( $show-all as xs:boolean, $ajax-loaded as xs:boolean, $grid-entities as node()*  ){ 
  	if( $show-all or exists($browse:URIs) or fn:exists($browse:CATEGORIES) ) then ( 	
  	 if( $ajax-loaded ) then (
@@ -352,61 +434,54 @@ declare function browse:page-grid( $show-all as xs:boolean, $ajax-loaded as xs:b
 	             <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" 
 	               url="{$browse:controller-url}/browse-section?section=entity-grid&amp;cache=grid-{$browse:LEVELS[ count($browse:LEVELS) ]/@vector}">Loading</div>   
 	     ) else ( 	
-         	<table summary="Table summary">		
+         	<table class="browse-tbl" summary="Table summary" cellspacing="4" >		
         		<colgroup>
-        			<col class="colA" />
-        			<col class="colB" />
+        			<col class="colA" width="20%"/>
+        			<col class="colB" width="15%"/>
+        			<col class="colB"/>
         			<col class="colC" />
-        			<col class="colD" />
+        			<col class="colD" width="50%" />
         		</colgroup>
         		<thead>
         			<tr>
-        				<th width="20%" >Encyclopedia</th>
-        				<th width="25%" >Entry</th>
-        				<th width="10%" >Subject</th>
-        				<th width="45%" >Categories</th>
+        				<th>Encyclopedia</th>
+        				<th>Entry Title</th>
+        				
+        				<th>Subject</th>
+        				<th>Categories</th>
         			</tr>
         		</thead>
         		<tbody>{
-        			 for $e at $pos in $grid-entities
+        			 for $e at $tr-pos in $grid-entities
                       let $root := $e/ancestor-or-self::tei:TEI,
         			      $uri  := document-uri( root($e)),
         			      $document-title := browse-books:title-extract($root//teiHeader/fileDesc/titleStmt, $browse:URIs),
         			      $node-id := util:node-id($e),
-        			      $categories := browse-names:categories-list($e)
+        			      $categories-number := browse-names:categories-number($e),        			      
+        			      $alt-titles := browse-entries:alternative-titles($e)
         			 
-        			 return <tr class="{ if( $pos mod 2 = 0 ) then 'odd' else ()}">{
-        				element {'td'}{ string($document-title)},
-        				<td>{ browse-entries:direct-link($e)}</td>,
+        			 return <tr class="{ if( $tr-pos mod 2 = 0 ) then 'odd' else ()}">{
+        				<td >{ string($document-title)}</td>,
+        				<td  >{
+                   				browse-entries:direct-link($e), 
+        				        if( exists($alt-titles)) then concat(' (', fn:string-join( $alt-titles , ', '), ')') else() }</td>,
         				<td>{ string($e/@subtype )}</td>,
-        				<td>{  
-        				    for $c in $categories 
-        				    let $total := sum($c/value/@count)
-        				    return
-        				    <div>
-        				       <span class="cat-name">{ 
-        				            attribute {'title'}{ concat(  $c/@count, ' unique keys and ', $total, ' instaces'   )},
-        				            string($c/@name),
-        				            concat('(', $c/@count,'/', $total ,')')				            
-        				       }:</span>
-        				       {
-        				         for $n at $pos in $c/value 
-        				         let $title := concat( $n/@count,' instances in this document')
-        				         return(
-        				         <a title="{$title} {if($n/@key = 'missing') then ' - Missing Key!' else ()}" class="cat-value-deep-link" 
-        				            href="{ concat('entry.html?doc=', $uri, 
-        				                            '&amp;node=',$node-id, 
-        				                            '&amp;name-node-id=', $n/@name-node-id,
-        				                            '&amp;key=', $n/@key
-        				                          )}">{ 
-        				            string($n),
-        				            
-        				            if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()	           
-        				         }</a>,
-        				         if( $pos < number($c/@count)) then ', ' else ()
-        				        )
-        				       }
-        				    </div>
+        				<td >{  
+        				    
+        				  if(  $categories-number >  $browse:categories-table-ajax-limit ) then (
+                                 let $url := browse:ajax-url( (), (
+                                                      concat('node-id=',  util:node-id($e) ), 
+                                                      concat('uri=',   document-uri( root($e)) ),
+                                                      concat('cat2get=', $categories-number   ),                                                      
+                                                      'section=entry-cat-summary',
+                                                      concat( 'id=td', $tr-pos ) 
+                                              ))               	     
+              			        return <div id="td{$tr-pos}" class="ajax-loaded loading-red" url="{$url}">Loading  { $categories-number } categories </div>           				       
+        				  )else (
+        				       browse:entiry-categories-listed( $e )
+             				    
+        				    
+                            ) 
         				}</td>
         			}</tr>
         	    }</tbody>

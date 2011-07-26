@@ -1,6 +1,36 @@
-.L-block a:hover {
-	background:#fff;
-}
-.cat-name { font-weight:bold; color:red }
-a.cat-value-deep-link:hover,
+.L-block a:hover {	background:#fff;}
+
+.cat-name { font-weight:bold; color:red }
+
+a.cat-value-deep-link:hover,
 a.entry-derect-link:hover{ color:blue; background-color:#fff; text-decoration:underline; }
+
+tr.odd td {background-color:#ebebeb}
+
+table td, table th { padding: 2px; /* cellpadding' equivalent */ }
+
+table.browse-tbl {
+	border-width: 0px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse ; /* separate */
+/*	background-color: rgb(255, 245, 238);  */
+}
+table.browse-tbl th {
+	border-width: 0px;
+	padding: 2px;
+	border-style: solid;
+	border-color: white;
+	/*background-color: white; */
+	-moz-border-radius: 2px ;
+}
+table.browse-tbl td {
+	border-width: 2px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #e8e8e8;
+	/* background-color: white; */
+	-moz-border-radius: 2px ;
+}
+

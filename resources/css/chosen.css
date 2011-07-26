@@ -328,11 +328,15 @@ div.chzn-container-active ul.chzn-choices input {
 
 
 .chzn-container.not-ready .chzn-drop{ display:none}
-.loading-grey { background: url('loader-gray.gif') no-repeat 99% 1px; }
+.loading-grey { 
+    background: url('loader-gray.gif') no-repeat 99% 1px; 
+    background-color:#eee;
+}
 .loading-red { 
    background-image: url('loader-red.gif');
    background-repeat:no-repeat;
    background-position:98% 4%; 
+   background-color:#eee;
 }
 .ajax-loaded-combo{
     font-size:12px;

@@ -13,6 +13,19 @@ function browse_Set_L3( event, $L1, $L2, $L3){
 */    
 }
 
+function fetchAJAXfragment( pos, that ){
+        var $this = $(that).removeClass('');
+        //var URL = $this.attr('url') +'?' + $("#browseForm").serialize();
+        var section = $this.attr('section')?  { section: $this.attr('section') }: {dummy:'yes'};
+        $this.load( $this.attr('url'), section, function(response, status, xhr) {
+            var newDom = $this.find(' > *').remove();
+            $this.replaceWith( newDom );
+            if( newDom.hasClass('chzn-select')) { newDom.chosen() };
+            //$this.removeClass('loading-grey ajax-loaded-combo');
+             $('.ajax-loaded', newDom ).each( fetchAJAXfragment);            
+        });
+};
+
 $(document).ready(function() {
     $('#L1').live('change', function(event){
          var $L1 = $(event.target),
@@ -33,8 +46,11 @@ $(document).ready(function() {
     $('#L2').live('change', browse_Set_L3 );
     $(".chzn-select").chosen();
     
+     $('.ajax-loaded').each( fetchAJAXfragment);
     
-    $('.ajax-loaded').each(function(pos, item ){
+    /*
+    $('.ajax-loaded').each( function(pos, item ){
+        
         var $this = $(this).removeClass('');
         //var URL = $this.attr('url') +'?' + $("#browseForm").serialize();
         var section = $this.attr('section')?  { section: $this.attr('section') }: {dummy:'yes'};
@@ -42,9 +58,11 @@ $(document).ready(function() {
             var newDom = $this.find(' > *').remove();
             $this.replaceWith( newDom );
             if( newDom.hasClass('chzn-select')) { newDom.chosen() };
-            //$this.removeClass('loading-grey ajax-loaded-combo'); 
+            //$this.removeClass('loading-grey ajax-loaded-combo');
+                        
         });
     })
+    */
     
     $("a.combo-reset").live('click', function(evnt){
         $('#'+ $(this).attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
