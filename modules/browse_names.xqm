@@ -133,3 +133,33 @@ declare function browse-names:titles-list(
 
     }    
 };
+
+declare function browse-names:entiry-categories-listed( $e as node() ){
+    for $c in browse-names:categories-list($e) 
+    let $total := sum($c/value/@count)
+    return
+        <div>
+           <span class="cat-name">{ 
+                attribute {'title'}{ concat(  $c/@count, ' unique keys and ', $total, ' instaces'   )},
+                string($c/@name),
+                concat('(', $c/@count,'/', $total ,')')				            
+           }:</span>
+           {
+             for $n at $pos in $c/value 
+             let $title := concat( $n/@count,' instances in this document')
+             return(
+             <a title="{$title} {if($n/@key = 'missing') then ' - Missing Key!' else ()}" class="cat-value-deep-link" 
+                href="{ concat('entry.html?doc=', document-uri( root($e)), 
+                                '&amp;node=',util:node-id($e), 
+                                '&amp;name-node-id=', $n/@name-node-id,
+                                '&amp;key=', $n/@key
+                              )}">{ 
+                string($n),        				            
+                if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()	           
+             }</a>,
+             if( $pos < number($c/@count)) then ', ' else ()
+            )
+           }
+        </div>    
+};
+

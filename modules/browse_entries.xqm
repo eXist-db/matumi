@@ -131,3 +131,4 @@ declare function browse-entries:titles-list( $nodes as element()*,  $level as no
        }
     }    
 };
+
