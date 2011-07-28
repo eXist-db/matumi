@@ -2,6 +2,7 @@ xquery version "1.0";
 
 module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books";
 
+
 declare namespace anno="http://exist-db.org/xquery/annotate";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 

@@ -74,7 +74,6 @@ declare function browse-entries:filtered( $data as node()*, $URIs as element(URI
 
 
 
-
 (:
      let $c-selected := $Categories[ name = $c/@name and key = '*' ]
             for $t in $c/*  

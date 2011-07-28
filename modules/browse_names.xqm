@@ -30,10 +30,9 @@ declare function  browse-names:categories-number($n as element()* ){
    count( $n/descendant-or-self::tei:name[@type])
 };
 
-declare function browse-names:categories-list( $n as element()* ){ 
+declare function browse-names:categories-list( $n as element()*, $add-node-id as xs:boolean ){ 
    let $categories := $n/descendant-or-self::tei:name[@type]
    let $types :=  distinct-values($categories/@type) 
- 
    return 
         for $t in $types 
         let $this-cat-values := $categories[@type = $t ], 
@@ -57,7 +56,7 @@ declare function browse-names:categories-list( $n as element()* ){
                         attribute {'key'}{ $key-value },
                         attribute {'value-insted-of-key'}{ 'yes' },
                         attribute {'count'}{ $instances-count },
-                        attribute {'name-node-id'}{ util:node-id($instances[1])},                        
+                        if( $add-node-id ) then attribute {'name-node-id'}{ util:node-id($instances[1])} else(),                        
                         fn:string-join((
                                $key-value,                               
                                if( $instances-count > 1 ) then (' (', $instances-count , ')') else (),
@@ -79,6 +78,8 @@ declare function browse-names:categories-list( $n as element()* ){
                             ),'')                                        
                    }           
             } 
+  
+            
 };
 
 declare function browse-names:titles-list( 
@@ -87,7 +88,7 @@ declare function browse-names:titles-list(
     $URIs as node()*, 
     $Categories as element(category)*  
  ){
-     let $categories := browse-names:categories-list( $nodes)
+     let $categories := browse-names:categories-list( $nodes, false() ) (: false to prevent long initial caching :)
      return element titles {
         attribute {'name'}{ 'category' }, (: combo name, ie the parameter name :)
         attribute {'count'}{ count( $categories )},
@@ -129,37 +130,59 @@ declare function browse-names:titles-list(
                     )else $t
 :)                  string($t)  
                 }
-        }           
+        }          
 
     }    
 };
 
-declare function browse-names:entiry-categories-listed( $e as node() ){
-    for $c in browse-names:categories-list($e) 
-    let $total := sum($c/value/@count)
-    return
-        <div>
-           <span class="cat-name">{ 
-                attribute {'title'}{ concat(  $c/@count, ' unique keys and ', $total, ' instaces'   )},
-                string($c/@name),
-                concat('(', $c/@count,'/', $total ,')')				            
-           }:</span>
-           {
-             for $n at $pos in $c/value 
-             let $title := concat( $n/@count,' instances in this document')
-             return(
-             <a title="{$title} {if($n/@key = 'missing') then ' - Missing Key!' else ()}" class="cat-value-deep-link" 
-                href="{ concat('entry.html?doc=', document-uri( root($e)), 
-                                '&amp;node=',util:node-id($e), 
-                                '&amp;name-node-id=', $n/@name-node-id,
-                                '&amp;key=', $n/@key
-                              )}">{ 
-                string($n),        				            
-                if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()	           
-             }</a>,
-             if( $pos < number($c/@count)) then ', ' else ()
+
+
+(: to do: move saving of the categories to browse-names:categories-list  :)
+
+declare function browse-names:entiry-categories-listed( $e as node(), $save-categories as xs:boolean ){
+    let $categories :=  if( exists( $e/categories-summary ) and not($browse:refresh-categories) ) then (
+         $e/categories-summary/*
+    ) else ( 
+        let $c := browse-names:categories-list($e, false())
+        let $save := if( $browse:save-categories ) then 
+            util:catch("*", (
+                  update insert element {'categories-summary'}{ $c } into $e 
+               ), (
+                 (: 
+                   util:log("WARN", ("Failed to save categories summary for ", concat( document-uri( root($e)), util:node-id($e)) ))
+                 :)
+               ) 
             )
-           }
-        </div>    
+           else ()
+        return $c
+    ) 
+    
+    return
+        for $c in $categories
+        let $total := sum($c/value/@count)
+        return
+            <div>
+               <span class="cat-name">{ 
+                    attribute {'title'}{ concat(  $c/@count, ' unique keys and ', $total, ' instaces'   )},
+                    string($c/@name),
+                    concat('(', $c/@count,'/', $total ,')')				            
+               }:</span>
+               {
+                 for $n at $pos in $c/value 
+                 let $title := concat( $n/@count,' instances in this document')
+                 return(
+                 <a title="{$title} {if($n/@key = 'missing') then ' - Missing Key!' else ()}" class="cat-value-deep-link" 
+                    href="{ concat('entry.html?doc=', document-uri( root($e)), 
+                                    '&amp;node=',util:node-id($e), 
+                                    '&amp;name-node-id=', $n/@name-node-id,
+                                    '&amp;key=', $n/@key
+                                  )}">{ 
+                    string($n),        				            
+                    if( number($n/@count) > 1 ) then concat('(', $n/@count,')') else ()	           
+                 }</a>,
+                 if( $pos < number($c/@count)) then ', ' else ()
+                )
+               }
+            </div>    
 };
 
