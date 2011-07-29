@@ -30,40 +30,48 @@ declare function  browse-names:categories-number($n as element()* ){
    count( $n/descendant-or-self::tei:name[@type])
 };
 
-declare function browse-names:categories-list( $n as element()*, $add-node-id as xs:boolean ){ 
+declare function browse-names:categories-list( $n as element()*, $add-node-id as xs:boolean ) {
+    for $name in $n/descendant-or-self::tei:name[@type][@key]
+    group $name as $byType by $name/@type as $type
+    return
+        let $values :=
+            for $name in $byType
+            group $name as $byKey by $name/@key as $key
+            return
+                   let $instances-count := count($byKey)
+                   let $keyName := translate(replace($key, "^.*/([^/]+)$", "$1"), "_", " ")
+                   return element {'value'}{ 
+                        attribute {'key'}{ $key },
+                        attribute {'count'}{ $instances-count },
+                        attribute {'name-node-id'}{ util:node-id($byKey[1])},
+                        fn:string-join((
+                               $keyName
+                               (: , if( $instances-count > 1 ) then (' (', $instances-count , ')') else ()  :)
+                            ),'')                                        
+                   }
+        return
+            element category {               
+                   attribute {'name'}{$type},
+                   attribute {'count'}{ count($values) },
+                   $values
+            }
+};
+
+(:
+declare function browse-names:categories-list( $n as element()*, $add-node-id as xs:boolean ) { 
    let $categories := $n/descendant-or-self::tei:name[@type]
    let $types :=  distinct-values($categories/@type)
+   let $allKeys := distinct-values($categories/@key)
    return 
-        for $t in $types 
+        for $t in $types
         let $this-cat-values := $categories[@type = $t ], 
             $keys := distinct-values($this-cat-values/@key)
-            (: $no-keys := distinct-values($this-cat-values[empty(@key)]) :)
-                        
         order by $t
         return                    
             element category {               
                attribute {'name'}{$t},
                attribute {'count'}{ count( $keys ) },
-               (: if( exists( $no-keys )) then attribute {'no-keys'}{ count($no-keys) } else (), :)
                attribute {'total'}{ count( $this-cat-values ) },
-               (:
-               for $nk in $no-keys 
-                   let $instances := $n/descendant-or-self::tei:name[. = $nk][@type = $t],
-                       $instances-count := count($instances),
-                       $key-value := fn:normalize-space(string( $instances[1] ))                      
-                   order by string( $nk )
-                   return element {'value'}{ 
-                        attribute {'key'}{ $key-value },
-                        attribute {'value-insted-of-key'}{ 'yes' },
-                        attribute {'count'}{ $instances-count },
-                        if( $add-node-id ) then attribute {'name-node-id'}{ util:node-id($instances[1])} else(),                        
-                        fn:string-join((
-                               $key-value,                               
-                               if( $instances-count > 1 ) then (' (', $instances-count , ')') else (),
-                               '*'
-                            ),'')
-                   },
-               :)
                for $k in $keys 
                    let $instances := $this-cat-values[@key = $k],
                        $instances-count := count($instances)                    
@@ -74,13 +82,11 @@ declare function browse-names:categories-list( $n as element()*, $add-node-id as
                         attribute {'name-node-id'}{ util:node-id($instances[1])},
                         fn:string-join((
                                fn:normalize-space(string( $instances[1] ))
-                               (: , if( $instances-count > 1 ) then (' (', $instances-count , ')') else ()  :)
                             ),'')                                        
                    }           
             } 
-  
-            
 };
+:)
 
 declare function browse-names:titles-list( 
     $nodes as element()*,  
