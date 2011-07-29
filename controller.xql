@@ -19,6 +19,8 @@ if ($exist:path eq "/") then
 else if ($exist:resource eq 'browse-section') then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="modules/browse-section.xql">
+            <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>
+            <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
             <add-parameter name="controller-url" value="{$local:controller-url}"/>        
         </forward>
      </dispatch>
