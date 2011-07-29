@@ -271,7 +271,7 @@ declare function browse:section-parameters-combo( $section as element(titles)?, 
           ) else ( 
            for $title in $section/group/title 
            let $t := fn:normalize-space($title[not(@type='alt')][1])
-           let $same-xml-ids := fn:distinct-values( ($same-xmlID[@xml-id = $title/@xml-id ][ not(. = $t )], $title/*[@type='alt'])  )
+           let $same-xml-ids := fn:distinct-values( ($same-xmlID[@xml-id = $title/@xml-id][ . != $t ], $title/*[@type='alt'])  )
            return 
              element {'option'}{ 
                 $title/@selected, 

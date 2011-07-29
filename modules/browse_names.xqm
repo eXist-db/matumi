@@ -32,23 +32,23 @@ declare function  browse-names:categories-number($n as element()* ){
 
 declare function browse-names:categories-list( $n as element()*, $add-node-id as xs:boolean ){ 
    let $categories := $n/descendant-or-self::tei:name[@type]
-   let $types :=  distinct-values($categories/@type) 
+   let $types :=  distinct-values($categories/@type)
    return 
         for $t in $types 
         let $this-cat-values := $categories[@type = $t ], 
-            $keys := distinct-values($this-cat-values/@key),
-            $no-keys := distinct-values($this-cat-values[empty(@key)])
+            $keys := distinct-values($this-cat-values/@key)
+            (: $no-keys := distinct-values($this-cat-values[empty(@key)]) :)
                         
         order by $t
         return                    
             element category {               
                attribute {'name'}{$t},
                attribute {'count'}{ count( $keys ) },
-               if( exists( $no-keys )) then attribute {'no-keys'}{ count($no-keys) } else (),               
+               (: if( exists( $no-keys )) then attribute {'no-keys'}{ count($no-keys) } else (), :)
                attribute {'total'}{ count( $this-cat-values ) },
-               
+               (:
                for $nk in $no-keys 
-                   let $instances := $this-cat-values[. = $nk],                   
+                   let $instances := $n/descendant-or-self::tei:name[. = $nk][@type = $t],
                        $instances-count := count($instances),
                        $key-value := fn:normalize-space(string( $instances[1] ))                      
                    order by string( $nk )
@@ -61,11 +61,11 @@ declare function browse-names:categories-list( $n as element()*, $add-node-id as
                                $key-value,                               
                                if( $instances-count > 1 ) then (' (', $instances-count , ')') else (),
                                '*'
-                            ),'')                                        
+                            ),'')
                    },
-                   
+               :)
                for $k in $keys 
-                   let $instances := $this-cat-values[@key = $k],                   
+                   let $instances := $this-cat-values[@key = $k],
                        $instances-count := count($instances)                    
                    order by string( $k )
                    return element {'value'}{ 
