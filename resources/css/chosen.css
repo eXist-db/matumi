@@ -49,14 +49,6 @@ div.chzn-container-single div.chzn-drop {
   border-radius: 0 0 4px 4px;
 }
 
-/* update TW */
-/* div.chzn-container-single div.chzn-drop {
-   left:0
-   display:block;
-   height:220px;
-} */
-
-
 
 /* SINGLE */
 div.chzn-container a.chzn-single {
@@ -195,14 +187,6 @@ div.chzn-container ul.chzn-choices li.search-choice {
   position: relative;
   margin: 3px 3px 3px 5px;
 }
-
-div.chzn-container ul.chzn-choices span.group-label{
-    font-style:bold;
-}
-div.chzn-container ul.chzn-choices span.choice-text{
-    font-style:normal;
-}
-
 div.chzn-container ul.chzn-choices li.search-choice span {
   cursor: default;
 }
@@ -228,16 +212,16 @@ div.chzn-container ul.chzn-choices li.search-choice.search-choice-focus a.search
 
 
 /* Results */
-div.chzn-container ul.chzn-results {
+div.chzn-container .chzn-results {
   margin: 0 4px 4px 0;
-  max-height: 300px;
+  max-height: 500px;
   padding: 0 0 0 4px;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 20;
 }
-div.chzn-container-multi ul.chzn-results {
+div.chzn-container-multi .chzn-results {
   margin: -1px 0 0;
   padding: 0;
 }
@@ -246,40 +230,42 @@ div.chzn-container-multi ul.chzn-results li {
   border-right: 0px !important;
 }
 div.chzn-container ul.chzn-results li {
-  line-height: 100%;
-  padding: 6px 7px 8px;
+  line-height: 80%;
+  padding: 7px 7px 8px;
   z-index: 22;
   margin: 0;
   list-style-type: none;
 }
-div.chzn-container ul.chzn-results li.active-result {
+div.chzn-container .chzn-results li.active-result {
   cursor: pointer;
 }
-div.chzn-container ul.chzn-results li em {
+div.chzn-container .chzn-results li em {
   font-style: bold;
-  background: #FEFFDC;
+  background: #fdffc6 !important;
 }
-div.chzn-container ul.chzn-results li.highlighted {
+div.chzn-container .chzn-results li.highlighted {
   background: #3875d7;
   color: #fff;
+  cursor: pointer;
 }
-div.chzn-container ul.chzn-results li.highlighted em {
-  background: transparent;
+div.chzn-container .chzn-results li.highlighted em {
+  background: transparent !important;
+  color: yellow;
 }
-div.chzn-container ul.chzn-results li.no-results {
+div.chzn-container .chzn-results li.no-results {
   background: #F4F4F4;
 }
-div.chzn-container ul.chzn-results li.group-result {
+div.chzn-container .chzn-results li.group-result {
   cursor: default;
-  color: black;
+  color: #999;
   font-weight: bold;
-  background-color:#ccc;
 }
-div.chzn-container ul.chzn-results li.group-option {
+div.chzn-container .chzn-results li.group-option,
+div.chzn-container .chzn-results li.flat-option {
   padding-left: 20px;
 }
 
-div.chzn-container-multi div.chzn-drop li.result-selected {
+div.chzn-container-multi .chzn-drop li.result-selected {
   display: none;
 }
 
@@ -327,6 +313,7 @@ div.chzn-container-active ul.chzn-choices input {
 }
 
 
+/*  TW */
 .chzn-container.not-ready .chzn-drop{ display:none}
 .loading-grey { 
     background: url('loader-gray.gif') no-repeat 99% 1px; 
@@ -346,3 +333,48 @@ div.chzn-container-active ul.chzn-choices input {
     height:20px;
     line-height:18px;
 }
+
+
+/*  TW */
+.group-cont{
+    border: 1px solid silver;
+    margin: 2px 1px;
+}
+.groupTitle{
+    background-color:#ccc; 
+    padding:2px 4px;
+    font-weight: bold;       
+}
+
+.group-cont ul {
+    overflow: auto;
+}
+ div.chzn-container .group-cont li, div.chzn-container li.flat-option {
+   float:left;
+   list-style: none;
+   min-width: 7em;
+   margin: .2em .4em .2em .2em ;
+   padding: 2px 6px !important;
+   background-color: #eee;
+   overflow: visible; 
+}
+div.chzn-container li.flat-option {
+   float:none;
+   max-width:none;
+   padding:4px 6px ;
+}
+div.chzn-container li.odd { background-color: transparent }
+
+div.chzn-container ul.group li, 
+div.chzn-container ul.flat li  { 
+display: none;
+}
+
+div.chzn-container ul.group li.active-result,
+div.chzn-container ul.flat li.active-result{
+display: block;
+}
+
+div.chzn-container li.active-result span { display: none  }
+div.chzn-container li.active-result.patial-match span { display: block  }
+div.chzn-container li.active-result.patial-match div { display: none  }

@@ -24,20 +24,27 @@ let $LEVELS :=      $browse:LEVELS
 let $URLs : =       $browse:URIs 
 let $CATEGORIES : = $browse:CATEGORIES 
 
-
 (:
     $LEVELS,
     $URLs,
     $CATEGORIES
+    
+    
+    util:declare-option("exist:serialize", "method=xml media-type=text/xml indent=yes") 
+    
+    declare option exist:serialize "media-type=text/json";
+    
 :)
 
 return (
      if(  request:get-parameter("section", 'none')='level-data-combo' and $level > 0) then (
           let $data := browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () )          
-          return browse:section-titles-combo( 
-             $data, 
-             $LEVELS[$level]
-          )
+          
+          return if( 'yes' = request:get-parameter("json", 'no')) then (
+                 browse:section-titles-combo-as-json(  $data, $LEVELS[$level] )
+            )else(
+                  browse:section-titles-combo(  $data, $LEVELS[$level] )
+            )
       
     )else if( $section = 'entity-grid') then (
           let $data := browse:get-cached-data( $browse:LEVELS[ .  = 'entries' ]/@vector, '-grid')

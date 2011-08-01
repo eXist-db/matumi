@@ -15,13 +15,13 @@ import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/bro
 declare variable $browse:combo-ajax-load := 'yes' = request:get-parameter("ajax-combo", 'yes' );
 declare variable $browse:grid-ajax-load := 'yes'  = request:get-parameter("ajax-grid", 'yes' );
 declare variable $browse:use-cached-data := 'yes' = request:get-parameter("use-cached-data", 'yes' );
-declare variable $browse:save-categories := 'yes' = request:get-parameter("save-categories", 'yes' );
+declare variable $browse:save-categories := 'yes' = request:get-parameter("save-categories", 'no' );
 declare variable $browse:refresh-categories := 'yes' = request:get-parameter("refresh-categories", 'no' );
 
 
 declare variable $browse:combo-plugin-in-use := true(); (: chzn-select :)
-declare variable $browse:combo-plugin-drop-limit := 125; (: switch to a clasic dropdown for better performance. To be fixed :)
-declare variable $browse:grid-categories-ajax-limit := 100;
+declare variable $browse:combo-plugin-drop-limit := 5000; (: switch to a clasic dropdown for better performance. To be fixed :)
+declare variable $browse:grid-categories-ajax-limit := 200;
 
 
 declare variable $browse:cache-cleared := if( request:get-parameter("cache-reset", 'no' ) = 'yes') then cache:clear( session:get-id() ) else();
@@ -41,7 +41,7 @@ declare variable $browse:delimiter-uri-nameNode := '---';
 declare variable $browse:levels := (
     <level value-names="uri" title="Books" ajax-if-more-then="-1" class="chzn-select">books</level>,             (: uri=/db/matumi/data/GSE-eng.xml :)
     <level value-names="entry-uri" title="Entries" ajax-if-more-then="50" class="chzn-select" >entries</level>, (:  uri=/db/matumi/data/GSE-eng.xml___3.2.2.2 :)
-    <level value-names="category" title="Names" ajax-if-more-then="50">names</level>
+    <level value-names="category" title="Names" ajax-if-more-then="50" class="chzn-select" >names</level>
     (: , <level value-names="subject" title="Subjects">subject</level> :)
 );
 
@@ -242,6 +242,60 @@ declare function browse:change-element-ns-deep ($element as element(), $newns as
   })
 };
 
+(:  work in progress :)
+declare function browse:section-titles-combo-as-json( $section as element(titles)?, $level as node()? ) {
+     let $has-groups := $section/group/@name
+     let $same-xmlID := browse:heads-with-same-xmlID($section//@xml-id)
+     
+    return  concat("{",
+        string-join((
+               
+ 
+
+        <select id="{$level}" style="width:100%" 
+           class="s-select {if( $browse:combo-plugin-in-use and count($section/group/title) < $browse:combo-plugin-drop-limit ) then 'chzn-select' else ()}" 
+           name="{$section/@name}" title="No filters"  multiple="multiple">{
+          if( exists( $has-groups )) then ( 
+             for $g in $section/group return 
+              <optgroup label="{ $g/@title}">{
+                for $title in $g/title 
+                  let $t :=  fn:normalize-space($title[not(@type='alt')][1])
+                  let $same-xml-ids := fn:distinct-values($same-xmlID[ @xml-id = $title/@xml-id ][. != $t ])
+                  return 
+                     element {'option'}{ 
+                        $title/@selected, 
+                        $title/@value, 
+                        $title/@title,
+                        $title/@xml-id,                        
+                        $t,
+                        if( exists($same-xml-ids)) then 
+                            concat('(', fn:string-join( $same-xml-ids, ', '), ')')
+                        else ()
+                     }
+              }</optgroup>                 
+          ) else ( 
+           for $title in $section/group/title 
+           let $t := fn:normalize-space($title[not(@type='alt')][1])
+           let $same-xml-ids := fn:distinct-values( ($same-xmlID[@xml-id = $title/@xml-id][ . != $t ], $title/*[@type='alt'])  )
+           return 
+             element {'option'}{ 
+                $title/@selected, 
+                $title/@value, 
+                $title/@title, 
+                $title/@xml-id,                      
+                $t,
+                if( exists($same-xml-ids)) then 
+                    concat('(', fn:string-join( $same-xml-ids, ', '), ')')
+                else () 
+            }
+          )
+       }</select>
+       
+       
+        ),', ' ),       
+    "}")   
+};
+
 declare function browse:section-parameters-combo( $section as element(titles)?, $level as node()? ) {
      let $has-groups := $section/group/@name
      let $same-xmlID := browse:heads-with-same-xmlID($section//@xml-id)
@@ -302,7 +356,6 @@ declare function browse:section-titles-combo(  $all-level-data as node(), $level
            ) else ()
 };
 
-
 declare function browse:ajax-url( $level as node()?, $param as xs:string* ) as xs:string {
     fn:string-join((
       concat($browse:controller-url,'/browse-section?'),
@@ -314,8 +367,8 @@ declare function browse:ajax-url( $level as node()?, $param as xs:string* ) as x
        for $L in $browse:LEVELS return 
            for $p in request:get-parameter( $L/@value-names, () ) 
            order by $p          
-           return concat($L/@value-names, '=', $p)
-      
+           return concat($L/@value-names, '=', $p),
+       concat('session=',session:get-id() )
     ),'&amp;')
 };
 
