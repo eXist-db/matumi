@@ -7,7 +7,10 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
+import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.exist.xquery.modules.cache.CacheModule";
+
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
 import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/browse-names" at "browse_names.xqm";
@@ -22,17 +25,10 @@ declare variable $browse:refresh-categories := 'yes' = request:get-parameter("re
 declare variable $browse:combo-plugin-in-use := true(); (: chzn-select :)
 declare variable $browse:combo-plugin-drop-limit := 5000; (: switch to a clasic dropdown for better performance. To be fixed :)
 declare variable $browse:grid-categories-ajax-limit := 200;
-
+declare variable $browse:minutes-to-cache := 30;
 
 declare variable $browse:cache-cleared := if( request:get-parameter("cache-reset", 'no' ) = 'yes') then cache:clear( session:get-id() ) else();
 declare variable $browse:cache := cache:cache( session:get-id() );
-(:  
-   save the session id in a file with expiration time and update the timestap every time when this file is opened.
-   then check if some of the records are expired and delete the cache object 
-:)
-
-
-
 
 declare variable $browse:controller-url := request:get-parameter("controller-url", 'missing-controller-url');
 declare variable $browse:delimiter-uri-node := '___';
@@ -118,6 +114,37 @@ declare variable $browse:CATEGORIES :=  (: combine multiple castegory types and 
               )
           }
 ;   
+
+
+declare function browse:check-cached-data(){    
+   let $expite-at := dateTime(current-date(), util:system-time() ) + xs:dayTimeDuration( concat('PT', $browse:minutes-to-cache, 'M')),
+       $coll := concat($config:app-root, "/cache"),
+       $name := 'session-ids.xml',
+       $uri := concat($coll, '/', $name), 
+       $ping := if(  not(doc-available($uri )) ) then (
+                    util:catch("*", 
+                       xdb:store( $coll,  $name, <sessions/> ),               
+                       util:log("WARN", ("Failed to create", $uri))  
+                    )
+               ) else (),
+       $sessions := doc($uri )/*,
+       $this-session := $sessions/session[@id = session:get-id()],
+       $update-expiration := 
+       util:catch("*", (   
+               if( exists( $this-session ) )then
+                    update value $this-session/@expire with $expite-at 
+               else update insert  <session id="{session:get-id()}" expire="{$expite-at}"/>  into $sessions
+             
+               ,for $i in $sessions/session[ xs:dateTime(@expire) <  dateTime(current-date(), util:system-time() )]
+               return (
+                   cache:clear( $i/@id ),  (: cler the cache for the expired sessions :)
+                   update delete $i
+               )
+            ),  
+            util:log("WARN", ("Failed to update", $uri))   
+       )    
+   return ()
+};
 
 declare function local:now() as xs:dateTime {   dateTime(current-date(), util:system-time() ) };
 
@@ -242,14 +269,13 @@ declare function browse:change-element-ns-deep ($element as element(), $newns as
   })
 };
 
-(:  work in progress :)
+(:  work in progress 
 declare function browse:section-titles-combo-as-json( $section as element(titles)?, $level as node()? ) {
      let $has-groups := $section/group/@name
      let $same-xmlID := browse:heads-with-same-xmlID($section//@xml-id)
      
     return  concat("{",
-        string-join((
-               
+        string-join((              
  
 
         <select id="{$level}" style="width:100%" 
@@ -289,12 +315,12 @@ declare function browse:section-titles-combo-as-json( $section as element(titles
                 else () 
             }
           )
-       }</select>
-       
+       }</select>       
        
         ),', ' ),       
     "}")   
 };
+:)
 
 declare function browse:section-parameters-combo( $section as element(titles)?, $level as node()? ) {
      let $has-groups := $section/group/@name
@@ -467,11 +493,9 @@ declare function browse:entries-for-grid(){
 };
 
 declare function browse:page-grid( $show-all as xs:boolean ){
-   browse:page-grid( $show-all, $browse:grid-ajax-load, browse:entries-for-grid()  )   
+   let $check := browse:check-cached-data()
+   return  browse:page-grid( $show-all, $browse:grid-ajax-load, browse:entries-for-grid()  )   
 };
-
-
-
 
 declare function browse:page-grid( $show-all as xs:boolean, $ajax-loaded as xs:boolean, $grid-entities as node()*  ){ 
  	if( $show-all or exists($browse:URIs) or fn:exists($browse:CATEGORIES) ) then ( 	

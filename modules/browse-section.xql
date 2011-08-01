@@ -11,39 +11,24 @@ declare option exist:serialize "method=xml media-type=text/xml omit-xml-declarat
 
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/browse-names" at "browse_names.xqm";
-
 import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.exist.xquery.modules.cache.CacheModule";
 
 let $section := request:get-parameter("section", 'none'),
-    $data-id   := request:get-parameter("cache", 'none')
-   
-(: let $data  := cache:remove( $browse:cache, $data-id  ) :)
-let $level := number(request:get-parameter("level", 0 ))
+    $data-id   := request:get-parameter("cache", 'none'),   
+    $level := number(request:get-parameter("level", 0 ))
 
-let $LEVELS :=      $browse:LEVELS
-let $URLs : =       $browse:URIs 
-let $CATEGORIES : = $browse:CATEGORIES 
-
-(:
-    $LEVELS,
-    $URLs,
-    $CATEGORIES
-    
-    
-    util:declare-option("exist:serialize", "method=xml media-type=text/xml indent=yes") 
-    
-    declare option exist:serialize "media-type=text/json";
-    
-:)
-
-return (
+return 
+  
      if(  request:get-parameter("section", 'none')='level-data-combo' and $level > 0) then (
-          let $data := browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () )          
-          
+          let $data := browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () )
           return if( 'yes' = request:get-parameter("json", 'no')) then (
+            (:
+                 util:declare-option("exist:serialize", "media-type=text/json")  
                  browse:section-titles-combo-as-json(  $data, $LEVELS[$level] )
+            :)
+                 <not-implemented/>
             )else(
-                  browse:section-titles-combo(  $data, $LEVELS[$level] )
+                 browse:section-titles-combo(  $data, $browse:LEVELS[$level] )
             )
       
     )else if( $section = 'entity-grid') then (
@@ -64,4 +49,3 @@ return (
        
     )else <div class="ajax-missing-section">Unknown section "{ $section }"</div>
   
-)
