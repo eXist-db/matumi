@@ -322,15 +322,18 @@ declare function browse:section-titles-combo-as-json( $section as element(titles
 };
 :)
 
-declare function browse:section-parameters-combo( $section as element(titles)?, $level as node()? ) {
+declare function browse:section-parameters-combo( $section as element(titles)?, $level as node()?, $use-plugin as xs:boolean, $multiple as xs:boolean ) {
      let $has-groups := $section/group/@name
      let $same-xmlID := browse:heads-with-same-xmlID($section//@xml-id)
      
      return (
         <select id="{$level}" style="width:100%" 
-           class="s-select {if( $browse:combo-plugin-in-use and count($section/group/title) < $browse:combo-plugin-drop-limit ) then 'chzn-select' else ()}" 
-           name="{$section/@name}" title="No filters"  multiple="multiple">{
-          if( exists( $has-groups )) then ( 
+           name="{$section/@name}" title="No filters" >{
+           if( $multiple ) then attribute {'multiple'}{'true'} else(),
+           if( $use-plugin and $browse:combo-plugin-in-use and count($section/group/title) < $browse:combo-plugin-drop-limit ) then
+               attribute {'class'}{ 'chzn-select' }
+           else (),
+           if( exists( $has-groups )) then ( 
              for $g in $section/group return 
               <optgroup label="{ $g/@title}">{
                 for $title in $g/title 
@@ -378,7 +381,7 @@ declare function browse:section-titles-combo(  $all-level-data as node(), $level
           default return <titles><title>no-titles</title></titles>			     
  
     return if( exists($titles)) then ( 
-               browse:section-parameters-combo( $titles, $level )
+               browse:section-parameters-combo( $titles, $level, true(), true() )
            ) else ()
 };
 

@@ -265,12 +265,22 @@
 	   return this.container_id + '_' + id;
 	};
 		
-	Chosen.prototype.results_build_group_UL_list = function( oGroup, options , UL, LI ) {	   
-	   if( !options || (oGroup && oGroup.empty )) { return; }
-	   if( oGroup  ) { 
+	Chosen.prototype.results_build_group_UL_list = function( oGroup, options , UL, LI, batch ) {	   
+	   var originalUL;
+		if( !options || (oGroup && oGroup.empty )) { return; }
+	   if( oGroup ) { 
 	      oGroup.dom_id = this.makeID('groupContainer', oGroup.group_index	);	
-	   }
-	   for ( var _i = 0, _len = options.length; _i < _len; _i++) {
+			originalUL = $('#'+ oGroup.dom_id +' ul');
+			UL = $('<ul class="group"/>');
+	   }else{
+		   originalUL = UL;
+			UL = $('<ul class="flat"/>');
+		}
+		
+		//var workingUL 
+		$('<ul class="group"/>')
+		for ( var _i = 0, _len = options.length; _i < _len; _i++) {
+			if( batch && this.buildBatch != batch ) return;
 			var data = options[_i];  
 			if ( data.empty || data.disabled) continue;
 			
@@ -285,6 +295,27 @@
 				this.choice_build( data, oGroup );			
 			 }
 		  }
+		  originalUL.replaceWith(UL);
+	};
+	
+	
+	Chosen.prototype.results_build_asynch_by_group = function( aGroups, UL, LI, batch  ) {
+		 if( !aGroups || !aGroups.length ){
+			this.show_search_field_default();
+			this.parsing = false;
+			return;
+		 }
+		 if( this.results_data.groupedData ){
+				var group = aGroups.shift();
+				this.results_build_group_UL_list(group, group.options, null, LI, batch );
+		 }else{
+				this.results_build_group_UL_list(null, aGroups, UL, LI, batch )
+		 }	     
+		 if( this.buildBatch == batch) {
+			 this.buildTimer = setTimeout((__bind(function() {
+				this.results_build_asynch_by_group( this.results_data.groupedData?aGroups:null, UL, LI, batch );
+			 }, this)), 15);
+		  };
 	};
 	
 
@@ -316,16 +347,18 @@
 								 '<div class="groupTitle">'+ group.label + '</div></div>')
 							   .append( ul );
 			  	
-			  if( this.asynchGroups ){
-					// start asynch group build. They will eventually replace the group's placeholders above
-			  }else {
+			  if( !this.asynchGroups ){
 				  this.results_build_group_UL_list(group, group.options, ul, li_option )
 			  } 
 			  groupCont.appendTo(ul_container);		          
 		  }	
       }else{
 	      var ul = $('<ul class="flat"/>');
-		  this.results_build_group_UL_list(null, groups, ul, li_option )
+		  if( this.asynchGroups ) {
+		  
+		  }else{
+		     this.results_build_group_UL_list(null, groups, ul, li_option );
+		  }
           ul.appendTo(ul_container);	
       }	  
 
@@ -333,9 +366,13 @@
       this.search_field_scale();
       this.search_results.replaceWith( ul_container );
 	  this.search_results = ul_container;
-		
-	//  this.search_results.html(content);
-      return this.parsing = false;
+	
+      if( this.asynchGroups ){	  
+	      clearTimeout(this.buildTimer);
+		   this.results_build_asynch_by_group( $.extend([], this.results_data), ul, li_option, (this.buildBatch = (new Date).getTime())  );	
+	  }else {
+         return this.parsing = false;
+	  }
     };
 	// TW - end
 
@@ -492,7 +529,6 @@
         item = this.getOptionData( high_id );		
         item.selected = true;
         this.setOptionSelected( high_id, true );
-//		form_field.options[item.options_index].selected = true;
         if (this.is_multiple) {            
 		   this.choice_build( item, item.group_index != -1 ? this.getOptionData( null, -1, item.group_index  ):null);		                                                     
         } else {
@@ -537,10 +573,11 @@
     };
     
     
-    Chosen.prototype.winnow_results_display_group = function(  options, searchText, regex, zregex ) {
+    Chosen.prototype.winnow_results_display_group = function(  options, searchText, regex, zregex, batch ) {
       var results = 0;
       for( var o=0, lenOp = options.length; o < lenOp; o++ ){
-		     var option = options[o];
+		     if( batch && this.searchBatch != batch ) { return results}
+			 var option = options[o];
              if (option.disabled || option.empty || option.selected || !this.is_multiple  ) { continue; }
 		     var $item = $("#" + (option.dom_id));
 			 if( !$item.length  ){ continue;  }
@@ -568,6 +605,34 @@
        return results;
     };
     
+	
+	Chosen.prototype.winnow_results_asynch_by_group = function( aGroups, searchText, regex, zregex, results, batch  ) {
+		 results = results || 0;
+         if( this.searchBatch != batch) { return results} ;// another search has started
+		 if( !aGroups || !aGroups.length ){
+			return (results < 1 && searchText.length) ?
+				  this.no_results(searchText):
+			      this.winnow_results_set_highlight();
+		 }
+		 if( this.results_data.groupedData ){
+		    var group = aGroups.shift(), visibleInThisGroup=0;
+		    visibleInThisGroup = this.winnow_results_display_group( group.options, searchText, regex, zregex, batch  );			
+			if( this.searchBatch != batch) { return results} 
+			if( !visibleInThisGroup ) {
+    		      $("#" + group.dom_id).hide();
+    		}else $("#" + group.dom_id).show(); 
+			results += visibleInThisGroup;
+		 }else{
+		    results = this.winnow_results_display_group( aGroups, searchText, regex, zregex, batch  );
+		 }
+		 if( this.searchBatch == batch) { 
+			 this.searchTimer =  setTimeout((__bind(function() {
+				this.winnow_results_asynch_by_group(  this.results_data.groupedData ?aGroups:null, searchText, regex, zregex, results, batch );
+			 }, this)), 15);	
+		}
+         return results;	     
+	};
+	
     Chosen.prototype.winnow_results = function( firstClick ) {
       var part, parts,  results=0, startTime = new Date(),
           searchText = this.search_field.val() === this.default_text ? "" : $.trim(this.search_field.val()),
@@ -581,26 +646,30 @@
 	     $('.group-cont', this.dropdown).show();
 		 return;	  
 	  }	 
-
-     if( this.results_data.groupedData ){    
-          for (var g = 0, _len = this.results_data.length; g < _len; g++) {
-    	      var group = this.results_data[g], 
-    	      visibleInThisGroup = this.winnow_results_display_group( group.options, searchText, regex, zregex );
-    	      results += visibleInThisGroup;
-    		  if( !visibleInThisGroup ) {
-    			    $("#" + group.dom_id).hide();
-    		  }else $("#" + group.dom_id).show();    		   
-          }
-      }else{
-          results = this.winnow_results_display_group( this.results_data, searchText, regex, zregex );
-      
-      }
-      
-      if (results < 1 && searchText.length) {
-        return this.no_results(searchText);
-      } else {
-        return this.winnow_results_set_highlight();
-      }
+	  if( this.asynchSearch ){
+	      clearTimeout(this.searchTimer);
+		  this.searchBatch = (new Date).getTime();
+		  this.winnow_results_asynch_by_group( $.extend([], this.results_data), searchText, regex, zregex, 0, this.searchBatch )
+	  }else{
+		  if( this.results_data.groupedData ){    
+				 for (var g = 0, _len = this.results_data.length; g < _len; g++) {
+					var group = this.results_data[g], 
+					visibleInThisGroup = this.winnow_results_display_group( group.options, searchText, regex, zregex );
+					results += visibleInThisGroup;
+				  if( !visibleInThisGroup ) {
+						 $("#" + group.dom_id).hide();
+				  }else $("#" + group.dom_id).show();    		   
+				 }
+			}else{
+				 results = this.winnow_results_display_group( this.results_data, searchText, regex, zregex );
+			}
+			
+			if (results < 1 && searchText.length) {
+			  return this.no_results(searchText);
+			} else {
+			  return this.winnow_results_set_highlight();
+			}
+	  }
     };
 	
     Chosen.prototype.winnow_results_clear = function() {
@@ -783,7 +852,8 @@
 		result_single_selected : null,
 		choices : 0,
 		maxHeight: 200,
-		asynchGroups:false
+		asynchGroups:true,
+		asynchSearch:true
     };
 	
 	
@@ -805,6 +875,8 @@
 	  this.parsed.name = select.name;
 	  this.parsed.title = select.title;
 	  this.parsed.multiple = select.multiple;
+	  this.parsed.total=0;
+	  this.parsed.rendered=0;
     }
     SelectParser.prototype.add_node = function(child) {
       if (child.nodeName === "OPTGROUP") {
@@ -877,8 +949,7 @@
 	
 	
 	for ( var g = 0; g < _len; g++) {
-      var child = _ref[g], 
-	      item = null;
+      var child = _ref[g], item = null;
       switch(child.nodeName.toLowerCase()){
   	    case "optgroup" :
 		  item = {
@@ -893,6 +964,7 @@
 		     options = item.options;
 		 
 		 for ( var o = 0, oL = _options.length; o < oL; o++) {
+			parser.parsed.total++;
 			var option = _options[o];
 			if( option.nodeName.toLowerCase() !== "option") continue;
 			options.push({
@@ -916,7 +988,8 @@
 				selected: !!child.selected,
 				disabled: !!child.disabled,
 				empty : !child.text
-		  } 
+		  }
+        parser.parsed.total++;
 		  break;
 		default: continue;
       }
@@ -925,5 +998,5 @@
     return parser.parsed;
   };
 
-   root.SelectParser = SelectParser;
+  root.SelectParser = SelectParser;
 }).call(this);

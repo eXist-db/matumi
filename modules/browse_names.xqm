@@ -33,10 +33,12 @@ declare function  browse-names:categories-number($n as element()* ){
 declare function browse-names:categories-list( $n as element()*, $add-node-id as xs:boolean ) {
     for $name in $n/descendant-or-self::tei:name[@type][@key]
     group $name as $byType by $name/@type as $type
+ (:   order by $type  :)
     return
         let $values :=
             for $name in $byType
             group $name as $byKey by $name/@key as $key
+           (: order by $key :)
             return
                    let $instances-count := count($byKey)
                    let $keyName := translate(replace($key, "^.*/([^/]+)$", "$1"), "_", " ")
