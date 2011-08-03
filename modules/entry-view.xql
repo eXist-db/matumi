@@ -9,6 +9,7 @@ import module namespace search="http://exist-db.org/xquery/search" at "search.xq
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 
+
 declare function matumi:entry($node as node()*, $params as element(parameters)?, $model as item()*) {
     let $doc := request:get-parameter("doc", ())
     let $id := request:get-parameter("id", ())
@@ -114,12 +115,13 @@ declare function matumi:metadata-combo($node as node()*, $params as element(para
         }});
      </script>
       <form id="metadataForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }">{
-        browse:section-parameters-combo( 
+    
+       browse:section-parameters-combo( 
              browse-books:titles-list( $books, (),$browse:URIs,() ),
              <level value-names="uri" title="Books" ajax-if-more-then="-1" class="">books</level>,
              false(),
              false()
-         )        
+         ) 
      }</form>
       <div>          
            <table cellspacing="3" cellpadding="3" style="margin-top:1em" width="100%">
@@ -129,19 +131,19 @@ declare function matumi:metadata-combo($node as node()*, $params as element(para
              </tr>
              <tr>
                 <td class="label">Editor</td>
-                <td>{ string($fileDesc/tei:titleStmt/tei:editor) }</td>
+                <td>{ fn:string-join($fileDesc/tei:titleStmt/tei:editor, ', ') }</td>
              </tr>             
   
              <tr>
                 <td class="label">Title</td>
                 <td>
-                   <div class="book-title-main" style="font-size:115%">{ string( $fileDesc/tei:titleStmt/tei:title[@type="main" or empty(@type) ] ) }</div>
-                   <div class="book-title-sub">{  string( $fileDesc/tei:titleStmt/tei:title[@type="sub"] ) }</div>                
+                   <div class="book-title-main" style="font-size:115%">{ fn:string-join( $fileDesc/tei:titleStmt/tei:title[@type="main" or empty(@type) ], ', ' ) }</div>
+                   <div class="book-title-sub">{  fn:string-join( $fileDesc/tei:titleStmt/tei:title[@type="sub"], ', ' ) }</div>                
                 </td>
              </tr>
              <tr>
                 <td class="label">Year</td>
-                <td>{ $fileDesc/tei:publicationStmt/date }</td>
+                <td>{ string($fileDesc/tei:publicationStmt/date) }</td>
              </tr>
              <tr>
                 <td class="label">Publisher</td>
@@ -158,9 +160,14 @@ declare function matumi:metadata-combo($node as node()*, $params as element(para
              <tr>
                 <td class="label">Articles in this encyclopedia</td>
                 <td> <ul>{
-                    for $e in $doc/tei:text/tei:body/tei:div[@type="entry"]
+                    for $e in $doc/tei:text/tei:body/tei:div[@type="entry"]                    
+                    let $title := fn:string-join($e/tei:head, ', ') 
                     return element {'li'}{
-                       string($e/tei:head)
+                       element a {
+                          attribute {'class'}{ 'entry-derect-link' },
+                          attribute {'href'}{ concat('entry.html?doc=', document-uri( root($e)), '&amp;node=',util:node-id($e))},    
+                          $title
+                        }     
                     }
                 }</ul></td>
              </tr>

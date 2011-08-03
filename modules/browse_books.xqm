@@ -40,7 +40,7 @@ declare function browse-books:title-extract( $title as element(tei:titleStmt)?, 
             
             if( exists($title/title[@type='main']) ) then
                  $title/title[@type="main"]   
-            else if( string($title) = 'Title' or empty($title/title) or fn:string-join($title/title,'') = '' ) then 
+            else if( string($title[empty(@type)][1]) = 'Title' or empty($title/title) or fn:string-join($title/title,'') = '' ) then 
                  concat('[',  util:document-name($title), ']') 
             else $title/title
          }   
