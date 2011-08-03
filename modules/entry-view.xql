@@ -159,7 +159,7 @@ declare function matumi:metadata-combo($node as node()*, $params as element(para
              </tr>
              <tr>
                 <td class="label">Articles in this encyclopedia</td>
-                <td> <ul>{
+                <td> <ul id="entries-links">{
                     for $e in $doc/tei:text/tei:body/tei:div[@type="entry"]                    
                     let $title := fn:string-join($e/tei:head, ', ') 
                     return element {'li'}{

@@ -18,7 +18,7 @@ import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/bro
 declare variable $browse:combo-ajax-load := 'yes' = request:get-parameter("ajax-combo", 'yes' );
 declare variable $browse:grid-ajax-load := 'yes'  = request:get-parameter("ajax-grid", 'yes' );
 declare variable $browse:use-cached-data := 'yes' = request:get-parameter("use-cached-data", 'yes' );
-declare variable $browse:save-categories := 'yes' = request:get-parameter("save-categories", 'no' );
+declare variable $browse:save-categories := 'yes' = request:get-parameter("save-categories", 'yes' );
 declare variable $browse:refresh-categories := 'yes' = request:get-parameter("refresh-categories", 'no' );
 
 
