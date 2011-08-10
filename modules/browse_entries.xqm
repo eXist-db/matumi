@@ -13,7 +13,7 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 
-declare function browse-entries:data-all( $context-nodes as node()*, $root as xs:boolean ){
+declare function browse-entries:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
    if( $root ) then 
         collection(concat($config:app-root, '/data'))//tei:body/tei:div[@type="entry"]    
    else typeswitch ($context-nodes[1] )
@@ -22,7 +22,7 @@ declare function browse-entries:data-all( $context-nodes as node()*, $root as xs
          default                 return <error type="unknown-context-data-element"/>       
 };
 
-declare function browse-entries:data-filtered( $data as node()*, $URIs as node()*, $Categories as element(category)* ){
+declare function browse-entries:data-filtered( $data as node()*, $level as node(),  $URIs as node()*, $Categories as element(category)* ){
     if( empty($URIs) )then (
              $data   
     )else (

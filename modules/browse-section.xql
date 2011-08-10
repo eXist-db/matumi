@@ -19,6 +19,38 @@ let $section := request:get-parameter("section", 'none'),
 
 return 
   
+  if( $section = 'test') then (
+  element test {
+  
+      
+    browse-names:titles-list( browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () ), $browse:LEVELS[ @pos  = $level ], $browse:URIs, $browse:CATEGORIES )
+
+ 
+  (:
+
+ 
+ browse-names:categories-list( browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () ), false())    
+  
+     browse-names:combine-category-lists(  )
+:)     
+
+(:
+      browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () )
+  browse-names:categories-list( browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () ), false())
+  
+   browse-names:combine-category-lists(  browse-names:categories-list( browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () ), false()) )
+  
+  
+ , browse-names:titles-list(
+      browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () ),
+     $browse:LEVELS[ @pos  = $level ], 
+    $browse:URIs, 
+    ()
+   )
+:)   
+  }
+  
+  )else
      if(  request:get-parameter("section", 'none')='level-data-combo' and $level > 0) then (
           let $data := browse:get-cached-data( $browse:LEVELS[ @pos  = $level ]/@vector, () )
           return if( 'yes' = request:get-parameter("json", 'no')) then (

@@ -6,6 +6,7 @@ function browse_Set_L3( event, $L1, $L2, $L3){
     $('option:disabled', $L3).removeAttr('disabled').show();
     $('option[value=' + $L1.val() + '], option[value=' + $L2.val() + '] ', $L3).attr('disabled', 'true' ).hide();
     $L3.val( $L3.find('option:enabled').eq(0).attr('value')); 
+    $('#browseForm').submit();
 /*    
     if( $autoUpdate.length == 0 || $autoUpdate.is(':checked')) {   
        $('#browseForm').submit();

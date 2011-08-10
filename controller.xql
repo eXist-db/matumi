@@ -99,5 +99,6 @@ else
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>,
         <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
+        <add-parameter name="controller-url" value="{$local:controller-url}"/>      
         <cache-control cache="yes"/>
     </dispatch>

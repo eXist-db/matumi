@@ -99,7 +99,7 @@ declare function matumi:browse-grid($node as node()*, $params as element(paramet
 };
 
 declare function matumi:metadata-combo($node as node()*, $params as element(parameters)?, $model as item()*) {
-   let $books := browse-books:data-all( (), true()),
+   let $books := browse-books:data-all( (), (), true()),
        $uri-param := request:get-parameter("uri", () ),
        $uri := if( empty($uri-param )) then document-uri( $books[1] ) else $uri-param,
        $doc := doc($uri)/*,

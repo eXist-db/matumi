@@ -12,13 +12,13 @@ declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 
-declare function browse-books:data-all( $context-nodes as node()*, $root as xs:boolean ){
+declare function browse-books:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
    if( $root ) then 
         collection(concat($config:app-root, '/data'))//tei:TEI        
    else $context-nodes/ancestor-or-self::tei:TEI
 };
 
-declare function browse-books:data-filtered( $data as node()*, $URIs as node()*, $Categories as element(category)* ){       
+declare function browse-books:data-filtered( $data as node()*, $level as node(),  $URIs as node()*, $Categories as element(category)* ){       
     if(  exists($URIs) ) then (
         for $d in $data return
         if( document-uri( root($d)) =  $URIs/uri ) then 

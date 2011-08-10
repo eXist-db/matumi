@@ -102,6 +102,7 @@
       this.results_build();
       return this.set_tab_index();
     };
+   
     Chosen.prototype.register_observers = function() {
       this.container.click(__bind(function(evt) {      return this.container_click(evt);  }, this));
       this.container.mouseenter(__bind(function(evt) {   return this.mouse_enter(evt);   }, this));
@@ -278,7 +279,7 @@
 		}
 		
 		//var workingUL 
-		$('<ul class="group"/>')
+		//$('<ul class="group"/>')
 		for ( var _i = 0, _len = options.length; _i < _len; _i++) {
 			if( batch && this.buildBatch != batch ) return;
 			var data = options[_i];  
@@ -298,23 +299,29 @@
 		  originalUL.replaceWith(UL);
 	};
 	
-	
-	Chosen.prototype.results_build_asynch_by_group = function( aGroups, UL, LI, batch  ) {
+	// TODO use http://stackoverflow.com/questions/1095263/how-do-i-chain-or-queue-custom-functions-using-jquery
+	Chosen.prototype.results_build_asynch_by_group = function( aGroups, UL, LI, batch, total, pass  ) {
 		 if( !aGroups || !aGroups.length ){
 			this.show_search_field_default();
 			this.parsing = false;
 			return;
 		 }
+		 pass  = (pass || 0) + 1;
+		 total = total || parseInt(aGroups.total || ( aGroups.options ? aGroups.options.length : 1 ));
+		 
+		 this.search_field.val(total); 
 		 if( this.results_data.groupedData ){
 				var group = aGroups.shift();
-				this.results_build_group_UL_list(group, group.options, null, LI, batch );
+				this.results_build_group_UL_list(group, group.options, null, LI, batch  );
+				total -= group.options.length;
 		 }else{
-				this.results_build_group_UL_list(null, aGroups, UL, LI, batch )
+				this.results_build_group_UL_list(null, aGroups, UL, LI, batch );
+				total=0;
 		 }	     
 		 if( this.buildBatch == batch) {
 			 this.buildTimer = setTimeout((__bind(function() {
-				this.results_build_asynch_by_group( this.results_data.groupedData?aGroups:null, UL, LI, batch );
-			 }, this)), 15);
+				this.results_build_asynch_by_group( this.results_data.groupedData?aGroups:null, UL, LI, batch, total, pass );
+			 }, this)), 5);
 		  };
 	};
 	
@@ -369,7 +376,10 @@
 	
       if( this.asynchGroups ){	  
 	      clearTimeout(this.buildTimer);
-		   this.results_build_asynch_by_group( $.extend([], this.results_data), ul, li_option, (this.buildBatch = (new Date).getTime())  );	
+		   this.results_build_asynch_by_group( $.extend([], this.results_data), ul, li_option, 
+					(this.buildBatch = (new Date).getTime()),
+					this.results_data_grouped.total
+		   );	
 	  }else {
          return this.parsing = false;
 	  }
@@ -574,12 +584,15 @@
     
     
     Chosen.prototype.winnow_results_display_group = function(  options, searchText, regex, zregex, batch ) {
-      var results = 0;
+      var results = 0, 
+          ul = $("#" + options[0].dom_id).closest('ul'), 
+          UL = ul.clone(true,true);
+      
       for( var o=0, lenOp = options.length; o < lenOp; o++ ){
 		     if( batch && this.searchBatch != batch ) { return results}
 			 var option = options[o];
              if (option.disabled || option.empty || option.selected || !this.is_multiple  ) { continue; }
-		     var $item = $("#" + (option.dom_id));
+		     var $item = $("#" + (option.dom_id), UL);
 			 if( !$item.length  ){ continue;  }
 		
 			 var testX = option.text.search(regex); // regex.test(option.text);
@@ -601,7 +614,8 @@
 			  }
 			  this.result_deactivate( $item.removeClass('patial-match') );
 			}                
-         }
+       }
+       ul.replaceWith(UL);
        return results;
     };
     
@@ -943,10 +957,10 @@
     
  SelectParser.select_to_grouped_array = function(select) {
     var parser, 
+		$select = $(select),
 		_ref = select.childNodes,
 		_len = _ref.length, 
- 		parser = new SelectParser(select); 
-	
+ 		parser = new SelectParser(select); 	
 	
 	for ( var g = 0; g < _len; g++) {
       var child = _ref[g], item = null;
@@ -961,7 +975,11 @@
 			options: []
 		  } 
 		 var _options = child.childNodes,
-		     options = item.options;
+		     options = item.options,
+			 $optgroup = $(item);
+		 
+		 item.total = $optgroup.attr('total');
+		 item.values = $optgroup.attr('values');
 		 
 		 for ( var o = 0, oL = _options.length; o < oL; o++) {
 			parser.parsed.total++;
@@ -995,6 +1013,9 @@
       }
       parser.parsed.push( item );	  
     }
+	parser.parsed.count = $select.attr('count');
+	parser.parsed.total = $select.attr('total');
+	parser.parsed.values = $select.attr('values');
     return parser.parsed;
   };
 
