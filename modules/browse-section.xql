@@ -15,7 +15,8 @@ import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.ex
 
 let $section := request:get-parameter("section", 'none'),
     $data-id   := request:get-parameter("cache", 'none'),   
-    $level := number(request:get-parameter("level", 0 ))
+    $level := number(request:get-parameter("level", 0 )),
+    $cache := response:set-header( "Cache-Control", 'public, max-age=43200') (: 12h :)
 
 return 
   

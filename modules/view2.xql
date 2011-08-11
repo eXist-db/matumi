@@ -10,7 +10,14 @@ declare variable $modules :=
         <module prefix="matumi" uri="http://www.asia-europe.uni-heidelberg.de/xquery/matumi" at="entry-view.xql"/>
     </modules>;
 
+
 let $content := request:get-data()
 let $log := util:log("DEBUG", ($content))
+
+let $no-cache := if( request:get-parameter( 'resource','something-else') = 'browse.html') then (
+                      response:set-header( "Cache-Control",  'no-cache, no-store, max-age=0, must-revalidate' ),
+                      response:set-header( "X-Content-Type-Options", 'nosniff' )
+                 )else()
+
 return
     templates:apply($content, $modules, ())

@@ -14,6 +14,8 @@ import module namespace jquery="http://exist-db.org/xquery/jquery" at "resource:
 
 declare option exist:serialize "method=xhtml media-type=text/html add-exist-id=all indent=no omit-xml-declaration=yes";
 
+
+
 let $resource := request:get-parameter("doc", ())
 let $query := request:get-parameter("q", ())
 let $context := doc($resource)

@@ -74,7 +74,8 @@ else if (ends-with($exist:path, ".html")) then
                     <set-attribute name="exist:prefix" value="{$exist:prefix}"/>
                     <set-attribute name="exist:root" value="{$exist:root}"/>
                     <clear-attribute name="xquery.attribute"/>
-                    <add-parameter name="controller-url" value="{$local:controller-url}"/>       
+                    <add-parameter name="controller-url" value="{$local:controller-url}"/>
+                    <add-parameter name="resource" value="{$exist:resource}"/>                    
                  </forward>
             </view>
          </dispatch>

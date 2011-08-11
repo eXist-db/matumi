@@ -27,7 +27,11 @@ declare function matumi:entry($node as node()*, $params as element(parameters)?,
 };
 
 declare function matumi:encyclopedia-title($node as node()*, $params as element(parameters)?, $model as item()*) {
-    $model/ancestor::tei:TEI/tei:teiHeader//tei:titleStmt/tei:title/text()
+   let $title0 := $model/ancestor::tei:TEI/tei:teiHeader//tei:titleStmt/tei:title/text(),
+       $title := if( $title0 = ('', 'title', 'Title')) then 
+                    concat('[',  util:document-name($title0), ']') 
+                 else $title0
+    return <a href="metadata.html?doc={  document-uri( root($model)) }">{ $title }</a>
 };
 
 declare function matumi:encyclopedia-subjects($node as node()*, $params as element(parameters)?, $model as item()*) {
@@ -100,8 +104,7 @@ declare function matumi:browse-grid($node as node()*, $params as element(paramet
 
 declare function matumi:metadata-combo($node as node()*, $params as element(parameters)?, $model as item()*) {
    let $books := browse-books:data-all( (), (), true()),
-       $uri-param := request:get-parameter("uri", () ),
-       $uri := if( empty($uri-param )) then document-uri( $books[1] ) else $uri-param,
+       $uri := ( request:get-parameter("doc", () ), document-uri( $books[1] ))[1],
        $doc := doc($uri)/*,
        $fileDesc := $doc/tei:teiHeader/tei:fileDesc
 
