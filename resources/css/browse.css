@@ -34,3 +34,29 @@ table.browse-tbl td {
 	-moz-border-radius: 2px ;
 }
 
+
+.loadingIndicator{
+    height: 20px;
+	background: transparent url(loading-bars.gif) no-repeat center ;
+}
+
+.cat-toggle.collapsed, .cat-toggle.expanded {
+    background: transparent url(toggle-expand.png) no-repeat center ; 
+    width:16px;
+    height:16px;
+    margin-right:3px;
+    display:inline-block;
+}
+
+.cat-toggle.expanded {
+    background: transparent url(toggle-collapse.png) no-repeat center ; 
+}
+
+span.cat-name { margin-right:0.5em }
+
+td.cat-container span.values, td.cat-container .br {  display:none !important }
+td.cat-container.expanded span.values { display:inline !important } 
+td.cat-container.expanded .br { display:block !important }
+
+
+

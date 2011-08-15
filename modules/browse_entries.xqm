@@ -10,7 +10,8 @@ declare copy-namespaces no-preserve, no-inherit;
 declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
+import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm"; 
+(: import module namespace browse-config="http://exist-db.org/xquery/apps/matumi/browse-config" at "browse_config.xqm"; :)
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 
 declare function browse-entries:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
@@ -108,7 +109,7 @@ declare function browse-entries:direct-link( $entry as element()? ){
    }     
 };
 
-declare function browse-entries:titles-list( $nodes as element()*,  $level as node()?, $URIs as element(URI)*, $Categories as element(category)*  ){
+declare function browse-entries:titles-list( $nodes as node()*,  $level as element(level)?, $URIs as element(URI)*, $Categories as element(category)*  ){
     
     element titles {
         attribute {'name'}{ 'entry-uri' },

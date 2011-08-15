@@ -2,7 +2,6 @@ xquery version "1.0";
 
 module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books";
 
-
 declare namespace anno="http://exist-db.org/xquery/annotate";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
@@ -14,7 +13,7 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 
 declare function browse-books:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
    if( $root ) then 
-        collection(concat($config:app-root, '/data'))//tei:TEI        
+        collection(concat($config:app-root, '/data'))/tei:TEI        
    else $context-nodes/ancestor-or-self::tei:TEI
 };
 
