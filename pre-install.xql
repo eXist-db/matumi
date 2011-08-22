@@ -1,6 +1,7 @@
 xquery version "1.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
+import module namespace util="http://exist-db.org/xquery/util";
 
 declare variable $home external;
 declare variable $dir external;
@@ -29,4 +30,7 @@ else xdb:create-user("editor", "editor", "biblio.users", ()),
 
 util:log("INFO", ("Loading collection configuration ...")),
 local:mkcol("/db/system/config", $target),
-xdb:store-files-from-pattern(concat("/db/system/config/", $target), $dir, "*.xconf")
+xdb:store-files-from-pattern(concat("/db/system/config/", $target), $dir, "*.xconf"),
+
+local:mkcol($target, 'cache'),
+xdb:set-collection-permissions( concat($target,'/cache'), "editor", "biblio.users",  xmldb:string-to-permissions('rwurwurwu') )

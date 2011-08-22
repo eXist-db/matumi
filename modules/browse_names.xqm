@@ -15,6 +15,7 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 (: import module namespace browse-config="http://exist-db.org/xquery/apps/matumi/browse-config" at "browse_config.xqm"; :)
 import module namespace browse-summary="http://exist-db.org/xquery/apps/matumi/browse-summary" at "browse_summary.xqm";
+import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
 declare function browse-names:data-all( $context-nodes as node()*,  $level as node(), $root as xs:boolean){   
    if( $root  ) then 
@@ -55,8 +56,73 @@ declare function browse-names:data-filtered( $data as node()*,  $level as node()
     )
 };
 
-
-
+declare function browse-names:titles-list-fast( 
+    $QUERIEs as element(query)*,  
+    $level as node()?, 
+    $URIs as node()*, 
+    $Categories as element(category)*
+){
+    let $Q := $QUERIEs[@name= $level ],
+        $data-all := browse-data:strip-query(  $Q/tei:data-all ),
+        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
+(:        $nodes := util:eval($data-all[1])  :)
+    
+       $start :=  dateTime(current-date(), util:system-time() ), 
+       $categories :=  browse-summary:get-out-of-entries-only( $QUERIEs, $level, $URIs,  $Categories, $browse:refresh-categories,  $browse:embeded-category-summary ),
+       $ts-categories-list :=  dateTime(current-date(), util:system-time() ) - $start,
+       $ts-cat-start := dateTime(current-date(), util:system-time() ),
+       $cat := for $c in $categories 
+           let $c-selected := $Categories[ name = $c/@name and key = '*' ]
+           
+           return element {'group'}{
+               $c/@count,
+               $c/@values, 
+               $c/@name,
+               attribute {'title'}{ string($c/@name)},             
+               if( count( $c/* ) > 1 ) then (            
+                    element {'title'}{
+                        attribute {'value'}{$c/@name},
+                        $c/@*,
+                        if( exists($c-selected) ) then attribute {'selected'}{'true'} else (),
+                        concat( 'Any value for "', $c/@name, '"(',  $c/@count, ')' )
+                    }
+               ) else(),
+               
+               for $t in $c/*  
+               let $t-selected := if( exists( $t/@value-insted-of-key )) then            
+                                       $Categories[  name = $c/@name and value = $t/@key  ]
+                                  else $Categories[  name = $c/@name and key = $t/@key ]
+               return                    
+                   element title {
+                       if( $t-selected  ) then attribute {'selected'}{'true'} else (),
+                       $t/@count,
+                       $t/@total,            
+                       attribute {'value'}{ 
+                           if( exists( $t/@value-insted-of-key )) then     
+                                concat($c/@name, $browse:delimiter-uri-nameNode, $t/@key)
+                           else concat($c/@name, $browse:delimiter-uri-node, $t/@key)
+                         },
+   (:                   
+                       if( number($c/@count) > 1 ) then (
+                          attribute {'title'}{ concat(  $total, ' unique keys and ', $count, ' instaces'   )},
+                          concat( $t, ' (', $total, '/', $count ,')' )
+                       )else $t
+   :)                  string($t)  
+                   }
+           },
+    $ts-cat-time :=  dateTime(current-date(), util:system-time() ) - $ts-cat-start
+       
+  return element titles {
+        attribute {'name'}{ 'category' }, (: combo name, ie the parameter name :)
+        attribute {'count'}{ count( $categories )},
+        attribute {'total'}{ count( $categories/* )},
+        attribute {'values'}{ sum( $categories//@values )},
+        attribute {'title'}{ $level/@title },
+        attribute {'time-categories-list'}{ $ts-categories-list }, 
+        attribute {'time-categories-render'}{ $ts-cat-time },          
+        $cat
+    } 
+};
 
 
 declare function browse-names:titles-list( 
@@ -66,14 +132,8 @@ declare function browse-names:titles-list(
     $Categories as element(category)*  
  ){
      let $start :=  dateTime(current-date(), util:system-time() ), 
-        $categories :=  browse-summary:get($nodes, $level/@pos = 1, $URIs,  $Categories, $browse:refresh-categories,  $browse:embeded-category-summary ),
-                        
-(:        
-        if( $browse:LEVELS[1] = 'names' and fn:empty( $browse:URIs/uri)) then
-               browse-names:all-categories-summary( $browse:refresh-categories )                               
-        else 
-                 browse-summary:list( $nodes, $browse:refresh-categories ),
-  :)              
+       $categories :=  browse-summary:get($nodes, $level/@pos = 1, $URIs,  $Categories, $browse:refresh-categories,  $browse:embeded-category-summary ),
+                             
        $ts-categories-list :=  dateTime(current-date(), util:system-time() ) - $start,
        $ts-cat-start := dateTime(current-date(), util:system-time() ),
        $cat := for $c in $categories 
@@ -137,12 +197,9 @@ declare function browse-names:summary-detailes($n as element()* ){
 };
 
 
-
-
-
 (: to do: move saving of the categories to  browse-summary:list  :)
 
-declare function browse-names:entiry-categories-listed( $e as node(), $refresh-categories as xs:boolean ){
+declare function browse-names:entiry-categories-listed( $e as node()  ){
     let $categories :=  browse-summary:get-one( $e )
 
     return if( exists($categories)) then (        

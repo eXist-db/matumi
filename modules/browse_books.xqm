@@ -10,15 +10,17 @@ declare copy-namespaces no-preserve, no-inherit;
 declare boundary-space strip;
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
 declare function browse-books:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
-   if( $root ) then 
+   if( $root or $level/pos = 1 ) then 
         collection(concat($config:app-root, '/data'))/tei:TEI        
    else $context-nodes/ancestor-or-self::tei:TEI
 };
 
 declare function browse-books:data-filtered( $data as node()*, $level as node(),  $URIs as node()*, $Categories as element(category)* ){       
     if(  exists($URIs) ) then (
+(:        $data[  document-uri( root(.)) =  $URIs/uri ]        :)
         for $d in $data return
         if( document-uri( root($d)) =  $URIs/uri ) then 
             $d 
@@ -48,6 +50,27 @@ declare function browse-books:title-extract( $title as element(tei:titleStmt)?, 
 
 
 declare function browse-books:titles-list( $nodes as element()*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
+    element titles {
+         attribute {'name'}{ 'uri' },
+         attribute {'count'}{ count($nodes)},
+         attribute {'title'}{ $level/@title },
+         element {'group'}{
+             for $title in $nodes//tei:fileDesc/tei:titleStmt
+             let $title2 := browse-books:title-extract($title, $URIs )
+             order by string($title2)
+             return $title2
+         }
+    }    
+};
+
+
+declare function browse-books:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
+    let $Q := $QUERIEs[@name= $level ],
+        $data-all :=      browse-data:strip-query(  $Q/tei:data-all ),
+        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
+        $nodes := util:eval($data-all[1])/ancestor-or-self::tei:TEI
+    
+    return
     element titles {
          attribute {'name'}{ 'uri' },
          attribute {'count'}{ count($nodes)},

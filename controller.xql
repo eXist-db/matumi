@@ -71,6 +71,10 @@ else if (ends-with($exist:path, ".html")) then
             <forward url="{theme:resolve($exist:prefix, $exist:root, $exist:resource)}"/>
             <view>
                 <forward url="modules/view2.xql">
+                (: for testing :)
+                <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>
+                <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
+                
                     <set-attribute name="exist:prefix" value="{$exist:prefix}"/>
                     <set-attribute name="exist:root" value="{$exist:root}"/>
                     <clear-attribute name="xquery.attribute"/>

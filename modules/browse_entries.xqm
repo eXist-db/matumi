@@ -13,13 +13,14 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm"; 
 (: import module namespace browse-config="http://exist-db.org/xquery/apps/matumi/browse-config" at "browse_config.xqm"; :)
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
+import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
 declare function browse-entries:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
-   if( $root ) then 
+   if( $root or $level/pos = 1 ) then 
         collection(concat($config:app-root, '/data'))//tei:body/tei:div[@type="entry"]    
    else typeswitch ($context-nodes[1] )
-          case element(tei:TEI)  return $context-nodes//tei:body/tei:div[@type="entry"]
-          case element(tei:name) return $context-nodes/ancestor-or-self::tei:div[@type="entry"]    
+          case element(tei:TEI)  return $context-nodes//tei:body/tei:div[@type="entry"] | ()         (: remove duplicates ? :)   
+          case element(tei:name) return $context-nodes/ancestor-or-self::tei:div[@type="entry"] | ()  
          default                 return <error type="unknown-context-data-element"/>       
 };
 
@@ -83,10 +84,25 @@ declare function browse-entries:filtered( $data as node()*, $URIs as element(URI
                                else $Categories[  name = $c/@name and key = $t/@key ]
 :)
 
+
+
+(: I have an error "Can not find the ICU4J library in the classpath com.ibm.icu.text.Normalizer " when using fn:normalize-unicode :)
+declare function browse-entries:heads-with-same-xmlID( $xml-id as xs:string* ) as node()*  { 
+     for $i in browse-books:data-all((), (), true())//head[ .//@xml:id = $xml-id ] 
+     let $s := fn:normalize-space(string($i))
+     order by string($i/@xml:id), $s
+     return element {'head'}{
+         attribute {'xml-id'}{ string( $i//@xml:id[1] ) },
+         attribute {'node-id'}{ util:node-id($i) },
+         attribute {'uri' }{ document-uri( root($i)) },
+         $s 
+     }     
+};
+
 declare function browse-entries:alternative-titles( $entry as element()? ) as xs:string* { 
    let $xml-id := string($entry/head//@xml:id)
    let $main-title := string( $entry/tei:head[not(@type='alt')][1] )
-   let $same-xmlID := browse:heads-with-same-xmlID( $xml-id )
+   let $same-xmlID := browse-entries:heads-with-same-xmlID( $xml-id )
    for $i in fn:distinct-values( ($same-xmlID[@xml-id =$xml-id ][ not(. = $main-title )], $entry/tei:head[ .//@type='alt'])  ) 
    order by $i
    return $i 
@@ -108,6 +124,7 @@ declare function browse-entries:direct-link( $entry as element()? ){
      string($title)
    }     
 };
+
 
 declare function browse-entries:titles-list( $nodes as node()*,  $level as element(level)?, $URIs as element(URI)*, $Categories as element(category)*  ){
     
@@ -132,3 +149,30 @@ declare function browse-entries:titles-list( $nodes as node()*,  $level as eleme
     }    
 };
 
+
+declare function browse-entries:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
+    let $Q := $QUERIEs[@name= $level ],
+        $data-all := browse-data:strip-query(  $Q/tei:data-all ),
+        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
+        $nodes := util:eval($data-all[1])
+    
+    return  element titles {
+        attribute {'name'}{ 'entry-uri' },
+        attribute {'count'}{ count($nodes)},
+        attribute {'title'}{ $level/@title },
+        element {'group'}{
+            for $n in $nodes 
+             let $title := $n/tei:head[not(@type='alt')][1] 
+             order by string($title)
+             return 
+                element {'title'} {
+                     if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
+                     attribute {'value'} {  browse:makeDocument-Node-URI( $n ) },  
+                     attribute{'xml-id'}{ string($n/head//@xml:id[1]) },
+                     attribute{'node-id'}{ util:node-id($n) },                     
+                     $title,
+                     $n/tei:head[ @type='alt']
+                }
+       }
+    }    
+};

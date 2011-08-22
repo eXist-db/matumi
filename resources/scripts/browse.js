@@ -1,19 +1,3 @@
-function browse_Set_L3( event, $L1, $L2, $L3){
-    var $autoUpdate = $('#autoUpdate');
-    $L1 = $L1 || $('#L1');
-    $L2 = $L2 || $('#L2');    
-    $L3 = $L3 || $('#L3');    
-    $('option:disabled', $L3).removeAttr('disabled').show();
-    $('option[value=' + $L1.val() + '], option[value=' + $L2.val() + '] ', $L3).attr('disabled', 'true' ).hide();
-    $L3.val( $L3.find('option:enabled').eq(0).attr('value')); 
-    $('#browseForm').submit();
-/*    
-    if( $autoUpdate.length == 0 || $autoUpdate.is(':checked')) {   
-       $('#browseForm').submit();
-    }
-*/    
-}
-
 function fetchAJAXfragment( pos, that ){
         var $this = $(that).removeClass('');
         //var URL = $this.attr('url') +'?' + $("#browseForm").serialize();
@@ -29,28 +13,50 @@ function fetchAJAXfragment( pos, that ){
         });
 };
 
+function disableSinleOption( $t, value ){
+    var current = $t.val();    
+    $t.find( 'option[value=' + value + ']').attr('disabled', 'true' ).hide();      
+    if( current == value ){         
+       $t.val( $t.find('option:enabled').eq(0).attr('value')); 
+    }
+
+};
+
+function disableLeftOptions( $leftCombos, $combosToDisable  ){   
+   var $select = $combosToDisable.eq(0);
+   $select.find('option:disabled').removeAttr('disabled').show();
+   for( var i = 0; i< $leftCombos.length; i++){      
+      disableSinleOption($select,$leftCombos.eq(i).val());
+   }
+   if( $combosToDisable.length > 1){
+      disableLeftOptions( $leftCombos.add($select), $combosToDisable.slice(1) );
+   }
+};
+
+
+
+
+
 $(document).ready(function() {
     $('#L1').live('change', function(event){
-         var $L1 = $(event.target),
-             $L2 = $('#L2'),
-             $L3 = $('#L3'),
-             v1 = $L1.val(),
-             v2 = $L2.val(),
-             v3 = $L3.val();
-         
-         $('#browseForm option:disabled').removeAttr('disabled').show();
-         $('#L2 option[value=' + v1 + ']').attr('disabled', 'true' ).hide();
-         if( v2 == v1 ) { 
-             $L2.val( $L2.find('option:enabled').eq(0).attr('value')); 
-         }
-         browse_Set_L3(null, $L1, $L2, $L3 );
+         disableLeftOptions( $(event.target), $('#L2, #L3, #L4'));
+         $('#browseForm').submit();
     });
+     $('#L2').live('change', function(event){
+          disableLeftOptions( $('#L1, #L2'), $('#L3, #L4')); 
+          $('#browseForm').submit();          
+     });
+     $('#L3').live('change', function(event){
+          disableLeftOptions( $('#L1, #L2, #L3'), $('#L4')); 
+          $('#browseForm').submit();          
+     });
+    
      $("a.combo-reset").live('click', function(evnt){
         $('#'+ $(this).attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
-        $('#'+ $(this).attr('combo2reset') +  ' option:selected').removeAttr('selected');        
+        $('#'+ $(this).attr('combo2reset') +  ' option:selected').removeAttr('selected');  
+         $('#browseForm').submit(); 
     });    
     
-    $('#L2').live('change', browse_Set_L3 );
     
     $('.cat-toggle.collapsed').live('click', function(){
         $(this).closest('.cat-container').add( $(this)).addClass('expanded').removeClass('collapsed');
