@@ -11,13 +11,16 @@ import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
 import module namespace cache="http://exist-db.org/xquery/cache"     at "java:org.exist.xquery.modules.cache.CacheModule";
 
-
-import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+(:
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
-import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
 import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/browse-names" at "browse_names.xqm";
 import module namespace browse-subject="http://exist-db.org/xquery/apps/matumi/browse-subject"  at "browse_subject.xqm";
 import module namespace browse-summary="http://exist-db.org/xquery/apps/matumi/browse-summary" at "browse_summary.xqm";
+
+:)
+import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
+
 
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
@@ -32,7 +35,7 @@ declare variable $browse:use-cached-data := 'yes' = request:get-parameter("use-c
 declare variable $browse:save-categories := 'yes' = request:get-parameter("save-categories", 'yes' );
 declare variable $browse:refresh-categories := 'yes' = request:get-parameter("refresh-categories", 'no' );
 
-declare variable $browse:max-cat-summary-to-save := 20;
+declare variable $browse:max-cat-summary-to-save := 30;
 
 declare variable $browse:embeded-category-summary := false(); (: save the summary inside of the entry or the book :)
 
@@ -41,7 +44,7 @@ declare variable $browse:combo-plugin-drop-limit := 6000; (: switch to a clasic 
 
 declare variable $browse:grid-categories-page-size := 30;
 declare variable $browse:grid-ajax-trigger := $browse:grid-categories-page-size; (: $browse:grid-categories-page-size :)
-declare variable $browse:grid-categories-ajax-trigger := 10;
+declare variable $browse:grid-categories-ajax-trigger := 25;
 
 declare variable $browse:minutes-to-cache := 20;
 
@@ -52,7 +55,6 @@ declare variable $browse:controller-url := request:get-parameter("controller-url
 declare variable $browse:delimiter-uri-node := '___';
 declare variable $browse:delimiter-uri-nameNode := '---';
 
-declare variable $browse:base-time := browse-summary:base-time(false());
 
 declare variable $browse:levels := (
     <level value-names="uri" title="Books" ajax-if-more-then="-1" class="chzn-select">books</level>,             (: uri=/db/matumi/data/GSE-eng.xml :)
@@ -139,10 +141,17 @@ declare variable $browse:LEVELS :=
  
 declare variable $browse:QUERIES :=  browse-data:queries-for-all-levels( $browse:LEVELS, $browse:URIs, $browse:CATEGORIES, $browse:SUBJECTS );
 
-declare function browse:now() as xs:dateTime {   dateTime(current-date(), util:system-time() ) };
 
-
-
+declare function browse:makeDocument-Node-URI( $node as node() ) as xs:string {
+  fn:string-join((
+       document-uri( root($node)),       
+       typeswitch ( $node )
+          case element(tei:div)  return $browse:delimiter-uri-node
+          case element(tei:name) return $browse:delimiter-uri-nameNode
+          default return '_node-id_',
+       util:node-id($node)
+  ),'')
+};
 declare function browse:ajax-url( $level as node()?, $param as xs:string*, $controller-url as xs:string, $LEVELS ) as xs:string {
     fn:string-join((
       concat($controller-url,'/browse-section?'),
@@ -158,6 +167,11 @@ declare function browse:ajax-url( $level as node()?, $param as xs:string*, $cont
        concat('session=',session:get-id() ),
        concat('cache=', $level/@uuid) 
     ),'&amp;')
+};
+
+
+declare function browse:ajax-loading-div( $level as node()?, $param as xs:string*, $id as xs:string ) as xs:string {
+   <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{browse:ajax-url( $level, $param, $browse:controller-url, $browse:LEVELS )}">Loading  { string($level/@title) }... </div> 
 };
 
 
@@ -178,44 +192,18 @@ declare function browse:levels-combo( $level as node(), $pos as xs:int ) as elem
                    attribute {'style'}{'display:none'}
               )else ()
            )else(),     
+           if($pos = 4 ) then (
+              if( $L is $browse:LEVELS[1] or $L is $browse:LEVELS[2] or $L is $browse:LEVELS[3]) then( 
+                   attribute {'disabled'}{'disabled'},
+                   attribute {'style'}{'display:none'}
+              )else ()
+           )else(),     
            attribute {'value'}{ string($L)},
            string($L/@title)
        }
    }</select>
 };
 
-(:~
- : create file-node URI depending on the type of the element node.
- :)
- 
-declare function browse:makeDocument-Node-URI( $node as node() ) as xs:string {
-  fn:string-join((
-       document-uri( root($node)),       
-       typeswitch ( $node )
-          case element(tei:div)  return $browse:delimiter-uri-node
-          case element(tei:name) return $browse:delimiter-uri-nameNode
-          default return '_node-id_',
-       util:node-id($node)
-  ),'')
-
-};
-
-(: example: local:change-element-ns-deep($x, "http://www.w3.org/1999/xhtml")  :)
-declare function browse:change-element-ns-deep ($element as element(), $newns as xs:string) as element(){
-  let $newName := QName($newns, local-name($element))
-  return
-  (element {$newName} {
-    $element/@*, for $child in $element/node()
-      return
-        if ($child instance of element())
-        then browse:change-element-ns-deep($child, $newns)
-        else $child
-  })
-};
-
-declare function browse:ajax-loading-div( $level as node()?, $param as xs:string*, $id as xs:string ) as xs:string {
-   <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{browse:ajax-url( $level, $param, $browse:controller-url, $browse:LEVELS )}">Loading  { string($level/@title) }... </div> 
-};
 
 declare function browse:section-parameters-combo( $titles as element(titles)?, $level as node()?, $use-plugin as xs:boolean, $multiple as xs:boolean ) {
      let $has-groups := $titles/group/@name
@@ -271,17 +259,13 @@ declare function browse:section-parameters-combo( $titles as element(titles)?, $
     )       
 };
 
-declare function browse:section-as-searchable-combo-generic( $data as node(), $level as node()?, $ajax-loaded as xs:boolean ) {                     
+declare function browse:section-as-searchable-combo-generic( $level as node()?, $ajax-loaded as xs:boolean ) {                     
     <div class="grid_4">
 		<div class="box L-box">
 			<h2>{browse:levels-combo( $level,  $level/@pos ) }</h2>
-			<div class="block L-block">{
-    			    if( not($ajax-loaded) or number($level/@ajax-if-more-then) = -1 (: or count($data) <  number($level/@ajax-if-more-then)  :)   ) then (
-                        $data
-    			     ) else (
-                        let $url :=browse:ajax-url( $level, ( 'section=level-data-combo'), $browse:controller-url, $browse:LEVELS )     	     
-    			        return <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>   
-    			     )                           
+			<div class="block L-block">{    			   
+                    let $url :=browse:ajax-url( $level, ( 'section=level-data-combo'), $browse:controller-url, $browse:LEVELS )     	     
+    		        return <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>   
                 }
                  <a href="#{$level}" class="combo-reset" combo2reset="{$level}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
             </div>
@@ -289,29 +273,21 @@ declare function browse:section-as-searchable-combo-generic( $data as node(), $l
 	</div>
 };
 
-declare function browse:section-titles-combo(  $level as node()? ) {
-   let $titles := 
-            if( $level = 'books')   then  browse-books:titles-list-fast(   $browse:QUERIES, $level, $browse:URIs, $browse:CATEGORIES )            
-       else if( $level = 'entries') then  browse-entries:titles-list-fast( $browse:QUERIES, $level, $browse:URIs, $browse:CATEGORIES )
-       else if( $level = 'names')   then  browse-names:titles-list-fast(   $browse:QUERIES, $level, $browse:URIs, $browse:CATEGORIES )    
-       else if( $level = 'subjects') then  browse-subject:titles-list-fast(   $browse:QUERIES, $level, $browse:URIs, $browse:CATEGORIES, $browse:SUBJECTS )    
-       else  <titles><title>no-titles for level { $level }</title></titles>			
- 
-    return if( exists($titles)) then ( 
-               browse:section-parameters-combo( $titles, $level, true(), true() )
-           ) else ()
-};
- 
+
 
 declare function browse:level-boxes(){
-   <form id="browseForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }">
-    
-    { 
+   <form id="browseForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }"> { 
     (:     <input type="hidden" name="random" value="{util:uuid()}"/>  :)
-    browse:section-as-searchable-combo-generic( browse:section-titles-combo(   $browse:LEVELS[1]), $browse:LEVELS[1], $browse:combo-ajax-load ),
-	browse:section-as-searchable-combo-generic( browse:section-titles-combo(   $browse:LEVELS[2]), $browse:LEVELS[2], $browse:combo-ajax-load ),
-	browse:section-as-searchable-combo-generic( browse:section-titles-combo(   $browse:LEVELS[3]), $browse:LEVELS[3], $browse:combo-ajax-load),
-	browse:section-as-searchable-combo-generic( browse:section-titles-combo(   $browse:LEVELS[4]), $browse:LEVELS[4], $browse:combo-ajax-load),
+        browse:section-as-searchable-combo-generic( $browse:LEVELS[1], $browse:combo-ajax-load ),
+     	browse:section-as-searchable-combo-generic( $browse:LEVELS[2], $browse:combo-ajax-load ),
+     	browse:section-as-searchable-combo-generic( $browse:LEVELS[3], $browse:combo-ajax-load),
+     	browse:section-as-searchable-combo-generic( $browse:LEVELS[4], $browse:combo-ajax-load),
+	   <input type="submit" id="browseSubmit" value="Submit"/>,
+	   <div class="clear"></div>	
+   }</form>
+};
+
+(:
 	<span>
 	   <!-- input type="checkbox" name="autoUpdate" id="autoUpdate">{
     	      if( request:get-parameter("autoUpdate", 'off' ) = 'on' ) then(
@@ -320,126 +296,15 @@ declare function browse:level-boxes(){
     	   }</input>
     	   <span style="font-size:10px">Autoupdate</span>
 	   <br/ -->
-	   
-	   <input type="submit" id="" value="Submit"/>
 	</span>,
-	<div class="clear"></div>	
-   }</form>
-};
 
-(:
-declare function browse:entries-for-grid(){    
-   let  
-        $entries-level := $browse:LEVELS[.  = 'entries'],
-        $data := cache:get( $browse:cache,   $entries-level/@vector),
-        $step1 := $data[ empty( $browse:URIs/node-id  ) or  util:node-id(.) = $browse:URIs/node-id and document-uri( root(.)) = $browse:URIs/uri  ],
-
-        $filtered := if(  exists( $browse:CATEGORIES/name) ) then (
-            let $names-with-values := if( exists( $browse:CATEGORIES/value) ) then 
-                           for $n in $step1/descendant-or-self::tei:name[  empty(@key) and @type =  $browse:CATEGORIES/name ]
-                           return if( exists( $browse:CATEGORIES[ name = $n/@type and value = fn:normalize-space($n )  ])) then 
-                                     $n
-                                  else ()
-                        else ()                
-               
-            return  (if( exists($browse:CATEGORIES[key='*']) ) then (
-                       $step1[  ./descendant-or-self::tei:name[ @type = $browse:CATEGORIES[key='*']/name ] ]
-                    )else ())
-                    |
-                    (if( exists($browse:CATEGORIES[ key != '*']) ) then
-                       $step1[  ./descendant-or-self::tei:name[ @key = $browse:CATEGORIES/key[not(. = '*') ] ]]
-                    else ())                       
-                    | 
-                   $names-with-values/ancestor-or-self::tei:div[@type="entry"]   
-       ) else 
-              $step1,
-
-        $saved  :=  browse-cache:save( $browse:cache, $filtered, $entries-level/@vector, '-grid', $entries-level/@uuid )
-   return $filtered        
-};
 :)
 
-declare function browse:entries-fast( $level-name as xs:string ){    
-    let $q := browse-data:strip-query(  $browse:QUERIES[@name= $level-name ]/tei:data-fitered )
-    (: todo
-       special cases: #all, #fullPath
-        
-    :)   
-    return util:eval( $q[1] )        
-};
 
 
-declare function browse:page-grid( $show-all as xs:boolean ){
-   let (: $check := browse-cache:check-cached-data(  $browse:minutes-to-cache ),  :)
-       $data  :=  fn:subsequence(  browse:entries-fast( 'grid' ) , 1, $browse:grid-categories-page-size )    
-   return  browse:page-grid( $show-all, $browse:grid-ajax-load, $data, false())   
-};
-
-declare function browse:page-grid( $show-all as xs:boolean, $ajax-loaded as xs:boolean, $grid-entities as node()*, $more as xs:boolean ){ 
+declare function browse:page-grid( $show-all as xs:boolean ){ 
        let $level := $browse:LEVELS[ .  = 'entries' ]
-       let $url := browse:ajax-url( $level, (
-                    'section=entity-grid',
-                     if( $more ) then 'more=yes' else () 
-                  ), $browse:controller-url, $browse:LEVELS)
-                
- 	   return if( $ajax-loaded  and count($grid-entities) > $browse:grid-categories-ajax-trigger ) then (
-	         <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" copyURL="yes"  url="{ $url }">Loading</div>   
-	     ) else ( 	
-         	<table id="entryGrid" class="browse-tbl" summary="Table summary" cellspacing="4" >
-         	  {  if( not($more) ) then attribute {'noMoreData'}{'yes'} else()  }
-        		<colgroup>
-        			<col class="colA" width="20%"/>
-        			<col class="colB" width="15%"/>
-        			<col class="colB"/>
-        			<col class="colC" />
-        			<col class="colD" width="50%" />
-        		</colgroup>
-        		<thead>
-        			<tr>
-        				<th>Encyclopedia</th>
-        				<th>Entry Title</th>
-        				
-        				<th>Subject</th>
-        				<th>Categories</th>
-        			</tr>
-        		</thead>
-        		<tbody>{
-        			 for $e at $tr-pos in $grid-entities
-                      let $root := $e/ancestor-or-self::tei:TEI,
-        			      $uri  := document-uri( root($e)),
-        			      $document-title := browse-books:title-extract($root//teiHeader/fileDesc/titleStmt, $browse:URIs),
-        			      $node-id := util:node-id($e),
-        			      $summary := $e/summary,
-        			      $alt-titles := browse-entries:alternative-titles($e),
-        			     (: $categories-number := number( ($summary/@count, browse-names:categories-number($e))[1]) :)
-        			      $categories-number := number( ($summary/@names, $summary/@count, $browse:grid-categories-ajax-trigger + 2 )[1])
-        			 
-        			 return <tr class="{ if( $tr-pos mod 2 = 0 ) then 'odd' else ()}">{
-        				<td >{ string($document-title)}</td>,
-        				<td  >{
-                   				browse-entries:direct-link($e), 
-        				        if( exists($alt-titles)) then concat(' (', fn:string-join( $alt-titles , ', '), ')') else() }</td>,
-        				<td>{ string($e/@subtype )}</td>,
-        				<td class="cat-container collapsed" >{  
-(:        				  if( $categories-number ) then( 
-        				      (:  no categories :) '-'
-        				  )else
-:)
-                           if( $categories-number  >  $browse:grid-categories-ajax-trigger  ) then (
-                                 let $url := browse:ajax-url( (), (
-                                                      concat('node-id=',  util:node-id($e) ), 
-                                                      concat('cat-entry-uri=',   document-uri( root($e)) ),
-                                                      concat('cat2get=', $summary/@values   ),                                                      
-                                                      'section=entry-cat-summary',
-                                                      concat( 'id=td', $tr-pos ) 
-                                              ), $browse:controller-url, $browse:LEVELS)               	     
-              			        return <div id="td{$tr-pos}" class="cat-container collapsed ajax-loaded loading-red" url="{$url}">Loading  { if( exists($summary/@count) ) then string($summary/@count) else '' } categories </div>           				       
-        				  )else (
-             				    browse-names:entiry-categories-listed( $e )
-                            ) 
-        				}</td>
-        			}</tr>
-        	    }</tbody>
-        	</table>
-    	)
+       let $url := browse:ajax-url( $level, ('section=entity-grid'), $browse:controller-url, $browse:LEVELS)                
+ 	   return  <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" copyURL="yes"  url="{ $url }">Loading</div>   
+	    
 };

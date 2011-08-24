@@ -15,5 +15,7 @@
         <create qname="@key" type="xs:string"/>
         <create qname="@xml:id" type="xs:string"/>
         <create qname="@uuid" type="xs:string"/>
+        <create qname="@names" type="xs:int"/>
+        <create qname="@count" type="xs:int"/>
     </index>
 </collection>

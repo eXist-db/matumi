@@ -15,6 +15,7 @@ import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" a
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
+(:
 declare function browse-entries:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
    if( $root or $level/pos = 1 ) then 
         collection(concat($config:app-root, '/data'))//tei:body/tei:div[@type="entry"]    
@@ -73,7 +74,7 @@ declare function browse-entries:filtered( $data as node()*, $URIs as element(URI
        ) else 
               $step1
 };
-
+:)
 
 
 (:
@@ -107,6 +108,7 @@ declare function browse-entries:alternative-titles( $entry as element()? ) as xs
    order by $i
    return $i 
 };
+
 declare function browse-entries:title-extract( $entry as element()? ){ 
    element title {
      attribute {'doc'}{ document-uri( root($entry)) },
@@ -125,7 +127,7 @@ declare function browse-entries:direct-link( $entry as element()? ){
    }     
 };
 
-
+(:
 declare function browse-entries:titles-list( $nodes as node()*,  $level as element(level)?, $URIs as element(URI)*, $Categories as element(category)*  ){
     
     element titles {
@@ -148,7 +150,7 @@ declare function browse-entries:titles-list( $nodes as node()*,  $level as eleme
        }
     }    
 };
-
+:)
 
 declare function browse-entries:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
     let $Q := $QUERIEs[@name= $level ],
