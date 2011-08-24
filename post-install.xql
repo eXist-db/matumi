@@ -22,12 +22,7 @@ declare function local:mkcol($collection, $path) {
     local:mkcol-recursive($collection, tokenize($path, "/"))
 };
 
-util:log("INFO", ("Running pre-install script ...")),
-if (xdb:group-exists("biblio.users")) then ()
-else xdb:create-group("biblio.users"),
-if (xdb:exists-user("editor")) then ()
-else xdb:create-user("editor", "editor", "biblio.users", ()),
+util:log("INFO", ("Running post-install script ...")),
 
-util:log("INFO", ("Loading collection configuration ...")),
-local:mkcol("/db/system/config", $target),
-xdb:store-files-from-pattern(concat("/db/system/config/", $target), $dir, "*.xconf")
+local:mkcol($target, 'cache'),
+xdb:set-collection-permissions( concat($target,'/cache'), "editor", "biblio.users",  xmldb:string-to-permissions('rwurwurwu') )

@@ -11,12 +11,6 @@
     <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
     <repo:status>stable</repo:status>
     <repo:prepare>pre-install.xql</repo:prepare>
-    2011-05-19T19:42:58.267+02:00
-2011-05-20T11:23:11.931+02:00
-2011-05-20T19:11:39.974+02:00
-2011-07-09T18:36:21.373+02:00
-2011-07-11T21:14:21.392+02:00
-2011-07-12T10:24:20.138+02:00
-2011-07-12T20:46:35.518+02:00
-<repo:deployed>2011-07-14T09:41:35.624+02:00</repo:deployed>
+	<repo:finish>post-install.xql</repo:finish>
+	<repo:deployed>2011-07-29T09:03:48.665+02:00</repo:deployed>
 </repo:meta>
