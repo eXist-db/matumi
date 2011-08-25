@@ -1,0 +1,10 @@
+table.metadata{
+    border-collapse: separate;
+	border-spacing: 2px;
+}
+
+table.metadata th, td { vertical-align: top; }
+
+table.metadata .label {   font-size:115%; }
+
+h2{ margin: 1em 0 .1em 0; }

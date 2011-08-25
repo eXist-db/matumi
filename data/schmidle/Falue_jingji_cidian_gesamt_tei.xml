@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns:de="http://www.mpiwg-berlin.mpg.de/ns/de/1.0/" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:echo="http://www.mpiwg-berlin.mpg.de/ns/echo/1.0/" xmlns:dcterms="http://purl.org/dc/terms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:de="http://www.mpiwg-berlin.mpg.de/ns/de/1.0/" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:echo="http://www.mpiwg-berlin.mpg.de/ns/echo/1.0/" xmlns:dcterms="http://purl.org/dc/terms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <teiHeader>
         <fileDesc>
             <titleStmt>

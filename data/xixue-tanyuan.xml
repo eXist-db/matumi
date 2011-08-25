@@ -1,0 +1,169 @@
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Xixue tanyuan 西學探源 (Explorations into Western Learning)</title>
+                <title type="sub">An electronic edition of excerpts for transcultural research</title>
+                <editor>Research Project "Hidden Grammars of Transculturality - Migrations of Encyclopedic Knowledge and Power"</editor>
+                <respStmt>
+                    <resp>Project Coordination</resp>
+                    <name xml:id="BM">Barbara Mittler</name>
+                    <name xml:id="MH">Madeleine Herren-Oesch</name>
+                    <name xml:id="JK">Joachim Kurtz</name>
+                    <name xml:id="KMW">Kaja Mueller-Wang</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Technical supervision and file administration</resp>
+                    <name xml:id="JP">Jens Østergaard Petersen</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Proof-reading, Mark-up</resp>
+                    <name>Kaja Mueller-Wang</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Cluster of Excellence "Asia and Europe in a Global Context"</publisher>
+                <pubPlace>Heidelberg University</pubPlace>
+                <address>
+                    <addrLine>Karl Jaspers Centre for Advanced Transcultural Studies</addrLine>
+                    <addrLine>Voßstraße 2, Building 4400</addrLine>
+                    <addrLine>69115 Heidelberg</addrLine>
+                    <addrLine>Germany</addrLine>
+                </address>
+                <date>2011</date>
+            </publicationStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Xixue tanyuan 西學探源 (Explorations into Western Learning)</title>
+                        <author>
+                            <name type="person" ref="persons.xml#OkamotoKansuke">Okamoto Kansuke 岡本監輔</name>
+                        </author>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>1st Edition</edition>
+                    </editionStmt>
+                    <publicationStmt>
+                        <publisher>Shanghai yinshuguan 上海印書館 (Commercial Press)</publisher>
+                        <date>Meiji 34 (1901)</date>
+                        <date>Guangxu 27 (1901)</date>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note>Other editions: not known.</note>
+                    </notesStmt>
+                </biblFull>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement>Heidelberg University</settlement>
+                        <repository>Library of the Institute of Chinese Studies</repository>
+                    </msIdentifier>
+                    <physDesc>
+                        <p>Size: 9.14 in (23.22 cm) * 6.78 in (17.22 cm) </p>
+                        <p>Volumes: 4 juan</p>
+                        <p>Script: Woodblock print; names and countries are marked with lines on side </p>
+                        <p>Illustrations:none</p>
+                    </physDesc>
+                    <msPart>
+                        <altIdentifier>
+                            <idno/>
+                        </altIdentifier>
+                        <msContents>
+                            <p>Lemma-organization: 16 topics.</p>
+                            <p>Table of contents: simple list in the beginning of the book.</p>
+                            <p>Index: none.</p>
+                            <p>Contents: <lb/> 1. learning (xuexi 學習)，<lb/> 2. education (jiaoyu 教育)，<lb/> 3. ethics (lunli 倫理)，<lb/> 4. skills and industry (yiye
+                                藝業)，<lb/> 5. self-knowledge (shengke 省克)，<lb/> 6. great willpower (hongyi 宏毅)，<lb/> 7. benevolence and frugality (renjian 仁儉)，<lb/> 8. honesty
+                                and trust (jianxin 廉信)，<lb/> 9. dedicating oneself to serve the country (baoguo 報國)，<lb/> 10. training in military skills (jiangwu 講武)，<lb/> 11.
+                                economy (jingji 經濟)，<lb/> 12. law (falü 法律)，<lb/> 13. rhetorics (yanlun 言論)，<lb/> 14. political affairs (zhengshi 政事)，<lb/> 15. way of the noble
+                                man (jundao 君道)，<lb/> 16. diplomacy (waijiao 外交).</p>
+                        </msContents>
+                        <history>
+                            <p>The book is dated Meiji 34 (1901) and Guangxu 27 (1901), published in Chinese by the Commercial Press in Shanghai. </p>
+                            <p>The author is Okamoto Kansuke 岡本監輔 (1839-1904), a preface is written by the „commoner“ (buyi 布衣) Kawase Nagasada 河瀨長定 (= Kawase Gitarō 河瀨儀太郎) </p>
+                            <p>The author Okamoto Kansuke 岡本監輔  travelled to China to present the book to Zhang Zhidong, but Zhang Zhidong refused to see him. Okamoto went back to Japan, sent his manuscript to Shanghai for publication, where Kawase Nagasada 河瀨長定 (=Kawase Gitarō 河瀨儀太郎) wrote the preface to the book.</p>
+                            <p>A scan of the work is available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+                        </history>
+                    </msPart>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <settingDesc>
+                <p>According to Kawase’s preface: The author Okamoto was a great sinologist who turned away from politics because his views differed too much from those of others. He engaged in education instead. On a first visit to China in Meiji 7 or 8 (1874/75), Okamoto visited Luoyang and wrote the famous book Bankoku Shiki萬國史記 (1879, Account of World History). After twenty years, when Japan became strong and China weak, Okamoto wanted to improve the situation of China, and wrote this book for this aim.</p>
+                <p>The publisher Shanghai yinshuguan (Commercial Press) was founded in 1897, four years before the book was published. Shanghai yinshuguan later became a very influential press, publishing primary and secondary education textbooks, dictionaries, as well as important magazines: "Eastern Miscellany" (東方雜誌), "Education Magazine" (教育雜誌), "The Short Story Magazine" (小說月報), "Youth Magazine" (少年雜誌), "Students' Magazine" (學生雜誌).</p>
+            </settingDesc>
+            <textDesc>
+                <channel mode="w">print</channel>
+                <constitution type="single">A single complete text, integrating fragments from other books.</constitution>
+                <derivation type="abridgment">Text is written by Okamoto himself. He states in the preface that all his book consists of information derived from other books, of which he does not give concrete sources.</derivation>
+                <domain type="education"/>
+                <factuality type="fact">Text is written with the intention to inform people about facts of Western learning.</factuality>
+                <interaction type="none" active="singular" passive="world"/>
+                <preparedness type="spontaneous"/>
+                <purpose type="inform" degree="high"/>
+                <purpose type="entertain" degree="low"/>
+            </textDesc>
+            <langUsage>
+                <language ident="zh">Chinese</language>
+            </langUsage>
+        </profileDesc>
+        <encodingDesc>
+            <p>Scans available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+            <p>Digitalization by Formax BPO Beijing Inc., special instructions for typing Chinese texts and encyclopedias developed by
+            Wolfgang Schmidle et. al. at Max Planck Institute for the History of Science, Berlin. 
+            Transformation of the digitized raw texts into TEI done by Wolfgang Schmidle. 
+            TEI Header and mark-ups inserted by project members at Heidelberg University.</p>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="2011-08-08" who="#KMW">created</change>
+            <change when="2011-08-09" who="#KMW">Questionnaire info added to teiHeader</change>
+            <change when="2011-08-11" who="#KMW">inserted encodingDesc</change>
+            <change when="2011-08-23" who="#KMW">small changes in header</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <front>
+            <div xml:id="preface1" type="preface" ana="xixue-tanyuan-annotations.xml#ana-preface1">
+                <head>西學探源序</head>
+                <p>韋菴岡本先生。學博識卓。窮堅老益壯。其授業子
+                    弟幾千萬人。或在官或在野。其名聲隆隆者亦不為
+                    少。而未嘗依之求沽也。先生壯時。單身入北海。跋涉
+                    柯太諸島。後爲開拓判官數年。與人議不合辭罷。....</p>
+            </div>
+        </front>
+        <body>
+            <div type="entry" subtype="education">
+                <head>學習第一</head>
+                <p>歐賢云。凡人之爲非犯罪者。莫非不學之徒。無何世何國皆然。以其不
+                    知也。斯言信矣。然知之淺薄者。有危於不知。反資爲非犯罪之用。泰西
+                    一小國。少年用事。誇衒開化。有老學士。嘗就舉國男女年十五以下者。
+                    而比校之。學童犯罪者。多於不識字者云。人焉可以小知自安乎哉。</p>
+                <p>學問之要自愛惜光陰始。無東西古今一也。在昔英王亞弗勒。盡心軍
+                    國事。而未嘗廢學業。三分一日二十四時。初八時聽政。次八時爲學。終
+                    八時休憩。時未有自鳴鐘。用蠟燭三條。逐次燃之。以定其時刻云。後人
+                    傳誦而取法焉。如伯路寒。文辭富贍高妙。皆自公餘養神致之。性易變。
+                    服行多事。交互爲之。吉福兀德。每事務暇著述。自謂非吾勞心。卽是自
+                    <pb/>
+                    娛。與渴鹿飲水無異。彼專業著述者。猶夫犬奔走求食也。是好學者
+                    之事也。尋常人從事於學。要嚴立課程。有課程可循。而漸次登進。其樂
+                    無窮也。歐人又稱。學問日費一時。以至十年。則可以達一科學。化愚昧
+                    爲賢智。經驗之言殆不誣也已。</p>
+                <p>富蘭格令曰。時間卽黃金。欲得黃金。不得不藉時間。馬何默德曰 。今日
+                    之一時。貴於明日之二時。其言不可易已。然知時間之貴者。必至不記
+                    時間。乃有眞可貴。歐諺云。悲哀之一時。長於快樂之一日。是爲其不堪
+                    久也。人之勤勉成習者。必有快樂長存。是爲精明在身。而間暇無事者。
+                    反致鬱悶懊惱。爲其無事不適身體機關也。勉强過度。輙有害生之患。
+                    然猶不失活潑志氣。視諸怠惰釀疾者。自有霄壤之別。歐賢嘗傳此說
+                    綦詳。葢無事業與學術皆然矣。人之輕棄時間者。不止損己。動輙害人。
+                    西歐嘗有十人立約謀事。刻期會...............</p>
+            </div>
+            <div type="entry" subtype="education">
+                <head>敎育第二</head>
+                <p>學者一身之善惡正邪。卽國家盛衰所在也。萊薄昵德曰。將來世界唯
+                    在敎育者掌中福斐的見拿破崙蹂躪獨逸。立街頭。颺言曰。振興我國
+                    勢力者唯有敎育一事而已。其言確切不可易也。昔者加質萊因王。欲
+                    奪羅馬人自由。與臣僚會議。無如之何。.....</p>
+            </div>
+        </body>
+    </text>
+</TEI>
