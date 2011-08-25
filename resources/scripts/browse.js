@@ -78,7 +78,10 @@ $(document).ready(function() {
 			        url  = $target.attr('url'),
 			        lastPage = $dom.data('noMoreData' ) || $target.attr('noMoreData') === 'yes';
 			    
-			    if( lastPage ) {
+			    if( !$target.length ){
+			       $('#bottom').scrollExtend( 'disable');
+			       return null;
+			    }else if( lastPage ) {
 			        $dom.data('noMoreData', true );	
 			        return null;
 			    }else{
