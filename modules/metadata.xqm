@@ -142,44 +142,44 @@ declare function metadata:all($node as node()*, $params as element(parameters)?,
      }</form>
     
       <div> 
-          <h2>Bibliographical Data</h2>      
+          <h2>Source Description</h2>      
            <table class="metadata" cellspacing="3" cellpadding="3"  width="100%">
              <tbody>{
                 metadata:process('Title',         $biblFull/tei:titleStmt/tei:title ),
-                metadata:process('Date',          $biblFull/tei:editionStmt/tei:date),
-                metadata:process('Edition',       $biblFull/tei:editionStmt/tei:edition ),
-                metadata:process('Other editions',$biblFull/tei:notesStmt ),
                 metadata:process('Author',        $biblFull/tei:titleStmt/tei:author ),
                 metadata:process('Editor',        $biblFull/tei:titleStmt/tei:editor ),
                 metadata:process('Publisher',     $biblFull/tei:publicationStmt/tei:publisher ),
+                metadata:process('Date',          $biblFull/tei:editionStmt/tei:date),
+                metadata:process('Edition',       $biblFull/tei:editionStmt/tei:edition ),
+                metadata:process('Other editions',$biblFull/tei:notesStmt ),
                 metadata:process('Physical Description',  $msDesc/tei:physDesc),
                 metadata:process('Content',       $msDesc/tei:msPart/tei:msContents ),
-                metadata:process('History',       $msDesc/tei:msPart/tei:history )
+                metadata:process('History of the manuscript',       $msDesc/tei:msPart/tei:history )
     
              }</tbody>
            </table>
            
-         <h2>Beyond bibliographical data</h2>      
+         <h2>Profile Description</h2>      
            <table class="metadata" cellspacing="3" cellpadding="3"  width="100%">
              <tbody>{
-                 metadata:process('Background of authors and editors', $profileDesc/tei:particDesc/tei:listPerson ),
-                 metadata:process('Publication circumstances',         $profileDesc/tei:settingDesc ),
                  metadata:process('Language',                          $profileDesc/tei:langUsage ),
+                 metadata:process('Publication circumstances',         $profileDesc/tei:settingDesc ),
+                 metadata:process('Background of authors and editors', $profileDesc/tei:particDesc/tei:listPerson ),
                  metadata:process('Genre and style',                   $profileDesc/tei:textDesc ) 
              }</tbody>
            </table>
 
-         <h2>Information from other sources and analysis</h2>      
+         <h2>Analysis</h2>      
            <table class="metadata" cellspacing="3" cellpadding="3"  width="100%">
              <tbody>{
                  metadata:process('Translations of Prefaces',       $annotation-body/tei:div/@type[. = 'preface-translation']),
                  metadata:process('Analysis of Prefaces',           $annotation-body/tei:div/@type[. = 'preface-analysis']),
-                 metadata:process('Advertisements (Analysis)',      $annotation-body/tei:div/@type[. = 'advertisement-analysis']),
+                 metadata:process('Analysis of advertisements for this book',      $annotation-body/tei:div/@type[. = 'advertisement-analysis']),
                  metadata:process('Advertisements in this books',   $annotation-body/tei:div/@type[. = 'advertisement-for-this-book']),
-                 metadata:process('Readership',                     $annotation-body/tei:div/@type[. = 'readership']),
-                 metadata:process('Hidden grammars',                $annotation-body/tei:div/@type[. = 'HiddenGrammars']),
+                 metadata:process('Analysis of readership',                     $annotation-body/tei:div/@type[. = 'readership']),
+                 metadata:process('Hidden grammars - underlying world view or intention', $annotation-body/tei:div/@type[. = 'HiddenGrammars']),
+                 metadata:process('Secondary literature  on this encyclopedia',           $annotation-body/tei:div/@type[. = 'secondary-literature']),
                  metadata:process('Open Questions',                 $annotation-body/tei:div/@type[. = 'open-questions']),
-                 metadata:process('Secondary literature',           $annotation-body/tei:div/@type[. = 'secondary-literature']),
               (:   metadata:process('', $annotation-body/tei:div/@type[. = '']),    add more if necessary  :)
                  ()
              }</tbody>
