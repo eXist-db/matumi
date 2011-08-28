@@ -2,9 +2,31 @@ table.metadata{
     border-collapse: separate;
 	border-spacing: 2px;
 }
-
 table.metadata th, td { vertical-align: top; }
 
-table.metadata .label {   font-size:115%; }
+table.metadata th{ 
+   text-align:left;
+   vertical-align: top; 
+   background-color: #fcd9c9;
+}
 
-h2{ margin: 1em 0 .1em 0; }
+table.metadata .label {   font-size:115%; }
+table.metadata p { 
+   margin-bottom:.5em;
+   line-height:120%;
+}
+
+h2{ margin: 1em 0 .1em 0; font-size:130%; }
+
+.person-listed .person {
+    margin-left:0;
+    margin-right:.35em
+}
+
+.textDesc { margin-bottom:.5em; border-bottom:solid 1px #ccc;}
+
+.textDesc .typeName,
+.textDesc .typeNameOther {font-weight:600}
+
+.textDesc .typeValue,
+.textDesc .typeValueOther {font-style: italic;  }

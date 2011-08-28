@@ -39,10 +39,19 @@
                     <titleStmt>
                         <title>Encyclopaedic Dictionary</title>
                         <editor>Edited by I.E. Andreevskiy (vol. 1 - 4a), K.K. Arseniev und F.F.
-                     Petrushevskiy.</editor>
+                        Petrushevskiy.</editor>
+                        <editor>Chief editor 
+                                <name type="person" key="http://dbpedia.org/resource/Otto_Schmidt">O.Yu. Shmidt</name>.
+                             zzzzzzzzz
+                        </editor>
+                        <author>
+                            note
+                            <name type="person" ref="persons.xml#OkamotoKansuke">Okamoto Kansuke 岡本監輔</name>
+                        </author>
                     </titleStmt>
                     <editionStmt>
                         <edition>5th Edition</edition>
+                        <date>1890</date>
                     </editionStmt>
                     <publicationStmt>
                         <publisher>F.A. Brokgauz (Leipzig)</publisher>
@@ -76,8 +85,70 @@
                         <p>http://runivers.ru/lib/book3182/</p>
                     </sourceDesc>
                 </biblFull>
+                <msDesc>
+                    <physDesc>
+                        <p>Size: 9.14 in (23.22 cm) * 6.78 in (17.22 cm) </p>
+                        <p>Volumes: 4 juan</p>
+                        <p>Script: Woodblock print; names and countries are marked with lines on side </p>
+                        <p>Illustrations:none</p>
+                    </physDesc>
+                    <msPart>
+                        <altIdentifier>
+                            <idno/>
+                        </altIdentifier>
+                        <msContents>
+                            <p>Lemma-organization: 16 topics.</p>
+                            <p>Table of contents: simple list in the beginning of the book.</p>
+                            <p>Index: none.</p>
+                            <p>Contents: <lb/> 1. learning (xuexi 學習)，<lb/> 2. education (jiaoyu 教育)，<lb/> 3. ethics (lunli 倫理)，<lb/> 4. skills and industry (yiye
+                                藝業)，<lb/> 5. self-knowledge (shengke 省克)，<lb/> 6. great willpower (hongyi 宏毅)，<lb/> 7. benevolence and frugality (renjian 仁儉)，<lb/> 8. honesty
+                                and trust (jianxin 廉信)，<lb/> 9. dedicating oneself to serve the country (baoguo 報國)，<lb/> 10. training in military skills (jiangwu 講武)，<lb/> 11.
+                                economy (jingji 經濟)，<lb/> 12. law (falü 法律)，<lb/> 13. rhetorics (yanlun 言論)，<lb/> 14. political affairs (zhengshi 政事)，<lb/> 15. way of the noble
+                                man (jundao 君道)，<lb/> 16. diplomacy (waijiao 外交).</p>
+                        </msContents>
+                        <history>
+                            <p>The book is dated Meiji 34 (1901) and Guangxu 27 (1901), published in Chinese by the Commercial Press in Shanghai. </p>
+                            <p>The author is Okamoto Kansuke 岡本監輔 (1839-1904), a preface is written by the „commoner“ (buyi 布衣) Kawase Nagasada 河瀨長定 (= Kawase Gitarō 河瀨儀太郎) </p>
+                            <p>The author Okamoto Kansuke 岡本監輔  travelled to China to present the book to Zhang Zhidong, but Zhang Zhidong refused to see him. Okamoto went back to Japan, sent his manuscript to Shanghai for publication, where Kawase Nagasada 河瀨長定 (=Kawase Gitarō 河瀨儀太郎) wrote the preface to the book.</p>
+                            <p>A scan of the work is available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+                        </history>
+                    </msPart>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson>
+                    <person role="editor" xml:id="TangJinggao">
+                        <persName>Tang Jinggao 唐敬杲</persName>
+                        <note>
+                            <p>唐敬杲（1898～1982），字旦初，漕河泾镇人。天资聪颖，4岁识字，12岁起读四书五经、诸子百家。1915年（民国4年）考入上海商务印书馆，任编译员17年。勤奋自学日文，编译所主任沈雁冰赞扬“敬杲日语学得特别好”。 1932年，“—•二八”之役，商务印书馆印刷厂毁于日军炮火，敬杲进《申报》馆，担任《申报月刊》、《申报年鉴》编辑，主编《现代外国名人辞典人《综合日汉大辞典》。抗日战争时期，羁沪的爱国志士拒绝出任伪职，生活艰难。 敬杲撰文向社会呼吁，并发起组织文人补助会，将募得的粮食等物送往困难户。1942年后，执教于辅仁中学、斯盛中学、光华大学。1945年，应上海“增修大藏经会”聘校注佛经。1947年，任南京国史馆协修，次年返上海。 1952年，敬杲在中国人民解放军军事医学科学院任翻译，译介大量日文军医资料，1963年因病退休。1971年，参加编写《辞海》。</p>
+                            <p>敬杲毕生从事辞书编写和日文翻译，参与编著有《新文化辞书》、《学生国学丛书》等，未出版的有 《古书异义大辞典》稿。</p>
+                            <p>Source:  <ref target="http://www.shmh.gov.cn/mhgl_cssy_xz.aspx">上海縣志 (Local history of Shanghai)</ref>
+                            </p>
+                        </note>
+                    </person>
+                </listPerson>
+            </particDesc>
+            <settingDesc>
+                <p>According to Kawase’s preface: The author Okamoto was a great sinologist who turned away from politics because his views differed too much from those of others. He engaged in education instead. On a first visit to China in Meiji 7 or 8 (1874/75), Okamoto visited Luoyang and wrote the famous book Bankoku Shiki萬國史記 (1879, Account of World History). After twenty years, when Japan became strong and China weak, Okamoto wanted to improve the situation of China, and wrote this book for this aim.</p>
+                <p>The publisher Shanghai yinshuguan (Commercial Press) was founded in 1897, four years before the book was published. Shanghai yinshuguan later became a very influential press, publishing primary and secondary education textbooks, dictionaries, as well as important magazines: "Eastern Miscellany" (東方雜誌), "Education Magazine" (教育雜誌), "The Short Story Magazine" (小說月報), "Youth Magazine" (少年雜誌), "Students' Magazine" (學生雜誌).</p>
+            </settingDesc>
+            <textDesc>
+                <channel mode="w">print</channel>
+                <constitution type="single">A single complete text, integrating fragments from other books.</constitution>
+                <derivation type="abridgment">Text is written by Okamoto himself. He states in the preface that all his book consists of information derived from other books, of which he does not give concrete sources.</derivation>
+                <domain type="education"/>
+                <factuality type="fact">Text is written with the intention to inform people about facts of Western learning.</factuality>
+                <interaction type="none" active="singular" passive="world"/>
+                <preparedness type="spontaneous"/>
+                <purpose type="inform" degree="high"/>
+                <purpose type="entertain" degree="low"/>
+            </textDesc>
+            <langUsage>
+                <language ident="zh">Chinese</language>
+            </langUsage>
+        </profileDesc>
         <revisionDesc>
             <change when="2011-07-12" who="#KMW">upload Alexey's file with small changes; TEI Header</change>
         </revisionDesc>
@@ -1338,6 +1409,7 @@
                188000 3250 Египетские владения (п-ов Синай) 59000 9 Португальские владения 19918 851
                Германские владения (Киоджау) 501 120 44228702 818839 </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="0d63d7ee-00b2-4ed3-953d-901d482910e5" ts="2011-08-23T23:21:47.147+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="7"/>
@@ -1354,6 +1426,7 @@
                горизонтом; вблизи точки востока восходит Солнце в дни весеннего (см.) и осеннего
                равноденствий (см. это слово). А. Ж.</p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="35dd92d4-098e-467a-bfb4-77b48c8905d9" ts="2011-08-23T23:21:47.51+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="9"/>
@@ -2164,6 +2237,7 @@
                образовательный ценз от гласных, в размере курса городских училищ по Положению 31 мая
                1872 г. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="535b6f14-70e7-4c2e-bfad-138c1900e095" ts="2011-08-23T23:21:47.789+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="9"/>
@@ -2571,6 +2645,7 @@
                "Конституционное государство", сборник статей, изд. И. Гессена и А. Каминки (СПб.,
                1905). </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="db457a73-8ca2-4f90-b12f-4b6f33b144f0" ts="2011-08-23T23:21:48.261+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="11a"/>
@@ -3300,6 +3375,7 @@
                (принадл. Египту) 393 1897 12140 С.-Марино 60 1899 11002 Лихтенштейн 159 1901 9434
                Андорра 452 1899 5231 Всего 9905524 100 — 401907968 100 </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="8a971145-803d-4d63-bc1b-2f0f5d611a0e" ts="2011-08-23T22:35:46.922+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="11a"/>
@@ -3398,6 +3474,7 @@
                сих пор в большей части своих отраслей на степени искусств и представляют частые
                колебания и перемены в своих положениях и приемах. А. Бекетов. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="32f82c73-4287-47a3-b10a-863cb41870fd" ts="2011-08-23T23:21:48.53+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="12"/>
@@ -3414,6 +3491,7 @@
                горизонтом, она диаметрально противоположна точке Востока, вблизи точки Запада
                заходит солнце в дни весеннего и осеннего равноденствий (см.). А. Ж. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="9f06676c-ac82-4b5f-8316-c701700dcb46" ts="2011-08-23T22:35:47.562+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="12a"/>
@@ -3439,6 +3517,7 @@
                терминами пользуются как синонимами. Об отношении между З. и мнением см. Платон,
                между З. и верой — см. Религия. Вл. С. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="cdfacb6b-b5ce-4046-86bc-ffa79a30db1b" ts="2011-08-23T23:21:48.801+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="12a"/>
@@ -3458,6 +3537,7 @@
                который называл идеологами всех тех, которые на каких-нибудь принципиальных
                основаниях противились практическим требованиям текущей политики. Вc. С. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="cba86ad3-9ce3-4909-8573-088e68093be5" ts="2011-08-23T23:21:49.126+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="13"/>
@@ -3502,6 +3582,7 @@
                обозначаемая ей власть: отсюда название И. Римской, Византийской и иных (см.
                Император). </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="6fee0115-9754-416c-a658-7336b306d9ca" ts="2011-08-23T23:21:49.391+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="13a"/>
@@ -4041,6 +4122,7 @@
                историко-философских взглядов и построений будут указаны в своем месте. См. также
                Историография. Н. К. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="1e38b123-0342-4d02-b6b9-eb2d97f002ae" ts="2011-08-23T23:21:49.787+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="17"/>
@@ -4074,6 +4156,7 @@
                немецкой научной литературы; у французов и англичан, вместо слова К., употребляется
                слово цивилизация (см.). Н. К. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="90a39d6d-ed4f-425c-9188-705f2e047933" ts="2011-08-23T23:21:50.177+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="20a"/>
@@ -4125,6 +4208,7 @@
                логическим признакам (простота и сложность, абстрактность и конкретность) — см. Конт,
                Спенсер. Вл. С. </p>
                 </div>
+                <summary names="0" values="0" uuid="a71b6464-c90e-466e-8247-1bfaf6aa5eae" ts="2011-08-23T21:58:25.739+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="24a"/>
@@ -4420,6 +4504,7 @@
                l'Administration et le Droit administratif"; Saint-Girons, "Essai sur la sé paration
                des pouvoirs"; Коркунов, "Указ и Закон". Вл. Гессен. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="3b848443-72ef-45f5-a9ac-9dcd6c13cc03" ts="2011-08-23T23:21:50.438+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="25"/>
@@ -4531,6 +4616,7 @@
                философских элементов в общее натуралистическое мировоззрение (неовитализм). Вл.
                Соловьев. </p>
                 </div>
+                <summary names="0" values="0" uuid="c92fef39-947c-4128-9fbc-6186d0fc6218" ts="2011-08-23T21:58:26.593+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="26a"/>
@@ -4840,6 +4926,7 @@
                РАСПРЕДЕЛЕНИЕ ПОСЛЕДОВАТЕЛЕЙ РАЗЛИЧНЫХ РЕЛИГИЙ В РАЗНЫХ СТРАНАХ: КАРТА
                РАСПРОСТРАНЕНИЯ РЕЛИГИЙ. </p>
                 </div>
+                <summary names="0" values="0" uuid="fc4430e5-974b-4a7e-a9b3-aa709f485d1f" ts="2011-08-23T21:58:27.288+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="30"/>
@@ -5388,6 +5475,7 @@
                франц.-русский С. Дидо (Варшава, 1896). — Краткий список "Словарей", имеющихся в
                книжном магазине Вольфа, см. в "Известиях" Вольфа, 1897, № 2. Н. Лucoвский. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="4128ffd3-e9c8-4a10-ab85-1753a83fcb00" ts="2011-08-23T23:21:50.754+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="33"/>
@@ -5693,6 +5781,7 @@
                многие подобные высшие учебные заведения, быстро стала богатеть через процветание
                своих фабрик и заводов (см. Техническое образование). Д. Менделеев. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="b248e37d-43e3-4622-afb0-78f42529b59a" ts="2011-08-23T23:21:51.219+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="35a"/>
@@ -7192,6 +7281,7 @@
                появился еще том о Фихте). Политическим интересом дня вызваны переводы "Утопии" Мора,
                "Государства солнца" Кампанеллы, сочинений Менгера и др. Э. Р. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="11d4cf9f-5e9a-4753-ac67-733e41a9a46b" ts="2011-08-23T23:21:51.521+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="38"/>
@@ -7667,6 +7757,7 @@
                Милюков, "Очерки по истории русской культуры" (СПб., 1896 — 1903); Ф. Готтенрот,
                "История внешней культуры" (русс. перев. Н. Клячко, 1903). Д. Каринский. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="f2865fca-83f5-4c8d-b156-0d0f4ec79f09" ts="2011-08-23T23:21:51.844+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="38a"/>
@@ -7822,6 +7913,7 @@
                братства народов, единого человечества, "идея единого стада, единого пастыря". Эта
                идея еще юна, но ей принадлежит будущее. Л. Штернберг. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="2e738856-6437-4a8a-9bce-0d2e5c9b3e5c" ts="2011-08-23T23:21:52.123+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="40a"/>
@@ -8158,6 +8250,7 @@
                выдающихся ученых и рассчитанной на 12 томов. О русских энциклопедиях см. Словари. Л.
                Горнфельд. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="924ce339-0d8f-4d30-a022-74750ad237e0" ts="2011-08-23T23:21:52.398+01:00"/>
             </div>
          <!--span of text not digitised-->
             <milestone unit="volume" n="41"/>
@@ -10197,6 +10290,7 @@
                предисловием Е. Дегена, СПб., 1903, "Знание"); Е. Деген, "Всенародное искусство"
                ("Мир Божий", 1904). Е. Аничков. </p>
                 </div>
+                <summary names="0" values="0" instances="0" uuid="49c5c2a6-5a4b-4337-8bc4-6aba51bc1500" ts="2011-08-23T23:21:52.855+01:00"/>
             </div>
         </body>
     </text>

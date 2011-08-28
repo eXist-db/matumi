@@ -13,8 +13,7 @@ declare option exist:serialize "method=xml media-type=text/xml omit-xml-declarat
 (: import module namespace browse-cache="http://exist-db.org/xquery/apps/matumi/cache" at "browse_cache.xqm"; 
 import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
 import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.exist.xquery.modules.cache.CacheModule";
-
-
+import module namespace counter="http://exist-db.org/xquery/counter org.exist.xquery.modules.counter.CounterModule";
 
 :)
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
@@ -24,6 +23,13 @@ import module namespace browse-subject="http://exist-db.org/xquery/apps/matumi/b
 import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/browse-names" at "browse_names.xqm";
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 import module namespace browse-summary="http://exist-db.org/xquery/apps/matumi/browse-summary" at "browse_summary.xqm";
+import module namespace page-304="http://exist-db.org/xquery/page-304-status" at "page-304-status.xqm";
+
+
+
+declare function local:capitalize-first($str as xs:string) as xs:string {
+    concat(upper-case(substring($str,1,1)), substring($str,2))
+ };
 
 declare function local:section-titles-combo(  $level as node()? ) {
    let $titles := 
@@ -43,13 +49,16 @@ let $section := request:get-parameter("section", 'none'),
     $cache-id := request:get-parameter("cache", 'none'),   
     $level := number(request:get-parameter("level", 0 )),
         
-      (:  <info data="" ts="" expires-at=""/> 
-        
-    $cached-info := browse-cache:cached-info($cache-id),
-    $data-id := $cached-info/@data,  (: should be the same as $browse:LEVELS[ @pos  = $level ]/@vector :)
-    $ts      :=  $cached-info/@ts,
-    $expires-at :=  $cached-info/@expires-at,       
-     :)
+(:
+
+function page-304:is-cached-page-still-valid( 
+      $ETag as xs:string?,
+      $last-modified as xs:dateTime,
+      $expiresAfter as xs:dayTimeDuration?, 
+      $must-revalidate as xs:boolean
+)
+
+:)
      
     $cache := response:set-header( "Cache-Control", 'public, max-age=43200') (: 12h :)
 (:    
@@ -67,8 +76,8 @@ return
    
      return 
       element test { 
-         $Q,
-         browse-summary:get-out-of-entries-only( $browse:QUERIES, $browse:LEVELS[@pos = $level], $browse:URIs,  $browse:CATEGORIES, $browse:refresh-categories,  $browse:embeded-category-summary ),
+         $browse:QUERIES,
+        (: browse-summary:get-out-of-entries-only( $browse:QUERIES, $browse:LEVELS[@pos = $level], $browse:URIs,  $browse:CATEGORIES, $browse:refresh-categories,  $browse:embeded-category-summary ),  :)
         <test-------------------------------------------/>, 
         $browse:URIs,
         $browse:CATEGORIES,
@@ -77,15 +86,7 @@ return
 
       }
    )else 
-   
-(:
-    if( $data-id != $browse:LEVELS[ @pos  = $level ]/@vector ) then (
-        $cached-info,
-        $browse:LEVELS[ @pos  = $level ]   
-    
-    )else
-:)
-  
+ 
      if(  request:get-parameter("section", 'none')='level-data-combo' and $level > 0) then (
            local:section-titles-combo(  $browse:LEVELS[$level] )    
            
@@ -133,7 +134,11 @@ return
             				<td  >{
                        				browse-entries:direct-link($e), 
             				        if( exists($alt-titles)) then concat(' (', fn:string-join( $alt-titles , ', '), ')') else() }</td>,
-            				<td>{ string($e/@subtype )}</td>,
+            				<td>{ 
+            				   if( fn:exists( $e/@subtype )) then 
+            				      local:capitalize-first($e/@subtype )
+            				   else '-'
+            				 }</td>,
             				<td class="cat-container collapsed" >{  
             				 
           				  if( $categories-number  = 0 and fn:exists($summary/@values ) ) then( 

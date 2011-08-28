@@ -24,6 +24,7 @@ import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/b
 
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
+
 (:
 import module namespace browse-cache="http://exist-db.org/xquery/apps/matumi/cache" at "browse_cache.xqm";
 import module namespace browse-config="http://exist-db.org/xquery/apps/matumi/browse-config" at "browse_config.xqm";
@@ -265,11 +266,15 @@ declare function browse:section-as-searchable-combo-generic( $level as node()?, 
 			<h2>{browse:levels-combo( $level,  $level/@pos ) }</h2>
 			<div class="block L-block">{    			   
                     let $url :=browse:ajax-url( $level, ( 'section=level-data-combo'), $browse:controller-url, $browse:LEVELS )     	     
-    		        return <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>   
+    		        return (
+    		          
+    		           <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>  
+    		        )
                 }
                  <a href="#{$level}" class="combo-reset" combo2reset="{$level}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
             </div>
 		</div>
+		
 	</div>
 };
 
@@ -284,6 +289,7 @@ declare function browse:level-boxes(){
      	browse:section-as-searchable-combo-generic( $browse:LEVELS[4], $browse:combo-ajax-load),
 	   <input type="submit" id="browseSubmit" value="Submit"/>,
 	   <div class="clear"></div>	
+(:	    , $browse:QUERIES/data-all   :)
    }</form>
 };
 

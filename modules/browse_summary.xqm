@@ -12,6 +12,7 @@ declare boundary-space strip;
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
 import module namespace system="http://exist-db.org/xquery/system";
+import module namespace counter="http://exist-db.org/xquery/counter" at "java:org.exist.xquery.modules.counter.CounterModule";
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
@@ -81,85 +82,6 @@ declare function  browse-summary:update-one( $node as node() ){
     return $new-summary
 };
 
-
-(:  cases: 
-          A. nodes are tei:TEI:
-             A.1  no uri                - all categories
-             A.2  some uri              - summaries for these books
-             A.3  some uri and node-id  - summaries for these entries  
-
-          B. nodes are tei:div:
-            B.1 no uri                - all categories
-            B.2 some uri              - summaries for these books
-            B.3 some uri and node-id  - summaries for these entries
-            
-          C. nodes are tei:name
-            C.1 no uri                - all categories
-            C.2 some uri              - summaries for the containing books 
-            C.3 some uri and node-id  - summaries for the containing entries
-            
-          D. nodes are <category/>
-            D.1  - combine them          
- :)
- (:
-declare function  browse-summary:get( $nodes as node()*, $root as xs:boolean, $URIs as element(URI)*,  $Categories as element(category)*, $update as xs:boolean, $embeded as xs:boolean  ){
-  if( $root ) then(  (: cases x.1    or fn:empty( $URIs )  :)
-        browse-summary:all()
-   )else (
-    
-      let $nodes-to-process :=  typeswitch ( $nodes[1] )      
-          (: previous level is books :)
-          case element(tei:TEI)  return ( 
-               (: if there are any $URIs/uri then $nodes will contain only the relevant books :)         
-               
-               (: only selected entries :)
-               if( $URIs[ uri and node-id] ) then (
-                   for $book in $nodes  
-                   let $U := $URIs[ uri = document-uri( root($book)) ] 
-                   return for $node-id in $U/node-id 
-                          return util:node-by-id( root($book), $node-id)           
-               )else $nodes
-            )
-          
-          (: previous level is entries :)
-          case element(tei:div)  return (          
-              (: no specific entries - whole books :)
-              if( empty($URIs/node-id)) then (
-                  for $uri in $URIs/uri 
-                  return fn:doc( $uri )/tei:TEI
-                  
-              )else $nodes
-            )
-            
-          case element(tei:name) return   <error>tei:name</error>           
-          case element(tei:category) return   <error>tei:category</error>            
-          default return $nodes
-    
-    
-    let $existing-summary := if( $browse:refresh-categories ) then () 
-                             else collection( concat($config:app-root, '/cache'))/categories-summary[ @uuid = $nodes-to-process/summary/@uuid ]/*,
-                             
-        $nodes-with-missing-summary  := if( $browse:refresh-categories) then 
-                                             $nodes-to-process 
-                                        else $nodes-to-process[ not(summary/@uuid) or not(summary/@uuid = $existing-summary/@uuid) ],
-        
-        $fresh := for $n at $pos in $nodes-with-missing-summary[ position() <= $browse:max-cat-summary-to-save ]   
-                  return browse-summary:update-one( $n )
-                       
-    let $result := (
-        $existing-summary,
-        $fresh, 
-         browse-summary:make( fn:subsequence($nodes-with-missing-summary, $browse:max-cat-summary-to-save+1 ), false() )
-      )  
-
-     return 
-       if( count( $nodes-to-process ) > 1 ) then (
-             browse-summary:combine( $result, $Categories )
-       )else $result
-  )
-};
-:)
-
 declare function  browse-summary:get-out-of-entries-only( 
    $QUERIEs as element(query)*,  
    $level as node()?,    
@@ -171,9 +93,9 @@ declare function  browse-summary:get-out-of-entries-only(
  
     let $Q := $QUERIEs[@name= $level ],
         $data-all := browse-data:strip-query(  $Q/tei:data-all ),
-        $data-filteres := browse-data:strip-query(  $Q/tei:data-all )
+        $data-filtered := browse-data:strip-query(  $Q/tei:data-all )
 
-  return if( $level/@pos = 1 ) then(  (: cases x.1  or fn:empty( $URIs ) :)
+  return if( $level/@pos = 1 or $data-all[2] = '#all' ) then(  (: cases x.1  or fn:empty( $URIs ) :)
         browse-summary:all()
    )else (
     
@@ -262,8 +184,9 @@ declare function  browse-summary:save( $node as node()?, $categories as element(
               return (
 (:          
               return util:catch("*", ( 
-                 eval-async((
-:)                 
+ :)               
+         util:eval-async((
+               
             system:as-user( request:get-attribute('xquery.user'), request:get-attribute('xquery.password'), (
             
                       if( fn:exists( $categories)) then (
@@ -305,8 +228,9 @@ declare function  browse-summary:save( $node as node()?, $categories as element(
                         util:log("INFO", ("Saved categories-summary for ", document-uri( root($node)), ', ', if( fn:exists($node)) then util:node-id( $node ) else() )  )
                     )) 
                     
-(:
-                  ))    
+
+                  ))   
+ (:                 
                 ), util:log("WARN", ("Failed to save categories-summary for ", document-uri( root($node)), ', ',if( fn:exists($node)) then util:node-id( $node ) else() )  )
 :)                
              ) 

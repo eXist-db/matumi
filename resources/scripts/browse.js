@@ -104,5 +104,17 @@ $(document).ready(function() {
 			}
 	});
 		    
+	// metadata 	    
+    $('#matadataBooks').live('change', function(event){
+       $('#metadataForm').submit();
+    });
+
+   var ul = $('ul.editions'), li = ul.find('li');
+   if( li.length > 4 ) {
+       ul.makeacolumnlists({
+         cols: li.length < 10 ? 3: 4,
+         colWidth:0,equalHeight:true});
+    }		    
+		    
 });
 

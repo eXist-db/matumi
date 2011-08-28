@@ -11,6 +11,12 @@ declare boundary-space strip;
 
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
+
+
+declare function local:capitalize-first($str as xs:string) as xs:string {
+    concat(upper-case(substring($str,1,1)), substring($str,2))
+ };
+
 declare function browse-subject:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)*, $SUBJECTs as node()*  ){
     let $Q := $QUERIEs[@name= $level ],
         $data-all := browse-data:strip-query(  $Q/tei:data-all ),
@@ -29,7 +35,7 @@ declare function browse-subject:titles-list-fast( $QUERIEs as element(query)*,  
                 element {'title'} {
                      if( $n = $SUBJECTs  ) then attribute {'selected'}{'true'} else (),
                      attribute {'value'} {  $title  },  
-                     $title,
+                     local:capitalize-first( $title ),
                      concat(' (', count(  $nodes/@subtype[ . = $n ]), ')')                    
                 }
        }

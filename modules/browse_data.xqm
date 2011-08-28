@@ -4,21 +4,18 @@ module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data
 
 declare namespace anno="http://exist-db.org/xquery/annotate";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
-
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
-
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 
-declare function browse-data:now() as xs:dateTime {   dateTime(current-date(), util:system-time() ) };
 
+declare function browse-data:now() as xs:dateTime {   dateTime(current-date(), util:system-time() ) };
 
 (:~
  : create file-node URI depending on the type of the element node.
  :)
-
 (: example: local:change-element-ns-deep($x, "http://www.w3.org/1999/xhtml")  :)
 declare function browse-data:change-element-ns-deep ($element as element(), $newns as xs:string) as element(){
   let $newName := QName($newns, local-name($element))
@@ -32,16 +29,6 @@ declare function browse-data:change-element-ns-deep ($element as element(), $new
   })
 };
 
-(:
-    It is all about selecting a subset of entries and then each level presentation 
-    will derive what to display out of the list of entries. 
-    We always start from a full entry list and filter out some of them on every level. 
-    
-    We need two subsets of data: 
-        1. Enumeration of all values for this level - we do not need the actual data 
-        2. filtered data for the next level       
-:)
-
 declare function local:isEQto($p as xs:string, $o as item()* ){   
    let $last := count( $o )
    return if( fn:exists( $o )) then (    
@@ -53,6 +40,15 @@ declare function local:isEQto($p as xs:string, $o as item()* ){
 };
 
 
+(:
+    It is all about selecting a subset of entries and then each level presentation 
+    will derive what to display out of the list of entries. 
+    We always start from a full entry list and filter out some of them on every level. 
+    
+    We need two subsets of data: 
+        1. Enumeration of all values for this level - we do not need the actual data 
+        2. filtered data for the next level       
+:)
 declare function browse-data:filter-one-level(
     $level-pos as xs:int,
     $LEVELs as element(level)*,
@@ -61,7 +57,7 @@ declare function browse-data:filter-one-level(
     $SUBJECTs as element(subject)*  
 ){
    let $coll := concat($config:app-root, '/data'),
-       $all-entries := ('collection("', $coll, '")/descendant-or-self::tei:div[@type="entry" ]'), (:  #all; :)
+       $all-entries := ('#all;collection("', $coll, '")/descendant-or-self::tei:div[@type="entry" ]'), (:  :)
        $this-level  := $LEVELs[ $level-pos ]
        
    return if(fn:empty($URIs) and fn:empty( $CATEGORIEs ) and fn:empty($SUBJECTs) ) then (
@@ -86,7 +82,7 @@ declare function browse-data:filter-one-level(
                   if( fn:exists( $URIs )) then "#fullPath;" else (),
                   for $u at $pos in $URIs return (
                      if( $pos > 1 ) then " | " else (),
-                    "doc( '", $u/uri, "')//tei:body/tei:div[@type='entry'] " 
+                    "doc('", $u/uri, "')//tei:body/tei:div[@type='entry'] " 
                   )                               
               )else(
                   ()
@@ -101,7 +97,7 @@ declare function browse-data:filter-one-level(
               )else  if( $this-level = "books" and empty( $URIs/node-id )) then (  
                  for $u at $pos in $URIs return (
                      if( $pos > 1 ) then " | " else (),
-                    "doc( '", $u/uri, "')//tei:body/tei:div[@type='entry']  "
+                    "doc('", $u/uri, "')//tei:body/tei:div[@type='entry']  "
                  )
               )else(
                   ()
@@ -131,7 +127,7 @@ declare function browse-data:filter-all-levels-before(
     $SUBJECTs as element(subject)*  
 ){
    let $coll := concat($config:app-root, '/data'),
-       $all-entries := ('collection("', $coll, '")/descendant-or-self::tei:div[@type="entry" ]') (: #all; :)
+       $all-entries := ('#all;collection("', $coll, '")/descendant-or-self::tei:div[@type="entry" ]') (:  :)
        
    return if( $level-pos = 1 and  fn:empty($URIs) and fn:empty( $CATEGORIEs ) and fn:empty($SUBJECTs) ) then (
          $all-entries             
@@ -139,35 +135,31 @@ declare function browse-data:filter-all-levels-before(
       if(  not($prev-levels = ('books', 'entries')) or fn:empty($URIs) ) then (
           $all-entries
       )else (
-         "( () | ",
+         "(() | ",
          
-           if( $LEVELs[ . = 'entries']/@pos > $LEVELs[ . = 'books']/@pos or
-               $LEVELs[ . = 'books']/@pos   <  $LEVELs[ . = 'entries']/@pos 
-              ) then  (
+           if( $LEVELs[ . = 'entries']/@pos > $LEVELs[ . = 'books']/@pos ) then  (
              (:  books, entries :)                             
                if( $prev-levels = "entries" and exists($URIs/node-id)) then (                                 
                   (: if node-id present then no other books are displayed :)                                   
                   for $u in $URIs[node-id] return ( "util:node-by-id( doc('", $u/uri,  "'), '", $u/node-id, "' ) | " )
               )else if( $prev-levels = "books" and exists($URIs) )   then (
                   (: whole books are loaded, follow entries fill filter by  :)
-                  for $u in $URIs return ("doc( '", $u/uri, "')//tei:body/tei:div[@type='entry'] | " )                               
+                  for $u in $URIs return ("#book:doc('", $u/uri, "')//tei:body/tei:div[@type='entry'] | " )                               
               )else(
-                  $all-entries,
-                  ' | '
+                  $all-entries, ' | '
               )                             
            )else(
              (: entries, books  :)
               if( $prev-levels = "entries" and exists($URIs/node-id) )   then (
                  for $u in $URIs[node-id] return ( "util:node-by-id( doc('", $u/uri,  "'), '", $u/node-id, "' ) | " ) 
               )else  if( $prev-levels = "books" and empty( $URIs/node-id )) then (  
-                 for $u in $URIs return ("doc( '", $u/uri, "')//tei:body/tei:div[@type='entry'] | " )
+                 for $u in $URIs return ("#book:doc('", $u/uri, "')//tei:body/tei:div[@type='entry'] | " )
               )else(
-                  $all-entries,
-                  ' | '
+                  $all-entries, ' | '
               )
            ),
            
-         ' () )'
+         ' ())'
       ),
       
       if( $prev-levels = 'subjects' and exists( $SUBJECTs )) then (
@@ -224,11 +216,24 @@ declare function browse-data:queries-for-all-levels(
        }
    )
 };
-
 declare function browse-data:strip-query( $q as xs:string ){ 
     if( fn:starts-with( $q, '#')) then (
        let $t := fn:tokenize($q, ';')
-       return ($t[2], $t[1]) 
+       return ($t[2], $t[1])
+       
+    )else if( fn:contains($q, '#book:')) then (
+       let $parts := fn:tokenize( $q, '#book:doc\(') 
+       return (
+            fn:replace( $q, '#book:', ''),
+            for $i in $parts return fn:substring-before($i, "'") (: book urls :)
+       )
+    
+    (:
+    
+    (() | doc('/db/matumi/data/EncycBritannica.xml')//tei:body/tei:div[@type='entry'] | 
+    doc('/db/matumi/data/xixue-tanyuan.xml')//tei:body/tei:div[@type='entry'] |  ())
+    :)
+    
     )else $q    
 
 };
