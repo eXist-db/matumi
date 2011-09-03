@@ -1,4 +1,4 @@
-$(document).ready(function() {
+head.ready(function() {
     $('.editor-area').wymeditor({
         toolsItems: [
             {'name': 'Bold', 'title': 'Strong', 'css': 'wym_tools_strong'}, 

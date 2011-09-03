@@ -1,8 +1,10 @@
 function fetchAJAXfragment( pos, that ){
         var $this = $(that).removeClass('');
         //var URL = $this.attr('url') +'?' + $("#browseForm").serialize();
-        var section = $this.attr('section')?  { section: $this.attr('section') }: {dummy:'yes'};
-        $this.load( $this.attr('url'), section, function(response, status, xhr) {
+        var section = $this.attr('section');
+        var url = $this.attr('url');
+        if(section ) url += '&section=' + section;
+        $this.load( url, function(response, status, xhr) {
             var newDom = $this.find(' > *').remove();
             if($this.attr('copyURL') == 'yes') 
                  newDom.attr('url', $this.attr('url'));
@@ -12,6 +14,7 @@ function fetchAJAXfragment( pos, that ){
              $('.ajax-loaded', newDom ).each( fetchAJAXfragment);            
         });
 };
+
 
 function disableSinleOption( $t, value ){
     var current = $t.val();    
@@ -33,11 +36,9 @@ function disableLeftOptions( $leftCombos, $combosToDisable  ){
    }
 };
 
+head.ready(function() {
+    $.ajaxSetup({ifModified:true});
 
-
-
-
-$(document).ready(function() {
     $('#L1').live('change', function(event){
          disableLeftOptions( $(event.target), $('#L2, #L3, #L4'));
          $('#browseForm').submit();

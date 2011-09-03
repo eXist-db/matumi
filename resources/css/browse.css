@@ -63,3 +63,9 @@ td.cat-container.expanded .br { display:block !important }
 #browseForm { position:relative;}
 #browseSubmit {position:absolute; right:20px; top:-48px;}
 
+div.chzn-container ul.chzn-choices li.search-field {
+   padding-left:10px !important;       
+   margin-left:10px !important;
+   background: transparent url(find.png) no-repeat left  !important ;
+}
+

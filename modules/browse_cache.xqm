@@ -72,34 +72,35 @@ declare function browse-cache:get-cached-data( $cache-obj, $key as xs:string, $s
     cache:get($cache-obj, fn:string-join(($key, $suffix), '-'))
 };
 
-declare function  browse-cache:is-it-cached( 
+declare function  browse-cache:is-cached-page-still-valid( 
       $ETag as xs:string,
-      $last-modified as xs:dateTime,
+      $last-modified as xs:dateTime*,
       $expiresAfter as xs:dayTimeDuration?, 
       $must-revalidate as xs:boolean
 ) { 
      let $if-modified-since := request:get-header('If-Modified-Since')
      let $expire-after  := if( empty($expiresAfter) ) then  xs:dayTimeDuration( "PT12H" ) else $expiresAfter (: "P1D"   1 Day expiry period :)     
     
-     return if( ( request:get-header('If-None-Match') = $ETag ) or (:  ETag :)
-                (fn:string-length($if-modified-since) > 0 and datetime:parse-dateTime( $if-modified-since, 'EEE, d MMM yyyy HH:mm:ss Z' ) <= $last-modified ) 
-            ) then (                              
-                 let $dummy := (
-                        response:set-status-code( 304 ),
-                        response:set-header( "Cache-Control", concat('public, max-age=', $expire-after div xs:dayTimeDuration('PT1S')  )) (:   24h=86,400  , must-revalidate :)
-                        )
-                 return true()
-            ) else (                      
-                 let $maxAge := $expire-after  div xs:dayTimeDuration('PT1S')
-                 let $headers := (                          
-                      response:set-header( "ETag", $ETag ),
-                      response:set-header( "Last-Modified",  datetime:format-dateTime( $last-modified, 'EEE, d MMM yyyy HH:mm:ss Z' )),
-                      response:set-header( "Expires",        datetime:format-dateTime( dateTime(current-date(), util:system-time()) + $expire-after, 'EEE, d MMM yyyy HH:mm:ss Z' )), 
-                      response:set-header( "Cache-Control", concat( 'public, max-age=', $maxAge,  if( $must-revalidate ) then ', must-revalidate' else '' ))
-                  )
-                 return false()
-            ) 
-
-                                          
+     return 
+       if( ( request:get-header('If-None-Match') = $ETag ) or 
+            (fn:string-length($if-modified-since) > 0 and 
+             fn:exists( $last-modified ) and
+             datetime:parse-dateTime( $if-modified-since, 'EEE, d MMM yyyy HH:mm:ss Z' ) >= $last-modified ) 
+        ) then (                              
+             let $dummy := (
+                    response:set-status-code( 304 ),
+                    response:set-header( "Cache-Control", concat('public, max-age=', $expire-after div xs:dayTimeDuration('PT1S')  )) (:   24h=86,400  , must-revalidate :)
+                 )
+             return true()
+        ) else (                      
+             let $maxAge := $expire-after  div xs:dayTimeDuration('PT1S')
+             let $headers := (                          
+                  response:set-header( "ETag", $ETag ),
+                  response:set-header( "Last-Modified",  datetime:format-dateTime( $last-modified, 'EEE, d MMM yyyy HH:mm:ss Z' )),
+                  response:set-header( "Expires",        datetime:format-dateTime( dateTime(current-date(), util:system-time()) + $expire-after, 'EEE, d MMM yyyy HH:mm:ss Z' )), 
+                  response:set-header( "Cache-Control", concat( 'public, max-age=', $maxAge,  if( $must-revalidate ) then ', must-revalidate' else '' ))
+              )
+             return false()
+       )                                         
 };
 

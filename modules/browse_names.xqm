@@ -17,113 +17,6 @@ import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" a
 import module namespace browse-summary="http://exist-db.org/xquery/apps/matumi/browse-summary" at "browse_summary.xqm";
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
-(:
-declare function browse-names:data-all( $context-nodes as node()*,  $level as node(), $root as xs:boolean){   
-   if( $root  ) then 
-        collection(concat($config:app-root, '/data'))//tei:name[@type]       
-   else if( $level/@last ) then( 
-        $context-nodes (: when this is the last level there is no need to extract names. entry or book nodes will be returned 
-                          title-list will use the cached category lists :)
-   )else $context-nodes//tei:name[@type]
-}; 
-
-declare function browse-names:data-filtered( $data as node()*,  $level as node(), $URIs as node()*, $Categories as element(category)* ){       
-    if( $level/@last or empty( $Categories )) then 
-        $data 
-    else (
-(:   todo distinguish entities from categories 
-   <category name="event" count="1" total="1">
-      <value key="http://dbpedia.org/page/Mukden_Incident" count="1">Mukden Incident</value>
-   </category>
-:)
-    
-            let $names-with-values := if( exists( $Categories/value) ) then 
-                           for $n in $data/descendant-or-self::tei:name[  empty(@key) and @type =  $Categories/name ]
-                           return if( exists( $Categories[ name = $n/@type and value = fn:normalize-space($n )  ])) then 
-                                     $n
-                                  else ()
-                        else ()                
-               
-            return ( if( exists($Categories[key='*']) ) then (
-                       $data[  ./descendant-or-self::tei:name[ @type = $Categories[key='*']/name ] ]
-                    )else ())
-                    |
-                    (if( exists($Categories[ key != '*']) ) then
-                       $data[  ./descendant-or-self::tei:name[ @key = $Categories/key[not(. = '*') ] ]]
-                    else ())                       
-                    | 
-                   $names-with-values/ancestor-or-self::tei:div[@type="entry"]   
-
-    )
-};
-
-
-
-declare function browse-names:titles-list( 
-    $nodes as element()*,  
-    $level as node()?, 
-    $URIs as node()*, 
-    $Categories as element(category)*  
- ){
-     let $start :=  dateTime(current-date(), util:system-time() ), 
-       $categories :=  browse-summary:get($nodes, $level/@pos = 1, $URIs,  $Categories, $browse:refresh-categories,  $browse:embeded-category-summary ),
-                             
-       $ts-categories-list :=  dateTime(current-date(), util:system-time() ) - $start,
-       $ts-cat-start := dateTime(current-date(), util:system-time() ),
-       $cat := for $c in $categories 
-           let $c-selected := $Categories[ name = $c/@name and key = '*' ]
-           
-           return element {'group'}{
-               $c/@count,
-               $c/@values, 
-               $c/@name,
-               attribute {'title'}{ string($c/@name)},             
-               if( count( $c/* ) > 1 ) then (            
-                    element {'title'}{
-                        attribute {'value'}{$c/@name},
-                        $c/@*,
-                        if( exists($c-selected) ) then attribute {'selected'}{'true'} else (),
-                        concat( 'Any value for "', $c/@name, '"(',  $c/@count, ')' )
-                    }
-               ) else(),
-               
-               for $t in $c/*  
-               let $t-selected := if( exists( $t/@value-insted-of-key )) then            
-                                       $Categories[  name = $c/@name and value = $t/@key  ]
-                                  else $Categories[  name = $c/@name and key = $t/@key ]
-               return                    
-                   element title {
-                       if( $t-selected  ) then attribute {'selected'}{'true'} else (),
-                       $t/@count,
-                       $t/@total,            
-                       attribute {'value'}{ 
-                           if( exists( $t/@value-insted-of-key )) then     
-                                concat($c/@name, $browse:delimiter-uri-nameNode, $t/@key)
-                           else concat($c/@name, $browse:delimiter-uri-node, $t/@key)
-                         },
-   (:                   
-                       if( number($c/@count) > 1 ) then (
-                          attribute {'title'}{ concat(  $total, ' unique keys and ', $count, ' instaces'   )},
-                          concat( $t, ' (', $total, '/', $count ,')' )
-                       )else $t
-   :)                  string($t)  
-                   }
-           },
-    $ts-cat-time :=  dateTime(current-date(), util:system-time() ) - $ts-cat-start
-       
-  return element titles {
-        attribute {'name'}{ 'category' }, (: combo name, ie the parameter name :)
-        attribute {'count'}{ count( $categories )},
-        attribute {'total'}{ count( $categories/* )},
-        attribute {'values'}{ sum( $categories//@values )},
-        attribute {'title'}{ $level/@title },
-        attribute {'time-categories-list'}{ $ts-categories-list }, 
-        attribute {'time-categories-render'}{ $ts-cat-time },          
-        $cat
-    } 
-};
-:)
-
 declare function browse-names:titles-list-fast( 
     $QUERIEs as element(query)*,  
     $level as node()?, 
@@ -131,12 +24,10 @@ declare function browse-names:titles-list-fast(
     $Categories as element(category)*
 ){
     let $Q := $QUERIEs[@name= $level ],
-        $data-all := browse-data:strip-query(  $Q/tei:data-all ),
-        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
 (:        $nodes := util:eval($data-all[1])  :)
     
        $start :=  dateTime(current-date(), util:system-time() ), 
-       $categories :=  browse-summary:get-out-of-entries-only( $QUERIEs, $level, $URIs,  $Categories, $browse:refresh-categories,  $browse:embeded-category-summary ),
+       $categories :=  browse-summary:get-out-of-entries-only( $QUERIEs, $level, $URIs,  $Categories ),
        $ts-categories-list :=  dateTime(current-date(), util:system-time() ) - $start,
        $ts-cat-start := dateTime(current-date(), util:system-time() ),
        $cat := for $c in $categories 
@@ -197,13 +88,11 @@ declare function browse-names:titles-list-fast(
 declare function browse-names:categories-number($n as element()* ){   
    count( $n/descendant-or-self::tei:name[@type])
 };
-declare function browse-names:summary-detailes($n as element()* ){   
-   browse-summary:detailes($n)     
-};
 
-
-declare function browse-names:entiry-categories-listed( $e as node()  ){
-    let $categories :=  browse-summary:get-one( $e )
+declare function browse-names:entiry-categories-listed( $e as node(), $cat as node()*  ){
+    let $categories :=  if( fn:exists($cat) ) then 
+                             $cat
+                        else browse-summary:get-one( $e )
 
     return if( exists($categories)) then (        
         <span class="cat-toggle collapsed">&#160;</span>,
@@ -228,6 +117,8 @@ declare function browse-names:entiry-categories-listed( $e as node()  ){
                 )
                }</span>
          )
-     ) else()   
+     ) else(
+         <span>-</span>
+     )   
 };
 

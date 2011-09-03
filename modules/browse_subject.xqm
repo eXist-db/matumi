@@ -18,10 +18,7 @@ declare function local:capitalize-first($str as xs:string) as xs:string {
  };
 
 declare function browse-subject:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)*, $SUBJECTs as node()*  ){
-    let $Q := $QUERIEs[@name= $level ],
-        $data-all := browse-data:strip-query(  $Q/tei:data-all ),
-        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
-        $nodes := util:eval($data-all[1])
+    let $nodes := browse-data:execute-query( $QUERIEs[@name= $level ] ) 
     
     return  element titles {
         attribute {'name'}{ 'subject' },

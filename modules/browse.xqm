@@ -48,6 +48,8 @@ declare variable $browse:grid-ajax-trigger := $browse:grid-categories-page-size;
 declare variable $browse:grid-categories-ajax-trigger := 25;
 
 declare variable $browse:minutes-to-cache := 20;
+declare variable $browse:http-cache :=  xs:dayTimeDuration( "PT12H" );
+
 
 declare variable $browse:cache-cleared := if( request:get-parameter("cache-reset", 'no' ) = 'yes') then cache:clear( session:get-id() ) else();
 declare variable $browse:cache := cache:cache( session:get-id() );
@@ -164,9 +166,7 @@ declare function browse:ajax-url( $level as node()?, $param as xs:string*, $cont
        for $L in $LEVELS return 
            for $p in request:get-parameter( $L/@value-names, () ) 
            order by $p          
-           return concat($L/@value-names, '=', $p),
-       concat('session=',session:get-id() ),
-       concat('cache=', $level/@uuid) 
+           return concat($L/@value-names, '=', $p)
     ),'&amp;')
 };
 
@@ -266,10 +266,9 @@ declare function browse:section-as-searchable-combo-generic( $level as node()?, 
 			<h2>{browse:levels-combo( $level,  $level/@pos ) }</h2>
 			<div class="block L-block">{    			   
                     let $url :=browse:ajax-url( $level, ( 'section=level-data-combo'), $browse:controller-url, $browse:LEVELS )     	     
-    		        return (
-    		          
+    		        return     		          
     		           <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>  
-    		        )
+    		        
                 }
                  <a href="#{$level}" class="combo-reset" combo2reset="{$level}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
             </div>

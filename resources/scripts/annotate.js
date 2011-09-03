@@ -8,7 +8,7 @@ var selector = null;
 
 var selection = null;
 
-$(document).ready(function() {
+head.ready(function() {
     $("#error-message").dialog({
         title: 'An Error Occurred',
         width: 450,

@@ -1,6 +1,6 @@
 var editor = null;
 
-$(document).ready(function() {
+head.ready(function() {
     $("#tool-dialog").dialog({
         title: 'Edit/Insert Term',
         width: 450,

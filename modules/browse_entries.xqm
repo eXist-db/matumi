@@ -15,78 +15,6 @@ import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" a
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 
-(:
-declare function browse-entries:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
-   if( $root or $level/pos = 1 ) then 
-        collection(concat($config:app-root, '/data'))//tei:body/tei:div[@type="entry"]    
-   else typeswitch ($context-nodes[1] )
-          case element(tei:TEI)  return $context-nodes//tei:body/tei:div[@type="entry"] | ()         (: remove duplicates ? :)   
-          case element(tei:name) return $context-nodes/ancestor-or-self::tei:div[@type="entry"] | ()  
-         default                 return <error type="unknown-context-data-element"/>       
-};
-
-declare function browse-entries:data-filtered( $data as node()*, $level as node(),  $URIs as node()*, $Categories as element(category)* ){
-    if( empty($URIs) )then (
-             $data   
-    )else (
-       let $urls := if( exists($URIs/node-id)) then $URIs[node-id] else $URIs
-       return for $d in $data 
-           let $this-param-URI := $urls[ uri = document-uri( root($d) )  ]
-           return    
-            if( exists($this-param-URI) ) then(
-                if( empty( $this-param-URI/node-id  ) or $this-param-URI/node-id   = util:node-id($d)  ) then (
-                      $d
-                )else ()        
-            )else ()          
-    )  
-};
-
-declare function browse-entries:filtered( $data as node()*, $URIs as element(URI)*, $Categories as element(category)* ){       
-    let $step1 := 
-        if(  exists($URIs/node-id) ) then (
-            $URIs/node-id,           
-            $data[ util:node-id(.) = $URIs/node-id and document-uri( root(.)) = $URIs/uri  ]
-        )else (  
-            <no-node-id/>,
-            $URIs,
-            $URIs/tei:node-id,
-            $data
-        )            
-  
-    return  if(  exists($Categories/name) ) then (
-            let $names-with-values := if( exists( $Categories/value) ) then 
-                           for $n in $data/descendant-or-self::tei:name[  empty(@key) and @type =  $Categories/name ]
-                           return if( exists( $Categories[ name = $n/@type and value = fn:normalize-space($n )  ])) then 
-                                     $n
-                                  else ()
-                        else ()
-                
-               
-            return  (if( exists($Categories[key='*']) ) then (
-                       $data[  ./descendant-or-self::tei:name[ @type = $Categories[key='*']/name ] ]
-                    )else ())
-                    |
-                    (if( exists($Categories[ key != '*']) ) then
-                       $data[  ./descendant-or-self::tei:name[ @key = $Categories/key[not(. = '*') ] ]]
-                    else ())                       
-                    | 
-                   $names-with-values/ancestor-or-self::tei:div[@type="entry"]   
-       ) else 
-              $step1
-};
-:)
-
-
-(:
-     let $c-selected := $Categories[ name = $c/@name and key = '*' ]
-            for $t in $c/*  
-            let $c-selected := if( exists( $t/@value-insted-of-key )) then            
-                                    $Categories[  name = $c/@name and value = $t/@key  ]
-                               else $Categories[  name = $c/@name and key = $t/@key ]
-:)
-
-
-
 (: I have an error "Can not find the ICU4J library in the classpath com.ibm.icu.text.Normalizer " when using fn:normalize-unicode :)
 declare function browse-entries:heads-with-same-xmlID( $xml-id as xs:string* ) as node()*  { 
      for $i in browse-books:data-all((), (), true())//head[ .//@xml:id = $xml-id ] 
@@ -127,36 +55,8 @@ declare function browse-entries:direct-link( $entry as element()? ){
    }     
 };
 
-(:
-declare function browse-entries:titles-list( $nodes as node()*,  $level as element(level)?, $URIs as element(URI)*, $Categories as element(category)*  ){
-    
-    element titles {
-        attribute {'name'}{ 'entry-uri' },
-        attribute {'count'}{ count($nodes)},
-        attribute {'title'}{ $level/@title },
-        element {'group'}{
-            for $n in $nodes 
-             let $title := $n/tei:head[not(@type='alt')][1] 
-             order by string($title)
-             return 
-                element {'title'} {
-                     if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
-                     attribute {'value'} {  browse:makeDocument-Node-URI( $n ) },  
-                     attribute{'xml-id'}{ string($n/head//@xml:id[1]) },
-                     attribute{'node-id'}{ util:node-id($n) },                     
-                     $title,
-                     $n/tei:head[ @type='alt']
-                }
-       }
-    }    
-};
-:)
-
 declare function browse-entries:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
-    let $Q := $QUERIEs[@name= $level ],
-        $data-all := browse-data:strip-query(  $Q/tei:data-all ),
-        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
-        $nodes := util:eval($data-all[1])
+    let $nodes := browse-data:execute-query( $QUERIEs[@name= $level ] ) 
     
     return  element titles {
         attribute {'name'}{ 'entry-uri' },

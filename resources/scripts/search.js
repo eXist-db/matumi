@@ -1,4 +1,4 @@
-$(document).ready(function() {
+head.ready(function() {
     $(".facet").change(function () {
         $("#search-form").submit();
     });

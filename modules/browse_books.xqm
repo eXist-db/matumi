@@ -30,7 +30,6 @@ declare function browse-books:data-filtered( $data as node()*, $level as node(),
         $data    
 };
 
-TEI/teiHeader/fileDesc/sourceDesc/biblFull/titleStmt/title
 :)
             			      
 declare function browse-books:title-extract( $title as node(), $root as node(),  $URIs as node()* ){     
@@ -69,10 +68,7 @@ declare function browse-books:titles-list( $nodes as element()*,  $level as node
 
 
 declare function browse-books:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
-    let $Q := $QUERIEs[@name= $level ],
-        $data-all :=      browse-data:strip-query(  $Q/tei:data-all ),
-        $data-filteres := browse-data:strip-query(  $Q/tei:data-all ),
-        $nodes := util:eval($data-all[1])/ancestor-or-self::tei:TEI
+    let $nodes := browse-data:execute-query( $QUERIEs[@name= $level ] )/ancestor-or-self::tei:TEI 
     
     return
     element titles {
