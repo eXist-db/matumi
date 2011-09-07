@@ -55,6 +55,17 @@ declare function browse-entries:direct-link( $entry as element()? ){
    }     
 };
 
+declare function browse-entries:makeDocument-Node-URI( $node as node() ) as xs:string {
+  fn:string-join((
+       document-uri( root($node)),       
+       typeswitch ( $node )
+          case element(tei:div)  return $browse:delimiter-uri-node
+          case element(tei:name) return $browse:delimiter-uri-nameNode
+          default return '_node-id_',
+       util:node-id($node)
+  ),'')
+};
+
 declare function browse-entries:titles-list-fast( $QUERIEs as element(query)*,  $level as node()?, $URIs as node()*, $Categories as element(category)* ){
     let $nodes := browse-data:execute-query( $QUERIEs[@name= $level ] ) 
     
@@ -69,7 +80,7 @@ declare function browse-entries:titles-list-fast( $QUERIEs as element(query)*,  
              return 
                 element {'title'} {
                      if( $URIs[uri =  document-uri( root($n)) and node-id = util:node-id($n) ]  ) then attribute {'selected'}{'true'} else (),
-                     attribute {'value'} {  browse:makeDocument-Node-URI( $n ) },  
+                     attribute {'value'} {  browse-entries:makeDocument-Node-URI( $n ) },  
                      attribute{'xml-id'}{ string($n/head//@xml:id[1]) },
                      attribute{'node-id'}{ util:node-id($n) },                     
                      $title,

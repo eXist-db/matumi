@@ -117,7 +117,7 @@ declare function metadata:process($label as xs:string?, $Nodes as node()* ) {
 
 declare function metadata:all($node as node()*, $params as element(parameters)?, $model as item()*) {
    let $books := browse-books:data-all( (), (), true()),
-       $uri := ( request:get-parameter("uri", () ), document-uri( $books[1] ))[1],
+       $uri := ( request:get-parameter("doc", () ), document-uri( $books[1] ))[1],
        $uri-annotation := concat( fn:substring-before($uri, '.xml'), '-annotations.xml'),
        $doc := doc($uri)/*, 
        $doc-annotation := if( fn:doc-available( $uri-annotation ) ) then doc($uri-annotation)/* else (),
@@ -132,10 +132,13 @@ declare function metadata:all($node as node()*, $params as element(parameters)?,
    return
     <div class="grid_16 entry-view">
       <form id="metadataForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }">{
-    
-       browse:section-parameters-combo( 
-             browse-books:titles-list( $books, (), $browse:URIs,() ),
-             <level value-names="uri" title="Books" ajax-if-more-then="-1" class="">matadataBooks</level>,
+       let $titles := browse-books:titles-list( $books, (), $browse:URIs,() )
+       return browse:section-parameters-combo( 
+             <tei:titles name='doc' >{ 
+                $titles/@*[ local-name() != 'name'],
+                $titles/*
+             }</tei:titles>,
+             <level value-names="doc" title="Books" ajax-if-more-then="-1" class="">matadataBooks</level>,
              false(),
              false()
          ) 
@@ -154,8 +157,7 @@ declare function metadata:all($node as node()*, $params as element(parameters)?,
                 metadata:process('Other editions',$biblFull/tei:notesStmt ),
                 metadata:process('Physical Description',  $msDesc/tei:physDesc),
                 metadata:process('Content',       $msDesc/tei:msPart/tei:msContents ),
-                metadata:process('History of the manuscript',       $msDesc/tei:msPart/tei:history )
-    
+                metadata:process('History of the manuscript',       $msDesc/tei:msPart/tei:history )    
              }</tbody>
            </table>
            

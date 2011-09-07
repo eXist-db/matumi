@@ -144,7 +144,6 @@ declare variable $browse:LEVELS :=
  
 declare variable $browse:QUERIES :=  browse-data:queries-for-all-levels( $browse:LEVELS, $browse:URIs, $browse:CATEGORIES, $browse:SUBJECTS );
 
-
 declare function browse:makeDocument-Node-URI( $node as node() ) as xs:string {
   fn:string-join((
        document-uri( root($node)),       
@@ -155,6 +154,7 @@ declare function browse:makeDocument-Node-URI( $node as node() ) as xs:string {
        util:node-id($node)
   ),'')
 };
+
 declare function browse:ajax-url( $level as node()?, $param as xs:string*, $controller-url as xs:string, $LEVELS ) as xs:string {
     fn:string-join((
       concat($controller-url,'/browse-section?'),
@@ -217,8 +217,8 @@ declare function browse:section-parameters-combo( $titles as element(titles)?, $
            $titles/@values,
            if( $multiple ) then attribute {'multiple'}{'true'} else(),
            if( $use-plugin and $browse:combo-plugin-in-use and count($titles/group/title) < $browse:combo-plugin-drop-limit ) then
-               attribute {'class'}{ 'chzn-select' }
-           else (),           
+                attribute {'class'}{ 'browseParameters chzn-select' }
+           else attribute {'class'}{ 'browseParameters' },           
            if( exists( $has-groups )) then ( 
              for $g in $titles/group return 
               <optgroup label="{ $g/@title}">{                
@@ -261,55 +261,40 @@ declare function browse:section-parameters-combo( $titles as element(titles)?, $
 };
 
 declare function browse:section-as-searchable-combo-generic( $level as node()?, $ajax-loaded as xs:boolean ) {                     
-    <div class="grid_4">
+    <div class="grid_4 omega">
 		<div class="box L-box">
 			<h2>{browse:levels-combo( $level,  $level/@pos ) }</h2>
 			<div class="block L-block">{    			   
                     let $url :=browse:ajax-url( $level, ( 'section=level-data-combo'), $browse:controller-url, $browse:LEVELS )     	     
-    		        return     		          
-    		           <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>  
-    		        
-                }
-                 <a href="#{$level}" class="combo-reset" combo2reset="{$level}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
+    		        return <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>    		        
+                }<a href="#{$level}" class="combo-reset" combo2reset="{$level}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
             </div>
-		</div>
-		
+		</div>		
 	</div>
 };
 
-
-
 declare function browse:level-boxes(){
    <form id="browseForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }"> { 
-    (:     <input type="hidden" name="random" value="{util:uuid()}"/>  :)
         browse:section-as-searchable-combo-generic( $browse:LEVELS[1], $browse:combo-ajax-load ),
      	browse:section-as-searchable-combo-generic( $browse:LEVELS[2], $browse:combo-ajax-load ),
      	browse:section-as-searchable-combo-generic( $browse:LEVELS[3], $browse:combo-ajax-load),
      	browse:section-as-searchable-combo-generic( $browse:LEVELS[4], $browse:combo-ajax-load),
-	   <input type="submit" id="browseSubmit" value="Submit"/>,
-	   <div class="clear"></div>	
-(:	    , $browse:QUERIES/data-all   :)
+	    <input type="submit" id="browseSubmit" value="Go"/>,
+	   	<span id="autoUpdateCont">
+       	   <input type="checkbox" name="autoUpdate" id="autoUpdate">{
+           	      if( request:get-parameter("autoUpdate", 'off' ) = 'on' ) then(
+           	         attribute {'checked'}{'true'}
+           	      )else()
+           	}</input>
+           	<label for="autoUpdate"style="font-size:10px">Autoupdate</label>       	   
+       	</span>,
+	    <div class="clear"></div>	
    }</form>
 };
 
-(:
-	<span>
-	   <!-- input type="checkbox" name="autoUpdate" id="autoUpdate">{
-    	      if( request:get-parameter("autoUpdate", 'off' ) = 'on' ) then(
-    	         attribute {'checked'}{'true'}
-    	      )else()
-    	   }</input>
-    	   <span style="font-size:10px">Autoupdate</span>
-	   <br/ -->
-	</span>,
-
-:)
-
-
 
 declare function browse:page-grid( $show-all as xs:boolean ){ 
-       let $level := $browse:LEVELS[ .  = 'entries' ]
-       let $url := browse:ajax-url( $level, ('section=entity-grid'), $browse:controller-url, $browse:LEVELS)                
- 	   return  <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" copyURL="yes"  url="{ $url }">Loading</div>   
-	    
+   let $level := $browse:LEVELS[ .  = 'entries' ]
+   let $url := browse:ajax-url( $level, ('section=entity-grid'), $browse:controller-url, $browse:LEVELS)                
+   return  <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" copyURL="yes"  url="{ $url }">Loading</div> 	    
 };

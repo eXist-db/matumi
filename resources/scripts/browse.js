@@ -1,4 +1,4 @@
-function fetchAJAXfragment( pos, that ){
+ function fetchAJAXfragment( pos, that ){
         var $this = $(that).removeClass('');
         //var URL = $this.attr('url') +'?' + $("#browseForm").serialize();
         var section = $this.attr('section');
@@ -16,20 +16,19 @@ function fetchAJAXfragment( pos, that ){
 };
 
 
-function disableSinleOption( $t, value ){
+function disableSingleOption( $t, value ){
     var current = $t.val();    
     $t.find( 'option[value=' + value + ']').attr('disabled', 'true' ).hide();      
     if( current == value ){         
        $t.val( $t.find('option:enabled').eq(0).attr('value')); 
     }
-
 };
 
 function disableLeftOptions( $leftCombos, $combosToDisable  ){   
    var $select = $combosToDisable.eq(0);
    $select.find('option:disabled').removeAttr('disabled').show();
    for( var i = 0; i< $leftCombos.length; i++){      
-      disableSinleOption($select,$leftCombos.eq(i).val());
+      disableSingleOption($select,$leftCombos.eq(i).val());
    }
    if( $combosToDisable.length > 1){
       disableLeftOptions( $leftCombos.add($select), $combosToDisable.slice(1) );
@@ -41,23 +40,22 @@ head.ready(function() {
 
     $('#L1').live('change', function(event){
          disableLeftOptions( $(event.target), $('#L2, #L3, #L4'));
-         $('#browseForm').submit();
+         $('body').trigger('selectionHasChanged');
     });
      $('#L2').live('change', function(event){
           disableLeftOptions( $('#L1, #L2'), $('#L3, #L4')); 
-          $('#browseForm').submit();          
+          $('body').trigger('selectionHasChanged');       
      });
      $('#L3').live('change', function(event){
           disableLeftOptions( $('#L1, #L2, #L3'), $('#L4')); 
-          $('#browseForm').submit();          
+          $('body').trigger('selectionHasChanged');     
      });
     
      $("a.combo-reset").live('click', function(evnt){
         $('#'+ $(this).attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
         $('#'+ $(this).attr('combo2reset') +  ' option:selected').removeAttr('selected');  
-         $('#browseForm').submit(); 
+        $('body').trigger('selectionHasChanged');
     });    
-    
     
     $('.cat-toggle.collapsed').live('click', function(){
         $(this).closest('.cat-container').add( $(this)).addClass('expanded').removeClass('collapsed');
@@ -104,11 +102,6 @@ head.ready(function() {
 			   return false;			  
 			}
 	});
-		    
-	// metadata 	    
-    $('#matadataBooks').live('change', function(event){
-       $('#metadataForm').submit();
-    });
 
    var ul = $('ul.editions'), li = ul.find('li');
    if( li.length > 4 ) {
@@ -116,6 +109,22 @@ head.ready(function() {
          cols: li.length < 10 ? 3: 4,
          colWidth:0,equalHeight:true});
     }		    
-		    
+	
+	// metadata 	    
+    $('#matadataBooks').live('change', function(event){
+       $('#metadataForm').submit();
+    });
+
+    $('select.browseParameters').live( 'change', function(event){
+        $('body').trigger('selectionHasChanged', [true]);    
+    });
+
+    $('body').bind('selectionHasChanged', function(e, useAutoSubmit ){
+        if( !useAutoSubmit || $('#autoUpdate').is(':checked') ){  
+           $('#browseForm').submit();
+        }
+    })
+
+
 });
 

@@ -61,7 +61,8 @@ td.cat-container.expanded span.values { display:inline !important }
 td.cat-container.expanded .br { display:block !important }
 
 #browseForm { position:relative;}
-#browseSubmit {position:absolute; right:20px; top:-48px;}
+#autoUpdateCont {position:absolute; right:20px; top:-48px;}
+#browseSubmit { float:right; margin-top:26px; margin-right:14px  }
 
 div.chzn-container ul.chzn-choices li.search-field {
    padding-left:10px !important;       
