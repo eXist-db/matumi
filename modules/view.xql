@@ -33,6 +33,6 @@ return
         jquery:process(dict:transform($root[1]))
     (: else: just display the html page :)
     else
-        let $content := request:get-data()
+        let $content := request:get-data()/element()
         return
             jquery:process($content)
