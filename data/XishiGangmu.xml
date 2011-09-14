@@ -1,0 +1,125 @@
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Xishi gangmu 西史綱目 (An Outline of Western History)</title>
+                <editor>Research Project "Hidden Grammars of Transculturality - Migrations of Encyclopedic Knowledge and Power"</editor>
+                <respStmt>
+                    <resp>Project Coordination</resp>
+                    <name xml:id="BM">Barbara Mittler</name>
+                    <name xml:id="MH">Madeleine Herren-Oesch</name>
+                    <name xml:id="JK">Joachim Kurtz</name>
+                    <name xml:id="KMW">Kaja Mueller-Wang</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Technical supervision and file administration</resp>
+                    <name xml:id="JP">Jens Østergaard Petersen</name>
+                </respStmt>
+                <respStmt>
+                    <resp>TEI Header</resp>
+                    <name xml:id="OS">Oliver Schulz</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Cluster of Excellence "Asia and Europe in a Global Context"</publisher>
+                <pubPlace>Heidelberg University</pubPlace>
+                <address>
+                    <addrLine>Karl Jaspers Centre for Advanced Transcultural Studies</addrLine>
+                    <addrLine>Voßstraße 2, Building 4400</addrLine>
+                    <addrLine>69115 Heidelberg</addrLine>
+                    <addrLine>Germany</addrLine>
+                </address>
+                <date>2011</date>
+            </publicationStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Xishi gangmu 西史綱目 (An Outline of Western History)</title>
+                        <author>
+                            <name type="person" ref="persons.xml#ZhouWeihan">Zhou Weihan 周維翰</name>
+                        </author>
+                    </titleStmt>
+                    <editionStmt>
+                                          
+                        <edition>The 1st part is a reprint of the 1st edition of 1901.</edition>
+                        
+                    </editionStmt>
+                    <publicationStmt>
+                        <publisher>Jingshi wenshe 經世文社</publisher>
+                        <pubPlace>Shanghai 上海</pubPlace>
+                        <date>Guangxu 26[1903]</date>
+                    </publicationStmt>
+                    <notesStmt>
+                            <note>It seems that a third part was published or at least planned, as it is stated so in the preface. The book ends at 1000AD, which does not make much sense.
+                            The first and the second part seems to have been printed in an interval of several months, it may be that the third part should have been printed, 
+                            but could not because of the upheavals at the time or out of other reasons.</note>
+                    </notesStmt>
+                </biblFull>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement>Heidelberg University</settlement>
+                        <repository>Library of the Institute of Chinese Studies</repository>
+                    </msIdentifier>
+                    <physDesc>  
+                     <!--   <p>Size: 11.72 in (29,77 cm) * 8.25 in (20.96 cm) </p> -->
+                        <p>Volumes: 35 juan</p>
+                        <p>Script: Print</p>
+                        <p>Illustrations: Some tables and maps in the very beginning, nothing more.</p>
+                    </physDesc>
+                    <msPart>
+                        <altIdentifier>
+                            <idno/>
+                        </altIdentifier>
+                        <msContents>
+                            <p>Lemma-organization: The first 2 parts of the book are ordered into 35 juan. Ordered chronologically.</p>
+                            <p>Table of contents: The first part deals with events up to the turn of the eras. The second part deals with events of the 1st millenium AD.</p>
+                            <p>Index: none.</p>
+                            <p>Contents: Historical and cultural events from different countries over the time.</p>
+                        </msContents>
+                        <history>
+                            <p>The 1st part is a reprint of the 1st edition.</p>
+                            <p>A scan of the work is available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+                        </history>
+                    </msPart>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <settingDesc>
+                <p>The book was at least partly compiled in Shanghai, as its said in the preface.</p></settingDesc>
+            <textDesc>
+                <channel mode="w">print</channel>
+                <constitution type="single">The first two parts of the book comprise 35 juan. The events therein are ordered chronologically, 
+                    whereby in the beginning of the column the Chinese way of counting is used and the year related to the Gregorian Calendar is given thereafter in smaller characters. 
+                    The worldwide events are grouped to each year.              
+                </constitution>
+                <derivation type="abridgment"></derivation>
+                <domain type="education"/>
+                <factuality type="fact"/>
+                <interaction type="none" active="singular" passive="world"></interaction>
+                <preparedness type="none"/>
+                <purpose type="inform" degree="high">The book should give an overview about Western history and therefore wide the horizon of its readers.</purpose>
+                <purpose type="entertain" degree="low"/>
+            </textDesc>
+            <langUsage>
+                <language ident="zh" usage="100">Chinese</language>                
+            </langUsage>
+        </profileDesc>
+        <encodingDesc>
+            <p>Scans available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+            <p>Digitalization by Formax BPO Beijing Inc., special instructions for typing Chinese texts and encyclopedias developed by
+                Wolfgang Schmidle et. al. at Max Planck Institute for the History of Science, Berlin. 
+                Transformation of the digitized raw texts into TEI done by Wolfgang Schmidle. 
+                TEI Header and mark-ups inserted by project members at Heidelberg University.</p>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="2011-08-01" who="#OS">created</change>
+            <change when="2011-09-02" who="#OS">Questionnaire info added to TEI header</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="entry"/>       
+        </body>
+    </text>
+</TEI>

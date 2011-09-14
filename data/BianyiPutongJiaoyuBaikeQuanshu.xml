@@ -1,0 +1,166 @@
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Bianyi putong jiaoyu baike quanshu 編譯普通教育百科全書 (Compiled and Translated Encyclopedia for General Education) </title>
+                <editor>Research Project "Hidden Grammars of Transculturality - Migrations of Encyclopedic Knowledge and Power"</editor>
+                <respStmt>
+                    <resp>Project Coordination</resp>
+                    <name xml:id="BM">Barbara Mittler</name>
+                    <name xml:id="MH">Madeleine Herren-Oesch</name>
+                    <name xml:id="JK">Joachim Kurtz</name>
+                    <name xml:id="KMW">Kaja Mueller-Wang</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Technical supervision and file administration</resp>
+                    <name xml:id="JP">Jens Østergaard Petersen</name>
+                </respStmt>
+                <respStmt>
+                    <resp>TEI header</resp>
+                    <name xml:id="OS">Oliver Schulz</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Cluster of Excellence "Asia and Europe in a Global Context"</publisher>
+                <pubPlace>Heidelberg University</pubPlace>
+                <address>
+                    <addrLine>Karl Jaspers Centre for Advanced Transcultural Studies</addrLine>
+                    <addrLine>Voßstraße 2, Building 4400</addrLine>
+                    <addrLine>69115 Heidelberg</addrLine>
+                    <addrLine>Germany</addrLine>
+                </address>
+                <date>2011</date>
+            </publicationStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Bianyi putong jiaoyu baike quanshu 編譯普通教育百科全書 (Edited and Translated Encyclopedia for General Education)</title>
+                        <author>
+                            <name type="person" ref="persons.xml#FanDiji">Fan Diji 范廸吉</name>
+                            <name type="person" ref="persons.xml#HuangChaojian"> Huang Chaojian 黃朝鋻</name> 
+                            <name type="person" ref="persons.xml#LiSishen">Li Sishen 李思慎</name>
+                            <name type="person" ref="persons.xml#ZhangZhensheng">Zhang Zhensheng張振聲</name> 
+                            <name type="person" ref="persons.xml#GuFujia">Gu Fujia 顧福嘉</name>
+                        </author>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>1st Edition</edition>
+                    </editionStmt>
+                    <publicationStmt>
+                        <publisher>Shanghai huiwen xuesheban 上海會文學社版</publisher>
+                        <pubPlace>Shanghai 上海</pubPlace>
+                        <date>Guangxu 29 (1903)</date>
+                    </publicationStmt>
+                    <notesStmt>
+                        <note></note>
+                    </notesStmt>
+                </biblFull>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement>Heidelberg University</settlement>
+                        <repository>Library of the Institute of Chinese Studies</repository>
+                    </msIdentifier>
+                    <physDesc>
+                        <p>Size: 11.72 in (29,77 cm) * 8.25 in (20.96 cm) </p>
+                        <p>Volumes: 100 juan, 100 ce</p>
+                        <p>Script: Print</p>
+                        <p>Illustrations: It includes graphic representations for illustrating certain entries.</p>
+                    </physDesc>
+                    <msPart>
+                        <altIdentifier>
+                            <idno/>
+                        </altIdentifier>
+                        <msContents>
+                            <p>Lemma-organization: Ordered thematically, whereby the first division is made into "Elementary", "General" and "Scientific" Chapters.</p>
+                            <p>Table of contents: A general one (總目) and a more detailed one, in which every chapter's original source is mentioned (簡明目錄).</p>
+                            <p>Index: None.</p>
+                            <p>Contents: Covers a broad, though not all-encompassing thematic range, from sciences to humanities.<lb/> </p>
+                        </msContents>
+                        <history>
+                            <p>A partly scan of the work is available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+                        </history>
+                    </msPart>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <settingDesc>
+                <p>Fan Diji had studied in Japan and did also translate educational works from Japanese, such as Fujimato Ri藤本理, Wuji huaxue jiangyi無機化學講義 (1908), and a work on Swedish style gymnastics, 
+                    Ruidian shi ti cao jiaokeshu 瑞典式體操教科書 (1906).</p>
+                <p>The publishing house was set up in 1903 by Tang Shouqian 湯壽潛 and Shen Lin 沈霖 (Shen Yulin 沈玉林). The name of the Shanghai company publishing the Chinese edition suggests that it was done with Japanese financial support.</p>
+            </settingDesc>
+            <textDesc>
+                <channel mode="w">print</channel>
+                <constitution type="single">A text with three great divisions, which constitute different levels. On these different levels general topics are dealt with.</constitution>
+                <derivation type="abridgment">It is clearly stated, from which source every chapter was taken and translated. 
+                    In the Beginner’s Section 初級學 most of the titles are taken from the Questions and Answers series of Fuzanbō.
+                For the chapters at hand:  
+                    Riben lishi wenda日本歴史問答 based on work with the same title, which is 普通学問答全書 第３編 of Fuzanbō publisher, Tokyo 1894. (Japanese text accessible on-line in ndl)
+                    Shijie lishi wenda 世界歴史問答, based on work with the same title, which is 普通学問答全書 第5編 of Fuzanbō publisher, Tokyo , 1894. . (Japanese text accessible on-line in ndl)
+                    Riben dili wenda日本地理問答, based on work with the same title, which is 普通学問答全書 第1編 of Fuzanbō publisher, Tokyo , 1894. . (Japanese text accessible on-line in ndl)
+                    Some examples from the Putongxue section: 普通學
+                    Wanguo xin lishi 萬國新歷史 based on 万国新歴史, which is第５編 of 普通学全書 series of Fuzanbō publisher, Tokyo , 1891. (Japanese text accessible on-line in ndl) 
+                    
+                    Chapter 11. Lunlixue wenda 論理学問答 (Questions and answers on Logic) . 
+                    This is a translation of Fuzanbō ed., 富山房編，Ronrigaku mondō論理学問答, Tokyo:富山房, 明２９．１２. - (普通学問答全書 ; 第１８篇), 1896. Available on ndl website.
+                    
+                    chapter 43: Ikebukuro Hidetarō池袋秀太郎, Jingji fanlun 經濟汎輪 
+                    This is a translation of Ikebukuro Hidetarō池袋秀太郎, Keizai hanron経済汎論, Tokyo, Hakubunkan 1901, which is vol. 70 in the Teikoku hyakka zensho帝国百科全書, 東京：博文館,1898-1908.. Japanese. Full text Scan on HTTP://kindai.ndl.go.jp/. 
+                    
+                    chapter 44 Shangye jingji 商業經濟, Author 法學士 清水泰吉Shimizu Taikichi
+                    This is a translation of Shimizu Taikichi 清水泰吉, Shōgyō keizaigaku 商業経済学 ,Tokyo: Hakubunsha 1899, which is vol. 38 in the Teikoku hyakka zensho帝国百科全書, 東京：博文館, which is. Full scan of Japanese original in HTTP://kindai.ndl.go.jp/ 
+                    
+                    chapter 48 Hōjō Motoatsu北條元篤 and Kumagai Naota雄谷直太 eds. trsl., Guoji gongfa 國際公法. 
+                    This is a translation of Kokusai kōhō 国際公法, which is vol. 23 in the Teikoku hyakka zensho帝国百科全書, 東京：博文館,1899, Japanese. Full scan available in HTTP://kindai.ndl.go.jp/. The original work is Hall, William Edward (1836-1894), International Law (Oxford: Clarendon, 1880). A copy of this work is in the Heidelberg University Library.
+                    
+                    chapter 49 Nakamura Tarō中村太郎，Guoji sifa 國際私法 
+                    This is a translation of Nakamura Tarō 中村太郎, Kokusai Shihō国際私法 , Tokyo Hakubunkan, 1898, which is vol. 22 in the Teikoku hyakka zensho帝国百科全書, 東京：博文館,1898-1908. Full scan of this Japanese version in HTTP://kindai.ndl.go.jp./ 
+                    
+                    Chapter 50: Tanaka Jirō田中次郎(1873-1931), Riben diguo xianfa lun 日本帝國憲法論 by. 
+                    This is a translation of Tanaka Jirō田中次郎, Nihon teikoku kempō ron, Tokyo: Hakubunkan, 1899, which is vol. 33 of the Teikoku hyakka zensho帝国百科全書, 東京：博文館,1898-1908. The scan in HTTP://kindai.ndl.go.jp/ is made from the 8th edition in 1906. 
+                    
+                    Chapter 60:
+                    Julius Herrmann von Kirchmann (1802-1884), Zhexue fanlun 哲學汎論, Translation from the Japanese Tetsugaku hanron哲學汎論, Fujii Kenjiro藤井健治郎(1872-1931) tr. , Tokyo: Hakubunkan, 1899. This is the introduction to Kirchmann’s Katechismus der Philosophie, Leipzig, 1877, p. 2-25. Japanese Version available on the ndl website. This is Teikoku hyakka zenshu no. 35. In table of contents of Chinese edition, German author not mentioned. But “age of global culture” 近日宇宙文化達開明之極點。
+                    Availability: Scan of Japanese text in ndl. 
+                    
+                    Chapter 61: 
+                    Kanie Yishimaru蟹江義丸 (1872-1904), Xiyang zhexue shi 西洋哲學史 (History of Western Philosophy)
+                    This is a translation of Kanie Yishimaru 蟹江義丸, Seiyō tetsugaku shi 西洋哲學史, Tokyo: Hakubunkan, 1899, which is Teikoku hyakka zensho vol 32. Available on ndl. 
+                    
+                    Chapter 62: Eduard v. Hartmann (1842-1906), Zongjiao zhexue 宗教哲學 (Philosophy of religion)
+                    This is a retranslation of Eduard v. Hartmann, Shūkyō Tetsugaku 宗教哲學, tr. By Anezaki Masaharu 姉崎，正治（１８７３－１９４９）, Tokyo : Hakubunkan, 1898, which is vol. 5 of Teikoku hyakka zensho. This Japanese version is available on ndl website. Refers to Eduard von Hartmann, Das Religiöse Bewusstsein der Menschheit im Stufengang seiner Entwicklung. Berlin 1882. Copy of this work in Heidelberg University Library. 
+                    
+                    Chapter 64: Kimura Takatarō木村鷹太郎 (1870-1931) Dongyang xiyang lilunxue shi 東洋西洋倫理學史 (History of Eastern and Western Ethics)
+                    This is a translation of Kimura Takatarō, Tōyō seiyō rinrigaku shi東洋西洋倫理學史, Tokyo: Hakubunkan, 1898, which is vol. 3 of Teikoku hyakka zensho. This is available at ndl website.               
+                </derivation>
+                <domain type="education"/>
+                <factuality type="fact"></factuality>
+                <interaction type="none" active="plural" passive="world"/>
+                <preparedness type="none"/>
+                <purpose type="inform" degree="high"/>
+                <purpose type="entertain" degree="low"/>
+                <purpose>With this book people should be educated on different levels and thus their sense for the nation be sharpened.</purpose>
+            </textDesc>
+            <langUsage>
+                <language ident="zh" usage="100">Chinese</language>
+            </langUsage>
+        </profileDesc>
+        <encodingDesc>
+            <p>s partly available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+            <p>Digitalization by Formax BPO Beijing Inc., special instructions for typing Chinese texts and encyclopedias developed by
+                Wolfgang Schmidle et. al. at Max Planck Institute for the History of Science, Berlin. 
+                Transformation of the digitized raw texts into TEI done by Wolfgang Schmidle. 
+                TEI Header and mark-ups inserted by project members at Heidelberg University.</p>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="2011-08-30" who="#OS">created</change>
+            <change when="2011-08-30" who="#OS">Questionnaire info added to TEI header</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="entry"/>                            
+        </body>
+    </text>
+</TEI>
+

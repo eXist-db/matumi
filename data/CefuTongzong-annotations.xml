@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/teilite.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Cefu tongzong 策府統宗 (Comprehensive Summary of the Imperial Library)</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Uni Heidelberg 2011</p>        
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="preface-analysis" xml:id="ana-preface1">
+                <p>There are two prefaces, one by the compiler written in 1888 and one by the publisher. The one by the author tries to create an image of thorough scholarship.</p>
+            </div>  
+            <div type="advertisement-analysis" xml:id="ana-advertisements-in-general"> 
+                <p>None.</p>
+            </div>
+            <div type="readership">
+                <p>The book was intended to prepare students taking the exams. These people should form the main body of the readership. Of the existence of at least two reprints until the abolition of the exams that it was successful.</p>
+            </div>
+            <div type="hidden-grammars">
+                <p>As the book comes with a new concept and hints in the preface explicitly in this direction, it is said that the materials for exam preparation hadn't been sufficient so far.</p>
+            </div>
+            <div type="secondary-literature"> <bibl> Andrea Janku. "New Methods to Nourish the People:" Late Qing Encyclopaedic Writings on Political Economy. In: Milena Doleželová-Velingerová/ Rudolf G. Wagner (Eds.). 
+                Chinese Encyclopaedias of New Global Knowledge (1870-1920): Changing Ways of Thought, 348-386. To be published soon.</bibl>
+            </div>
+        </body>
+    </text>
+</TEI>
+

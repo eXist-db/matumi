@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/teilite.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Xixue tanyuan - annotations</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Uni Heidelberg 2011</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="preface-analysis" xml:id="ana-preface1">
+                <p>Analysis of preface by Kawase Nagasada 河瀨長定</p>
+                <p>Kawase Nagasada 河瀨長定 writes in the preface that China, although culturally superior, 
+          has had corrupt officials who are unable to turn China from weak to strong, and to stand 
+          against the Western powers that now put pressure on China. Kawase goes as far as calling 
+          the “high officials asleep, the subordinate magistrates incapable” (dachen anmei, xialiao 
+          beilou 大臣暗昧，下僚卑陋). Kawase thus criticizes the imperial governors, leaving little space 
+          for any willingness by them to start reading Okamoto’s book. Being criticized this way in the 
+          preface, it is doubtful if Zhang Zhidong and his subordinates would have looked into Okamoto’s book at all.</p>
+                <byline>(<name ref="#KMW">Kaja Mueller-Wang</name>)</byline>
+            </div>
+        </body>
+    </text>
+</TEI>

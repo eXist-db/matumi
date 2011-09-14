@@ -1,0 +1,120 @@
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Cefu tongzong 策府統宗 (Comprehensive Summary of the Imperial Library)</title>
+                <editor>Research Project "Hidden Grammars of Transculturality - Migrations of Encyclopedic Knowledge and Power"</editor>
+                <respStmt>
+                    <resp>Project Coordination</resp>
+                    <name xml:id="BM">Barbara Mittler</name>
+                    <name xml:id="MH">Madeleine Herren-Oesch</name>
+                    <name xml:id="JK">Joachim Kurtz</name>
+                    <name xml:id="KMW">Kaja Mueller-Wang</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Technical supervision and file administration</resp>
+                    <name xml:id="JP">Jens Østergaard Petersen</name>
+                </respStmt>
+                <respStmt>
+                    <resp>TEI Header</resp>
+                    <name xml:id="OS">Oliver Schulz</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Cluster of Excellence "Asia and Europe in a Global Context"</publisher>
+                <pubPlace>Heidelberg University</pubPlace>
+                <address>
+                    <addrLine>Karl Jaspers Centre for Advanced Transcultural Studies</addrLine>
+                    <addrLine>Voßstraße 2, Building 4400</addrLine>
+                    <addrLine>69115 Heidelberg</addrLine>
+                    <addrLine>Germany</addrLine>
+                </address>
+                <date>2011</date>
+            </publicationStmt>
+            <sourceDesc>
+                <biblFull>
+                    <titleStmt>
+                        <title>Cefu tongzong 策府統宗 (Comprehensive Summary of the Imperial Library)</title>
+                        <author>
+                            <name type="person" ref="persons.xml#LiuChangling">Liu Changling 劉昌齡</name>
+                        </author>                        
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>Reprints in 1891 and 1897.</edition>
+                    </editionStmt>
+                    <publicationStmt>
+                        <publisher>Hongwen shuju 鴻文書局</publisher>
+                        <pubPlace>Shanghai 上海</pubPlace>
+                        <date>Guangxu 15[1889]</date>
+                    </publicationStmt>
+                 </biblFull>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement>Heidelberg University</settlement>
+                        <repository>Library of the Institute of Chinese Studies</repository>
+                    </msIdentifier>
+                    <physDesc>
+                        <p>Size: 12,2cm * 7.25cm </p>
+                        <p>Volumes: 65 juan</p>
+                        <p>Script: Print</p>
+                        <p>Illustrations: None.</p>
+                        <p>The characters are written in about 30 columns with almost no space above and to the side, it very much resembles classical texts.</p>
+                    </physDesc>
+                    <msPart>
+                        <altIdentifier>
+                            <idno/>
+                        </altIdentifier>
+                        <msContents>
+                            <p>Lemma-organization: The content of the book is ordered into 65 juan. The ordering of the juan is a mix of traditional and modern elements, 
+                                whereby the thematically related lemmata are to be found therein. The lemmata of each juan do not follow a stroke count arrangement.</p>
+                            <p>Table of contents: Located at the beginning of the book, it is a listing of each juan with each lemma. Not very helpful to get an orientation at the first sight.</p>
+                            <p>Index: none.</p>
+                            <p>Bibliography: yes</p>
+                            <p>Contents: The book offers the information which had been important for the exams. Many written works are mentioned and explained, but also issues like traditional military ranks.   
+                            The listed books often come with the number of its juan.</p>
+                        </msContents>
+                        <history>
+                            <p>A scan of the work is available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+                        </history>
+                    </msPart>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <settingDesc>
+                <p>According to the preface Liu was not satisfied with the book cexue dacheng 策學大成 by Cai Mei'an, he therefore wanted to correct its mistakes and wrote a new work. In this undertaking he was supported by many erudite scholars. 
+                   </p></settingDesc>
+            <textDesc>
+                <channel mode="w">print</channel>
+                <constitution type="single">The text is ordered into many lemmata, which are mostly comparatively short.                     
+                </constitution>
+                <derivation type="abridgment"></derivation>
+                <domain type="education"/>
+                <factuality type="fact"/>
+                <interaction type="none" active="plural" passive="world"></interaction>
+                <preparedness type="none"/>
+                <purpose type="inform" degree="high">The book should be a preparatory tool for students taking the exams.</purpose>
+                <purpose type="entertain" degree="low"/>
+            </textDesc>
+            <langUsage>
+                <language ident="zh" usage="100">Chinese</language>                
+            </langUsage>
+        </profileDesc>
+        <encodingDesc>
+            <p>Scans available at the library of the Institute of Chinese Studies, Heidelberg University.</p>
+            <p>Digitalization by Formax BPO Beijing Inc., special instructions for typing Chinese texts and encyclopedias developed by
+                Wolfgang Schmidle et. al. at Max Planck Institute for the History of Science, Berlin. 
+                Transformation of the digitized raw texts into TEI done by Wolfgang Schmidle. 
+                TEI Header and mark-ups inserted by project members at Heidelberg University.</p>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="2011-09-05" who="#OS">created</change>
+            <change when="2011-09-05" who="#OS">Questionnaire info added to TEI header</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="entry"/>       
+        </body>
+    </text>
+</TEI>

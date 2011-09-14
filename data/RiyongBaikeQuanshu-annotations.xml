@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/teilite.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Riyong baike quanshu 日用百科全書 (The Everyday Cyclopedia - annotations</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Uni Heidelberg 2011</p>        
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="preface-analysis" xml:id="ana-preface1">
+                <p>The preface is written in a very simple and intelligible way. It states its mission to provide a body of general knowledge,  
+                   which should be directly applicable and without one cannot make in the modern times. Therefore the preface gives some examples from the book.</p>
+            </div>  
+            <div type="advertisement-analysis" xml:id="ana-advertisements-in-general"> 
+                <p>Many other publications by the Shanghai Commercial Press are displayed. 
+                There are three ads in the index alone, f.e. The book for daily use 日常用書 or Scenic spots of China 中國名勝. The other ads usually correspond to the certain categories.</p>
+            </div>
+            <div type="readership">
+                <p>The book was intended to inform and educate the common citizen of the new Chinese nation and to create an indispensable general knowledge. Includes many practical devices and often reads more like a user manual. 
+                    With the 13th edition in only 6 years it had been a great success.</p>
+            </div>
+            <div type="hidden-grammars">
+                <p>Chinese people need a certain standard of civilization. This book tries to give some practical benchmarks.</p>
+            </div>
+            <div type="secondary-literature"> <bibl>Catherine Yeh. Civilizing Our People through the Everyday
+                Application of New Knowledge: Everyday Cyclopaedia 日用百科全書. In: Milena Doleželová-Velingerová/ Rudolf G. Wagner (Eds.). 
+                Chinese Encyclopaedias of New Global Knowledge (1870-1920): Changing Ways of Thought, 387-422. To be published soon.</bibl>
+            </div>
+        </body>
+    </text>
+</TEI>
