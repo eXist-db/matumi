@@ -24,6 +24,11 @@ function disableSingleOption( $t, value ){
     }
 };
 
+function clearComboSelection( $combo ){
+    $('option:selected', $combo).removeAttr('selected');
+    $('option:last',     $combo).removeAttr('disabled').attr('selected', 'selected');
+};
+
 function disableLeftOptions( $leftCombos, $combosToDisable  ){   
    var $select = $combosToDisable.eq(0);
    $select.find('option:disabled').removeAttr('disabled').show();
@@ -52,8 +57,9 @@ head.ready(function() {
      });
     
      $("a.combo-reset").live('click', function(evnt){
-        $('#'+ $(this).attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
-        $('#'+ $(this).attr('combo2reset') +  ' option:selected').removeAttr('selected');  
+        var $this = $(this), $combo2reset =  $('#'+ $this.attr('combo2reset'));
+        $('#'+ $this.attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
+        clearComboSelection( $combo2reset );
         $('body').trigger('selectionHasChanged');
     });    
     
@@ -120,6 +126,12 @@ head.ready(function() {
     });
 
     $('body').bind('selectionHasChanged', function(e, useAutoSubmit ){
+        $('select.browseParameters').each( function(){
+            var $this = $(this), selected = $('option:selected', $this);      
+            if( !selected.length ){
+               $('option:last', $this).removeAttr('disabled').attr('selected', 'selected');// select option='*'
+            }
+        });
         if( !useAutoSubmit || $('#autoUpdate').is(':checked') ){  
            $('#browseForm').submit();
         }

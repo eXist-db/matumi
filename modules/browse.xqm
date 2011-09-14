@@ -9,26 +9,12 @@ declare default element namespace "http://www.tei-c.org/ns/1.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
+import module namespace session="http://exist-db.org/xquery/session";
+
 import module namespace cache="http://exist-db.org/xquery/cache"     at "java:org.exist.xquery.modules.cache.CacheModule";
-
-(:
-import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
-import module namespace browse-names="http://exist-db.org/xquery/apps/matumi/browse-names" at "browse_names.xqm";
-import module namespace browse-subject="http://exist-db.org/xquery/apps/matumi/browse-subject"  at "browse_subject.xqm";
-import module namespace browse-summary="http://exist-db.org/xquery/apps/matumi/browse-summary" at "browse_summary.xqm";
-
-:)
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
-
-
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
-
-
-(:
-import module namespace browse-cache="http://exist-db.org/xquery/apps/matumi/cache" at "browse_cache.xqm";
-import module namespace browse-config="http://exist-db.org/xquery/apps/matumi/browse-config" at "browse_config.xqm";
-:)
 
 declare variable $browse:combo-ajax-load := 'yes' = request:get-parameter("ajax-combo", 'yes' );
 declare variable $browse:grid-ajax-load := 'yes'  = request:get-parameter("ajax-grid", 'yes' );
@@ -37,8 +23,6 @@ declare variable $browse:save-categories := 'yes' = request:get-parameter("save-
 declare variable $browse:refresh-categories := 'yes' = request:get-parameter("refresh-categories", 'no' );
 
 declare variable $browse:max-cat-summary-to-save := 30;
-
-declare variable $browse:embeded-category-summary := false(); (: save the summary inside of the entry or the book :)
 
 declare variable $browse:combo-plugin-in-use := true(); (: chzn-select :)
 declare variable $browse:combo-plugin-drop-limit := 6000; (: switch to a clasic dropdown for better performance. To be fixed :)
@@ -50,14 +34,9 @@ declare variable $browse:grid-categories-ajax-trigger := 25;
 declare variable $browse:minutes-to-cache := 20;
 declare variable $browse:http-cache :=  xs:dayTimeDuration( "PT12H" );
 
-
-declare variable $browse:cache-cleared := if( request:get-parameter("cache-reset", 'no' ) = 'yes') then cache:clear( session:get-id() ) else();
-declare variable $browse:cache := cache:cache( session:get-id() );
-
 declare variable $browse:controller-url := request:get-parameter("controller-url", 'missing-controller-url');
 declare variable $browse:delimiter-uri-node := '___';
 declare variable $browse:delimiter-uri-nameNode := '---';
-
 
 declare variable $browse:levels := (
     <level value-names="uri" title="Books" ajax-if-more-then="-1" class="chzn-select">books</level>,             (: uri=/db/matumi/data/GSE-eng.xml :)
@@ -67,9 +46,9 @@ declare variable $browse:levels := (
 );
 
 
-declare variable $browse:URIs :=  (: combine multiple URI and multiple node-id :)                  
-        let $u := for $i in (request:get-parameter("uri", () ),
-                             request:get-parameter("entry-uri", () )) 
+declare variable $browse:URIs :=  (: combine multiple URI and multiple node-id :)
+        let $u := for $i in (browse:get-parameter("uri", () ),
+                             browse:get-parameter("entry-uri", () )) 
                 return                 
                   element {  QName("http://www.tei-c.org/ns/1.0", 'URI' ) }{ 
                       if(  contains($i,  $browse:delimiter-uri-node ) ) then (
@@ -102,7 +81,7 @@ declare variable $browse:URIs :=  (: combine multiple URI and multiple node-id :
 ;   
 
 declare variable $browse:CATEGORIES :=  (: combine multiple castegory types and names :)                  
-    for $i in request:get-parameter("category", ()) 
+    for $i in browse:get-parameter("category", ()) 
           return 
           element { QName("http://www.tei-c.org/ns/1.0",'category')}{ 
               if(  contains($i,  $browse:delimiter-uri-node ) ) then (
@@ -116,20 +95,20 @@ declare variable $browse:CATEGORIES :=  (: combine multiple castegory types and 
                   element {'key'} { '*' }
               )
           }
-;  
+; 
 
 declare variable $browse:SUBJECTS :=  (: combine multiple castegory types and names :)                  
-    for $i in request:get-parameter("subject", ()) 
+    for $i in browse:get-parameter("subject", ()) 
       return  element { QName("http://www.tei-c.org/ns/1.0",'subject')}{ 
           $i      
       }
 ;  
 
 declare variable $browse:LEVELS := 
-    let $L1 := ($browse:levels[ . = request:get-parameter("L1", () )], $browse:levels[1])[1],
-        $L2 := ($browse:levels[ . = request:get-parameter("L2", () )], $browse:levels[ not(. = $L1) ])[1],
-        $L3 := ($browse:levels[ . = request:get-parameter("L3", () )], $browse:levels[ not(. = ($L1,$L2)) ])[1],
-        $L4 :=  ($browse:levels[ . = request:get-parameter("L4", () )], $browse:levels[ not(. = ($L1,$L2,$L3)) ])[1],  
+    let $L1 := ($browse:levels[ . = browse:get-parameter("L1", () )], $browse:levels[1])[1],
+        $L2 := ($browse:levels[ . = browse:get-parameter("L2", () )], $browse:levels[ not(. = $L1) ])[1],
+        $L3 := ($browse:levels[ . = browse:get-parameter("L3", () )], $browse:levels[ not(. = ($L1,$L2)) ])[1],
+        $L4 := ($browse:levels[ . = browse:get-parameter("L4", () )], $browse:levels[ not(. = ($L1,$L2,$L3)) ])[1],  
         $all := ( $L1, $L2, $L3, $L4 ), (:  :)
         $result := for $l at $pos in $all
              return element { QName("http://www.tei-c.org/ns/1.0",'level')}{                
@@ -143,6 +122,57 @@ declare variable $browse:LEVELS :=
 ;
  
 declare variable $browse:QUERIES :=  browse-data:queries-for-all-levels( $browse:LEVELS, $browse:URIs, $browse:CATEGORIES, $browse:SUBJECTS );
+
+(:
+To distinguish A) a missing parameter in an existing session and B) parameter to restore from existing session we introduce the dummy parameter '*'.
+If '*' exists then the parameter has empty value and it should not be restored from the session object.
+:)
+
+declare function browse:get-parameter( $name as xs:string, $default as xs:string? ){
+    let $param := request:get-parameter($name, 'missing' ),
+        $saved := if( session:get-attribute($name) = '*') then '' else session:get-attribute($name),
+        $value := if( $param = '*' ) then 
+              ()
+           else if( $param = 'missing'  ) then (
+                 if( not($saved = '' ) ) then (           
+                   if( fn:contains($saved, ';') ) then 
+                        fn:tokenize($saved, ';')
+                   else $saved
+                )else ()
+           )else $param
+           
+     return if( fn:exists($value) ) then 
+                 $value 
+            else $default
+};
+declare function browse:set-parameter( $name as xs:string, $value as xs:string* ) {
+    let $v := if( empty($value) ) then '*'
+              else if( count($value) = 1 ) then $value
+              else fn:string-join( fn:distinct-values($value), ';' )
+
+    return session:set-attribute($name, $v)
+};
+
+declare function browse:save-parameter( $name ) {
+   browse:set-parameter( $name, browse:get-parameter( $name, ())) 
+};
+
+declare function browse:save-all-parameters() {
+    browse:save-parameter( "uri" ),
+    browse:save-parameter( "entry-uri" ),
+    browse:save-parameter( "category" ),
+    browse:save-parameter( "subject" ),
+    browse:save-parameter(  "L1" ),
+    browse:save-parameter(  "L2" ),
+    browse:save-parameter(  "L3" ),
+    browse:save-parameter(  "L4" )
+};
+
+declare function browse:list-saved-parameters() {
+   for $name in session:get-attribute-names()
+   return concat($name, ':', session:get-attribute($name), ', ' )
+};
+
 
 declare function browse:makeDocument-Node-URI( $node as node() ) as xs:string {
   fn:string-join((
@@ -164,7 +194,7 @@ declare function browse:ajax-url( $level as node()?, $param as xs:string*, $cont
           concat('level=', $level/@pos)
       ) else (),     
        for $L in $LEVELS return 
-           for $p in request:get-parameter( $L/@value-names, () ) 
+           for $p in browse:get-parameter( $L/@value-names, () ) 
            order by $p          
            return concat($L/@value-names, '=', $p)
     ),'&amp;')
@@ -210,7 +240,7 @@ declare function browse:section-parameters-combo( $titles as element(titles)?, $
      let $has-groups := $titles/group/@name
      let $same-xmlID := browse-entries:heads-with-same-xmlID($titles//@xml-id)
      
-     return (
+     return 
         <select id="{$level}" style="width:100%" name="{$titles/@name}" title="No filters" >{
            $titles/@count,
            $titles/@total,
@@ -239,7 +269,10 @@ declare function browse:section-parameters-combo( $titles as element(titles)?, $
                             concat('(', fn:string-join( $same-xml-ids, ', '), ')')
                         else ()
                      }
-              }</optgroup>                 
+              }</optgroup>,
+               <optgroup label="all" style="display:none" disabled="true">          
+                  <option value='*' disabled="true">all</option>
+               </optgroup>              
           ) else ( 
            for $title in $titles/group/title 
            let $t := fn:normalize-space($title[not(@type='alt')][1])
@@ -254,10 +287,10 @@ declare function browse:section-parameters-combo( $titles as element(titles)?, $
                 if( exists($same-xml-ids)) then 
                     concat('(', fn:string-join( $same-xml-ids, ', '), ')')
                 else () 
-            }
+            },
+            <option value='*' disabled="true">all</option>
           )
-       }</select>
-    )       
+       }</select>        
 };
 
 declare function browse:section-as-searchable-combo-generic( $level as node()?, $ajax-loaded as xs:boolean ) {                     
@@ -267,13 +300,16 @@ declare function browse:section-as-searchable-combo-generic( $level as node()?, 
 			<div class="block L-block">{    			   
                     let $url :=browse:ajax-url( $level, ( 'section=level-data-combo'), $browse:controller-url, $browse:LEVELS )     	     
     		        return <div id="{$level}-delayed" class="ajax-loaded loading-grey" url="{$url}">Loading  { string($level/@title) }... </div>    		        
-                }<a href="#{$level}" class="combo-reset" combo2reset="{$level}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
+                }<a href="#{$level}" class="combo-reset" combo2reset="{$level}" param2clear="{$level/@value-names}" style="font-size:80%">Clear all filters for { string($level/@title)}.</a>
             </div>
 		</div>		
 	</div>
 };
 
 declare function browse:level-boxes(){
+   let $save := browse:save-all-parameters()
+   
+   return 
    <form id="browseForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }"> { 
         browse:section-as-searchable-combo-generic( $browse:LEVELS[1], $browse:combo-ajax-load ),
      	browse:section-as-searchable-combo-generic( $browse:LEVELS[2], $browse:combo-ajax-load ),
@@ -296,5 +332,5 @@ declare function browse:level-boxes(){
 declare function browse:page-grid( $show-all as xs:boolean ){ 
    let $level := $browse:LEVELS[ .  = 'entries' ]
    let $url := browse:ajax-url( $level, ('section=entity-grid'), $browse:controller-url, $browse:LEVELS)                
-   return  <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" copyURL="yes"  url="{ $url }">Loading</div> 	    
+   return <div id="entity-grid" class="ajax-loaded loading-grey" section="entity-grid" copyURL="yes"  url="{ $url }">Loading</div>     
 };

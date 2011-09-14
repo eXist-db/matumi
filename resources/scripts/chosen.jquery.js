@@ -978,6 +978,9 @@
 		     options = item.options,
 			 $optgroup = $(item);
 		 
+		 if( child.disabled ){
+		    continue;
+		 }
 		 item.total = $optgroup.attr('total');
 		 item.values = $optgroup.attr('values');
 		 

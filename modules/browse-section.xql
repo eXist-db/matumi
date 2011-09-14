@@ -58,7 +58,11 @@ return
        let $Q := $browse:QUERIES[ @pos= $level ] 
      return 
       element test { 
-          $browse:QUERIES
+          <saved>{ browse:list-saved-parameters() }</saved>,
+          <L1> { browse:get-parameter('L1', ()) } </L1>,
+         (: $browse:QUERIES, :)
+          $browse:URIs, 
+          $browse:CATEGORIES
       }
    )else 
  

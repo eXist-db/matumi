@@ -117,7 +117,8 @@ declare function metadata:process($label as xs:string?, $Nodes as node()* ) {
 
 declare function metadata:all($node as node()*, $params as element(parameters)?, $model as item()*) {
    let $books := browse-books:data-all( (), (), true()),
-       $uri := ( request:get-parameter("doc", () ), document-uri( $books[1] ))[1],
+       $uri := ( browse:get-parameter("doc", () ), document-uri( $books[1] ))[1],
+       $save-uri := browse:set-parameter('doc', $uri ),
        $uri-annotation := concat( fn:substring-before($uri, '.xml'), '-annotations.xml'),
        $doc := doc($uri)/*, 
        $doc-annotation := if( fn:doc-available( $uri-annotation ) ) then doc($uri-annotation)/* else (),
@@ -132,7 +133,10 @@ declare function metadata:all($node as node()*, $params as element(parameters)?,
    return
     <div class="grid_16 entry-view">
       <form id="metadataForm" action="{if( fn:contains(request:get-url(), '?')) then fn:substring-before(request:get-url(), '?') else request:get-url() }">{
-       let $titles := browse-books:titles-list( $books, (), $browse:URIs,() )
+       let $URIs :=  element {  QName("http://www.tei-c.org/ns/1.0", 'URI' ) }{ 
+                          element {'uri'} { $uri }                          
+                     }
+       let $titles := browse-books:titles-list( $books, (), $URIs,() )
        return browse:section-parameters-combo( 
              <tei:titles name='doc' >{ 
                 $titles/@*[ local-name() != 'name'],
