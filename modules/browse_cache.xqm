@@ -9,7 +9,7 @@ declare default element namespace "http://www.tei-c.org/ns/1.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
-import module namespace datetime = "http://exist-db.org/xquery/datetime";
+import module namespace datetime = "http://exist-db.org/xquery/datetime" at "java:org.exist.xquery.modules.datetime.DateTimeModule";
 import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.exist.xquery.modules.cache.CacheModule";
 import module namespace context="http://exist-db.org/xquery/context" at "java:org.exist.xquery.modules.context.ContextModule";
 

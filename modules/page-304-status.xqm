@@ -1,7 +1,7 @@
 xquery version "1.0";
 module namespace page-304="http://exist-db.org/xquery/page-304-status";
 
-import module namespace datetime = "http://exist-db.org/xquery/datetime";
+import module namespace datetime = "http://exist-db.org/xquery/datetime" at "java:org.exist.xquery.modules.datetime.DateTimeModule";
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
 

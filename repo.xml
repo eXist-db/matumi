@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repo:meta xmlns="http://exist-db.org/xquery/repo" xmlns:repo="http://exist-db.org/xquery/repo">
-    <repo:author>Jens Ostergaard Petersen</repo:author>
-    <repo:author>Wolfgang Meier</repo:author>
-    <repo:website>http://exist-db.org</repo:website>
-    <repo:license>GNU-LGPL</repo:license>
-    <repo:copyright>true</repo:copyright>
-    <repo:description>Matumi Multi-Linugal Encyclopedias</repo:description>
-    <repo:type>application</repo:type>
-    <repo:target>/db/matumi</repo:target>
-    <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
-    <repo:status>stable</repo:status>
-    <repo:prepare>pre-install.xql</repo:prepare>
-	<repo:finish>post-install.xql</repo:finish>
-	<repo:deployed>2011-07-29T09:03:48.665+02:00</repo:deployed>
-</repo:meta>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Matumi Multi-Linugal Encyclopedias</description>
+    <author>Jens Ostergaard Petersen</author>
+    <author>Wolfgang Meier</author>
+    <website>http://exist-db.org</website>
+    <status>stable</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>/db/matumi</target>
+    <prepare>pre-install.xql</prepare>
+    <finish>post-install.xql</finish>
+    <permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
+</meta>
