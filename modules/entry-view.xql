@@ -28,7 +28,7 @@ declare function matumi:entry($node as node()*, $params as element(parameters)?,
 };
 
 declare function matumi:encyclopedia-title($node as node()*, $params as element(parameters)?, $model as item()*) {
-   let $title0 := $model/ancestor::tei:TEI/tei:teiHeader//tei:titleStmt/tei:title/text(),
+   let $title0 := $model/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@type = "main"]/text(),
        $title := if( $title0 = ('', 'title', 'Title')) then 
                     concat('[',  util:document-name($title0), ']') 
                  else $title0
@@ -36,7 +36,10 @@ declare function matumi:encyclopedia-title($node as node()*, $params as element(
 };
 
 declare function matumi:encyclopedia-subjects($node as node()*, $params as element(parameters)?, $model as item()*) {
-    <a href="browse.html?L1=subjects&amp;L2=entries&amp;L3=names&amp;L4=books&amp;subject={$model/@subtype/string()}">{ $model/@subtype/string() }</a>
+    let $subjects := $model/@subtype/string()
+    for $subject in tokenize($subjects, "_")
+    return
+        <a href="browse.html?L1=subjects&amp;L2=entries&amp;L3=names&amp;L4=books&amp;subject={$subject}">{ $subject }</a>
    
 };
 
