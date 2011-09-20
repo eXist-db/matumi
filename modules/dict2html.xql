@@ -121,6 +121,20 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
                         dict:process-children($documentURI, $node, $comments)
                     }
                 )
+            case element(tei:table) return
+                <table class="teitable">
+                {
+                    for $row in $node/tei:row
+                    return
+                        <tr>
+                        {
+                            for $cell in $row/tei:cell
+                            return
+                                <td>{$cell/text()}</td>
+                        }
+                        </tr>
+                }
+                </table>
             case element(tei:list) return
                 <ul>
                 { dict:process-children($documentURI, $node, $comments) }
