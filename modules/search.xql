@@ -42,7 +42,7 @@ declare variable $search:FACETS :=
         if ($action = "refine") then
             let $facets := session:get-attribute("matumi:facets")
             let $newFacets := distinct-values(($facets, request:get-parameter("facet", ())))
-            let $log := util:log("ERROR", ("FACETS: ", $newFacets))
+            (:let $log := util:log("ERROR", ("FACETS: ", $newFacets)):)
             return
                 ( session:set-attribute("matumi:facets", $newFacets), $newFacets )
         else if ($query) then

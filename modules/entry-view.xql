@@ -49,7 +49,7 @@ declare function matumi:format-entry($node as node()*, $params as element(parame
 
 declare function matumi:tabs($node as node()*, $params as element(parameters)?, $model as item()*) {
     let $uri := replace(request:get-uri(), "^.*/([^/]+)$", "$1")
-    let $log := util:log("DEBUG", ("$uri = ", $uri))
+    (:let $log := util:log("DEBUG", ("$uri = ", $uri)):)
     return
         <ul class="tabs">{ for $child in $node/node() return matumi:process-tabs($child, $uri) }</ul>
 };

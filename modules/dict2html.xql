@@ -17,10 +17,10 @@ declare function dict:comments($root as node()?, $docURI as xs:string) {
 };
 
 declare function dict:find-comment($document-uri as xs:string, $node as node()) {
-    let $log := util:log("DEBUG", ("Text: ", $node))
+    (:let $log := util:log("DEBUG", ("Text: ", $node)):)
     for $location in collection($config:app-root)//atom:feed/exist:location[@doc = $document-uri]
     let $target := util:eval(concat("root($node)/", $location/exist:xpath))
-    let $log := util:log("DEBUG", ("Target: ", $target))
+    (:let $log := util:log("DEBUG", ("Target: ", $target)):)
     return
         if ($node is $target) then
             $location
@@ -225,7 +225,7 @@ declare function dict:entries($root as node()?) {
     let $documentURI := document-uri(root($root))
     let $expanded := util:expand($root, "add-exist-id=all")
     let $comments := dict:comments($expanded, $documentURI)
-    let $log := util:log("DEBUG", ("Comments: ", $comments))
+    (:let $log := util:log("DEBUG", ("Comments: ", $comments)):)
     let $entries := $expanded//tei:entry
     return
         if ($entries) then

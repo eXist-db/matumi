@@ -22,7 +22,7 @@ declare function theme:resolve($prefix as xs:string?, $root as xs:string, $resou
             "/", $theme, "/",
             $resource
         )
-    let $log := util:log("DEBUG", ("resolved theme path: ", $path))
+    (:let $log := util:log("DEBUG", ("resolved theme path: ", $path)):)
     return
         $path
 };

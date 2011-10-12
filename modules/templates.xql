@@ -70,7 +70,7 @@ declare function templates:process($node as node(), $prefixes as xs:string*, $mo
 declare function templates:call($class as xs:string, $node as node(), $model as item()*) {
     let $paramStr := substring-after($class, "?")
     let $parameters := templates:parse-parameters($paramStr)
-    let $log := util:log("DEBUG", ("params: ", $parameters))
+    (:let $log := util:log("DEBUG", ("params: ", $parameters)):)
     let $func := if ($paramStr) then substring-before($class, "?") else $class
     let $call := concat($func, "($node, $parameters, $model)")
     return
@@ -119,7 +119,7 @@ declare function templates:include($node as node(), $params as element(parameter
 declare function templates:surround($node as node(), $params as element(parameters)?, $model as item()*) {
     let $with := $params/param[@name = "with"]/@value
     let $template := theme:resolve(request:get-attribute("exist:prefix"), request:get-attribute("exist:root"), $with)
-    let $log := util:log("DEBUG", ("template: ", $template))
+    (:let $log := util:log("DEBUG", ("template: ", $template)):)
     let $at := $params/param[@name = "at"]/@value
     let $path := concat($config:app-root, "/", $template)
     let $merged := templates:process-surround(doc($template), $node, $at)
