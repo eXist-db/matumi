@@ -16,6 +16,7 @@ import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.ex
 import module namespace counter="http://exist-db.org/xquery/counter org.exist.xquery.modules.counter.CounterModule";
 
 :)
+import module namespace datetime = "http://exist-db.org/xquery/datetime" at "java:org.exist.xquery.modules.datetime.DateTimeModule";
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
 import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";

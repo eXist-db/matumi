@@ -8,7 +8,7 @@ declare variable $exist:resource external;
 declare variable $exist:path external;
 declare variable $exist:root external;
 declare variable $exist:prefix external;
-
+declare variable $exist:controller external;
 declare variable $local:controller-url := concat( fn:substring-before(request:get-url(), $exist:controller),$exist:controller);
 
 if ($exist:path eq "/") then
@@ -19,8 +19,6 @@ if ($exist:path eq "/") then
 else if ($exist:resource eq 'browse-section') then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <forward url="modules/browse-section.xql">
-            <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>
-            <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
             <add-parameter name="controller-url" value="{$local:controller-url}"/>        
         </forward>
      </dispatch>
@@ -34,8 +32,6 @@ else if ($exist:resource eq 'annotate.xql') then
     if (request:get-parameter("action", ())) then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="modules/store.xql">
-                <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>
-                <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
                 <set-attribute name="xquery.attribute" value="data"/>
             </forward>
             <view>
@@ -55,8 +51,6 @@ else if (ends-with($exist:path, ".html")) then
     if (request:get-parameter("action", ()) = "store") then
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <forward url="modules/store.xql">
-                <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>
-                <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
                 <set-attribute name="xquery.attribute" value="data"/>
             </forward>
             <view>
@@ -71,9 +65,6 @@ else if (ends-with($exist:path, ".html")) then
             <forward url="{theme:resolve($exist:prefix, $exist:root, $exist:resource)}"/>
             <view>
                 <forward url="modules/view2.xql">
-                (: for testing :)
-                <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>
-                <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
                 
                     <set-attribute name="exist:prefix" value="{$exist:prefix}"/>
                     <set-attribute name="exist:root" value="{$exist:root}"/>
@@ -102,8 +93,6 @@ return
 
 else
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <set-attribute name="xquery.user" value="{$local:CREDENTIALS[1]}"/>,
-        <set-attribute name="xquery.password" value="{$local:CREDENTIALS[2]}"/>
         <add-parameter name="controller-url" value="{$local:controller-url}"/>      
         <cache-control cache="yes"/>
     </dispatch>

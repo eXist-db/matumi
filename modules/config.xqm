@@ -7,6 +7,8 @@ module namespace config="http://exist-db.org/xquery/apps/config";
 declare namespace repo="http://exist-db.org/xquery/repo";
 declare namespace expath="http://expath.org/ns/pkg";
 
+declare variable $config:credentials := ( "editor", "editor" );
+declare variable $config:group := "biblio.users";
 (: 
     Determine the application root collection from the current module load path.
 :)

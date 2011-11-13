@@ -51,7 +51,7 @@ declare function  browse-summary:base-time-get( $update as xs:boolean ) as xs:da
 
 
 declare function  browse-summary:add-books-id( ) {    
-     system:as-user( request:get-attribute('xquery.user'), request:get-attribute('xquery.password'), (     
+     system:as-user( $config:credentials[1], $config:credentials[2], (     
          for $book at $pos in collection ( concat($config:app-root, '/data') )/tei:TEI[ empty(@xml:id) ] 
          return update insert attribute {  xs:QName("xml:id") }{ concat('i',$pos)} into $book         
      ))
@@ -190,7 +190,7 @@ declare function  browse-summary:save( $node as node()?, $categories as element(
                
               return (
              (:     util:eval-async(           :)     
-                     system:as-user( request:get-attribute('xquery.user'), request:get-attribute('xquery.password'), (            
+                     system:as-user( $config:credentials[1], $config:credentials[2], (            
                               xdb:store( $coll, $file-name ,  
                                  element {'categories-summary'}{
                                    attribute {'names'}{ $names-count }, 
@@ -202,7 +202,7 @@ declare function  browse-summary:save( $node as node()?, $categories as element(
                                    $categories
                                 } 
                               ),
-                             xdb:set-resource-permissions($coll, $file-name, "editor", "biblio.users", xdb:string-to-permissions( 'rwurwurwu' )),     
+                             xdb:set-resource-permissions($coll, $file-name, $config:credentials[1], $config:group, xdb:string-to-permissions( 'rwurwurwu' )),     
                                              
                             if( fn:exists($node) and empty( $node/@xml:id ) ) then (
                                     update insert attribute {   xs:QName("xml:id") }{ $uuid } into $node

@@ -2,6 +2,7 @@ xquery version "1.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
+import module namespace config="http://exist-db.org/xquery/apps/config" at "modules/config.xqm";
 
 declare variable $home external;
 declare variable $dir external;
@@ -23,10 +24,10 @@ declare function local:mkcol($collection, $path) {
 };
 
 util:log("INFO", ("Running pre-install script ...")),
-if (xdb:group-exists("biblio.users")) then ()
-else xdb:create-group("biblio.users"),
-if (xdb:exists-user("editor")) then ()
-else xdb:create-user("editor", "editor", "biblio.users", ()),
+if (xdb:group-exists($config:group)) then ()
+else xdb:create-group($config:group),
+if (xdb:exists-user($config:credentials[1])) then ()
+else xdb:create-user($config:credentials[1], $config:credentials[2], $config:group, ()),
 
 util:log("INFO", ("Loading collection configuration ...")),
 local:mkcol("/db/system/config", $target),
