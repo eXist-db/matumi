@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
     <description>Matumi Multi-Linugal Encyclopedias</description>
-    <author>Jens Ostergaard Petersen</author>
+    <author>Thomas White</author>
     <author>Wolfgang Meier</author>
     <website>http://exist-db.org</website>
     <status>stable</status>
