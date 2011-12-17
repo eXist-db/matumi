@@ -8,6 +8,15 @@ declare variable $home external;
 declare variable $dir external;
 declare variable $target external;
 
+declare function local:chmod-recursive($collection, $mode) {
+    for $resource in xmldb:get-child-resources($collection)
+    return
+        xmldb:chmod-resource($collection, $resource, $mode),
+    for $child in xmldb:get-child-collections($collection)
+    return
+        local:chmod-recursive(concat($collection, "/", $child), $mode)
+};
+
 declare function local:mkcol-recursive($collection, $components) {
     if (exists($components)) then
         let $newColl := concat($collection, "/", $components[1])
@@ -26,4 +35,5 @@ declare function local:mkcol($collection, $path) {
 util:log("INFO", ("Running post-install script ...")),
 
 local:mkcol($target, 'cache'),
-xdb:set-collection-permissions( concat($target,'/cache'), $config:credentials[1], $config:group,  xmldb:string-to-permissions('rwurwurwu') )
+xdb:set-collection-permissions( concat($target,'/cache'), $config:credentials[1], $config:group,  xmldb:string-to-permissions('rwurwurwu') ),
+local:chmod-recursive($config:data-collection, xmldb:string-to-permissions("rwurwur--"))
