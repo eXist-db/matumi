@@ -245,3 +245,47 @@ h1, h2, h3, h4, h5, h6, .block {
 .tooltip h4 { margin: 8px 10px; }
 
 .L-block li {  line-height:1.3em; margin-bottom:.5em;}
+
+
+.pb {   
+    color:#cd853f; 
+    width:100%;
+    text-align:right;
+    border-top:1px solid #cd853f;
+    
+}
+
+.rh {   
+    color:#cd853f; 
+    float:left; 
+    margin-top:-30px;
+    
+}
+
+.unclear { 
+    color:#cc3300; 
+}
+
+.figure { 
+    max-width:800px; 
+    border: 0px solid red; 
+    display:block; 
+    font-size:12px;
+    line-height:14px;
+    margin-bottom:10px;
+}
+
+.facsimile { 
+    position:relative;
+    float:right;
+    margin: 0 0 0 10px;
+    height:200px; 
+    border: 1px solid #cd853f; 
+    display:block; 
+}
+
+.facsimile:hover { 
+    height:800px; 
+    border: 1px solid #cd853f; 
+    display:block; 
+}

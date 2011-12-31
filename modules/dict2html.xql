@@ -187,6 +187,42 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
                     <!--a href="edit.xql?doc={document-uri(root($node))}&amp;nodeId={$node/@exist:id}" class="edit" target="_new">Edit</a-->
                     <p id="{$node/@exist:id}" class="block">{dict:process-children($documentURI, $node, $comments)}</p>
                 </div>
+            case element(tei:lb) return
+                <br/>
+            case element(tei:pb) return (
+                <p class="pb">{fn:string($node/@n)}</p>,
+                <img class="facsimile" src="{fn:string($node/@facs)}"/>
+            )
+            case element(tei:fw) return
+                <p class="rh">{$node/text()}</p>
+            case element(tei:unclear) return
+                <span class="unclear" title="{$node/@reason}">{$node/text()}</span>
+            case element(tei:figure) return (
+                <img class="figure" src="{fn:string($node/@facs)}"/>,
+                <div class="figure">[Figure:] {dict:process-children($documentURI, $node, $comments)}</div>
+            )
+            case element(tei:note) return
+                if ($node/@author) then
+                    <p class="note">Note by {fn:string($node/@author)}: {fn:string($node)}</p>
+                else
+                    <p class="note">Note: {fn:string($node)}</p>
+        (:    case element(tei:table) return
+                <table class="teitable">
+                {
+                    for $row in $node/tei:row
+                    return
+                        <tr>{dict:process-children($documentURI, $node, $comments)}</tr>
+                }
+                </table>
+            case element(tei:cell) return
+                <td>{dict:process-children($documentURI, $node, $comments)}</td>
+        :)   
+            case element(tei:ruby) return 
+                <ruby>{dict:process-children($documentURI, $node, $comments)}</ruby>
+            case element(tei:rbase) return
+                <rb>{dict:process-children($documentURI, $node, $comments)}</rb>
+            case element(tei:rtext) return
+                <rt>{dict:process-children($documentURI, $node, $comments)}</rt>
             case element() return
                 <span id="{$node/@exist:id}">{dict:process-children($documentURI, $node, $comments)}</span>
             case text() return

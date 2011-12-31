@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/teilite.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="i29">
     <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title>Riyong baike quanshu 日用百科全書 (The Everyday Cyclopedia) - annotations</title>
             </titleStmt>
             <publicationStmt>
-                <p>Uni Heidelberg 2011</p>        
+                <p>Uni Heidelberg 2011</p>
             </publicationStmt>
             <sourceDesc>
                 <p>Born digital.</p>
@@ -18,8 +18,8 @@
         <body>
             <div type="preface-analysis" xml:id="ana-preface1">
                 <p>The preface is very short and deals only with the changes and additions made in comparison to the original version. It emphasizes that new materials were checked in regards to their practical use.</p>
-            </div>  
-            <div type="advertisement-analysis" xml:id="ana-advertisements-in-general"> 
+            </div>
+            <div type="advertisement-analysis" xml:id="ana-advertisements-in-general">
                 <p>Many other publications by the Shanghai Commercial Press are displayed. 
                     There are three ads in the index alone, f.e. The book for daily use 日常用書 or Scenic spots of China 中國名勝. The other ads usually correspond to the certain categories.</p>
             </div>
@@ -30,11 +30,11 @@
             <div type="hidden-grammars">
                 <p>Chinese people need a certain standard of civilization. This book tries to give some practical benchmarks.</p>
             </div>
-            <div type="secondary-literature"> <bibl>Catherine Yeh. Civilizing Our People through the Everyday
+            <div type="secondary-literature">
+                <bibl>Catherine Yeh. Civilizing Our People through the Everyday
                 Application of New Knowledge: Everyday Cyclopaedia 日用百科全書. In: Milena Doleželová-Velingerová/ Rudolf G. Wagner (Eds.). 
                 Chinese Encyclopaedias of New Global Knowledge (1870-1920): Changing Ways of Thought, 387-422. To be published soon.</bibl>
             </div>
         </body>
     </text>
 </TEI>
-
