@@ -202,7 +202,7 @@ declare function  browse-summary:save( $node as node()?, $categories as element(
                                    $categories
                                 } 
                               ),
-                             xdb:set-resource-permissions($coll, $file-name, $config:credentials[1], $config:group, xdb:string-to-permissions( 'rwurwurwu' )),     
+                             xdb:set-resource-permissions($coll, $file-name, $config:credentials[1], $config:group, xdb:string-to-permissions( 'rwxrwxrwx' )),     
                                              
                             if( fn:exists($node) and empty( $node/@xml:id ) ) then (
                                     update insert attribute {   xs:QName("xml:id") }{ $uuid } into $node

@@ -35,5 +35,5 @@ declare function local:mkcol($collection, $path) {
 util:log("INFO", ("Running post-install script ...")),
 
 local:mkcol($target, 'cache'),
-xdb:set-collection-permissions( concat($target,'/cache'), $config:credentials[1], $config:group,  xmldb:string-to-permissions('rwurwurwu') ),
-local:chmod-recursive($config:data-collection, xmldb:string-to-permissions("rwurwur--"))
+xdb:set-collection-permissions( concat($target,'/cache'), $config:credentials[1], $config:group,  xmldb:string-to-permissions('rwxrwxrwx') ),
+local:chmod-recursive($config:data-collection, xmldb:string-to-permissions("rwxrwxr--"))

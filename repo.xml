@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<meta xmlns="http://exist-db.org/xquery/repo">
-    <description>Matumi Multi-Linugal Encyclopedias</description>
-    <author>Thomas White</author>
-    <author>Wolfgang Meier</author>
-    <website>http://exist-db.org</website>
-    <status>stable</status>
-    <license>GNU-LGPL</license>
-    <copyright>true</copyright>
-    <type>application</type>
-    <target>/db/matumi</target>
-    <prepare>pre-install.xql</prepare>
-    <finish>post-install.xql</finish>
-    <permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
-</meta>
+<repo:meta xmlns="http://exist-db.org/xquery/repo" xmlns:repo="http://exist-db.org/xquery/repo">
+    <repo:description>Matumi Multi-Linugal Encyclopedias</repo:description>
+    <repo:author>Thomas White</repo:author>
+    <repo:author>Wolfgang Meier</repo:author>
+    <repo:website>http://exist-db.org</repo:website>
+    <repo:status>stable</repo:status>
+    <repo:license>GNU-LGPL</repo:license>
+    <repo:copyright>true</repo:copyright>
+    <repo:type>application</repo:type>
+    <repo:target>/db/matumi</repo:target>
+    <repo:prepare>pre-install.xql</repo:prepare>
+    <repo:finish>post-install.xql</repo:finish>
+    <repo:permissions user="editor" password="editor" group="biblio.users" mode="0444"/>
+    <deployed>2012-08-11T22:56:51.303+02:00</deployed>
+</repo:meta>
