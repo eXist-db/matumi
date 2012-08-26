@@ -4,14 +4,16 @@
         <div class="box L-box">
             <form action="" method="GET">
                 <h2>
-                    <select name="L1" id="L1" style="width: 100%" class="templates:form-control">
+                    <select name="L1" id="L1" style="width: 100%" class="templates:form-control?session-parameter=matumi.L1">
                         <option value="entries">Entries</option>
                         <option value="books">Books</option>
                         <option value="names">Names</option>
                         <option value="subjects">Subjects</option>
                     </select>
                 </h2>
-                <select name="key" class="chzn-select block L-block matumi:browse-select" multiple="true" style="width: 100%"/>
+                <select id="L1-choose" name="key" class="chzn-select block L-block" multiple="true" style="width: 100%">
+                    <option class="matumi:browse-select">Terms</option>
+                </select>
                 <button type="submit">Show</button>
             </form>
         </div>

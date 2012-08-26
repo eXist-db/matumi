@@ -13,7 +13,7 @@ declare variable $local:controller-url := concat( fn:substring-before(request:ge
 
 if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-        <redirect url="browse.html"/>
+        <redirect url="browse-new.html"/>
     </dispatch>
     
 else if ($exist:resource eq 'browse-section') then
@@ -65,7 +65,7 @@ else if (ends-with($exist:path, ".html")) then
             <forward url="{theme:resolve($exist:prefix, $exist:root, $exist:resource)}"/>
             <view>
                 <forward url="modules/view2.xql">
-                
+                    <set-header name="Cache-Control" value="no-cache"/>
                     <set-attribute name="exist:prefix" value="{$exist:prefix}"/>
                     <set-attribute name="exist:root" value="{$exist:root}"/>
                     <clear-attribute name="xquery.attribute"/>

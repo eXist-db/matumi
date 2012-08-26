@@ -40,103 +40,112 @@ function disableLeftOptions( $leftCombos, $combosToDisable  ){
    }
 };
 
-head.ready(function() {
-    $.ajaxSetup({ifModified:true});
+//head.ready(function() {
+//    $.ajaxSetup({ifModified:true});
+//
+//    $('#L1').live('change', function(event){
+//         disableLeftOptions( $(event.target), $('#L2, #L3, #L4'));
+//         $('body').trigger('selectionHasChanged');
+//    });
+//     $('#L2').live('change', function(event){
+//          disableLeftOptions( $('#L1, #L2'), $('#L3, #L4')); 
+//          $('body').trigger('selectionHasChanged');       
+//     });
+//     $('#L3').live('change', function(event){
+//          disableLeftOptions( $('#L1, #L2, #L3'), $('#L4')); 
+//          $('body').trigger('selectionHasChanged');     
+//     });
+//    
+//     $("a.combo-reset").live('click', function(evnt){
+//        var $this = $(this), $combo2reset =  $('#'+ $this.attr('combo2reset'));
+//        $('#'+ $this.attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
+//        clearComboSelection( $combo2reset );
+//        $('body').trigger('selectionHasChanged');
+//    });    
+//    
+//    $('.cat-toggle.collapsed').live('click', function(){
+//        $(this).closest('.cat-container').add( $(this)).addClass('expanded').removeClass('collapsed');
+//    });  
+//    $('.cat-toggle.expanded').live('click', function(){
+//        $(this).closest('.cat-container').add( $(this)).addClass('collapsed').removeClass('expanded');
+//    });  
+//    
+//    
+//    $(".chzn-select").chosen();    
+//    $('.ajax-loaded').each( fetchAJAXfragment); 
+//    
+//	$('#bottom').scrollExtend({	
+//			'newElementClass': 'list_item more_content',		
+//			'target': '#dummy-cont',
+//			'url': function($dom, options ){
+//			    var $target = $('#entryGrid'), //$(options.target),
+//			        page = ( $dom.data('page') || 1) + 1,
+//			        url  = $target.attr('url'),
+//			        lastPage = $dom.data('noMoreData' ) || $target.attr('noMoreData') === 'yes';
+//			    
+//			    if( !$target.length ){
+//			       $('#bottom').scrollExtend( 'disable');
+//			       return null;
+//			    }else if( lastPage ) {
+//			        $dom.data('noMoreData', true );	
+//			        return null;
+//			    }else{
+//    		        $dom.data('page', page );			    
+//    			    return url + '&page=' + page;
+//    		    }
+//			}, 
+//			'onSuccess': function ( data, target, $dom ){
+//			   var tbl =  $('#entryGrid'),
+//			       $data =  $(data);
+//			   
+//			   if( $data.attr('noMoreData') ){
+//			       $dom.data('noMoreData', true );
+//			       // return false;
+//			   }		   
+//			   target.find('tbody').appendTo(tbl);
+//			   target.empty();
+//			   $('.ajax-loaded', tbl ).each( fetchAJAXfragment);   
+//			   return false;			  
+//			}
+//	});
+//
+//   var ul = $('ul.editions'), li = ul.find('li');
+//   if( li.length > 4 ) {
+//       ul.makeacolumnlists({
+//         cols: li.length < 10 ? 3: 4,
+//         colWidth:0,equalHeight:true});
+//    }		    
+//	
+//	// metadata 	    
+//    $('#matadataBooks').live('change', function(event){
+//       $('#metadataForm').submit();
+//    });
+//
+//    $('select.browseParameters').live( 'change', function(event){
+//        $('body').trigger('selectionHasChanged', [true]);    
+//    });
+//
+//    $('body').bind('selectionHasChanged', function(e, useAutoSubmit ){
+//        $('select.browseParameters').each( function(){
+//            var $this = $(this), selected = $('option:selected', $this);      
+//            if( !selected.length ){
+//               $('option:last', $this).removeAttr('disabled').attr('selected', 'selected');// select option='*'
+//            }
+//        });
+//        if( !useAutoSubmit || $('#autoUpdate').is(':checked') ){  
+//           $('#browseForm').submit();
+//        }
+//    })
+//
+//
+//});
 
-    $('#L1').live('change', function(event){
-         disableLeftOptions( $(event.target), $('#L2, #L3, #L4'));
-         $('body').trigger('selectionHasChanged');
-    });
-     $('#L2').live('change', function(event){
-          disableLeftOptions( $('#L1, #L2'), $('#L3, #L4')); 
-          $('body').trigger('selectionHasChanged');       
-     });
-     $('#L3').live('change', function(event){
-          disableLeftOptions( $('#L1, #L2, #L3'), $('#L4')); 
-          $('body').trigger('selectionHasChanged');     
-     });
-    
-     $("a.combo-reset").live('click', function(evnt){
-        var $this = $(this), $combo2reset =  $('#'+ $this.attr('combo2reset'));
-        $('#'+ $this.attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
-        clearComboSelection( $combo2reset );
-        $('body').trigger('selectionHasChanged');
-    });    
-    
-    $('.cat-toggle.collapsed').live('click', function(){
-        $(this).closest('.cat-container').add( $(this)).addClass('expanded').removeClass('collapsed');
-    });  
-    $('.cat-toggle.expanded').live('click', function(){
-        $(this).closest('.cat-container').add( $(this)).addClass('collapsed').removeClass('expanded');
-    });  
-    
-    
-    $(".chzn-select").chosen();    
-    $('.ajax-loaded').each( fetchAJAXfragment); 
-    
-	$('#bottom').scrollExtend({	
-			'newElementClass': 'list_item more_content',		
-			'target': '#dummy-cont',
-			'url': function($dom, options ){
-			    var $target = $('#entryGrid'), //$(options.target),
-			        page = ( $dom.data('page') || 1) + 1,
-			        url  = $target.attr('url'),
-			        lastPage = $dom.data('noMoreData' ) || $target.attr('noMoreData') === 'yes';
-			    
-			    if( !$target.length ){
-			       $('#bottom').scrollExtend( 'disable');
-			       return null;
-			    }else if( lastPage ) {
-			        $dom.data('noMoreData', true );	
-			        return null;
-			    }else{
-    		        $dom.data('page', page );			    
-    			    return url + '&page=' + page;
-    		    }
-			}, 
-			'onSuccess': function ( data, target, $dom ){
-			   var tbl =  $('#entryGrid'),
-			       $data =  $(data);
-			   
-			   if( $data.attr('noMoreData') ){
-			       $dom.data('noMoreData', true );
-			       // return false;
-			   }		   
-			   target.find('tbody').appendTo(tbl);
-			   target.empty();
-			   $('.ajax-loaded', tbl ).each( fetchAJAXfragment);   
-			   return false;			  
-			}
-	});
-
-   var ul = $('ul.editions'), li = ul.find('li');
-   if( li.length > 4 ) {
-       ul.makeacolumnlists({
-         cols: li.length < 10 ? 3: 4,
-         colWidth:0,equalHeight:true});
-    }		    
-	
-	// metadata 	    
-    $('#matadataBooks').live('change', function(event){
-       $('#metadataForm').submit();
-    });
-
-    $('select.browseParameters').live( 'change', function(event){
-        $('body').trigger('selectionHasChanged', [true]);    
-    });
-
-    $('body').bind('selectionHasChanged', function(e, useAutoSubmit ){
-        $('select.browseParameters').each( function(){
-            var $this = $(this), selected = $('option:selected', $this);      
-            if( !selected.length ){
-               $('option:last', $this).removeAttr('disabled').attr('selected', 'selected');// select option='*'
-            }
+$(document).ready(function() {
+    $(".chzn-select").chosen();
+    $("#L1").change(function() {
+        $.get("select.html", { "L1": $(this).val() }, function(data) {
+            $("#L1-choose").empty().html(data);
+            $("#L1-choose").trigger("liszt:updated");
         });
-        if( !useAutoSubmit || $('#autoUpdate').is(':checked') ){  
-           $('#browseForm').submit();
-        }
-    })
-
-
+    });
 });
-

@@ -108,15 +108,24 @@ declare function matumi:browse-grid($node as node()*, $model as map()) {
      </div>
 };
 
-declare
-    %templates:default("L1", "entries")
-function matumi:browse-select($node as node()*, $model as map(), $L1 as xs:string, $key as xs:string*) {
-    element { node-name($node) } {
-        $node/@*,
+declare function matumi:browse-select($node as node()*, $model as map(), $L1 as xs:string?, $key as xs:string*) {
+    let $L1 :=
+        if (empty($L1)) then
+            session:get-attribute("matumi.L1")
+        else
+            $L1
+    let $key :=
+        if (empty($key)) then
+            session:get-attribute("matumi.key")
+        else
+            $key
+    let $log := util:log("DEBUG", ("Key: ", $key))
+    return (
+        session:set-attribute("matumi.key", $key),
         switch ($L1)
             case "entries" return
                 let $types :=
-                    collection($config:data-collection)/tei:TEI//tei:div[@type = "entry"]/@subtype
+                    collection($config:data-collection)/tei:TEI//tei:body//tei:div[@type = "entry"]/tei:head/string()
                 for $type in distinct-values($types)
                 order by $type
                 return
@@ -134,18 +143,36 @@ function matumi:browse-select($node as node()*, $model as map(), $L1 as xs:strin
                         { $title }
                     </option>
             case "names" return
-                let $types :=
-                    collection($config:data-collection)/tei:TEI//tei:div[@type = "entry"][@subtype]//tei:name/@key
-                for $type in distinct-values($types)
-                order by $type
+                let $names :=
+                    collection($config:data-collection)/tei:TEI//tei:div[@type = "entry"][@subtype]//tei:name
+                for $name in $names
+                group $name as $byType by $name/@type as $type
                 return
-                    <option value="{$type}">
-                        { if ($key = $type) then attribute selected { "selected" } else () }
-                        { matumi:extract-key($type) }
+                    <optgroup label="{$type}">
+                    {
+                        for $nameKey in distinct-values($byType/@key)
+                        let $displayName := matumi:extract-key($nameKey)
+                        order by $displayName
+                        return
+                            <option value="{$nameKey}">
+                            { if ($key = $nameKey) then attribute selected { "selected" } else () }
+                            { $displayName }
+                            </option>
+                    }
+                    </optgroup>
+            case "subjects" return
+                let $subjects :=
+                    collection($config:data-collection)/tei:TEI//tei:body//tei:div[@type = "entry"]/@subtype
+                for $subject in distinct-values($subjects)
+                order by $subject
+                return
+                    <option value="{$subject}">
+                        { if ($key = $subject) then attribute selected { "selected" } else () }
+                        { $subject }
                     </option>
             default return
                 ()
-    }
+    )
 };
 
 declare function matumi:metadata-combo($node as node()*, $model as map()) {
@@ -155,22 +182,25 @@ declare function matumi:metadata-combo($node as node()*, $model as map()) {
 declare
     %templates:wrap
 function matumi:browse($node as node(), $model as map(*), $L1 as xs:string, $key as xs:string*) {
-    let $log := util:log("DEBUG", ("Key: ", $key))
     let $data :=
         if (exists($key)) then
             switch ($L1)
                 case "entries" return
-                    collection($config:data-collection)/tei:TEI//tei:div[@type = "entry"][@subtype = $key]
+                    collection($config:data-collection)/tei:TEI//tei:div[@type = "entry"][tei:head = $key]
                 case "books" return
                     collection($config:data-collection)/tei:TEI[@xml:id = $key]//tei:div[@type = "entry"][@subtype]
                 case "names" return
                     collection($config:data-collection)/tei:TEI//tei:div[.//tei:name/@key = $key][@type = "entry"][@subtype]
+                case "subjects" return
+                    collection($config:data-collection)/tei:TEI//tei:div[@type = "entry"][@subtype = $key]
                 default return
                     ()
         else
-            ()
-    return
-        map { "browse" := $data }
+            session:get-attribute("matumi.browse")
+    return (
+        map { "browse" := $data },
+        session:set-attribute("matumi.browse", $data)
+    )
 };
 
 declare function matumi:browse-summary($node as node(), $model as map(*)) {

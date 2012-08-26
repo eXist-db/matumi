@@ -400,11 +400,10 @@ declare function templates:load-source($node as node(), $model as map(*)) as nod
     Processes input and select form controls, setting their value/selection to
     values found in the request - if present.
  :)
-declare function templates:form-control($node as node(), $model as map(*)) as node()* {
+declare function templates:form-control($node as node(), $model as map(*), $session-parameter as xs:string?) as node()* {
     typeswitch ($node)
         case element(input) return
-            let $name := $node/@name
-            let $value := request:get-parameter($name, ())
+            let $value := templates:get-form-parameter($node, $session-parameter)
             return
                 if ($value) then
                     element { node-name($node) } {
@@ -415,7 +414,7 @@ declare function templates:form-control($node as node(), $model as map(*)) as no
                 else
                     $node
         case element(select) return
-            let $value := request:get-parameter($node/@name/string(), ())
+            let $value := templates:get-form-parameter($node, $session-parameter)
             return
                 element { node-name($node) } {
                     $node/@* except $node/@class,
@@ -434,6 +433,22 @@ declare function templates:form-control($node as node(), $model as map(*)) as no
                 }
         default return
             $node
+};
+
+declare %private function templates:get-form-parameter($node as node(), $sessionParam as xs:string?) as xs:string? {
+    let $param := request:get-parameter($node/@name, ())
+    let $value :=
+        if (empty($param) and exists($sessionParam)) then
+            session:get-attribute($sessionParam)
+        else
+            $param
+    return (
+        if (exists($sessionParam)) then
+            session:set-attribute($sessionParam, $value)
+        else
+            (),
+        $value
+    )
 };
 
 declare function templates:error-description($node as node(), $model as map(*)) {
