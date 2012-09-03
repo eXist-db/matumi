@@ -56,6 +56,7 @@ else if (ends-with($exist:path, ".html")) then
             <view>
                 <forward url="modules/view.xql">
                     <clear-attribute name="xquery.attribute"/>
+                    <set-header name="Cache-Control" value="no-cache"/>
                  </forward>
              </view>
         	<cache-control cache="no"/>

@@ -141,6 +141,10 @@ a.entry-derect-link:hover{ color:blue; background-color:#fff; text-decoration:un
     background-color:#FCEEB1;
 }
 
+#update-button {
+    margin-bottom: 10px;
+}
+
 #toolbar { margin: 0; padding: 10px 8px; background-color: #FFAD00; }
 #toolbar li { list-style: none; display: inline; }
 #toobar img { border: 0; }

@@ -162,7 +162,7 @@ declare %private function templates:process-output($node as element(), $model as
         $inspect/annotation[ends-with(@name, ":wrap")]
             [@namespace = "http://exist-db.org/xquery/templates"]
     return
-        if ($wrap) then
+        if ($wrap and exists($output)) then
             element { node-name($node) } {
                 $node/@*,
                 templates:process-output($node, $model, $output)
@@ -400,55 +400,50 @@ declare function templates:load-source($node as node(), $model as map(*)) as nod
     Processes input and select form controls, setting their value/selection to
     values found in the request - if present.
  :)
-declare function templates:form-control($node as node(), $model as map(*), $session-parameter as xs:string?) as node()* {
-    typeswitch ($node)
-        case element(input) return
-            let $value := templates:get-form-parameter($node, $session-parameter)
-            return
-                if ($value) then
-                    element { node-name($node) } {
-                        $node/@* except $node/@value,
-                        attribute value { $value },
-                        $node/node()
-                    }
-                else
-                    $node
-        case element(select) return
-            let $value := templates:get-form-parameter($node, $session-parameter)
-            return
-                element { node-name($node) } {
-                    $node/@* except $node/@class,
-                    for $option in $node/option
-                    return
-                        <option>
-                        {
-                            $option/@*,
-                            if ($option/@value = $value) then
-                                attribute selected { "selected" }
-                            else
-                                (),
-                            $option/node()
+declare function templates:form-control($node as node(), $model as map(*)) as node()* {
+    let $name := $node/@name
+    return
+        typeswitch ($node)
+            case element(input) return
+                let $value := templates:get-form-parameter($name)
+                return
+                    if ($value) then
+                        element { node-name($node) } {
+                            $node/@* except $node/@value,
+                            attribute value { $value },
+                            $node/node()
                         }
-                        </option>
-                }
-        default return
-            $node
+                    else
+                        $node
+            case element(select) return
+                let $value := templates:get-form-parameter($name)
+                return
+                    element { node-name($node) } {
+                        $node/@* except $node/@class,
+                        for $option in $node/option
+                        return
+                            <option>
+                            {
+                                $option/@*,
+                                if ($option/@value = $value) then
+                                    attribute selected { "selected" }
+                                else
+                                    (),
+                                $option/node()
+                            }
+                            </option>
+                    }
+            default return
+                $node
 };
 
-declare %private function templates:get-form-parameter($node as node(), $sessionParam as xs:string?) as xs:string? {
-    let $param := request:get-parameter($node/@name, ())
-    let $value :=
-        if (empty($param) and exists($sessionParam)) then
-            session:get-attribute($sessionParam)
-        else
+declare %private function templates:get-form-parameter($name as xs:string) {
+    let $param := request:get-parameter($name, ())
+    return
+        if (exists($param)) then
             $param
-    return (
-        if (exists($sessionParam)) then
-            session:set-attribute($sessionParam, $value)
         else
-            (),
-        $value
-    )
+            session:get-attribute($name)
 };
 
 declare function templates:error-description($node as node(), $model as map(*)) {
