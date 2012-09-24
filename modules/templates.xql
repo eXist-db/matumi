@@ -195,9 +195,12 @@ declare %private function templates:map-argument($arg as element(argument), $par
     let $var := $arg/@var
     let $type := $arg/@type/string()
     let $reqParam := request:get-parameter($var, ())
+    let $sessionParam := session:get-attribute($var)
     let $paramFromContext :=
         if (exists($reqParam)) then
             $reqParam
+        else if (exists($sessionParam)) then
+            $sessionParam
         else
             $parameters($var)
     let $param :=
@@ -439,11 +442,14 @@ declare function templates:form-control($node as node(), $model as map(*)) as no
 
 declare %private function templates:get-form-parameter($name as xs:string) {
     let $param := request:get-parameter($name, ())
-    return
+    let $value :=
         if (exists($param)) then
             $param
         else
             session:get-attribute($name)
+    let $log := util:log("WARN", "VALUE: " || $value)
+    return
+        $value
 };
 
 declare function templates:error-description($node as node(), $model as map(*)) {

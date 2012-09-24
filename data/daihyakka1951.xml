@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
-<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:id="i14">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:id="i14">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -79,13 +79,11 @@
                 </head>
                 <head type="alt">文化</head>
                 <head type="alt">Culture</head>
-                
                 <div type="article">
                     <p>自然に対する語。興へられたる自然を材料として人聞が一定の目的に従い、その理想を実現せんとする過程の総称。この過程の所産を文化財という。的ち価値の属する実在的客体であり、換言すれば価値判断の対象となるものである。科学、道徳、芸術、宗教、法律、経済、国家等これである。文化財の有する価値そのものを文化価値といふ。とれは文化財の普遍妥当性を判定する標準をいい、文化財とは区別せられる。真、善、美、等が文化価値である。文化は広義に於ては、文明をも包括するが、狭義に於ては、文明と区別される。即ち文化Kulturは学問、芸術、宗教等の発達を示すもの、文明Civilizationは外部生活の発達、即ちち、殖産工業その他法律制度等の進歩を指すものである。前者は所謂精神的文明であり、後者は物質的文明である。</p>
                     <byline>（地頭）</byline>
                 </div>
             </div>
-            
             <pb n="52"/>
             <div type="entry" subtype="state_nation">
                 <head>
@@ -94,7 +92,7 @@
                 <head type="alt">地域</head>
                 <div type="article">
                     <div type="section">
-                    <p> 法律上一定の區劃された土地の範圍をいふ。ここに土地とは陸地たると水地たるとを問はず地表一體をいふ。
+                        <p> 法律上一定の區劃された土地の範圍をいふ。ここに土地とは陸地たると水地たるとを問はず地表一體をいふ。
                         區劃の方法は山、河、海、道路その他如何なる標識を以てするかを問はない。従つて地域は地表の一部である。一般に地域を基礎とする團體を地域團體といふ。</p>
                     </div>
                     <div type="section">
@@ -108,10 +106,9 @@
                             卽ちその區域の制定變更をなすものであつて、府縣にあつては法律を以てこれを定め、市町村にあつては内務大臣若しくはその許可を得て府縣知事がこれを定める
                             （府縣制三條、市制三條、町村制三條及び四條）。 </p>
                     </div>
-                <byline>（相場）</byline>
+                    <byline>（相場）</byline>
                 </div>
             </div>
-            
             <pb n="127"/>
             <div type="entry" subtype="knowledge">
                 <head>
@@ -121,10 +118,9 @@
                 <head type="alt">Knowledge</head>
                 <div type="article">
                     <p>哲學上重要なる概念。知るといふことが成立するためには、知るものと知られるものとがなければならない。知るものとは主觀であり、我々人間である。知られるものとは客觀であり、これに人間と道具的なるものと物體的なるものとの區別が考へられる。我々は人間を識つてゐるといふ。この場合その人を見たことがあるといふだけの場合と、その人の名を知つてゐるといふ場合と、その如何なる人物であるかを知つてゐるといふ場合とある。我々はまた道具的在るものについて、知つてゐるといふ。この場合にも、それを見たことがあるといふだけの場合と、何のためのものかを知つてゐる場合と、それを如何に使ふかを知つてゐる場合とがある。最後に物體的なるものについても、我々は知つてゐるといふ。この場合にも、それを見たことがあるといふだけの場合と、それが何であるかを知つてゐる場合と、それが何より成るかを知つてゐる場合とある。この三種の客觀を知るといふとき、それぞれ知り方が異なることは勿論である。第二の道具的なるものの知に於ては、知るといふことは、完全なる程度に於ては、出來るといふことにほかならない。従つてそれは實踐的意義を有つ。これに反して、第三の物體的なるものの知に於ては、知るは單に知るに留まり、直接には實踐的意義を有しない。さて以上の三種の客觀の知は、何れも箇々の對象の知である。箇々の對象を我々が知る場合には、我我はこれを或る場所に於てこれを知るのである。その場所は箇々の對象以前に我々に與へられてゐなければならない。箇々の道具的聯關の全體が、箇々の自然物の前に自然界全體が、箇々の人の前に人間社會全體が與へられてゐなければならない。更にこれ等のものよりも前に、世界全體が我々に與へられてゐなければならない。この世界は旣に我々に知られてゐるといふことも出來る。かかる意味の世界の知は、箇々の對象の知以前に存し、それを可能ならしめるものとして、根源的な知と考へることが出來る。次に箇々の對象の知は如何にして生ずるか。それは直接の經驗乃至直觀によるか、または間接的な思惟または論結によるか、または他人の知の傳承によるか何れかである。かくして知は非直觀的な把持としての知識となる。その體系的なるものは學的知識である。知識の集まりが人々の知的生活の基礎を構成し、新たなる知識の獲得の地盤及び實踐の發する源泉となる。勿論人の知識には完全なもの不完全なもの、眞なるもの偽なるものがある。我々の知識を理論的明證に訴へてこれを確證したり、乃至その偽なることを暴露したりすることが出來ると共に、また時にはとれを實踐に移すことにより、その眞なるを實際的に證したり、その無力、虚偽を暴露せしめることも出來る。また知識には確信的な知識の他に、多分であらうといふ蓋然的な知識もあり、かも知れないといふ可能的な知識もある。また人間理性の弱點は、自己の知り得ざることをも知らんと欲し、または知り得たりと盲信する傾向を有つ。かくの如き超越的知識に陷らないために、<name type="person" key="http://dbpedia.org/page/Immanuel_Kant">カント</name>以來知識批評といふことが重要な問題となつてゐる。</p>
-                <byline>（鬼頭）</byline>
+                    <byline>（鬼頭）</byline>
                 </div>
             </div>
-            
             <pb n="1259"/>
             <div type="entry" subtype="education">
                 <head>
@@ -234,9 +230,8 @@
                             單なる反復、一體の構造を作らない反復は、學習に效果がないことが盆々證明せられ、構成の補强または變容に貢献する限りに於て效
                             果があることが認められるのである。</p>
                     </div>
-                <byline>(增田)</byline>
+                    <byline>(增田)</byline>
                 </div>
-                
                 <summary names="1" values="2" instances="3" uuid="a7ebc32a-14ca-4cdc-8ba3-8e6bbddd66e2" ts="2011-09-05T14:34:51.31+02:00"/>
             </div>
 
@@ -328,10 +323,9 @@
                             解決の源とする限りに於て先驗的觀念論である。<name type="person" key="http://dbpedia.org/page/Edmund_Husserl">フッセル</name>の主知主義的であるのに反して<name type="person" key="http://dbpedia.org/page/Martin_Heidegger">ハイデッガー</name>は中心を生存Daseinに置き、
                         ー切の存在論の基礎を生存の分析論に置いた。彼によれば、存在が存在者によつては決して説明され得ず、それが如何なる存在者に對し
                         ても常に旣に先驗的なるものであるといふ主張の意味に觀念論を解するならば、哲學の唯一可能なる立場は觀念論であるといふ。</p>
-                <byline>(鬼頭)</byline>
+                    <byline>(鬼頭)</byline>
                 </div>
             </div>
-            
             <pb n="564"/>
             <div type="entry" subtype="state_nation">
                 <head>
@@ -340,7 +334,7 @@
                 <head type="alt">國家</head>
                 <div type="article">
                     <div type="section">
-                    <p>國家は種々の方面から研究することが出來る。社曾學的に見れば一定の土地の上に結合分離して生活してゐる人類の團體生活現象であり、政治學的に見れば統治の行はるる狀態であつて、一定の治者と被治者との對立相關關係である。しかしこれ等を國家と呼ぶのは法律現象としての
+                        <p>國家は種々の方面から研究することが出來る。社曾學的に見れば一定の土地の上に結合分離して生活してゐる人類の團體生活現象であり、政治學的に見れば統治の行はるる狀態であつて、一定の治者と被治者との對立相關關係である。しかしこれ等を國家と呼ぶのは法律現象としての
                         國家と紛亂する處があるから、なるべく他の稱呼を用ひるがよい。ここには法律現象としての國家を說明するのである。</p>
                     </div>
                     <div type="section" rend="inline">
@@ -427,10 +421,9 @@
                             </list>
                         </p>
                     </div>
-                <byline>（鈴木）</byline> 
+                    <byline>（鈴木）</byline>
                 </div>
             </div>
-            
             <pb n="367"/>
             <div type="entry" subtype="nation_state">
                 <head>
@@ -486,10 +479,9 @@
                             豪族恣にその勢力圈内を以て郡の境域を定め、或は分郡、置郡の事が行はれて、甚しく混亂の狀を呈した。<name type="period" key="http://dbpedia.org/page/Edo_period">徳川時代</name>に至り、 <name type="period" key="http://dbpedia.org/page/Kanbun_(era)">寛文</name>四年諸大名の領知目錄を交付する際、『延喜式』の舊郡名の復舊を圖り、大いに統一整理を行つたが、中には調査粗漏にして、
                         單に舊郡名のみを復して推定の位置を誤つたものも少なくない。併しともかくもこれによつて郡名の一定を得、 <name type="period" key="http://dbpedia.org/page/Meiwa">明和</name>元年靑木敦書著はすところの『郡名考』には六百三十都を錄してある。後<name type="place" key="http://dbpedia.org/page/Higo_Province">肥後</name>盆城郡を上下に分つて、<name type="period" key="http://dbpedia.org/page/Meiji_period">明治</name>初年六百三十一郡。 <name type="place" key="http://dbpedia.org/page/Hokkaidō">北海道</name>十一國八十六郡を加へて七百十七郡となる。その後にも分合あり、<name type="period" key="http://dbpedia.org/page/Meiji_period">明治</name>十三年の郡區改正の後七百九十七郡、
                             <name type="place" key="http://dbpedia.org/page/Ryūkyū_Kingdom">琉球</name>五郡を加へて八百二郡となる。<name type="period" key="http://dbpedia.org/page/Meiji_period">明治</name>二十九年以降郡の大整理あり、現今六百三十郡の名を存してゐるが、 部制廢止の今日、行政區劃として意義を有しない。 </p>
-                 <byline>（喜田）</byline>
+                    <byline>（喜田）</byline>
                 </div>
             </div>
-            
             <pb n="420"/>
             <div type="entry" subtype="nation">
                 <head>
@@ -511,10 +503,9 @@
                         また近代立憲國に於ては國民は絶對服従の地位にだけは立つことなく、諸種の自由權、參政權、國務要求權等の公權を認められてゐる。
                         また國家を守り國家の負搪に任ずる義務もある（兵役義務、納稅義務）。國民と外國人の異なる點はこれらの主要なる權利のあるものを享受せず、
                         また義務を負搪しない點にある。 </p>
-                <byline>（鈴木）</byline>
+                    <byline>（鈴木）</byline>
                 </div>
             </div>
-            
             <pb n="522"/>
             <div type="entry" subtype="nation_state">
                 <head>
@@ -525,7 +516,6 @@
                     <p> → 國郡制度(コクグンセイド) </p>
                 </div>
             </div>
-            
             <pb n="3"/>
             <div type="entry" subtype="education">
                 <head>
@@ -613,11 +603,10 @@
                             質を變更し、環境の影響を阻止し得るや否やは疑問である。要するに敎育とは素質と環境を條件として、その範圍內に於て人格價値の
                             增進をなすことであり、しかもその範圍と力とは頗る大なるものがあるのである。</p>
                     </div>
-                <byline>(吉田)</byline>
+                    <byline>(吉田)</byline>
                 </div>
                 <summary names="3" values="6" instances="10" uuid="ff9f9dd8-3711-42fc-99dd-6e67f4761f7e" ts="2011-09-05T14:34:51.409+02:00"/>
             </div>
-            
             <pb n="20"/>
             <div type="entry" subtype="culture">
                 <head>
@@ -627,10 +616,9 @@
                 <head type="alt">Culture</head>
                 <div type="article">
                     <p>人間心身の諸性能を一面的、外面的でなく全面的、内面的に、卽ち調和的に修養、形成、發展せしむること。卽ち、精神を陶冶して、一切の人間的意義あることに就いての理解と關興とを有し、一時代の精神生活内容を生き生きと己が中に充實し、以て人類共同の文化生活進展に貢獻し得る能力を作りあげること、及びかくして成れる精神内容をいふ。かかる人間性の敎養を力說せるは、<name type="person" key="http://dbpedia.org/page/Arent_de_Gelder">ヘルデル</name>、<name type="person" key="http://dbpedia.org/page/Johann_Wolfgang_von_Goethe">ゲーテ</name>、<name type="person" key="http://dbpedia.org/page/Friedrich_Schiller">シルレル</name>、<name type="person" key="http://dbpedia.org/page/Wilhelm_von_Humboldt">ウィルヘルム・フオン・フンボルト</name>等。</p>
-                <byline>（牧野）</byline>
+                    <byline>（牧野）</byline>
                 </div>
             </div>
-            
             <pb n="174"/>
             <div type="entry" subtype="city">
                 <head>
@@ -653,7 +641,6 @@
                 <!-- is here some text missing? -->
                 </div>
             </div>
-            
             <pb n="242"/>
             <div type="entry" subtype="history">
                 <head>
@@ -682,7 +669,7 @@
                                 史家は史料の蒐集、批判、解釋、綜合を遂行するためには史學と關係ある他の諸科學の知識を必要とする。一般には人類地理學、人類學、人種學、社會學、經濟學、統計學、政治學等が最も關係が深いが、就中、人類地理學の知識は史實を決定する有力な地理的要素を把握するために必要である。なほ某時代または某國の歷史のみに就いて特に必要を感ずる科學がある。例へば記錄の缺乏せる上古の時に就いては遺物の研究を任務とする考古學は特に必要である。また言語學、古代文字學、史料學、印章學、古泉學、系譜學、年代學、地理學等何れも狹義の補助科學に屬する。これ等の補助科學の數は史學の研究が進歩するに従つて益ゝ增加せんとしてゐる。</item>
                         </list>
                     </p>
-                <byline>（村川）</byline>
+                    <byline>（村川）</byline>
                 </div>
             </div>
 
@@ -900,10 +887,9 @@
                             して僞とすべきではない(理論の場合には、その前提としての假說のなかに屢々實在以外の要素が含まれてゐるために、これが根柢か
                             ら變更されることがあるが、それは上述の眞の意味と必ずしも矛盾しない)。</p>
                     </div>
-                <byline>(石原)</byline>
+                    <byline>(石原)</byline>
                 </div>
             </div>
-            
             <pb n="870"/>
             <div type="entry" subtype="nation_state">
                 <head>
@@ -915,7 +901,6 @@
                     <p> 陸地の大なるものをいひ、<name type="place" key="http://dbpedia.org/resource/Eurasia">ユーラシヤ</name> ( <name type="place" key="http://dbpedia.org/resource/Asia">アジヤ</name> 及び<name type="place" key="http://dbpedia.org/page/Europe">ヨーロッパ</name> ）、<name type="place" key="http://dbpedia.org/page/Africa">アフリカ</name> 、<name type="place" key="http://dbpedia.org/resource/North_America">北アメリカ</name>、 <name type="place" key="http://dbpedia.org/resource/South_America">南アメリ力</name>、 <name type="place" key="http://dbpedia.org/resource/Australia_(continent)">オーストラリヤ</name>を五大陸と稱し 、またこれに<name type="place" key="http://dbpedia.org/page/Antarctica">南極大陸</name>を加へて六大陸となす場合もある。前表は各大陸の面積、人口を示す。 </p>
                 </div>
             </div>
-            
             <pb n="57"/>
             <div type="entry" subtype="city">
                 <head>
@@ -926,7 +911,6 @@
                     <p> → 都市(トシ) </p>
                 </div>
             </div>
-            
             <pb n="153"/>
             <div type="entry" subtype="city">
                 <head>
@@ -1021,7 +1005,6 @@
                     <byline>(佐々木)</byline>
                 </div>
             </div>
-            
         </body>
     </text>
 </TEI>

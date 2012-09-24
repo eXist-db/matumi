@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
-<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg">
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:id="i14">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -80,10 +80,11 @@
             <gap reason="not digitized"/>
             <milestone unit="volume" n="2"/>
             <gap reason="not digitized"/>
-            <pb n="657" facs="images/EncBrit/EncBrit.11.02.0657.png"/>
-            <gap reason="not digitized"/>
+            
             <!-- ART -->
-            <div type="entry" subtype="art">
+            <div type="entry" subtype="art" xml:id="i14-133">
+                <pb n="657" facs="images/EncBrit/EncBrit.11.02.0657.png"/>
+                <gap reason="not digitized"/>
                 <head>
                     <term xml:id="ART">
                         <hi rend="bold">ART</hi>
@@ -384,7 +385,7 @@
             <pb n="734" facs="images/EncBrit/EncBrit.11.02.0734.png"/>
             <gap reason="not digitized"/>
             <!-- ASIA -->
-            <div type="entry" subtype="asia">
+            <div type="entry" subtype="asia" xml:id="i14-139">
                 <head>
                     <term xml:id="ASIA">
                         <hi rend="bold">ASIA</hi>
@@ -3975,7 +3976,7 @@
             <pb n="400" facs="images/EncBrit/EncBrit.11.06.0400.png"/>
             <gap reason="not digitized"/>
             <!-- CITY -->
-            <div type="entry" subtype="city">
+            <div type="entry" subtype="city" xml:id="i14-136">
                 <head>
                     <hi rend="bold">CITY</hi>
                 </head>
@@ -4897,7 +4898,7 @@
             <gap reason="not digitized"/>
             <pb n="316" facs="images/EncBrit/EncBrit.11.07.0316.png"/>
             <!--COUNTRY-->
-            <div type="entry" subtype="nation_state">
+            <div type="entry" subtype="nation_state" xml:id="i14-134">
                 <head>
                     <term xml:id="COUNTRY">
                         <hi rend="bold">COUNTRY</hi>
@@ -19680,7 +19681,7 @@
             <pb n="527" facs="images/EncBrit/EncBrit.11.13.0527.png"/>
             <gap reason="not digitized"/>
             <!-- HISTORY -->
-            <div type="entry" subtype="history">
+            <div type="entry" subtype="history" xml:id="i14-138">
                 <head>
                     <term xml:id="HISTORY">
                         <hi rend="bold">HISTORY.</hi>
@@ -20470,7 +20471,7 @@
             <pb n="556" facs="images/EncBrit/EncBrit.11.14.0556.png"/>
             <gap reason="not digitized"/>
             <!-- INFORMATION -->
-            <div type="entry" subtype="information">
+            <div type="entry" subtype="information" xml:id="i14-135">
                 <head>
                     <term xml:id="INFORMATION">
                         <hi rend="bold">INFORMATION</hi>
@@ -20510,7 +20511,7 @@
             <pb n="396" facs="images/EncBrit/EncBrit.11.24.0396.png"/>
             <gap reason="not digitized"/>
             <!-- SCIENCE -->
-            <div type="entry" subtype="science">
+            <div type="entry" subtype="science" xml:id="i14-137">
                 <head>
                     <term xml:id="SCIENCE">
                         <hi rend="bold">SCIENCE</hi>

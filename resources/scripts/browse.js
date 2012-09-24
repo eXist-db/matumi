@@ -1,151 +1,67 @@
- function fetchAJAXfragment( pos, that ){
-        var $this = $(that).removeClass('');
-        //var URL = $this.attr('url') +'?' + $("#browseForm").serialize();
-        var section = $this.attr('section');
-        var url = $this.attr('url');
-        if(section ) url += '&section=' + section;
-        $this.load( url, function(response, status, xhr) {
-            var newDom = $this.find(' > *').remove();
-            if($this.attr('copyURL') == 'yes') 
-                 newDom.attr('url', $this.attr('url'));
-            $this.replaceWith( newDom );
-            if( newDom.hasClass('chzn-select')) { newDom.chosen() };
-            //$this.removeClass('loading-grey ajax-loaded-combo');
-             $('.ajax-loaded', newDom ).each( fetchAJAXfragment);            
-        });
-};
 
+function getParameters(level) {
+	var params = [];
+	if (level) {
+		params.push("level=" + level);
+	}
+    $("select").each(function() {
+        var val = $(this).val();
+        var name = this.name;
+        if (name.length > 2 && name.substring(name.length - 2) == "[]")
+            name = name.substring(0, name.length - 2);
+        if (val)
+            params.push(name + "=" + encodeURIComponent(val));
+        else
+        	params.push(name + "=");
+    });
+    return params.join("&");
+}
 
-function disableSingleOption( $t, value ){
-    var current = $t.val();    
-    $t.find( 'option[value=' + value + ']').attr('disabled', 'true' ).hide();      
-    if( current == value ){         
-       $t.val( $t.find('option:enabled').eq(0).attr('value')); 
-    }
-};
+function updateSelect(level, select, callback) {
+    var params = getParameters(level);
+    $.get("select.html", params, function(data) {
+        select.empty().html(data);
+        select.trigger("liszt:updated");
+        if (callback)
+            callback(data);
+    });
+}
 
-function clearComboSelection( $combo ){
-    $('option:selected', $combo).removeAttr('selected');
-    $('option:last',     $combo).removeAttr('disabled').attr('selected', 'selected');
-};
-
-function disableLeftOptions( $leftCombos, $combosToDisable  ){   
-   var $select = $combosToDisable.eq(0);
-   $select.find('option:disabled').removeAttr('disabled').show();
-   for( var i = 0; i< $leftCombos.length; i++){      
-      disableSingleOption($select,$leftCombos.eq(i).val());
-   }
-   if( $combosToDisable.length > 1){
-      disableLeftOptions( $leftCombos.add($select), $combosToDisable.slice(1) );
-   }
-};
-
-//head.ready(function() {
-//    $.ajaxSetup({ifModified:true});
-//
-//    $('#L1').live('change', function(event){
-//         disableLeftOptions( $(event.target), $('#L2, #L3, #L4'));
-//         $('body').trigger('selectionHasChanged');
-//    });
-//     $('#L2').live('change', function(event){
-//          disableLeftOptions( $('#L1, #L2'), $('#L3, #L4')); 
-//          $('body').trigger('selectionHasChanged');       
-//     });
-//     $('#L3').live('change', function(event){
-//          disableLeftOptions( $('#L1, #L2, #L3'), $('#L4')); 
-//          $('body').trigger('selectionHasChanged');     
-//     });
-//    
-//     $("a.combo-reset").live('click', function(evnt){
-//        var $this = $(this), $combo2reset =  $('#'+ $this.attr('combo2reset'));
-//        $('#'+ $this.attr('combo2reset') +  '_chzn a.search-choice-close').trigger('click');
-//        clearComboSelection( $combo2reset );
-//        $('body').trigger('selectionHasChanged');
-//    });    
-//    
-//    $('.cat-toggle.collapsed').live('click', function(){
-//        $(this).closest('.cat-container').add( $(this)).addClass('expanded').removeClass('collapsed');
-//    });  
-//    $('.cat-toggle.expanded').live('click', function(){
-//        $(this).closest('.cat-container').add( $(this)).addClass('collapsed').removeClass('expanded');
-//    });  
-//    
-//    
-//    $(".chzn-select").chosen();    
-//    $('.ajax-loaded').each( fetchAJAXfragment); 
-//    
-//	$('#bottom').scrollExtend({	
-//			'newElementClass': 'list_item more_content',		
-//			'target': '#dummy-cont',
-//			'url': function($dom, options ){
-//			    var $target = $('#entryGrid'), //$(options.target),
-//			        page = ( $dom.data('page') || 1) + 1,
-//			        url  = $target.attr('url'),
-//			        lastPage = $dom.data('noMoreData' ) || $target.attr('noMoreData') === 'yes';
-//			    
-//			    if( !$target.length ){
-//			       $('#bottom').scrollExtend( 'disable');
-//			       return null;
-//			    }else if( lastPage ) {
-//			        $dom.data('noMoreData', true );	
-//			        return null;
-//			    }else{
-//    		        $dom.data('page', page );			    
-//    			    return url + '&page=' + page;
-//    		    }
-//			}, 
-//			'onSuccess': function ( data, target, $dom ){
-//			   var tbl =  $('#entryGrid'),
-//			       $data =  $(data);
-//			   
-//			   if( $data.attr('noMoreData') ){
-//			       $dom.data('noMoreData', true );
-//			       // return false;
-//			   }		   
-//			   target.find('tbody').appendTo(tbl);
-//			   target.empty();
-//			   $('.ajax-loaded', tbl ).each( fetchAJAXfragment);   
-//			   return false;			  
-//			}
-//	});
-//
-//   var ul = $('ul.editions'), li = ul.find('li');
-//   if( li.length > 4 ) {
-//       ul.makeacolumnlists({
-//         cols: li.length < 10 ? 3: 4,
-//         colWidth:0,equalHeight:true});
-//    }		    
-//	
-//	// metadata 	    
-//    $('#matadataBooks').live('change', function(event){
-//       $('#metadataForm').submit();
-//    });
-//
-//    $('select.browseParameters').live( 'change', function(event){
-//        $('body').trigger('selectionHasChanged', [true]);    
-//    });
-//
-//    $('body').bind('selectionHasChanged', function(e, useAutoSubmit ){
-//        $('select.browseParameters').each( function(){
-//            var $this = $(this), selected = $('option:selected', $this);      
-//            if( !selected.length ){
-//               $('option:last', $this).removeAttr('disabled').attr('selected', 'selected');// select option='*'
-//            }
-//        });
-//        if( !useAutoSubmit || $('#autoUpdate').is(':checked') ){  
-//           $('#browseForm').submit();
-//        }
-//    })
-//
-//
-//});
+function updateSummary() {
+    var params = getParameters();
+    $.get("summary.html", params, function(data) {
+	    $("#summary").replaceWith(data);
+    });
+}
 
 $(document).ready(function() {
     $(".chzn-select").chosen();
+    
+    /* Browsing page */
     $("#L1").change(function() {
-        $.get("select.html", { "L1": $(this).val() }, function(data) {
-            $("#L1-choose").empty().html(data);
-            $("#L1-choose").trigger("liszt:updated");
+    	$("#indicator").show();
+        updateSelect(1, $("#L1-choose"), function(data) {
+            updateSelect(2, $("#L2-choose"), function(data) {
+	        	$("#indicator").hide();
+            });
         });
     });
+    $("#L1-choose").change(function() {
+        $("#L2-choose").val("").trigger("liszt:updated");
+        updateSelect(2, $("#L2-choose"));
+        updateSummary();
+    });
+    $("#L2").change(function() {
+        updateSelect(2, $("#L2-choose"));
+    });
+    $("#L2-choose").change(function() {
+	    updateSummary();
+    });
+    /* End browsing page */
+    
+    /* Metadata page */
+    $("#metadata-select").change(function() {
+	    $("form").submit();
+    });
+    /* End browsing page */
 });

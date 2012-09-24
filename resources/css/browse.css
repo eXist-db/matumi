@@ -40,7 +40,10 @@ table.browse-tbl td {
 	background: transparent url(loading-bars.gif) no-repeat center ;
 }
 
-.cat-toggle{ float:left; margin-top:2px; }
+.cat-toggle{ 
+    margin-top:2px;
+    vertical-align: middle;
+}
 
 .cat-toggle.collapsed, .cat-toggle.expanded {
     background: transparent url(toggle-expand.png) no-repeat center ; 
@@ -54,11 +57,9 @@ table.browse-tbl td {
     background: transparent url(toggle-collapse.png) no-repeat center ; 
 }
 
-span.cat-name { margin: 0 0.5em 0 0; float:left; line-height:16px; }
+span.cat-name { margin: 0 0.5em 0 0; }
 
-td.cat-container span.values, td.cat-container .br {  display:none !important }
-td.cat-container.expanded span.values { display:inline !important } 
-td.cat-container.expanded .br { display:block !important }
+td.cat-container li { display: inline; }
 
 #browseForm { position:relative;}
 #autoUpdateCont {position:absolute; right:20px; top:-48px;}
