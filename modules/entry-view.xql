@@ -192,6 +192,7 @@ function matumi:metadata-select($node as node()*, $model as map(), $doc as xs:st
    for $book in $books
    let $title := matumi:get-title($book)
    let $uri := document-uri(root($book))
+   where not(ends-with($uri, "-annotations.xml"))
    return
         <option value="{$uri}">
         {
