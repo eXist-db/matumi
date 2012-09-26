@@ -119,7 +119,10 @@ declare function search:display-result($node as element(), $xpath as xs:string) 
         let $block := $node/ancestor-or-self::tei:p
         return
             if ($block) then
-                kwic:summarize($block, $config, $callback)
+                (: kwic:summarize($block, $config, $callback) :)
+                let $expanded := util:expand($block, "expand-xincludes=no")
+                for $match in $expanded//exist:match
+	            return kwic:get-summary($expanded, $match, $config, $callback)          
             else
                 ()
     else
@@ -238,22 +241,55 @@ declare function search:search() {
         $results
 };
 
-declare function search:show-results($results) {
+declare function search:show-results($results) {   
     let $xpath := session:get-attribute("matumi:xpath")
-    let $rows :=
+    let $results-print :=
         for $result in $results
-        order by ft:score($result)
-        return
-            search:display-result($result, $xpath)
+            let $titles := $result/ancestor-or-self::tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title
+            let $main-title := (
+                if (exists($titles[@type="main"]))
+                    then $titles[@type="main"]/text()
+                else 
+                    if (exists($titles))
+                        then 
+                            for $title in $titles
+                                return $title/text()
+                    else $result/ancestor-or-self::tei:TEI//tei:titlePart/text() 
+            )
+            let $entry-title := 
+                for $title in $result/ancestor-or-self::tei:div[@type="entry"]/tei:head
+                    return
+                        fn:string($title)        
+            order by ft:score($result)    
+        return (
+                <tr>
+                    <td class="source">
+                        {$main-title}
+                        {if (fn:contains(fn:string($xpath), "tei:p"))
+                            then (": ", $entry-title)
+                        else ()
+                        }
+                    </td>
+                </tr>
+                ,
+                <tr>
+                    <td class="matches">
+                        <table class="matches">{search:display-result($result, $xpath)}</table>
+                    </td>
+                </tr>
+            )
+    let $count-matches := 
+        if (count($results-print//table[@class="matches"]/*/*[@class="hi"]) > 0)
+            then count($results-print//table[@class="matches"]/*/*[@class="hi"])
+        else 
+            count($results)
     return
         <div>
-            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
+            <p id="navbar">Query Results: {$count-matches} matches in {count($results)} paragraphs.</p>
             <div id="results">
                 <div id="results-container">
-                    <table class="kwic">
-                    {
-                        $rows
-                    }
+                    <table class="result">
+                        {$results-print}
                     </table>
                 </div>
             </div>

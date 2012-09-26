@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:id="i21">
+<TEI xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xml:id="i21">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title type="main">Great Soviet encyclopedia. Translation of third Russian edition of Bol'shaya sovetskaya entsiklopediya. New York: Macmillan, London: Collier Macmillan, 1974-1983</title>
+                <title type="main">Great Soviet encyclopedia. Translation of third Russian edition of Bol'shaya sovetskaya entsiklopediya. New York: Macmillan, London: Collier Macmillan, 1974-1983.</title>
                 <title type="sub">An electronic edition of excerpts for transcultural research</title>
                 <editor>Research Project "Hidden Grammars of Transculturality - Migrations of Encyclopedic Knowledge and Power"</editor>
                 <respStmt>
@@ -112,6 +112,7 @@
             <change when="2011-09-22" who="#CS">Insertion of Publisher's Foreword, Editors of the BSE's Foreword</change>
             <change when="2011-11-10" who="#KMW">some TEI structural changes</change>
             <change when="2011-11-16" who="#KMW">corrections in tagging</change>
+            <change when="2012-09-03" who="#KMW">.png endings added for page scan info</change>
         </revisionDesc>
     </teiHeader>
     <text xml:lang="en">
@@ -427,7 +428,7 @@
         </front>
         <body>
             <gap reason="not digitized" extent="407 pages"/>
-            <pb n="407" facs="images/GSE/GSE.ed3.eng.vol01.0407"/>
+            <pb n="407" facs="images/GSE/GSE.ed3.eng.vol01.0407.png"/>
             <div type="entry" subtype="asia">
                 <head>
                     <term xml:id="ASIA">ASIA</term>
@@ -532,7 +533,7 @@
                                 <name type="place" key="http://dbpedia.org/resource/Kolyma">Kolyman</name>, 
                                 <name type="place">Great Chinese</name>) or in the piedmont 
                                 basins (<name type="place">Mesopotamian</name>, 
-                                <name type="place" key="http://dbpedia.org/resource/Indo-Gangetic_Plain">Indo- <pb n="408" facs="images/GSE/GSE.ed3.eng.vol01.0408"/> Gangetic</name>).
+                                    <name type="place" key="http://dbpedia.org/resource/Indo-Gangetic_Plain">Indo- <pb n="408" facs="images/GSE/GSE.ed3.eng.vol01.0408.png"/> Gangetic</name>).
                 The inlermontane plains of <ref type="place" target="http://dbpedia.org/resource/Central_Asia">Central Asia</ref> and <name type="place">Middle
                   Asia</name> (<name type="place" key="http://dbpedia.org/resource/Kashgar">Kashgar</name>, <name type="place" key="http://dbpedia.org/resource/Dzungaria">Dzungarian</name>, <name type="place" key="http://dbpedia.org/resource/Gobi_Desert">Gobi</name>,
                   <name type="place" key="http://dbpedia.org/resource/Qaidam">Tsaidam</name>, and <name type="place">Fergana</name>) are more uplifted.</p>
@@ -618,7 +619,7 @@
                                 (from the <name type="period" key="http://dbpedia.org/resource/Carboniferous">Upper 
                                 Carboniferous</name> to the 
                                 <name type="period" key="http://dbpedia.org/resource/Jurassic">Jurassic</name> Age 
-                                inclusively), by mantles <pb n="409" facs="images/GSE/GSE.ed3.eng.vol01.0409"/> of basal lava (traps of the <name type="period" key="http://dbpedia.org/resource/Cretaceous">Cretaceous</name> and <name type="period">Paleogenic</name> ages), and, along the
+                                    inclusively), by mantles <pb n="409" facs="images/GSE/GSE.ed3.eng.vol01.0409.png"/> of basal lava (traps of the <name type="period" key="http://dbpedia.org/resource/Cretaceous">Cretaceous</name> and <name type="period">Paleogenic</name> ages), and, along the
                 edges of the shield, by <name type="period" key="http://dbpedia.org/resource/Jurassic">Jurassic</name> and <name type="period" key="http://dbpedia.org/resource/Cretaceous">Cretaceous</name> marine deposits. In the north the <name type="period" key="http://dbpedia.org/resource/Precambrian">Precambrian</name> avement has been submerged beneath a bed of <name type="period" key="http://dbpedia.org/resource/Cenozoic">Cenozoic</name> deposits which is thickest in the upper portion of the <name type="place">Ganges
                   Valley</name>, the <name type="place">sub-Himalayan depression</name>, and the <name type="place" key="http://dbpedia.org/resource/Indus_River">Indus</name> River basin.</p>
                                 <p>The ancient basement of <name type="place" key="http://dbpedia.org/resource/Arabian_Peninsula">Arabia</name> is also composed of <name type="period" key="http://dbpedia.org/resource/Precambrian">Precambrian</name> crystalline rock which outcrops over a large portion of the
@@ -673,7 +674,7 @@
                                 The largest deposits of
                 hard coal are concentrated in the <name type="period" key="http://dbpedia.org/resource/Carboniferous">Carboniferous</name> deposits of <name type="place" key="http://dbpedia.org/resource/Kazakhstan">Kazakhstan</name> (the <name type="place">Karaganda Basin</name> and others), in the
                   <name type="period" key="http://dbpedia.org/resource/Permian">Permian</name> deposits of <name type="place" key="http://dbpedia.org/resource/Siberia">Siberia</name> (<name type="place" key="http://dbpedia.org/resource/Kuznetsk_Basin">Kuznetsk</name>,
-                                <pb n="410" facs="images/GSE/GSE.ed3.eng.vol01.0410"/>
+                                    <pb n="410" facs="images/GSE/GSE.ed3.eng.vol01.0410.png"/>
                                     <name type="place">Minusinsk</name>, and <name type="place">Tungus</name> basins), and in <name type="place" key="http://dbpedia.org/resource/Korea">Korea</name>, the eastern part of <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name> and the eastern regions of the <name type="place" key="http://dbpedia.org/resource/Hindustan">Hindustan</name> peninsula. <name type="period" key="http://dbpedia.org/resource/Mesozoic">Mesozoic</name> coal deposits are found in <name type="place">Middle Asia</name>, several regions of <name type="place">Siberia</name>, the
                   <name type="place" key="http://dbpedia.org/resource/Far_East">Far East</name>, <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name> (<name type="place">the Sinkiang-Uigur Autonomous region</name>,
                   <name type="place">southern China</name>), <name type="place" key="http://dbpedia.org/resource/Vietnam">Vietnam</name>, and <name type="place" key="http://dbpedia.org/resource/Japan">Japan</name>. <name type="period" key="http://dbpedia.org/resource/Cenozoic">Cenozoic</name> coal
@@ -733,7 +734,7 @@
                 mitigated by the bordering seas. The monsoon is warmed while passing over the sea and picks up moisture, which during the winter is returned as
                 precipitation on the northwestern slopes of the island chains. In the subequatorial portion of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name>, continental tropical air prevails during the winter and equatorial sea air during the
                 summer. The dry and warm winter winds of the southern Asiatic continental monsoon, which blow toward the equatorial depression, are analogous to
-                the trade winds over the <name type="place" key="http://dbpedia.org/resource/Atlantic_Ocean">Atlantic</name> and <name type="place" key="http://dbpedia.org/resource/Pacific_Ocean">Pacific</name> oceans. The dry spring <pb n="411" facs="images/GSE/GSE.ed3.eng.vol01.0411"/> is abruptly replaced by the rainy summer
+                the trade winds over the <name type="place" key="http://dbpedia.org/resource/Atlantic_Ocean">Atlantic</name> and <name type="place" key="http://dbpedia.org/resource/Pacific_Ocean">Pacific</name> oceans. The dry spring <pb n="411" facs="images/GSE/GSE.ed3.eng.vol01.0411.png"/> is abruptly replaced by the rainy summer
                   (<q>"the monsoon outburst"</q>). The summer monsoon provides enormous amounts of precipitation (up to 2,500 mm a month). Over the equatorial
                 parts of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> (the south of <name type="place" key="http://dbpedia.org/resource/Sri_Lanka">Ceylon</name> and the <name type="place" key="http://dbpedia.org/resource/Malacca">Malacca
                   Peninsula</name>, as well as the <name type="place" key="http://dbpedia.org/resource/Greater_Sunda_Islands">Greater Sunda Islands</name>),
@@ -937,7 +938,7 @@
                   <name type="place" key="http://dbpedia.org/resource/Pacific_Ocean">Pacific</name>. The <name type="place" key="http://dbpedia.org/resource/Salween_River">Salween</name>, <name type="place" key="http://dbpedia.org/resource/Ayeyarwady_River">Irrawaddy</name>, <name type="place" key="http://dbpedia.org/resource/Brahmaputra_River">Brahmaputra</name>, <name type="place" key="http://dbpedia.org/resource/Ganges">Ganges</name>, and <name type="place" key="http://dbpedia.org/resource/Indus_River">Indus</name>
                 rivers flow into the <name type="place" key="http://dbpedia.org/resource/Indian_Ocean">Indian Ocean</name>, as well as the <name type="place" key="http://dbpedia.org/resource/Shatt_al-Arab">Shatt al Arab</name>, which is formed by the confluence of the <name type="place" key="http://dbpedia.org/resource/Tigris">Tigris</name> and <name type="place" key="http://dbpedia.org/resource/Euphrates">Euphrates</name>
                 rivers. Only small mountain rivers empty into the <name type="place" key="http://dbpedia.org/resource/Sea_of_Azov">Azov</name>, <name type="place" key="http://dbpedia.org/resource/Black_Sea">Black</name>, and <name type="place" key="http://dbpedia.org/resource/Mediterranean_Sea">Mediterranean</name> seas from Asian territory. The <name type="place" key="http://dbpedia.org/resource/Kura_River">Kura</name>, <name type="place" key="http://dbpedia.org/resource/Amu_Darya">Amu Darya</name>,
-                                <name type="place" key="http://dbpedia.org/resource/Syr_Darya">Syr Darya</name>, and <name type="place" key="http://dbpedia.org/resource/Ili_River">Ili rivers</name> empty into the <pb n="412" facs="images/GSE/GSE.ed3.eng.vol01.0412"/> extensive inland basins of the <name type="place" key="http://dbpedia.org/resource/Caspian_Sea">Caspian Sea</name> and <name type="place" key="http://dbpedia.org/resource/Aral_Sea">Aral
+                                    <name type="place" key="http://dbpedia.org/resource/Syr_Darya">Syr Darya</name>, and <name type="place" key="http://dbpedia.org/resource/Ili_River">Ili rivers</name> empty into the <pb n="412" facs="images/GSE/GSE.ed3.eng.vol01.0412.png"/> extensive inland basins of the <name type="place" key="http://dbpedia.org/resource/Caspian_Sea">Caspian Sea</name> and <name type="place" key="http://dbpedia.org/resource/Aral_Sea">Aral
                   seas</name> and <name type="place" key="http://dbpedia.org/resource/Lake_Balkhash">Lake Balkhash</name>. Part of the flow of rivers in the
                 inland drainage basins reaches lakes, and part terminates in dry deltas in the sands and salt bottoms or in oases, where all the water is
                 consumed on field irrigation and evaporation. The largest of these rivers are the <name type="place" key="http://dbpedia.org/resource/Tarim_River">Tarim</name>, the <name type="place" key="http://dbpedia.org/resource/Chu_River">Chu</name>, and
@@ -1006,7 +1007,7 @@
                 equatorial zones.</p>
                                 <p>In the mountains the altitude-zoned series of soil types are represented; as a rule, these are skeletal and underdeveloped. Beneath the
                 mountain forests in the north of the temperate zone, mountain podzolic soils and mountain variations of the gray-forest and taiga-permafrost
-                soils have developed. Above the timberline these are replaced by <pb n="413" facs="images/GSE/GSE.ed3.eng.vol01.0413"/>mountain-tundra soils. In the southern temperate zone, beneath the mountain
+                soils have developed. Above the timberline these are replaced by <pb n="413" facs="images/GSE/GSE.ed3.eng.vol01.0413.png"/>mountain-tundra soils. In the southern temperate zone, beneath the mountain
                 steppes, mountain chestnut and mountain chernozem soils have developed, and in the wetter (forested) regions there are brown mountain forest
                 soils. Mountain meadow soils are found under the subalpine and alpine meadows. In the humid regions of the low latitudes the mountain red,
                 yellow, and ferroallite soils predominate, and in the dry regions there are mountain brown, graybrown, and brownish-gray soils. The alpine
@@ -1077,7 +1078,7 @@
                 many species in common with the species in <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>, <name type="place" key="http://dbpedia.org/resource/North_America">North America</name>, and <name type="place" key="http://dbpedia.org/resource/Africa">Africa</name>. The ties with <name type="place" key="http://dbpedia.org/resource/America">America </name> are the consequence of the recent
                 connecting ofthe continents in the zone of <name type="place">Cape Bering</name> and the similarity of contemporary conditions. The result is
                 almost complete identicalness of fauna from the American and Asiatic tundras and the significant similarity in the fauna of the forest zone.
-                Such species as tapirs and<pb n="414" facs="images/GSE/GSE.ed3.eng.vol01.0414"/> alligators recall the more ancient ties of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> with <name type="place" key="http://dbpedia.org/resource/America">America </name>. The ancient and presently existing overland
+                Such species as tapirs and<pb n="414" facs="images/GSE/GSE.ed3.eng.vol01.0414.png"/> alligators recall the more ancient ties of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> with <name type="place" key="http://dbpedia.org/resource/America">America </name>. The ancient and presently existing overland
                 ties with <name type="place" key="http://dbpedia.org/resource/Africa">Africa</name> account for significant similarity in the fauna of arid
                 southwestern <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> and <name type="place" key="http://dbpedia.org/resource/North_Africa">North Africa</name>: southern <name type="place" key="http://dbpedia.org/resource/Arabian_Peninsula">Arabia</name> is a part of the Ethiopian zoogeographic area, which is common also to <name type="place" key="http://dbpedia.org/resource/Africa">Africa</name>. Proof of the more ancient ties of southern <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> with <name type="place" key="http://dbpedia.org/resource/Africa">Africa</name> is the
                 presence of the elephant, rhinoceros, deer, and peacock in both parts of the world. The <name type="place" key="http://dbpedia.org/resource/Lesser_Sunda_Islands">Lesser Sunda Islands</name>, with the extreme insular paucity of fauna, have a marked
@@ -1142,7 +1143,7 @@
               navigators had long since sailed into <name type="place">Tazovskaia Bay.</name> Thesea expeditions of <name type="person" key="http://dbpedia.org/resource/Zheng_He">Cheng Ho</name> to <name type="place" key="http://dbpedia.org/resource/South_Asia">South</name> and
                 <ref type="place" target="http://dbpedia.org/resource/Southwest_Asia">Southwest Asia</ref> took place in the early 15th century. The Venetian
                 <name type="person" key="http://dbpedia.org/resource/Niccolò_de'_Conti">N. de'Conti</name> traveled around <name type="place" key="http://dbpedia.org/resource/South_Asia">South</name> for many years in the first half of the 15th century. The <name type="person" key="http://dbpedia.org/resource/Afanasy_Nikitin">Russian merchant Afanasii Nikitin</name> traveled through <name type="place" key="http://dbpedia.org/resource/Iran">Iran</name> to <name type="place" key="http://dbpedia.org/resource/India">India</name> during 1466-72,
-                            <pb n="415" facs="images/GSE/GSE.ed3.eng.vol01.0415"/> leaving a description of <name type="place" key="http://dbpedia.org/resource/India">India</name>. After the <name type="people" key="http://dbpedia.org/resource/Turkish_people">Turks</name> conquered <name type="place" key="http://dbpedia.org/resource/Constantinople">Constantinople</name> (1453) and closed the ancient land routes from <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>
+                                <pb n="415" facs="images/GSE/GSE.ed3.eng.vol01.0415.png"/> leaving a description of <name type="place" key="http://dbpedia.org/resource/India">India</name>. After the <name type="people" key="http://dbpedia.org/resource/Turkish_people">Turks</name> conquered <name type="place" key="http://dbpedia.org/resource/Constantinople">Constantinople</name> (1453) and closed the ancient land routes from <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name>
               to <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name>. <name type="people">Europeans</name> began to seek sea routes to <name type="place" key="http://dbpedia.org/resource/India">India</name>India. In 1498 the <name type="people">Portuguese</name> reached <name type="place" key="http://dbpedia.org/resource/India">India</name> by sea (<name type="person" key="http://dbpedia.org/resource/Vasco_da_Gama">Vasco da Gama</name>); later they reached <name type="place" key="http://dbpedia.org/resource/Malacca">Malacca</name> (1509-11) and <name type="place" key="http://dbpedia.org/resource/Java">Java</name> (151 D- and in 1520 they settled in <name type="place" key="http://dbpedia.org/resource/Macau">Macao</name>. In 1521, <name type="place" key="http://dbpedia.org/resource/Ferdinand_Magellan">Magellan</name> led a Spanish worldwide expedition which approached the <name type="place" key="http://dbpedia.org/resource/Philippines">Philippines</name> from the east. At the <name type="place">Molucca Islands</name> his ships met the Portuguese coming from the west. In 1542
               the <name type="place">Portuguese</name> reached the <name type="place" key="http://dbpedia.org/resource/Japanese_Archipelago">Japanese
                 archipelago</name>. Geographical study of the countries of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> accompanied,
@@ -1216,7 +1217,7 @@
                 Huk</name> and <name type="person">J. Gabet</name> studied <name type="place" key="http://dbpedia.org/resource/Tibet">Tibet</name> and <name type="place" key="http://dbpedia.org/resource/Mongolia">Mongolia</name> (1844-46). The Russian naturalist <name type="person">A. F.
                 Middendorf</name> studied northern and eastern <name type="place" key="http://dbpedia.org/resource/Siberia">Siberia</name> during 1842-45 and
               the <name type="place" key="http://dbpedia.org/resource/Fergana_Valley">Fergana Valley</name> during 1877-78. The Russian academician <name type="person">G. V. Abikh</name>, a German émigré, conducted detailed research on the terrain and subterranean structure of the <name type="place" key="http://dbpedia.org/resource/Caucasus_Mountains">Caucasus</name> from 1844 to 1865. Between 1848 and 1853 the Russian navigator
-                            <name type="person" key="http://dbpedia.org/resource/Gennady_Nevelskoy">G. I. Nevelskoi</name> and his associates studied the coasts of <name type="place" key="http://dbpedia.org/resource/Sakhalin">Sakhalin</name> and the lower <name type="place">Amur River.</name>. <name type="person" key="http://dbpedia.org/resource/Pyotr_Chikhachov">P. A. Chikhachev</name> conducted <pb n="416" facs="images/GSE/GSE.ed3.eng.vol01.0416"/> basic research on <name type="place">Asia
+                                <name type="person" key="http://dbpedia.org/resource/Gennady_Nevelskoy">G. I. Nevelskoi</name> and his associates studied the coasts of <name type="place" key="http://dbpedia.org/resource/Sakhalin">Sakhalin</name> and the lower <name type="place">Amur River.</name>. <name type="person" key="http://dbpedia.org/resource/Pyotr_Chikhachov">P. A. Chikhachev</name> conducted <pb n="416" facs="images/GSE/GSE.ed3.eng.vol01.0416.png"/> basic research on <name type="place">Asia
                 Minor</name> from 1846 to 1863. During 1848-63 the Russian navigator <name type="person">I. A. Butakov</name> described the <name type="place" key="http://dbpedia.org/resource/Aral_Sea">Aral seas</name>, <name type="place">Amu Darya</name>, and <name type="place" key="http://dbpedia.org/resource/Syr_Darya">Syr Darya</name>. The natural features of <name type="place" key="http://dbpedia.org/resource/India">India</name>, the <name type="place" key="http://dbpedia.org/resource/Himalayas">Himalayas</name>, and <name type="place" key="http://dbpedia.org/resource/Karakoram">Karakoram</name> were studied during 1854-58 by the German geographers <name type="person" key="http://dbpedia.org/resource/Adolf_Schlagintweit">A. H. Schlagintweit</name> and <name type="person" key="http://dbpedia.org/resource/Robert_Schlagintweit">R. Schlagintweit</name>. The work of the German ethnographer <name type="person" key="http://dbpedia.org/resource/Adolf_Bastian">A. Bastian</name> (1861-63) was important for the study of <name type="place" key="http://dbpedia.org/resource/Indochina">Indochina</name>. The expeditions of the American traveler <name type="person">R. Pampelli</name>
               (1862-65) and the German geographer <name type="person" key="http://dbpedia.org/resource/Ferdinand_von_Richthofen">F. Richthofen</name> (1868-72)
               collected information on central and eastern <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name>. Indian
@@ -1288,7 +1289,7 @@
               the creation of new coal and metallurgical bases and hydroelectric complexes in <name type="place" key="http://dbpedia.org/resource/Siberia">Siberia</name>, irrigation in <name type="place">Middle Asia</name>, and the mastery of northern and Far Eastern outlying regions of the
               country. Far-reaching work on the increasingly large-scale cartography of Soviet and, to some extent, foreign <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> has been carried out by Soviet topographers and geodesists. The study of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> comes within the sphere of activity of many Soviet scientific research institutes and
               establishments; the <name type="institutions">Institute of Geography of the Academy of Sciences</name> of the <name type="place" key="http://dbpedia.org/resource/Soviet_Union">USSR</name>, the <name type="institution">Council for the Study of Productise Forces of
-                  Gosplan</name> (the <name type="institution">USSR State Planning Committee</name>),<pb n="417" facs="images/GSE/GSE.ed3.eng.vol01.0417"/> the <name type="institution">Siberian Division of
+                  Gosplan</name> (the <name type="institution">USSR State Planning Committee</name>),<pb n="417" facs="images/GSE/GSE.ed3.eng.vol01.0417.png"/> the <name type="institution">Siberian Division of
                 the Academy of Sciences of the USSR</name>, the <name type="institution">Academies of Science of the Union republics</name>, the Geography
               Faculties and Institutes of many universities, and special institute complexes and branches. Many ministries and departments of the <name type="place" key="http://dbpedia.org/resource/Soviet_Union">USSR</name> are engaged in the study of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name>. Through the efforts of Soviet expeditions, a period of discovery and of filling in the
                 <q>"blank spots"</q> of the Asiatic parts of the <name type="place" key="http://dbpedia.org/resource/Soviet_Union">USSR</name> and contiguous
@@ -1351,7 +1352,7 @@
                 groups (the <name type="people" key="http://dbpedia.org/resource/Turkic_peoples">Turkic</name>, <name type="people" key="http://dbpedia.org/resource/Category:Mongolian_people">Mongolian group</name>, and <name type="people">Tunguso-Manchurian</name>), are
                 dispersed over vast distances of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> from <name type="place" key="http://dbpedia.org/resource/Turkey">Turkey</name> to the <name type="place" key="http://dbpedia.org/resource/Pacific_Ocean">Pacific</name>, The peoples of the <name type="people" key="http://dbpedia.org/resource/Turkic_peoples">Turkic group</name> (about 63
                   million—<name type="people" key="http://dbpedia.org/resource/Turkish_people">Turks</name>, <name type="people" key="http://dbpedia.org/resource/Azerbaijani_people">Azerbaijanis</name>, <name type="people" key="http://dbpedia.org/resource/Uyghur_people">Uighurs</name>, <name type="people">Uzbeks</name>, <name type="people" key="http://dbpedia.org/resource/Kazakhs">Kazakhs</name>, <name type="people" key="http://dbpedia.org/resource/Category:Turkmen_people">Turkomans</name>, <name type="people" key="http://dbpedia.org/resource/Yakuts">Yakuts</name>, and others) occupy much of <name type="place" key="http://dbpedia.org/resource/Turkey">Turkey</name>, the northern part of <name type="place" key="http://dbpedia.org/resource/Iran">Iran</name> and <name type="place" key="http://dbpedia.org/resource/Afghanistan">Afghanistan</name>. <name type="place" key="http://dbpedia.org/resource/Xinjiang">Sinkiang</name>, the <name type="place" key="http://dbpedia.org/resource/Azerbaijan_Soviet_Socialist_Republic">Azerbaijan SSR</name>, <name type="place">Middle Asia</name> and <name type="place" key="http://dbpedia.org/resource/Kazakhstan">Kazakhstan</name>, <name type="place" key="http://dbpedia.org/resource/Gorno-Altai_Republic">Gorno-Altai</name>, and much of the <name type="place" key="http://dbpedia.org/resource/Yakut_Autonomous_Soviet_Socialist_Republic">Yakut ASSR</name>. The peoples of the <name type="people" key="http://dbpedia.org/resource/Category:Mongolian_people">Mongolian group</name> (3.5 million) are settled mainly in <ref type="place" target="http://dbpedia.org/resource/Central_Asia">Central Asia</ref> (<name type="place" key="http://dbpedia.org/resource/Mongolian_People's_Republic">People's Republic of Mongaolia</name> northern <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name>) and also in the <name type="place" key="http://dbpedia.org/resource/Buryat_Autonomous_Soviet_Socialist_Republic">Buriat ASSR</name>. The <name type="people">Tunguso-Manchurian
-                      peoples</name> (3.1 million, including 3 million who are, properly speaking, <name type="people" key="http://dbpedia.org/resource/Manchurian_people">Manchurians</name> and who today speak <name type="people" key="http://dbpedia.org/resource/Chinese_language">Chinese</name>) are settled in northeastern <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name>, <name type="place" key="http://dbpedia.org/resource/Siberia">Siberia</name>, and the <pb n="418" facs="images/GSE/GSE.ed3.eng.vol01.0418"/>
+                      peoples</name> (3.1 million, including 3 million who are, properly speaking, <name type="people" key="http://dbpedia.org/resource/Manchurian_people">Manchurians</name> and who today speak <name type="people" key="http://dbpedia.org/resource/Chinese_language">Chinese</name>) are settled in northeastern <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name>, <name type="place" key="http://dbpedia.org/resource/Siberia">Siberia</name>, and the <pb n="418" facs="images/GSE/GSE.ed3.eng.vol01.0418.png"/>
                                     <name type="place" key="http://dbpedia.org/resource/Far_East">Far East</name> (the <name type="people" key="http://dbpedia.org/resource/Evenks">Evenki</name>, <name type="people" key="http://dbpedia.org/resource/Evens">Evens</name>, <name type="people" key="http://dbpedia.org/resource/Nanai">Nanai</name>, and others). Some researchers put the <name type="people" key="http://dbpedia.org/resource/Koreans">Koreans</name> (45 million) and the <name type="people" key="http://dbpedia.org/resource/Japanese_people">Japanese</name> (1(K) million), who are usually considered to speak in isolated languages,
                 close to the peoples of the <name type="people" key="http://dbpedia.org/resource/Altaic_languages">Altaic language family</name>
                                 </p>
@@ -1424,7 +1425,7 @@
                 decreased proportion of older people (6 percent of the population of <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> is
                 over 60, while in <name type="place" key="http://dbpedia.org/resource/Europe">Europe</name> the figure is 14 percent) <name type="place" key="http://dbpedia.org/resource/Asia">Asia</name> is the only part of the world where the number of men greatly exceeds the number of women
                 (by 55 million): 46.8 percent of the population of <name type="place" key="http://dbpedia.org/resource/Sri_Lanka">Ceylon</name> is composed of
-                                women, <pb n="419" facs="images/GSE/GSE.ed3.eng.vol01.0419"/>
+                                    women, <pb n="419" facs="images/GSE/GSE.ed3.eng.vol01.0419.png"/>
                                 </p>
                                 <p>
                                     <table rows="51" cols="4">
@@ -1759,7 +1760,7 @@
                                 <p>(14)1960</p>
                                 <p/>
                                 <p>Source: Demographic Yearbook 1967, New York, 1968</p>
-                                <pb n="420" facs="images/GSE/GSE.ed3.eng.vol01.0420"/>
+                                <pb n="420" facs="images/GSE/GSE.ed3.eng.vol01.0420.png"/>
                                 <p>47 percent in pre-1972 <name type="place" key="http://dbpedia.org/resource/Pakistan">Pakistan</name>, 48.2 percent in <name type="place" key="http://dbpedia.org/resource/People's_Republic_of_China">China</name>, and 48.6 percent in <name type="place" key="http://dbpedia.org/resource/India">India</name>. This proportion between the sexes is the result of women's lack of rights in the
                 past.</p>
                                 <p>Migration greatly influences population dynamics. Chinese migration began to increase in the second half of the <name type="period" key="http://dbpedia.org/resource/19th_century">19th century</name>. They migrated in search of work, primarily to the countries of <ref type="place" target="http://dbpedia.org/resource/Southeast_Asia">Southeast Asia</ref>, where the colonialists had developed a plantation
@@ -1805,7 +1806,7 @@
             </div>
             <gap reason="not digitized" extent="6 volumes"/>
             <milestone unit="volume" n="7"/>
-            <pb n="22" facs="images/GSE3/GSE.ed3.eng.vol07.0022"/>
+            <pb n="22" facs="images/GSE3/GSE.ed3.eng.vol07.0022.png"/>
             <div type="entry" subtype="city">
                 <head>
                     <term xml:id="CITY">CITY</term>
@@ -1959,7 +1960,7 @@
                         traits that are united in the concept of the urban way of life.
                         The city is characterized by the concentration and intensity
                         of different forms of social interaction and by a specific (in</p>
-                        <pb n="23" facs="images/GSE3/GSE.ed3.eng.vol07.0023"/>
+                        <pb n="23" facs="images/GSE3/GSE.ed3.eng.vol07.0023.png"/>
                         <p>
                             <table rows="115" cols="6">
                                 <head>Table 1 Largest Cities of the World</head>
@@ -2561,7 +2562,7 @@
                                     <cell/>
                                     <cell>1957</cell>
                                 </row>
-                                <pb n="24" facs="images/GSE3/GSE.ed3.eng.vol07.0024"/>
+                                <pb n="24" facs="images/GSE3/GSE.ed3.eng.vol07.0024.png"/>
                                 <row>
                                     <cell>Naples</cell>
                                     <cell>Italy</cell>
@@ -2937,7 +2938,7 @@
                         is determined by many factors including the size and spatial
                         structure of the city, the history of its formation, its historical
                         and architectural heritage, and the natural landscape.</p>
-                        <p>Special urban zones - the center, the residential zone, the<pb n="25" facs="images/GSE3/GSE.ed3.eng.vol07.0025"/>industrial 
+                        <p>Special urban zones - the center, the residential zone, the<pb n="25" facs="images/GSE3/GSE.ed3.eng.vol07.0025.png"/>industrial 
                         zone and others - have taken shape historically in
                         cities or have been established according to plan (primarily in
                         cities that were rebuilt or in the new cities of the socialist
@@ -3085,7 +3086,7 @@
                         was extended to elections for municipal bodies. The city administrative
                         bodies typical of present capitalist states are the
                         elected municipal council, a head of the city administration
-                        (mayor burgomaster, manager, and so on) elected by the<pb n="26" facs="images/GSE3/GSE.ed3.eng.vol07.0026"/>
+                        (mayor burgomaster, manager, and so on) elected by the<pb n="26" facs="images/GSE3/GSE.ed3.eng.vol07.0026.png"/>
                         council or by the population, and the divisions departments,
                         and other services subordinate to them. In France and many
                         other Western European countries the head of the city administration
@@ -3231,7 +3232,7 @@
                         large historical role, the entire ancient civilization, with its
                         great achievements, was clearly urban in nature.</p>
                         <p>The early Middle Ages (sixth to tenth centuries) were
-                        characterized by the decline of the cities in Western Europe.<pb n="27" facs="images/GSE3/GSE.ed3.eng.vol07.0027"/>
+                            characterized by the decline of the cities in Western Europe.<pb n="27" facs="images/GSE3/GSE.ed3.eng.vol07.0027.png"/>
                         Under conditions of the predominance of subsistence farming 
                         the Roman cities either disappeared entirely or lost their
                         former economic significance and municipal organization.
@@ -3377,7 +3378,7 @@
                         appearance of capitalist industry and new types of transportation
                         (the railroads), began with the Industrial Revolution
                         and became an inalienable part of industrialization. In the
-                        mid-19th century, Great Britain's urban population was 50<pb n="28" facs="images/GSE3/GSE.ed3.eng.vol07.0028"/>
+                        mid-19th century, Great Britain's urban population was 50<pb n="28" facs="images/GSE3/GSE.ed3.eng.vol07.0028.png"/>
                         percent of the population of the country, and at the beginning
                         of the 20th century it was 78 percent In Germany in the early
                         1880's the urban population was 41 percent and at the beginning
@@ -3558,7 +3559,7 @@
                         there were about 25 cities in Ancient Rus', including Kiev,
                         Chernigov, Smolensk, Novgorod, and Pskov. In the 11th
                         century, 64 new cities are mentioned, in the 12th century
-                        134, and in the 13th century (until 1237), 47 Crafts, com-<pb n="29" facs="images/GSE3/GSE.ed3.eng.vol07.0029"/>
+                        134, and in the 13th century (until 1237), 47 Crafts, com-<pb n="29" facs="images/GSE3/GSE.ed3.eng.vol07.0029.png"/>
                         merce, and culture developed in the cities of Ancient Rus'.
                         The cities were the site of major antifeudal uprisings (1068-69
                         and 1113 in Kiev, 1136 and 1207 in Novgorod and 1174 in
@@ -3704,7 +3705,7 @@
                         in a short time. The restoration of Kiev, Stalingrad (Volgograd),
                         Minsk, Kharkov, Sevastopol', Smolensk, and many
                         other cities was accompanied by fundamental modernization.</p>
-                        <p>Between 1950 and 1967 more than 460 cities and 1,200<pb n="30" facs="images/GSE3/GSE.ed3.eng.vol07.0030"/>
+                        <p>Between 1950 and 1967 more than 460 cities and 1,200<pb n="30" facs="images/GSE3/GSE.ed3.eng.vol07.0030.png"/>
                         urban type settlements appeared. Among them are Angarsk,
                         Bratsk, Tol ratti, Volzhskii, Rustavi, Sumgait, and Rudnyi.
                         Special <q>'science'</q> cities appeared; Akademgorodok (near
@@ -4109,7 +4110,7 @@
                                     <cell>194</cell>
                                     <cell>227</cell>
                                 </row>
-                                <pb n="31" facs="images/GSE3/GSE.ed3.eng.vol07.0031"/>
+                                <pb n="31" facs="images/GSE3/GSE.ed3.eng.vol07.0031.png"/>
                                 <row>
                                     <cell>Dnepropetrovsk (from 1786 Ekaterinoslav later
                                     Novorossiisk from 1802 to 1928 Ekaterinoslav)</cell>
@@ -4669,7 +4670,7 @@
                                     <cell>205</cell>
                                     <cell>284</cell>
                                 </row>
-                                <pb n="32" facs="images/GSE3/GSE.ed3.eng.vol07.0032"/>
+                                <pb n="32" facs="images/GSE3/GSE.ed3.eng.vol07.0032.png"/>
                                 <row>
                                     <cell>Kustanai</cell>
                                     <cell>14</cell>
@@ -5235,7 +5236,7 @@
                                     <cell>196</cell>
                                     <cell>267</cell>
                                 </row>
-                                <pb n="33" facs="images/GSE3/GSE.ed3.eng.vol07.0033"/>
+                                <pb n="33" facs="images/GSE3/GSE.ed3.eng.vol07.0033.png"/>
                                 <row>
                                     <cell>Saransk</cell>
                                     <cell>15</cell>
@@ -5900,7 +5901,7 @@
                                     <pubPlace>Moscow</pubPlace>, <date>1971</date>
                                 </bibl>
                             </item>
-                            <pb n="34" facs="images/GSE3/GSE.ed3.eng.vol07.0034"/>
+                            <pb n="34" facs="images/GSE3/GSE.ed3.eng.vol07.0034.png"/>
                             <item>
                                 <bibl>
                                     <author>Dziewonski, K.</author>
@@ -6213,7 +6214,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="515 pages"/>
-            <pb n="550" facs="images/GSE/GSE.ed3.eng.vol07.550"/>
+            <pb n="550" facs="images/GSE/GSE.ed3.eng.vol07.550.png"/>
             <div type="entry" subtype="philosophy">
                 <head>
                     <term xml:id="HUMANISM">Humanism,</term>
@@ -6305,7 +6306,7 @@
                         socialists Saint Simon C. Fourier and R. Owen who
                         recognized the contradictions in the already existing
                         capitalist system and inspired bv the ideals of humanism,
-                        worked out projects for reforming society on socialist princi-<pb n="551" facs="images/GSE/GSE.ed3.eng.vol07.551"/>
+                        worked out projects for reforming society on socialist princi-<pb n="551" facs="images/GSE/GSE.ed3.eng.vol07.551.png"/>
                         ples. However, they were unable to find any practical ways
                         for the building of socialist society and their concepts of the
                         future contain much that is fantastic together with insights of
@@ -6625,7 +6626,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="99 pages"/>
-            <pb n="650" facs="images/GSE/GSE.ed3.eng.vol07.0650"/>
+            <pb n="650" facs="images/GSE/GSE.ed3.eng.vol07.0650.png"/>
             <div type="entry" subtype="state">
                 <head>
                     <term xml:id="STATE">STATE,</term>
@@ -6703,7 +6704,7 @@
                         apparatus, its essence, and the nature of its relationship with
                         society - it always represents the political power of the ruling
                         class (class dictatorship). 
-                        Classes that own the means of pro-<pb n="651" facs="images/GSE/GSE.ed3.eng.vol07.0651"/>
+                        Classes that own the means of pro-<pb n="651" facs="images/GSE/GSE.ed3.eng.vol07.0651.png"/>
                         duction achieve political domination with the assistance of
                         the state, and thus they consolidate their economic and social
                         supremacy within the society and in its relations with other
@@ -6880,7 +6881,7 @@
                         independent or semi-independent states (principalities, seigneuries,
                         and so forth). In the process of the centralization of
                         state power, the estate-representative monarchy
-                        was formed.<pb n="652" facs="images/GSE/GSE.ed3.eng.vol07.0652"/>
+                        was formed.<pb n="652" facs="images/GSE/GSE.ed3.eng.vol07.0652.png"/>
                         The wealthy elements in the cities were one of the supports
                         of the central power in this process; as a result, organs of
                         estate representation arose (national assemblies, or Zemskii
@@ -7031,7 +7032,7 @@
                         placed among the basic types of state. Some of these states
                         have embarked on a noncapitalist path of development,
                         orienting toward the perspective of constructing a socialist
-                        society. In these states, serious economic and social trans-<pb n="653" facs="images/GSE/GSE.ed3.eng.vol07.0653"/>
+                        society. In these states, serious economic and social trans-<pb n="653" facs="images/GSE/GSE.ed3.eng.vol07.0653.png"/>
                         formations are being realized - for example, the carrying out
                         of democratic agrarian reforms, the creation of a state sector
                         of the economy, and the nationalization of the property of
@@ -7195,7 +7196,7 @@
                                     </title>vol. 33, p. 95)</bibl>
                             </cit>,
                         .</p>
-                        <pb n="654" facs="images/GSE/GSE.ed3.eng.vol07.0654"/>
+                        <pb n="654" facs="images/GSE/GSE.ed3.eng.vol07.0654.png"/>
                         <p>The socialist all-national state is a transitional stage to the
                         stateless organization of society under communism. Then the
                         communist self-government of society will become firmly established
@@ -7593,7 +7594,7 @@
             </div>
             <gap reason="not digitized" extent="approx. 300 pages"/>
             <milestone unit="volume" n="9"/>
-            <pb n="145" facs="images/GSE/GSE.ed3.eng.vol09.0145"/>
+            <pb n="145" facs="images/GSE/GSE.ed3.eng.vol09.0145.png"/>
             <div type="entry" subtype="europe">
                 <head>
                     <term xml:id="EUROPE">EUROPE,</term>
@@ -7722,7 +7723,7 @@
                              Eastern European (Russian) Plain and its extension in the
                              west - the Central European Plain. A considerable portion of
                              Fennoscandia is also occupied by plains, and in the remaining
-                             regions of the continent, plains are scattered between the<pb n="146" facs="images/GSE/GSE.ed3.eng.vol09.0146"/>
+                             regions of the continent, plains are scattered between the<pb n="146" facs="images/GSE/GSE.ed3.eng.vol09.0146.png"/>
                              mountains (for example, the Central Danubian and Lower
                              Danubian plains).</p>
                             <p>In the extreme east lie the Ural Mountains, and in the
@@ -7878,7 +7879,7 @@
                              Pyrenees and the Andalusian and Crimean mountains. Water
                              erosion, the development of karst, and other geologic
                              processes played a considerable role in forming the terrain of
-                             these mountains. A number of Pleistocene glaciers affected<pb n="147" facs="images/GSE/GSE.ed3.eng.vol09.0147"/>
+                             these mountains. A number of Pleistocene glaciers affected<pb n="147" facs="images/GSE/GSE.ed3.eng.vol09.0147.png"/>
                              the terrain of the highest mountains, and glaciers still cause
                              significant changes in the Alps. Karst forms are most typical
                              in the limestone regions of the Alps, the Jura, and the
@@ -8034,7 +8035,7 @@
                              Paris and Aquitanian basins, and the underwater deposits
                              of the North Sea). A number of the petroleum deposits are
                              related to Neocene deposits in the piedmont and intermontane
-                             downwarps of the Alpine folded region in countries<pb n="148" facs="images/GSE/GSE.ed3.eng.vol09.0148"/>
+                             downwarps of the Alpine folded region in countries<pb n="148" facs="images/GSE/GSE.ed3.eng.vol09.0148.png"/>
                              such as Rumania, Yugoslavia, Hungary, Bulgaria, and Italy.
                              Among the deposits of anthracite and bituminous coals that
                              are being worked are the Donets, L'vov-Volynsk, Moscow,
@@ -8190,7 +8191,7 @@
                              annual precipitation is 1,000 mm in the west and 400 mm in
                              the east, and evaporation is less than precipitation.</p>
                             <p>The temperate belt (the remaining regions of Europe, with
-                             the exception of the Mediterranean region and the southern<pb n="149" facs="images/GSE/GSE.ed3.eng.vol09.0149"/>
+                                the exception of the Mediterranean region and the southern<pb n="149" facs="images/GSE/GSE.ed3.eng.vol09.0149.png"/>
                              shore of the Crimea) has a cold, boreal climate in the north
                              and a warmer, subboreal climate in the south. Moreover, the
                              western portion of the temperate belt has a marine climate,
@@ -8460,7 +8461,7 @@
                              snow. The maximum flow occurs during the spring, but as a
                              result of the regulating role of the lakes and the large forests
                              in the basins, the water content is also great in the summer
-                             and autumn. In the mountainous regions of Fennoscandia<pb n="150" facs="images/GSE/GSE.ed3.eng.vol09.0150"/>
+                             and autumn. In the mountainous regions of Fennoscandia<pb n="150" facs="images/GSE/GSE.ed3.eng.vol09.0150.png"/>
                              there are waterfalls. The ice cover lasts from two to three
                              months in the central regions and as long as seven to 7 1/2
                              months in the north.</p>
@@ -8621,7 +8622,7 @@
                              forest soils, which are formed on richer parent rocks.
                              Among the intrazonal soils that are characteristic of the
                              boreal belt are alluvial soils (including the marshy soils on flat
-                             shorelines, peaty-carbonate soils (rendzinas), which develop<pb n="151" facs="images/GSE/GSE.ed3.eng.vol09.0151"/>
+                             shorelines, peaty-carbonate soils (rendzinas), which develop<pb n="151" facs="images/GSE/GSE.ed3.eng.vol09.0151.png"/>
                              only on parent rocks rich in carbonate, and peaty-gley soils,
                              which develop on gently rolling meadow plains of the
                              taiga, where the groundwater is shallow, and peaty bog
@@ -8778,7 +8779,7 @@
                              feed deer.</p>
                             <p>Taiga vegetation grows in a broad band that extends south
                              to approximately 57°-58° N lat. Most of the forests are coniferous.
-                             In the East, Siberian spruce, Siberian fir, and Siberian<pb n="152" facs="images/GSE/GSE.ed3.eng.vol09.0152"/>
+                             In the East, Siberian spruce, Siberian fir, and Siberian<pb n="152" facs="images/GSE/GSE.ed3.eng.vol09.0152.png"/>
                              larch prevail. (The Siberian stone pine is found in the Cisurals
                              as well as in the northern regions of the taiga as far as Scandinavia.)
                              European spruce and common pine prevail in the
@@ -8933,7 +8934,7 @@
                              found refuge in regions that had been only slightly developed.</p>
                             <p>A monotonous habitat with scanty food supplies and
                              severe climate, the tundra has few species of fauna. Small
-                             rodents prevail in Norway, Ob, and arctic lemmings and Mid-<pb n="153" facs="images/GSE/GSE.ed3.eng.vol09.0153"/>
+                             rodents prevail in Norway, Ob, and arctic lemmings and Mid-<pb n="153" facs="images/GSE/GSE.ed3.eng.vol09.0153.png"/>
                              dendorf mice. Also characteristic of the tundra are the
                              northern deer, arctic fox, wolf, and seal (the common ringed
                              seal and the sea hare). Among the species of birds the most
@@ -9089,7 +9090,7 @@
                             <p>Between 35 B.C. and A.D. 9, Octavian Augustus' generals,
                              including Marcus Vipsanius Agrippa, Marcus Crassus,
                              Claudius Drusus, and Tiberius, invaded Central Europe.
-                             They traveled up the Rhine and the Danube, exploring the<pb n="154" facs="images/GSE/GSE.ed3.eng.vol09.0154"/>
+                             They traveled up the Rhine and the Danube, exploring the<pb n="154" facs="images/GSE/GSE.ed3.eng.vol09.0154.png"/>
                              valleys of the Danube's largest Alpine tributaries. (Tiberius
                              reached the sources of the Danube on the slopes of the Black
                              Forest in 16 B.C.) Octavian's generals also explored the Elbe
@@ -9251,7 +9252,7 @@
                               century by the geologists W. Smith, C. Lyell, R. Murchison,
                              A. Sedgwick, and J. McCulloch. Even earlier (before
                              1812), R. Griffith had thoroughly studied the topography of
-                             Ireland. The first instrumental survey of the coasts of Iceland<pb n="155" facs="images/GSE/GSE.ed3.eng.vol09.0155"/>
+                             Ireland. The first instrumental survey of the coasts of Iceland<pb n="155" facs="images/GSE/GSE.ed3.eng.vol09.0155.png"/>
                              was made between 1801 and 1818 by a number of scientists,
                              including H. Sjeel and H. Frisak. Exploration of the terrain
                              of the interior regions of Iceland was begun by B. Gunnlaugsson
@@ -9416,7 +9417,7 @@
                              in Central and Northern Europe (most Germans, some
                              Dutch, and the German-Swiss, English, Scots, Scotch-Irish,
                              Anglo-Irish, Swedes, Norwegians, Welsh, Finns, Estonians,
-                             and some Latvians). Islam is professed by believers among<pb n="156" facs="images/GSE/GSE.ed3.eng.vol09.0156"/>
+                             and some Latvians). Islam is professed by believers among<pb n="156" facs="images/GSE/GSE.ed3.eng.vol09.0156.png"/>
                              the Turks, by most Tatars, Bashkirs, Albanians, Gypsies, and
                              Bosnians, and by some Bulgarians. The religion of the Jews
                              is Judaism.</p>
@@ -10540,7 +10541,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="145 pages"/>
-            <pb n="303" facs="images/GSE/GSE.ed3.eng.vol09.0303"/>
+            <pb n="303" facs="images/GSE/GSE.ed3.eng.vol09.0303.png"/>
             <div type="entry" subtype="knowledge">
                 <head>
                     <term xml:id="KNOWLEDGE">KNOWLEDGE,</term>
@@ -10575,7 +10576,7 @@
             </div>
             <gap reason="not digitized" extent="approximately 300 pages"/>
             <milestone unit="volume" n="10"/>
-            <pb n="6" facs="images/GSE/GSE.ed3.eng.vol10.0006"/>
+            <pb n="6" facs="images/GSE/GSE.ed3.eng.vol10.0006.png"/>
             <div type="entry" subtype="art">
                 <head>
                     <term xml:id="ART">ART</term>
@@ -10597,7 +10598,7 @@
             classicism or realism) with which they are concerned. A major factor giving rise to conflicting definitions of art and its role is the objective
             structural complexity of art itself.</p>
                         <p>Some theorists, who are not aware of the complex and many-sided nature of art's structure, define the essence of art as gnoseological, ideological,
-                        aesthetic, or inventive. Dissatisfied with <pb n="7" facs="images/GSE/GSE.ed3.eng.vol10.0007"/>these and other one-sided definitions, some art scholars assert that art encompasses dissimilar yet
+                            aesthetic, or inventive. Dissatisfied with <pb n="7" facs="images/GSE/GSE.ed3.eng.vol10.0007.png"/>these and other one-sided definitions, some art scholars assert that art encompasses dissimilar yet
             organically related elements, such as the cognition and evaluation of reality, the reflection and creation of reality, or the reproduction and
             symbolic representation of reality. These two-sided interpretations also fail to fully describe the complicated structure of art.</p>
                         <p>Scholarship has turned to systemic analysis in its study of the nature of art, which makes it possible to approach the problem from several
@@ -10675,7 +10676,7 @@
             painting, monumental painting, and miniature painting. The various genres of painting include portraiture, landscape painting, and still life
             painting. Among the aspects of the theatrical arts are tragedy, drama, comedy, and vaudeville.</p>
                         <p>Art, when viewed as a whole, is a historically evolved system of various concrete and artistic methods of apprehending the world. Each of these
-                        methods shares common features with <pb n="8" facs="images/GSE/GSE.ed3.eng.vol10.0008"/>others. At the same time, each has individual and distinctive characteristics.</p>
+                            methods shares common features with <pb n="8" facs="images/GSE/GSE.ed3.eng.vol10.0008.png"/>others. At the same time, each has individual and distinctive characteristics.</p>
                         <p>Art originated during the Stone Age. Primitive man's earliest forms of artistic activity included the creation of myths, songs, and dances, the
             depiction of animals on cave walls, and the ornamentation of tools, weapons, clothing, and the human body. These activities were of enormous
             importance. They contributed to the strengthening of human collective life, developing primitive man spiritually and helping him to understand his
@@ -10879,7 +10880,7 @@
                                 <bibl>
                                     <author>Dmitneva, N. A.</author> Izobrazheme i slow [Moscow, <date>1962</date>]</bibl>
                             </item>
-                            <pb n="9" facs="images/GSE/GSE.ed3.eng.vol10.0009"/>
+                            <pb n="9" facs="images/GSE/GSE.ed3.eng.vol10.0009.png"/>
                             <item>
                                 <bibl>
                                     <author>Ingarden, R.</author> Issledovaiuia po estetike Moscow, <date>1962</date> (Translated from Polish )</bibl>
@@ -10970,7 +10971,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="88 pages"/>
-            <pb n="98" facs="images/GSE/GSE.ed3.eng.vol10.0098"/>
+            <pb n="98" facs="images/GSE/GSE.ed3.eng.vol10.0098.png"/>
             <div type="entry" subtype="history">
                 <head>
                     <term xml:id="HISTORY">HISTORY</term>
@@ -11125,7 +11126,7 @@
                         of the <q>"secrets"</q> of nature - the energy of fire, water, steam,
                         and electricity and atomic energy - are landmarks of historical
                         development in the gradual mastering of the forces of nature.
-                        Simultaneously, and closely linked with material progress there<pb n="99" facs="images/GSE/GSE.ed3.eng.vol10.0099"/>
+                        Simultaneously, and closely linked with material progress there<pb n="99" facs="images/GSE/GSE.ed3.eng.vol10.0099.png"/>
                         occurred a progressive social development of human groups
                         from a primitive herd, from clans and tribes to nationalities and
                         nations (<foreign xml:lang="ru">
@@ -11289,7 +11290,7 @@
                         outstanding individuals, and social ideas. The absence of a genuinely
                         scientific method caused the slow progress of the study of
                         history.</p>
-                        <pb n="100" facs="images/GSE/GSE.ed3.eng.vol10.0100"/>
+                        <pb n="100" facs="images/GSE/GSE.ed3.eng.vol10.0100.png"/>
                         <p>Only the unification of dialectics with materialism - the appearance
                          of Marxism - made possible the creation of a truly
                         scientific method of understanding the complex and diverse history
@@ -11459,7 +11460,7 @@
                                 <hi rend="italic">Voprosy istorii</hi>
                             </foreign>
                         (Problems of History), The International Congresses of
-                        Historical Science, held every five years, promote the expansion<pb n="101" facs="images/GSE/GSE.ed3.eng.vol10.0101"/>
+                        Historical Science, held every five years, promote the expansion<pb n="101" facs="images/GSE/GSE.ed3.eng.vol10.0101.png"/>
                         of scholarly contacts among historians of different countries and
                         the summing up of research.</p>
                     </div>
@@ -12041,7 +12042,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="18 pages"/>
-            <pb n="120" facs="images/GSE/GSE.ed3.eng.vol10.0120"/>
+            <pb n="120" facs="images/GSE/GSE.ed3.eng.vol10.0120.png"/>
             <div type="entry">
                 <head>
                     <term xml:id="IDEOLOGY">IDEOLOGY,</term>
@@ -12209,7 +12210,7 @@
                         on the basis of a more complete use of objective knowledge (for
                         example the bourgeoisie during its ascending development). But
                         this thesis expresses only a general tendency which may change
-                        greatly under the influence of concrete historical conditions,<pb n="121" facs="images/GSE/GSE.ed3.eng.vol10.0121"/>
+                        greatly under the influence of concrete historical conditions,<pb n="121" facs="images/GSE/GSE.ed3.eng.vol10.0121.png"/>
                         particularly during the period of prebourgeois development. The
                         thesis proves wholly correct in application to the working class
                         whose subjective interests coincide with the objective requirements
@@ -12577,7 +12578,7 @@
                                 <pubPlace>Frankfurt am Main</pubPlace>, <date>1952</date>.
                             </bibl>
                             </item>
-                            <pb n="122" facs="images/GSE/GSE.ed3.eng.vol10.0122"/>
+                            <pb n="122" facs="images/GSE/GSE.ed3.eng.vol10.0122.png"/>
                             <item>
                                 <bibl>
                                     <author>Aron R.</author>
@@ -12611,7 +12612,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="151 pages"/>
-            <pb n="274" facs="images/GSE/GSE.ed3.eng.vol10.0274"/>
+            <pb n="274" facs="images/GSE/GSE.ed3.eng.vol10.0274.png"/>
             <div type="entry" subtype="information">
                 <head>
                     <term xml:id="INFORMATION">INFORMATION,</term>
@@ -12690,7 +12691,7 @@
                         transporting signals from the receptors to the brain are to have
                         properties inherent in the idealized communication channel
                         figuring in information theory. The information approach has
-                        played an important role in genetics and molecular biology, and<pb n="275" facs="images/GSE/GSE.ed3.eng.vol10.0275"/>
+                        played an important role in genetics and molecular biology, and<pb n="275" facs="images/GSE/GSE.ed3.eng.vol10.0275.png"/>
                         has permitted in particular the role of the RNA molecule as a
                         carrier of information to be more deeply understood. Research
                         is also being carried out on the use of information methods in
@@ -12780,7 +12781,7 @@
             </div>
             <gap reason="not digitized" extent="3 volumes"/>
             <milestone unit="volume" n="13"/>
-            <pb n="298" facs="images/GSE/GSE.ed3.eng.vol13.0298"/>
+            <pb n="298" facs="images/GSE/GSE.ed3.eng.vol13.0298.png"/>
             <div type="entry" subtype="culture">
                 <head>
                     <term xml:id="CULTURE">CULTURE,</term>
@@ -12953,7 +12954,7 @@
                         these cultural patterns.</p>
                         <p>Unlike the theory of cultural patterns, which subordinated the
                         social structure to culture, the functional theories of culture
-                        emphasized social structure, regarding culture as an organic<pb n="299" facs="images/GSE/GSE.ed3.eng.vol13.0299"/>
+                        emphasized social structure, regarding culture as an organic<pb n="299" facs="images/GSE/GSE.ed3.eng.vol13.0299.png"/>
                         whole to be analyzed in terms of its institutions. First developed
                         by the British ethnologists and sociologists B. Malinowski and
                         A. Radcliffe-Brown, social anthropology regards structure as
@@ -13119,7 +13120,7 @@
                         traditions. Inevitably, each new formation inherits the cultural
                         achievements of its predecessor and includes them in the new
                         system of social relations. The Marxist theory of culture, which
-                        assumes the multiplicity of the forms of culture of different<pb n="300" facs="images/GSE/GSE.ed3.eng.vol13.0300"/>
+                        assumes the multiplicity of the forms of culture of different<pb n="300" facs="images/GSE/GSE.ed3.eng.vol13.0300.png"/>
                         peoples and societies, decisively rejects the practice of setting up
                         any one culture as an absolute standard, denying not only the
                         theory of cultural diffusionism but also that of cultural relativism,
@@ -13612,7 +13613,7 @@
                                     <pubPlace>New York</pubPlace>, <date>1949.</date>
                                 </bibl>
                             </item>
-                            <pb n="301" facs="images/GSE/GSE.ed3.eng.vol13.0301"/>
+                            <pb n="301" facs="images/GSE/GSE.ed3.eng.vol13.0301.png"/>
                             <item>
                                 <bibl>
                                     <author>Kroeber, A. L., and C. K1uckhohn.</author>
@@ -13669,7 +13670,7 @@
             </div>
             <gap reason="not digitized" extent="4 volumes"/>
             <milestone unit="volume" n="17"/>
-            <pb n="355" facs="images/GSE/GSE.ed3.eng.vol17.0355"/>
+            <pb n="355" facs="images/GSE/GSE.ed3.eng.vol17.0355.png"/>
             <div type="entry" subtype="nation">
                 <head>
                     <term xml:id="NATION">
@@ -13842,7 +13843,7 @@
                         <p>
                         The formation of different nations is determined by the correlation
                         of economic, political, and ethnic factors as well as by the
-                        <pb n="356" facs="images/GSE/GSE.ed3.eng.vol17.0356"/>
+                            <pb n="356" facs="images/GSE/GSE.ed3.eng.vol17.0356.png"/>
                         character of the historical epoch. In some cases the processes of
                         a nation's formation and the conditions for its existence run
                         parallel and supplement each other. For example, the first European
@@ -14189,7 +14190,7 @@
                                     <pubPlace>Moscow</pubPlace>, <date>1971</date>
                                 </bibl>
                             </item>
-                            <pb n="357" facs="images/GSE/GSE.ed3.eng.vol17.0357"/>
+                            <pb n="357" facs="images/GSE/GSE.ed3.eng.vol17.0357.png"/>
                             <item>
                                 <bibl>
                                     <title>
@@ -14210,7 +14211,7 @@
                 </div>
             </div>
             <gap reason="not digitized" extent="13 pages"/>
-            <pb n="371" facs="images/GSE/GSE.ed3.eng.vol17.0371"/>
+            <pb n="371" facs="images/GSE/GSE.ed3.eng.vol17.0371.png"/>
             <div type="entry" subtype="nation">
                 <head>
                     <term xml:id="NATIONAL_LANGUAGE">
@@ -14258,7 +14259,7 @@
                     <byline>M M GUKHMAN [17-1110-1]</byline>
                 </div>
             </div>
-            <pb n="372" facs="images/GSE/GSE.ed3.eng.vol17.0372"/>
+            <pb n="372" facs="images/GSE/GSE.ed3.eng.vol17.0372.png"/>
             <div type="entry" subtype="nation">
                 <head>
                     <term xml:id="NATIONAL_LIBERATION_REVOLUTION">
@@ -14289,7 +14290,7 @@
             different parts of the world. During the 16th, 17th, and 18th centuries and the first half of the 19th, nations were formed, national movements
             developed, and nation-states were created in Western Europe, North Amenca, and Russia (for example, the Dutch bourgeois revolution and the War of
             Independence in North America). In the second half of the 19th century, <name type="place" key="http://dbpedia.org/resource/Germany">Germany</name>
-                        and <name type="place" key="http://dbpedia.org/resource/Italy">Italy</name> were unified, and nation-states <pb n="373" facs="images/GSE/GSE.ed3.eng.vol17.0373"/> emerged in <name type="place" key="http://dbpedia.org/resource/Bulgaria">Bulgaria</name>, <name type="place" key="http://dbpedia.org/resource/Romania">Rumania</name>, and <name type="place" key="http://dbpedia.org/resource/Serbia">Serbia</name>. The struggle of the <name type="people" key="http://dbpedia.org/resource/Czechs">Czech</name>, <name type="people" key="http://dbpedia.org/resource/Poles">Polish</name>, and <name type="people" key="http://dbpedia.org/resource/Finns">Finnish peoples</name> for independence also unfolded. <ref>According to <name type="person" key=" http://dbpedia.org/resource/Vladimir_Lenin">V. I. Lenin</name>, the wars between 1789 and 1871 in Europe were, for the most part,
+                            and <name type="place" key="http://dbpedia.org/resource/Italy">Italy</name> were unified, and nation-states <pb n="373" facs="images/GSE/GSE.ed3.eng.vol17.0373.png"/> emerged in <name type="place" key="http://dbpedia.org/resource/Bulgaria">Bulgaria</name>, <name type="place" key="http://dbpedia.org/resource/Romania">Rumania</name>, and <name type="place" key="http://dbpedia.org/resource/Serbia">Serbia</name>. The struggle of the <name type="people" key="http://dbpedia.org/resource/Czechs">Czech</name>, <name type="people" key="http://dbpedia.org/resource/Poles">Polish</name>, and <name type="people" key="http://dbpedia.org/resource/Finns">Finnish peoples</name> for independence also unfolded. <ref>According to <name type="person" key=" http://dbpedia.org/resource/Vladimir_Lenin">V. I. Lenin</name>, the wars between 1789 and 1871 in Europe were, for the most part,
                 <quote>"indubitably connected with the most important <q>'interests of the people,'</q> namely, a powerful bourgeois progressive movement for
                 national liberation which involved millions of people, with the destruction of feudalism, absolutism, and foreign
                       oppression"</quote>
@@ -14444,7 +14445,7 @@
                 </div>
             </div>
             <gap reason="not digitalized" extent="3 pages"/>
-            <pb n="376" facs="images/GSE/GSE.ed3.eng.vol17.0376"/>
+            <pb n="376" facs="images/GSE/GSE.ed3.eng.vol17.0376.png"/>
             <div type="entry" subtype="nation">
                 <head>
                     <term xml:id="NATIONAL_QUESTION">
@@ -14480,7 +14481,7 @@
               the Belgian <name type="person">Laurent</name>, and the Russians <name type="person">A Gradovskii</name> and <name type="person" key="http://dbpedia.org/resource/Nikolay_Yakovlevich_Danilevsky">N Danilevskii</name>
                             </ref>. The principle of nationality transformed the
             national element into an absolute. However the principle was extended only to <q>"civilized"</q> peoples. The bourgeoisie used it to distract the
-                        proletariat from the class struggle and tried to divide <pb n="377" facs="images/GSE/GSE.ed3.eng.vol17.0377"/> the working class by fostering nationalistic prejudices and inciting national
+                            proletariat from the class struggle and tried to divide <pb n="377" facs="images/GSE/GSE.ed3.eng.vol17.0377.png"/> the working class by fostering nationalistic prejudices and inciting national
             animosities and hatred. Nonetheless, during the bourgeois revolutions and the formation of bourgeois national states the principle of nationality
             played a positive role in the struggle against the legacy of feudal fragmentation and national oppression. Under the conditions of premonopoly
             capitalism the formation of national states alleviated the national question in some cases.</p>
@@ -14586,7 +14587,7 @@
                         <p>The victory of the Great October Socialist Revolution opened the era of the social and national emancipation of the peoples of the world. The
             liberation movement encompassed all of Asia, Africa, and South Amenca. With the shift in the world balance of forces in favor of socialism after
             World War II (1939-45), there was an upsurge in the national liberation movement. In the three decades since World War II more than 70 new states
-            have emerged. As a result of the efforts of the Soviet Union, which have been supported by the other socialist countries and by the <pb n="378" facs="images/GSE/GSE.ed3.eng.vol17.0378"/>
+            have emerged. As a result of the efforts of the Soviet Union, which have been supported by the other socialist countries and by the <pb n="378" facs="images/GSE/GSE.ed3.eng.vol17.0378.png"/>
             developing countries, the principle of self-determination has become a principle in international law. It is written into the <title key="http://dbpedia.org/resource/United_Nations_Charter">UN Charter</title>, and it was included in the resolutions of the Bandung Conference of
             Asian and African states in 1955 and in the resolutions of the conferences of nonaligned countries in Belgrade (1961), Cairo (1964) Lusaka (1970),
             and Algiers (1973). For many oppressed peoples, the content of the national question changes after independence is won, when the national question
@@ -14657,7 +14658,7 @@
               USSR</name> under the impact of various powerful unifying factors that include a single socialist economy, an internationalist Marxist-Leninist
             ideology, the common historical destiny of all the peoples and nationalities; and the joint struggle against imperialism, aggression, and
             exploitation and for peace and communism. The further drawing together of nations is an objective historical process. It is harmful to force this
-            process ahead and absolutely impermissible to hold <pb n="379" facs="images/GSE/GSE.ed3.eng.vol17.0379"/> it back. Either approach would slow down this progressive process and contradict
+            process ahead and absolutely impermissible to hold <pb n="379" facs="images/GSE/GSE.ed3.eng.vol17.0379.png"/> it back. Either approach would slow down this progressive process and contradict
             the general line of development of Soviet society and the interests of communist construction. The socialist countries that emerged after World War
             II have, in practice, confirmed and supplemented the experience of <name type="place" key="http://dbpedia.org/resource/Soviet_Union">the USSR</name>
             in solving the national question. Principles such as socialist federation, socialist autonomy, and the legal and real equality of nations and
@@ -14937,7 +14938,7 @@
                 </div>
             </div>
             <gap reason="not digitzed" extent="291 pages"/>
-            <pb n="668" facs="images/GSE/GSE.ed3.eng.vol17.0668"/>
+            <pb n="668" facs="images/GSE/GSE.ed3.eng.vol17.0668.png"/>
             <div type="entry" subtype="science">
                 <head>
                     <term xml:id="SCIENCE">SCIENCE,</term>
@@ -15039,7 +15040,7 @@
                         for the important role of the natural sciences in shaping a world
                         view.</p>
                         <p>Science, which is oriented toward the criteria of reason, has
-                        been the antithesis of religion, which rests on faith in the super-<pb n="669" facs="images/GSE/GSE.ed3.eng.vol17.0669"/>
+                            been the antithesis of religion, which rests on faith in the super-<pb n="669" facs="images/GSE/GSE.ed3.eng.vol17.0669.png"/>
                         natural. Whereas science studies reality by means of reality itself
                         and requires rational substantiation and practical confirmation
                         of the knowledge derived, religion sees its main strength in revelation
@@ -15212,7 +15213,7 @@
                         V I Lenin, who developed all aspects of Marxism in a new
                         historical era.</p>
                         <p>Major changes in scientific thought and a number of new
-                        discoveries in physics (such as the electron and radioactivity)<pb n="670" facs="images/GSE/GSE.ed3.eng.vol17.0670"/>
+                            discoveries in physics (such as the electron and radioactivity)<pb n="670" facs="images/GSE/GSE.ed3.eng.vol17.0670.png"/>
                         precipitated a crisis in modern classical science at the turn of the
                         century and caused the collapse of its philosophical and methodological
                         foundation - the mechanistic world view. The essence
@@ -15379,7 +15380,7 @@
                         and so forth.</p>
                         <p>The applied sciences may emphasize either theoretical or
                         practical problems. For example, electrodynamics and quantum
-                        mechanics play a fundamental role in contemporary physics,<pb n="671" facs="images/GSE/GSE.ed3.eng.vol17.0671"/>
+                        mechanics play a fundamental role in contemporary physics,<pb n="671" facs="images/GSE/GSE.ed3.eng.vol17.0671.png"/>
                         when applied to specific fields of inquiry they form such branches
                         of theoretical applied physics as the physics of metals and semiconductor
                         physics. The practical application of electrodynamics
@@ -15535,7 +15536,7 @@
                         solve specific scientific problems, often of an interdisciplinary
                         nature, special groups, comprising problem-oriented teams, have
                         been created to carry out projects and programs, for example,
-                        the space program. Centralization in the supervision of scientific<pb n="672" facs="images/GSE/GSE.ed3.eng.vol17.0672"/>
+                        the space program. Centralization in the supervision of scientific<pb n="672" facs="images/GSE/GSE.ed3.eng.vol17.0672.png"/>
                         activity is increasingly being combined with decentralization and
                         autonomy in research. Informal problem-oriented groups of
                         scientists - <q>"invisible groups"</q> - are frequently formed. In addition,
@@ -15900,7 +15901,7 @@
                                     <pubPlace>Moscow</pubPlace>, <date>1973</date>.
                             </bibl>
                             </item>
-                            <pb n="673" facs="images/GSE/GSE.ed3.eng.vol17.0673"/>
+                            <pb n="673" facs="images/GSE/GSE.ed3.eng.vol17.0673.png"/>
                             <item>
                                 <bibl>
                                     <author>Shvyrev, V. S., and E. G. Iudin</author>
@@ -16187,7 +16188,7 @@
                         of terrestrial bodies was included in mathematics and psychology
                         in physiology) Comte did not have a historical view of
                         nature, the historical element manifested itself only in man's
-                        knowledge of nature. His system rested on the principle of coor-<pb n="674" facs="images/GSE/GSE.ed3.eng.vol17.0674"/>
+                        knowledge of nature. His system rested on the principle of coor-<pb n="674" facs="images/GSE/GSE.ed3.eng.vol17.0674.png"/>
                         dination, and he assigned to sociology a separate place in his
                         hierarchy. Comte's classification was significant in that, first, he
                         identified the truly basic sciences corresponding (if mathematics
@@ -16335,7 +16336,7 @@
                         <p>Further developing his system of classification, Engels took
                         into account the material bearers, or substrata, of different forms
                         of motion. His classification thus touched upon the theory of the
-                        structure of matter (atomism). By determining the bearers of<pb n="675" facs="images/GSE/GSE.ed3.eng.vol17.0675"/>
+                        structure of matter (atomism). By determining the bearers of<pb n="675" facs="images/GSE/GSE.ed3.eng.vol17.0675.png"/>
                         various forms of motion, Engels established a full correspondence
                          between the sequence of matter's increasingly complex
                         forms of motion and the general sequence of their bearers, which
@@ -16479,7 +16480,7 @@
                         sciences the history of man, since each social science is primarily
                         a historical science. Human history may be studied in two cross-sections
                          as the development of society as a whole (the interdependence
-                         of all its aspects and elements) or as the development<pb n="676" facs="images/GSE/GSE.ed3.eng.vol17.0676"/>
+                         of all its aspects and elements) or as the development<pb n="676" facs="images/GSE/GSE.ed3.eng.vol17.0676.png"/>
                         of one or several of its structural aspects in isolation. The first
                         of these approaches is represented by historical science in the
                         narrow sense of the word - the history of the various stages of
@@ -16560,7 +16561,7 @@
                         result of man's breakthrough into space. A narrower field of
                         study is the earth as an individual body (planet), whose history
                         as a whole is the subject of geology and whose surface is the
-                        subject of physical geography and the related sciences of phyto-<pb n="677" facs="images/GSE/GSE.ed3.eng.vol17.0677"/>
+                        subject of physical geography and the related sciences of phyto-<pb n="677" facs="images/GSE/GSE.ed3.eng.vol17.0677.png"/>
                         geography and zoogeography. A still narrower field is the earth's
                         biosphere, which constitutes the subject of biology and the
                         related science of biogeochemistry. Thus, still another sequence
@@ -16593,7 +16594,7 @@
             </div>
             <gap reason="not digitized" extent="approximately 100 pages"/>
             <milestone unit="volume" n="18"/>
-            <pb n="74" facs="images/GSE/GSE.ed3.eng.vol18.074"/>
+            <pb n="74" facs="images/GSE/GSE.ed3.eng.vol18.0074.png"/>
             <div type="entry" subtype="education">
                 <head>
                     <term xml:id="EDUCATION">EDUCATION,</term>
@@ -16696,7 +16697,7 @@
                          progress. Furthermore, they are assigned the task of
                         equipping students with a profound, solid knowledge of the fundamental
                         principles of various disciplines, as well as inculcating
-                        in them a drive to continually improve their knowledge and an<pb n="75" facs="images/GSE/GSE.ed3.eng.vol18.075"/>
+                        in them a drive to continually improve their knowledge and an<pb n="75" facs="images/GSE/GSE.ed3.eng.vol18.0075.png"/>
                         ability to supplement their knowledge independently and to apply
                         it in practice.</p>
                     <p>The scientific and technological revolution has caused an increase
@@ -16785,7 +16786,7 @@
             </div>
             <gap reason="not digitized" extent="2 volumes"/>
             <milestone unit="volume" n="20"/>
-            <pb n="175" facs="images/GSE/GSE.ed3.eng.vol20.0175"/>
+            <pb n="175" facs="images/GSE/GSE.ed3.eng.vol20.0175.png"/>
             <div type="entry" subtype="science">
                 <head>
                     <term xml:id="NATURE">NATURE</term>
@@ -16892,7 +16893,7 @@
                         nature-that is, to a fuller, more efficient, and more varied utilization of natural
                         resources. From the standpoint of society, the necessity for such a transition is
                         remforced by a change in the character of human activity, which can no longer develop
-                        spontaneously under the <pb n="176" facs="images/GSE/GSE.ed3.eng.vol20.0176"/> influence of its own inner logic. Human acticities
+                        spontaneously under the <pb n="176" facs="images/GSE/GSE.ed3.eng.vol20.0176.png"/> influence of its own inner logic. Human acticities
                         must be regulated, because the material and natural conditions for it are limited. In
                         contemporary society, the instrument for the regulations of human activity is science -
                         the principal tool for the intensification and rationalization of production and for the
@@ -17005,7 +17006,7 @@
                         position to regulate its relationship with nature intelligently. Although it is by no
                         means possible to solve all problems at once, a planned approach guarantees success and
                         deprives ecological pessimism of its social base.</p>
-                        <pb n="177" facs="images/GSE3/GSE.ed3.eng.vol20.0177"/>
+                        <pb n="177" facs="images/GSE3/GSE.ed3.eng.vol20.0177.png"/>
                     </div>
                     <div type="bibliography">
                         <head type="alt">REFERENCES</head>
@@ -17104,7 +17105,7 @@
             </div>
             <gap reason="not digitized" extent="5 volumes"/>
             <milestone unit="volume" n="5"/>
-            <pb n="444" facs="images/GSE3/GSE.ed3.eng.vol25.0444"/>
+            <pb n="444" facs="images/GSE3/GSE.ed3.eng.vol25.0444.png"/>
             <div type="entry" subtype="technology">
                 <head>
                     <term xml:id="TECHNOLOGY">TECHNOLOGY</term>
@@ -17262,7 +17263,7 @@
                         independently and without direct human intervention perform all
                         basic and auxiliary operations, such as changing speeds and
                         feeds, reversing, positioning objects and removing them after
-                        processing, and applying and removing working elements. Each<pb n="445" facs="images/GSE3/GSE.ed3.eng.vol25.0445"/>
+                        processing, and applying and removing working elements. Each<pb n="445" facs="images/GSE3/GSE.ed3.eng.vol25.0445.png"/>
                         automated machine is a complex aggregate containing one or
                         several motors, several transfer devices, several working elements,
                         and special equipment for monitoring, control, and regulation. In
@@ -17532,7 +17533,7 @@
                         production of electrical household appliances also shows high
                         growth rates.</p>
                         <p>The present period of technological development is characterized
-                        by an ever increasing rate of modernization and replacement<pb n="446" facs="images/GSE3/GSE.ed3.eng.vol25.0446"/>
+                            by an ever increasing rate of modernization and replacement<pb n="446" facs="images/GSE3/GSE.ed3.eng.vol25.0446.png"/>
                         of the technical means of production, by the creation of a wide
                         range of new machines, mechanisms, equipment and instru
                         ments, by maximum standardization of products, and by 
@@ -17695,7 +17696,7 @@
                             </cit> 
                          Radical changes in technology bring about
                         a chain reaction of changes in the economic and social institutions
-                        of a society. Thus, machine production created the conditions for<pb n="447" facs="images/GSE3/GSE.ed3.eng.vol25.0447"/>
+                        of a society. Thus, machine production created the conditions for<pb n="447" facs="images/GSE3/GSE.ed3.eng.vol25.0447.png"/>
                         an unparalleled growth in the productivity and socialization of
                         labor and for the replacement of small-scale cottage production by
                         large-scale production. However in capitalist society the 
@@ -18092,7 +18093,7 @@
             </div>
             <gap reason="not digitized" extent="4 volumes"/>
             <milestone unit="volume" n="30"/>
-            <pb n="5" facs="images/GSE3/GSE.ed3.eng.vol30.0005"/>
+            <pb n="5" facs="images/GSE3/GSE.ed3.eng.vol30.0005.png"/>
             <div type="entry" subtype="art">
                 <head>
                     <term xml:id="AESTHETICS">
@@ -18250,7 +18251,7 @@ aesthetics (represented by <name type="person" key="http://dbpedia.org/resource/
 strength, the movement was still quite heterogeneous in its philosophical
 and artistic concerns.</p>
                         <p>The growing interest in art and in its ability to mold man's view
-    of the world<pb n="6" facs="images/GSE3/GSE.ed3.eng.vol30.0006"/> led to the attempt to contrast the various forms of art
+                            of the world<pb n="6" facs="images/GSE3/GSE.ed3.eng.vol30.0006.png"/> led to the attempt to contrast the various forms of art
 (for example, by <name type="person" key="http://dbpedia.org/resource/Jean-Baptiste_Dubos">J.B. Dubos</name> and 
                     <name type="person">J. Harris</name>
                             <note type="uncertainty" resp="#alexey.gorobiy">It is not clear here which one of people called J. Harris is meant. - Alexey Gorobiy</note>) and later to the notion
@@ -18452,7 +18453,7 @@ By supplementing and purposefully expanding the actual experience
 of the individual, art serves as a powerful means of spiritually
 molding each new member of society; it helps him assimilate
 the values, norms, and ideals accumulated by culture and corre
-                        <pb n="7" facs="images/GSE3/GSE.ed3.eng.vol30.0007"/>
+                            <pb n="7" facs="images/GSE3/GSE.ed3.eng.vol30.0007.png"/>
 sponding to the needs of a particular society's way of life or of a
 particular class, ethnic group, or social milieu. Thus the arts dialectically
 combine what is common to all mankind, what is historically
@@ -18765,7 +18766,7 @@ and <term xml:lang="ru">
                                         <hi rend="italic">Istoriia na estetikata.</hi>
                                     </title> 2nd ed. <pubPlace>Sofia</pubPlace>, <date>1958</date>.</bibl>
                             </item>
-                            <pb n="8" facs="images/GSE3/GSE.ed3.eng.vol30.0008"/>
+                            <pb n="8" facs="images/GSE3/GSE.ed3.eng.vol30.0008.png"/>
                             <item>
                                 <bibl>
                                     <author>Gilbert K</author>, and <author>H Kuhn</author>
@@ -18937,7 +18938,7 @@ and <term xml:lang="ru">
                 </div>
             </div>
             <gap reason="not digitized" extent="214"/>
-            <pb n="220" facs="images/GSE3/GSE.ed3.eng.vol30.0220"/>
+            <pb n="220" facs="images/GSE3/GSE.ed3.eng.vol30.0220.png"/>
             <div type="entry">
                 <head>
                     <term xml:id="ENCYCLOPEDIA">ENCYCLOPEDIA,</term>
@@ -19089,7 +19090,7 @@ and <term xml:lang="ru">
                         </title>
                                 <date>1875-77</date>
                             </bibl>.</p>
-                        <pb n="221" facs="images/GSE3/GSE.ed3.eng.vol30.0221"/>
+                        <pb n="221" facs="images/GSE3/GSE.ed3.eng.vol30.0221.png"/>
                         <p>By the early 20th century, those involved in the publication of
                         encyclopedias were able to draw on the experience obtained in
                         the compilation of 19th century encyclopedias in Russia and
@@ -19594,7 +19595,7 @@ and <term xml:lang="ru">
                         <bibl>
                                 <title>
                                     <hi rend="italic">Wielka encyklopedia powszechna</hi> (Great
-                        <pb n="222" facs="images/GSE3/GSE.ed3.eng.vol30.0222"/>
+                                    <pb n="222" facs="images/GSE3/GSE.ed3.eng.vol30.0222.png"/>
                         Universal Encyclopedia</title>, vols. 1-13,
                             <pubPlace>Warsaw</pubPlace>, <date>1962-70</date>
                             </bibl>) and is

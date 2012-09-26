@@ -1,13 +1,19 @@
 table.metadata{
     border-collapse: separate;
 	border-spacing: 2px;
+	font-size:smaller;
+	color:#391f04;  /* B45F04 8c4b06*/
 }
 table.metadata th, td { vertical-align: top; }
 
 table.metadata th{ 
-   text-align:left;
+   text-align:right;
    vertical-align: top; 
-   background-color: #fcd9c9;
+   background-color: #fbedc7;
+   width:250px;
+   font-weight:normal;
+   white-space:normal;
+   color:#76440c;
 }
 
 table.metadata .label {   font-size:115%; }
@@ -30,3 +36,5 @@ h2{ margin: 1em 0 .1em 0; font-size:130%; }
 
 .textDesc .typeValue,
 .textDesc .typeValueOther {font-style: italic;  }
+
+.metadatahead {color:#391f04;}

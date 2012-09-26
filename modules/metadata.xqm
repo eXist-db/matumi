@@ -11,26 +11,69 @@ declare function local:capitalize-first($str as xs:string) as xs:string {
     concat(upper-case(substring($str,1,1)), substring($str,2))
  };
 
-
+declare function local:get-textdescname($str as xs:string) as xs:string {
+    if      ($str eq "Channel")         then <span>Medium</span> 
+    else if ($str eq "Constitution")    then <span>Constitution</span>
+    else if ($str eq "Derivation")      then <span>Derivation</span>
+    else if ($str eq "Domain")          then <span>Domain</span>
+    else if ($str eq "Factuality")      then <span>Factuality</span>
+    else if ($str eq "Interaction")     then <span>Interaction</span>
+    else if ($str eq "Preparedness")    then <span>Preparedness</span>
+    else if ($str eq "Purpose")         then <span>Purpose</span>
+    else <span>[Item]</span>
+ };
+ 
+ declare function local:get-textdescinfo($str as xs:string) as xs:string {
+    if      ($str eq "Channel")         then <span>? 'Channel' describes the medium or channel by which a text is delivered or experienced. For a written text, this might be print, manuscript, e-mail, etc.; for a spoken one, radio, telephone, face-to-face, etc.</span>
+    else if ($str eq "Constitution")    then <span>? 'Constitution' describes the internal composition of a text or text sample, for example as fragmentary, complete, etc.</span>
+    else if ($str eq "Derivation")      then <span>? 'Derivation' describes the nature and extent of originality of this text.</span>
+    else if ($str eq "Domain")          then <span>? 'Domain' (domain of use) describes the most important social context in which the text was realized or for which it is intended, for example private vs. public, education, religion, etc.</span>
+    else if ($str eq "Factuality")      then <span>? 'Factuality' describes the extent to which the text may be regarded as imaginative or non-imaginative, that is, as describing a fictional or a non-fictional world. </span>
+    else if ($str eq "Interaction")     then <span>? 'Interaction' describes the extent, cardinality and nature of any interaction among those producing and experiencing the text, for example in the form of response or interjection, commentary, etc.</span>
+    else if ($str eq "Preparedness")    then <span>? 'Preparedness' describes the extent to which a text may be regarded as prepared or spontaneous. </span>
+    else if ($str eq "Purpose")         then <span>? 'Puropse' characterizes a single purpose or communicative function of the text.</span>
+    else <span>[Item]</span>
+ };
+declare function local:get-textdescdesc($str as xs:string) as xs:string {
+    if      ($str eq "Channel")         then <span>print / manuscript / scan / other</span>
+    else if ($str eq "Constitution")    then <span>one single complete text / composition of single complete texts / fragments / other</span>
+    else if ($str eq "Derivation")      then <span>original / revision / translation / abridgment / plagiarism / traditional / other</span>
+    else if ($str eq "Domain")          then <span>education / government / public / domestic / religion / business / art / other</span>
+    else if ($str eq "Factuality")      then <span>fiction / fact / mixed</span>
+    else if ($str eq "Interaction")     then <span>interaction among those producing and experiencing the text</span>
+    else if ($str eq "Preparedness")    then <span>spontaneous / formulaic / revised</span>
+    else if ($str eq "Purpose")         then <span>inform / entertain / persuade / express</span>
+    else <span>[Item]</span>
+ };
+ 
 declare function metadata:process-child-nodes($Node as node()?) {
     for $N in $Node/node() return metadata:process( (), $N ) 
 };
 
 declare function metadata:genre-and-style-element( $e as node() ){
     let $other-attr := $e/@*[local-name()!= 'type'],
-        $name := local:capitalize-first(local-name($e))
+        $name := local:capitalize-first(local-name($e)),
+        $textdescname := local:get-textdescname($name),
+        $textdescinfo := local:get-textdescinfo($name),
+        $textdescdesc := local:get-textdescdesc($name)
       
-    return <div class="textDesc { string($e/@type) }">
-              <span class="typeName">{ $name }</span>{
+     return <div class="textDesc { string($e/@type) }">
+              <span class="typeName">{ $textdescname }</span>
+              <span class="textinfo">{ $textdescinfo }</span>
+              <span class="textdescription"> ({ $textdescdesc })</span>:<br/> {
                 if( fn:exists( $e/@type )) then (
                   ':', 
                   <span class="typeValue">{string($e/@type)}</span>
                 )else(),
-                for $a in $other-attr return ( 
+                if( fn:exists( $e/@mode )) then (                  
+                  <span class="typeValue">written</span>
+                )else(),
+             (:   for $a in $other-attr return ( 
                     ', ',
                     <span class="typeNameOther">{  local-name($a) } </span>, 
                     ':', <span class="typeValueOther">{ string($a) }</span>
                 ),
+             :)   
                 if( $e/node() ) then (' - ', metadata:process-child-nodes($e) ) else() 
           }</div>
 };

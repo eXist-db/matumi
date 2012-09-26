@@ -1,9 +1,77 @@
 body {
     margin: 25px 70px;
     font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;
+    background: url(../images/bg800.png) repeat-x;
 }
 
-table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
+a:link     {color:#610B0B}
+a:visited  {color:#610B0B}
+a:hover    {color:#B45F04}
+
+table {border: 0px solid green;}
+
+
+table.result {
+    background-color: #F8ECE0;
+    border: 2.5px solid white;
+    width:100%;
+}
+
+table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif; }
+
+table td.source { 
+    font: 0.75em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;
+    padding: 2px 5px 0px 5px;
+    min-width:550px;
+    color:#61380B;
+}
+
+table .matches {
+    width:100%;
+}
+
+table td.matches {
+    border-bottom: 3.5px solid white;
+    padding: 0px 5px 2px 5px;
+}
+
+.previous{
+    width: 43%;
+}
+.following {
+    width: 47%;
+}
+a.titlelink {
+    background: url(../images/EncDat-title.png) no-repeat;
+    width: 600px; height: 90px;
+    display: block;
+}
+ul.toplinks {
+    float:right;
+    background:transparent;
+    margin: 0 60px 0 400px;
+}
+ul.toplinks li {
+    float:left;
+    background:transparent;
+    padding: 0 5px;
+    font-size:11px;
+    line-height:13px;
+    color: maroon;
+    border-right:1px solid maroon;
+}
+
+ul.toplinks li a {
+    float:right;
+    background:transparent;
+    color: maroon;
+}
+.clusterlink {
+    background:transparent;
+    float:left;
+    margin-left:600px;
+    border-style:none;
+}
 
 #content {
     padding: 15px;
@@ -11,10 +79,6 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
     border: 2px solid #FFAD00;
     border-radius: 10px;
     moz-border-radius: 10px;
-}
-
-.box {
-	margin-bottom: 10px;
 }
 .query-form {
     margin-bottom: 10px;
@@ -27,6 +91,16 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 
 .entry-body {
     margin-top: 10px;
+}
+.entry-outer-body {
+    width:100%;
+    min-width:600px;
+    position:relative;
+}
+.container_16 {
+    min-width:800px;
+	background:#fff;
+
 }
 
 #facets {
@@ -106,7 +180,7 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 }
 
 .entry-view td {
-    padding: 4px 8px;
+    padding: 4px 8px 4px 8px;
     margin: 4px 8px;
     background-color: #FEF8E0;
 }
@@ -134,6 +208,10 @@ table td { font: 1em/1.73em Verdana,Arial,Geneva,Helvetica,sans-serif;  }
 a.cat-value-deep-link:hover,
 
 a.entry-derect-link:hover{ color:blue; background-color:#fff; text-decoration:underline; }
+
+.browse-grid {
+    margin-top: 10px;
+}
 
 .browse-grid table, .browse-boxes {
     font-size: 85%;
@@ -254,28 +332,40 @@ h1, h2, h3, h4, h5, h6, .block {
 
 .L-block li {  line-height:1.3em; margin-bottom:.5em;}
 
+.tableborder {border: 1px solid black;}
 
+#buffer {
+    position:relative;
+    display:block;
+    width:100%; height:120px;
+    border:0px solid red;
+}
+#buffer2 {
+    position:relative;
+    min-width:850px;
+    overflow:visible;
+    border:2px solid blue;
+}
 .pb {   
-    color:#cd853f; 
-    width:100%;
-    text-align:right;
-    border-top:1px solid #cd853f;
-    
+    color:#444444; /* color:#cd853f; */ 
+    width:98%;
+    left:0;
+    margin: 20px 10px 0 10px;
+    position:absolute;
+    text-align:center;
+    border-top:3px solid #cd853f;
+    clear:both;
+    height:30px;
+    display:block;   
 }
-
 .rh {   
-    color:#cd853f; 
-    float:left; 
-    margin-top:-30px;
-    
-}
-
-.unclear { 
-    color:#cc3300; 
+    color:#444444; /* color:#cd853f; */  
+    margin: -96px 0 80px 0px;
 }
 
 .figure { 
     max-width:800px; 
+    max-height:800px;
     border: 0px solid red; 
     display:block; 
     font-size:12px;
@@ -286,14 +376,257 @@ h1, h2, h3, h4, h5, h6, .block {
 .facsimile { 
     position:relative;
     float:right;
-    margin: 0 0 0 10px;
-    height:200px; 
+    height:84px;
     border: 1px solid #cd853f; 
     display:block; 
+    margin: 0px 0 20px 0;
 }
-
-.facsimile:hover { 
+/* .facsimile:hover { 
     height:800px; 
     border: 1px solid #cd853f; 
     display:block; 
+} */
+
+.columnbreak {
+    width:300px;
+}
+
+/* Kaja: for welcome site on home  */
+.hometable td {
+	border:1px solid white;
+	padding: 2px 2px 10px 2px;
+}
+.hometable h5 {
+    color:#c6810a;
+}
+.hometablecaption td {
+	background-color: #765C5C;
+	border:1px solid white;
+	color: #FFFFF2;
+}
+
+.cwelcome {
+	background-color: #fff;
+}
+.c1 {
+	background-color: #FFE5cc;
+}
+.c2 {
+	background-color: #FFF2e5;
+}
+.c3 {
+	background-color: #FFFFee;
+}
+.cellcaption {
+	color: #7F6666;
+}
+.middle {
+	text-align: center;
+}
+
+div.pageview{  
+    width:100%;
+    height:100px;
+    float:right;
+    display:block; 
+    position:relative;  
+    margin: -30px 0 0 0; 
+    /*background:#FFFFFF; */
+    z-index:5;
+    right:0;
+    border:0px solid pink;
+} 
+
+div.osize{
+    float:right;
+    width:88px;
+    height:84px;
+    font-size:small;
+    border: 1px solid #cd853f;
+    border-left:none;
+    background:#ffffee;
+    text-align:center;
+    color:#cd853f;
+}
+
+a.osize{
+    color:inherit;
+    text-decoration:none;
+    float:right;
+    width:44px;
+}
+a.osize:hover{
+    color:#ffffee;
+    background:#cd853f;
+}
+
+div.buttons{
+    float:right;
+    width:44px;
+    font-size:small;
+    /*font-weight:bold;*/
+    border: 0px solid #cd853f;
+    background:#ffffee;
+    color:#cd853f;
+}
+
+div.buttons:hover{
+    cursor:pointer;
+    background:#cd853f;
+    color:#ffffee;
+}
+
+a.close{
+    /*position:relative;*/
+    /*margin:15px;*/
+    display:none;
+    text-align:center;
+}
+
+a.scale{
+    /*margin:15px;*/
+    display:block;
+    text-align:center;
+}
+ul.toclist {
+    background-color: #ffffee;
+    padding:20px;
+}
+
+ul.toclist li  {
+    margin-left:40px;
+    border-bottom:1px solid #F6E3CE;
+}
+ul.toclist li ul li ul {
+    margin-left:40px;
+    font-size:smaller;
+}
+ul.toclist {
+    margin-left:40px;
+    font-size:20px;
+    border:1px solid orange;
+    width:650px;
+}
+ul.toclist li.level1  {margin-left:0px;   font-size:larger; font-weight:bold;}
+ul.toclist li.level2  {margin-left:40px;  font-size:larger;}
+ul.toclist li.level3  {margin-left:80px;  font-size:medium;}
+ul.toclist li.level4  {margin-left:120px; font-size:small;}
+ul.toclist li.level5  {margin-left:160px; font-size:x-small;}
+ul.toclist li.level6  {margin-left:200px; font-size:x-small;} 
+
+
+
+/* non-unicode characters .png-file display size */
+
+img.non-unicode-char{
+    height:20px;
+    width:20px;
+}
+
+
+
+
+/* Kaja changes after sending to Wolfgang on July 27, 2012 */
+
+.contentdesc {
+    background-color: #fffff3;
+    border:1px solid orange;
+    padding:20px;
+}
+.contentdesctitle {
+    float:right;
+    color:#B45F04;
+}
+
+.textdescription {
+    font-weight:normal;
+    text-decoration:none;
+    color:#C5AE82;
+    
+}
+.typeName {
+    font-weight:normal;
+    text-decoration:none;
+    color:#C5AE82;
+    margin-left:20px;
+}
+.textinfo {
+    position:absolute;
+    margin-top:-26px;
+    margin-left:0px;
+    width:15px;
+    height:20px;
+    border:1px solid #C5AE82;
+    background-color:white;
+    display:block;
+    overflow:hidden;
+}
+.textinfo:hover {
+   width:auto;
+   overflow:visible;
+}
+.noteresp {
+    width:10px;
+    height:18px;
+    border:1px solid #C5AE82;
+    background-color:white;
+    display:inline-block;
+    overflow:hidden;
+    font-size:smaller;
+    color:#b45f04;
+    vertical-align:super;
+    position:absolute;
+    margin-top:-10px;
+    margin-left:-20px;
+}
+.noteresp:hover {
+   width:auto; height:auto;
+   overflow:visible;
+   z-index:5;
+}
+.choice {border:0px solid red;}
+.reg {color:orange;}
+.orig {}
+.alternative {color:orange;}
+
+.unclear { 
+    border: 1px solid orange;
+    border-top: none;
+    border-left:none;
+}
+.unclear-fragezeichen { 
+    vertical-align:super;
+    color:orange;
+    border:0px solid red;
+}
+.addition {color:blue;}   /* #b45f04 */
+.gapinfo {color:#b45f04;}
+
+.character-variant, character-oldradical {
+    border-bottom:1px solid orange;
+}
+
+div.anatd{  
+    display:block; 
+}
+a.closeana{
+    display:none;
+    color:#610b0b;
+    text-decoration:underline;
+}
+a.viewana{
+    display:block;
+    color:#610b0b;
+    text-decoration:underline;
+}
+.anaarticle{
+    display:none;
+    border: 4px solid white;
+}
+a.viewana:hover, a.closeana:hover {color:#b45f04;}
+.ana-box{
+    border: 4px solid red;
+    display:block;
+    width:500px;
+    height:10px;
 }

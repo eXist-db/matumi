@@ -112,7 +112,14 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
             case element(tei:teiHeader) return
                 ()
             case element(tei:div) return
-                dict:process-children($documentURI, $node, $comments)
+                if ($node/@type = 'advertisement' or $node/@subtype = 'advertisement')  then
+                    <div class="contentdesc">
+                        <div class="contentdesctitle">[Advertisement]</div>
+                        {dict:process-children($documentURI, $node, $comments)}
+                    </div>
+                 else
+                    dict:process-children($documentURI, $node, $comments)
+                    
             case element(tei:head) return
                 let $level := count($node/ancestor::tei:div)
                 return (
@@ -121,26 +128,139 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
                         dict:process-children($documentURI, $node, $comments)
                     }
                 )
+    
+            case element(tei:lb) return
+                <br/>
+            case element(tei:fw) return
+                <p class="rh">{$node/text()}</p>
+            case element(tei:unclear) return
+                (
+                
+                <span class="unclear" title="unclear. reason: {$node/@reason}">{dict:process-children($documentURI, $node, $comments)}<span class="unclear-fragezeichen">?</span></span>
+            )
+            case element(tei:gap) return 
+                <span class="gapinfo" title="reason: {$node/@reason}">[gap:{fn:string($node/@extent)}{fn:string($node/@unit)}]</span>
+                
+            case element(tei:figure) return (
+                <img class="figure" src="{fn:string($node/@facs)}"/>,
+                <div class="figure"><span class="addition">[Figure above:]</span> {dict:process-children($documentURI, $node, $comments)}</div>
+            )
+            case element(tei:figDesc) return 
+                <span class="addition">{dict:process-children($documentURI, $node, $comments)}</span> 
+            case element(tei:anchor) return (
+                <a name="{fn:string($node/@xml:id)}"/>
+            )
+            case element(tei:note) return
+                if ($node/@author) then
+                    <span class="note">Note by {fn:string($node/@author)}: {fn:string($node)}</span>
+                else if ($node/@resp) then
+                    <span class="noteresp">Note by {fn:string($node/@resp)}: {fn:string($node)}</span>
+                else
+                    <span class="note">Note: {fn:string($node)}</span>
+            case element(tei:add) return        
+                if ($node/@resp) then
+                    <span class="addition" title="Addition by {fn:string($node/@resp)}">{fn:string($node)}</span>
+                else
+                    <span class="addition">{fn:string($node)}</span>
+            
+            
+            
+            case element(tei:choice) return
+                <span class="choice">
+                    {dict:process-children($documentURI, $node, $comments)}
+                </span>
+            case element(tei:reg) return
+                <span class="reg" title="regularized form">
+                    ({dict:process-children($documentURI, $node, $comments)})
+                </span>
+            case element(tei:orig) return
+                <span class="orig">
+                    {dict:process-children($documentURI, $node, $comments)}
+                </span>
+            case element(tei:seg) return
+                if ($node/@type eq "alternative") then
+                <span class="alternative">
+                    /{dict:process-children($documentURI, $node, $comments)}
+                </span>
+                else dict:process-children($documentURI, $node, $comments)
+                
             case element(tei:table) return
-                <table class="teitable">
-                {
-                    for $row in $node/tei:row
-                    return
-                        <tr>
-                        {
-                            for $cell in $row/tei:cell
-                            return
-                                <td>{$cell/text()}</td>
-                        }
-                        </tr>
-                }
+                <table class="teitable">           
+                    {dict:process-children($documentURI, $node, $comments)}
                 </table>
+            case element(tei:row) return
+                <tr>           
+                    {dict:process-children($documentURI, $node, $comments)}
+                </tr>
+             case element(tei:cell) return
+                <td>           
+                    {dict:process-children($documentURI, $node, $comments)}
+                </td>
+            case element(tei:pb) return 
+               <span id="wrapper">
+                 <div class="pb">{fn:string($node/@n)} 
+                 <div class="pageview" id="pageview_{fn:string($node/@n)}">
+                        <div class="osize">
+                            Orig.Page:<br/>
+                            <a class="osize" href="{fn:string($node/@facs)}" target="_blank"><b>++</b><br/> 100% </a> 
+                            <div class="buttons">
+                                <a class="scale"><b>+</b> Bigger</a>
+                                <a class="close"><b>-</b> Smaller</a>
+                        </div></div>
+                        <img class="facsimile" src="{fn:string($node/@facs)}" id="image_{fn:string($node/@n)}"/>                                        
+                  </div>
+                  </div>
+                  <div id="buffer"></div>
+               </span>
+            case element(tei:ruby) return 
+                <ruby>{dict:process-children($documentURI, $node, $comments)}</ruby>
+            case element(tei:rbase) return
+                <rb>{dict:process-children($documentURI, $node, $comments)}</rb>
+            case element(tei:rtext) return
+                <rt>{dict:process-children($documentURI, $node, $comments)}</rt>
+            case element(tei:charDecl) return ()
+            case element(tei:g) return
+              if ($node/@type = 'V') then
+                <span class="character-variant" title="character variant">{$node/text()}</span>
+              else if ($node/@type = 'R') then
+                <span class="character-oldradical" title="character with old radical">{$node/text()}</span>
+              else if ($node/@type = 'R') then
+                <span class="character-oldradical character-variant" title="character variant with old radical">{$node/text()}</span>
+              else
+                 <b>
+                    {   
+                        let $id := replace($node/@ref, '#', '')             
+                        let $glyph := doc($documentURI)//tei:charDecl/tei:glyph[@xml:id = $id]   
+                        return <img class="non-unicode-char" src="{fn:string($glyph/tei:graphic/@url)}" alt="(non-unicode-char)" title="(non-unicode-char)"/>                
+                    }
+                </b> 
             case element(tei:list) return
-                <ul>
-                { dict:process-children($documentURI, $node, $comments) }
-                </ul>
+                if ($node/@type = 'toclist') then
+                    <div class="contentdesc">
+                        <div class="contentdesctitle">[Table of Contents]</div>
+                        <ul class="toclist">
+                        { dict:process-children($documentURI, $node, $comments) }
+                        </ul>
+                    </div>
+                else
+                    <ul>
+                    { dict:process-children($documentURI, $node, $comments) }
+                    </ul>
             case element(tei:item) return
-                <li>{ dict:process-children($documentURI, $node, $comments) }</li>
+                if ($node/@rend = '1') then
+                    <li class="level1">{ dict:process-children($documentURI, $node, $comments) }</li>
+                else if ($node/@rend = '2') then
+                    <li class="level2">{ dict:process-children($documentURI, $node, $comments) }</li>
+                else if ($node/@rend = '3') then
+                    <li class="level3">{ dict:process-children($documentURI, $node, $comments) }</li>
+                else if ($node/@rend = '4') then
+                    <li class="level4">{ dict:process-children($documentURI, $node, $comments) }</li>
+                else if ($node/@rend = '5') then
+                    <li class="level5">{ dict:process-children($documentURI, $node, $comments) }</li>
+                else if ($node/@rend = '6') then
+                    <li class="level6">{ dict:process-children($documentURI, $node, $comments) }</li>
+                else
+                    <li>{ dict:process-children($documentURI, $node, $comments) }</li>
             case element(tei:form) return (
                 <span class="orth">{dict:process($documentURI, $node/tei:orth, $comments)}</span>,
                 <span class="gramGrp">{dict:process($documentURI, $node/tei:gramGrp, $comments)}</span>
@@ -158,11 +278,22 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
                     <span id="{$node/@exist:id}" class="smallcaps">{dict:process-children($documentURI, $node, $comments)}</span>
                 else
                     <span id="{$node/@exist:id}" class="italic">{dict:process-children($documentURI, $node, $comments)}</span>
+                    
+                    
             case element(tei:hi) return
                 if ($node/@rend = 'bold') then
                     <b id="{$node/@exist:id}">{dict:process-children($documentURI, $node, $comments)}</b>
+                else if ($node/@rend = 'listpagenumber') then
+                    <div style="float:right;" id="{$node/@exist:id}">{dict:process-children($documentURI, $node, $comments)}</div>
                 else
                     <span id="{$node/@exist:id}" class="italic">{dict:process-children($documentURI, $node, $comments)}</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
             case element(tei:name) return (
                 <a class="{$node/@type} name" id="{$node/@exist:id}" 
                     href="{$node/@key}" target="_new" rel="{replace($node/@key, "^.*/([^/]+)", "$1")}">
@@ -177,7 +308,7 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
             case element(tei:ref) return
                 if ($node/@target) then
                     <a href="{$node/@target}" id="{$node/@exist:id}" target="_new" 
-                        title="External Link">{dict:process-children($documentURI, $node, $comments)}</a>
+                        title="External Link">{fn:string($node/@type)}{dict:process-children($documentURI, $node, $comments)}</a>
                 else
                     dict:process-children($documentURI, $node, $comments)
             case element(exist:match) return
@@ -187,42 +318,6 @@ declare function dict:process($documentURI as xs:string, $nodes as node()*, $com
                     <!--a href="edit.xql?doc={document-uri(root($node))}&amp;nodeId={$node/@exist:id}" class="edit" target="_new">Edit</a-->
                     <p id="{$node/@exist:id}" class="block">{dict:process-children($documentURI, $node, $comments)}</p>
                 </div>
-            case element(tei:lb) return
-                <br/>
-            case element(tei:pb) return (
-                <p class="pb">{fn:string($node/@n)}</p>,
-                <img class="facsimile" src="{fn:string($node/@facs)}"/>
-            )
-            case element(tei:fw) return
-                <p class="rh">{$node/text()}</p>
-            case element(tei:unclear) return
-                <span class="unclear" title="{$node/@reason}">{$node/text()}</span>
-            case element(tei:figure) return (
-                <img class="figure" src="{fn:string($node/@facs)}"/>,
-                <div class="figure">[Figure:] {dict:process-children($documentURI, $node, $comments)}</div>
-            )
-            case element(tei:note) return
-                if ($node/@author) then
-                    <p class="note">Note by {fn:string($node/@author)}: {fn:string($node)}</p>
-                else
-                    <p class="note">Note: {fn:string($node)}</p>
-        (:    case element(tei:table) return
-                <table class="teitable">
-                {
-                    for $row in $node/tei:row
-                    return
-                        <tr>{dict:process-children($documentURI, $node, $comments)}</tr>
-                }
-                </table>
-            case element(tei:cell) return
-                <td>{dict:process-children($documentURI, $node, $comments)}</td>
-        :)   
-            case element(tei:ruby) return 
-                <ruby>{dict:process-children($documentURI, $node, $comments)}</ruby>
-            case element(tei:rbase) return
-                <rb>{dict:process-children($documentURI, $node, $comments)}</rb>
-            case element(tei:rtext) return
-                <rt>{dict:process-children($documentURI, $node, $comments)}</rt>
             case element() return
                 <span id="{$node/@exist:id}">{dict:process-children($documentURI, $node, $comments)}</span>
             case text() return

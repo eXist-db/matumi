@@ -258,6 +258,27 @@ declare function matumi:metadata-display($node as node(), $model as map(*), $doc
                  ()
              }</tbody>
             </table>
+            
+            <h2 class="metadatahead">Digitized entries from this encyclopedia</h2>      
+           <table class="metadata" cellspacing="3" cellpadding="3"  width="100%">
+             <tbody>
+                <tr>
+                <th>Digitized entries</th>
+                <td> <ul id="entries-links">{
+                    for $e in $doc/tei:text/tei:body/tei:div[@type="entry"]                    
+                    let $title := fn:string-join($e/tei:head, ', ') 
+                    return element {'li'}{
+                       element a {
+                          attribute {'class'}{ 'entry-derect-link' },
+                          attribute {'href'}{ concat('entry.html?doc=', document-uri( root($e)), '&amp;node=',util:node-id($e))},    
+                          $title
+                        }     
+                    }
+                }</ul></td>
+             </tr>
+
+             </tbody>
+           </table>
         </div>
 };
 

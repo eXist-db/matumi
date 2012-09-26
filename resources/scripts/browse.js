@@ -65,3 +65,94 @@ $(document).ready(function() {
     });
     /* End browsing page */
 });
+
+
+$(document).ready(function(){
+    $("a.scale").click(function(){
+        var pageview = $(this).parents("div.pageview");
+        var pageimage = pageview.find("img.facsimile");
+        var closebutton = $(this).next();  
+        $(this).css({
+            "display": "none"
+        });
+        closebutton.css({
+            "display": "block"
+        });
+        pageview.next().css({
+            "clear":"none",
+            "width":"100%"
+        });
+        pageview.css({ 
+            
+        }); 
+        pageimage.css({
+            "margin-left":"3%",
+            "width":"80%",
+            "height":"auto"
+        });
+        pageview.fadeIn("slow");
+    });
+    $("a.close").click(function(){
+        var pageview = $(this).parents("div.pageview");
+        var pageimage = pageview.find("img.facsimile");
+        var scalebutton = $(this).prev();
+        $(this).css({
+            "display":"none"
+        });
+        scalebutton.css({
+            "display":"block"
+        });
+        pageview.next().css({
+            "clear":"none"
+        });
+        pageview.css({
+            
+        });
+        pageimage.css({
+            "margin-left":"0",
+            "height":"84px",
+            "width":"auto"
+        });
+    });
+});
+
+
+/* Kaja: open and close analysis that comes with an entry  */
+$(document).ready(function(){
+    $("a.viewana").click(function(){
+        var anatd = $(this).parents("td.anatd");
+        var anaarticle = anatd.find("div.anaarticle");
+        var closebutton = $(this).next();  
+        $(this).css({
+            "display": "none"
+        });
+        closebutton.css({
+            "display": "block"
+        });
+        anatd.next().css({
+            "clear":"none"
+        });
+        anaarticle.css({
+            "display":"block"
+        });
+        anatd.fadeIn("slow");
+    });
+    $("a.closeana").click(function(){
+        var anatd = $(this).parents("td.anatd");
+        var anaarticle = anatd.find("div.anaarticle");
+        var viewbutton = $(this).prev();
+        $(this).css({
+            "display":"none"
+        });
+        viewbutton.css({
+            "display":"block"
+        });
+        anatd.next().css({
+            "clear":"none"
+        });
+        anaarticle.css({
+            "display":"none"
+        });
+    });
+});
+
