@@ -630,3 +630,12 @@ a.viewana:hover, a.closeana:hover {color:#b45f04;}
     width:500px;
     height:10px;
 }
+
+.cwelcome ul {
+                list-style-type:disc;        
+                margin-left:60px;
+}
+.cwelcome ul  ul{
+                list-style-type:circle;     
+                margin-left:40px;
+}
