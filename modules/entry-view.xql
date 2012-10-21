@@ -302,7 +302,7 @@ function matumi:browse($node as node(), $model as map(*), $L1 as xs:string, $key
     )
 };
 
-declare function matumi:select-entries($level as xs:string, $key as xs:string) {
+declare function matumi:select-entries($level as xs:string, $key as xs:string?) {
     switch ($level)
         case "entries" return
             collection($config:data-collection)/tei:TEI//tei:div[tei:head/tei:term = $key][@type = "entry"]
@@ -350,11 +350,11 @@ declare function matumi:browse-summary($node as node(), $model as map(*)) {
 
 declare %private function matumi:get-categories($div as element(tei:div)) {
     for $name in $div//tei:name
-    group $name as $byType by $name/@type as $type
+    group by $type := $name/@type
     return
         let $names :=
-            for $name in $byType[@key]
-            group $name as $distinct by $name/@key as $key
+            for $name in $name[@key]
+            group by $key := $name/@key
             return (
                 ", ",
                 <a href="entry.html?doc={document-uri(root($div))}&amp;node={util:node-id($div)}&amp;key={$key}">
