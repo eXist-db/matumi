@@ -9,7 +9,7 @@ module namespace templates="http://exist-db.org/xquery/templates";
  : @author Wolfgang Meier
 :)
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
-import module namespace theme="http:/exist-db.org/xquery/matumi/theme" at "theme.xqm";
+import module namespace theme="http://exist-db.org/xquery/matumi/theme" at "theme.xqm";
 
 declare variable $templates:CONFIG_STOP_ON_ERROR := "stop-on-error";
 

@@ -1,4 +1,4 @@
-module namespace theme="http:/exist-db.org/xquery/matumi/theme";
+module namespace theme="http://exist-db.org/xquery/matumi/theme";
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 

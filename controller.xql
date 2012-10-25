@@ -1,6 +1,6 @@
 xquery version "1.0";
 
-import module namespace theme="http:/exist-db.org/xquery/matumi/theme" at "modules/theme.xqm";
+import module namespace theme="http://exist-db.org/xquery/matumi/theme" at "modules/theme.xqm";
 
 declare variable $local:CREDENTIALS := ("admin", "");
 
