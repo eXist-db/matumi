@@ -89,7 +89,8 @@ declare function search:query-form() {
             <td>
                 <input name="q" size="50"
                     value="{(request:get-parameter('q', ()), $queryFromSession/field/string())[1]}"/>
-                <button type="reset">Clear</button>
+               <!-- <button type="reset">Clear</button>  -->
+                    <button type="submit">Query</button>
             </td>
         </tr>
 };
@@ -261,7 +262,7 @@ declare function search:show-results($results) {
                     return
                         fn:string($title)        
             order by ft:score($result)    
-        return (
+            return (
                 <tr>
                     <td class="source">
                         {$main-title}
@@ -295,3 +296,29 @@ declare function search:show-results($results) {
             </div>
         </div>
 };
+    
+(:    
+    let $xpath := session:get-attribute("matumi:xpath")
+    let $rows :=
+        for $result in $results
+        order by ft:score($result)
+        return 
+            <result>
+                {exists($result/ancestor-or-self::tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@type="main"]/text())},
+                {search:display-result($result, $xpath)}
+            </result>
+    return
+        <div>
+            <p id="navbar">Query Results: {count($rows)} matches in {count($results)} paragraphs.</p>
+            <div id="results">
+                <div id="results-container">
+                    <table class="kwic">
+                    {
+                        $rows
+                    }
+                    </table>
+                </div>
+            </div>
+        </div>
+:)
+
