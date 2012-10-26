@@ -14,16 +14,19 @@ import module namespace metadata="http://exist-db.org/xquery/apps/matumi/metadat
 
 
 declare function matumi:entry($node as node()*, $model as map(), $doc as xs:string?, $id as xs:string?) {
-    if ($id) then
-        let $entry := doc($doc)//tei:div[@type = "entry"][@subtype = $id]
-        return
-            map:entry("entry", $entry)
-    else
-        let $nodeId := request:get-parameter("node", ())
-        let $target := util:node-by-id(doc($doc), $nodeId)
-        let $entry := $target/ancestor-or-self::tei:div[@type = "entry"]
-        return
-            map:entry("entry", $entry)
+    let $nodeId := request:get-parameter("node", ())
+    return
+    if ($nodeId) then
+        if ($id) then
+            let $entry := doc($doc)//tei:div[@type = "entry"][@subtype = $id]
+            return
+                map:entry("entry", $entry)
+        else
+            let $target := util:node-by-id(doc($doc), $nodeId)
+            let $entry := $target/ancestor-or-self::tei:div[@type = "entry"]
+            return
+                map:entry("entry", $entry)
+    else 'Please select an entry through Browse or Search.'
 };
 
 declare function matumi:encyclopedia-title($node as node()*, $model as map()) {

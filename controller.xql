@@ -11,7 +11,12 @@ declare variable $exist:prefix external;
 declare variable $exist:controller external;
 declare variable $local:controller-url := concat( fn:substring-before(request:get-url(), $exist:controller),$exist:controller);
 
-if ($exist:path eq "/") then
+if ($exist:path eq '') then
+        <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+            <redirect url="{concat(request:get-uri(), '/')}"/>
+        </dispatch>
+
+else if ($exist:path eq "/") then
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
         <redirect url="browse-new.html"/>
     </dispatch>

@@ -139,7 +139,7 @@ ul.toplinks li a {
 
 .tabs {
     list-style: none;
-    margin: 0;
+    margin: 0 0 -2px 0;
     padding: 0 0 0 15px;
     height: 30px;
 }
@@ -669,6 +669,7 @@ ul.submenu li a{
     color:#410b0b;    
     line-height:16px;
     background:transparent;  /* #FEF8E0 */
+    vertical-align: middle !important;
 }
 ul.submenu li a:hover {
     background:#fff;
