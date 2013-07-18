@@ -59,7 +59,7 @@ declare function browse-data:filter-one-level(
     $CATEGORIEs as element(category)*, 
     $SUBJECTs as element(subject)*  
 ){
-   let $coll := concat($config:app-root, '/data'),
+   let $coll := $config:data-collection,
        $all-entries := ('#all;collection("', $coll, '")/descendant-or-self::tei:div[@type="entry" ]'), (:  :)
        $this-level  := $LEVELs[ $level-pos ]
        
@@ -129,7 +129,7 @@ declare function browse-data:filter-all-levels-before-and-summary(
     $CATEGORIEs as element(category)*, 
     $SUBJECTs as element(subject)*  
 ){
-   let $coll := concat($config:app-root, '/data'),
+   let $coll := $config:data-collection,
        $all-entries := (
               <etag>all-{ string($LEVELs[$level-pos])}-{ $level-pos } </etag>,
               <summary type="all"/>,
@@ -229,7 +229,7 @@ declare function browse-data:for-level2(
     $CATEGORIEs as element(category)*, 
     $SUBJECTs as element(subject)*  
  ) {    
-    let $coll := concat($config:app-root, '/data'),
+    let $coll := $config:data-collection,
         $this-level  := $LEVELs[ $level-pos ],
         $prev-levels := fn:subsequence($LEVELs, 1, $level-pos ),
         $prev-prev-levels := fn:subsequence($LEVELs, 1, ($level-pos - 1) )

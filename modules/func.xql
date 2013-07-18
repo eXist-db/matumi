@@ -7,8 +7,12 @@ declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare namespace rdfs="http://www.w3.org/2000/01/rdf-schema#";
 
 declare function func:expand-name($context as node()*, $name as xs:string) {
-    let $keys := collection($config:app-root)//rdf:Description[ft:query(rdfs:label, $name)]/@rdf:about
-    (: let $log := util:log("DEBUG", ("Keys: ", string-join($keys, " "))) :)
+    (:let $keys := collection($config:app-root)//rdf:Description[ft:query(rdfs:label, $name)]/@rdf:about:)
+    let $keys := collection($config:app-root)//rdf:Description[rdfs:label eq $name]/@rdf:about
+    (:let $log := util:log("DEBUG", ("##$keys: ", string-join($keys, " "))):) 
+    let $keys := 
+        if ($keys) then $keys 
+        else collection($config:app-root)//rdf:Description[ft:query(rdfs:label, $name)]/@rdf:about
     for $key in $keys
     let $names := $context//tei:name[@key = $key]
     for $name in $names

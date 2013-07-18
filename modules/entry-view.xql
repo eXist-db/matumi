@@ -6,7 +6,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace templates="http://exist-db.org/xquery/templates" at "templates.xql";
-import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
+import module namespace tei2html="http://exist-db.org/xquery/tei2html" at "tei2html.xql";
 import module namespace search="http://exist-db.org/xquery/search" at "search.xql";
 import module namespace browse="http://exist-db.org/xquery/apps/matumi/browse" at "browse.xqm";
 import module namespace browse-books="http://exist-db.org/xquery/apps/matumi/browse-books" at "browse_books.xqm";
@@ -50,7 +50,7 @@ declare function matumi:encyclopedia-subjects($node as node()*, $model as map())
 };
 
 declare function matumi:format-entry($node as node()*, $model as map()) {
-    dict:entry($model("entry"))
+    tei2html:entry($model("entry"))
 };
 
 declare function matumi:tabs($node as node()*, $model as map()) {
@@ -305,6 +305,7 @@ function matumi:browse($node as node(), $model as map(*), $L1 as xs:string, $key
     )
 };
 
+(:NB: Why does $key have to be optional?:)
 declare function matumi:select-entries($level as xs:string, $key as xs:string?) {
     switch ($level)
         case "entries" return
@@ -358,7 +359,8 @@ declare %private function matumi:get-categories($div as element(tei:div)) {
         let $names :=
             for $name in $name[@key]
             group by $key := $name/@key
-            return (
+            return
+            (
                 ", ",
                 <a href="entry.html?doc={document-uri(root($div))}&amp;node={util:node-id($div)}&amp;key={$key}">
                 { matumi:extract-key($key) }

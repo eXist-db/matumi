@@ -10,7 +10,7 @@ import module namespace config="http://exist-db.org/xquery/apps/config" at "conf
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 
-import module namespace h2t="http://exist-db.org/xquery/html2tei" at "html2tei.xql";
+import module namespace tei2html="http://exist-db.org/xquery/tei2html" at "tei2html.xql";
 
 import module namespace xutil="http://exist-db.org/xquery/xpath-util" at "path.xql";
     
@@ -146,9 +146,9 @@ declare function anno:annotate($resource as xs:string, $source as element()) {
 
 declare function anno:update($id as xs:string) {
     let $note := anno:parse-note()
-    (: let $tei := h2t:transform($note) :)
+    (: let $tei := tei2html:transform($note) :)
     let $content := $note//BODY/*
-    let $feed := collection($config:app-root)/atom:feed[atom:id = $id]
+    let $feed := collection($config:app-root)//atom:feed[atom:id = $id]
     return (
         update insert
             <entry xmlns="http://www.w3.org/2005/Atom">

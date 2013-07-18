@@ -4,11 +4,11 @@ declare namespace edit="http://exist-db.org/xquery/encyclopedia/edit";
 
 import module namespace jquery="http://exist-db.org/xquery/jquery" at "resource:org/exist/xquery/lib/jquery.xql";
 import module namespace xutil="http://exist-db.org/xquery/xpath-util" at "path.xql";
-import module namespace h2t="http://exist-db.org/xquery/html2tei" at "html2tei.xql";
+import module namespace tei2html="http://exist-db.org/xquery/tei2html" at "tei2html.xql";
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 
-declare variable $edit:COLLECTION := "/db/encyclopedia";
+declare variable $edit:COLLECTION := "/db/resources/commons/encyclopedias";
 
 declare variable $edit:DOC := request:get-parameter("doc", ());
 declare variable $edit:NODEID := request:get-parameter("nodeId", ());
@@ -18,7 +18,7 @@ declare function edit:retrieve-block() {
 };
 
 declare function edit:block-to-html() {
-    h2t:tei-to-html(edit:retrieve-block())
+    tei2html:tei-to-html(edit:retrieve-block())
 };
 
 declare function edit:html() {

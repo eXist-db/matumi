@@ -7,14 +7,17 @@ declare namespace rdfs="http://www.w3.org/2000/01/rdf-schema#";
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 import module namespace func="http://exist-db.org/encyclopedia/functions" at "func.xql";
 import module namespace kwic="http://exist-db.org/xquery/kwic";
-import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
+import module namespace tei2html="http://exist-db.org/xquery/tei2html" at "tei2html.xql";
 
 declare option exist:serialize "method=xml media-type=application/xml";
 
 declare variable $search:FIELDS :=
     <fields>
-        <field name="Lemma">$context//tei:form[ft:query(tei:orth, "$q")] union
-            $context//tei:div[@type = "entry"]/tei:head[ft:query(., "$q")]</field>
+        <field name="Lemma">
+            $context//tei:form[ft:query(tei:orth, "$q")]
+                union
+            $context//tei:div[@type = "entry"]/tei:head[ft:query(., "$q")]
+        </field>
         <field name="Name">func:expand-name($context, "$q")</field>
         <field name="Term">$context//tei:term[ft:query(., "$q")]</field>
         <field name="Text">$context//tei:p[ft:query(., "$q")]</field>
@@ -99,7 +102,9 @@ declare function search:query() as xs:string {
     let $field := request:get-parameter("field", ())
     let $queryStr := request:get-parameter("q", ())
     let $expr := $search:FIELDS/field[@name = $field]
+    (:let $log := util:log("DEBUG", ("##$expr): ", $expr)):)
     let $expandedExpr := replace($expr, "\$q", $queryStr)
+    (:let $log := util:log("DEBUG", ("##$expandedExpr): ", $expandedExpr)):)
     return
         ($expandedExpr, search:query-to-session())
 };
@@ -112,11 +117,14 @@ declare function search:filter($node as node(), $mode as xs:string) as item()? {
 };
 
 declare function search:display-result($node as element(), $xpath as xs:string) {
+    let $document-uri := document-uri(root($node))
+    return
     if (local-name($node) = ('name', 'term', 'p')) then
         let $callback := util:function(xs:QName("search:filter"), 2)
+        let $node-id := util:node-id($node)
         let $config :=
             <config width="40" table="yes"
-                link="entry.html?doc={document-uri(root($node))}&amp;qu={$xpath}&amp;node={util:node-id($node)}"/>
+                link="entry.html?doc={$document-uri}&amp;qu={$xpath}&amp;node={concat($node-id, '#', $node-id)}"/>
         let $block := $node/ancestor-or-self::tei:p
         return
             if ($block) then
@@ -127,64 +135,65 @@ declare function search:display-result($node as element(), $xpath as xs:string) 
             else
                 ()
     else
-        let $documentURI := document-uri(root($node))
-        return
             typeswitch ($node)
                 case element(tei:form) return
                     <tr>
-                        <td><a href="entry.html?doc={$documentURI}&amp;qu={$xpath}&amp;node={util:node-id($node)}">{$node/tei:orth/string()}</a></td>
-                        <td>{dict:process($documentURI, $node/../tei:sense[1]/tei:def, ())}</td>
+                        <td><a href="entry.html?doc={$document-uri}&amp;qu={$xpath}&amp;node={util:node-id($node)}">{$node/tei:orth/string()}</a></td>
+                        <td>{tei2html:process($document-uri, $node/../tei:sense[1]/tei:def, ())}</td>
                     </tr>
                 case element(tei:head) return
                     <tr>
-                        <td><a href="entry.html?doc={$documentURI}&amp;qu={$xpath}&amp;node={util:node-id($node)}">{$node/string()}</a></td>
-                        <td>{dict:process($documentURI, $node/../tei:div/tei:p[1]/tei:gloss[1], ())}</td>
+                        <td><a href="entry.html?doc={$document-uri}&amp;qu={$xpath}&amp;node={util:node-id($node)}">{$node/string()}</a></td>
+                        <td>{tei2html:process($document-uri, $node/../tei:div/tei:p[1]/tei:gloss[1], ())}</td>
                     </tr>
                 default return
                     ()
 };
 
 declare function search:name-facet($root as element()*, $type as xs:string, $view as xs:string) {
+    let $type-plural := 
+        if ($type eq 'city') then 'cities' else if ($type eq 'country') then 'countries' else if ($type eq 'dynasty') then 'dynasties'else concat($type, 's')
+    return
     <div class="facet">
-        <h3 class="{$type}">{dict:capitalize-first($type)}</h3>
+        <h3 class="{$type}">{$type-plural}</h3>
         <ul>
         {
-            let $names :=
+            let $name-keys :=
                 distinct-values(
-                    for $name in $root//tei:name[@type = $type]
+                    for $name-type in $root//tei:name[@type = $type]
                     return
-                        $name/@key
+                        $name-type/@key
                 )
-            for $name in $names order by $name
+            for $name-key in $name-keys
+            let $display-name := translate(replace($name-key, "^.*/([^/]+)", "$1"), "_", " ")
+            order by $display-name
             return
                 <li>
                     {
                         if ($view eq "search") then
-                            <input type="checkbox" name="facet" class="facet-check" value="{$name}"
+                            <input type="checkbox" name="facet" class="facet-check" value="{$name-key}"
                                 title="Mark to restrict search">
-                                {if (exists(index-of($search:FACETS, $name))) then attribute checked { "checked" } else ()}
+                                {if (exists(index-of($search:FACETS, $name-key))) then attribute checked { "checked" } else ()}
                             </input>
                         else
                             ()
                     }
                     {
-                        let $displayName := translate(replace($name, "^.*/([^/]+)", "$1"), "_", " ")
-                        return
-                            if ($view eq "entry") then
-                                <a href="#{util:node-id(($root//tei:name[@key = $name])[1])}"
+                        if ($view eq "entry") then
+                                <a href="#{util:node-id(($root//tei:name[@key = $name-key])[1])}"
                                     title="Click to jump to first occurrence">
-                                    { $displayName }
+                                    { $display-name }
                                 </a>
                             else
-                                $displayName
+                                $display-name
                     }
                     <span class="facet-links">
-                        <a href="{$name}" target="_new">
+                        <a href="{$name-key}" target="_new">
                             DBpedia
                         </a>
                         |
                         <a class="key-search" 
-                            href="search.html?field=Key&amp;q={$name}" target="_new">
+                            href="search.html?field=Key&amp;q={$name-key}" target="_new">
                             New Search
                         </a>
                     </span>
@@ -208,7 +217,7 @@ declare function search:do-search($xpath as xs:string?) {
             concat("func:find-by-key($context, '", $search:FACETS, "')")
         else
             ()
-    let $context := collection($config:app-root)
+    let $context := collection($config:data-collection)
     let $result :=
         search:apply-facets(util:eval($query), $search:FACETS)
     return (
@@ -286,10 +295,10 @@ declare function search:show-results($results) {
             count($results)
     return
         <div>
-            <p id="navbar">Query Results: {$count-matches} matches in {count($results)} paragraphs.</p>
             <div id="results">
                 <div id="results-container">
                     <table class="result">
+                        <thead><tr><td id="navbar">{$count-matches} matches in {count($results)} paragraphs</td></tr></thead>
                         {$results-print}
                     </table>
                 </div>
@@ -321,4 +330,3 @@ declare function search:show-results($results) {
             </div>
         </div>
 :)
-

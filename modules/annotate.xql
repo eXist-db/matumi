@@ -3,7 +3,6 @@ xquery version "1.0";
 declare namespace anno="http://exist-db.org/xquery/annotate";
 declare namespace atom="http://www.w3.org/2005/Atom";
 
-import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
 import module namespace jquery="http://exist-db.org/xquery/jquery" at "resource:org/exist/xquery/lib/jquery.xql";
 import module namespace xutil="http://exist-db.org/xquery/xpath-util" at "path.xql";
 

@@ -1,4 +1,4 @@
-xquery version "1.0";
+xquery version "3.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 import module namespace util="http://exist-db.org/xquery/util";
@@ -36,4 +36,7 @@ util:log("INFO", ("Running post-install script ...")),
 
 local:mkcol($target, 'cache'),
 xdb:set-collection-permissions( concat($target,'/cache'), $config:credentials[1], $config:group,  xmldb:string-to-permissions('rwxrwxrwx') ),
-local:chmod-recursive($config:data-collection, xmldb:string-to-permissions("rwxrwxr--"))
+local:chmod-recursive($config:data-collection, xmldb:string-to-permissions("rwxrwxr--")),
+
+xmldb:remove($target || "/" || "encyclopedias"),
+xmldb:remove($target || "/" || "images")

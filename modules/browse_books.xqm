@@ -14,8 +14,8 @@ import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/brow
 
 
 declare function browse-books:data-all( $context-nodes as node()*, $level as node(),  $root as xs:boolean ){
-   if( $root or $level/pos = 1 ) then 
-        collection(concat($config:app-root, '/data'))/tei:TEI        
+    if( $root or $level/pos = 1 ) then 
+        collection($config:data-collection)/tei:TEI        
    else $context-nodes/ancestor-or-self::tei:TEI
 };
 (:

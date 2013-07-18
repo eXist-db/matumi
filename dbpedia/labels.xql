@@ -19,7 +19,7 @@ declare function local:target() {
 
 declare function local:retrieve($url as xs:string) {
     let $key := replace($url, "^.*/([^/]+)$", "$1")
-    let $log := util:log("DEBUG", ("Retrieving ", $key, "..."))
+    (:let $log := util:log("DEBUG", ("Retrieving ", $key, "...")):)
     let $uri := xs:anyURI(concat($server, $key, ".rdf"))
     let $rdf:= util:catch("*", httpclient:get($uri, false(), ()), util:log("WARN", ("Failed to load ", $uri))) 
     let $target := local:target()

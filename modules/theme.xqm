@@ -31,7 +31,7 @@ declare function theme:resolve($prefix as xs:string?, $root as xs:string, $resou
  :
  :)
 declare function theme:get-path() {
-    concat(substring-after($config:themes, "/db"), "/default")
+    concat(substring-after($config:themes, "/db/apps"), "/default")
 };
 
 (:~

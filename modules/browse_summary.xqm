@@ -25,7 +25,7 @@ declare variable $browse-summary:base-time := browse-summary:base-time-get(false
 
 declare function local:now() as xs:dateTime {   dateTime(current-date(), util:system-time() ) };
 
-declare function  browse-summary:base-time-get( $update as xs:boolean ) as xs:dateTime{   
+declare function browse-summary:base-time-get( $update as xs:boolean ) as xs:dateTime{   
    let $coll := concat($config:app-root, '/cache'),
       $file-name := '0000_base-time.xml',
       $uri := concat( $coll, '/', $file-name),
@@ -49,14 +49,16 @@ declare function  browse-summary:base-time-get( $update as xs:boolean ) as xs:da
          )           
 };   
 
-
-declare function  browse-summary:add-books-id( ) {    
+(:
+declare function browse-summary:add-books-id() {    
      system:as-user( $config:credentials[1], $config:credentials[2], (     
-         for $book at $pos in collection ( concat($config:app-root, '/data') )/tei:TEI[ empty(@xml:id) ] 
+         for $book at $pos in collection ($config:data-collection)/tei:TEI[empty(@xml:id)] 
          return update insert attribute {  xs:QName("xml:id") }{ concat('i',$pos)} into $book         
      ))
 };     
+:)
 
+(:
 declare function browse-summary:next-id( $node as node()   ) {    
      let $book :=  document-uri( root($node) ),
          $top  :=  $node/ancestor-or-self::tei:TEI,
@@ -83,35 +85,38 @@ declare function browse-summary:next-id( $node as node()   ) {
        
 };
 
-declare function  browse-summary:all( ){   
+:)
+(:
+declare function browse-summary:all(){   
   let   $uri :=  concat($config:app-root, '/cache/categories-all.xml'),
         $saved-summary := if( fn:doc-available($uri) ) then doc($uri)/*  else ()
         
-  return if( exists( $saved-summary ) ) then (: or xs:dateTime($saved-summary/@ts) < $base-time :)
+  return if( exists( $saved-summary ) ) then (\: or xs:dateTime($saved-summary/@ts) < $base-time :\)
                $saved-summary/category 
           else(
-            let $new-summary :=  browse-summary:make(   collection(concat($config:app-root, '/data'))//tei:name[@type], false() ),
+            let $new-summary :=  browse-summary:make(   collection($config:data-collection)//tei:name[@type], false() ),
                 $saved :=  browse-summary:save( (), $new-summary  ) 
             return $new-summary
         )
 };   
+:)
 
-declare function  browse-summary:get-one( $node as node() ){
+declare function browse-summary:get-one( $node as node() ){
      if( empty($node/@xml:id) ) then (: or xs:dateTime($summary/@ts) < $base-time :)
           browse-summary:update-one( $node  )
      else collection( concat($config:app-root, '/cache'))/categories-summary[ @uuid = $node/@xml:id ]/*
 };
 
-declare function  browse-summary:get-many-packed( $nodes as node()* ){
+declare function browse-summary:get-many-packed( $nodes as node()* ){
      collection( concat($config:app-root, '/cache'))/categories-summary[ @uuid = $nodes/@xml:id ]
 };
 
-declare function  browse-summary:value-numbers( $node as node()? ){
+declare function browse-summary:value-numbers( $node as node()? ){
      collection( concat($config:app-root, '/cache'))/categories-summary[ @uuid = $node/@xml:id ]/@values
 };
 
 
-declare function  browse-summary:update-one( $node as node() ){
+declare function browse-summary:update-one( $node as node() ){
     let $started-at := dateTime(current-date(), util:system-time() )
     let $new-summary :=  browse-summary:make($node, false() ),                        
         $save := if( true() and local-name($node) = ('TEI','div') ) then 
@@ -120,7 +125,7 @@ declare function  browse-summary:update-one( $node as node() ){
     return $new-summary
 };
 
-declare function  browse-summary:get-out-of-entries-only( 
+declare function browse-summary:get-out-of-entries-only( 
    $QUERIEs as element(query)*,  
    $level as node()?,    
    $URIs as element(URI)*,  
@@ -167,7 +172,7 @@ declare function browse-summary:detailes($node as element()* ){
 };
 :)
 
-declare function  browse-summary:save( $node as node()?, $categories as element(category)*  ){
+declare function browse-summary:save( $node as node()?, $categories as element(category)*  ){
       let $root := root($node),
           $node-id := $node/@xml:id,
           
@@ -214,7 +219,7 @@ declare function  browse-summary:save( $node as node()?, $categories as element(
       
 };
 
-declare function  browse-summary:combine( $categories as element(category)*, $Categories as element(category)* ){
+declare function browse-summary:combine( $categories as element(category)*, $Categories as element(category)* ){
  for $category in $categories
     group $category as $byName by $category/@name as $cat-name
     order by fn:lower-case($cat-name) 
@@ -244,7 +249,7 @@ declare function  browse-summary:combine( $categories as element(category)*, $Ca
             }
 }; 
 
-declare function  browse-summary:make( $n as element()*, $add-node-id as xs:boolean ) {
+declare function browse-summary:make( $n as element()*, $add-node-id as xs:boolean ) {
    for $name in $n/descendant-or-self::tei:name[@type][@key]
     group $name as $byType by $name/@type as $type
    order by $type  

@@ -14,14 +14,15 @@ head.ready(function() {
         $(".facet").find("input").each(function () {
             this.checked = false;
         });
+        $("#search-form").submit();
     });
-    resize();
+    /*resize();*/ /*Jens commented out*/
 });
 
-function resize() {
+/*function resize() {
     var $facets =  $("#facets .facet-list");
     if( $facets.length ){
        var nh = $(window).height() - $facets.offset().top;
        $facets.height(nh - 40);
     }    
-}
+}*/ /*Jens commented out*/

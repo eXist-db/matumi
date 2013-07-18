@@ -1,8 +1,7 @@
 xquery version "1.0";
 
-module namespace browse-config="http://exist-db.org/xquery/apps/matumi/browse-config";
+module namespace browse="http://exist-db.org/xquery/apps/matumi/browse";
 
-declare namespace browse="http://exist-db.org/xquery/apps/matumi/browse";
 declare namespace anno="http://exist-db.org/xquery/annotate";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 

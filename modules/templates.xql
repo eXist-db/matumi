@@ -18,6 +18,7 @@ declare variable $templates:CONFIGURATION_ERROR := QName("http://exist-db.org/xq
 declare variable $templates:NOT_FOUND := QName("http://exist-db.org/xquery/templates", "NotFound");
 declare variable $templates:TOO_MANY_ARGS := QName("http://exist-db.org/xquery/templates", "TooManyArguments");
 declare variable $templates:PROCESSING_ERROR := QName("http://exist-db.org/xquery/templates", "ProcessingError");
+declare variable $templates:TYPE_ERROR := QName("http://exist-db.org/xquery/templates", "TypeError");
 
 declare variable $templates:root-collection :=
     let $root := request:get-attribute("templating.root")
@@ -213,7 +214,7 @@ declare %private function templates:map-argument($arg as element(argument), $par
             templates:cast($param, $type)
         } catch * {
             error($templates:TYPE_ERROR, "Failed to cast parameter value '" || $param || "' to the required target type for " ||
-                "template function parameter $" || $name || " of function " || ($arg/../@name) || ". Required type was: " ||
+                +                "template function parameter $" || $var || " of function " || ($arg/../@name) || ". Required type was: " ||
                 $type || ". " || $err:description)
         }
     return
@@ -312,7 +313,7 @@ declare function templates:include($node as node(), $model as map(*), $path as x
 };
 
 declare function templates:surround($node as node(), $model as map(*), $with as xs:string, $at as xs:string?, $using as xs:string?) {
-    let $template := theme:resolve(request:get-attribute("exist:prefix"), request:get-attribute("exist:root"), $with)
+    let $template := concat($config:app-root, "/themes/default/", $with) 
     let $content :=
         if ($using) then
             doc($template)//*[@id = $using]
@@ -447,7 +448,7 @@ declare %private function templates:get-form-parameter($name as xs:string) {
             $param
         else
             session:get-attribute($name)
-    let $log := util:log("WARN", "VALUE: " || $value)
+    (:let $log := util:log("WARN", "VALUE: " || $value):)
     return
         $value
 };
@@ -490,7 +491,7 @@ declare %private function templates:expand-link($href as xs:string, $external as
     string-join(
         let $analyzed := analyze-string($href, "^\{([^\{\}]+)\}")
         for $component in $analyzed/*/*
-        let $log := util:log("DEBUG", ("Component: ", $component))
+        (:let $log := util:log("DEBUG", ("Component: ", $component)):)
         return
             typeswitch($component)
                 case element(fn:match) return

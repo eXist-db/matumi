@@ -7,12 +7,12 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
-import module namespace xdb="http://exist-db.org/xquery/xmldb";
+(:import module namespace xdb="http://exist-db.org/xquery/xmldb";:)
 import module namespace util="http://exist-db.org/xquery/util";
 import module namespace session="http://exist-db.org/xquery/session";
 
-import module namespace cache="http://exist-db.org/xquery/cache"     at "java:org.exist.xquery.modules.cache.CacheModule";
-import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
+(:import module namespace cache="http://exist-db.org/xquery/cache" at "java:org.exist.xquery.modules.cache.CacheModule";:)
+(:import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";:)
 import module namespace browse-entries="http://exist-db.org/xquery/apps/matumi/browse-entries" at "browse_entries.xqm";
 import module namespace browse-data="http://exist-db.org/xquery/apps/matumi/browse-data" at "browse_data.xqm";
 

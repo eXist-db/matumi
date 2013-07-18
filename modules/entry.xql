@@ -7,7 +7,7 @@ declare copy-namespaces no-preserve, no-inherit;
 
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
-import module namespace dict="http://exist-db.org/xquery/dict" at "dict2html.xql";
+import module namespace tei2html="http://exist-db.org/xquery/tei2html" at "tei2html.xql";
 import module namespace config="http://exist-db.org/xquery/apps/config" at "config.xqm";
 
 (:
@@ -136,7 +136,7 @@ return <html >
             'Entry: ',
             for $h in $node/head return string($h)
         )else 
-            'All Enciclopedias'
+            'All Encyclopedias'
       
       }</title>
     </head>
@@ -144,13 +144,13 @@ return <html >
       if( exists($node)) then (
          <div class="tei-entry"> {
           
-          dict:entry( $node )   
+          tei2html:entry( $node )   
       
         }</div>
       ) else      
           local:books-table(local:books-list( 
-             if( exists($doc) ) then $doc//teiHeader/fileDesc
-             else collection(concat($config:app-root, '/data'))//teiHeader/fileDesc  ),
+             if( exists($doc) ) then $doc/tei:TEI/teiHeader/fileDesc
+             else collection($config:data-collection)/tei:TEI/teiHeader/fileDesc  ),
              exists($doc)
           ) 
        
