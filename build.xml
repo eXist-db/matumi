@@ -31,23 +31,10 @@
             </filterset>
         </copy>
         <zip basedir="." destfile="${build}/${project.app}-${project.version}${git.commit}.xar">
-            <fileset dir=".">
-                <include name="*.*"/>
-                <include name="modules/**"/>
-                <include name="resources/**"/>
-                <include name="templates/**"/>
-                <include name="${cache}/**"/>
-                <include name="${dbpedia}/**"/>
-                <include name="${encyclopedias}/**"/>
-                <include name="${images}/**"/>
-                <include name="${themes}/**"/>
-                <include name="${xconf}/**"/>
-
-                <exclude name="${build}/*"/>
-                <exclude name=".git*"/>
-                <exclude name="*.tmpl"/>
-                <exclude name="*.properties"/>
-            </fileset>
+            <exclude name="${build}/*"/>
+            <exclude name=".git*"/>
+            <exclude name="*.tmpl"/>
+            <exclude name="*.properties"/>
         </zip>
     </target>
     <target name="upload">
