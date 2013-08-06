@@ -5,14 +5,15 @@ declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare namespace rdfs="http://www.w3.org/2000/01/rdf-schema#";
 
 declare variable $server := "http://dbpedia.org/data/";
+declare variable $tei-location := "/db/resources/commons/encyclopedias";
 
 declare function local:target() {
-    let $root := collection("/db/encyclopedia")/rdf:RDF
+    let $root := collection($tei-location)/rdf:RDF
     return
         if ($root) then 
             $root
         else
-            let $doc := xmldb:store("/db/encyclopedia", "labels.xml", <rdf:RDF/>)
+            let $doc := xmldb:store($tei-location, "labels.xml", <rdf:RDF/>)
             return
                 doc($doc)/rdf:RDF
 };
@@ -31,8 +32,8 @@ declare function local:retrieve($url as xs:string) {
         into $target
 };
 
-for $node at $pos in collection("/db/encyclopedia")//tei:name
+for $node at $pos in collection($tei-location)//tei:name
 let $key := $node/@key
-where $key and empty(collection("/db/encyclopedia")//rdf:Description[@rdf:about = $key])
+where $key and empty(collection($tei-location)//rdf:Description[@rdf:about = $key])
 return
     local:retrieve($key)
