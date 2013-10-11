@@ -6,19 +6,16 @@
     <property name="build" value="./build"/>
     <property name="cache" value="./cache"/>
     <property name="dbpedia" value="./dbpedia"/>
-    <property name="encyclopedias" value="./encyclopedias"/>
+    <property name="encyclopedias" value="./Encyclopedias"/>
     <property name="images" value="./images"/>
     <property name="themes" value="./themes"/>
     <property name="xconf" value="./xconf"/>
     <property name="server.url" value="http://demo.exist-db.org/exist/apps/public-repo/public/"/>
-
     <condition property="git.commit" value="${git.commit}" else="">
         <isset property="git.commit"/>
     </condition>
-
     <target name="all" depends="xar"/>
     <target name="rebuild" depends="clean,all"/>
-
     <target name="clean">
         <delete dir="${build}"/>
         <delete file="expath-pkg.xml"/>

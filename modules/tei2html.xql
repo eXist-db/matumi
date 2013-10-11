@@ -142,7 +142,7 @@ declare function tei2html:process($documentURI as xs:string, $nodes as node()*, 
                 <span class="gapinfo" title="reason: {$node/@reason}">[gap:{fn:string($node/@extent)}{fn:string($node/@unit)}]</span>
                 
             case element(tei:figure) return (
-                <img class="figure" src="{concat('/exist/rest/db/resources/commons/encyclopedias/', fn:string($node/@facs))}"/>,
+                <img class="figure" src="{concat('/exist/rest/db/resources/commons/Encyclopedias/', fn:string($node/@facs))}"/>,
                 <div class="figure"><span class="addition">[Figure above:]</span> {tei2html:process-children($documentURI, $node, $comments)}</div>
             )
             case element(tei:figDesc) return 
@@ -204,13 +204,13 @@ declare function tei2html:process($documentURI as xs:string, $nodes as node()*, 
                          <div class="pageview" id="pageview_{fn:string($node/@n)}">
                                 <div class="osize">
                                     Orig.Page:<br/>
-                                    <a class="osize" href="{concat('/exist/rest/db/resources/commons/encyclopedias/', fn:string($node/@facs))}" target="_blank"><b>++</b><br/> 100% </a> 
+                                    <a class="osize" href="{concat('/exist/rest/db/resources/commons/Encyclopedias/', fn:string($node/@facs))}" target="_blank"><b>++</b><br/> 100% </a> 
                                     <div class="buttons">
                                         <a class="scale"><b>+</b> Bigger</a>
                                         <a class="close"><b>-</b> Smaller</a>
                                     </div>
                                 </div>
-                                <img class="facsimile" src="{concat('/exist/rest/db/resources/commons/encyclopedias/', fn:string($node/@facs))}" id="image_{fn:string($node/@n)}"/>
+                                <img class="facsimile" src="{concat('/exist/rest/db/resources/commons/Encyclopedias/', fn:string($node/@facs))}" id="image_{fn:string($node/@n)}"/>
                           </div>
                       </div>
                       <div id="buffer"></div>

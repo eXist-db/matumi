@@ -5,7 +5,7 @@ declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare namespace rdfs="http://www.w3.org/2000/01/rdf-schema#";
 
 declare variable $server := "http://dbpedia.org/data/";
-declare variable $tei-location := "/db/resources/commons/encyclopedias";
+declare variable $tei-location := "/db/resources/commons/Encyclopedias";
 
 declare function local:target() {
     let $root := collection($tei-location)/rdf:RDF

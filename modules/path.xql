@@ -1,6 +1,6 @@
 module namespace xutil="http://exist-db.org/xquery/xpath-util";
 
-declare variable $xutil:COLLECTION := "/db/encyclopedia";
+declare variable $xutil:COLLECTION := "/db/Encyclopedias";
 
 declare variable $xutil:ID := request:get-parameter("id", ());
 declare variable $xutil:DOC := request:get-parameter("doc", ());
