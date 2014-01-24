@@ -8,7 +8,7 @@ import module namespace tei2html="http://exist-db.org/xquery/tei2html" at "tei2h
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 
-declare variable $edit:COLLECTION := "/db/resources/commons/encyclopedias";
+declare variable $edit:COLLECTION := "/db/resources/commons/Encyclopedias";
 
 declare variable $edit:DOC := request:get-parameter("doc", ());
 declare variable $edit:NODEID := request:get-parameter("nodeId", ());

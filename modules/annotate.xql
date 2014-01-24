@@ -8,7 +8,7 @@ import module namespace xutil="http://exist-db.org/xquery/xpath-util" at "path.x
 
 declare option exist:serialize "method=xhtml media-type=text/html";
 
-declare variable $anno:COLLECTION := "/db/encyclopedia";
+declare variable $anno:COLLECTION := "/db/Encyclopedias";
 
 declare variable $anno:ID := request:get-parameter("id", ());
 declare variable $anno:DOC := request:get-parameter("doc", ());

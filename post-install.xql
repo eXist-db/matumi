@@ -38,5 +38,5 @@ local:mkcol($target, 'cache'),
 xdb:set-collection-permissions( concat($target,'/cache'), $config:credentials[1], $config:group,  xmldb:string-to-permissions('rwxrwxrwx') ),
 local:chmod-recursive($config:data-collection, xmldb:string-to-permissions("rwxrwxr--")),
 
-xmldb:remove($target || "/" || "encyclopedias"),
+xmldb:remove($target || "/" || "Encyclopedias"),
 xmldb:remove($target || "/" || "images")
