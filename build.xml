@@ -2,7 +2,7 @@
     <property file="local.build.properties"/>
     <property file="build.properties"/>
     <property name="project.app" value="matumi"/>
-    <property name="project.version" value="0.4"/>
+    <property name="project.version" value="0.5"/>
     <property name="build" value="./build"/>
     <property name="cache" value="./cache"/>
     <property name="dbpedia" value="./dbpedia"/>
